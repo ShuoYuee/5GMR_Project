@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 物件編輯控制器
+/// </summary>
 public class EditObjControll : MonoBehaviour
 {
 
-    private MapPoolDT _MapPoolDT;
+    private MapPoolDT _MapPoolDT;//場景資料(儲存時所用的)
 
+    /// <summary>
+    /// 儲存地圖資料
+    /// </summary>
+    /// <param name="tMapPoolDT"></param>
     public void f_Save(MapPoolDT tMapPoolDT)
     {
         _MapPoolDT = tMapPoolDT;

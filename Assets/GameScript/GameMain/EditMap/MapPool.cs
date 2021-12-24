@@ -26,7 +26,6 @@ public class MapPool : ccBasePool<long>
     /// <summary>
     /// 加载地图数据
     /// </summary>
-    /// <param name="strMap"></param>
     public void f_LoadMap()
     {
 
@@ -127,18 +126,29 @@ public class MapPool : ccBasePool<long>
         return AddObj(iId, tCharacterDT);
     }
 
+    /// <summary>
+    /// 導入儲存資料
+    /// </summary>
+    /// <param name="aData">資料</param>
     private void LoadObj(string[] aData)
     {
         long iId = ccMath.atol(aData[0]);
         CharacterDT tCharacterDT = (CharacterDT)glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetSC(ccMath.atoi(aData[1]));
         EditObjControll tEditObjControll = AddObj(iId, tCharacterDT);
-               
+        
+        //設定物件的位置、旋轉值、縮放值
         tEditObjControll.gameObject.transform.position = new Vector3(ccMath.atof(aData[2]), ccMath.atof(aData[3]), ccMath.atof(aData[4]));
         tEditObjControll.gameObject.transform.rotation = new Quaternion(ccMath.atof(aData[5]), ccMath.atof(aData[6]), ccMath.atof(aData[7]), ccMath.atof(aData[8]));
         tEditObjControll.gameObject.transform.localScale = new Vector3(ccMath.atof(aData[9]), ccMath.atof(aData[10]), ccMath.atof(aData[11]));
 
     }
 
+    /// <summary>
+    /// 創建物件進地圖
+    /// </summary>
+    /// <param name="iId"></param>
+    /// <param name="tCharacterDT"></param>
+    /// <returns></returns>
     private EditObjControll AddObj(long iId, CharacterDT tCharacterDT)
     {           
         GameObject tObj = glo_Main.GetInstance().m_ResourceManager.f_CreateABObj(tCharacterDT.szResName + ".bundle", tCharacterDT.szResName);

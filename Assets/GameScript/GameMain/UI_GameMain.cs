@@ -34,8 +34,8 @@ namespace GameLogic
 
         private void CreateTeamItem()
         {
-            List<NBaseSCDT> aData = glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetAll();
-            ListPositionCtrlTools.f_Create(_listPosCtrl, aData);
+            List<NBaseSCDT> aData = glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetAll();//讀取物件圖示資料
+            ListPositionCtrlTools.f_Create(_listPosCtrl, aData);//創建物件圖示
         }
 
         protected override void On_Open(object e)
@@ -71,16 +71,19 @@ namespace GameLogic
 
         }
 
+        /// <summary>讀取場景資料</summary>
         private void OnClick_LoadMap(GameObject go, object obj1, object obj2)
         {
             GameMain.GetInstance().f_LoadMap();
         }
 
+        /// <summary>儲存場景資料</summary>
         private void OnClick_SaveMap(GameObject go, object obj1, object obj2)
         {
             GameMain.GetInstance().f_SaveMap();
         }
 
+        /// <summary>選擇物件</summary>
         private void OnClick_Select(GameObject go, object obj1, object obj2)
         {
             ListItem tListItem = (ListItem)_listPosCtrl.GetCenteredBox();
@@ -89,18 +92,21 @@ namespace GameLogic
             GameMain.GetInstance().f_AddObj(tCharacterDT);
         }
 
+        /// <summary>刪除物件</summary>
         private void OnClick_DelObj(GameObject go, object obj1, object obj2)
         {
             EditObjControll tEditObjControll = null;
             GameMain.GetInstance().f_DelObj(tEditObjControll.f_GetId());
         }
-               
+
+        /// <summary>開啟設定介面</summary>       
         void OnClick_BtnSetup(GameObject go, object obj1, object obj2)
         {
             ccUIHoldPool.GetInstance().f_Hold(this);
             ccUIManage.GetInstance().f_SendMsg("UI_GameSet", BaseUIMessageDef.UI_OPEN, null, true);
         }
 
+        /// <summary>離開遊戲</summary>
         void OnClick_BtnExit(GameObject go, object obj1, object obj2)
         {
             f_Close();

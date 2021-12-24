@@ -6,6 +6,11 @@ using UnityEngine;
 public class ListPositionCtrlTools
 {
 
+    /// <summary>
+    /// 創建圖示
+    /// </summary>
+    /// <param name="tListPositionCtrl">圖示控制器</param>
+    /// <param name="aData">圖示資料庫</param>
     public static void f_Create(ListPositionCtrl tListPositionCtrl, List<NBaseSCDT> aData)
     {
         List<ListItem> aList = new List<ListItem>();
@@ -16,7 +21,7 @@ public class ListPositionCtrlTools
         for (int i = 0; i < aData.Count; i++)
         {
             tBaseItemDT = (BaseItemDT)aData[i];
-            Sprite tSprite = glo_Main.GetInstance().m_ResourceManager.f_LoadSpriteForAB(strAB, tBaseItemDT.f_GetLogo());
+            Sprite tSprite = glo_Main.GetInstance().m_ResourceManager.f_LoadSpriteForAB(strAB, tBaseItemDT.f_GetLogo());//Load Logo圖示
             string strGirlNum = "";// string.Format(LanguageManager.GetInstance().f_GetText("GmStr_StoryTeam_TextGirlNum"), tBaseItemDT.f_GetNum());
 
             ListItem tListItem = f_AddItem(tListPositionCtrl, i, tBaseItemDT, tBaseItemDT.f_GetName(), tSprite, strGirlNum);
@@ -26,6 +31,16 @@ public class ListPositionCtrlTools
         tListPositionCtrl.listBoxes = aList.ToArray();
     }
 
+    /// <summary>
+    /// 增加圖示資料
+    /// </summary>
+    /// <param name="tListPositionCtrl">圖示控制器</param>
+    /// <param name="iIndex">圖示Index</param>
+    /// <param name="tData">圖示資料</param>
+    /// <param name="strName">圖示名稱</param>
+    /// <param name="tSprite">圖片</param>
+    /// <param name="strNum"></param>
+    /// <returns></returns>
     static ListItem f_AddItem(ListPositionCtrl tListPositionCtrl, int iIndex, NBaseSCDT tData, string strName, Sprite tSprite, string strNum)
     {
         GameObject Obj = tListPositionCtrl.transform.GetChild(iIndex).gameObject;

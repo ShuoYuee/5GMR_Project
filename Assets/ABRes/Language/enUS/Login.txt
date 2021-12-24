@@ -1,0 +1,18 @@
+﻿GmStr_Login_NameText	帳號：
+GmStr_Login_PwdText	密碼：
+GmStr_Login_LoginBtn	Start
+GmStr_Login_LoginNameText	請輸入帳號
+GmStr_Login_BtnGB2312	切換簡體
+GmStr_Login_BtnBg5	切換繁體
+
+
+ACHITITLE_USE_BTN_TITLE	展示
+ACHITITLE_GET	獲取：{0}（{1}）
+ACHITITLE_GREAY_GET	<color=#7C7C7CFF>獲取：</color><color=#ED6A57FF>{0}（{1}）</color>
+ACHITITLE_GREAY_UN_PROGRESS_GET	<color=#7C7C7CFF>獲取：</color><color=#ED6A57FF>{0}</color>
+ACHITITLE_PERMANENT	<color=#31A929FF>永久</color>
+ACHITITLE_TEMPORARY	剩餘：<color=#31A929FF>{0}</color>
+ACHITITLE_PROGRESS	{0}/{1}
+ACHITITLE_HOUR	{0}小時
+ACHITITLE_NORMAL_ATTR	<color=#936843FF>{0}</color><color=#71B27AFF>+{1}</color>
+ACHITITLE_GREAY_ATTR	<color=#7C7C7CFF>{0}+{1}</color>

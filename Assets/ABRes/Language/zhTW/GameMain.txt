@@ -1,0 +1,10 @@
+﻿GmStr_BtnNewGame	新遊戲
+GmStr_BtnLoadGame	載入遊戲
+GmStr_BtnSetup	設置
+GmStr_GameMain_BtnExit	關閉
+GmStr_GameMain_BtnContinueGame	继续游戏
+GmStr_GameMain_BtnCG	CG
+GmStr_GameSet_BtnExit	返回
+GmStr_GameSet_MusicLabel	音乐
+GmStr_GameSet_SoundLabel	声音
+GmStr_GameSet_LanguageLabel	语言

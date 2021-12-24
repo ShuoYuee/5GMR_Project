@@ -1,0 +1,2 @@
+﻿GmStr_EmptyKeyFrame	新创建空的关键帧
+GmStr_GmName	测试团

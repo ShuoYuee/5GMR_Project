@@ -1,0 +1,18 @@
+﻿GmStr_Login_NameText	账号：
+GmStr_Login_PwdText	密码：
+GmStr_Login_LoginBtn	开 始
+GmStr_Login_LoginNameText	请输入帐号
+GmStr_Login_BtnGB2312	切换简体
+GmStr_Login_BtnBg5	切换繁体
+
+
+ACHITITLE_USE_BTN_TITLE	展示
+ACHITITLE_GET	获取：{0}（{1}）
+ACHITITLE_GREAY_GET	<color=#7C7C7CFF>获取：</color><color=#ED6A57FF>{0}（{1}）</color>
+ACHITITLE_GREAY_UN_PROGRESS_GET	<color=#7C7C7CFF>获取：</color><color=#ED6A57FF>{0}</color>
+ACHITITLE_PERMANENT	<color=#31A929FF>永久</color>
+ACHITITLE_TEMPORARY	剩余：<color=#31A929FF>{0}</color>
+ACHITITLE_PROGRESS	{0}/{1}
+ACHITITLE_HOUR	{0}小时
+ACHITITLE_NORMAL_ATTR	<color=#936843FF>{0}</color><color=#71B27AFF>+{1}</color>
+ACHITITLE_GREAY_ATTR	<color=#7C7C7CFF>{0}+{1}</color>

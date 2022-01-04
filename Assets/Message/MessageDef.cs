@@ -43,7 +43,8 @@ public class MessageDef
     /// </summary>
     public static string UI_GamePlotClose = "UI_GamePlotClose";
 
+    public static string UI_GameAnchorStart = "UI_GameAnchorStart";
+    public static string UI_GameAnchorEnd = "UI_GameAnchorEnd";
 
-
-
+    public static string UI_MapObjInit = "UI_MapObjInit";
 }

@@ -1,13 +1,19 @@
 ﻿using ccU3DEngine;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using Epibyte.ConceptVR;
 
 namespace GameLogic
 {
     public class UI_GameMain : ccUILogicBase
     {
-
         private ListPositionCtrl _listPosCtrl;
+        private Pagination _Pagination;
+        private Image _Anchor = null;
+
+        private bool _bAnchor = false;
+        private float _fAnchorWait = 0f;
 
         //PowerIndicator _PowerIndicator;
         protected override void On_Init()
@@ -15,9 +21,11 @@ namespace GameLogic
             MessageBox.DEBUG("启用游戏包中的UI_GameMain脚本");
 
             _listPosCtrl = f_GetObject("CircularList").GetComponent<ListPositionCtrl>();
+            _Anchor=f_GetObject("Anchor").GetComponent<Image>();
+
             f_RegClickEvent(f_GetObject("BtnSetup"), OnClick_BtnSetup);
 
-            f_RegClickEvent(f_GetObject("Select"), OnClick_Select);
+            //f_RegClickEvent(f_GetObject("Select"), OnClick_Select);
             f_RegClickEvent(f_GetObject("DelObj"), OnClick_DelObj);
 
 
@@ -28,8 +36,42 @@ namespace GameLogic
             //PowerLine.transform.parent = this.f_GetObject("Power").transform;
             //_PowerIndicator = PowerLine.GetComponent<PowerIndicator>();
 
+            f_InitMessage();
+            f_InitMapObjData();
+        }
 
+        private void f_InitMessage()
+        {
+            glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_GameAnchorStart, f_StartAnchorTime);
+            glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_GameAnchorEnd, f_EndAnchorTime);
+            glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_MapObjInit, f_SetMapObjData);
+        }
 
+        private void f_InitMapObjData()
+        {
+            List<GameObject> oMapObj = new List<GameObject>();
+            List<NBaseSCDT> tData = glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetAll();
+            CharacterDT aData;
+            GameObject oData = null;
+            for(int i = 0; i < tData.Count; i++)
+            {
+                aData = (CharacterDT)tData[i];
+                oData = AssetLoader.LoadAsset(aData.szDisplayAB + ".bundle", aData.szDisplayName) as GameObject;
+
+                oMapObj.Add(oData);
+            }
+            GameMain.GetInstance().m_Pagination.items = oMapObj;
+        }
+
+        public void f_SetMapObjData(object oMapObj)
+        {
+            List<NBaseSCDT> tData = glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetAll();
+            List<GameObject> tMapObj = (List<GameObject>)oMapObj;
+            for(int i = 0; i < tMapObj.Count; i++)
+            {
+                MenuObject tMenuObject = tMapObj[i].AddComponent<MenuObject>();
+                tMenuObject.f_InitMenuObj(tData[i]);
+            }
         }
 
         private void CreateTeamItem()
@@ -63,13 +105,15 @@ namespace GameLogic
         protected override void On_Update()
         {
             base.On_Update();
-            
+            f_AnchorUIIng();
         }
 
+        private float _fAnchorCurTime = 0f;
         protected override void On_UpdateGUI()
         {
-
+            
         }
+        #region 按鈕功能
 
         /// <summary>讀取場景資料</summary>
         private void OnClick_LoadMap(GameObject go, object obj1, object obj2)
@@ -110,7 +154,9 @@ namespace GameLogic
         void OnClick_BtnExit(GameObject go, object obj1, object obj2)
         {
             f_Close();
-        }    
+        }
+
+        #endregion
 
         private void DoExit()
         {
@@ -119,7 +165,7 @@ namespace GameLogic
 
         protected override void On_Destory()
         {
-
+            
         }
 
         float GetPower()
@@ -129,8 +175,31 @@ namespace GameLogic
             return 0;
         }
 
-       
+       public void f_StartAnchorTime(object fWaitTime)
+        {
+            _fAnchorWait = (float)fWaitTime;
+            _bAnchor = true;
+        }
 
+        public void f_EndAnchorTime(object e = null)
+        {
+            _bAnchor = false;
+            _Anchor.fillAmount = 0;
+            _fAnchorCurTime = 0;
+        }
 
+        private void f_AnchorUIIng()
+        {
+            if (_bAnchor)
+            {
+                _fAnchorCurTime += Time.deltaTime;
+                _Anchor.fillAmount = _fAnchorCurTime / _fAnchorWait;
+
+                if (_fAnchorCurTime >= _fAnchorWait)
+                {
+                    f_EndAnchorTime();
+                }
+            }
+        }
     }
 }

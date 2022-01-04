@@ -1,18 +1,18 @@
-﻿iId,szName,iType,szResName,strReadme,szLogo,iAttackPower,fAttackSize,fMoveSpeed,fViewSize,szAttackType,fHeight,fBodySize,iNoFind,iInvincible,iReBirth,szAI
+﻿iId,szName,iType,szResName,strReadme,szLogo,iAttackPower,fAttackSize,fMoveSpeed,fViewSize,szAttackType,fHeight,fBodySize,iNoFind,iInvincible,iReBirth,szAI,szDisplayAB,szDisplayName
 角色模板Id,角色名稱,角色類型,資源名稱,人物說明(中文),列表Logo,攻擊力,攻擊距離,移動速度,視野,攻擊目標類型,身體高,身體大小,"是否可以被偵測
 0:可以被偵測
 1:隱身不能被偵測","是否無敵
 0 : 正常 
-1 : 無敵",重生次數,AI列表
-1000,concrete_fence,0,concrete_fence,玩家數值,Team1,500,0.6,5,500,,1.8,0.3,0,0,2,
-1001,ib16,0,ib16,玩家數值,Team2,10,7,5,500,,1.8,0.3,0,0,2,
-1002,oldslumhouse,0,oldslumhouse,玩家數值,Team3,10,7,5,500,,1.8,0.3,0,0,2,
-1003,oldtable,1,oldtable,TestObj,Team4,,,,,,,0.5,0,0,,
-1004,untitled,1,untitled,ABObj,Team5,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
+1 : 無敵",重生次數,AI列表,預覽物AB資源,預覽物名稱
+1000,concrete_fence,0,concrete_fence,玩家數值,Team1,500,0.6,5,500,,1.8,0.3,0,0,2,,concrete_fence_display,concrete_fence_display
+1001,ib16,0,ib16,玩家數值,Team2,10,7,5,500,,1.8,0.3,0,0,2,,ib16_display,ib16_display
+1002,oldslumhouse,0,oldslumhouse,玩家數值,Team3,10,7,5,500,,1.8,0.3,0,0,2,,oldslumhouse_display,oldslumhouse_display
+1003,oldtable,1,oldtable,TestObj,Team4,,,,,,,0.5,0,0,,,oldtable_display,oldtable_display
+1004,untitled,1,untitled,ABObj,Team5,,,,,,,,,,,,untitled_display,untitled_display
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,

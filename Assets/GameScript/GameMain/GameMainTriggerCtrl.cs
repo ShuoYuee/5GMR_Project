@@ -32,7 +32,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
     void Update()
     {
         f_RayTrigger();
-
+        f_InputKey();
         
     }
 
@@ -40,43 +40,49 @@ public class GameMainTriggerCtrl : MonoBehaviour
     {
         Ray tRay = new Ray(transform.position, transform.forward);
         RaycastHit hit;
-        if(Physics.Raycast(tRay,out hit, Mathf.Infinity))
+        if(Physics.Raycast(tRay, out hit, Mathf.Infinity))
         {
             Debug.DrawLine(tRay.origin, hit.point, Color.red);
+
+            if (hit.collider.gameObject != oCurObj && oCurObj != null)
+            {
+                if (_Interactable != null)
+                {
+                    _Interactable.OnLeave();
+                    _Interactable = null;
+                }
+            }
+
             if (!_bLookTime && hit.collider.GetComponent<EditObjControll>() != null)
             {
                 _ObjEm = EM_TriggerObj.EditObj;
                 oCurObj = hit.collider.gameObject;
                 _EditObjControll = oCurObj.GetComponent<EditObjControll>();
-                _bLookTime = true;
             }
 
-            else if (hit.collider.GetComponent<Interactable>() != null)
+            else if (!_bLookTime && hit.collider.GetComponent<Interactable>() != null)
             {
                 _ObjEm = EM_TriggerObj.Button;
                 oCurObj = hit.collider.gameObject;
                 _Interactable = oCurObj.GetComponent<Interactable>();
                 _Interactable.OnHovered();
-                _bLookTime = true;
+            }
+        }
+        else
+        {
+            _ObjEm = EM_TriggerObj.None;
+            oCurObj = null;
+
+            if (_Interactable != null)
+            {
+                _Interactable.OnLeave();
+                _Interactable = null;
             }
 
-            else if(_bLookTime)
-            {
-                if (oCurObj.GetComponent<EditObjControll>() == null && oCurObj.GetComponent<Interactable>() == null)
-                {
-                    _ObjEm = EM_TriggerObj.None;
-                    oCurObj = null;
-
-                    if (_Interactable != null)
-                    {
-                        _Interactable.OnLeave();
-                        _Interactable = null;
-                    }
-
-                    _fLookTime = 0;
-                    _bLookTime = false;
-                }
-            }         
+            _fLookTime = 0;
+            _bLookTime = false;
+            glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_GameAnchorEnd);
+            return;
         }
 
         if (_bLookTime)
@@ -86,14 +92,33 @@ public class GameMainTriggerCtrl : MonoBehaviour
             {
                 _fLookTime = 0;
                 _bLookTime = false;
-            }
 
+                switch (_ObjEm)
+                {
+                    case EM_TriggerObj.EditObj:
+
+                        break;
+                    case EM_TriggerObj.Button:
+                        _Interactable.OnClicked();
+                        break;
+                }
+                glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_GameAnchorEnd);
+            }
+        }
+    }
+
+    private void f_InputKey()
+    {
+        if (oCurObj != null && Input.GetKeyUp(KeyCode.Space))
+        {
             switch (_ObjEm)
             {
-                case EM_TriggerObj.EditObj:
-                    
-                    break;
                 case EM_TriggerObj.Button:
+                    if (_Interactable == null)
+                    {
+                        _ObjEm = EM_TriggerObj.None;
+                        return;
+                    }
                     _Interactable.OnClicked();
                     break;
             }

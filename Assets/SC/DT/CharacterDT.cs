@@ -80,7 +80,14 @@ public class CharacterDT : BaseItemDT
     /// </summary>
     public string szAI;
 
-
+    /// <summary>
+    /// 預覽物AB資源
+    /// </summary>
+    public string szDisplayAB;
+    /// <summary>
+    /// 預覽物資源
+    /// </summary>
+    public string szDisplayName;
 
     public override string f_GetLogo()
     {

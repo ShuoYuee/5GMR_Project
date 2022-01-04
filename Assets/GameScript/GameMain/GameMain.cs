@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using ccU3DEngine;
+using Epibyte.ConceptVR;
 
 public class GameMain : MonoBehaviour
 {
     public MapPool m_MapPool = new MapPool();
-
+    public Pagination m_Pagination;
 
     ///// <summary>
     ///// 游戏为单线游戏直接启动单线逻辑

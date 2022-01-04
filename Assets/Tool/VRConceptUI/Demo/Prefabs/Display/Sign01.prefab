@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5022925875230575016}
   - component: {fileID: 465153678689837891}
   - component: {fileID: -1429757994568705652}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Sign01
   m_TagString: hitPad
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 01153c7e97e00a94d8a80774ad4be986, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

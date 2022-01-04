@@ -7,11 +7,14 @@ namespace Epibyte.ConceptVR
     {
         public GameObject relatedObject;
 
+        /// <summary>物件對應的角色資料</summary>
+        public NBaseSCDT m_SCData;
+
         void Start()
         {
             if (null != GetComponent<Interactable>())
             {
-                GetComponent<Interactable>().onClickedEvent.AddListener(GenerateGO);
+                GetComponent<Interactable>().onClickedEvent.AddListener(f_CreateObj);
             }
         }
 
@@ -19,7 +22,7 @@ namespace Epibyte.ConceptVR
         {
             if (null != GetComponent<Interactable>())
             {
-                GetComponent<Interactable>().onClickedEvent.RemoveListener(GenerateGO);
+                GetComponent<Interactable>().onClickedEvent.RemoveListener(f_CreateObj);
             }
         }
 
@@ -31,6 +34,16 @@ namespace Epibyte.ConceptVR
                 LaserPointer.instance.Target = go.GetComponent<IInteractable>();
                 go.GetComponent<IInteractable>().OnClicked();
             }
+        }
+
+        public void f_CreateObj()
+        {
+            relatedObject = GameMain.GetInstance().f_AddObj((CharacterDT)m_SCData).gameObject;
+        }
+
+        public void f_InitMenuObj(NBaseSCDT data)
+        {
+            m_SCData = data;
         }
     }
 }

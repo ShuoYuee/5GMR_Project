@@ -19,9 +19,14 @@ namespace Epibyte.ConceptVR
             int page = 0;
             int posIdx = 0;
             int itemIdx = 0;
+
+            List<GameObject> oData = new List<GameObject>();
             foreach (GameObject item in items)
             {
                 GameObject go = Instantiate(item, positions.GetChild(posIdx));
+
+                oData.Add(go);
+
                 PageItem pageItem = go.AddComponent<PageItem>();
                 pageItem.page = page;
 
@@ -55,6 +60,7 @@ namespace Epibyte.ConceptVR
 
                 itemIdx++;
             }
+            glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_MapObjInit, oData);
             numberOfPages = page;
             CleanUpVacantCircle();
         }

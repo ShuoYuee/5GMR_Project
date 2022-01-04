@@ -1,9 +1,7 @@
 fileFormatVersion: 2
 guid: 7ab47730d301c1c49b4408a929447d29
-timeCreated: 1554324844
-licenseType: Free
-NativeFormatImporter:
-  mainObjectFileID: 100100000
+PrefabImporter:
+  externalObjects: {}
   userData: 
-  assetBundleName: 
+  assetBundleName: oldtable.bundle
   assetBundleVariant: 

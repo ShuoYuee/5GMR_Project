@@ -1,3 +1,6 @@
 /.svn
 /Library
 /Temp
+/.vs
+/BuildInfo
+/Data

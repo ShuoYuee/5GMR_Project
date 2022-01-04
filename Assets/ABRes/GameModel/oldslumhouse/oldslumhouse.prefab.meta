@@ -1,9 +1,7 @@
 fileFormatVersion: 2
 guid: 6b5df76f9f5bf774bbff0c310e21061f
-timeCreated: 1568699779
-licenseType: Free
-NativeFormatImporter:
-  mainObjectFileID: 100100000
+PrefabImporter:
+  externalObjects: {}
   userData: 
-  assetBundleName: 
+  assetBundleName: oldslumhouse.bundle
   assetBundleVariant: 

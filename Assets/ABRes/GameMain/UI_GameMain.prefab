@@ -3298,6 +3298,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ListBoxTeam
       objectReference: {fileID: 0}
+    - target: {fileID: 5427126097103072892, guid: bcd0228f635e11048badcde65ddc74b0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcd0228f635e11048badcde65ddc74b0, type: 3}
 --- !u!114 &7936138239003629675 stripped

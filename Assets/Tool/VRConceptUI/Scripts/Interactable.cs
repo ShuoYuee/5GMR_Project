@@ -14,21 +14,25 @@ namespace Epibyte.ConceptVR
 
         public void OnHovered()
         {
+            if (onHoveredEvent == null) { return; }
             onHoveredEvent.Invoke();
         }
 
         public void OnClicked()
         {
+            if (onClickedEvent == null) { return; }
             onClickedEvent.Invoke();
         }
 
         public void OnReleased()
         {
+            if (onReleasedEvent == null) { return; }
             onReleasedEvent.Invoke();
         }
 
         public void OnLeave()
         {
+            if (onLeaveEvent == null) { return; }
             onLeaveEvent.Invoke();
         }
     }

@@ -33,9 +33,10 @@ public class GameMainTriggerCtrl : MonoBehaviour
     {
         f_RayTrigger();
         f_InputKey();
-        
+        f_EditInput();
     }
 
+    /// <summary>射線碰撞偵測</summary>
     private void f_RayTrigger()
     {
         Ray tRay = new Ray(transform.position, transform.forward);
@@ -53,14 +54,14 @@ public class GameMainTriggerCtrl : MonoBehaviour
                 }
             }
 
-            if (!_bLookTime && hit.collider.GetComponent<EditObjControll>() != null)
+            if (GameMain.GetInstance()._bEdit && hit.collider.GetComponent<EditObjControll>() != null)//編輯物件
             {
                 _ObjEm = EM_TriggerObj.EditObj;
                 oCurObj = hit.collider.gameObject;
                 _EditObjControll = oCurObj.GetComponent<EditObjControll>();
             }
 
-            else if (!_bLookTime && hit.collider.GetComponent<Interactable>() != null)
+            else if (!_bLookTime && hit.collider.GetComponent<Interactable>() != null)//按鈕物件
             {
                 _ObjEm = EM_TriggerObj.Button;
                 oCurObj = hit.collider.gameObject;
@@ -68,7 +69,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
                 _Interactable.OnHovered();
             }
         }
-        else
+        /*else
         {
             _ObjEm = EM_TriggerObj.None;
             oCurObj = null;
@@ -104,12 +105,13 @@ public class GameMainTriggerCtrl : MonoBehaviour
                 }
                 glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_GameAnchorEnd);
             }
-        }
+        }*/
     }
 
+    /// <summary>一般輸入</summary>
     private void f_InputKey()
     {
-        if (oCurObj != null && Input.GetKeyUp(KeyCode.Space))
+        if (oCurObj != null && Input.GetKeyUp(KeyCode.Space))//選取物件用
         {
             switch (_ObjEm)
             {
@@ -121,7 +123,52 @@ public class GameMainTriggerCtrl : MonoBehaviour
                     }
                     _Interactable.OnClicked();
                     break;
+
+                case EM_TriggerObj.EditObj:
+                    if (!GameMain.GetInstance()._bEdit) { return; }
+                    if (_EditObjControll == null)
+                    {
+                        _ObjEm = EM_TriggerObj.None;
+                        return;
+                    }
+
+                    GameMain.GetInstance()._bSelectEdit = true;
+                    _EditObjControll.f_SetEditState(true);
+                    _EditObjControll.OnClicked();
+                    break;
             }
         }
+    }
+
+    float _fBtnTime = 0f;
+    /// <summary>編輯模式下輸入</summary>
+    private void f_EditInput()
+    {
+        if (!GameMain.GetInstance()._bEdit) { return; }
+        if (!GameMain.GetInstance()._bSelectEdit) { return; }
+        _EditObjControll = GameMain.GetInstance().f_GetCurEditObj();
+        if (_EditObjControll == null) { return; }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))//旋轉、放大用
+        {
+            _EditObjControll.f_SetInput(1);
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))//旋轉、縮小用
+        {
+            _EditObjControll.f_SetInput(-1);
+        }
+        else if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            _EditObjControll.f_SetInput(0);
+        }
+
+        _fBtnTime += Time.deltaTime;//按鈕間隔時間
+        if (_fBtnTime < 0.1f) { return; }
+        if (Input.GetKeyUp(KeyCode.Space))//移動座標用
+        {
+            _EditObjControll.OnClicked();
+        }
+
+        _fBtnTime = 0;
     }
 }

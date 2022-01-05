@@ -5,6 +5,7 @@ using Epibyte.ConceptVR;
 public class GameMain : MonoBehaviour
 {
     public MapPool m_MapPool = new MapPool();
+    public Camera m_MainCamera;
     public Pagination m_Pagination;
 
     ///// <summary>
@@ -114,4 +115,68 @@ public class GameMain : MonoBehaviour
         return m_GameTable.transform;
     }
     
+    public void f_SetEditBtn(string EditTpye)
+    {
+        switch (EditTpye)
+        {
+            case "Position":
+                _EditEM = EM_EidtState.Position;
+                break;
+            case "RotationH":
+                _EditEM = EM_EidtState.RotationH;
+                break;
+            case "RotationV":
+                _EditEM = EM_EidtState.RotationV;
+                break;
+            case "Scale":
+                _EditEM = EM_EidtState.Scale;
+                break;
+            case "Edit":
+                _EditEM = EM_EidtState.None;
+                f_Edit();
+                break;
+        }
+    }
+
+    public bool _bEdit = false, _bSelectEdit = false;
+    public EM_EidtState _EditEM = EM_EidtState.None;
+    private EditObjControll _CurEditObjControll = null;
+    private TabButton _CurEditBtn = null;
+    public void f_Edit()
+    {
+        _bEdit = !_bEdit;
+        glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_MapEditState, _bEdit);
+
+        if (!_bEdit)
+        {
+            f_SetEditBtn();
+            _CurEditObjControll.f_SetEditState(false);
+            _bSelectEdit = false;
+            _CurEditObjControll = null;
+        }
+    }
+
+    public void f_SetEditBtn(TabButton EditBtn = null)
+    {
+        if (_CurEditBtn != null && _CurEditBtn != EditBtn)
+        {
+            _CurEditBtn.DeactivateAllEffects();
+            _CurEditBtn.isClicked = false;
+        }
+        _CurEditBtn = EditBtn;
+
+        if (EditBtn == null) { return; }
+        EditBtn.ActivateAllEffects();
+        _CurEditBtn.isClicked = true;
+    }
+
+    public void f_SetCurEditObj(EditObjControll Obj)
+    {
+        _CurEditObjControll = Obj;
+    }
+
+    public EditObjControll f_GetCurEditObj()
+    {
+        return _CurEditObjControll;
+    }
 }

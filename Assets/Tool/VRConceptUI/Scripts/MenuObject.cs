@@ -14,6 +14,7 @@ namespace Epibyte.ConceptVR
         {
             if (null != GetComponent<Interactable>())
             {
+                f_CreateEvent(GetComponent<Interactable>());
                 GetComponent<Interactable>().onClickedEvent.AddListener(f_CreateObj);
             }
         }
@@ -44,6 +45,17 @@ namespace Epibyte.ConceptVR
         public void f_InitMenuObj(NBaseSCDT data)
         {
             m_SCData = data;
+
+            CharacterDT tData = (CharacterDT)m_SCData;
+            transform.localScale = new Vector3(tData.fDisplayScale, tData.fDisplayScale, tData.fDisplayScale);
+        }
+
+        public void f_CreateEvent(Interactable Obj)
+        {
+            if (Obj.onClickedEvent == null) { Obj.onClickedEvent = new UnityEngine.Events.UnityEvent(); }
+            if (Obj.onHoveredEvent == null) { Obj.onHoveredEvent = new UnityEngine.Events.UnityEvent(); }
+            if (Obj.onReleasedEvent == null) { Obj.onReleasedEvent = new UnityEngine.Events.UnityEvent(); }
+            if (Obj.onLeaveEvent == null) { Obj.onLeaveEvent = new UnityEngine.Events.UnityEvent(); }
         }
     }
 }

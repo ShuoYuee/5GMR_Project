@@ -47,4 +47,5 @@ public class MessageDef
     public static string UI_GameAnchorEnd = "UI_GameAnchorEnd";
 
     public static string UI_MapObjInit = "UI_MapObjInit";
+    public static string UI_MapEditState = "UI_MapEditState";
 }

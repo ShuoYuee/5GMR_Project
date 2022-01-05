@@ -45,6 +45,7 @@ namespace GameLogic
             glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_GameAnchorStart, f_StartAnchorTime);
             glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_GameAnchorEnd, f_EndAnchorTime);
             glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_MapObjInit, f_SetMapObjData);
+            glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_MapEditState, f_EditState);
         }
 
         private void f_InitMapObjData()
@@ -56,8 +57,13 @@ namespace GameLogic
             for(int i = 0; i < tData.Count; i++)
             {
                 aData = (CharacterDT)tData[i];
-                oData = AssetLoader.LoadAsset(aData.szDisplayAB + ".bundle", aData.szDisplayName) as GameObject;
+                oData = AssetLoader.LoadAsset(aData.szResName + ".bundle", aData.szName) as GameObject;
 
+                if (oData == null)
+                {
+                    glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetSC(i).iId = -1;
+                    continue;
+                }
                 oMapObj.Add(oData);
             }
             GameMain.GetInstance().m_Pagination.items = oMapObj;
@@ -69,6 +75,7 @@ namespace GameLogic
             List<GameObject> tMapObj = (List<GameObject>)oMapObj;
             for(int i = 0; i < tMapObj.Count; i++)
             {
+                if (tData[i].iId < 0) { continue; }
                 MenuObject tMenuObject = tMapObj[i].AddComponent<MenuObject>();
                 tMenuObject.f_InitMenuObj(tData[i]);
             }
@@ -175,7 +182,8 @@ namespace GameLogic
             return 0;
         }
 
-       public void f_StartAnchorTime(object fWaitTime)
+        #region 錨點
+        public void f_StartAnchorTime(object fWaitTime)
         {
             _fAnchorWait = (float)fWaitTime;
             _bAnchor = true;
@@ -199,6 +207,19 @@ namespace GameLogic
                 {
                     f_EndAnchorTime();
                 }
+            }
+        }
+        #endregion
+
+        public void f_EditState(object e)
+        {
+            if ((bool)e)
+            {
+                f_GetObject("EditText").SetActive(true);
+            }
+            else
+            {
+                f_GetObject("EditText").SetActive(false);
             }
         }
     }

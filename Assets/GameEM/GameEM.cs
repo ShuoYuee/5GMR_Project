@@ -1,8 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-using ccU3DEngine;
-
-
+﻿
 public enum EM_eLocalData
 {
     iCurGameControllIndex = 1,
@@ -221,7 +217,14 @@ public enum EM_Sound
     Voice,
 }
 
-
+public enum EM_EidtState
+{
+    None = 0,
+    Position = 1,
+    RotationH = 2,
+    RotationV = 3,
+    Scale = 4,
+}
 
 public enum EM_GameControllAction
 {

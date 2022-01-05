@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 5522383476839323206}
   - component: {fileID: 5522383476838356102}
   - component: {fileID: 5522383476845459846}
+  - component: {fileID: 464418747046500802}
   m_Layer: 0
-  m_Name: IB16
+  m_Name: ib16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,3 +111,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!64 &464418747046500802
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5522383476836092486}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 0ae2554a56195ce4095502f1b020deee, type: 3}

@@ -217,13 +217,16 @@ public enum EM_Sound
     Voice,
 }
 
+/// <summary>
+/// 編輯器模式
+/// </summary>
 public enum EM_EidtState
 {
-    None = 0,
-    Position = 1,
-    RotationH = 2,
-    RotationV = 3,
-    Scale = 4,
+    None = 0,   //空
+    Position = 1,   //座標
+    RotationH = 2,  //水平旋轉
+    RotationV = 3,  //垂直旋轉
+    Scale = 4,  //縮放
 }
 
 public enum EM_GameControllAction

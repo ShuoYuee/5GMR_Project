@@ -39,7 +39,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172244728586050}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.4422107, y: 4.307641, z: 5.2912674}
@@ -371,6 +371,7 @@ GameObject:
   - component: {fileID: 4704643116404514}
   - component: {fileID: 33584108101738518}
   - component: {fileID: 23402522611037656}
+  - component: {fileID: 3837449870768368993}
   m_Layer: 0
   m_Name: Flying_Insect
   m_TagString: Untagged
@@ -444,3 +445,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &3837449870768368993
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724874857677222}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: b2359fd8578c87649ad70d6001527479, type: 3}

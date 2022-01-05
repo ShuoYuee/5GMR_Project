@@ -24,7 +24,7 @@ public class EditObjControll : MonoBehaviour
     public float rotationSpeed = 100f;
     [Header("Scale")]
     public bool isScalable = true;
-    public float scaleStep = 0.1f;
+    public float scaleStep = 0.3f;
     public float minScaleFactor = 0.5f;
     public float maxScaleFactor = 2f;
     #endregion

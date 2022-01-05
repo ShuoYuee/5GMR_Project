@@ -779,6 +779,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4906828391645816}
   - component: {fileID: 95237074988894122}
+  - component: {fileID: 4610301590763772118}
   m_Layer: 0
   m_Name: TurtleShellPBR
   m_TagString: Untagged
@@ -821,6 +822,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &4610301590763772118
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774625739149480}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.49
+  m_Height: 1.45
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.48, z: 0}
 --- !u!1 &1822049695589022
 GameObject:
   m_ObjectHideFlags: 0

@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 4172660377238974}
   - component: {fileID: 33609931772244196}
   - component: {fileID: 23329964076036706}
+  - component: {fileID: 2093832984003423132}
   m_Layer: 0
   m_Name: StarSparrow9
   m_TagString: Untagged
@@ -291,6 +292,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2093832984003423132
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741139820255028}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2746435131391062208, guid: c5854ef2d6dd2ab4ba6f56c2053676c0, type: 3}
 --- !u!1 &1903647827213970
 GameObject:
   m_ObjectHideFlags: 0

@@ -37,7 +37,7 @@ namespace GameLogic
             //_PowerIndicator = PowerLine.GetComponent<PowerIndicator>();
 
             f_InitMessage();
-            f_InitMapObjData();
+            
         }
 
         private void f_InitMessage()
@@ -48,6 +48,7 @@ namespace GameLogic
             glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_MapEditState, f_EditState);
         }
 
+        /// <summary>初始化地圖物件資料</summary>
         private void f_InitMapObjData()
         {
             List<GameObject> oMapObj = new List<GameObject>();
@@ -59,23 +60,29 @@ namespace GameLogic
                 aData = (CharacterDT)tData[i];
                 oData = AssetLoader.LoadAsset(aData.szResName + ".bundle", aData.szName) as GameObject;
 
-                if (oData == null)
+                if (oData == null)//清除空物件資料
                 {
-                    glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetSC(i).iId = -1;
+                    tData.RemoveAt(i);
+                    i -= 1;
                     continue;
                 }
                 oMapObj.Add(oData);
             }
-            GameMain.GetInstance().m_Pagination.items = oMapObj;
+            GameMain.GetInstance().m_Pagination.items = oMapObj;//將物件清單傳送給選單腳本
         }
 
+        /// <summary>
+        /// 設定物件資料
+        /// </summary>
+        /// <param name="oMapObj">物件清單</param>
         public void f_SetMapObjData(object oMapObj)
         {
             List<NBaseSCDT> tData = glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetAll();
             List<GameObject> tMapObj = (List<GameObject>)oMapObj;
+
+            //將資料一一賦予給實例化的物件
             for(int i = 0; i < tMapObj.Count; i++)
             {
-                if (tData[i].iId < 0) { continue; }
                 MenuObject tMenuObject = tMapObj[i].AddComponent<MenuObject>();
                 tMenuObject.f_InitMenuObj(tData[i]);
             }
@@ -97,6 +104,7 @@ namespace GameLogic
             //_PowerIndicator.f_Start();
 
             InitObjList();
+            f_InitMapObjData();
         }
 
         void InitObjList()
@@ -182,13 +190,19 @@ namespace GameLogic
             return 0;
         }
 
-        #region 錨點
+        #region 錨點(暫未用到)
+
+        /// <summary>
+        /// 開始錨點計時
+        /// </summary>
+        /// <param name="fWaitTime">等待時長</param>
         public void f_StartAnchorTime(object fWaitTime)
         {
             _fAnchorWait = (float)fWaitTime;
             _bAnchor = true;
         }
 
+        /// <summary>結束錨點計時</summary>
         public void f_EndAnchorTime(object e = null)
         {
             _bAnchor = false;
@@ -196,6 +210,7 @@ namespace GameLogic
             _fAnchorCurTime = 0;
         }
 
+        /// <summary>錨點計時</summary>
         private void f_AnchorUIIng()
         {
             if (_bAnchor)
@@ -211,6 +226,7 @@ namespace GameLogic
         }
         #endregion
 
+        /// <summary>開關編輯模式提示文字</summary>
         public void f_EditState(object e)
         {
             if ((bool)e)

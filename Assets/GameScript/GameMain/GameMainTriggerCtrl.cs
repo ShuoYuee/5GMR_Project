@@ -5,14 +5,14 @@ using Epibyte.ConceptVR;
 
 public class GameMainTriggerCtrl : MonoBehaviour
 {
-    public float _fLookTimeLimt = 2f;
+    //public float _fLookTimeLimt = 2f;
 
     private EditObjControll _EditObjControll = null;
     private Interactable _Interactable = null;
 
     private GameObject oCurObj = null;
     private EM_TriggerObj _ObjEm = EM_TriggerObj.None;
-    private float _fLookTime = 0f;
+    //private float _fLookTime = 0f;
     private bool _bLookTime = false;
 
     public enum EM_TriggerObj

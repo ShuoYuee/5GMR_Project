@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class MapPool : ccBasePool<long>
 {
-
     private string _strMapFile = "AAA";
     private string GetMapFilePath()
     {
@@ -133,6 +132,7 @@ public class MapPool : ccBasePool<long>
     private void LoadObj(string[] aData)
     {
         long iId = ccMath.atol(aData[0]);
+        if (ccMath.atoi(aData[1]) < 1) { return; }
         CharacterDT tCharacterDT = (CharacterDT)glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetSC(ccMath.atoi(aData[1]));
         EditObjControll tEditObjControll = AddObj(iId, tCharacterDT);
         
@@ -151,7 +151,7 @@ public class MapPool : ccBasePool<long>
     /// <returns></returns>
     private EditObjControll AddObj(long iId, CharacterDT tCharacterDT)
     {           
-        GameObject tObj = glo_Main.GetInstance().m_ResourceManager.f_CreateABObj(tCharacterDT.szResName + ".bundle", tCharacterDT.szResName);
+        GameObject tObj = glo_Main.GetInstance().m_ResourceManager.f_CreateABObj(tCharacterDT.szResName + ".bundle", tCharacterDT.szName);
         
         EditObjControll tEditObjControll = tObj.AddComponent<EditObjControll>();
 

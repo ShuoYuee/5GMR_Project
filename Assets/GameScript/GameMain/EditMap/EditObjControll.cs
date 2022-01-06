@@ -1,19 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ccU3DEngine;
 
 /// <summary>
 /// 物件編輯控制器
 /// </summary>
 public class EditObjControll : MonoBehaviour
 {
-    private MapPoolDT _MapPoolDT;//場景資料(儲存時所用的)
+    private Animator _Animator;
+
+    /// <summary>場景資料(儲存時所用的)</summary>
+    private MapPoolDT _MapPoolDT;
+    /// <summary>預覽動畫組</summary>
+    private string[] _strAnimGroup;
 
     /// <summary>編輯模式</summary>
     EM_EidtState _EditEM = EM_EidtState.None;
     /// <summary>是否被選中編輯</summary>
     bool _bEdit = false;
-    /// <summary>判別值</summary>
+    /// <summary>判別值(1為右或前，-1為左或後)</summary>
     int _iEditValue = 0;
 
     #region Public Variables
@@ -108,6 +114,12 @@ public class EditObjControll : MonoBehaviour
         _EditEM = EM_EidtState.None;
     }
     #endregion
+
+    private void Start()
+    {
+        _Animator = GetComponent<Animator>();
+        _strAnimGroup = ccMath.f_String2ArrayString(_MapPoolDT.m_CharacterDT.szAnimGroup, ";");
+    }
 
     // Update is called once per frame
     void Update()
@@ -227,8 +239,8 @@ public class EditObjControll : MonoBehaviour
         //StopAllCoroutines();
     }
 
-    #region 異步變動
-    /// <summary>座標異步變動</summary>
+    #region 協程變動
+    /// <summary>座標協程變動</summary>
     IEnumerator PositionTo(float duration)
     {
         isGrabbing = true;
@@ -236,6 +248,8 @@ public class EditObjControll : MonoBehaviour
 
         while (isGrabbing && elapsedTime < duration)
         {
+            //物件依照攝影機的方位做移動
+            _fPosDir += _iEditValue;
             Transform _CameraTrans = GameMain.GetInstance().m_MainCamera.transform;
             Vector3 vNewPos = _CameraTrans.forward + new Vector3(0, 0, _fPosDir);
             vNewPos = _CameraTrans.TransformPoint(vNewPos);
@@ -248,7 +262,7 @@ public class EditObjControll : MonoBehaviour
         isGrabbing = false;
     }
 
-    /// <summary>旋轉值異步變動</summary>
+    /// <summary>旋轉值協程變動</summary>
     IEnumerator RotateTo(float toValue, float duration)
     {
         // Coroutine starts running.
@@ -276,7 +290,7 @@ public class EditObjControll : MonoBehaviour
         isRotating = false;
     }
 
-    /// <summary>縮放值異步變動</summary>
+    /// <summary>縮放值協程變動</summary>
     IEnumerator ScaleTo(Vector3 toValue, float duration)
     {
         // Coroutine starts running.
@@ -334,11 +348,13 @@ public class EditObjControll : MonoBehaviour
         {
             GameMain.GetInstance().f_SetCurEditObj(this);
             f_StartEdit();
+            glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_MapEditState, 6);//開關提示文字
         }
         else
         {
             _iEditValue = 0;
             f_EndEdit();
+            glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_MapEditState, -6);//開關提示文字
         }
     }
     #endregion

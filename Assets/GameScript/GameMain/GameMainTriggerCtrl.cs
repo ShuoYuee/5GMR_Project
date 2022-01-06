@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 using Epibyte.ConceptVR;
 
 public class GameMainTriggerCtrl : MonoBehaviour
 {
+    Transform Player;
     //public float _fLookTimeLimt = 2f;
 
     private EditObjControll _EditObjControll = null;
@@ -18,22 +20,43 @@ public class GameMainTriggerCtrl : MonoBehaviour
     public enum EM_TriggerObj
     {
         None = 0,
-        EditObj = 1,
-        Button = 2,
+        EditObj = 1,    //編輯物
+        Button = 2,     //按鈕
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Player = transform.parent;
     }
 
     // Update is called once per frame
     void Update()
     {
+        f_MoveInput();
         f_RayTrigger();
         f_InputKey();
         f_EditInput();
+    }
+
+    private void f_MoveInput()
+    {
+        if (Input.GetKey(KeyCode.W))
+        {
+            Player.localPosition += transform.forward * 3f * Time.deltaTime;
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            Player.localPosition += -transform.forward * 3f * Time.deltaTime;
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            Player.localPosition += -transform.right * 3f * Time.deltaTime;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            Player.localPosition += transform.right * 3f * Time.deltaTime;
+        }
     }
 
     /// <summary>射線碰撞偵測</summary>
@@ -69,6 +92,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
                 _Interactable.OnHovered();
             }
         }
+        #region
         /*else
         {
             _ObjEm = EM_TriggerObj.None;
@@ -106,6 +130,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
                 glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_GameAnchorEnd);
             }
         }*/
+        #endregion
     }
 
     /// <summary>一般輸入</summary>
@@ -149,11 +174,11 @@ public class GameMainTriggerCtrl : MonoBehaviour
         _EditObjControll = GameMain.GetInstance().f_GetCurEditObj();
         if (_EditObjControll == null) { return; }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))//旋轉、放大用
+        if (Input.GetKeyDown(KeyCode.RightArrow))//拉前、旋轉、放大用
         {
             _EditObjControll.f_SetInput(1);
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))//旋轉、縮小用
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))//退後、旋轉、縮小用
         {
             _EditObjControll.f_SetInput(-1);
         }

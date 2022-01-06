@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using ccU3DEngine;
 using Epibyte.ConceptVR;
 
@@ -98,15 +99,33 @@ public class GameMain : MonoBehaviour
     public void f_LoadMap()
     {
         m_MapPool.f_LoadMap();
+        glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_MapEditState, 2);//開關提示文字
     }
 
     public void f_SaveMap()
     {
         m_MapPool.f_SaveMap();
+        glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_MapEditState, 3);//開關提示文字
+    }
+
+    public void f_ResetMap()
+    {
+        int iCount = m_MapPool.f_Count();
+        for(int i = 0; i < iCount; i++)
+        {
+            m_MapPool.f_DeleteObj(m_MapPool.f_GetAll()[0].iId);
+        }
+        glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_MapEditState, 4);//開關提示文字
+    }
+
+    public void f_ExitMap()
+    {
+        glo_Main.GetInstance().f_Destroy();
     }
 
     public EditObjControll f_AddObj(CharacterDT tCharacterDT)
     {
+        glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_MapEditState, 5);//開關提示文字
         return m_MapPool.f_AddObj(tCharacterDT);
     }
 
@@ -165,18 +184,24 @@ public class GameMain : MonoBehaviour
     public void f_Edit()
     {
         _bEdit = !_bEdit;
-        glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_MapEditState, _bEdit);//開關編輯模式提示文字
 
         if (_bEdit)
         {
             f_SetEditBtn();
+            glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_MapEditState, 1);//開關提示文字
         }
         else
         {
             f_SetEditBtn();
-            _CurEditObjControll.f_SetEditState(false);
+            if (_CurEditObjControll != null)
+            {
+                _CurEditObjControll.f_SetEditState(false);
+            }
+            
             _bSelectEdit = false;
             _CurEditObjControll = null;
+            glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_MapEditState, -1);//開關提示文字
+            glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_MapEditState, -6);//開關提示文字
         }
     }
 

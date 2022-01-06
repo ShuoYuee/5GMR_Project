@@ -80,11 +80,23 @@ public class CharacterDT : BaseItemDT
     /// </summary>
     public string szAI;
 
+
+    /// <summary>
+    /// 預覽物來源(0或不填寫：共用模式    1：AB資源模式)
+    /// </summary>
+    public int iDisplayResource;
+    /// <summary>
+    /// 預覽物AB資源名稱
+    /// </summary>
+    public string szDisplayAB;
     /// <summary>
     /// 預覽物大小
     /// </summary>
     public float fDisplayScale;
     /// <summary>
+    /// 物件預覽動畫
+    /// </summary>
+    public string szAnimGroup;
 
     public override string f_GetLogo()
     {

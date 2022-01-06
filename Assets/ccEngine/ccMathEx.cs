@@ -96,7 +96,8 @@ public class ccMathEx
             for (int i = iNum; i < 0; i++)
             {
                 GameObject tItem = GameObject.Instantiate(obj.transform.GetChild(0).gameObject);
-                tItem.transform.parent = obj.transform;
+                //tItem.transform.parent = obj.transform;
+                tItem.transform.SetParent(obj.transform);
             }
         }
 

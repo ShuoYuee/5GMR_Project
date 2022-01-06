@@ -63,7 +63,10 @@ public class CharacterSC : NBaseSC
                 DataDT.iInvincible = ccMath.atoi(tData[a++]);
                 DataDT.iReBirth = ccMath.atoi(tData[a++]);
                 DataDT.szAI = tData[a++];
+                DataDT.iDisplayResource = ccMath.atoi(tData[a++]);
+                DataDT.szDisplayAB = tData[a++];
                 DataDT.fDisplayScale = ccMath.atof(tData[a++]);
+                DataDT.szAnimGroup = tData[a++];
                 SaveItem(DataDT);
             }
             catch

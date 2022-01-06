@@ -42,10 +42,10 @@ namespace GameLogic
 
         private void f_InitMessage()
         {
-            glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_GameAnchorStart, f_StartAnchorTime);
-            glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_GameAnchorEnd, f_EndAnchorTime);
-            glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_MapObjInit, f_SetMapObjData);
-            glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_MapEditState, f_EditState);
+            glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_GameAnchorStart, f_StartAnchorTime); //啟用錨點計時
+            glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_GameAnchorEnd, f_EndAnchorTime); //關閉錨點計時
+            glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_MapObjInit, f_SetMapObjData);    //設定地圖物件資料
+            glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_MapEditState, f_EditState);  //開關提醒文字
         }
 
         /// <summary>初始化地圖物件資料</summary>
@@ -58,7 +58,17 @@ namespace GameLogic
             for(int i = 0; i < tData.Count; i++)
             {
                 aData = (CharacterDT)tData[i];
-                oData = AssetLoader.LoadAsset(aData.szResName + ".bundle", aData.szName) as GameObject;
+
+                //判別資源來源模式
+                switch (aData.iDisplayResource)
+                {
+                    case 1:
+                        oData = AssetLoader.LoadAsset(aData.szResName + ".bundle", aData.szDisplayAB) as GameObject;
+                        break;
+                    default:
+                        oData = AssetLoader.LoadAsset(aData.szResName + ".bundle", aData.szName) as GameObject;
+                        break;
+                }
 
                 if (oData == null)//清除空物件資料
                 {
@@ -226,17 +236,48 @@ namespace GameLogic
         }
         #endregion
 
-        /// <summary>開關編輯模式提示文字</summary>
+        #region Debug
+        /// <summary>開關提示文字</summary>
         public void f_EditState(object e)
         {
-            if ((bool)e)
+            switch ((int)e)
             {
-                f_GetObject("EditText").SetActive(true);
-            }
-            else
-            {
-                f_GetObject("EditText").SetActive(false);
+                case 1:
+                    f_GetObject("EditText").SetActive(true);
+                    break;
+                case -1:
+                    f_GetObject("EditText").SetActive(false);
+                    break;
+                case 2:
+                    f_GetObject("DebugText").GetComponent<Text>().text = "LoadMap Success";
+                    ccTimeEvent.GetInstance().f_RegEvent(1f, false, null, f_CloseText);
+                    break;
+                case 3:
+                    f_GetObject("DebugText").GetComponent<Text>().text = "SaveMap Success";
+                    ccTimeEvent.GetInstance().f_RegEvent(1f, false, null, f_CloseText);
+                    break;
+                case 4:
+                    f_GetObject("DebugText").GetComponent<Text>().text = "Reset Success";
+                    ccTimeEvent.GetInstance().f_RegEvent(1f, false, null, f_CloseText);
+                    break;
+                case 5:
+                    f_GetObject("DebugText").GetComponent<Text>().text = "Create Success";
+                    ccTimeEvent.GetInstance().f_RegEvent(1f, false, null, f_CloseText);
+                    break;
+                case 6:
+                    f_GetObject("DebugText").GetComponent<Text>().text = "Selecting";
+                    break;
+                case -6:
+                    f_GetObject("DebugText").GetComponent<Text>().text = "Cancel Select";
+                    ccTimeEvent.GetInstance().f_RegEvent(1f, false, null, f_CloseText);
+                    break;
             }
         }
+
+        private void f_CloseText(object e = null)
+        {
+            f_GetObject("DebugText").GetComponent<Text>().text = "";
+        }
+        #endregion
     }
 }

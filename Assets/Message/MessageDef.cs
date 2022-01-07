@@ -48,4 +48,5 @@ public class MessageDef
 
     public static string UI_MapObjInit = "UI_MapObjInit";
     public static string UI_MapEditState = "UI_MapEditState";
+    public static string UI_EditObjAnim = "UI_EditObjAnim";
 }

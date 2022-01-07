@@ -37,11 +37,13 @@ namespace Epibyte.ConceptVR
             }
         }
 
+        /// <summary>創建物件</summary>
         public void f_CreateObj()
         {
             relatedObject = GameMain.GetInstance().f_AddObj((CharacterDT)m_SCData).gameObject;
         }
 
+        /// <summary>初始化物件資料</summary>
         public void f_InitMenuObj(NBaseSCDT data)
         {
             m_SCData = data;
@@ -51,6 +53,7 @@ namespace Epibyte.ConceptVR
             transform.localScale = new Vector3(tData.fDisplayScale, tData.fDisplayScale, tData.fDisplayScale);
         }
 
+        /// <summary>初始化互動物件</summary>
         public void f_CreateEvent(Interactable Obj)
         {
             if (Obj.onClickedEvent == null) { Obj.onClickedEvent = new UnityEngine.Events.UnityEvent(); }

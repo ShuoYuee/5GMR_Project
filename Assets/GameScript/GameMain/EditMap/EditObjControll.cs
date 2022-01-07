@@ -312,6 +312,47 @@ public class EditObjControll : MonoBehaviour
     #endregion
     #endregion
 
+    #region 預覽動畫
+    private int _iAnimIndex = 0;
+    /// <summary>
+    /// 播放預覽動畫
+    /// </summary>
+    /// <param name="iAddIndex">增減動畫Index</param>
+    public void f_AnimPlay(int iAddIndex)
+    {
+        if (_Animator == null)
+        {
+            MessageBox.DEBUG("此物件未設有動畫機");
+            return;
+        }
+
+        _iAnimIndex += iAddIndex;
+        if (_iAnimIndex < 0) { _iAnimIndex = _strAnimGroup.Length; }
+        if (_iAnimIndex >= _strAnimGroup.Length) { _iAnimIndex = 0; }
+
+        int iStateId = Animator.StringToHash(_strAnimGroup[_iAnimIndex]);
+        bool bHasAction = _Animator.HasState(0, iStateId);
+
+        if (bHasAction)//確認是否擁有該動畫
+        {
+            _Animator.Play(_strAnimGroup[_iAnimIndex]);
+            glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_EditObjAnim, _strAnimGroup[_iAnimIndex]);//開啟動畫提示文字
+        }
+    }
+
+    /// <summary>停止播放預覽動畫</summary>
+    public void f_AnimStop()
+    {
+        if (_Animator == null)
+        {
+            MessageBox.DEBUG("此物件未設有動畫機");
+            return;
+        }
+
+        _Animator.StopRecording();
+    }
+    #endregion
+
     #region 屬性設定
     /// <summary>
     /// 設定判別值

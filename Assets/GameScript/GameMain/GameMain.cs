@@ -231,5 +231,22 @@ public class GameMain : MonoBehaviour
     {
         return _CurEditObjControll;
     }
+
+    /// <summary>
+    /// 編輯物播放預覽動畫
+    /// </summary>
+    /// <param name="iAddIndex">增減動畫Index</param>
+    public void f_EditObjAnimPlay(int iAddIndex)
+    {
+        if (!_bEdit || _CurEditObjControll == null) { return; }
+
+        if (iAddIndex == 0)//停止播放預覽動畫
+        {
+            _CurEditObjControll.f_AnimStop();
+            glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_EditObjAnim, null);//關閉動畫提示文字
+        }
+
+        _CurEditObjControll.f_AnimPlay(iAddIndex);
+    }
     #endregion
 }

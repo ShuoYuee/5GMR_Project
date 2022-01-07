@@ -88,7 +88,6 @@
     <Compile Include="Assets\GameScript\GameControllV2\GameControllV2.cs" />
     <Compile Include="Assets\GameScript\GameDataLoad\GameDataLoad.cs" />
     <Compile Include="Assets\GameScript\GameDataLoad\LocalDataManager.cs" />
-    <Compile Include="Assets\GameScript\GameMain\DeviceTest.cs" />
     <Compile Include="Assets\GameScript\GameMain\EditMap\DT\MapPoolDT.cs" />
     <Compile Include="Assets\GameScript\GameMain\EditMap\EditObjControll.cs" />
     <Compile Include="Assets\GameScript\GameMain\EditMap\MapPool.cs" />

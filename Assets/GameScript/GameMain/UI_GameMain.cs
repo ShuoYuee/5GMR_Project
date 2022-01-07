@@ -46,8 +46,10 @@ namespace GameLogic
             glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_GameAnchorEnd, f_EndAnchorTime); //關閉錨點計時
             glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_MapObjInit, f_SetMapObjData);    //設定地圖物件資料
             glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_MapEditState, f_EditState);  //開關提醒文字
+            glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_EditObjAnim, f_AnimPlayText);  //開關動畫提醒文字
         }
 
+        #region 初始化
         /// <summary>初始化地圖物件資料</summary>
         private void f_InitMapObjData()
         {
@@ -97,6 +99,7 @@ namespace GameLogic
                 tMenuObject.f_InitMenuObj(tData[i]);
             }
         }
+        #endregion
 
         private void CreateTeamItem()
         {
@@ -258,6 +261,7 @@ namespace GameLogic
                     break;
                 case 4:
                     f_GetObject("DebugText").GetComponent<Text>().text = "Reset Success";
+                    f_AnimPlayText(null);
                     ccTimeEvent.GetInstance().f_RegEvent(1f, false, null, f_CloseText);
                     break;
                 case 5:
@@ -269,6 +273,7 @@ namespace GameLogic
                     break;
                 case -6:
                     f_GetObject("DebugText").GetComponent<Text>().text = "Cancel Select";
+                    f_AnimPlayText(null);
                     ccTimeEvent.GetInstance().f_RegEvent(1f, false, null, f_CloseText);
                     break;
             }
@@ -276,6 +281,20 @@ namespace GameLogic
 
         private void f_CloseText(object e = null)
         {
+            f_GetObject("DebugText").GetComponent<Text>().text = "";
+        }
+
+        /// <summary>開關動畫提示文字</summary>
+        private void f_AnimPlayText(object e)
+        {
+            if (e == null)
+            {
+                f_GetObject("AnimText").GetComponent<Text>().text = "";
+                f_GetObject("DebugText").GetComponent<Text>().text = "Selecting";
+                return;
+            }
+
+            f_GetObject("AnimText").GetComponent<Text>().text = "播放動畫：" + (string)e;
             f_GetObject("DebugText").GetComponent<Text>().text = "";
         }
         #endregion

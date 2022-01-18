@@ -9,7 +9,9 @@ public class GameMain : MonoBehaviour
     public MapPool m_MapPool = new MapPool();
     /// <summary>主攝影機</summary>
     public Camera m_MainCamera;
-    /// <summary>物件選單</summary>
+    /// <summary>物件主選單</summary>
+    public GameObject m_MainMenu = null;
+    /// <summary>素材元件選單</summary>
     public Pagination m_Pagination;
 
     ///// <summary>
@@ -33,6 +35,14 @@ public class GameMain : MonoBehaviour
         _Instance = this;
         m_GameTable.SetActive(true);
         ccUIManage.GetInstance().f_SendMsg("UI_GameMain", BaseUIMessageDef.UI_OPEN, null, true);
+
+        ccTimeEvent.GetInstance().f_RegEvent(1f, false, null, f_SetMenuPos);
+    }
+
+    private void f_SetMenuPos(object e)
+    {
+        if(m_MainMenu != null)
+        m_MainMenu.transform.position = m_MainCamera.transform.position + new Vector3(-0.25f, 0.05f, 0);
     }
 
     //void Start()

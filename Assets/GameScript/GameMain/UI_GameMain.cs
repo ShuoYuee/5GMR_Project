@@ -66,9 +66,11 @@ namespace GameLogic
                 {
                     case 1:
                         oData = AssetLoader.LoadAsset(aData.szResName + ".bundle", aData.szDisplayAB) as GameObject;
+                        //oData = glo_Main.GetInstance().m_ResourceManager.f_CreateABObj(aData.szResName + ".bundle", aData.szDisplayAB);
                         break;
                     default:
                         oData = AssetLoader.LoadAsset(aData.szResName + ".bundle", aData.szName) as GameObject;
+                        //oData = glo_Main.GetInstance().m_ResourceManager.f_CreateABObj(aData.szResName + ".bundle", aData.szName);
                         break;
                 }
 

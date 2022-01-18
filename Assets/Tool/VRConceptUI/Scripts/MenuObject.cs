@@ -47,7 +47,7 @@ namespace Epibyte.ConceptVR
         public void f_InitMenuObj(NBaseSCDT data)
         {
             m_SCData = data;
-
+            
             CharacterDT tData = (CharacterDT)m_SCData;
             transform.localPosition = Vector3.zero;
             transform.localScale = new Vector3(tData.fDisplayScale, tData.fDisplayScale, tData.fDisplayScale);

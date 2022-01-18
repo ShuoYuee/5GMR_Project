@@ -95,7 +95,7 @@ public class glo_Main :MonoBehaviour
 
         //打开模拟器模式 ，此模式下资源不需要经过打包输出和上传到资源服务器就可以直接使用
         //平时开发都采用模拟器模式来进行，后期整合时再切换回正常模式
-        ccU3DEngineParam.m_bIsLocalAB = false;
+        ccU3DEngineParam.m_bIsLocalAB = true;
 
         //设置当前编辑器及最终打包输出的目标平台
 #if UNITY_EDITOR

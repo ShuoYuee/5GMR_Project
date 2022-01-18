@@ -17,6 +17,9 @@ public class GameMainTriggerCtrl : MonoBehaviour
     //private float _fLookTime = 0f;
     private bool _bLookTime = false;
 
+    public static ControlState State = ControlState.VR;
+    private InputDevice[] _Device = new InputDevice[2];
+
     public enum EM_TriggerObj
     {
         None = 0,
@@ -33,13 +36,23 @@ public class GameMainTriggerCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        f_MoveInput();
+        switch (State)
+        {
+            case ControlState.VR:
+                break;
+
+            case ControlState.PC:
+                f_MouseMoveInput();
+                break;
+        }
+        
         f_RayTrigger();
         f_InputKey();
         f_EditInput();
     }
 
-    private void f_MoveInput()
+    /// <summary>PC移動輸入</summary>
+    private void f_MouseMoveInput()
     {
         if (Input.GetKey(KeyCode.W))
         {
@@ -62,8 +75,9 @@ public class GameMainTriggerCtrl : MonoBehaviour
     /// <summary>射線碰撞偵測</summary>
     private void f_RayTrigger()
     {
-        Ray tRay = new Ray(transform.position, transform.forward);
+        Ray tRay = new Ray(transform.position, transform.forward * 20);
         RaycastHit hit;
+        Debug.DrawRay(transform.position, transform.forward * 20, Color.yellow);
         if(Physics.Raycast(tRay, out hit, Mathf.Infinity))
         {
             Debug.DrawLine(tRay.origin, hit.point, Color.red);
@@ -133,8 +147,68 @@ public class GameMainTriggerCtrl : MonoBehaviour
         #endregion
     }
 
+    #region 一般輸入
     /// <summary>一般輸入</summary>
     private void f_InputKey()
+    {
+        switch (State)
+        {
+            case ControlState.VR:
+                f_VRInputKey();
+                break;
+
+            case ControlState.PC:
+                f_PCInputKey();
+                break;
+        }
+    }
+
+    /// <summary>VR輸入</summary>
+    private void f_VRInputKey()
+    {
+        if (!_Device[0].isValid || !_Device[1].isValid)
+        {
+            _Device[0] = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+            _Device[1] = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
+        }
+
+        bool triggerBtnAction = false;
+        _fBtnTime += Time.deltaTime;//按鈕間隔時間
+        if (_fBtnTime < 0.15f) { return; }
+        if (_Device[0].TryGetFeatureValue(CommonUsages.triggerButton, out triggerBtnAction) && triggerBtnAction)
+        {
+            if (oCurObj == null) { return; }
+            switch (_ObjEm)
+            {
+                case EM_TriggerObj.Button:
+                    if (_Interactable == null)
+                    {
+                        _ObjEm = EM_TriggerObj.None;
+                        return;
+                    }
+                    _Interactable.OnClicked();
+                    break;
+
+                case EM_TriggerObj.EditObj:
+                    if (!GameMain.GetInstance()._bEdit) { return; }
+                    if (_EditObjControll == null)
+                    {
+                        _ObjEm = EM_TriggerObj.None;
+                        return;
+                    }
+
+                    GameMain.GetInstance()._bSelectEdit = true;
+                    _EditObjControll.f_SetEditState(true);
+                    _EditObjControll.OnClicked();
+                    break;
+            }
+        }
+
+        _fBtnTime = 0;
+    }
+
+    /// <summary>PC輸入</summary>
+    private void f_PCInputKey()
     {
         if (oCurObj != null && Input.GetKeyUp(KeyCode.Space))//選取物件用
         {
@@ -164,7 +238,9 @@ public class GameMainTriggerCtrl : MonoBehaviour
             }
         }
     }
+    #endregion
 
+    #region 編輯模式輸入
     float _fBtnTime = 0f;
     /// <summary>編輯模式下輸入</summary>
     private void f_EditInput()
@@ -174,6 +250,56 @@ public class GameMainTriggerCtrl : MonoBehaviour
         _EditObjControll = GameMain.GetInstance().f_GetCurEditObj();
         if (_EditObjControll == null) { return; }
 
+        switch (State)
+        {
+            case ControlState.VR:
+                f_VREditInput();
+                break;
+
+            case ControlState.PC:
+                f_PCEditInput();
+                break;
+        }
+    }
+
+    /// <summary>VR輸入</summary>
+    private void f_VREditInput()
+    {
+        if (!_Device[0].isValid || !_Device[1].isValid)
+        {
+            _Device[0] = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+            _Device[1] = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
+        }
+        
+        bool triggerBtnAction = false;
+        if (_Device[1].TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 vPos))
+        {
+            if (vPos.x > 0.5f)
+            {
+                _EditObjControll.f_SetInput(1);
+            }
+            else if(vPos.x < -0.5f)
+            {
+                _EditObjControll.f_SetInput(-1);
+            }
+            else
+            {
+                _EditObjControll.f_SetInput(0);
+            }
+        }
+
+        _fBtnTime += Time.deltaTime;//按鈕間隔時間
+        if (_fBtnTime < 0.15f) { return; }
+        if (_Device[0].TryGetFeatureValue(CommonUsages.triggerButton, out triggerBtnAction) && triggerBtnAction)//移動座標用
+        {
+            _EditObjControll.OnClicked();
+            _fBtnTime = 0;
+        }
+    }
+
+    /// <summary>PC輸入</summary>
+    private void f_PCEditInput()
+    {
         if (Input.GetKeyDown(KeyCode.RightArrow))//拉前、旋轉、放大用
         {
             _EditObjControll.f_SetInput(1);
@@ -196,4 +322,5 @@ public class GameMainTriggerCtrl : MonoBehaviour
 
         _fBtnTime = 0;
     }
+    #endregion
 }

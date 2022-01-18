@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 using Epibyte.ConceptVR;
+using ccU3DEngine;
 
 public class GameMainTriggerCtrl : MonoBehaviour
 {
-    Transform Player;
     //public float _fLookTimeLimt = 2f;
-
     private EditObjControll _EditObjControll = null;
     private Interactable _Interactable = null;
 
@@ -17,8 +16,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
     //private float _fLookTime = 0f;
     private bool _bLookTime = false;
 
-    public static ControlState State = ControlState.VR;
-    private InputDevice[] _Device = new InputDevice[2];
+    
 
     public enum EM_TriggerObj
     {
@@ -27,49 +25,18 @@ public class GameMainTriggerCtrl : MonoBehaviour
         Button = 2,     //按鈕
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        Player = transform.parent;
+        GameInputCtrl.OnClickCtrlEvent += f_OnClick;
+        GameInputCtrl.OnClickBtnOne += f_EditCtrl;
+        GameInputCtrl.OnClickBtnTwo += f_EditCtrl;
+        GameInputCtrl.OnClickBtnThree += f_EditCtrl;
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch (State)
-        {
-            case ControlState.VR:
-                break;
-
-            case ControlState.PC:
-                f_MouseMoveInput();
-                break;
-        }
-        
         f_RayTrigger();
-        f_InputKey();
-        f_EditInput();
-    }
-
-    /// <summary>PC移動輸入</summary>
-    private void f_MouseMoveInput()
-    {
-        if (Input.GetKey(KeyCode.W))
-        {
-            Player.localPosition += transform.forward * 3f * Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            Player.localPosition += -transform.forward * 3f * Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            Player.localPosition += -transform.right * 3f * Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            Player.localPosition += transform.right * 3f * Time.deltaTime;
-        }
     }
 
     /// <summary>射線碰撞偵測</summary>
@@ -147,7 +114,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
         #endregion
     }
 
-    #region 一般輸入
+    /*#region 一般輸入
     /// <summary>一般輸入</summary>
     private void f_InputKey()
     {
@@ -238,9 +205,39 @@ public class GameMainTriggerCtrl : MonoBehaviour
             }
         }
     }
-    #endregion
+    #endregion*/
 
-    #region 編輯模式輸入
+    private void f_OnClick(int e)
+    {
+        if (oCurObj == null) { return; }
+
+        switch (_ObjEm)
+        {
+            case EM_TriggerObj.Button:
+                if (_Interactable == null)
+                {
+                    _ObjEm = EM_TriggerObj.None;
+                    return;
+                }
+                _Interactable.OnClicked();
+                break;
+
+            case EM_TriggerObj.EditObj:
+                if (!GameMain.GetInstance()._bEdit) { return; }
+                if (_EditObjControll == null)
+                {
+                    _ObjEm = EM_TriggerObj.None;
+                    return;
+                }
+
+                GameMain.GetInstance()._bSelectEdit = true;
+                _EditObjControll.f_SetEditState(true);
+                _EditObjControll.OnClicked();
+                break;
+        }
+    }
+
+    /*#region 編輯模式輸入
     float _fBtnTime = 0f;
     /// <summary>編輯模式下輸入</summary>
     private void f_EditInput()
@@ -322,5 +319,15 @@ public class GameMainTriggerCtrl : MonoBehaviour
 
         _fBtnTime = 0;
     }
-    #endregion
+    #endregion*/
+
+    private void f_EditCtrl(int iInput)
+    {
+        if (!GameMain.GetInstance()._bEdit) { return; }
+        if (!GameMain.GetInstance()._bSelectEdit) { return; }
+        _EditObjControll = GameMain.GetInstance().f_GetCurEditObj();
+        if (_EditObjControll == null) { return; }
+
+        _EditObjControll.f_SetInput(iInput);
+    }
 }

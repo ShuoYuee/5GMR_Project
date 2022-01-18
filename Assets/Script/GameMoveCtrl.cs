@@ -13,7 +13,7 @@ public class GameMoveCtrl : MonoBehaviour
 
     private void f_CameraForMouse()
     {
-        if (GameMainTriggerCtrl.State != ControlState.PC) { return; }
+        if (GameInputCtrl.State != ControlState.PC) { return; }
         float fMouseX = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * _fRotationSpeed;
         //float fMouseY = transform.localEulerAngles.x + Input.GetAxis("Mouse Y") * _fRotationSpeed;
         rotationY += Input.GetAxis("Mouse Y") * _fRotationSpeed;

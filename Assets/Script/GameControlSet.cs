@@ -16,6 +16,6 @@ public class GameControlSet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameMainTriggerCtrl.State = State;
+        GameInputCtrl.State = State;
     }
 }

@@ -220,13 +220,27 @@ public enum EM_Sound
 /// <summary>
 /// 編輯器模式
 /// </summary>
-public enum EM_EidtState
+public enum EM_EditState
 {
     None = 0,   //空
     Position = 1,   //座標
     RotationH = 2,  //水平旋轉
     RotationV = 3,  //垂直旋轉
     Scale = 4,  //縮放
+}
+
+public enum EM_EditAxis
+{
+    AxisX,
+    AxisY,
+    AxisZ,
+}
+
+public enum EM_EditPoint
+{
+    WorldPoint,
+    LocalPoint,
+    UserPoint,
 }
 
 public enum EM_GameControllAction

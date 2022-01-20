@@ -13,26 +13,21 @@ public class GameInputCtrl : MonoBehaviour
     public static event OnClickCtrl OnClickBtnTwo;
     public static event OnClickCtrl OnClickBtnThree;
 
-    Transform Player;
+    public Transform Player;
     float _fBtnTime = 0f;
 
-    public static ControlState State = ControlState.VR;
+    public static ControlState State = ControlState.PC;
     private InputDevice[] _Device = new InputDevice[2];
-
-    private void Start()
-    {
-        Player = transform.parent;
-    }
-
+    
     private void Update()
     {
-        if (State == ControlState.PC)
-        {
-            f_MouseMoveInput();
-        }
+        _fBtnTime += Time.deltaTime;//按鈕間隔時間
+    }
 
-        f_InputKey();
+    private void FixedUpdate()
+    {
         f_EditInput();
+        f_InputKey();
     }
 
     /// <summary>PC移動輸入</summary>
@@ -60,6 +55,7 @@ public class GameInputCtrl : MonoBehaviour
     /// <summary>一般輸入</summary>
     private void f_InputKey()
     {
+        if (_fBtnTime < 0.02f) { return; }
         switch (State)
         {
             case ControlState.VR:
@@ -75,6 +71,7 @@ public class GameInputCtrl : MonoBehaviour
     /// <summary>VR輸入</summary>
     private void f_VRInputKey()
     {
+        _fBtnTime = 0;
         if (!_Device[0].isValid || !_Device[1].isValid)
         {
             _Device[0] = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
@@ -82,14 +79,10 @@ public class GameInputCtrl : MonoBehaviour
         }
 
         bool triggerBtnAction = false;
-        _fBtnTime += Time.deltaTime;//按鈕間隔時間
-        if (_fBtnTime < 0.15f) { return; }
         if (_Device[0].TryGetFeatureValue(CommonUsages.triggerButton, out triggerBtnAction) && triggerBtnAction)
         {
             OnClickCtrlEvent(0);
         }
-
-        _fBtnTime = 0;
     }
 
     /// <summary>PC輸入</summary>
@@ -106,6 +99,7 @@ public class GameInputCtrl : MonoBehaviour
     /// <summary>編輯模式下輸入</summary>
     private void f_EditInput()
     {
+        if (!GameMain.GetInstance().m_EditManager._bEdit) { return; }
         switch (State)
         {
             case ControlState.VR:
@@ -127,6 +121,7 @@ public class GameInputCtrl : MonoBehaviour
             _Device[1] = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
         }
 
+        if (!GameMain.GetInstance().m_EditManager._bEdit) { return; }
         bool triggerBtnAction = false;
         if (_Device[1].TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 vPos))
         {
@@ -147,13 +142,12 @@ public class GameInputCtrl : MonoBehaviour
             }
         }
 
-        _fBtnTime += Time.deltaTime;//按鈕間隔時間
-        if (_fBtnTime < 0.15f) { return; }
+        if (_fBtnTime < 0.2f) { return; }
         if (_Device[0].TryGetFeatureValue(CommonUsages.triggerButton, out triggerBtnAction) && triggerBtnAction)//移動座標用
         {
+            _fBtnTime = 0;
             //_EditObjControll.OnClicked();
             OnClickCtrlEvent(0);
-            _fBtnTime = 0;
         }
     }
 
@@ -177,7 +171,7 @@ public class GameInputCtrl : MonoBehaviour
         }
 
         _fBtnTime += Time.deltaTime;//按鈕間隔時間
-        if (_fBtnTime < 0.1f) { return; }
+        if (_fBtnTime < 0.02f) { return; }
         if (Input.GetKeyUp(KeyCode.Space))//移動座標用
         {
             //_EditObjControll.OnClicked();

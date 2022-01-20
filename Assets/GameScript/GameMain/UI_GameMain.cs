@@ -37,13 +37,10 @@ namespace GameLogic
             //_PowerIndicator = PowerLine.GetComponent<PowerIndicator>();
 
             f_InitMessage();
-            
         }
 
         private void f_InitMessage()
         {
-            glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_GameAnchorStart, f_StartAnchorTime); //啟用錨點計時
-            glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_GameAnchorEnd, f_EndAnchorTime); //關閉錨點計時
             glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_MapObjInit, f_SetMapObjData);    //設定地圖物件資料
             glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_MapEditState, f_EditState);  //開關提醒文字
             glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_EditObjAnim, f_AnimPlayText);  //開關動畫提醒文字
@@ -196,13 +193,6 @@ namespace GameLogic
         protected override void On_Destory()
         {
             
-        }
-
-        float GetPower()
-        {
-
-
-            return 0;
         }
 
         #region 錨點(暫未用到)

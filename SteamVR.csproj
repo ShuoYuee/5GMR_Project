@@ -214,6 +214,8 @@
     <Compile Include="Assets\SteamVR\InteractionSystem\Teleport\Scripts\TeleportMarkerBase.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Teleport\Scripts\TeleportPoint.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Teleport\Scripts\TeleportURPHelper.cs" />
+    <Compile Include="Assets\SteamVR\OpenVRUnityXRPackage\Editor\OpenVRPackageInstaller.cs" />
+    <Compile Include="Assets\SteamVR\OpenVRUnityXRPackage\Editor\OpenVRSimpleJSON.cs" />
     <Compile Include="Assets\SteamVR\Plugins\openvr_api.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_Behaviour.cs" />

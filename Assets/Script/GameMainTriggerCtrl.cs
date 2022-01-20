@@ -16,8 +16,6 @@ public class GameMainTriggerCtrl : MonoBehaviour
     //private float _fLookTime = 0f;
     private bool _bLookTime = false;
 
-    
-
     public enum EM_TriggerObj
     {
         None = 0,
@@ -58,7 +56,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
                 }
             }
 
-            if (GameMain.GetInstance()._bEdit && hit.collider.GetComponent<EditObjControll>() != null)//編輯物件
+            if (GameMain.GetInstance().m_EditManager._bEdit && hit.collider.GetComponent<EditObjControll>() != null)//編輯物件
             {
                 _ObjEm = EM_TriggerObj.EditObj;
                 oCurObj = hit.collider.gameObject;
@@ -223,14 +221,14 @@ public class GameMainTriggerCtrl : MonoBehaviour
                 break;
 
             case EM_TriggerObj.EditObj:
-                if (!GameMain.GetInstance()._bEdit) { return; }
+                if (!GameMain.GetInstance().m_EditManager._bEdit) { return; }
                 if (_EditObjControll == null)
                 {
                     _ObjEm = EM_TriggerObj.None;
                     return;
                 }
 
-                GameMain.GetInstance()._bSelectEdit = true;
+                GameMain.GetInstance().m_EditManager._bSelectEdit = true;
                 _EditObjControll.f_SetEditState(true);
                 _EditObjControll.OnClicked();
                 break;
@@ -323,8 +321,8 @@ public class GameMainTriggerCtrl : MonoBehaviour
 
     private void f_EditCtrl(int iInput)
     {
-        if (!GameMain.GetInstance()._bEdit) { return; }
-        if (!GameMain.GetInstance()._bSelectEdit) { return; }
+        if (!GameMain.GetInstance().m_EditManager._bEdit) { return; }
+        if (!GameMain.GetInstance().m_EditManager._bSelectEdit) { return; }
         _EditObjControll = GameMain.GetInstance().f_GetCurEditObj();
         if (_EditObjControll == null) { return; }
 

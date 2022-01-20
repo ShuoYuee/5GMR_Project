@@ -93,9 +93,15 @@ public class glo_Main :MonoBehaviour
         Application.runInBackground = true;
         Application.targetFrameRate = 90;
 
+        gameObject.AddComponent<UpdateManager>();
+        //gameObject.AddComponent<ccSceneMgr>();
+        UpdateManager tUpdateManager = UpdateManager.Get();
+        UpdateManager.Get().SetClientVersion(Application.version);
+        gameObject.AddComponent<AssetLoader>();
+
         //打开模拟器模式 ，此模式下资源不需要经过打包输出和上传到资源服务器就可以直接使用
         //平时开发都采用模拟器模式来进行，后期整合时再切换回正常模式
-        ccU3DEngineParam.m_bIsLocalAB = true;
+        ccU3DEngineParam.m_bIsLocalAB = false;
 
         //设置当前编辑器及最终打包输出的目标平台
 #if UNITY_EDITOR
@@ -167,11 +173,7 @@ public class glo_Main :MonoBehaviour
     {
         ccUIManage.GetInstance().f_SaveFactoryHandler(ccILR_ClassFactory.GetInstance());
 
-        gameObject.AddComponent<UpdateManager>();
-        //gameObject.AddComponent<ccSceneMgr>();
-        UpdateManager tUpdateManager = UpdateManager.Get();
-        UpdateManager.Get().SetClientVersion(CurrentBundleVersion.version);
-        gameObject.AddComponent<AssetLoader>();
+        
 
         GameDataLoad.f_LoadGameSystemMemory();
     }
@@ -210,34 +212,18 @@ public class glo_Main :MonoBehaviour
         //GameMain.GetInstance().f_StartGame();   
 #endif
 
-        ccTimeEvent.GetInstance().f_RegEvent(0f, false, null, CallBack_StartUpdateRes);
+        ccTimeEvent.GetInstance().f_RegEvent(0f, false, null, CallBack_StartZip);
 
     }
 
 
     #region 资源更新及切换到登陆场景
 
-    void CallBack_StartUpdateRes(object Obj)
+    void CallBack_StartZip(object Obj)
     {
-        UpdateManager.Get().m_remoteUri = new[] { GloData.glo_strABServerURL };
-        UpdateManager.Get().BeginInitialize("1.0", m_SC_Pool.f_GetABVer(), OnUpdateInitialize, false);
-    }
-
-
-    void OnUpdateInitialize()
-    {
-        MessageBox.DEBUG("开始更新资源。");
-        UpdateManager.Get().BeginDownload(OnUpdateComplete);
-        //OnUpdateComplete();
-    }
-
-    private void OnUpdateComplete()
-    {
-        //ccTimeEvent.GetInstance().f_RegEvent(30, false, null, TTTTT);
         UpdateManager.Get().f_ZipBaseRes(CallBack_ZipBaseResProgress, CallBack_ZipBaseResSuc);
-
     }
-        
+    
     void CallBack_ZipBaseResProgress(object Obj)
     {
         glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(UIMessageDef.UI_UpdateInitProgress, Obj);
@@ -245,6 +231,33 @@ public class glo_Main :MonoBehaviour
 
     private void CallBack_ZipBaseResSuc(object Obj)
     {
+        StartUpdateRes();
+    }
+
+    int iUpdateProcessId = 0;
+    void StartUpdateRes( )
+    {
+        UpdateManager.Get().m_remoteUri = new[] { GloData.glo_strABServerURL };
+        UpdateManager.Get().BeginInitialize(m_SC_Pool.f_GetABVer(), OnUpdateInitialize, false);
+        iUpdateProcessId = ccTimeEvent.GetInstance().f_RegEvent(0.5f, true, null, OnTime_UpdateProcess);
+    }
+
+    void OnTime_UpdateProcess(object Obj)
+    {
+        UpdateManager.UpdateProgress tUpdateProgress = UpdateManager.Get().GetProgress();
+        glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(UIMessageDef.UI_UpdateInitProgress, tUpdateProgress.progressPercentage);
+    }
+
+
+    void OnUpdateInitialize()
+    {
+        MessageBox.DEBUG("开始更新资源。");
+        UpdateManager.Get().BeginDownload(OnUpdateComplete);
+    }
+
+    private void OnUpdateComplete()
+    {
+        ccTimeEvent.GetInstance().f_UnRegEvent(iUpdateProcessId);
 
         ccILR_ClassFactory.GetInstance().f_LoadHotFixDLL(true);
         MessageBox.DEBUG("资源更新成功...");
@@ -254,6 +267,7 @@ public class glo_Main :MonoBehaviour
 
         f_InitGame();
     }
+        
 
     private void RegLanguageSC()
     {

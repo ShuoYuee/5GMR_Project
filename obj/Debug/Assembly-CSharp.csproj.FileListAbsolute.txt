@@ -636,3 +636,9 @@ C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\obj\Debug\Assembly-CS
 C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\obj\Debug\Assembly-CSharp.dll
 C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\obj\Debug\Assembly-CSharp.pdb
+E:\UnityProjects\MR\Temp\bin\Debug\Valve.Newtonsoft.Json.dll
+E:\UnityProjects\MR\Temp\bin\Debug\SteamVR_Actions.pdb
+E:\UnityProjects\MR\Temp\bin\Debug\SteamVR_Input_Editor.pdb
+E:\UnityProjects\MR\Temp\bin\Debug\SteamVR_Editor.pdb
+E:\UnityProjects\MR\Temp\bin\Debug\SteamVR.pdb
+E:\UnityProjects\MR\Temp\bin\Debug\SteamVR_Windows_EditorHelper.pdb

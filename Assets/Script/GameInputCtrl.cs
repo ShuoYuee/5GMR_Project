@@ -55,7 +55,7 @@ public class GameInputCtrl : MonoBehaviour
     /// <summary>一般輸入</summary>
     private void f_InputKey()
     {
-        if (_fBtnTime < 0.02f) { return; }
+        if (_fBtnTime < 0.001f) { return; }
         switch (State)
         {
             case ControlState.VR:
@@ -88,9 +88,10 @@ public class GameInputCtrl : MonoBehaviour
     /// <summary>PC輸入</summary>
     private void f_PCInputKey()
     {
-        if (Input.GetKeyUp(KeyCode.Space))//選取物件用
+        if (Input.GetKey(KeyCode.Space))//選取物件用
         {
             OnClickCtrlEvent(0);
+            _fBtnTime = 0;
         }
     }
     #endregion
@@ -154,15 +155,17 @@ public class GameInputCtrl : MonoBehaviour
     /// <summary>PC輸入</summary>
     private void f_PCEditInput()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))//拉前、旋轉、放大用
+        if (Input.GetKey(KeyCode.RightArrow))//拉前、旋轉、放大用
         {
             //_EditObjControll.f_SetInput(1);
             OnClickBtnOne(1);
+            _fBtnTime = 0;
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))//退後、旋轉、縮小用
+        else if (Input.GetKey(KeyCode.LeftArrow))//退後、旋轉、縮小用
         {
             //_EditObjControll.f_SetInput(-1);
             OnClickBtnTwo(-1);
+            _fBtnTime = 0;
         }
         else if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
         {
@@ -171,14 +174,13 @@ public class GameInputCtrl : MonoBehaviour
         }
 
         _fBtnTime += Time.deltaTime;//按鈕間隔時間
-        if (_fBtnTime < 0.02f) { return; }
+        if (_fBtnTime < 0.01f) { return; }
         if (Input.GetKeyUp(KeyCode.Space))//移動座標用
         {
             //_EditObjControll.OnClicked();
             OnClickCtrlEvent(0);
+            _fBtnTime = 0;
         }
-
-        _fBtnTime = 0;
     }
     #endregion
 }

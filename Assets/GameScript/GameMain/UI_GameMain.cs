@@ -42,8 +42,6 @@ namespace GameLogic
         private void f_InitMessage()
         {
             glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_MapObjInit, f_SetMapObjData);    //設定地圖物件資料
-            glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_MapEditState, f_EditState);  //開關提醒文字
-            glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_EditObjAnim, f_AnimPlayText);  //開關動畫提醒文字
         }
 
         #region 初始化

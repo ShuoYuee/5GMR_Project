@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Epibyte.ConceptVR;
+using ccU3DEngine;
 
 public class EditManager
 {
@@ -20,6 +21,7 @@ public class EditManager
     /// <summary>當前點選的編輯按鈕</summary>
     private TabButton _CurEditBtn = null;
 
+    #region 點擊按鈕
     /// <summary>
     /// 點選編輯按鈕
     /// </summary>
@@ -31,12 +33,10 @@ public class EditManager
             case "Position":
                 _EditEM = EM_EditState.Position;
                 break;
-            case "RotationH":
-                _EditEM = EM_EditState.RotationH;
+            case "Rotation":
+                _EditEM = EM_EditState.Rotation;
                 break;
-            case "RotationV":
-                _EditEM = EM_EditState.RotationV;
-                break;
+
             case "Scale":
                 _EditEM = EM_EditState.Scale;
                 break;
@@ -55,7 +55,6 @@ public class EditManager
         if (_bEdit)
         {
             f_SetEditBtn();
-            glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_MapEditState, 1);//開關提示文字
         }
         else
         {
@@ -67,11 +66,52 @@ public class EditManager
 
             _bSelectEdit = false;
             _CurEditObjControll = null;
-            glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_MapEditState, -1);//開關提示文字
-            glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_MapEditState, -6);//開關提示文字
         }
     }
 
+    public void f_OpenPanel(GameObject Panel)
+    {
+        Panel.SetActive(true);
+    }
+
+    public void f_ClosePanel(GameObject Panel)
+    {
+        Panel.SetActive(false);
+    }
+
+    public void f_LeaveEdit(TabButton button)
+    {
+        button.OnClicked();
+    }
+
+    public void f_SetEditAxis(string strAxis)
+    {
+        int iAxis = ccMath.atoi(strAxis);
+        if ((int)_EditAxitEM + 1 > iAxis)
+        {
+            _EditAxitEM = (EM_EditAxis)1;
+        }
+        else
+        {
+            _EditAxitEM = (EM_EditAxis)iAxis;
+        }
+    }
+
+    public void f_SetEditPoint(string strPoint)
+    {
+        int iPoint = ccMath.atoi(strPoint);
+        if ((int)_EditPointEM + 1 > iPoint)
+        {
+            _EditPointEM = (EM_EditPoint)1;
+        }
+        else
+        {
+            _EditPointEM = (EM_EditPoint)iPoint;
+        }
+    }
+    #endregion
+
+    #region 按鈕反饋
     /// <summary>設定當前點選的編輯按鈕</summary>
     public void f_SetEditBtn(TabButton EditBtn = null)
     {
@@ -102,6 +142,28 @@ public class EditManager
         }
     }
 
+    public void f_SetOnClickText(Transform textGroup)
+    {
+        for (int i = 0; i < textGroup.childCount; i++)
+        {
+            if (textGroup.GetChild(i).gameObject.activeSelf)
+            {
+                textGroup.GetChild(i).gameObject.SetActive(false);
+                if (i + 1 >= textGroup.childCount)
+                {
+                    textGroup.GetChild(0).gameObject.SetActive(true);
+                    return;
+                }
+                else
+                {
+                    textGroup.GetChild(i + 1).gameObject.SetActive(true);
+                    return;
+                }
+            }
+        }
+    }
+    #endregion
+
     /// <summary>設定當前編輯的物件</summary>
     public void f_SetCurEditObj(EditObjControll Obj)
     {
@@ -125,7 +187,6 @@ public class EditManager
         if (iAddIndex == 0)//停止播放預覽動畫
         {
             _CurEditObjControll.f_AnimStop();
-            glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_EditObjAnim, null);//關閉動畫提示文字
         }
 
         _CurEditObjControll.f_AnimPlay(iAddIndex);

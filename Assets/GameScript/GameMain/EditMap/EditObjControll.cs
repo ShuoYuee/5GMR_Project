@@ -95,12 +95,10 @@ public class EditObjControll : MonoBehaviour
             case EM_EditState.Position:
                 f_EditPosition();
                 break;
-            case EM_EditState.RotationH:
+            case EM_EditState.Rotation:
                 f_EditRotation(_iEditValue);
                 break;
-            case EM_EditState.RotationV:
-                f_EditRotation(_iEditValue);
-                break;
+
             case EM_EditState.Scale:
                 f_EditScale(_iEditValue);
                 break;
@@ -172,7 +170,7 @@ public class EditObjControll : MonoBehaviour
             return;
         }
 
-        StartCoroutine(RotateTo(direction * rotationSpeed, 0.2f));
+        StartCoroutine(RotateTo(direction * rotationSpeed, 0.1f));
     }
 
     /// <summary>停止編輯旋轉值</summary>
@@ -220,7 +218,7 @@ public class EditObjControll : MonoBehaviour
             Mathf.Clamp(toValue.z, minSize.z, maxSize.z)
         );*/
 
-        StartCoroutine(ScaleTo(toValue, 0.5f));
+        StartCoroutine(ScaleTo(toValue, 0.2f));
     }
 
     /// <summary>停止編輯縮放值</summary>
@@ -334,9 +332,8 @@ public class EditObjControll : MonoBehaviour
         return Vector3.zero;
     }
 
-    private Vector3 f_RotationPoint(float toValue)
+    private void f_RotationPoint(float toValue)
     {
-        Vector3 vPos = Vector3.zero;
         switch (GameMain.GetInstance().m_EditManager._EditPointEM)
         {
             case EM_EditPoint.WorldPoint:
@@ -351,7 +348,6 @@ public class EditObjControll : MonoBehaviour
                 transform.RotateAround(transform.position, f_RotationActive(), toValue * Time.deltaTime);
                 break;
         }
-        return vPos;
     }
 
     /// <summary>縮放值協程變動</summary>
@@ -365,51 +361,13 @@ public class EditObjControll : MonoBehaviour
 
         while (isScaling && elapsedTime < duration)
         {
-            transform.localScale = Vector3.Lerp(from, toValue, (elapsedTime / duration));
+            transform.localScale = Vector3.Lerp(from, toValue, elapsedTime / duration);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
         // Coroutine finishes running.
         isScaling = false;
-    }
-
-    private Vector3 f_ScaleActive()
-    {
-        switch (GameMain.GetInstance().m_EditManager._EditAxitEM)
-        {
-            case EM_EditAxis.AxisX:
-                return new Vector3(0, 0, 0);
-
-            case EM_EditAxis.AxisY:
-                return new Vector3(0, 0, 0);
-
-            case EM_EditAxis.AxisZ:
-                return new Vector3(0, 0, 0);
-        }
-        return Vector3.zero;
-    }
-
-    private Vector3 f_ScalePoint(float toValue)
-    {
-        Vector3 vPos = Vector3.zero;
-        switch (GameMain.GetInstance().m_EditManager._EditPointEM)
-        {
-            case EM_EditPoint.WorldPoint:
-                vPos = transform.position + f_PositionActive(_fPosDir);
-                break;
-
-            case EM_EditPoint.LocalPoint:
-                //transform.localScale = Vector3.Lerp(from, toValue, (elapsedTime / duration));
-                break;
-
-            case EM_EditPoint.UserPoint:
-                Transform _CameraTrans = GameMain.GetInstance().m_MainCamera.transform;
-                vPos = _CameraTrans.forward + f_PositionActive(_fPosDir);
-                vPos = _CameraTrans.TransformPoint(vPos);
-                break;
-        }
-        return vPos;
     }
     #endregion
     #endregion
@@ -438,7 +396,6 @@ public class EditObjControll : MonoBehaviour
         if (bHasAction)//確認是否擁有該動畫
         {
             _Animator.Play(_strAnimGroup[_iAnimIndex]);
-            glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_EditObjAnim, _strAnimGroup[_iAnimIndex]);//開啟動畫提示文字
         }
     }
 
@@ -491,13 +448,11 @@ public class EditObjControll : MonoBehaviour
         {
             GameMain.GetInstance().f_SetCurEditObj(this);
             f_StartEdit();
-            glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_MapEditState, 6);//開關提示文字
         }
         else
         {
             _iEditValue = 0;
             f_EndEdit();
-            glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_MapEditState, -6);//開關提示文字
         }
     }
     #endregion

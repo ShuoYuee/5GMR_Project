@@ -589,3 +589,4 @@ C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\obj\Debug\ILRuntime.c
 C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\obj\Debug\ILRuntime.dll
 C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\obj\Debug\ILRuntime.pdb
 E:\UnityProjects\MR\Temp\bin\Debug\Valve.Newtonsoft.Json.dll
+C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\Temp\bin\Debug\Valve.Newtonsoft.Json.dll

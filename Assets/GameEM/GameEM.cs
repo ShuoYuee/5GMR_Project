@@ -224,23 +224,22 @@ public enum EM_EditState
 {
     None = 0,   //空
     Position = 1,   //座標
-    RotationH = 2,  //水平旋轉
-    RotationV = 3,  //垂直旋轉
-    Scale = 4,  //縮放
+    Rotation = 2,  //旋轉
+    Scale = 3,  //縮放
 }
 
 public enum EM_EditAxis
 {
-    AxisX,
-    AxisY,
-    AxisZ,
+    AxisX = 1,
+    AxisY = 2,
+    AxisZ = 3,
 }
 
 public enum EM_EditPoint
 {
-    WorldPoint,
-    LocalPoint,
-    UserPoint,
+    WorldPoint = 1,
+    LocalPoint = 2,
+    UserPoint = 3,
 }
 
 public enum EM_GameControllAction

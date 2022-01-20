@@ -111,13 +111,11 @@ public class GameMain : MonoBehaviour
     public void f_LoadMap()
     {
         m_MapPool.f_LoadMap();
-        glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_MapEditState, 2);//開關提示文字
     }
 
     public void f_SaveMap()
     {
         m_MapPool.f_SaveMap();
-        glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_MapEditState, 3);//開關提示文字
     }
 
     public void f_ResetMap()
@@ -127,7 +125,6 @@ public class GameMain : MonoBehaviour
         {
             m_MapPool.f_DeleteObj(m_MapPool.f_GetAll()[0].iId);
         }
-        glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_MapEditState, 4);//開關提示文字
     }
 
     public void f_ExitMap()
@@ -137,7 +134,6 @@ public class GameMain : MonoBehaviour
 
     public EditObjControll f_AddObj(CharacterDT tCharacterDT)
     {
-        glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_MapEditState, 5);//開關提示文字
         return m_MapPool.f_AddObj(tCharacterDT);
     }
 
@@ -169,6 +165,31 @@ public class GameMain : MonoBehaviour
         m_EditManager.f_Edit();
     }
 
+    public void f_OpenPanel(GameObject Panel)
+    {
+        m_EditManager.f_OpenPanel(Panel);
+    }
+
+    public void f_ClosePanel(GameObject Panel)
+    {
+        m_EditManager.f_ClosePanel(Panel);
+    }
+
+    public void f_LeaveEdit(TabButton button)
+    {
+        m_EditManager.f_LeaveEdit(button);
+    }
+
+    public void f_SetEditAxis(string strAxis)
+    {
+        m_EditManager.f_SetEditAxis(strAxis);
+    }
+
+    public void f_SetEditPoint(string strPoint)
+    {
+        m_EditManager.f_SetEditPoint(strPoint);
+    }
+
     /// <summary>設定當前點選的編輯按鈕</summary>
     public void f_SetEditBtn(TabButton EditBtn = null)
     {
@@ -179,6 +200,11 @@ public class GameMain : MonoBehaviour
     public void f_SetEditBtnOnClick(TabButton EditBtn = null)
     {
         m_EditManager.f_SetEditBtnOnClick(EditBtn);
+    }
+
+    public void f_SetOnClickText(Transform textGroup)
+    {
+        m_EditManager.f_SetOnClickText(textGroup);
     }
 
     /// <summary>設定當前編輯的物件</summary>

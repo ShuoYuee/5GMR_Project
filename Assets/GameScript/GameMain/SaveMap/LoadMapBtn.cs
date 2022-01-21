@@ -1,8 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 地圖檔案按鈕
+/// </summary>
 public class LoadMapBtn : MonoBehaviour
 {
     public Text _text;

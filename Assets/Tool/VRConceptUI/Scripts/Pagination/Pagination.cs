@@ -122,6 +122,7 @@ namespace Epibyte.ConceptVR
             {
                 for (int i = numberOfPositions - 1; i >= 0; i--)
                 {
+                    if (positions.GetChild(i).GetComponentInChildren<Circle>() == null) { continue; }
                     positions.GetChild(i).GetComponentInChildren<Circle>(true).gameObject.SetActive(true);
                 }
 

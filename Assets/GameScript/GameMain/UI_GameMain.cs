@@ -24,17 +24,11 @@ namespace GameLogic
             _Anchor=f_GetObject("Anchor").GetComponent<Image>();
 
             f_RegClickEvent(f_GetObject("BtnSetup"), OnClick_BtnSetup);
-
-            //f_RegClickEvent(f_GetObject("Select"), OnClick_Select);
             f_RegClickEvent(f_GetObject("DelObj"), OnClick_DelObj);
 
 
             f_RegClickEvent(f_GetObject("LoadMap"), OnClick_LoadMap);
             f_RegClickEvent(f_GetObject("SaveMap"), OnClick_SaveMap);
-
-            //GameObject PowerLine = glo_Main.GetInstance().m_ResourceManager.f_CreateRes("UI/GameMain/PowerLine", false);
-            //PowerLine.transform.parent = this.f_GetObject("Power").transform;
-            //_PowerIndicator = PowerLine.GetComponent<PowerIndicator>();
 
             f_InitMessage();
         }
@@ -61,11 +55,9 @@ namespace GameLogic
                 {
                     case 1:
                         oData = AssetLoader.LoadAsset(aData.szResName + ".bundle", aData.szDisplayAB) as GameObject;
-                        //oData = glo_Main.GetInstance().m_ResourceManager.f_CreateABObj(aData.szResName + ".bundle", aData.szDisplayAB);
                         break;
                     default:
                         oData = AssetLoader.LoadAsset(aData.szResName + ".bundle", aData.szName) as GameObject;
-                        //oData = glo_Main.GetInstance().m_ResourceManager.f_CreateABObj(aData.szResName + ".bundle", aData.szName);
                         break;
                 }
 
@@ -92,9 +84,16 @@ namespace GameLogic
             //將資料一一賦予給實例化的物件
             for(int i = 0; i < tMapObj.Count; i++)
             {
+                f_CheckIgnore(tMapObj[i]);
                 MenuObject tMenuObject = tMapObj[i].AddComponent<MenuObject>();
                 tMenuObject.f_InitMenuObj(tData[i]);
             }
+        }
+
+        /// <summary>無視物件初始化</summary>
+        private void f_CheckIgnore(GameObject e)
+        {
+            if (e.GetComponent<LoadMapBtn>() != null) { return; }
         }
         #endregion
 
@@ -108,10 +107,6 @@ namespace GameLogic
         {
             CreateTeamItem();
             _listPosCtrl.Initialize();
-
-            //ccUIManage.GetInstance().f_SendMsg("UIP_GameText", BaseUIMessageDef.UI_OPEN);
-            //StaticValue.m_GamePlotControll.f_Play(StaticValue.m_iCurGamePlotId);
-            //_PowerIndicator.f_Start();
 
             InitObjList();
             f_InitMapObjData();

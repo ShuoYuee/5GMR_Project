@@ -1,36 +1,31 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using ccU3DEngine;
 using Epibyte.ConceptVR;
 
+/// <summary>
+/// 地圖存檔UI管理
+/// </summary>
 public class MapFileManager : MonoBehaviour
 {
-    //public ListPositionCtrl _ListPositionCtrl;
+    /// <summary>列表元件</summary>
     public Pagination _Pagination;
+    /// <summary>按鈕物件</summary>
     public GameObject _oFileBtn;
 
     private void Start()
     {
-        glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_MapObjInit, f_SetLoadMapBtn);
+        f_InitMessage();
     }
 
+    private void f_InitMessage()
+    {
+        glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_MapObjInit, f_SetLoadMapBtn);    //設定Load按鈕物件資料
+    }
+
+    /// <summary>重設地圖讀檔列表</summary>
     public void f_Reset()
     {
-        /*if (_ListPositionCtrl != null)
-        {
-            ListPositionCtrlTools.f_Create(_ListPositionCtrl, GameMain.GetInstance().m_MapPool.f_LoadPreviewData());
-            _ListPositionCtrl.Initialize();
-
-            ListBoxBase Item = null;
-            for(int i = 0; i < _ListPositionCtrl.listBoxes.Length; i++)
-            {
-                Item = _ListPositionCtrl.listBoxes[i];
-                Item.transform.localPosition = new Vector3(0, transform.position.y, 0.1f);
-                Item.transform.localEulerAngles = Vector3.zero;
-            }
-        }*/
         if (_Pagination == null) { return; }
         List<GameObject> oMapObj = new List<GameObject>();
         string[] aData = GameMain.GetInstance().m_MapPool.f_LoadPreviewData();
@@ -42,11 +37,16 @@ public class MapFileManager : MonoBehaviour
         _Pagination.f_Reset();
     }
 
+    /// <summary>
+    /// 讀取地圖
+    /// </summary>
+    /// <param name="text">檔案名稱</param>
     public void f_LoadMap(Text text)
     {
         GameMain.GetInstance().m_MapPool.f_LoadMap(text.text);
     }
 
+    /// <summary>設定地圖讀檔按鈕</summary>
     private void f_SetLoadMapBtn(object e)
     {
         List<GameObject> oData = (List<GameObject>)e;
@@ -57,9 +57,14 @@ public class MapFileManager : MonoBehaviour
             oData[i].GetComponentInChildren<Text>().text = aData[i];
             oData[i].name = aData[i];
             oData[i].transform.localScale = _oFileBtn.transform.localScale;
+            oData[i].transform.localPosition = Vector3.zero;
         }
     }
 
+    /// <summary>
+    /// 儲存地圖
+    /// </summary>
+    /// <param name="text">檔案自定義名稱</param>
     public void f_SaveMap(Text text)
     {
         GameMain.GetInstance().m_MapPool.f_SaveMap(text.text);

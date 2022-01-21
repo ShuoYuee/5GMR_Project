@@ -1,9 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.XR;
-using UnityEngine.Events;
-using ccU3DEngine;
 
 public class GameInputCtrl : MonoBehaviour
 {
@@ -14,9 +10,12 @@ public class GameInputCtrl : MonoBehaviour
     public static event OnClickCtrl OnClickBtnThree;
 
     public Transform Player;
+    /// <summary>按鈕間隔時間</summary>
     float _fBtnTime = 0f;
 
+    /// <summary>輸入模式</summary>
     public static ControlState State = ControlState.PC;
+    /// <summary>VR輸入裝備</summary>
     private InputDevice[] _Device = new InputDevice[2];
     
     private void Update()
@@ -89,7 +88,7 @@ public class GameInputCtrl : MonoBehaviour
     private void f_PCInputKey()
     {
         if (GameMain.GetInstance().m_EditManager._bEdit) { return; }
-        if (Input.GetKey(KeyCode.Space))//選取物件用
+        if (Input.GetKey(KeyCode.A))//選取物件用
         {
             OnClickCtrlEvent(0);
             _fBtnTime = 0;
@@ -129,17 +128,14 @@ public class GameInputCtrl : MonoBehaviour
         {
             if (vPos.x > 0.5f)
             {
-                //_EditObjControll.f_SetInput(1);
                 OnClickBtnOne(1);
             }
             else if (vPos.x < -0.5f)
             {
-                //_EditObjControll.f_SetInput(-1);
                 OnClickBtnTwo(-1);
             }
             else
             {
-                //_EditObjControll.f_SetInput(0);
                 OnClickBtnOne(0);
             }
         }
@@ -148,7 +144,6 @@ public class GameInputCtrl : MonoBehaviour
         if (_Device[0].TryGetFeatureValue(CommonUsages.triggerButton, out triggerBtnAction) && triggerBtnAction)//移動座標用
         {
             _fBtnTime = 0;
-            //_EditObjControll.OnClicked();
             OnClickCtrlEvent(0);
         }
     }
@@ -156,27 +151,24 @@ public class GameInputCtrl : MonoBehaviour
     /// <summary>PC輸入</summary>
     private void f_PCEditInput()
     {
-        if (Input.GetKey(KeyCode.RightArrow))//拉前、旋轉、放大用
+        if (Input.GetKey(KeyCode.D))//拉前、旋轉、放大用
         {
-            //_EditObjControll.f_SetInput(1);
             OnClickBtnOne(1);
             _fBtnTime = 0;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow))//退後、旋轉、縮小用
+        else if (Input.GetKey(KeyCode.S))//退後、旋轉、縮小用
         {
-            //_EditObjControll.f_SetInput(-1);
             OnClickBtnTwo(-1);
             _fBtnTime = 0;
         }
-        else if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
+        else if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.S))//鬆開按鈕
         {
-            //_EditObjControll.f_SetInput(0);
             OnClickBtnOne(0);
         }
 
         _fBtnTime += Time.deltaTime;//按鈕間隔時間
         if (_fBtnTime < 0.01f) { return; }
-        if (Input.GetKeyUp(KeyCode.Space))//移動座標用
+        if (Input.GetKeyUp(KeyCode.A))//移動座標用
         {
             OnClickCtrlEvent(0);
             _fBtnTime = 0;

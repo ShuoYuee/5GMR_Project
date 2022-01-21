@@ -1,9 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Epibyte.ConceptVR;
 using ccU3DEngine;
 
+/// <summary>
+/// 編輯管理器
+/// </summary>
 public class EditManager
 {
     /// <summary>是否處於編輯模式</summary>
@@ -13,7 +14,9 @@ public class EditManager
 
     /// <summary>編輯類型</summary>
     public EM_EditState _EditEM = EM_EditState.None;
+    /// <summary>軸心模式</summary>
     public EM_EditAxis _EditAxitEM = EM_EditAxis.AxisX;
+    /// <summary>座標模式</summary>
     public EM_EditPoint _EditPointEM = EM_EditPoint.WorldPoint;
 
     /// <summary>當前編輯的物件</summary>
@@ -33,6 +36,7 @@ public class EditManager
             case "Position":
                 _EditEM = EM_EditState.Position;
                 break;
+
             case "Rotation":
                 _EditEM = EM_EditState.Rotation;
                 break;
@@ -40,6 +44,7 @@ public class EditManager
             case "Scale":
                 _EditEM = EM_EditState.Scale;
                 break;
+
             case "Edit":
                 _EditEM = EM_EditState.None;
                 f_Edit();
@@ -69,12 +74,19 @@ public class EditManager
         }
     }
 
+    /// <summary>點擊按鈕</summary>
     public void f_LeaveEdit(TabButton button)
     {
         button.OnClicked();
     }
 
+    /// <summary>按鈕冷卻</summary>
     private bool bWait = false;
+
+    /// <summary>
+    /// 設定編輯軸心模式
+    /// </summary>
+    /// <param name="strAxis">軸心名稱</param>
     public void f_SetEditAxis(string strAxis)
     {
         if (bWait) { return; }
@@ -89,6 +101,10 @@ public class EditManager
         }
     }
 
+    /// <summary>
+    /// 設定編輯座標模式
+    /// </summary>
+    /// <param name="strPoint">座標名稱</param>
     public void f_SetEditPoint(string strPoint)
     {
         if (bWait) { return; }
@@ -103,6 +119,7 @@ public class EditManager
         }  
     }
 
+    /// <summary>按鈕冷卻結束</summary>
     private void f_BtnWait(object e)
     {
         bWait = false;
@@ -140,6 +157,10 @@ public class EditManager
         }
     }
 
+    /// <summary>
+    /// 點擊按鈕更改UI狀態
+    /// </summary>
+    /// <param name="textGroup">按鈕文字群</param>
     public void f_SetOnClickText(Transform textGroup)
     {
         if (bWait) { return; }
@@ -164,6 +185,10 @@ public class EditManager
         }
     }
 
+    /// <summary>
+    /// 設定座標按鈕UI
+    /// </summary>
+    /// <param name="TextGroup">按鈕文字群</param>
     public void f_SetCurPoint(Transform TextGroup)
     {
         for (int i = 0; i < TextGroup.childCount; i++)
@@ -176,6 +201,10 @@ public class EditManager
         }
     }
 
+    /// <summary>
+    /// 設定軸心按鈕UI
+    /// </summary>
+    /// <param name="TextGroup">按鈕文字群</param>
     public void f_SetCurAxis(Transform TextGroup)
     {
         for (int i = 0; i < TextGroup.childCount; i++)

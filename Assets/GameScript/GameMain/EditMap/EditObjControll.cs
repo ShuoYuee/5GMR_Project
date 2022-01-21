@@ -86,6 +86,21 @@ public class EditObjControll : MonoBehaviour
         _EditEM = GameMain.GetInstance().m_EditManager._EditEM;
         _fPosDir = Vector3.Distance(transform.position, GameMain.GetInstance().m_MainCamera.transform.position);
         _fLerpDir = 0;
+
+        if (GetComponentInChildren<MeshRenderer>() != null)
+        {
+            foreach(MeshRenderer Renderer in GetComponentsInChildren<MeshRenderer>())
+            {
+                Renderer.material = GameMain.GetInstance()._SelectMaterial;
+            }
+        }
+        else if (GetComponentInChildren<SkinnedMeshRenderer>() != null)
+        {
+            foreach (SkinnedMeshRenderer Renderer in GetComponentsInChildren<SkinnedMeshRenderer>())
+            {
+                Renderer.material = GameMain.GetInstance()._SelectMaterial;
+            }
+        }
     }
 
     /// <summary>進行編輯</summary>

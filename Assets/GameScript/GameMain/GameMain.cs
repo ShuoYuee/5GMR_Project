@@ -13,16 +13,10 @@ public class GameMain : MonoBehaviour
     public GameObject m_MainMenu = null;
     /// <summary>素材元件選單</summary>
     public Pagination m_Pagination;
-
+    /// <summary>編輯管理器</summary>
     public EditManager m_EditManager = new EditManager();
 
-    ///// <summary>
-    ///// 游戏为单线游戏直接启动单线逻辑
-    ///// </summary>
-    //private GameControll _GameControll = new GameControll(-99);
-
-    //private GameControllV2 _GameControllV2 = new GameControllV2();
-
+    public Material _SelectMaterial;
     public GameObject m_GameTable;
 
     private static GameMain _Instance = null;
@@ -38,74 +32,15 @@ public class GameMain : MonoBehaviour
         m_GameTable.SetActive(true);
         ccUIManage.GetInstance().f_SendMsg("UI_GameMain", BaseUIMessageDef.UI_OPEN, null, true);
 
-        ccTimeEvent.GetInstance().f_RegEvent(0.3f, true, null, f_InitMenuPos);
+        ccTimeEvent.GetInstance().f_RegEvent(0.3f, true, null, f_UpdateMenuPos);
     }
 
-    private void f_InitMenuPos(object e)
+    /// <summary>更新菜單位置</summary>
+    private void f_UpdateMenuPos(object e)
     {
         if(m_MainMenu != null)
         m_MainMenu.transform.position = m_MainCamera.transform.position + new Vector3(-0.4f, 0.05f, 0);
     }
-
-    //void Start()
-    //{
-    //    InitMessage();
-    //    InitManager();
-
-    //}
-
-    //private void InitManager()
-    //{
-    //    MessageBox.DEBUG("加载资源");
-
-    //    ResManagerState_Loop tResManagerState_Loop = new ResManagerState_Loop();
-    //    //GameObject tLoginPage = GameObject.Find("LoginPage");
-
-
-    //}
-
-    //void InitMessage()
-    //{
-    //    glo_Main.GetInstance().m_GameMessagePool.f_AddListener(MessageDef.GameStart, OnGameStart);
-    //    glo_Main.GetInstance().m_GameMessagePool.f_AddListener(MessageDef.GAMEOVER, OnGameOver);
-
-    //}
-
-    //private void LoadGameDataForMemory()
-    //{
-    //    if (ccLocalDataManager.f_HasLocalData(EM_eLocalData.iCurGameControllIndex.ToString()))
-    //    {
-    //        StaticValue.m_iCurGameControllIndex = ccLocalDataManager.f_GetLocalData<int>(EM_eLocalData.iCurGameControllIndex.ToString());
-    //    }
-    //    else
-    //    {
-    //        StaticValue.m_iCurGameControllIndex = 1000;
-    //    }
-
-    //}
-
-    //void OnGameStart(object Obj)
-    //{
-    //    //ccUIManage.GetInstance().f_SendMsg("UI_GameBattleUI", BaseUIMessageDef.UI_OPEN, null, true);
-    //    MessageBox.DEBUG("開始:" + StaticValue.m_iCurGameControllIndex);
-
-    //    LoadGameDataForMemory();
-    //    _GameControll.f_Start(StaticValue.m_iCurGameControllIndex);
-    //    //_GameStepManager.f_ChangeState((int)EM_eGameStep.PlayBall);
-    //}
-
-    //void OnGameOver(object Obj)
-    //{
-
-    //    MessageBox.DEBUG("OnGameOver");
-    //}
-
-    //private void Update()
-    //{
-    //    _GameControll.f_Update();
-
-    //}
-
 
     #region 地圖功能
     public void f_LoadMap(string strFileName)
@@ -165,16 +100,28 @@ public class GameMain : MonoBehaviour
         m_EditManager.f_Edit();
     }
 
+    /// <summary>
+    /// 點選按鈕
+    /// </summary>
+    /// <param name="button">按鈕</param>
     public void f_LeaveEdit(TabButton button)
     {
         m_EditManager.f_LeaveEdit(button);
     }
 
+    /// <summary>
+    /// 設定軸心模式
+    /// </summary>
+    /// <param name="strAxis">軸心模式(填軸心名稱)</param>
     public void f_SetEditAxis(string strAxis)
     {
         m_EditManager.f_SetEditAxis(strAxis);
     }
 
+    /// <summary>
+    /// 設定座標模式
+    /// </summary>
+    /// <param name="strPoint">座標模式(填座標名稱)</param>
     public void f_SetEditPoint(string strPoint)
     {
         m_EditManager.f_SetEditPoint(strPoint);
@@ -192,6 +139,10 @@ public class GameMain : MonoBehaviour
         m_EditManager.f_SetEditBtnOnClick(EditBtn);
     }
 
+    /// <summary>
+    /// 設定按鈕UI文字
+    /// </summary>
+    /// <param name="textGroup">按鈕文字群</param>
     public void f_SetOnClickText(Transform textGroup)
     {
         m_EditManager.f_SetOnClickText(textGroup);
@@ -209,11 +160,19 @@ public class GameMain : MonoBehaviour
         return m_EditManager.f_GetCurEditObj();
     }
 
+    /// <summary>
+    /// 設定當前軸心模式(確保每一頁面的模式都相同)
+    /// </summary>
+    /// <param name="TextGroup">按鈕文字群</param>
     public void f_SetCurPoint(Transform TextGroup)
     {
         m_EditManager.f_SetCurPoint(TextGroup);
     }
 
+    /// <summary>
+    /// 設定當前座標模式(確保每一頁面的模式都相同)
+    /// </summary>
+    /// <param name="TextGroup">按鈕文字群</param>
     public void f_SetCurAxis(Transform TextGroup)
     {
         m_EditManager.f_SetCurAxis(TextGroup);

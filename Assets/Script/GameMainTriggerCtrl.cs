@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Epibyte.ConceptVR;
-using UnityEngine.EventSystems;
 
 public class GameMainTriggerCtrl : MonoBehaviour
 {
@@ -29,6 +28,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
 
     private void Start()
     {
+        //暫預定四個輸入事件
         GameInputCtrl.OnClickCtrlEvent += f_OnClick;
         GameInputCtrl.OnClickBtnOne += f_EditCtrl;
         GameInputCtrl.OnClickBtnTwo += f_EditCtrl;
@@ -60,6 +60,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
                 }
             }
 
+            //將要偵測的元件一一填入
             if (GameMain.GetInstance().m_EditManager._bEdit && hit.collider.GetComponent<EditObjControll>() != null)//編輯物件
             {
                 _ObjEm = EM_TriggerObj.EditObj;
@@ -74,11 +75,11 @@ public class GameMainTriggerCtrl : MonoBehaviour
                 _Interactable = oCurObj.GetComponent<Interactable>();
                 _Interactable.OnHovered();
             }
-            else if(hit.collider.GetComponent<InputField>() != null)
+            else if(hit.collider.GetComponent<InputField>() != null)//輸入文字框物件
             {
                 _ObjEm = EM_TriggerObj.InpuUI;
                 oCurObj = hit.collider.gameObject;
-                _InputField = hit.collider.GetComponent<InputField>();
+                _InputField = hit.collider.GetComponent<InputField>();//按鈕UI物件
             }
             else if(hit.collider.GetComponent<Button>() != null)
             {
@@ -129,103 +130,12 @@ public class GameMainTriggerCtrl : MonoBehaviour
         #endregion
     }
 
-    /*#region 一般輸入
-    /// <summary>一般輸入</summary>
-    private void f_InputKey()
-    {
-        switch (State)
-        {
-            case ControlState.VR:
-                f_VRInputKey();
-                break;
-
-            case ControlState.PC:
-                f_PCInputKey();
-                break;
-        }
-    }
-
-    /// <summary>VR輸入</summary>
-    private void f_VRInputKey()
-    {
-        if (!_Device[0].isValid || !_Device[1].isValid)
-        {
-            _Device[0] = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
-            _Device[1] = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
-        }
-
-        bool triggerBtnAction = false;
-        _fBtnTime += Time.deltaTime;//按鈕間隔時間
-        if (_fBtnTime < 0.15f) { return; }
-        if (_Device[0].TryGetFeatureValue(CommonUsages.triggerButton, out triggerBtnAction) && triggerBtnAction)
-        {
-            if (oCurObj == null) { return; }
-            switch (_ObjEm)
-            {
-                case EM_TriggerObj.Button:
-                    if (_Interactable == null)
-                    {
-                        _ObjEm = EM_TriggerObj.None;
-                        return;
-                    }
-                    _Interactable.OnClicked();
-                    break;
-
-                case EM_TriggerObj.EditObj:
-                    if (!GameMain.GetInstance()._bEdit) { return; }
-                    if (_EditObjControll == null)
-                    {
-                        _ObjEm = EM_TriggerObj.None;
-                        return;
-                    }
-
-                    GameMain.GetInstance()._bSelectEdit = true;
-                    _EditObjControll.f_SetEditState(true);
-                    _EditObjControll.OnClicked();
-                    break;
-            }
-        }
-
-        _fBtnTime = 0;
-    }
-
-    /// <summary>PC輸入</summary>
-    private void f_PCInputKey()
-    {
-        if (oCurObj != null && Input.GetKeyUp(KeyCode.Space))//選取物件用
-        {
-            switch (_ObjEm)
-            {
-                case EM_TriggerObj.Button:
-                    if (_Interactable == null)
-                    {
-                        _ObjEm = EM_TriggerObj.None;
-                        return;
-                    }
-                    _Interactable.OnClicked();
-                    break;
-
-                case EM_TriggerObj.EditObj:
-                    if (!GameMain.GetInstance()._bEdit) { return; }
-                    if (_EditObjControll == null)
-                    {
-                        _ObjEm = EM_TriggerObj.None;
-                        return;
-                    }
-
-                    GameMain.GetInstance()._bSelectEdit = true;
-                    _EditObjControll.f_SetEditState(true);
-                    _EditObjControll.OnClicked();
-                    break;
-            }
-        }
-    }
-    #endregion*/
-
+    /// <summary>一般輸入事件</summary>
     private void f_OnClick(int e)
     {
         if (oCurObj == null) { return; }
 
+        //將各對象的執行動作一一填入
         switch (_ObjEm)
         {
             case EM_TriggerObj.Button:
@@ -270,90 +180,10 @@ public class GameMainTriggerCtrl : MonoBehaviour
         }
     }
 
-    /*#region 編輯模式輸入
-    float _fBtnTime = 0f;
-    /// <summary>編輯模式下輸入</summary>
-    private void f_EditInput()
-    {
-        if (!GameMain.GetInstance()._bEdit) { return; }
-        if (!GameMain.GetInstance()._bSelectEdit) { return; }
-        _EditObjControll = GameMain.GetInstance().f_GetCurEditObj();
-        if (_EditObjControll == null) { return; }
-
-        switch (State)
-        {
-            case ControlState.VR:
-                f_VREditInput();
-                break;
-
-            case ControlState.PC:
-                f_PCEditInput();
-                break;
-        }
-    }
-
-    /// <summary>VR輸入</summary>
-    private void f_VREditInput()
-    {
-        if (!_Device[0].isValid || !_Device[1].isValid)
-        {
-            _Device[0] = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
-            _Device[1] = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
-        }
-        
-        bool triggerBtnAction = false;
-        if (_Device[1].TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 vPos))
-        {
-            if (vPos.x > 0.5f)
-            {
-                _EditObjControll.f_SetInput(1);
-            }
-            else if(vPos.x < -0.5f)
-            {
-                _EditObjControll.f_SetInput(-1);
-            }
-            else
-            {
-                _EditObjControll.f_SetInput(0);
-            }
-        }
-
-        _fBtnTime += Time.deltaTime;//按鈕間隔時間
-        if (_fBtnTime < 0.15f) { return; }
-        if (_Device[0].TryGetFeatureValue(CommonUsages.triggerButton, out triggerBtnAction) && triggerBtnAction)//移動座標用
-        {
-            _EditObjControll.OnClicked();
-            _fBtnTime = 0;
-        }
-    }
-
-    /// <summary>PC輸入</summary>
-    private void f_PCEditInput()
-    {
-        if (Input.GetKeyDown(KeyCode.RightArrow))//拉前、旋轉、放大用
-        {
-            _EditObjControll.f_SetInput(1);
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))//退後、旋轉、縮小用
-        {
-            _EditObjControll.f_SetInput(-1);
-        }
-        else if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
-        {
-            _EditObjControll.f_SetInput(0);
-        }
-
-        _fBtnTime += Time.deltaTime;//按鈕間隔時間
-        if (_fBtnTime < 0.1f) { return; }
-        if (Input.GetKeyUp(KeyCode.Space))//移動座標用
-        {
-            _EditObjControll.OnClicked();
-        }
-
-        _fBtnTime = 0;
-    }
-    #endregion*/
-
+    /// <summary>
+    /// 編輯模式輸入事件
+    /// </summary>
+    /// <param name="iInput">判別值(左為-1  右為1)</param>
     private void f_EditCtrl(int iInput)
     {
         if (!GameMain.GetInstance().m_EditManager._bEdit) { return; }

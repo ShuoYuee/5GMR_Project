@@ -233,6 +233,7 @@ public enum EM_EditAxis
     AxisX = 1,
     AxisY = 2,
     AxisZ = 3,
+    Free = 4,
 }
 
 public enum EM_EditPoint

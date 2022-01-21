@@ -55,7 +55,7 @@ public class GameInputCtrl : MonoBehaviour
     /// <summary>一般輸入</summary>
     private void f_InputKey()
     {
-        if (_fBtnTime < 0.001f) { return; }
+        if (_fBtnTime < 0.1f) { return; }
         switch (State)
         {
             case ControlState.VR:
@@ -88,6 +88,7 @@ public class GameInputCtrl : MonoBehaviour
     /// <summary>PC輸入</summary>
     private void f_PCInputKey()
     {
+        if (GameMain.GetInstance().m_EditManager._bEdit) { return; }
         if (Input.GetKey(KeyCode.Space))//選取物件用
         {
             OnClickCtrlEvent(0);
@@ -177,7 +178,6 @@ public class GameInputCtrl : MonoBehaviour
         if (_fBtnTime < 0.01f) { return; }
         if (Input.GetKeyUp(KeyCode.Space))//移動座標用
         {
-            //_EditObjControll.OnClicked();
             OnClickCtrlEvent(0);
             _fBtnTime = 0;
         }

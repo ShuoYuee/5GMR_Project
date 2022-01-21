@@ -69,23 +69,15 @@ public class EditManager
         }
     }
 
-    public void f_OpenPanel(GameObject Panel)
-    {
-        Panel.SetActive(true);
-    }
-
-    public void f_ClosePanel(GameObject Panel)
-    {
-        Panel.SetActive(false);
-    }
-
     public void f_LeaveEdit(TabButton button)
     {
         button.OnClicked();
     }
 
+    private bool bWait = false;
     public void f_SetEditAxis(string strAxis)
     {
+        if (bWait) { return; }
         int iAxis = ccMath.atoi(strAxis);
         if ((int)_EditAxitEM + 1 > iAxis)
         {
@@ -93,12 +85,13 @@ public class EditManager
         }
         else
         {
-            _EditAxitEM = (EM_EditAxis)iAxis;
+            _EditAxitEM = (EM_EditAxis)(int)_EditAxitEM + 1;
         }
     }
 
     public void f_SetEditPoint(string strPoint)
     {
+        if (bWait) { return; }
         int iPoint = ccMath.atoi(strPoint);
         if ((int)_EditPointEM + 1 > iPoint)
         {
@@ -106,8 +99,13 @@ public class EditManager
         }
         else
         {
-            _EditPointEM = (EM_EditPoint)iPoint;
-        }
+            _EditPointEM = (EM_EditPoint)(int)_EditPointEM + 1;
+        }  
+    }
+
+    private void f_BtnWait(object e)
+    {
+        bWait = false;
     }
     #endregion
 
@@ -144,6 +142,9 @@ public class EditManager
 
     public void f_SetOnClickText(Transform textGroup)
     {
+        if (bWait) { return; }
+        bWait = true;
+        ccTimeEvent.GetInstance().f_RegEvent(0.8f, false, null, f_BtnWait);
         for (int i = 0; i < textGroup.childCount; i++)
         {
             if (textGroup.GetChild(i).gameObject.activeSelf)
@@ -159,6 +160,30 @@ public class EditManager
                     textGroup.GetChild(i + 1).gameObject.SetActive(true);
                     return;
                 }
+            }
+        }
+    }
+
+    public void f_SetCurPoint(Transform TextGroup)
+    {
+        for (int i = 0; i < TextGroup.childCount; i++)
+        {
+            if (TextGroup.GetChild(i).gameObject.activeSelf)
+            {
+                GameMain.GetInstance().m_EditManager._EditPointEM = (EM_EditPoint)i + 1;
+                return;
+            }
+        }
+    }
+
+    public void f_SetCurAxis(Transform TextGroup)
+    {
+        for (int i = 0; i < TextGroup.childCount; i++)
+        {
+            if (TextGroup.GetChild(i).gameObject.activeSelf)
+            {
+                GameMain.GetInstance().m_EditManager._EditAxitEM = (EM_EditAxis)i + 1;
+                return;
             }
         }
     }

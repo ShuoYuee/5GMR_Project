@@ -143,13 +143,13 @@ namespace GameLogic
         /// <summary>讀取場景資料</summary>
         private void OnClick_LoadMap(GameObject go, object obj1, object obj2)
         {
-            GameMain.GetInstance().f_LoadMap();
+            //GameMain.GetInstance().f_LoadMap();
         }
 
         /// <summary>儲存場景資料</summary>
         private void OnClick_SaveMap(GameObject go, object obj1, object obj2)
         {
-            GameMain.GetInstance().f_SaveMap();
+            //GameMain.GetInstance().f_SaveMap();
         }
 
         /// <summary>選擇物件</summary>

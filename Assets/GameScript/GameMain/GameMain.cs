@@ -44,7 +44,7 @@ public class GameMain : MonoBehaviour
     private void f_InitMenuPos(object e)
     {
         if(m_MainMenu != null)
-        m_MainMenu.transform.position = m_MainCamera.transform.position + new Vector3(-0.35f, 0.05f, 0);
+        m_MainMenu.transform.position = m_MainCamera.transform.position + new Vector3(-0.4f, 0.05f, 0);
     }
 
     //void Start()
@@ -108,14 +108,14 @@ public class GameMain : MonoBehaviour
 
 
     #region 地圖功能
-    public void f_LoadMap()
+    public void f_LoadMap(string strFileName)
     {
-        m_MapPool.f_LoadMap();
+        m_MapPool.f_LoadMap(strFileName);
     }
 
-    public void f_SaveMap()
+    public void f_SaveMap(string strFileName)
     {
-        m_MapPool.f_SaveMap();
+        m_MapPool.f_SaveMap(strFileName);
     }
 
     public void f_ResetMap()
@@ -165,16 +165,6 @@ public class GameMain : MonoBehaviour
         m_EditManager.f_Edit();
     }
 
-    public void f_OpenPanel(GameObject Panel)
-    {
-        m_EditManager.f_OpenPanel(Panel);
-    }
-
-    public void f_ClosePanel(GameObject Panel)
-    {
-        m_EditManager.f_ClosePanel(Panel);
-    }
-
     public void f_LeaveEdit(TabButton button)
     {
         m_EditManager.f_LeaveEdit(button);
@@ -217,6 +207,16 @@ public class GameMain : MonoBehaviour
     public EditObjControll f_GetCurEditObj()
     {
         return m_EditManager.f_GetCurEditObj();
+    }
+
+    public void f_SetCurPoint(Transform TextGroup)
+    {
+        m_EditManager.f_SetCurPoint(TextGroup);
+    }
+
+    public void f_SetCurAxis(Transform TextGroup)
+    {
+        m_EditManager.f_SetCurAxis(TextGroup);
     }
 
     /// <summary>

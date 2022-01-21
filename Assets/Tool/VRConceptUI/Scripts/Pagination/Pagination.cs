@@ -15,6 +15,11 @@ namespace Epibyte.ConceptVR
         Dictionary<int, List<PageItem>> pages = new Dictionary<int, List<PageItem>>();
         void Awake()
         {
+            f_Reset();
+        }
+
+        public void f_Reset()
+        {
             numberOfPositions = positions.childCount;
             int page = 0;
             int posIdx = 0;
@@ -134,6 +139,7 @@ namespace Epibyte.ConceptVR
 
                 for (int i = numberOfPositions - 1; i >= 0; i--)
                 {
+                    if(positions.GetChild(i).GetComponentInChildren<Circle>() == null) { continue; }
                     positions.GetChild(i).GetComponentInChildren<Circle>().gameObject.SetActive(false);
                     circlesLeft--;
 

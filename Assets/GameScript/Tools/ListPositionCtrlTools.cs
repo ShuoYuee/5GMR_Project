@@ -58,4 +58,35 @@ public class ListPositionCtrlTools
 
         return tListItem;
     }
+
+    public static void f_Create(ListPositionCtrl tListPositionCtrl, string[] aData)
+    {
+        List<ListItem> aList = new List<ListItem>();
+        ccMathEx.f_CreateChild(tListPositionCtrl.gameObject, aData.Length);
+
+        for (int i = 0; i < aData.Length; i++)
+        {
+            ListItem tListItem = f_AddItem(tListPositionCtrl, i, aData[i], aData[i]);
+            aList.Add(tListItem);
+        }
+
+        tListPositionCtrl.listBoxes = aList.ToArray();
+    }
+
+    private static ListItem f_AddItem(ListPositionCtrl tListPositionCtrl, int iIndex, string strName, string strNum)
+    {
+        GameObject Obj = tListPositionCtrl.transform.GetChild(iIndex).gameObject;
+        ListItem tListItem = Obj.GetComponent<ListItem>();
+        if (tListItem == null)
+        {
+            tListItem = Obj.AddComponent<ListItem>();
+        }
+        tListItem.m_SCData = null;
+        tListItem.m_strName = strName;
+        tListItem.m_strNum = strNum;
+
+        Obj.name = strName;
+
+        return tListItem;
+    }
 }

@@ -37,7 +37,8 @@ public class EditObjControll : MonoBehaviour
 
     #region Private Variables
     private Vector3 _vTargetPos;
-    private float _fPosDir = 0;
+    private float _fPosDir = 0, _fLerpDir = 0;
+    Vector3 originPos;
     Vector3 originSize, minSize, maxSize;
 
     bool isGrabbing = false;
@@ -84,6 +85,7 @@ public class EditObjControll : MonoBehaviour
         StopAll();
         _EditEM = GameMain.GetInstance().m_EditManager._EditEM;
         _fPosDir = Vector3.Distance(transform.position, GameMain.GetInstance().m_MainCamera.transform.position);
+        _fLerpDir = 0;
     }
 
     /// <summary>進行編輯</summary>
@@ -199,24 +201,16 @@ public class EditObjControll : MonoBehaviour
         Vector3 toValue;
         if (1 == direction)
         {
-            //toValue = transform.localScale + (transform.localScale * scaleStep);
-            toValue = transform.localScale + Vector3.one * scaleStep;
+            toValue = transform.localScale + f_ScaleActive() * scaleStep;
         }
         else if (-1 == direction)
         {
-            //toValue = transform.localScale - (transform.localScale * scaleStep);
-            toValue = transform.localScale - Vector3.one * scaleStep;
+            toValue = transform.localScale - f_ScaleActive() * scaleStep;
         }
         else
         {
             return;
         }
-
-        /*toValue = new Vector3(
-            Mathf.Clamp(toValue.x, minSize.x, maxSize.x),
-            Mathf.Clamp(toValue.y, minSize.y, maxSize.y),
-            Mathf.Clamp(toValue.z, minSize.z, maxSize.z)
-        );*/
 
         StartCoroutine(ScaleTo(toValue, 0.2f));
     }
@@ -234,7 +228,6 @@ public class EditObjControll : MonoBehaviour
         StopPosition();
         StopRotating();
         StopScaling();
-        //StopAllCoroutines();
     }
 
     #region 協程變動
@@ -247,7 +240,7 @@ public class EditObjControll : MonoBehaviour
         while (isGrabbing && elapsedTime < duration)
         {
             //物件依照攝影機的方位做移動
-            _fPosDir += _iEditValue;
+            //_fPosDir += _iEditValue;
             //Transform _CameraTrans = GameMain.GetInstance().m_MainCamera.transform;
             //Vector3 vNewPos = _CameraTrans.forward + new Vector3(0, 0, _fPosDir);
             //vNewPos = _CameraTrans.TransformPoint(vNewPos);
@@ -260,6 +253,26 @@ public class EditObjControll : MonoBehaviour
         isGrabbing = false;
     }
 
+    private void f_SetOriginPos()
+    {
+        switch (GameMain.GetInstance().m_EditManager._EditAxitEM)
+        {
+            case EM_EditAxis.AxisX:
+                originPos = transform.position;
+                break;
+
+            case EM_EditAxis.AxisY:
+                originPos = transform.localPosition;
+                break;
+        }
+    }
+
+    #region 位移計算
+    /// <summary>
+    /// 位移方向
+    /// </summary>
+    /// <param name="fdir">位移值</param>
+    /// <returns></returns>
     private Vector3 f_PositionActive(float fdir)
     {
         switch (GameMain.GetInstance().m_EditManager._EditAxitEM)
@@ -276,27 +289,31 @@ public class EditObjControll : MonoBehaviour
         return Vector3.zero;
     }
 
+    /// <summary>位移模式</summary>
     private Vector3 f_PositionPoint()
     {
         Vector3 vPos = Vector3.zero;
+        Transform _CameraTrans = GameMain.GetInstance().m_MainCamera.transform;
+        _fLerpDir += _iEditValue;
+
         switch (GameMain.GetInstance().m_EditManager._EditPointEM)
         {
             case EM_EditPoint.WorldPoint:
-                vPos = transform.position + f_PositionActive(_fPosDir);
+                vPos = transform.position + f_PositionActive(_iEditValue);
                 break;
 
             case EM_EditPoint.LocalPoint:
-                vPos = transform.localPosition + f_PositionActive(_fPosDir);
+                vPos = transform.localPosition + f_PositionActive(_iEditValue);
                 break;
 
             case EM_EditPoint.UserPoint:
-                Transform _CameraTrans = GameMain.GetInstance().m_MainCamera.transform;
-                vPos = _CameraTrans.forward + f_PositionActive(_fPosDir);
-                vPos = _CameraTrans.TransformPoint(vPos);
+                vPos = _CameraTrans.forward + f_PositionActive(_fLerpDir) + new Vector3(0, 0, _fPosDir);
+                //vPos = _CameraTrans.TransformPoint(vPos);
                 break;
         }
         return vPos;
     }
+    #endregion
 
     /// <summary>旋轉值協程變動</summary>
     IEnumerator RotateTo(float toValue, float duration)
@@ -316,6 +333,8 @@ public class EditObjControll : MonoBehaviour
         isRotating = false;
     }
 
+    #region
+    /// <summary>旋轉模式</summary>
     private Vector3 f_RotationActive()
     {
         switch (GameMain.GetInstance().m_EditManager._EditAxitEM)
@@ -332,23 +351,24 @@ public class EditObjControll : MonoBehaviour
         return Vector3.zero;
     }
 
+    /// <summary>
+    /// 旋轉方向
+    /// </summary>
+    /// <param name="toValue">旋轉值</param>
     private void f_RotationPoint(float toValue)
     {
         switch (GameMain.GetInstance().m_EditManager._EditPointEM)
         {
             case EM_EditPoint.WorldPoint:
-                transform.Rotate(f_PositionPoint(), Space.World);
+                transform.RotateAround(transform.position, f_RotationActive(), toValue * Time.deltaTime);
                 break;
 
             case EM_EditPoint.LocalPoint:
-                transform.Rotate(f_PositionPoint(), Space.Self);
-                break;
-
-            case EM_EditPoint.UserPoint:
-                transform.RotateAround(transform.position, f_RotationActive(), toValue * Time.deltaTime);
+                transform.Rotate(f_RotationActive(), toValue * Time.deltaTime);
                 break;
         }
     }
+    #endregion
 
     /// <summary>縮放值協程變動</summary>
     IEnumerator ScaleTo(Vector3 toValue, float duration)
@@ -368,6 +388,26 @@ public class EditObjControll : MonoBehaviour
 
         // Coroutine finishes running.
         isScaling = false;
+    }
+
+    /// <summary>縮放模式</summary>
+    private Vector3 f_ScaleActive()
+    {
+        switch (GameMain.GetInstance().m_EditManager._EditAxitEM)
+        {
+            case EM_EditAxis.AxisX:
+                return Vector3.right;
+
+            case EM_EditAxis.AxisY:
+                return Vector3.up;
+
+            case EM_EditAxis.AxisZ:
+                return Vector3.forward;
+
+            case EM_EditAxis.Free:
+                return Vector3.one;
+        }
+        return Vector3.zero;
     }
     #endregion
     #endregion

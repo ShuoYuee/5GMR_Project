@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR;
+using UnityEngine.UI;
 using Epibyte.ConceptVR;
-using ccU3DEngine;
+using UnityEngine.EventSystems;
 
 public class GameMainTriggerCtrl : MonoBehaviour
 {
     //public float _fLookTimeLimt = 2f;
     private EditObjControll _EditObjControll = null;
     private Interactable _Interactable = null;
+    private InputField _InputField = null;
+    private Button _Button = null;
 
     private GameObject oCurObj = null;
     private EM_TriggerObj _ObjEm = EM_TriggerObj.None;
@@ -21,6 +23,8 @@ public class GameMainTriggerCtrl : MonoBehaviour
         None = 0,
         EditObj = 1,    //編輯物
         Button = 2,     //按鈕
+        InpuUI = 3,     //輸入文字UI
+        ButtonUI = 4,   //按鈕UI
     }
 
     private void Start()
@@ -70,6 +74,19 @@ public class GameMainTriggerCtrl : MonoBehaviour
                 _Interactable = oCurObj.GetComponent<Interactable>();
                 _Interactable.OnHovered();
             }
+            else if(hit.collider.GetComponent<InputField>() != null)
+            {
+                _ObjEm = EM_TriggerObj.InpuUI;
+                oCurObj = hit.collider.gameObject;
+                _InputField = hit.collider.GetComponent<InputField>();
+            }
+            else if(hit.collider.GetComponent<Button>() != null)
+            {
+                _ObjEm = EM_TriggerObj.ButtonUI;
+                oCurObj = hit.collider.gameObject;
+                _Button = hit.collider.GetComponent<Button>();
+            }
+
         }
         #region
         /*else
@@ -231,6 +248,24 @@ public class GameMainTriggerCtrl : MonoBehaviour
                 GameMain.GetInstance().m_EditManager._bSelectEdit = true;
                 _EditObjControll.f_SetEditState(true);
                 _EditObjControll.OnClicked();
+                break;
+
+            case EM_TriggerObj.InpuUI:
+                if (_InputField == null)
+                {
+                    _ObjEm = EM_TriggerObj.None;
+                    return;
+                }
+                _InputField.Select();
+                break;
+
+            case EM_TriggerObj.ButtonUI:
+                if (_Button == null)
+                {
+                    _ObjEm = EM_TriggerObj.None;
+                    return;
+                }
+                _Button.onClick.Invoke();
                 break;
         }
     }

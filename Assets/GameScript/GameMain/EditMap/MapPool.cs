@@ -7,9 +7,16 @@ using UnityEngine;
 public class MapPool : ccBasePool<long>
 {
     private string _strMapFile = "AAA";
-    private string GetMapFilePath()
+
+    private string GetMapFilePath(string strFileName)
     {
-        return Application.streamingAssetsPath + "/" + _strMapFile + ".txt";
+        //return Application.streamingAssetsPath + "/" + _strMapFile + ".txt";
+        return Application.streamingAssetsPath + "/SaveFile/" + strFileName + ".txt";
+    }
+
+    private string GetMapSavePath()
+    {
+        return Application.streamingAssetsPath + "/SaveFile";
     }
 
     public MapPool() : base("MapPoolDT")
@@ -22,13 +29,12 @@ public class MapPool : ccBasePool<long>
         f_Clear();
     }
 
-    /// <summary>
-    /// 加载地图数据
-    /// </summary>
-    public void f_LoadMap()
+    #region LoadMap
+    /// <summary>加载地图数据</summary>
+    public void f_LoadMap(string strFileName)
     {
 
-        string path = GetMapFilePath();
+        string path = GetMapFilePath(strFileName);
         bool bNewMap = true;
 
         MessageBox.DEBUG("f_LoadMap:" + _strMapFile);
@@ -73,12 +79,30 @@ public class MapPool : ccBasePool<long>
         }
     }
 
+    public string[] f_LoadPreviewData()
+    {
+        string[] aData = Directory.GetFileSystemEntries(@GetMapSavePath(), "*.txt");
+        List<string> tData = new List<string>();
+        for(int i = 0; i < aData.Length; i++)
+        {
+            tData.Add(Path.GetFileNameWithoutExtension(aData[i]));
+        }
+        return tData.ToArray();
+    }
+
+    public int f_ChekSaveFileCount()
+    {
+        DirectoryInfo tDirInfo = new DirectoryInfo(GetMapSavePath());
+        return tDirInfo.GetFiles("*.txt").Length;
+    }
+    #endregion
+
     #region SaveMap
 
     /// <summary>
     /// 保存当前编辑的地图信息
     /// </summary>
-    public void f_SaveMap()
+    public void f_SaveMap(string strFileName)
     {
         string strMapData = "";
         List<BasePoolDT<long>> aData = f_GetAll();
@@ -90,7 +114,7 @@ public class MapPool : ccBasePool<long>
             strMapData = strMapData + tMapPoolDT.f_GetInfor() + "\n";
         }
 
-        string path = GetMapFilePath();
+        string path = GetMapFilePath(strFileName);
        
         FileStream tFileStream = File.Open(path, FileMode.OpenOrCreate);
 
@@ -98,8 +122,7 @@ public class MapPool : ccBasePool<long>
         tFileStream.Write(aBuf, 0, aBuf.Length);
         tFileStream.Close();
 
-        MessageBox.DEBUG("f_Save:" + _strMapFile);
-
+        MessageBox.DEBUG("f_Save:" + strFileName);
     }
 
     #endregion

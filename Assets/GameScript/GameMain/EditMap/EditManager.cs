@@ -74,6 +74,18 @@ public class EditManager
         }
     }
 
+    public void f_EditExit()
+    {
+        f_SetEditBtn();
+        if (_CurEditObjControll != null)
+        {
+            _CurEditObjControll.f_SetEditState(false);
+        }
+
+        _bSelectEdit = false;
+        _CurEditObjControll = null;
+    }
+
     /// <summary>點擊按鈕</summary>
     public void f_LeaveEdit(TabButton button)
     {

@@ -84,16 +84,10 @@ namespace GameLogic
             //將資料一一賦予給實例化的物件
             for(int i = 0; i < tMapObj.Count; i++)
             {
-                f_CheckIgnore(tMapObj[i]);
+                if (tMapObj[i].GetComponent<LoadMapBtn>() != null) { return; }
                 MenuObject tMenuObject = tMapObj[i].AddComponent<MenuObject>();
                 tMenuObject.f_InitMenuObj(tData[i]);
             }
-        }
-
-        /// <summary>無視物件初始化</summary>
-        private void f_CheckIgnore(GameObject e)
-        {
-            if (e.GetComponent<LoadMapBtn>() != null) { return; }
         }
         #endregion
 

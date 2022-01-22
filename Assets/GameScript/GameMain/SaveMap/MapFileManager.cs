@@ -27,6 +27,7 @@ public class MapFileManager : MonoBehaviour
     public void f_Reset()
     {
         if (_Pagination == null) { return; }
+        f_ClearMapBtn();
         List<GameObject> oMapObj = new List<GameObject>();
         string[] aData = GameMain.GetInstance().m_MapPool.f_LoadPreviewData();
         for(int i = 0; i < aData.Length; i++)
@@ -59,6 +60,15 @@ public class MapFileManager : MonoBehaviour
             oData[i].transform.localScale = _oFileBtn.transform.localScale;
             oData[i].transform.localPosition = Vector3.zero;
         }
+    }
+
+    private void f_ClearMapBtn()
+    {
+        for(int i = 0; i < _Pagination.positions.childCount; i++)
+        {
+            ccMathEx.f_CreateChild(_Pagination.positions.GetChild(i).gameObject, 0);
+        }
+        
     }
 
     /// <summary>

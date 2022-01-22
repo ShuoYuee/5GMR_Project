@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.XR;
+using ccU3DEngine;
 
 public class GameInputCtrl : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GameInputCtrl : MonoBehaviour
     public Transform Player;
     /// <summary>按鈕間隔時間</summary>
     float _fBtnTime = 0f;
+    bool _bBtnTime = false;
 
     /// <summary>輸入模式</summary>
     public static ControlState State = ControlState.PC;
@@ -20,7 +22,7 @@ public class GameInputCtrl : MonoBehaviour
     
     private void Update()
     {
-        _fBtnTime += Time.deltaTime;//按鈕間隔時間
+        //_fBtnTime += Time.deltaTime;//按鈕間隔時間
     }
 
     private void FixedUpdate()
@@ -50,11 +52,17 @@ public class GameInputCtrl : MonoBehaviour
         }
     }
 
+    private void f_InputCooling(object e)
+    {
+        _bBtnTime = false;
+    }
+
     #region 一般輸入
     /// <summary>一般輸入</summary>
     private void f_InputKey()
     {
-        if (_fBtnTime < 0.1f) { return; }
+        //if (_fBtnTime < 0.1f) { return; }
+        if (_bBtnTime) { return; }
         switch (State)
         {
             case ControlState.VR:
@@ -70,7 +78,7 @@ public class GameInputCtrl : MonoBehaviour
     /// <summary>VR輸入</summary>
     private void f_VRInputKey()
     {
-        _fBtnTime = 0;
+        _bBtnTime = true;
         if (!_Device[0].isValid || !_Device[1].isValid)
         {
             _Device[0] = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
@@ -90,8 +98,9 @@ public class GameInputCtrl : MonoBehaviour
         if (GameMain.GetInstance().m_EditManager._bEdit) { return; }
         if (Input.GetKey(KeyCode.A))//選取物件用
         {
+            _bBtnTime = true;
             OnClickCtrlEvent(0);
-            _fBtnTime = 0;
+            ccTimeEvent.GetInstance().f_RegEvent(0.2f, false, null, f_InputCooling);
         }
     }
     #endregion
@@ -140,10 +149,11 @@ public class GameInputCtrl : MonoBehaviour
             }
         }
 
-        if (_fBtnTime < 0.2f) { return; }
+        if (_bBtnTime) { return; }
         if (_Device[0].TryGetFeatureValue(CommonUsages.triggerButton, out triggerBtnAction) && triggerBtnAction)//移動座標用
         {
-            _fBtnTime = 0;
+            _bBtnTime = true;
+            ccTimeEvent.GetInstance().f_RegEvent(0.2f, false, null, f_InputCooling);
             OnClickCtrlEvent(0);
         }
     }
@@ -153,25 +163,27 @@ public class GameInputCtrl : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.D))//拉前、旋轉、放大用
         {
+            _bBtnTime = true;
             OnClickBtnOne(1);
-            _fBtnTime = 0;
+            ccTimeEvent.GetInstance().f_RegEvent(0.2f, false, null, f_InputCooling);
         }
         else if (Input.GetKey(KeyCode.S))//退後、旋轉、縮小用
         {
+            _bBtnTime = true;
             OnClickBtnTwo(-1);
-            _fBtnTime = 0;
+            ccTimeEvent.GetInstance().f_RegEvent(0.2f, false, null, f_InputCooling);
         }
         else if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.S))//鬆開按鈕
         {
             OnClickBtnOne(0);
         }
 
-        _fBtnTime += Time.deltaTime;//按鈕間隔時間
-        if (_fBtnTime < 0.01f) { return; }
+        //_fBtnTime += Time.deltaTime;//按鈕間隔時間
         if (Input.GetKeyUp(KeyCode.A))//移動座標用
         {
+            _bBtnTime = true;
             OnClickCtrlEvent(0);
-            _fBtnTime = 0;
+            ccTimeEvent.GetInstance().f_RegEvent(0.2f, false, null, f_InputCooling);
         }
     }
     #endregion

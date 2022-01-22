@@ -100,6 +100,11 @@ public class GameMain : MonoBehaviour
         m_EditManager.f_Edit();
     }
 
+    public void f_ExitEdit()
+    {
+        m_EditManager.f_EditExit();
+    }
+
     /// <summary>
     /// 點選按鈕
     /// </summary>

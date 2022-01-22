@@ -65,7 +65,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
             {
                 _ObjEm = EM_TriggerObj.EditObj;
                 oCurObj = hit.collider.gameObject;
-                _EditObjControll = oCurObj.GetComponent<EditObjControll>();
+                //_EditObjControll = oCurObj.GetComponent<EditObjControll>();
             }
 
             else if (!_bLookTime && hit.collider.GetComponent<Interactable>() != null)//按鈕物件
@@ -149,6 +149,16 @@ public class GameMainTriggerCtrl : MonoBehaviour
 
             case EM_TriggerObj.EditObj:
                 if (!GameMain.GetInstance().m_EditManager._bEdit) { return; }
+                if (_EditObjControll != null && _EditObjControll.gameObject != oCurObj)
+                {
+                    _EditObjControll.f_SetEditState(false);
+                    _EditObjControll = oCurObj.GetComponent<EditObjControll>();
+                }
+                else
+                {
+                    _EditObjControll = oCurObj.GetComponent<EditObjControll>();
+                }
+
                 if (_EditObjControll == null)
                 {
                     _ObjEm = EM_TriggerObj.None;

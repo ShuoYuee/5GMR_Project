@@ -9,6 +9,7 @@ using ccU3DEngine;
 public class EditObjControll : MonoBehaviour
 {
     private Animator _Animator;
+    private List<Material> _Material = new List<Material>();
 
     /// <summary>場景資料(儲存時所用的)</summary>
     private MapPoolDT _MapPoolDT;
@@ -87,20 +88,7 @@ public class EditObjControll : MonoBehaviour
         _fPosDir = Vector3.Distance(transform.position, GameMain.GetInstance().m_MainCamera.transform.position);
         _fLerpDir = 0;
 
-        if (GetComponentInChildren<MeshRenderer>() != null)
-        {
-            foreach(MeshRenderer Renderer in GetComponentsInChildren<MeshRenderer>())
-            {
-                Renderer.material = GameMain.GetInstance()._SelectMaterial;
-            }
-        }
-        else if (GetComponentInChildren<SkinnedMeshRenderer>() != null)
-        {
-            foreach (SkinnedMeshRenderer Renderer in GetComponentsInChildren<SkinnedMeshRenderer>())
-            {
-                Renderer.material = GameMain.GetInstance()._SelectMaterial;
-            }
-        }
+        f_ChangeMaterial(GameMain.GetInstance()._SelectMaterial);
     }
 
     /// <summary>進行編輯</summary>
@@ -127,6 +115,47 @@ public class EditObjControll : MonoBehaviour
     {
         StopAll();
         _EditEM = EM_EditState.None;
+        f_ChangeMaterial(_Material);
+    }
+
+    private void f_ChangeMaterial(Material material)
+    {
+        if (material == null) { return; }
+        if (GetComponentInChildren<MeshRenderer>() != null)
+        {
+            foreach (MeshRenderer Renderer in GetComponentsInChildren<MeshRenderer>())
+            {
+                Renderer.material = material;
+            }
+        }
+        else if (GetComponentInChildren<SkinnedMeshRenderer>() != null)
+        {
+            foreach (SkinnedMeshRenderer Renderer in GetComponentsInChildren<SkinnedMeshRenderer>())
+            {
+                Renderer.material = material;
+            }
+        }
+    }
+
+    private void f_ChangeMaterial(List<Material> material)
+    {
+        if (material == null) { return; }
+        if (GetComponentInChildren<MeshRenderer>() != null)
+        {
+            MeshRenderer[] tChilds = GetComponentsInChildren<MeshRenderer>();
+            for(int i = 0; i < _Material.Count; i++)
+            {
+                tChilds[i].material = material[i];
+            }
+        }
+        else if (GetComponentInChildren<SkinnedMeshRenderer>() != null)
+        {
+            SkinnedMeshRenderer[] tChilds = GetComponentsInChildren<SkinnedMeshRenderer>();
+            for (int i = 0; i < _Material.Count; i++)
+            {
+                tChilds[i].material = material[i];
+            }
+        }
     }
     #endregion
 
@@ -134,6 +163,21 @@ public class EditObjControll : MonoBehaviour
     {
         _Animator = GetComponent<Animator>();
         _strAnimGroup = ccMath.f_String2ArrayString(_MapPoolDT.m_CharacterDT.szAnimGroup, ";");
+
+        if (GetComponentInChildren<MeshRenderer>() != null)
+        {
+            foreach (MeshRenderer Renderer in GetComponentsInChildren<MeshRenderer>())
+            {
+                _Material.Add(Renderer.material);
+            }
+        }
+        else if (GetComponentInChildren<SkinnedMeshRenderer>() != null)
+        {
+            foreach (SkinnedMeshRenderer Renderer in GetComponentsInChildren<SkinnedMeshRenderer>())
+            {
+                _Material.Add(Renderer.material);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -161,7 +205,7 @@ public class EditObjControll : MonoBehaviour
             return;
         }
 
-        StartCoroutine(PositionTo(0.2f));
+        StartCoroutine(PositionTo(1f));
     }
 
     /// <summary>停止編輯座標</summary>
@@ -255,10 +299,6 @@ public class EditObjControll : MonoBehaviour
         while (isGrabbing && elapsedTime < duration)
         {
             //物件依照攝影機的方位做移動
-            //_fPosDir += _iEditValue;
-            //Transform _CameraTrans = GameMain.GetInstance().m_MainCamera.transform;
-            //Vector3 vNewPos = _CameraTrans.forward + new Vector3(0, 0, _fPosDir);
-            //vNewPos = _CameraTrans.TransformPoint(vNewPos);
             transform.position = f_PositionPoint();
 
             elapsedTime += Time.deltaTime;
@@ -314,15 +354,15 @@ public class EditObjControll : MonoBehaviour
         switch (GameMain.GetInstance().m_EditManager._EditPointEM)
         {
             case EM_EditPoint.WorldPoint:
-                vPos = transform.position + f_PositionActive(_iEditValue);
+                vPos = transform.position + f_PositionActive(_iEditValue * Time.deltaTime);
                 break;
 
             case EM_EditPoint.LocalPoint:
-                vPos = transform.localPosition + f_PositionActive(_iEditValue);
+                vPos = transform.localPosition + f_PositionActive(_iEditValue * Time.deltaTime);
                 break;
 
             case EM_EditPoint.UserPoint:
-                vPos = _CameraTrans.forward + f_PositionActive(_fLerpDir) + new Vector3(0, 0, _fPosDir);
+                vPos = _CameraTrans.forward + f_PositionActive(_fLerpDir * Time.deltaTime) + new Vector3(0, 0, _fPosDir);
                 //vPos = _CameraTrans.TransformPoint(vPos);
                 break;
         }

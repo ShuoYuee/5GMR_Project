@@ -37,7 +37,7 @@ public class MapPool : ccBasePool<long>
         string path = GetMapFilePath(strFileName);
         bool bNewMap = true;
 
-        MessageBox.DEBUG("f_LoadMap:" + _strMapFile);
+        MessageBox.DEBUG("f_LoadMap:" + strFileName);
         if (!File.Exists(path))
         {
             bNewMap = true;

@@ -88,6 +88,7 @@ public class EditObjControll : MonoBehaviour
         _fPosDir = Vector3.Distance(transform.position, GameMain.GetInstance().m_MainCamera.transform.position);
         _fLerpDir = 0;
 
+        EditDisplay.GetInstance().f_StartUpdate(transform);
         f_ChangeMaterial(GameMain.GetInstance()._SelectMaterial);
     }
 
@@ -115,9 +116,14 @@ public class EditObjControll : MonoBehaviour
     {
         StopAll();
         _EditEM = EM_EditState.None;
+        EditDisplay.GetInstance().f_StopUpdate();
         f_ChangeMaterial(_Material);
     }
 
+    /// <summary>
+    /// 變更單一材質
+    /// </summary>
+    /// <param name="material">變更材質</param>
     private void f_ChangeMaterial(Material material)
     {
         if (material == null) { return; }
@@ -137,6 +143,10 @@ public class EditObjControll : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 變更複數材質
+    /// </summary>
+    /// <param name="material">變更材質</param>
     private void f_ChangeMaterial(List<Material> material)
     {
         if (material == null) { return; }
@@ -164,6 +174,7 @@ public class EditObjControll : MonoBehaviour
         _Animator = GetComponent<Animator>();
         _strAnimGroup = ccMath.f_String2ArrayString(_MapPoolDT.m_CharacterDT.szAnimGroup, ";");
 
+        //取得編輯物材質
         if (GetComponentInChildren<MeshRenderer>() != null)
         {
             foreach (MeshRenderer Renderer in GetComponentsInChildren<MeshRenderer>())
@@ -308,6 +319,7 @@ public class EditObjControll : MonoBehaviour
         isGrabbing = false;
     }
 
+    /// <summary>設定初始座標</summary>
     private void f_SetOriginPos()
     {
         switch (GameMain.GetInstance().m_EditManager._EditAxitEM)

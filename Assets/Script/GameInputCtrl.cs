@@ -19,11 +19,6 @@ public class GameInputCtrl : MonoBehaviour
     public static ControlState State = ControlState.PC;
     /// <summary>VR輸入裝備</summary>
     private InputDevice[] _Device = new InputDevice[2];
-    
-    private void Update()
-    {
-        //_fBtnTime += Time.deltaTime;//按鈕間隔時間
-    }
 
     private void FixedUpdate()
     {
@@ -52,6 +47,7 @@ public class GameInputCtrl : MonoBehaviour
         }
     }
 
+    /// <summary>輸入冷卻時間</summary>
     private void f_InputCooling(object e)
     {
         _bBtnTime = false;
@@ -173,7 +169,7 @@ public class GameInputCtrl : MonoBehaviour
             OnClickBtnTwo(-1);
             ccTimeEvent.GetInstance().f_RegEvent(0.2f, false, null, f_InputCooling);
         }
-        else if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.S))//鬆開按鈕
+        else//鬆開按鈕
         {
             OnClickBtnOne(0);
         }

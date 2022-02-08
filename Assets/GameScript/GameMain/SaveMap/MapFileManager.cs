@@ -62,6 +62,7 @@ public class MapFileManager : MonoBehaviour
         }
     }
 
+    /// <summary>清空列表</summary>
     private void f_ClearMapBtn()
     {
         for(int i = 0; i < _Pagination.positions.childCount; i++)

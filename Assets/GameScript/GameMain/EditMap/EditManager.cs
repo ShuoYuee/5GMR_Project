@@ -74,6 +74,7 @@ public class EditManager
         }
     }
 
+    /// <summary>點選離開編輯按鈕</summary>
     public void f_EditExit()
     {
         f_SetEditBtn();

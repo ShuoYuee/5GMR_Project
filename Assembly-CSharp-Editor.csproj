@@ -62,6 +62,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Components\Support\PlayMaker\Editor\AVProVideoActionHeaderPropertyDrawer.cs" />
+    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Editor\ApplyToMaterialEditor.cs" />
+    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Editor\ApplyToMeshEditor.cs" />
+    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Editor\AudioOutputEditor.cs" />
+    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Editor\DisplayUGUIEditor.cs" />
+    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Editor\MediaPlayerEditor.cs" />
+    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Editor\PlaylistMediaPlayerEditor.cs" />
+    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Editor\PostProcessBuild.cs" />
+    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Editor\SupportWindow.cs" />
+    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Editor\UpdateStereoMaterialEditor.cs" />
     <Compile Include="Assets\ThirdParty\DOTween\DOTweenPro\Editor\DOTweenAnimationInspector.cs" />
     <Compile Include="Assets\Tool\VRConceptUI\Scripts\Editor\DeviceControlWindow.cs" />
     <Compile Include="Assets\Tool\VRConceptUI\Scripts\Editor\ScaleConstraintsDrawer.cs" />

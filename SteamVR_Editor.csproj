@@ -679,11 +679,11 @@
     <Reference Include="Boo.Lang">
       <HintPath>E:/Unity2019.4.24f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>E:/UnityProjects/MR/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>E:/UnityProjects/MR/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>E:/UnityProjects/MR/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>E:/UnityProjects/MR/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>

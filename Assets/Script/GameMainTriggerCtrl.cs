@@ -6,6 +6,8 @@ using Epibyte.ConceptVR;
 
 public class GameMainTriggerCtrl : MonoBehaviour
 {
+    public Transform _Focus = null;
+
     //public float _fLookTimeLimt = 2f;
     private EditObjControll _EditObjControll = null;
     private Interactable _Interactable = null;
@@ -65,7 +67,6 @@ public class GameMainTriggerCtrl : MonoBehaviour
             {
                 _ObjEm = EM_TriggerObj.EditObj;
                 oCurObj = hit.collider.gameObject;
-                //_EditObjControll = oCurObj.GetComponent<EditObjControll>();
             }
 
             else if (!_bLookTime && hit.collider.GetComponent<Interactable>() != null)//按鈕物件
@@ -81,13 +82,25 @@ public class GameMainTriggerCtrl : MonoBehaviour
                 oCurObj = hit.collider.gameObject;
                 _InputField = hit.collider.GetComponent<InputField>();//按鈕UI物件
             }
-            else if(hit.collider.GetComponent<Button>() != null)
+            else if(hit.collider.GetComponent<Button>() != null)//UI按鈕
             {
                 _ObjEm = EM_TriggerObj.ButtonUI;
                 oCurObj = hit.collider.gameObject;
                 _Button = hit.collider.GetComponent<Button>();
             }
 
+            if (_Focus != null)//設定Focus位置
+            {
+                _Focus.position = hit.point;
+            }
+
+        }
+        else
+        {
+            if (_Focus != null)//設定Focus位置
+            {
+                _Focus.position = transform.forward * 20;
+            }
         }
         #region
         /*else
@@ -103,7 +116,6 @@ public class GameMainTriggerCtrl : MonoBehaviour
 
             _fLookTime = 0;
             _bLookTime = false;
-            glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_GameAnchorEnd);
             return;
         }
 
@@ -124,7 +136,6 @@ public class GameMainTriggerCtrl : MonoBehaviour
                         _Interactable.OnClicked();
                         break;
                 }
-                glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_GameAnchorEnd);
             }
         }*/
         #endregion

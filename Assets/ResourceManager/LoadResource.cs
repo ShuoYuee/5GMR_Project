@@ -13,13 +13,13 @@ public class LoadResource
     //public delegate void Callback_LoadHttp(HttpDataDT eHttpDataDT);
 
     /// <summary>
-    /// 资源加载完回调
+    /// 資源加載完回調
     /// </summary>
     private ccCallback _hCallBack;
     /// <summary>
-    /// 资源开始加载
+    /// 資源開始加載
     /// </summary>
-    /// <param name="hCallBack">资源加载完函数回调</param>
+    /// <param name="hCallBack">資源加載完回調</param>
     public void f_StartLoad(ccCallback hCallBack)
     {
         _hCallBack = hCallBack;

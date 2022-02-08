@@ -30,7 +30,7 @@ public class MapPool : ccBasePool<long>
     }
 
     #region LoadMap
-    /// <summary>加载地图数据</summary>
+    /// <summary>加載地圖數據</summary>
     public void f_LoadMap(string strFileName)
     {
 
@@ -79,6 +79,7 @@ public class MapPool : ccBasePool<long>
         }
     }
 
+    /// <summary>加載預覽資料</summary>
     public string[] f_LoadPreviewData()
     {
         string[] aData = Directory.GetFileSystemEntries(@GetMapSavePath(), "*.txt");
@@ -90,6 +91,7 @@ public class MapPool : ccBasePool<long>
         return tData.ToArray();
     }
 
+    /// <summary>確認存檔數量</summary>
     public int f_ChekSaveFileCount()
     {
         DirectoryInfo tDirInfo = new DirectoryInfo(GetMapSavePath());
@@ -100,7 +102,7 @@ public class MapPool : ccBasePool<long>
     #region SaveMap
 
     /// <summary>
-    /// 保存当前编辑的地图信息
+    /// 保存當前編輯的地圖訊息
     /// </summary>
     public void f_SaveMap(string strFileName)
     {
@@ -168,8 +170,8 @@ public class MapPool : ccBasePool<long>
     /// <summary>
     /// 創建物件進地圖
     /// </summary>
-    /// <param name="iId"></param>
-    /// <param name="tCharacterDT"></param>
+    /// <param name="iId">物件ID</param>
+    /// <param name="tCharacterDT">物件資料</param>
     /// <returns></returns>
     private EditObjControll AddObj(long iId, CharacterDT tCharacterDT)
     {           
@@ -196,7 +198,7 @@ public class MapPool : ccBasePool<long>
     //}
 
     /// <summary>
-    /// 外部调用删除编辑场景里物件操作
+    /// 外部調用刪除編輯場景裡物件操作
     /// </summary>
     /// <param name="iRoleId"></param>
     public void f_DeleteObj(long iRoleId)

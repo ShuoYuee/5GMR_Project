@@ -16,7 +16,9 @@ public class GameMain : MonoBehaviour
     /// <summary>編輯管理器</summary>
     public EditManager m_EditManager = new EditManager();
 
+    /// <summary>選擇物材質</summary>
     public Material _SelectMaterial;
+    /// <summary>主父物件</summary>
     public GameObject m_GameTable;
 
     private static GameMain _Instance = null;
@@ -92,17 +94,20 @@ public class GameMain : MonoBehaviour
     public void f_SetEditBtn(string EditTpye)
     {
         m_EditManager.f_SetEditBtn(EditTpye);
+        EditDisplay.GetInstance().f_SetPanel(true);
     }
 
-    /// <summary>點選編輯按鈕</summary>
+    /// <summary>點選開始編輯按鈕</summary>
     public void f_Edit()
     {
         m_EditManager.f_Edit();
     }
 
+    /// <summary>點選離開編輯按鈕</summary>
     public void f_ExitEdit()
     {
         m_EditManager.f_EditExit();
+        EditDisplay.GetInstance().f_SetPanel(false);
     }
 
     /// <summary>

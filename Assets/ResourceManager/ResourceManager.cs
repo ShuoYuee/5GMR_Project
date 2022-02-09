@@ -143,29 +143,59 @@ public class ResourceManager
         return tAudioClip;
     }
 
+    /// <summary>
+    /// 載入圖片檔
+    /// </summary>
+    /// <param name="strAB">AB資源名</param>
+    /// <param name="strRes">物件名</param>
+    /// <returns></returns>
     public Sprite f_LoadSpriteForAB(string strAB, string strRes)
     {
         Texture2D Img = AssetLoader.LoadAsset(strAB, strRes) as Texture2D;
         return Sprite.Create(Img, new Rect(0, 0, Img.width, Img.height), Vector2.zero);
     }
 
-
+    /// <summary>
+    /// 創建物件
+    /// </summary>
+    /// <param name="strABBundle">AB資源名</param>
+    /// <param name="strAB">物件名</param>
+    /// <returns></returns>
     public GameObject f_CreateABObj(string strABBundle, string strAB)
     {
         //GameObject oModel = AssetLoader.LoadAsset(strAB + ".bundle", strAB) as GameObject;
         GameObject oModel = AssetLoader.LoadAsset(strABBundle, strAB) as GameObject;
         GameObject tObj = GameObject.Instantiate(oModel);
+
+        //座標歸零
         tObj.transform.position = Vector3.zero;
-
-        //Quaternion tQuaternion = Quaternion.Euler(v3Angle.x, v3Angle.y, v3Angle.z);
         tObj.transform.rotation = new Quaternion(0, 0, 0, 0);
-
         tObj.transform.localScale = new Vector3(1, 1, 1);
         return tObj;
     }
 
+    /// <summary>
+    /// 載入物件
+    /// </summary>
+    /// <param name="strAB">AB資源名</param>
+    /// <param name="strRes">物件名</param>
+    /// <returns></returns>
+    public GameObject f_GetABObj(string strAB, string strRes)
+    {
+        GameObject oModel = AssetLoader.LoadAsset(strAB, strRes) as GameObject;
+        return oModel;
+    }
+
+    /// <summary>
+    /// 載入動畫機
+    /// </summary>
+    /// <param name="strAB">AB資源名</param>
+    /// <param name="strRes">物件名</param>
+    /// <returns></returns>
+    public RuntimeAnimatorController f_CreateABAnimator(string strAB, string strRes)
+    {
+        RuntimeAnimatorController tController = AssetLoader.LoadAsset(strAB, strRes) as RuntimeAnimatorController;
+        return tController;
+    }
     #endregion
-
-
-
 }

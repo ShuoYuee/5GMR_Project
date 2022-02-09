@@ -30,6 +30,29 @@ public class MapPoolDT: BasePoolDT<long>
         m_GameObject = tGameObject;
         iId = iRoleId;
         m_CharacterDT = tCharacterDT;
+
+        //替物件裝上碰撞
+        if (!tGameObject.TryGetComponent(out Collider tCollider))
+        {
+            CapsuleCollider collider = tGameObject.AddComponent<CapsuleCollider>();
+            collider.radius = tCharacterDT.fBodySize;
+            collider.height = tCharacterDT.fHeight;
+        }
+
+        //替物件裝上動畫機
+        if (!tGameObject.TryGetComponent(out Animator oAnimator))
+        {
+            Animator tAnimator = tGameObject.AddComponent<Animator>();
+            string[] strAnimator = ccMath.f_String2ArrayString(tCharacterDT.szAI, ";");
+            if (strAnimator.Length == 2)
+            {
+                tAnimator.runtimeAnimatorController = glo_Main.GetInstance().m_ResourceManager.f_CreateABAnimator(strAnimator[0], strAnimator[1]);
+            }
+            else
+            {
+                MessageBox.ASSERT("動畫機載入出錯：" + tCharacterDT.iId);
+            }
+        }
     }
 
     public void f_UpdateInfor()

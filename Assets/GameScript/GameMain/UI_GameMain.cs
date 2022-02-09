@@ -56,7 +56,7 @@ namespace GameLogic
                     case 1:
                         oData = AssetLoader.LoadAsset(aData.szResName + ".bundle", aData.szDisplayAB) as GameObject;
                         break;
-                    default:
+                    default:                        
                         oData = AssetLoader.LoadAsset(aData.szResName + ".bundle", aData.szName) as GameObject;
                         break;
                 }
@@ -94,7 +94,7 @@ namespace GameLogic
         private void CreateTeamItem()
         {
             List<NBaseSCDT> aData = glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetAll();//讀取物件圖示資料
-            ListPositionCtrlTools.f_Create(_listPosCtrl, aData);//創建物件圖示
+            //ListPositionCtrlTools.f_Create(_listPosCtrl, aData);//創建物件圖示
         }
 
         protected override void On_Open(object e)

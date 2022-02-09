@@ -5,6 +5,7 @@ using Epibyte.ConceptVR;
 
 public class GameMain : MonoBehaviour
 {
+    #region 管理物件
     /// <summary>地圖物件池</summary>
     public MapPool m_MapPool = new MapPool();
     /// <summary>主攝影機</summary>
@@ -15,6 +16,9 @@ public class GameMain : MonoBehaviour
     public Pagination m_Pagination;
     /// <summary>編輯管理器</summary>
     public EditManager m_EditManager = new EditManager();
+
+    public GameObject[] m_InitGameObj;
+    #endregion
 
     /// <summary>選擇物材質</summary>
     public Material _SelectMaterial;
@@ -36,6 +40,22 @@ public class GameMain : MonoBehaviour
 
         ccTimeEvent.GetInstance().f_RegEvent(0.3f, true, null, f_UpdateMenuPos);
     }
+
+    /*private void Start()
+    {
+        iTimeId = ccTimeEvent.GetInstance().f_RegEvent(1f, false, null, f_InitGameObj);
+    }
+
+    int iTimeId = 0;
+    private void f_InitGameObj(object e)
+    {
+        ccTimeEvent.GetInstance().f_UnRegEvent(iTimeId);
+        if (m_InitGameObj == null) { return; }
+        for (int i = 0; i < m_InitGameObj.Length; i++)
+        {
+            m_MapPool.f_ManualAddObj(m_InitGameObj[i]);
+        }
+    }*/
 
     /// <summary>更新菜單位置</summary>
     private void f_UpdateMenuPos(object e)

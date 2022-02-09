@@ -33,6 +33,8 @@ public class GloData// : MonoBehaviour
 
     public static string glo_ProName = "MR_Edit";
     public static string glo_strHttpServerIP = "123.207.87.187";
+    //public static string glo_ProName = "MR_Edit5";
+    //public static string glo_strHttpServerIP = "192.168.0.182";
 
 #elif Local
     /// <summary>

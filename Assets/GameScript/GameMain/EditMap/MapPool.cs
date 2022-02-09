@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class MapPool : ccBasePool<long>
 {
-    private string _strMapFile = "AAA";
+    //private string _strMapFile = "AAA";
 
     private string GetMapFilePath(string strFileName)
     {
@@ -163,8 +163,7 @@ public class MapPool : ccBasePool<long>
         //設定物件的位置、旋轉值、縮放值
         tEditObjControll.gameObject.transform.position = new Vector3(ccMath.atof(aData[2]), ccMath.atof(aData[3]), ccMath.atof(aData[4]));
         tEditObjControll.gameObject.transform.rotation = new Quaternion(ccMath.atof(aData[5]), ccMath.atof(aData[6]), ccMath.atof(aData[7]), ccMath.atof(aData[8]));
-        tEditObjControll.gameObject.transform.localScale = new Vector3(ccMath.atof(aData[9]), ccMath.atof(aData[10]), ccMath.atof(aData[11]));
-
+        tEditObjControll.gameObject.transform.localScale = new Vector3(ccMath.atof(aData[9]), ccMath.atof(aData[10]), ccMath.atof(aData[11]));        
     }
 
     /// <summary>
@@ -176,16 +175,27 @@ public class MapPool : ccBasePool<long>
     private EditObjControll AddObj(long iId, CharacterDT tCharacterDT)
     {           
         GameObject tObj = glo_Main.GetInstance().m_ResourceManager.f_CreateABObj(tCharacterDT.szResName + ".bundle", tCharacterDT.szName);
-        
         EditObjControll tEditObjControll = tObj.AddComponent<EditObjControll>();
 
+        /*//設定物件地圖資料
         MapPoolDT tMapPoolDT = new MapPoolDT();
         tMapPoolDT.f_Set(iId, tObj, tCharacterDT);
-
+        //儲存物件地圖資料
         f_Save(tMapPoolDT);
-        tEditObjControll.f_Save(tMapPoolDT);
+        tEditObjControll.f_Save(tMapPoolDT);*/
+        f_SaveData(iId, tCharacterDT, tEditObjControll);
 
         return tEditObjControll;
+    }
+
+    private void f_SaveData(long iId, CharacterDT tCharacterDT, EditObjControll tEditObj)
+    {
+        //設定物件地圖資料
+        MapPoolDT tMapPoolDT = new MapPoolDT();
+        tMapPoolDT.f_Set(iId, tEditObj.gameObject, tCharacterDT);
+        //儲存物件地圖資料
+        f_Save(tMapPoolDT);
+        tEditObj.f_Save(tMapPoolDT);
     }
 
     //public bool f_CheckIsDelete(CreateABAction tCreateABAction)
@@ -216,6 +226,57 @@ public class MapPool : ccBasePool<long>
 
     #endregion
 
+    #region 增加物件
+    public void f_ManualAddObj(GameObject tObj)
+    {
+        MeshFilter[] tMeshes = tObj.GetComponentsInChildren<MeshFilter>();
+        CharacterDT tCharacterDT = null;
+        if (tMeshes.Length > 0)
+        {
+            tCharacterDT = f_FindSC(tMeshes);
+        }
+        if (tCharacterDT != null)
+        {
+            GameObject oObj = f_AddObj(tCharacterDT).gameObject;
 
+            oObj.transform.position = tObj.transform.position;
+            oObj.transform.localEulerAngles = tObj.transform.localEulerAngles;
+            oObj.transform.localScale = tObj.transform.localScale;
+            GameObject.Destroy(tObj);
+            MessageBox.DEBUG("讀取現場物件 : " + tCharacterDT.iId);
+        }
+    }
 
+    private CharacterDT f_FindSC(MeshFilter[] tMeshes)
+    {
+        List<NBaseSCDT> tData = glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetAll();
+        CharacterDT tCharacterDT = null;
+        MeshFilter[] aMeshes = null;
+
+        for(int i = 0; i < tData.Count; i++)
+        {
+            tCharacterDT = (CharacterDT)tData[i];
+            GameObject oModel = glo_Main.GetInstance().m_ResourceManager.f_GetABObj(tCharacterDT.szName + ".bundle", tCharacterDT.szResName);
+            aMeshes = oModel.GetComponentsInChildren<MeshFilter>();
+
+            bool bCheck = false;
+            for(int j = 0; j < tMeshes.Length; j++)
+            {
+                if (j >= aMeshes.Length) { break; }
+                if (tMeshes[j].sharedMesh.name != aMeshes[j].sharedMesh.name) { break; }
+                if (j == tMeshes.Length - 1)
+                {
+                    bCheck = true;
+                }
+            }
+
+            if (bCheck)
+            {
+                return (CharacterDT)tData[i];
+            }
+        }
+
+        return null;
+    }
+    #endregion
 }

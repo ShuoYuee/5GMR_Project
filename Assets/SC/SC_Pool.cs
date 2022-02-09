@@ -21,7 +21,6 @@ public class SC_Pool
     public GameControllSC m_GameControllSC = new GameControllSC();  
     public GamePlotSC m_GamePlotSC = new GamePlotSC();
     public GoodsSC m_GoodsSC = new GoodsSC();
-    //public GameTennisSC m_GameTennisSC = new GameTennisSC();
 
     List<NBaseSC> _aSCList = new List<NBaseSC>();
     public void f_LoadSC(byte[] bData)
@@ -37,7 +36,6 @@ public class SC_Pool
         //_aSCList.Add(m_GameControllSC);
         //_aSCList.Add(m_GamePlotSC);
         //_aSCList.Add(m_GoodsSC);
-        //_aSCList.Add(m_GameTennisSC);
 
 
         ///////////////////////////////////////////////////////////////

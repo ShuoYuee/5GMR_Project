@@ -89,18 +89,12 @@ public class GameMainTriggerCtrl : MonoBehaviour
                 _Button = hit.collider.GetComponent<Button>();
             }
 
-            if (_Focus != null)//設定Focus位置
-            {
-                _Focus.position = hit.point;
-            }
+            f_SetFocus(hit.point);
 
         }
         else
         {
-            if (_Focus != null)//設定Focus位置
-            {
-                _Focus.position = transform.forward * 20;
-            }
+            f_SetFocus(hit.point);
         }
         #region
         /*else
@@ -139,6 +133,21 @@ public class GameMainTriggerCtrl : MonoBehaviour
             }
         }*/
         #endregion
+    }
+    
+    /// <summary>
+    /// 設定焦點
+    /// </summary>
+    /// <param name="vTarget">焦點位置</param>
+    private void f_SetFocus(Vector3 vTarget)
+    {
+        if (_Focus == null) { return; }
+        _Focus.position = vTarget;//設定焦點位置
+
+        //保持焦點在視野內的大小
+        float distance = Vector3.Distance(transform.position, vTarget);
+        float fScale = 0.02f * distance * Mathf.Tan(GetComponent<Camera>().fieldOfView * Mathf.Deg2Rad);
+        _Focus.localScale = new Vector3(fScale, fScale, fScale);
     }
 
     /// <summary>一般輸入事件</summary>

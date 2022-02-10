@@ -40,7 +40,8 @@ namespace Epibyte.ConceptVR
         /// <summary>創建物件</summary>
         public void f_CreateObj()
         {
-            relatedObject = GameMain.GetInstance().f_AddObj((CharacterDT)m_SCData).gameObject;
+            //relatedObject = GameMain.GetInstance().f_AddObj((CharacterDT)m_SCData).gameObject;
+            GameMain.GetInstance().f_AddObj((CharacterDT)m_SCData);
         }
 
         /// <summary>初始化物件資料</summary>

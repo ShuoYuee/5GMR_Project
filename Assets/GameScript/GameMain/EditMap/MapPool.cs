@@ -33,7 +33,6 @@ public class MapPool : ccBasePool<long>
     /// <summary>加載地圖數據</summary>
     public void f_LoadMap(string strFileName)
     {
-
         string path = GetMapFilePath(strFileName);
         bool bNewMap = true;
 
@@ -67,7 +66,7 @@ public class MapPool : ccBasePool<long>
             tFileStream.Close();
 
             string strMapData = System.Text.Encoding.UTF8.GetString(aBuf);
-            string[] aItem = ccMath.f_String2ArrayString(strMapData, "\n");
+            /*string[] aItem = ccMath.f_String2ArrayString(strMapData, "\n");
             for (int i = 0; i < aItem.Length; i++)
             {
                 if (!string.IsNullOrEmpty(aItem[i]))
@@ -75,7 +74,9 @@ public class MapPool : ccBasePool<long>
                     string[] aData = ccMath.f_String2ArrayString(aItem[i], ";");
                     LoadObj(aData);
                 }
-            }
+            }*/
+            iLoadId = 0;
+            f_LoadObj(null, null, strMapData);
         }
     }
 
@@ -131,6 +132,7 @@ public class MapPool : ccBasePool<long>
 
     #region AB资源相关
     int iIndex = 0;
+    /// <summary>創建隨機Id</summary>
     private long CreateKeyId()
     {
         //1138817954
@@ -144,6 +146,11 @@ public class MapPool : ccBasePool<long>
         return iId;
     }
 
+    /// <summary>
+    /// 儲存物件
+    /// </summary>
+    /// <param name="tCharacterDT">物件資料</param>
+    /// <returns></returns>
     public EditObjControll f_AddObj(CharacterDT tCharacterDT)
     {
         long iId = CreateKeyId();
@@ -174,8 +181,9 @@ public class MapPool : ccBasePool<long>
     /// <returns></returns>
     private EditObjControll AddObj(long iId, CharacterDT tCharacterDT)
     {           
-        GameObject tObj = glo_Main.GetInstance().m_ResourceManager.f_CreateABObj(tCharacterDT.szResName + ".bundle", tCharacterDT.szName);
-        EditObjControll tEditObjControll = tObj.AddComponent<EditObjControll>();
+        GameObject tObj = glo_Main.GetInstance().m_ResourceManager.f_CreateABObj(tCharacterDT.szResName + ".bundle", tCharacterDT.szName, f_SetObj);
+        _CurCharacterDT = tCharacterDT;
+        //EditObjControll tEditObjControll = tObj.AddComponent<EditObjControll>();
 
         /*//設定物件地圖資料
         MapPoolDT tMapPoolDT = new MapPoolDT();
@@ -183,11 +191,65 @@ public class MapPool : ccBasePool<long>
         //儲存物件地圖資料
         f_Save(tMapPoolDT);
         tEditObjControll.f_Save(tMapPoolDT);*/
-        f_SaveData(iId, tCharacterDT, tEditObjControll);
+        //f_SaveData(iId, tCharacterDT, tEditObjControll);
 
-        return tEditObjControll;
+        //return tEditObjControll;
+        return null;
     }
 
+    private CharacterDT _CurCharacterDT = null;
+    /// <summary>設定物件</summary>
+    private void f_SetObj(object e)
+    {
+        GameObject tObj = (GameObject)e;
+        EditObjControll tEditObjControll = tObj.AddComponent<EditObjControll>();
+        f_SaveData(CreateKeyId(), _CurCharacterDT, tEditObjControll);
+        _CurCharacterDT = null;
+    }
+
+    /// <summary>載入順序Id</summary>
+    private int iLoadId = 0;
+    /// <summary>依序載入物件</summary>
+    private void f_LoadObj(string name, Object obj, object callbackData)
+    {
+        string[] aItem = ccMath.f_String2ArrayString(callbackData.ToString(), "\n");
+        if (obj != null)
+        {
+            GameObject oObj = (GameObject)obj;
+            GameObject tObj = GameObject.Instantiate(oObj);
+
+            string[] aData = ccMath.f_String2ArrayString(aItem[iLoadId - 1], ";");
+            CharacterDT tCharacterDT = (CharacterDT)glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetSC(ccMath.atoi(aData[1]));
+            f_SaveData((ccMath.atol(aData[0])), tCharacterDT, tObj.AddComponent<EditObjControll>());
+
+            //設定物件的位置、旋轉值、縮放值
+            tObj.transform.position = new Vector3(ccMath.atof(aData[2]), ccMath.atof(aData[3]), ccMath.atof(aData[4]));
+            tObj.transform.rotation = new Quaternion(ccMath.atof(aData[5]), ccMath.atof(aData[6]), ccMath.atof(aData[7]), ccMath.atof(aData[8]));
+            tObj.transform.localScale = new Vector3(ccMath.atof(aData[9]), ccMath.atof(aData[10]), ccMath.atof(aData[11]));
+        }
+
+        if (iLoadId + 1 > aItem.Length)
+        {
+            return;
+        }
+
+        if (!string.IsNullOrEmpty(aItem[iLoadId]))
+        {
+            string[] aData = ccMath.f_String2ArrayString(aItem[iLoadId], ";");
+
+            long iId = ccMath.atol(aData[0]);
+            CharacterDT tCharacterDT = (CharacterDT)glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetSC(ccMath.atoi(aData[1]));
+            iLoadId += 1;
+            AssetLoader.LoadAssetAsync(tCharacterDT.szResName + ".bundle", tCharacterDT.szName, f_LoadObj, callbackData);
+        }
+    }
+
+    /// <summary>
+    /// 將資料存入資料庫
+    /// </summary>
+    /// <param name="iId">物件Id</param>
+    /// <param name="tCharacterDT">物件資料</param>
+    /// <param name="tEditObj">編輯物</param>
     private void f_SaveData(long iId, CharacterDT tCharacterDT, EditObjControll tEditObj)
     {
         //設定物件地圖資料
@@ -221,33 +283,25 @@ public class MapPool : ccBasePool<long>
         MapPoolDT tMapPoolDT = (MapPoolDT)oData;
         tMapPoolDT.f_Destory();
         f_Delete(iRoleId);
-
     }
 
     #endregion
 
-    #region 增加物件
-    public void f_ManualAddObj(GameObject tObj)
+    #region 手動增加物件
+    /// <summary>
+    /// 手動儲存物件
+    /// </summary>
+    /// <param name="tObj">物件編輯器</param>
+    public void f_ManualAddObj(EditObjControll tObj)
     {
-        MeshFilter[] tMeshes = tObj.GetComponentsInChildren<MeshFilter>();
-        CharacterDT tCharacterDT = null;
-        if (tMeshes.Length > 0)
-        {
-            tCharacterDT = f_FindSC(tMeshes);
-        }
-        if (tCharacterDT != null)
-        {
-            GameObject oObj = f_AddObj(tCharacterDT).gameObject;
+        if (!tObj.IsInit) { return; }
 
-            oObj.transform.position = tObj.transform.position;
-            oObj.transform.localEulerAngles = tObj.transform.localEulerAngles;
-            oObj.transform.localScale = tObj.transform.localScale;
-            GameObject.Destroy(tObj);
-            MessageBox.DEBUG("讀取現場物件 : " + tCharacterDT.iId);
-        }
+        CharacterDT tCharacterDT = (CharacterDT)glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetSC(tObj.CharacterId);
+        f_SaveData(CreateKeyId(), tCharacterDT, tObj);
+        MessageBox.DEBUG("讀取現場物件 : " + tObj.CharacterId);
     }
 
-    private CharacterDT f_FindSC(MeshFilter[] tMeshes)
+    /*private CharacterDT f_FindSC(MeshFilter[] tMeshes)
     {
         List<NBaseSCDT> tData = glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetAll();
         CharacterDT tCharacterDT = null;
@@ -277,6 +331,6 @@ public class MapPool : ccBasePool<long>
         }
 
         return null;
-    }
+    }*/
     #endregion
 }

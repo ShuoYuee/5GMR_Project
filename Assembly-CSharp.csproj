@@ -257,6 +257,7 @@
     <None Include="Assets\ABRes\Language\zhTW\System.txt" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-IMGUI-Transparent.shader" />
     <None Include="Assets\ThirdParty\AVProVideo\Demos\Materials\UI-Default-ExtraTexture.shader" />
+    <None Include="Assets\StreamingAssets\SaveFile\Test2.txt" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-VR-InsideSphere-AndroidOES.shader" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Helper-Transition.shader" />
     <None Include="Assets\ABRes\Language\zhCN\System.txt" />
@@ -274,6 +275,7 @@
     <None Include="Assets\ABRes\Language\enUS\System.txt" />
     <None Include="Assets\Resources\Font3\Font3.fnt" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Skybox-Sphere.shader" />
+    <None Include="Assets\StreamingAssets\SaveFile\TestScene.txt" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-VR-InsideSphere-StereoUV.shader" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Background-FullScreenTransparent.shader" />
     <None Include="Assets\ABRes\HotFixDLL\HotFixDllp.txt" />
@@ -287,6 +289,7 @@
     <None Include="Assets\Resources\Font4\Font4.fnt" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Unlit-AndroidOES.shader" />
     <None Include="Assets\gmcs.rsp" />
+    <None Include="Assets\StreamingAssets\SaveFile\001.txt" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Unlit.shader" />
     <None Include="Assets\AssetStore\3D Game Kit - Character Pack\Shaders\EnergyCore.shader" />
     <None Include="Assets\smcs.rsp" />

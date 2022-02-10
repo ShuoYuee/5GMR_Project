@@ -16,8 +16,6 @@ public class GameMain : MonoBehaviour
     public Pagination m_Pagination;
     /// <summary>編輯管理器</summary>
     public EditManager m_EditManager = new EditManager();
-
-    public GameObject[] m_InitGameObj;
     #endregion
 
     /// <summary>選擇物材質</summary>
@@ -41,21 +39,21 @@ public class GameMain : MonoBehaviour
         ccTimeEvent.GetInstance().f_RegEvent(0.3f, true, null, f_UpdateMenuPos);
     }
 
-    /*private void Start()
+    private void Start()
     {
-        iTimeId = ccTimeEvent.GetInstance().f_RegEvent(1f, false, null, f_InitGameObj);
+        f_InitGameObj();
     }
 
-    int iTimeId = 0;
-    private void f_InitGameObj(object e)
+    /// <summary>手動導入場上物件</summary>
+    private void f_InitGameObj()
     {
-        ccTimeEvent.GetInstance().f_UnRegEvent(iTimeId);
-        if (m_InitGameObj == null) { return; }
-        for (int i = 0; i < m_InitGameObj.Length; i++)
+        if (m_GameTable.transform.childCount <= 0) { return; }
+        EditObjControll[] m_InitGameObj = m_GameTable.GetComponentsInChildren<EditObjControll>();
+        for (int i = 0; i < m_GameTable.transform.childCount; i++)
         {
             m_MapPool.f_ManualAddObj(m_InitGameObj[i]);
         }
-    }*/
+    }
 
     /// <summary>更新菜單位置</summary>
     private void f_UpdateMenuPos(object e)

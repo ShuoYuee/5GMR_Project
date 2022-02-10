@@ -161,29 +161,32 @@ public class ResourceManager
     /// <param name="strABBundle">AB資源名</param>
     /// <param name="strAB">物件名</param>
     /// <returns></returns>
-    public GameObject f_CreateABObj(string strABBundle, string strAB)
+    public GameObject f_CreateABObj(string strABBundle, string strAB, ccCallback ccCallback)
     {
-        //GameObject oModel = AssetLoader.LoadAsset(strAB + ".bundle", strAB) as GameObject;
-        GameObject oModel = AssetLoader.LoadAsset(strABBundle, strAB) as GameObject;
-        GameObject tObj = GameObject.Instantiate(oModel);
+        AssetLoader.LoadAssetAsync(strABBundle, strAB, f_CompleteCreateAB, ccCallback);
+        /*GameObject oModel = AssetLoader.LoadAsset(strAB + ".bundle", strAB) as GameObject;
+        //GameObject oModel = AssetLoader.LoadAsset(strABBundle, strAB) as GameObject;
+        //GameObject tObj = GameObject.Instantiate(oModel);
+
+        //座標歸零
+        tObj.transform.position = Vector3.zero;
+        tObj.transform.rotation = new Quaternion(0, 0, 0, 0);
+        tObj.transform.localScale = new Vector3(1, 1, 1);*/
+        return null;
+    }
+
+    /// <summary>AB資源載入後執行</summary>
+    private void f_CompleteCreateAB(string name, UnityEngine.Object obj, object callbackData)
+    {
+        GameObject tObj = GameObject.Instantiate((GameObject)obj);
 
         //座標歸零
         tObj.transform.position = Vector3.zero;
         tObj.transform.rotation = new Quaternion(0, 0, 0, 0);
         tObj.transform.localScale = new Vector3(1, 1, 1);
-        return tObj;
-    }
 
-    /// <summary>
-    /// 載入物件
-    /// </summary>
-    /// <param name="strAB">AB資源名</param>
-    /// <param name="strRes">物件名</param>
-    /// <returns></returns>
-    public GameObject f_GetABObj(string strAB, string strRes)
-    {
-        GameObject oModel = AssetLoader.LoadAsset(strAB, strRes) as GameObject;
-        return oModel;
+        //設定物件
+        ccTimeEvent.GetInstance().f_RegEvent(0f, false, tObj, (ccCallback)callbackData);
     }
 
     /// <summary>

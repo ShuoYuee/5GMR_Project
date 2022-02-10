@@ -197,6 +197,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
                     return;
                 }
                 _InputField.Select();
+                _InputField.GetComponentInParent<EditDisplayText>().f_InputValue();
                 break;
 
             case EM_TriggerObj.ButtonUI:

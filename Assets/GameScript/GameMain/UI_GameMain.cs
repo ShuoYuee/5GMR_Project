@@ -42,8 +42,7 @@ namespace GameLogic
         /// <summary>初始化地圖物件資料</summary>
         private void f_InitMapObjData()
         {
-            List<GameObject> oMapObj = new List<GameObject>();
-            List<NBaseSCDT> tData = glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetAll();
+            /*List<NBaseSCDT> tData = glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetAll();
             CharacterDT aData;
             GameObject oData = null;
             for(int i = 0; i < tData.Count; i++)
@@ -69,8 +68,73 @@ namespace GameLogic
                 }
                 oMapObj.Add(oData);
             }
-            GameMain.GetInstance().m_Pagination.items = oMapObj;//將物件清單傳送給選單腳本
+
+            GameMain.GetInstance().m_Pagination.items = oMapObj;//將物件清單傳送給選單腳本*/
+
+            f_LoadObj(null, null, 0);
         }
+
+        /// <summary>AB物件清單</summary>
+        List<GameObject> oMapObj = new List<GameObject>();
+        /// <summary>依序進行AB物件載入</summary>
+        private void f_LoadObj(string name, Object obj, object callbackData)
+        {
+            if (obj != null)
+            {
+                oMapObj.Add((GameObject)obj);
+            }
+
+            List<NBaseSCDT> aData = glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetAll();
+            GameObject oData = null;
+            int iNextId = (int)callbackData + 1;
+            if (iNextId > aData.Count)
+            {
+                GameMain.GetInstance().m_Pagination.items = oMapObj;//將物件清單傳送給選單腳本
+                return;
+            }
+
+            CharacterDT tCharacterDT = (CharacterDT)aData[(int)callbackData];
+            //判別資源來源模式
+            switch (tCharacterDT.iDisplayResource)
+            {
+                case 1:
+                    AssetLoader.LoadAssetAsync(tCharacterDT.szResName + ".bundle", tCharacterDT.szDisplayAB, f_LoadObj, iNextId);
+                    break;
+                default:
+                    AssetLoader.LoadAssetAsync(tCharacterDT.szResName + ".bundle", tCharacterDT.szName, f_LoadObj, iNextId);
+                    break;
+            }
+        }
+
+        /*/// <summary>依序進行AB物件載入</summary>
+        private void f_LoadObj(object callbackData)
+        {
+            List<NBaseSCDT> aData = glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetAll();
+            GameObject oData = null;
+            int iNextId = (int)callbackData + 1;
+            if (iNextId >= aData.Count)
+            {
+                GameMain.GetInstance().m_Pagination.items = oMapObj;//將物件清單傳送給選單腳本
+                return;
+            }
+
+            CharacterDT tCharacterDT = (CharacterDT)aData[(int)callbackData];
+            //判別資源來源模式
+            switch (tCharacterDT.iDisplayResource)
+            {
+                case 1:
+                    oData = AssetLoader.LoadAsset(tCharacterDT.szResName + ".bundle", tCharacterDT.szDisplayAB) as GameObject;
+                    break;
+                default:
+                    oData = AssetLoader.LoadAsset(tCharacterDT.szResName + ".bundle", tCharacterDT.szName) as GameObject;
+                    break;
+            }
+            if (oData != null)
+            {
+                oMapObj.Add(oData);
+            }
+            ccTimeEvent.GetInstance().f_RegEvent(2f, false, iNextId, f_LoadObj);
+        }*/
 
         /// <summary>
         /// 設定物件資料
@@ -119,7 +183,7 @@ namespace GameLogic
         protected override void On_Update()
         {
             base.On_Update();
-            f_AnchorUIIng();
+            //f_AnchorUIIng();
         }
 
         private float _fAnchorCurTime = 0f;

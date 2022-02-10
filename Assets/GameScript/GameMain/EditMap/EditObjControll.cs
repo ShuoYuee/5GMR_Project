@@ -34,6 +34,9 @@ public class EditObjControll : MonoBehaviour
     public float scaleStep = 0.3f;
     public float minScaleFactor = 0.5f;
     public float maxScaleFactor = 2f;
+
+    public bool IsInit = false;
+    public int CharacterId = 0;
     #endregion
 
     #region Private Variables
@@ -72,6 +75,12 @@ public class EditObjControll : MonoBehaviour
         _MapPoolDT = tMapPoolDT;
         name = _MapPoolDT.iId + "_" + _MapPoolDT.m_CharacterDT.szResName;
         transform.parent = GameMain.GetInstance().f_GetObjParent();
+
+        //獲得動畫片段資料
+        if (_MapPoolDT.m_CharacterDT.szAnimGroup != null)
+        {
+            _strAnimGroup = ccMath.f_String2ArrayString(_MapPoolDT.m_CharacterDT.szAnimGroup, ";");
+        }
     }
         
     public long f_GetId()
@@ -172,7 +181,6 @@ public class EditObjControll : MonoBehaviour
     private void Start()
     {
         _Animator = GetComponent<Animator>();
-        _strAnimGroup = ccMath.f_String2ArrayString(_MapPoolDT.m_CharacterDT.szAnimGroup, ";");
 
         //取得編輯物材質
         if (GetComponentInChildren<MeshRenderer>() != null)

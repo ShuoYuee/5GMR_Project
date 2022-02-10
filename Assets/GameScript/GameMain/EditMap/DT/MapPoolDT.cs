@@ -50,7 +50,7 @@ public class MapPoolDT: BasePoolDT<long>
             }
             else
             {
-                MessageBox.ASSERT("動畫機載入出錯：" + tCharacterDT.iId);
+                MessageBox.DEBUG("動畫機載入出錯：" + tCharacterDT.iId + ", 若沒有設相關動畫機則忽略此警告");
             }
         }
     }

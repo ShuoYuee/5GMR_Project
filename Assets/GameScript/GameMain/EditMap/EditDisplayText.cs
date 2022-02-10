@@ -57,7 +57,6 @@ public class EditDisplayText : MonoBehaviour
             return;
         }
 
-        f_InputValue();
         f_UpdateText();
     }
 
@@ -101,9 +100,9 @@ public class EditDisplayText : MonoBehaviour
     }
 
     /// <summary>開始輸入新文本</summary>
-    private void f_InputValue()
+    public void f_InputValue()
     {
-        if (EventSystem.current.currentSelectedGameObject != _InputField) { return; }
+        //if (EventSystem.current.currentSelectedGameObject != _InputField) { return; }
         _bInputing = true;
     }
 
@@ -116,7 +115,16 @@ public class EditDisplayText : MonoBehaviour
     /// <summary>依文本設定目標物</summary>
     private void f_SetTarget(string strTarget)
     {
-        float fValue = ccMath.atof(_InputField.text);
+        float fValue = 0;
+        try
+        {
+            fValue = ccMath.atof(_InputField.text);
+        }
+        catch
+        {
+            return;
+        }
+
         Transform Target = EditDisplay.GetInstance().f_GetTarget();
         switch (_EditState)
         {
@@ -125,7 +133,7 @@ public class EditDisplayText : MonoBehaviour
                 break;
 
             case EditState.Rotation:
-                Target.localEulerAngles = f_SetCoordinate(Target.localEulerAngles, fValue);
+                Target.eulerAngles = f_SetCoordinate(Target.eulerAngles, fValue);
                 break;
 
             case EditState.Scale:

@@ -8,13 +8,16 @@ using ccU3DEngine;
 /// </summary>
 public class EditDisplayText : MonoBehaviour
 {
+    #region Public
     /// <summary>編輯模式</summary>
     public EditState _EditState = EditState.Position;
     /// <summary>編輯座標</summary>
     public EditV3 _Coordinate = EditV3.X;
     /// <summary>文本套件</summary>
     public Text _DisplayText = null;
+    #endregion
 
+    #region Private
     /// <summary>文字輸入框</summary>
     private InputField _InputField;
     /// <summary>當前編輯三維</summary>
@@ -23,7 +26,9 @@ public class EditDisplayText : MonoBehaviour
     private float _DisplayValue = 0;
     /// <summary>是否正在輸入文字</summary>
     private bool _bInputing = false;
+    #endregion
 
+    #region Enum
     public enum EditState
     {
         Position,
@@ -37,6 +42,7 @@ public class EditDisplayText : MonoBehaviour
         Y,
         Z,
     }
+    #endregion
 
     private void Start()
     {
@@ -46,8 +52,8 @@ public class EditDisplayText : MonoBehaviour
         {
             _InputField = GetComponentInChildren<InputField>();
         }
-        _InputField.onValueChanged.AddListener(f_SetTarget);
-        _InputField.onEndEdit.AddListener(f_InputEnd);
+        _InputField.onValueChanged.AddListener(f_SetTarget);//當文字內容改變時
+        _InputField.onEndEdit.AddListener(f_InputEnd);//當編輯結束時
     }
 
     private void FixedUpdate()
@@ -72,7 +78,7 @@ public class EditDisplayText : MonoBehaviour
                 break;
 
             case EditState.Rotation:
-                _DisplayV3 = Target.localEulerAngles;
+                _DisplayV3 = Target.rotation.eulerAngles;
                 break;
 
             case EditState.Scale:
@@ -99,10 +105,12 @@ public class EditDisplayText : MonoBehaviour
         _InputField.text = _DisplayValue + "";
     }
 
+    #region 輸入行為
     /// <summary>開始輸入新文本</summary>
     public void f_InputValue()
     {
         //if (EventSystem.current.currentSelectedGameObject != _InputField) { return; }
+        //在輸入操作時調用
         _bInputing = true;
     }
 
@@ -168,4 +176,5 @@ public class EditDisplayText : MonoBehaviour
 
         return vValue;
     }
+    #endregion
 }

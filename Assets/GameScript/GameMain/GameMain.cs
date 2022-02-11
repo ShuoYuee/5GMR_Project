@@ -6,22 +6,41 @@ using Epibyte.ConceptVR;
 public class GameMain : MonoBehaviour
 {
     #region 管理物件
-    /// <summary>地圖物件池</summary>
-    public MapPool m_MapPool = new MapPool();
+    [Header("初始化")]
+    [Tooltip("玩家")]
+    /// <summary>玩家</summary>
+    public Transform m_Player;
+    [Tooltip("起始出生點")]
+    /// <summary>起始出生點</summary>
+    public Transform m_InitPos;
+
+    [Space(10)]
+    [Header("主要遊戲元件")]
+    [Tooltip("主攝影機")]
     /// <summary>主攝影機</summary>
     public Camera m_MainCamera;
+    [Tooltip("物件主選單")]
     /// <summary>物件主選單</summary>
     public GameObject m_MainMenu = null;
+    [Tooltip("素材元件選單")]
     /// <summary>素材元件選單</summary>
     public Pagination m_Pagination;
+
+    [Space(10)]
+    [Header("額外物件")]
+    [Tooltip("替選擇物掛上區別用材質")]
+    /// <summary>選擇物材質</summary>
+    public Material _SelectMaterial;
+    [Tooltip("生成物件將統一掛在該物件下")]
+    /// <summary>主父物件</summary>
+    public GameObject m_GameTable;
+
+    [HideInInspector]
+    /// <summary>地圖物件池</summary>
+    public MapPool m_MapPool = new MapPool();   
     /// <summary>編輯管理器</summary>
     public EditManager m_EditManager = new EditManager();
     #endregion
-
-    /// <summary>選擇物材質</summary>
-    public Material _SelectMaterial;
-    /// <summary>主父物件</summary>
-    public GameObject m_GameTable;
 
     private static GameMain _Instance = null;
     public static GameMain GetInstance()
@@ -65,6 +84,12 @@ public class GameMain : MonoBehaviour
     #region 地圖功能
     public void f_LoadMap(string strFileName)
     {
+        m_MapPool.f_ResetMap();
+        m_MapPool.f_LoadMap(strFileName);
+    }
+
+    public void f_ImportMap(string strFileName)
+    {
         m_MapPool.f_LoadMap(strFileName);
     }
 
@@ -75,11 +100,7 @@ public class GameMain : MonoBehaviour
 
     public void f_ResetMap()
     {
-        int iCount = m_MapPool.f_Count();
-        for(int i = 0; i < iCount; i++)
-        {
-            m_MapPool.f_DeleteObj(m_MapPool.f_GetAll()[0].iId);
-        }
+        m_MapPool.f_ResetMap();
     }
 
     public void f_ExitMap()

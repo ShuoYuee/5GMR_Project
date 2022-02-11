@@ -80,6 +80,16 @@ public class MapPool : ccBasePool<long>
         }
     }
 
+    /// <summary>清空地圖</summary>
+    public void f_ResetMap()
+    {
+        int iCount = f_Count();
+        for (int i = 0; i < iCount; i++)
+        {
+            f_DeleteObj(f_GetAll()[0].iId);
+        }
+    }
+
     /// <summary>加載預覽資料</summary>
     public string[] f_LoadPreviewData()
     {
@@ -128,6 +138,19 @@ public class MapPool : ccBasePool<long>
         MessageBox.DEBUG("f_Save:" + strFileName);
     }
 
+    /// <summary>確認檔案名是否重複</summary>
+    public bool f_CheckFileName(string strFileName)
+    {
+        string[] FileName = f_LoadPreviewData();
+        for(int i = 0; i < FileName.Length; i++)
+        {
+            if (FileName[i] == strFileName)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     #endregion
 
     #region AB资源相关
@@ -233,12 +256,14 @@ public class MapPool : ccBasePool<long>
             return;
         }
 
+        //若資料非空，創建物件
         if (!string.IsNullOrEmpty(aItem[iLoadId]))
         {
             string[] aData = ccMath.f_String2ArrayString(aItem[iLoadId], ";");
 
             long iId = ccMath.atol(aData[0]);
             CharacterDT tCharacterDT = (CharacterDT)glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetSC(ccMath.atoi(aData[1]));
+            //依序循環載入
             iLoadId += 1;
             AssetLoader.LoadAssetAsync(tCharacterDT.szResName + ".bundle", tCharacterDT.szName, f_LoadObj, callbackData);
         }

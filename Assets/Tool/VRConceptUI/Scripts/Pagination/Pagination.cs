@@ -20,6 +20,7 @@ namespace Epibyte.ConceptVR
 
         public void f_Reset()
         {
+            pages.Clear();
             numberOfPositions = positions.childCount;
             int page = 0;
             int posIdx = 0;

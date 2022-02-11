@@ -66,6 +66,7 @@ public class EditObjControll : MonoBehaviour
     public void OnLeave() { }
     #endregion
 
+    #region 地圖資料
     /// <summary>
     /// 儲存地圖資料
     /// </summary>
@@ -87,6 +88,7 @@ public class EditObjControll : MonoBehaviour
     {
         return _MapPoolDT.iId;
     }
+    #endregion
 
     #region 編輯模式觸發
     /// <summary>開始編輯</summary>
@@ -232,6 +234,7 @@ public class EditObjControll : MonoBehaviour
     {
         isGrabbing = false;
         StopCoroutine(PositionTo(0));
+        _fPosDir = Vector3.Distance(GameMain.GetInstance().m_MainCamera.transform.position, transform.position);
     }
 
     /// <summary>
@@ -313,7 +316,7 @@ public class EditObjControll : MonoBehaviour
     IEnumerator PositionTo(float duration)
     {
         isGrabbing = true;
-        float elapsedTime = 0f;
+        float elapsedTime = 0f;      
 
         while (isGrabbing && elapsedTime < duration)
         {
@@ -408,7 +411,7 @@ public class EditObjControll : MonoBehaviour
         isRotating = false;
     }
 
-    #region
+    #region 旋轉計算
     /// <summary>旋轉模式</summary>
     private Vector3 f_RotationActive()
     {

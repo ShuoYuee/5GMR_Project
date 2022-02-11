@@ -40,6 +40,7 @@ public class ResourceManager
         return tAudioClip;
     }
 
+    #region Resource
     public GameObject f_CreateRes(string strRes, bool bResetPosition = true, bool bCreate = true)
     {
         GameObject oOther = CreateResource(strRes, bResetPosition, bCreate);
@@ -106,7 +107,6 @@ public class ResourceManager
         return oBullet;
     }
 
-    
     /// <summary>
     /// 创建的GameObject通过此方法进行回收
     /// </summary>
@@ -142,7 +142,9 @@ public class ResourceManager
         }
         return tAudioClip;
     }
+    #endregion
 
+    #region AB資源
     /// <summary>
     /// 載入圖片檔
     /// </summary>
@@ -185,7 +187,7 @@ public class ResourceManager
         tObj.transform.rotation = new Quaternion(0, 0, 0, 0);
         tObj.transform.localScale = new Vector3(1, 1, 1);
 
-        //設定物件
+        //載入完成後自訂執行
         ccTimeEvent.GetInstance().f_RegEvent(0f, false, tObj, (ccCallback)callbackData);
     }
 
@@ -200,5 +202,6 @@ public class ResourceManager
         RuntimeAnimatorController tController = AssetLoader.LoadAsset(strAB, strRes) as RuntimeAnimatorController;
         return tController;
     }
+    #endregion
     #endregion
 }

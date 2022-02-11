@@ -4,15 +4,18 @@ using ccU3DEngine;
 
 public class GameInputCtrl : MonoBehaviour
 {
+    #region 按鈕事件
     public delegate void OnClickCtrl(int iInput);
     public static event OnClickCtrl OnClickCtrlEvent;
     public static event OnClickCtrl OnClickBtnOne;
     public static event OnClickCtrl OnClickBtnTwo;
     public static event OnClickCtrl OnClickBtnThree;
+    #endregion
 
-    public Transform Player;
-    /// <summary>按鈕間隔時間</summary>
-    float _fBtnTime = 0f;
+    private Transform Player;
+    ///// <summary>按鈕間隔時間</summary>
+    //float _fBtnTime = 0f;
+    /// <summary>輸入冷卻</summary>
     bool _bBtnTime = false;
 
     /// <summary>輸入模式</summary>
@@ -24,27 +27,40 @@ public class GameInputCtrl : MonoBehaviour
     {
         f_EditInput();
         f_InputKey();
+        f_MouseMoveInput();
     }
 
     /// <summary>PC移動輸入</summary>
     private void f_MouseMoveInput()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (Player == null)
         {
-            Player.localPosition += transform.forward * 3f * Time.deltaTime;
+            Player = GameMain.GetInstance().m_Player;
         }
-        else if (Input.GetKey(KeyCode.S))
+
+        if (Input.GetKey(KeyCode.UpArrow))
         {
-            Player.localPosition += -transform.forward * 3f * Time.deltaTime;
+            Player.localPosition += transform.up * 3f * Time.deltaTime;
+            //GameMain.GetInstance().m_MainCamera.transform.localPosition += transform.up * 3f * Time.deltaTime;
         }
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.DownArrow))
+        {
+            Player.localPosition -= transform.up * 3f * Time.deltaTime;
+            //GameMain.GetInstance().m_MainCamera.transform.localPosition -= transform.up * 3f * Time.deltaTime;
+        }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Player.transform.position = GameMain.GetInstance().m_InitPos.position;
+            //GameMain.GetInstance().m_MainCamera.transform.position = GameMain.GetInstance().m_InitPos.position;
+        }
+        /*else if (Input.GetKey(KeyCode.LeftArrow))
         {
             Player.localPosition += -transform.right * 3f * Time.deltaTime;
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.RightArrow))
         {
             Player.localPosition += transform.right * 3f * Time.deltaTime;
-        }
+        }*/
     }
 
     /// <summary>輸入冷卻時間</summary>
@@ -96,7 +112,7 @@ public class GameInputCtrl : MonoBehaviour
         {
             _bBtnTime = true;
             OnClickCtrlEvent(0);
-            ccTimeEvent.GetInstance().f_RegEvent(0.2f, false, null, f_InputCooling);
+            ccTimeEvent.GetInstance().f_RegEvent(0.1f, false, null, f_InputCooling);
         }
     }
     #endregion
@@ -157,17 +173,24 @@ public class GameInputCtrl : MonoBehaviour
     /// <summary>PC輸入</summary>
     private void f_PCEditInput()
     {
+        //將按鈕功能依序填入
         if (Input.GetKey(KeyCode.D))//拉前、旋轉、放大用
         {
             _bBtnTime = true;
             OnClickBtnOne(1);
-            ccTimeEvent.GetInstance().f_RegEvent(0.2f, false, null, f_InputCooling);
+            ccTimeEvent.GetInstance().f_RegEvent(0.1f, false, null, f_InputCooling);
         }
         else if (Input.GetKey(KeyCode.S))//退後、旋轉、縮小用
         {
             _bBtnTime = true;
             OnClickBtnTwo(-1);
-            ccTimeEvent.GetInstance().f_RegEvent(0.2f, false, null, f_InputCooling);
+            ccTimeEvent.GetInstance().f_RegEvent(0.1f, false, null, f_InputCooling);
+        }
+        else if (Input.GetKeyUp(KeyCode.A))//移動座標用
+        {
+            _bBtnTime = true;
+            OnClickCtrlEvent(0);
+            ccTimeEvent.GetInstance().f_RegEvent(0.1f, false, null, f_InputCooling);
         }
         else//鬆開按鈕
         {
@@ -175,12 +198,12 @@ public class GameInputCtrl : MonoBehaviour
         }
 
         //_fBtnTime += Time.deltaTime;//按鈕間隔時間
-        if (Input.GetKeyUp(KeyCode.A))//移動座標用
+        /*if (Input.GetKeyUp(KeyCode.A))//移動座標用
         {
             _bBtnTime = true;
             OnClickCtrlEvent(0);
             ccTimeEvent.GetInstance().f_RegEvent(0.2f, false, null, f_InputCooling);
-        }
+        }*/
     }
     #endregion
 }

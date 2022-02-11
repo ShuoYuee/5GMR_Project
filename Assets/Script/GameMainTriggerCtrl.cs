@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Epibyte.ConceptVR;
 
@@ -142,7 +141,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
     private void f_SetFocus(Vector3 vTarget)
     {
         if (_Focus == null) { return; }
-        _Focus.position = vTarget;//設定焦點位置
+        _Focus.position = vTarget;//焦點設置在碰撞物前方
 
         //保持焦點在視野內的大小
         float distance = Vector3.Distance(transform.position, vTarget);
@@ -158,7 +157,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
         //將各對象的執行動作一一填入
         switch (_ObjEm)
         {
-            case EM_TriggerObj.Button:
+            case EM_TriggerObj.Button://3D按鈕
                 if (_Interactable == null)
                 {
                     _ObjEm = EM_TriggerObj.None;
@@ -167,7 +166,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
                 _Interactable.OnClicked();
                 break;
 
-            case EM_TriggerObj.EditObj:
+            case EM_TriggerObj.EditObj://編輯物
                 if (!GameMain.GetInstance().m_EditManager._bEdit) { return; }
                 if (_EditObjControll != null && _EditObjControll.gameObject != oCurObj)
                 {
@@ -190,17 +189,21 @@ public class GameMainTriggerCtrl : MonoBehaviour
                 _EditObjControll.OnClicked();
                 break;
 
-            case EM_TriggerObj.InpuUI:
+            case EM_TriggerObj.InpuUI://UI輸入框
                 if (_InputField == null)
                 {
                     _ObjEm = EM_TriggerObj.None;
                     return;
                 }
+                EventSystem.current.SetSelectedGameObject(null);//重新輸入
                 _InputField.Select();
-                _InputField.GetComponentInParent<EditDisplayText>().f_InputValue();
+                if (GameMain.GetInstance().m_EditManager._bSelectEdit)//若為編輯模式則調用開始輸入文本之功能
+                {
+                    _InputField.GetComponentInParent<EditDisplayText>().f_InputValue();//調用開始輸入文本之功能
+                }
                 break;
 
-            case EM_TriggerObj.ButtonUI:
+            case EM_TriggerObj.ButtonUI://UI按鈕
                 if (_Button == null)
                 {
                     _ObjEm = EM_TriggerObj.None;

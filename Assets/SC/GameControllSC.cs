@@ -1,11 +1,3 @@
-
-//============================================
-//
-//    GameControll来自GameControll.xlsx文件自动生成脚本
-//    2018/7/30 19:19:18
-//    
-//
-//============================================
 using ccU3DEngine;
 using System;
 using System.Collections.Generic;
@@ -36,7 +28,7 @@ public class GameControllSC : NBaseSC
             {
                 if (tFoddScData[i] == "")
                 {
-                    MessageBox.DEBUG(m_strRegDTName + "脚本存在空记录, " + i);
+                    MessageBox.DEBUG(m_strRegDTName + "腳本存在空記錄, " + i);
                     continue;
                 }
                 tData = tFoddScData[i].Split(new string[] { "@," }, System.StringSplitOptions.None);
@@ -45,7 +37,7 @@ public class GameControllSC : NBaseSC
                 DataDT.iId = ccMath.atoi(tData[a++]);
                 if (DataDT.iId <= 0)
                 {
-                    MessageBox.ASSERT("Id错误");
+                    MessageBox.ASSERT("Id錯誤");
                 }
                 DataDT.szName = tData[a++];
                 DataDT.iSection = ccMath.atoi(tData[a++]);
@@ -66,10 +58,11 @@ public class GameControllSC : NBaseSC
             }
             catch
             {
-                MessageBox.DEBUG(m_strRegDTName + "脚本记录存在错误, " + i);
+                MessageBox.DEBUG(m_strRegDTName + "腳本記錄存在錯誤, " + i);
                 continue;
             }
         }
     }
 
 }
+

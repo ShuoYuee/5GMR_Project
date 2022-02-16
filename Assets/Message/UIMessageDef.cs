@@ -3,7 +3,7 @@ using System.Collections;
 using ccU3DEngine;
 
 /// <summary>
-/// UI消息定义
+/// UI消息定義
 /// </summary>
 public class UIMessageDef : BaseUIMessageDef
 {
@@ -16,14 +16,14 @@ public class UIMessageDef : BaseUIMessageDef
     //public static string BATTLEUIUPDATE = "BATTLEUIUPDATE";
 
     public static string PlayerJionGame = "PlayerJionGame";
-    public static string PlayerLeaveGame = "PlayerLeaveGame";    
+    public static string PlayerLeaveGame = "PlayerLeaveGame";
 
     /// <summary>
-    /// 资源加载进度
+    /// 資源載入進度
     /// </summary>
     public static string UI_RESOURCELOADPROGRESS = "UI_RESOURCELOADPROGRESS";
     /// <summary>
-    /// 资源加载完消息
+    /// 資源載入完消息
     /// </summary>
     public static string UI_RESOURCECOMPLETE = "UI_RESOURCECOMPLETE";
 
@@ -32,3 +32,4 @@ public class UIMessageDef : BaseUIMessageDef
     public static string UI_UpdateInitProgress = "UI_UpdateInitProgress";
 
 }
+

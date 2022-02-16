@@ -6,7 +6,7 @@ public class SCTools
 {
 
     /// <summary>
-    /// 手工设置当前工作的VVV几
+    /// 手工設置當前工作的VVV幾
     /// </summary>
     /// <param name="strVVV"></param>
     public static void f_SetVVV(string strVVV)

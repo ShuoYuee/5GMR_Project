@@ -18,6 +18,8 @@ public class GameMainTriggerCtrl : MonoBehaviour
     //private float _fLookTime = 0f;
     private bool _bLookTime = false;
 
+    private EM_PlayCtrl _PlayCtrl = EM_PlayCtrl.Positon;
+
     public enum EM_TriggerObj
     {
         None = 0,
@@ -27,6 +29,15 @@ public class GameMainTriggerCtrl : MonoBehaviour
         ButtonUI = 4,   //按鈕UI
     }
 
+    /// <summary>輸入控制模式</summary>
+    private enum EM_PlayCtrl
+    {
+        Positon,
+        Rotation,
+        Scale,
+        Height,
+    }
+
     private void Start()
     {
         //暫預定四個輸入事件
@@ -34,6 +45,11 @@ public class GameMainTriggerCtrl : MonoBehaviour
         GameInputCtrl.OnClickBtnOne += f_EditCtrl;
         GameInputCtrl.OnClickBtnTwo += f_EditCtrl;
         GameInputCtrl.OnClickBtnThree += f_EditCtrl;
+
+        //控制玩家輸入事件
+        GameInputCtrl.OnClickBtnArrow += f_PlayCtrlInput;
+        GameInputCtrl.OnClickBtnChangeState += f_ChangePlayCtrlState;
+        GameInputCtrl.OnClickBtnReset += f_ResetInitPos;
     }
 
     // Update is called once per frame
@@ -149,6 +165,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
         _Focus.localScale = new Vector3(fScale, fScale, fScale);
     }
 
+    #region 互動輸入事件
     /// <summary>一般輸入事件</summary>
     private void f_OnClick(int e)
     {
@@ -227,4 +244,154 @@ public class GameMainTriggerCtrl : MonoBehaviour
 
         _EditObjControll.f_SetInput(iInput);
     }
+    #endregion
+
+    #region 控制輸入事件
+    private Transform Player;
+    /// <summary>改變控制輸入模式</summary>
+    private void f_ChangePlayCtrlState(int i = 0)
+    {
+        int iState = (int)_PlayCtrl;
+        iState += 1;
+        if (iState > (int)EM_PlayCtrl.Height)
+        {
+            iState = (int)EM_PlayCtrl.Positon;
+        }
+        _PlayCtrl = (EM_PlayCtrl)iState;
+
+        if (GameMain.GetInstance()._PlayerCtrlText != null)
+        {
+            switch (_PlayCtrl)
+            {
+                case EM_PlayCtrl.Positon:
+                    GameMain.GetInstance()._PlayerCtrlText.text = "當前操控模式 : 位移";
+                    break;
+
+                case EM_PlayCtrl.Rotation:
+                    GameMain.GetInstance()._PlayerCtrlText.text = "當前操控模式 : 旋轉";
+                    break;
+
+                case EM_PlayCtrl.Scale:
+                    GameMain.GetInstance()._PlayerCtrlText.text = "當前操控模式 : 場景縮放";
+                    break;
+
+                case EM_PlayCtrl.Height:
+                    GameMain.GetInstance()._PlayerCtrlText.text = "當前操控模式 : 高度";
+                    break;
+            }
+        }
+    }
+
+    /// <summary>玩家控制輸入</summary>
+    private void f_PlayCtrlInput(int iArrow)
+    {
+        if (Player == null)
+        {
+            Player = GameMain.GetInstance().m_Player;
+        }
+
+        switch (_PlayCtrl)
+        {
+            case EM_PlayCtrl.Positon:
+                f_CtrlPosition(iArrow);
+                break;
+
+            case EM_PlayCtrl.Rotation:
+                f_CtrlRotation(iArrow);
+                break;
+
+            case EM_PlayCtrl.Scale:
+                f_CtrlScale(iArrow);
+                break;
+
+            case EM_PlayCtrl.Height:
+                f_CtrlHeight(iArrow);
+                break;
+        }
+    }
+
+    #region 玩家控制輸入
+    /// <summary>控制玩家位移</summary>
+    private void f_CtrlPosition(int iArrow)
+    {
+        switch (iArrow)
+        {
+            case 1:
+                Player.localPosition += Player.forward * 3f * Time.deltaTime;
+                break;
+
+            case -1:
+                Player.localPosition -= Player.forward * 3f * Time.deltaTime;
+                break;
+
+            case 2:
+                Player.localPosition += -Player.right * 3f * Time.deltaTime;
+                break;
+
+            case -2:
+                Player.localPosition += Player.right * 3f * Time.deltaTime;
+                break;
+        }
+    }
+
+    /// <summary>控制玩家旋轉</summary>
+    private void f_CtrlRotation(int iArrow)
+    {
+        switch (iArrow)
+        {
+            case 2:
+                Player.localEulerAngles += Vector3.up * 20f * Time.deltaTime;
+                break;
+
+            case -2:
+                Player.localEulerAngles -= Vector3.up * 20f * Time.deltaTime;
+                break;
+        }
+    }
+
+    /// <summary>控制場上物件大小</summary>
+    private void f_CtrlScale(int iArrow)
+    {
+        switch (iArrow)
+        {
+            case 1:
+                GameMain.GetInstance().m_GameTable.transform.localScale += Vector3.one * Time.deltaTime;
+                break;
+
+            case -1:
+                GameMain.GetInstance().m_GameTable.transform.localScale -= Vector3.one * Time.deltaTime;
+                break;
+        }
+    }
+
+    /// <summary>控制玩家高度</summary>
+    private void f_CtrlHeight(int iArrow)
+    {
+        switch (iArrow)
+        {
+            case 1:
+                Player.localPosition += Player.up * 3f * Time.deltaTime;
+                break;
+                
+            case -1:
+                Player.localPosition -= Player.up * 3f * Time.deltaTime;
+                break;
+        }
+    }
+    #endregion
+
+    /// <summary>回歸原位</summary>
+    private void f_ResetInitPos(int i)
+    {
+        if (i == 0)
+        {
+            Player.position = GameMain.GetInstance().m_InitPos.position;
+            Player.eulerAngles = GameMain.GetInstance().m_InitPos.eulerAngles;
+        }
+        else if (i == 1)
+        {
+            GameMain.GetInstance().m_GameTable.transform.localScale = GameMain.GetInstance().m_InitPos.localScale;
+        }
+    }
+    #endregion
 }

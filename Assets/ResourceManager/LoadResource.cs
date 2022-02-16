@@ -3,7 +3,7 @@ using System.Collections;
 using ccU3DEngine;
 using System;
 /// <summary>
-/// 资源加载
+/// 資源載入
 /// </summary>
 public class LoadResource
 {
@@ -25,10 +25,10 @@ public class LoadResource
         _hCallBack = hCallBack;
         InitResManager();
     }
-    
+
     private void InitResManager()
     {
-        MessageBox.DEBUG("加载资源");
+        MessageBox.DEBUG("載入資源");
 
         _ResManager = new ccMachineManager(new ResManagerState_Loop());
         //GameObject tLoginPage = GameObject.Find("LoginPage");
@@ -50,13 +50,13 @@ public class LoadResource
     {
         _ResManager.f_Update();
     }
-    
+
     private void LoadResourceSuc(object Obj)
     {
         ccTimeEvent.GetInstance().f_UnRegEvent(_iLoadResourceTime);
         _hCallBack(eMsgOperateResult.OR_Succeed);
     }
-        
+
 
 
 

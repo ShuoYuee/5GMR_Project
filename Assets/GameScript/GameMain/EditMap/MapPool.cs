@@ -95,7 +95,7 @@ public class MapPool : ccBasePool<long>
     {
         string[] aData = Directory.GetFileSystemEntries(@GetMapSavePath(), "*.txt");
         List<string> tData = new List<string>();
-        for(int i = 0; i < aData.Length; i++)
+        for (int i = 0; i < aData.Length; i++)
         {
             tData.Add(Path.GetFileNameWithoutExtension(aData[i]));
         }
@@ -128,7 +128,7 @@ public class MapPool : ccBasePool<long>
         }
 
         string path = GetMapFilePath(strFileName);
-       
+
         FileStream tFileStream = File.Open(path, FileMode.OpenOrCreate);
 
         byte[] aBuf = System.Text.Encoding.UTF8.GetBytes(strMapData);
@@ -142,7 +142,7 @@ public class MapPool : ccBasePool<long>
     public bool f_CheckFileName(string strFileName)
     {
         string[] FileName = f_LoadPreviewData();
-        for(int i = 0; i < FileName.Length; i++)
+        for (int i = 0; i < FileName.Length; i++)
         {
             if (FileName[i] == strFileName)
             {
@@ -153,7 +153,7 @@ public class MapPool : ccBasePool<long>
     }
     #endregion
 
-    #region AB资源相关
+    #region AB資源相關
     int iIndex = 0;
     /// <summary>創建隨機Id</summary>
     private long CreateKeyId()
@@ -189,11 +189,11 @@ public class MapPool : ccBasePool<long>
         long iId = ccMath.atol(aData[0]);
         CharacterDT tCharacterDT = (CharacterDT)glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetSC(ccMath.atoi(aData[1]));
         EditObjControll tEditObjControll = AddObj(iId, tCharacterDT);
-        
+
         //設定物件的位置、旋轉值、縮放值
         tEditObjControll.gameObject.transform.position = new Vector3(ccMath.atof(aData[2]), ccMath.atof(aData[3]), ccMath.atof(aData[4]));
         tEditObjControll.gameObject.transform.rotation = new Quaternion(ccMath.atof(aData[5]), ccMath.atof(aData[6]), ccMath.atof(aData[7]), ccMath.atof(aData[8]));
-        tEditObjControll.gameObject.transform.localScale = new Vector3(ccMath.atof(aData[9]), ccMath.atof(aData[10]), ccMath.atof(aData[11]));        
+        tEditObjControll.gameObject.transform.localScale = new Vector3(ccMath.atof(aData[9]), ccMath.atof(aData[10]), ccMath.atof(aData[11]));
     }
 
     /// <summary>
@@ -203,7 +203,7 @@ public class MapPool : ccBasePool<long>
     /// <param name="tCharacterDT">物件資料</param>
     /// <returns></returns>
     private EditObjControll AddObj(long iId, CharacterDT tCharacterDT)
-    {           
+    {
         GameObject tObj = glo_Main.GetInstance().m_ResourceManager.f_CreateABObj(tCharacterDT.szResName + ".bundle", tCharacterDT.szName, f_SetObj);
         _CurCharacterDT = tCharacterDT;
         //EditObjControll tEditObjControll = tObj.AddComponent<EditObjControll>();

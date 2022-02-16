@@ -47,15 +47,15 @@ public class BaseSocket
     private EM_SocketStatic _EM_SocketStatic = EM_SocketStatic.OffLine;
     protected ccMachineManager _SocketMachineManger = null;
     private Socket_Loop _Socket_Loop = null;
-    
+
     private int m_iId = 0;
 
-    private SocketState m_SocketState = new SocketState();    
+    private SocketState m_SocketState = new SocketState();
     private ccSocketMessagePool m_GMSocketMessagePool = new ccSocketMessagePool();
     private ccMessagePoolV2 m_MessagePool = new ccMessagePoolV2();
 
     private ccCallback m_LoginCallbackFunc = null;
-    
+
     private float m_fLastTime;
 
     public BaseSocket()
@@ -66,7 +66,7 @@ public class BaseSocket
 
     protected virtual void InitMachine()
     {
-       
+
     }
 
     public ccSoket f_GetSocket()
@@ -75,7 +75,7 @@ public class BaseSocket
     }
 
     ///// <summary>
-    ///// 连接服务器
+    ///// 連接伺服器
     ///// </summary>
     //public void f_ConnectServer(ccCallback callback)
     //{
@@ -92,7 +92,7 @@ public class BaseSocket
     public virtual void f_Close()
     {
         _EM_SocketStatic = EM_SocketStatic.OffLine;
-        MessageBox.DEBUG("关闭连接...");
+        MessageBox.DEBUG("關閉連接...");
         m_Socket.Close();
     }
 
@@ -117,7 +117,7 @@ public class BaseSocket
         return _EM_SocketStatic;
     }
 
-    #region 内部消息处理
+    #region 內部消息處理
 
     public virtual void Destroy()
     {
@@ -128,7 +128,7 @@ public class BaseSocket
         m_aRRRRR = null;
         m_aOutCatchBuf.Clear();
         m_aOutCatchBuf = null;
-        
+
     }
 
     public void f_AddListener_EndString(int tSocketCommand, SockBaseDT tSockBaseDT, ccCallback_EndString handler)
@@ -143,7 +143,7 @@ public class BaseSocket
         {
             if (ccCallbackFail == null)
             {
-                MessageBox.ASSERT("定义的命令返回回调为空 " + teMsgOperateType.ToString());
+                MessageBox.ASSERT("定義的命令返回回檔為空 " + teMsgOperateType.ToString());
             }
             f_RegCommandReturn(teMsgOperateType, null, ccCallbackFail);
         }
@@ -168,14 +168,14 @@ public class BaseSocket
         {
             if (ccCallbackFail == null)
             {
-                MessageBox.ASSERT("定义的命令返回回调为空 " + tEroeMsgOperateType.ToString());
+                MessageBox.ASSERT("定義的命令返回回檔為空 " + tEroeMsgOperateType.ToString());
             }
             f_RegCommandReturn(tEroeMsgOperateType, null, ccCallbackFail);
         }
     }
 
     /// <summary>
-    /// 前2位为独立的int,第3位开始为数量
+    /// 前2位為獨立的int,第3位開始為數量
     /// </summary>
     public void f_RegMessage_Int2(int iSocketCommand, SockBaseDT tSockBaseDT, ccCallback_Int2_V2 ccCallbackSuc,
        int tEroeMsgOperateType = (int)eMsgOperateType.OT_NULL, ccCallback ccCallbackFail = null)
@@ -185,14 +185,14 @@ public class BaseSocket
         {
             if (ccCallbackFail == null)
             {
-                MessageBox.ASSERT("定义的命令返回回调为空 " + tEroeMsgOperateType.ToString());
+                MessageBox.ASSERT("定義的命令返回回檔為空 " + tEroeMsgOperateType.ToString());
             }
             f_RegCommandReturn(tEroeMsgOperateType, null, ccCallbackFail);
         }
     }
 
     /// <summary>
-    /// 前3位为独立的int,第4位开始为数量
+    /// 前3位為獨立的int,第4位開始為數量
     /// </summary>
     public void f_RegMessage_Int3(int iSocketCommand, SockBaseDT tSockBaseDT, ccCallback_Int3_V2 ccCallbackSuc,
        int tEroeMsgOperateType = (int)eMsgOperateType.OT_NULL, ccCallback ccCallbackFail = null)
@@ -202,14 +202,14 @@ public class BaseSocket
         {
             if (ccCallbackFail == null)
             {
-                MessageBox.ASSERT("定义的命令返回回调为空 " + tEroeMsgOperateType.ToString());
+                MessageBox.ASSERT("定義的命令返回回檔為空 " + tEroeMsgOperateType.ToString());
             }
             f_RegCommandReturn(tEroeMsgOperateType, null, ccCallbackFail);
         }
     }
 
     /// <summary>
-    /// 前1位为独立的int,第2位开始为数量
+    /// 前1位為獨立的int,第2位開始為數量
     /// </summary>
     public void f_RegMessage_Int1(int iSocketCommand, SockBaseDT tSockBaseDT, ccCallback_Int2_V2 ccCallbackSuc,
        int tEroeMsgOperateType = (int)eMsgOperateType.OT_NULL, ccCallback ccCallbackFail = null)
@@ -219,14 +219,14 @@ public class BaseSocket
         {
             if (ccCallbackFail == null)
             {
-                MessageBox.ASSERT("定义的命令返回回调为空 " + tEroeMsgOperateType.ToString());
+                MessageBox.ASSERT("定義的命令返回回檔為空 " + tEroeMsgOperateType.ToString());
             }
             f_RegCommandReturn(tEroeMsgOperateType, null, ccCallbackFail);
         }
     }
 
     /// <summary>
-    /// 定义游戏消息，并按定义的消息对相应的数据进行拆分和转发
+    /// 定義遊戲消息，並按定義的消息對相應的資料進行拆分和轉發
     /// </summary>
     /// <param name="tSocketCommand"></param>
     /// <param name="tSockBaseDT"></param>
@@ -238,14 +238,14 @@ public class BaseSocket
         m_GMSocketMessagePool.f_AddListener(tSocketCommand.ToString(), tSockBaseDT, handler, null, iHaveNum, bAlive);
     }
 
-    
+
     public void f_RemoveListener(int tSocketCommand)
     {
         m_GMSocketMessagePool.f_RemoveListener(tSocketCommand.ToString());
     }
-    
+
     /// <summary>
-    /// 前0位为独立的int,第1位开始为数量
+    /// 前0位為獨立的int,第1位開始為數量
     /// </summary>
     private void f_AddListener_Int0_V2(int tSocketCommand, SockBaseDT tSockBaseDT, ccCallback_Int2_V2 handler, UnityEngine.Object pParent)
     {
@@ -253,7 +253,7 @@ public class BaseSocket
     }
 
     /// <summary>
-    /// 前1位为独立的int,第2位开始为数量
+    /// 前1位為獨立的int,第2位開始為數量
     /// </summary>
     /// <param name="eventType"></param>
     /// <param name="tSockBaseDT"></param>
@@ -265,7 +265,7 @@ public class BaseSocket
     }
 
     /// <summary>
-    /// 前2位为独立的int,第3位开始为数量
+    /// 前2位為獨立的int,第3位開始為數量
     /// </summary>
     private void f_AddListener_Int2_V2(int tSocketCommand, SockBaseDT tSockBaseDT, ccCallback_Int2_V2 handler, UnityEngine.Object pParent)
     {
@@ -273,7 +273,7 @@ public class BaseSocket
     }
 
     /// <summary>
-    /// 前三位为独立的int,第4位开始为数量
+    /// 前三位為獨立的int,第4位開始為數量
     /// </summary>
     private void f_AddListener_Int3_V2(int tSocketCommand, SockBaseDT tSockBaseDT, ccCallback_Int3_V2 handler, UnityEngine.Object pParent)
     {
@@ -297,12 +297,12 @@ public class BaseSocket
     {
         if (iResult < 0)
         {
-            Debug.Log(m_strTTTT + " 游戏接收数据错误 " + iResult);
+            Debug.Log(m_strTTTT + " 遊戲接收資料錯誤 " + iResult);
             return;
         }
         byte[] TmpBytes = new byte[stHead.iBodyLen];
         Array.Copy(bytes, TmpBytes, stHead.iBodyLen);
-        string ppSQL = m_strTTTT + " " + wTemp + " 接收(" + iResult + ") - 类型:" + stHead.iPackType + " 长度:" + stHead.iBodyLen + "-" + stHead.iRecvUserID + "-" + stHead.iTemp + "-" + stHead.iTemp1 + "-" + stHead.iTemp2;
+        string ppSQL = m_strTTTT + " " + wTemp + " 接收(" + iResult + ") - 類型:" + stHead.iPackType + " 長度:" + stHead.iBodyLen + "-" + stHead.iRecvUserID + "-" + stHead.iTemp + "-" + stHead.iTemp1 + "-" + stHead.iTemp2;
         //MessageBox.DEBUG(ppSQL);
         //int iDoLen = DoRouter(stHead, bytes, 0);
         Debug.Log(ppSQL);
@@ -321,18 +321,18 @@ public class BaseSocket
             iRecvNum += 18;
             iRecvNum += bytes.Length;
 
-            string ppSQL = m_strTTTT + " 发:" + m_fSendBufSize + " 收:" + iRecvNum + " 接收 - 类型:" + stHead.iPackType + " 长度:" + stHead.iBodyLen + "-" + stHead.iRecvUserID + "-" + stHead.iTemp + "-" + stHead.iTemp1 + "-" + stHead.iTemp2;
+            string ppSQL = m_strTTTT + " 發:" + m_fSendBufSize + " 收:" + iRecvNum + " 接收 - 類型:" + stHead.iPackType + " 長度:" + stHead.iBodyLen + "-" + stHead.iRecvUserID + "-" + stHead.iTemp + "-" + stHead.iTemp1 + "-" + stHead.iTemp2;
             //MessageBox.DEBUG(ppSQL);
 
             m_dtSocketTimeout = System.DateTime.Now;
 
             if (DoRouter(stHead, bytes, 0) == 0)
-            {//未找到对应的处理转到外部方法处理
-                Debug.LogError(m_strTTTT + " 未找到对应的处理方法 " + stHead.iPackType);
-            }            
+            {//未找到對應的處理轉到外部方法處理
+                Debug.LogError(m_strTTTT + " 未找到對應的處理方法 " + stHead.iPackType);
+            }
             if (stHead.iPackType <= 0)
             {
-                f_Printf("错包", bytes);
+                f_Printf("錯包", bytes);
                 //m_bRunThread = false;
                 MessageBox.ASSERT(m_strTTTT + " EEEEE");
             }
@@ -340,7 +340,7 @@ public class BaseSocket
             {
                 //MessageBox.DEBUG("OK");
             }
-            //MessageBox.DEBUG("发:" + m_fSendBufSize + " 收:" + iRecvNum);
+            //MessageBox.DEBUG("發:" + m_fSendBufSize + " 收:" + iRecvNum);
         }
     }
 
@@ -354,7 +354,7 @@ public class BaseSocket
         RouterUpdate();
         m_MessagePool.f_Update();
         _SocketMachineManger.f_Update();
-        
+
     }
 
     private int DoRouter(aaa12334 stHead, byte[] bytes, int iPos)
@@ -369,16 +369,16 @@ public class BaseSocket
             if (_CurSendCatchBuf == null)
             {
                 _CurSendCatchBuf = (CatchBuf)m_aOutCatchBuf.Dequeue();
-            }      
+            }
             iSendNum = m_Socket.f_Send(_CurSendCatchBuf.bytes);
             if (-1 == iSendNum)
             {
-                MessageBox.DEBUG(m_strTTTT + " 发送失败 " + m_aOutCatchBuf.Count);
+                MessageBox.DEBUG(m_strTTTT + " 發送失敗 " + m_aOutCatchBuf.Count);
                 f_Close();
                 return;
             }
             _CurSendCatchBuf = null;
-            MessageBox.DEBUG(m_strTTTT + " 发送: " + iSendNum);
+            MessageBox.DEBUG(m_strTTTT + " 發送: " + iSendNum);
         }
     }
 
@@ -386,7 +386,7 @@ public class BaseSocket
     {
         return f_SendBuf((int)tSocketCommand, bBodyBuf);
     }
-        
+
     public int f_SendBuf(int wAssistantCmd, byte[] bBodyBuf)
     {
         byte[] bytes = m_Socket.f_CreateSocketPack(wAssistantCmd, bBodyBuf);
@@ -416,7 +416,7 @@ public class BaseSocket
 
     #endregion
 
-    #region 外部消息处理
+    #region 外部消息處理
 
     private bool _bInitMessage = false;
     protected virtual void InitMessage()
@@ -426,7 +426,7 @@ public class BaseSocket
             return;
         }
         _bInitMessage = true;
-        
+
     }
 
     protected virtual void UnInitMessage()
@@ -493,7 +493,7 @@ public class BaseSocket
 
         //MessageBox.DEBUG("LedCommand:" + tstLedCommand.iScId);
 
-    }       
+    }
 
     List<sCommandReturn> _aWaitDelList = new List<sCommandReturn>();
     protected void On_CMsg_GameCommandReturn(object Obj)
@@ -509,7 +509,7 @@ public class BaseSocket
         //    eMsgOperateType teMsgOperateType = (eMsgOperateType)tstGameCommandReturn.iCommand;
         //    if (tstGameCommandReturn.iResult != 0)
         //    {
-        //        MessageBox.DEBUG("操作失败：" + tstGameCommandReturn.iCommand + ">>" + teMsgOperateType.ToString() + " >> " + tstGameCommandReturn.iResult);
+        //        MessageBox.DEBUG("操作失敗：" + tstGameCommandReturn.iCommand + ">>" + teMsgOperateType.ToString() + " >> " + tstGameCommandReturn.iResult);
         //    }
         //}
 
@@ -518,7 +518,7 @@ public class BaseSocket
         {
             _aWaitDelList.Clear();
             //foreach (sCommandReturn tsCommandReturn in ttList)
-            for(int i = 0; i < ttList.Count; i++)
+            for (int i = 0; i < ttList.Count; i++)
             {
                 sCommandReturn tsCommandReturn = ttList[i];
                 if (tstGameCommandReturn.iResult == (int)eMsgOperateResult.OR_Succeed)
@@ -551,11 +551,11 @@ public class BaseSocket
 
 
 
-    #region 时间
+    #region 時間
 
     public virtual void f_Ping()
     {
-       
+
     }
 
     protected void On_Ping(object Obj)
@@ -591,7 +591,7 @@ public class BaseSocket
     //{
     //    System.TimeSpan tt = System.DateTime.Now - _LastUpdateTime;
     //    int second = tt.Seconds;
-    //    return StaticValue.m_iNewServerTime + second - 5;        // 延迟Time.deltaTime;
+    //    return StaticValue.m_iNewServerTime + second - 5;        // 延遲Time.deltaTime;
     //}
 
     #endregion

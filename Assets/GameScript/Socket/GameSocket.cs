@@ -45,8 +45,8 @@ public class GameSocket : BaseSocket
         base.f_Close();
 
     }
-    
-    #region 登陆相关
+
+    #region 登陸相關
 
     public void f_Login(ccCallback func = null)
     {
@@ -57,7 +57,7 @@ public class GameSocket : BaseSocket
 
     #endregion
 
-    #region 内部消息处理
+    #region 內部消息處理
 
     public override void Destroy()
     {
@@ -73,7 +73,7 @@ public class GameSocket : BaseSocket
 
     #endregion
 
-    #region 外部消息处理
+    #region 外部消息處理
 
     protected override void InitMessage()
     {
@@ -106,18 +106,18 @@ public class GameSocket : BaseSocket
 
     #endregion
 
-    #region 被踢下线相关
+    #region 被踢下線相關
 
     private void f_QuitGameSureHandle(object value)
     {
-        //退出游戏
+        //退出遊戲
         Application.Quit();
     }
 
     #endregion
 
-    
-#region 时间
+
+    #region 時間
 
     public override void f_Ping()
     {
@@ -141,7 +141,7 @@ public class GameSocket : BaseSocket
         stPlayerFishing tstPlayerFishing = (stPlayerFishing)Obj;
 
         MessageBox.DEBUG("OnPlayerFishing:" + tstPlayerFishing.iFishScId);
-        glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(GameMessageDef.PlayerFishing, tstPlayerFishing);        
+        glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(GameMessageDef.PlayerFishing, tstPlayerFishing);
 
     }
 
@@ -167,3 +167,4 @@ public class GameSocket : BaseSocket
 
 
 }//END Class
+

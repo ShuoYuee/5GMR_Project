@@ -1,4 +1,16 @@
-﻿using ccU3DEngine;
+﻿
+
+
+
+
+
+
+
+
+
+
+
+using ccU3DEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,7 +33,7 @@ namespace GameLogic
         GameObject _LogoFFF = null;
         Image _ImageBg = null;
 
-        
+
         Dictionary<string, GamePlotRole> _aGamePlotRole = new Dictionary<string, GamePlotRole>();
 
         protected override void On_Destory()
@@ -31,7 +43,7 @@ namespace GameLogic
 
         protected override void On_Init()
         {
-            MessageBox.DEBUG("启用游戏包中的UI_GamePlot脚本");
+            MessageBox.DEBUG("啟用遊戲包中的UI_GamePlot腳本");
 
             f_RegClickEvent(f_GetObject("Btn_NextArrow"), OnClick_Btn_NextArrow);
             f_RegClickEvent(f_GetObject("BtnExit"), OnClick_BtnExit);
@@ -75,26 +87,26 @@ namespace GameLogic
 
             MessageBox.DEBUG("Play:" + _GamePlotDT.iId);
             /*
-            开始执行动作类型：
+            開始執行動作類型：
 
-            1.剧本文字 （参数1剧情文字，参数2显示速度(0-10)，参数3无效，参数4无效）
+            1.劇本文字 （參數1劇情文字，參數2顯示速度(0-10)，參數3無效，參數4無效）
 
-            4.设置角色名（参数1角色名文字，参数2显示左右(0向右 1向左)，参数3无效，参数4无效）
-            5.重置所有（参数1无效，参数2无效，参数3无效，参数4无效）
-            6.关闭图片或背景图片（参数1资源名Resources\GamePlot，参数2无效，参数3无效，参数4无效）
+            4.設置角色名（參數1角色名文字，參數2顯示左右(0向右 1向左)，參數3無效，參數4無效）
+            5.重置所有（參數1無效，參數2無效，參數3無效，參數4無效）
+            6.關閉圖片或背景圖片（參數1資源名Resources\GamePlot，參數2無效，參數3無效，參數4無效）
 
-            21.显示图片 （参数1资源名Resources\GamePlot，参数2无效，参数3无效，参数4无效)
-            22.图片位置动画 （参数1资源名Resources\GamePlot，参数2Sx:Sy  开始移动SxSy(空使用当前位置)，参数3Ex:Ey 移动终点Ex:Ey，参数4时间内完成移动)
-            23.设置图片显示层次 （参数1资源名Resources\GamePlot，参数2 显示层次(数越大层次越高(0-10))，参数2无效，参数3无效，参数4无效）
-            24.设置图片朝向 （参数1资源名Resources\GamePlot，参数2 朝向(0向右 1向左)，参数2无效，参数3无效，参数4无效）
-            25.图片缩放动画 （参数1资源名Resources\GamePlot，参数2开始比例(空使用当前大小)，参数3 缩放大小比例(0-1)，参数4时间内完成）
+            21.顯示圖片 （參數1資源名Resources\GamePlot，參數2無效，參數3無效，參數4無效)
+            22.圖片位置動畫 （參數1資源名Resources\GamePlot，參數2Sx:Sy  開始移動SxSy(空使用當前位置)，參數3Ex:Ey 移動終點Ex:Ey，參數4時間內完成移動)
+            23.設置圖片顯示層次 （參數1資源名Resources\GamePlot，參數2 顯示層次(數越大層次越高(0-10))，參數2無效，參數3無效，參數4無效）
+            24.設置圖片朝向 （參數1資源名Resources\GamePlot，參數2 朝向(0向右 1向左)，參數2無效，參數3無效，參數4無效）
+            25.圖片縮放動畫 （參數1資源名Resources\GamePlot，參數2開始比例(空使用當前大小)，參數3 縮放大小比例(0-1)，參數4時間內完成）
 
 
              */
             if (_GamePlotDT.iStartAction == 1)
             {
                 CreateText(_GamePlotDT);
-            }            
+            }
             else if (_GamePlotDT.iStartAction == 4)
             {
                 SetRoleName(_GamePlotDT);
@@ -112,10 +124,10 @@ namespace GameLogic
             {
                 ImageCMD(_GamePlotDT);
             }
-        
+
             else
             {
-                MessageBox.ASSERT("未知剧情指令：" + _GamePlotDT.iId + ":" + _GamePlotDT.iStartAction);
+                MessageBox.ASSERT("未知劇情指令：" + _GamePlotDT.iId + ":" + _GamePlotDT.iStartAction);
             }
             PlayNext(_GamePlotDT);
 
@@ -140,7 +152,7 @@ namespace GameLogic
         {
             if (tGamePlotDT.iNeedEnd > 0)
             {
-                MessageBox.DEBUG(tGamePlotDT.iNeedEnd + "后结束");
+                MessageBox.DEBUG(tGamePlotDT.iNeedEnd + "後結束");
                 ccTimeEvent.GetInstance().f_RegEvent(tGamePlotDT.iNeedEnd, false, null, CallBackGoNextPlotDT);
             }
             else
@@ -168,11 +180,11 @@ namespace GameLogic
 
         private void ImageCMD(GamePlotDT tGamePlotDT)
         {
-//21.显示图片 （参数1资源名Resources\GamePlot，参数2无效，参数3无效，参数4无效)
-//22.图片位置动画 （参数1资源名Resources\GamePlot，参数2Sx: Sy 开始移动SxSy(空使用当前位置)，参数3Ex: Ey 移动终点Ex:Ey，参数4时间内完成移动)
-//23.设置图片显示层次 （参数1资源名Resources\GamePlot，参数2 显示层次(数越大层次越高(0 - 10))，参数2无效，参数3无效，参数4无效）
-//24.设置图片朝向 （参数1资源名Resources\GamePlot，参数2 朝向(0向右 1向左)，参数2无效，参数3无效，参数4无效）
-//25.图片缩放动画 （参数1资源名Resources\GamePlot，参数2开始比例(空使用当前大小)，参数3 缩放大小比例(0 - 1)，参数4时间内完成）
+            //21.顯示圖片 （參數1資源名Resources\GamePlot，參數2無效，參數3無效，參數4無效)
+            //22.圖片位置動畫 （參數1資源名Resources\GamePlot，參數2Sx: Sy 開始移動SxSy(空使用當前位置)，參數3Ex: Ey 移動終點Ex:Ey，參數4時間內完成移動)
+            //23.設置圖片顯示層次 （參數1資源名Resources\GamePlot，參數2 顯示層次(數越大層次越高(0 - 10))，參數2無效，參數3無效，參數4無效）
+            //24.設置圖片朝向 （參數1資源名Resources\GamePlot，參數2 朝向(0向右 1向左)，參數2無效，參數3無效，參數4無效）
+            //25.圖片縮放動畫 （參數1資源名Resources\GamePlot，參數2開始比例(空使用當前大小)，參數3 縮放大小比例(0 - 1)，參數4時間內完成）
             GamePlotRole tGamePlotRole = GetGamePlotRole(tGamePlotDT.szData1);
             if (tGamePlotRole == null)
             {
@@ -180,7 +192,7 @@ namespace GameLogic
             }
             tGamePlotRole.f_DoCMD(tGamePlotDT);
         }
-        
+
         private void SetRoleName(GamePlotDT tGamePlotDT)
         {
             _RoleName.SetRoleName(tGamePlotDT);
@@ -197,7 +209,7 @@ namespace GameLogic
             return tGamePlotRole;
         }
 
-            //private void LoadBG()
+        //private void LoadBG()
         //{
         //    GameObject Obj = CreateObj(_GamePlotDT.szBG);
         //    Obj.transform.parent = f_GetObject("BG").transform;            
@@ -219,7 +231,7 @@ namespace GameLogic
         {
 
         }
-        
+
         void OnClick_Btn_NextArrow(GameObject go, object obj1, object obj2)
         {
             _PlotText.f_FastClick();
@@ -235,7 +247,7 @@ namespace GameLogic
         {
             DoExit();
         }
-        
+
         private void DoExit()
         {
             DestoryRes();
@@ -244,7 +256,7 @@ namespace GameLogic
         }
 
         private void SleepClose(object Obj)
-        { 
+        {
             glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.UI_GamePlotClose);
             f_Close();
         }
@@ -254,7 +266,7 @@ namespace GameLogic
             GameObject Obj = glo_Main.GetInstance().m_ResourceManager.f_CreateResource("GamePlot/" + strRes);
             if (Obj == null)
             {
-                MessageBox.ASSERT("剧情资源未找到：" + strRes);
+                MessageBox.ASSERT("劇情資源未找到：" + strRes);
                 return null;
             }
             Obj.name = strRes;
@@ -276,9 +288,9 @@ namespace GameLogic
         }
 
         private void DestoryRes()
-        {            
+        {
             foreach (KeyValuePair<string, GamePlotRole> tItem in _aGamePlotRole)
-            {                
+            {
                 tItem.Value.f_Destory();
             }
             _aGamePlotRole.Clear();

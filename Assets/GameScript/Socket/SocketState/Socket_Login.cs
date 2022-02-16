@@ -28,7 +28,7 @@ public class Socket_Login : Socket_StateBase
     public override void f_Enter(object Obj)
     {
         base.f_Enter(Obj);
-        MessageBox.DEBUG("登陆....");
+        MessageBox.DEBUG("登入....");
 
         _stIp.m_szIp = GloData.glo_strSvrIP;
         _stIp.m_iPort = GloData.glo_iSvrPort;
@@ -60,11 +60,11 @@ public class Socket_Login : Socket_StateBase
         //    On_LoginSuc(tCMsg_GTC_LoginRelt);
         //}
     }
-    
+
     private void SendLogin(int iReLogin = 0)
-    {        
+    {
         _dtLoginTimeOut = System.DateTime.Now;
-       
+
         //CreateSocketBuf tCreateSocketBuf = new CreateSocketBuf();
         //tCreateSocketBuf.f_Add(iReLogin);
         //tCreateSocketBuf.f_Add(Data_Pool.m_UserData.m_iServerId);
@@ -74,7 +74,7 @@ public class Socket_Login : Socket_StateBase
         //tCreateSocketBuf.f_Add(StaticValue.m_LoginName, 28);
         //tCreateSocketBuf.f_Add(StaticValue.m_LoginPwd, 28);
         //_BaseSocket.f_SendBuf2Force((int)SocketCommand.CS_UserLogin, tCreateSocketBuf.f_GetBuf());
-          
+
         _BaseSocket.f_SetSocketStatic(EM_SocketStatic.Logining);
 
         CMsg_GTC_LoginRelt tCMsg_GTC_LoginRelt = new CMsg_GTC_LoginRelt();
@@ -84,7 +84,7 @@ public class Socket_Login : Socket_StateBase
 
     private void On_LoginSuc(object Obj)
     {
-		/*
+        /*
         if (_GameSocket.f_GetSocketStatic() == EM_SocketStatic.LoginEro)
         {
             return;
@@ -92,11 +92,11 @@ public class Socket_Login : Socket_StateBase
         */
         CMsg_GTC_LoginRelt tCMsg_GTC_LoginRelt = (CMsg_GTC_LoginRelt)Obj;
         //_GameSocket.f_RemoveListener(SocketCommand.GTC_AccountEnterResult);
-        MessageBox.DEBUG("登陆返回：" + tCMsg_GTC_LoginRelt.m_result);
+        MessageBox.DEBUG("登入返回：" + tCMsg_GTC_LoginRelt.m_result);
         if (_LoginCallbackFunc != null)
         {
             _LoginCallbackFunc(tCMsg_GTC_LoginRelt.m_result);
-            _LoginCallbackFunc = null;            
+            _LoginCallbackFunc = null;
         }
         if (tCMsg_GTC_LoginRelt.m_result == (int)eMsgOperateResult.OR_Succeed)
         {
@@ -104,21 +104,21 @@ public class Socket_Login : Socket_StateBase
             _BaseSocket.f_SetSocketStatic(EM_SocketStatic.OnLine);
             _BaseSocket.UpdateServerTime(tCMsg_GTC_LoginRelt.m_iServerTime);
 
-           
-            //MessageBox.DEBUG("登陆成功, 玩家Id:" + Data_Pool.m_UserData.m_iUserId);
+
+            //MessageBox.DEBUG("登入成功, 玩家Id:" + Data_Pool.m_UserData.m_iUserId);
 
             _BaseSocket.f_Ping();
             f_SetComplete((int)EM_Socket.Loop);
-        }     
+        }
         else
         {
             if (_iReLoginTimeId <= 0)
             {
                 _BaseSocket.f_Close();
-                //if ((eMsgOperateResult)tCMsg_GTC_LoginRelt.m_result == eMsgOperateResult.OR_Error_AccountRepetition ||    // = 20, // 注册：账号重复
-                //    (eMsgOperateResult)tCMsg_GTC_LoginRelt.m_result == eMsgOperateResult.OR_Error_NoAccount ||    // = 21 ||    //, // 登陆：账号不存在
-                //    (eMsgOperateResult)tCMsg_GTC_LoginRelt.m_result == eMsgOperateResult.OR_Error_Password ||    // = 22 ||    //, // 登陆：密码错误
-                //    (eMsgOperateResult)tCMsg_GTC_LoginRelt.m_result == eMsgOperateResult.OR_Error_AccountOnline)    // = 24)    //, // 登陆：账号在线)
+                //if ((eMsgOperateResult)tCMsg_GTC_LoginRelt.m_result == eMsgOperateResult.OR_Error_AccountRepetition ||    // = 20, // 註冊：帳號重複
+                //    (eMsgOperateResult)tCMsg_GTC_LoginRelt.m_result == eMsgOperateResult.OR_Error_NoAccount ||    // = 21 ||    //, // 登入：帳號不存在
+                //    (eMsgOperateResult)tCMsg_GTC_LoginRelt.m_result == eMsgOperateResult.OR_Error_Password ||    // = 22 ||    //, // 登入：密碼錯誤
+                //    (eMsgOperateResult)tCMsg_GTC_LoginRelt.m_result == eMsgOperateResult.OR_Error_AccountOnline)    // = 24)    //, // 登入：帳號線上)
                 //{
                 //    _GameSocket.f_SetSocketStatic(EM_SocketStatic.LoginEro);
                 //}
@@ -126,21 +126,21 @@ public class Socket_Login : Socket_StateBase
 
 
                 eMsgOperateResult teMsgOperateResult = (eMsgOperateResult)tCMsg_GTC_LoginRelt.m_result;
-                MessageBox.DEBUG("登陆失败。 " + teMsgOperateResult.ToString());
-                MessageBox.DEBUG("重新登陆。 ");
+                MessageBox.DEBUG("登入失敗。 " + teMsgOperateResult.ToString());
+                MessageBox.DEBUG("重新登入。 ");
                 _iReLoginTimeId = ccTimeEvent.GetInstance().f_RegEvent(10f, false, null, Login);
-            }            
+            }
         }
 
     }
 
 
-#region 游戏开始协议
+    #region 遊戲開始協議
 
     private void On_GTC_GameStartNotfy(object Obj)
     {
         //basicNode0 tsForceOffline = (basicNode0)Obj;
-        MessageBox.DEBUG("游戏开始 1111111111111。 ");
+        MessageBox.DEBUG("遊戲開始 1111111111111。 ");
         //if (_LoginCallbackFunc != null)
         //{
         //    _LoginCallbackFunc((object)eMsgOperateResult.OR_Succeed);
@@ -148,7 +148,8 @@ public class Socket_Login : Socket_StateBase
         //}
     }
 
-#endregion
+    #endregion
 
 
 }
+

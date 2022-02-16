@@ -13,26 +13,26 @@ namespace GameLogic
         //PowerIndicator _PowerIndicator;
         protected override void On_Init()
         {
-            MessageBox.DEBUG("启用游戏包中的UI_GameSet脚本");
+            MessageBox.DEBUG("啟用遊戲包中的UI_GameSet腳本");
 
             f_RegClickEvent(f_GetObject("BtnExit"), OnClick_BtnExit);
         }
-        
+
         protected override void On_Open(object e)
         {
-           
+
         }
 
-      
+
         protected override void On_Close()
         {
-           
+
         }
 
         protected override void On_Update()
         {
             base.On_Update();
-            
+
         }
 
         protected override void On_UpdateGUI()
@@ -44,12 +44,12 @@ namespace GameLogic
         void OnClick_BtnExit(GameObject go, object obj1, object obj2)
         {
             ccUIHoldPool.GetInstance().f_UnHold();
-            f_Close();           
-        }    
+            f_Close();
+        }
 
         private void DoExit()
         {
-           
+
         }
 
         protected override void On_Destory()

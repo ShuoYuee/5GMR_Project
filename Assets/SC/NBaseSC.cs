@@ -37,7 +37,7 @@ public abstract class NBaseSC
         {
             return tNBaseSCDT;
         }
-        MessageBox.ASSERT(m_strRegDTName + " 请求的SC脚本未找到 " + iId);
+        MessageBox.ASSERT(m_strRegDTName + " 請求的SC腳本未找到 " + iId);
         return null;
     }
 

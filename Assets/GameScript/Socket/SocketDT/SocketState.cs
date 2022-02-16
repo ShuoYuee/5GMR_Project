@@ -29,16 +29,16 @@ public class SocketState
         if (!m_StateData)
             ppSQL += "m_StateData ";
 
-        return ppSQL;        
+        return ppSQL;
     }
 
     /// <summary>
-    /// 玩家数据
+    /// 玩家數據
     /// </summary>
     public bool m_PlayerData;
 
     /// <summary>
-    /// 我的世界已有建筑
+    /// 我的世界已有建築
     /// </summary>
     public bool m_BuildData;
 
@@ -53,12 +53,12 @@ public class SocketState
     public bool m_GoodsData;
 
     /// <summary>
-    /// 战斗编队
+    /// 戰鬥編隊
     /// </summary>
     public bool m_BattleTeamData;
 
     /// <summary>
-    /// 关卡数据
+    /// 關卡數據
     /// </summary>
     public bool m_StateData;
 
@@ -66,3 +66,4 @@ public class SocketState
 
 
 }
+

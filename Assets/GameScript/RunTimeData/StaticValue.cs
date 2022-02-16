@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using ccU3DEngine;
 
 /// <summary>
-/// 保存玩家的各数据
+/// 保存玩家的各資料
 /// </summary>
 public class StaticValue
 {

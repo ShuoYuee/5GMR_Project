@@ -8,7 +8,7 @@ public class UITools
     public static Vector3 f_ChangeUIPos2ScenePos(GameObject oUIObj, Camera UICamera, Camera WorldCamera)
     {
         RectTransform tRectTransform = (RectTransform)oUIObj.transform;
-        
+
         Vector3[] fourCorners = new Vector3[4];
         tRectTransform.GetWorldCorners(fourCorners);
 
@@ -28,7 +28,7 @@ public class UITools
 
 
     /// <summary>
-    /// 计算content相对父级的bounds
+    /// 計算content相對父級的bounds
     /// </summary>
     /// <param name="content"></param>
     /// <returns></returns>
@@ -39,7 +39,7 @@ public class UITools
 
 
     /// <summary>
-    /// 计算相对于relativeTo的bounds
+    /// 計算相對於relativeTo的bounds
     /// </summary>
     /// <param name="relativeTo"></param>
     /// <param name="content"></param>
@@ -69,7 +69,7 @@ public class UITools
     }
 
     /// <summary>
-    /// 计算content相对世界坐标的bounds
+    /// 計算content相對世界座標的bounds
     /// </summary>
     /// <param name="content"></param>
     /// <returns></returns>
@@ -92,7 +92,7 @@ public class UITools
     }
 
     /// <summary>
-    /// 计算content的最大边框
+    /// 計算content的最大邊框
     /// </summary>
     /// <param name="content"></param>
     /// <param name="min"></param>
@@ -112,6 +112,6 @@ public class UITools
         }
 
     }
-    
+
 
 }

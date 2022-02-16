@@ -10,9 +10,13 @@ public class GameInputCtrl : MonoBehaviour
     public static event OnClickCtrl OnClickBtnOne;
     public static event OnClickCtrl OnClickBtnTwo;
     public static event OnClickCtrl OnClickBtnThree;
+
+    public static event OnClickCtrl OnClickBtnArrow;
+    public static event OnClickCtrl OnClickBtnReset;
+    public static event OnClickCtrl OnClickBtnChangeState;
     #endregion
 
-    private Transform Player;
+    //private Transform Player;
     ///// <summary>按鈕間隔時間</summary>
     //float _fBtnTime = 0f;
     /// <summary>輸入冷卻</summary>
@@ -25,42 +29,55 @@ public class GameInputCtrl : MonoBehaviour
 
     private void FixedUpdate()
     {
+        f_MouseMoveInput();
         f_EditInput();
         f_InputKey();
-        f_MouseMoveInput();
     }
 
     /// <summary>PC移動輸入</summary>
     private void f_MouseMoveInput()
     {
-        if (Player == null)
+        /*if (Player == null)
         {
             Player = GameMain.GetInstance().m_Player;
-        }
+        }*/
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            Player.localPosition += transform.up * 3f * Time.deltaTime;
+            //Player.localPosition += transform.up * 3f * Time.deltaTime;
             //GameMain.GetInstance().m_MainCamera.transform.localPosition += transform.up * 3f * Time.deltaTime;
+            OnClickBtnArrow.Invoke(1);
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            Player.localPosition -= transform.up * 3f * Time.deltaTime;
+            //Player.localPosition -= transform.up * 3f * Time.deltaTime;
             //GameMain.GetInstance().m_MainCamera.transform.localPosition -= transform.up * 3f * Time.deltaTime;
+            OnClickBtnArrow.Invoke(-1);
         }
-        else if (Input.GetKeyDown(KeyCode.Space))
+        else if (Input.GetKeyUp(KeyCode.Space))
         {
-            Player.transform.position = GameMain.GetInstance().m_InitPos.position;
+            //Player.transform.position = GameMain.GetInstance().m_InitPos.position;
             //GameMain.GetInstance().m_MainCamera.transform.position = GameMain.GetInstance().m_InitPos.position;
+            OnClickBtnReset.Invoke(0);
         }
-        /*else if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            Player.localPosition += -transform.right * 3f * Time.deltaTime;
+            //Player.localPosition += -transform.right * 3f * Time.deltaTime;
+            OnClickBtnArrow.Invoke(-2);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            Player.localPosition += transform.right * 3f * Time.deltaTime;
-        }*/
+            //Player.localPosition += transform.right * 3f * Time.deltaTime;
+            OnClickBtnArrow.Invoke(2);
+        }
+        else if (Input.GetKeyUp(KeyCode.F))
+        {
+            OnClickBtnChangeState(0);
+        }
+        else if (Input.GetKeyUp(KeyCode.G))
+        {
+            OnClickBtnReset.Invoke(1);
+        }
     }
 
     /// <summary>輸入冷卻時間</summary>

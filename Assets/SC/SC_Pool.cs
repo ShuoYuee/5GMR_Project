@@ -4,7 +4,7 @@ using ccU3DEngine;
 using System.Collections.Generic;
 
 /// <summary>
-/// 脚本管理器
+/// 腳本管理器
 /// </summary>
 public class SC_Pool
 {
@@ -18,7 +18,7 @@ public class SC_Pool
 
     public GameControll_ParameterSC m_GameControll_ParameterSC = new GameControll_ParameterSC();
     public GameControll_ConditionSC m_GameControll_ConditionSC = new GameControll_ConditionSC();
-    public GameControllSC m_GameControllSC = new GameControllSC();  
+    public GameControllSC m_GameControllSC = new GameControllSC();
     public GamePlotSC m_GamePlotSC = new GamePlotSC();
     public GoodsSC m_GoodsSC = new GoodsSC();
 
@@ -41,7 +41,7 @@ public class SC_Pool
         ///////////////////////////////////////////////////////////////
 
         int i = 0;
-        MessageBox.DEBUG("解析脚本");
+        MessageBox.DEBUG("解析腳本");
 
         string ppSQL;
         byte[] b = new byte[512];
@@ -70,7 +70,7 @@ public class SC_Pool
         _bLoadSuc = true;
 
 
-        MessageBox.DEBUG("解析脚本成功");
+        MessageBox.DEBUG("解析腳本成功");
     }
 
 
@@ -113,10 +113,10 @@ public class SC_Pool
         }
         else
         {
-            MessageBox.DEBUG("AB资源版本版本错误:" + strData);
+            MessageBox.DEBUG("AB資源版本版本錯誤:" + strData);
         }
 
-        MessageBox.DEBUG("AB资源版本:" + _iABVer);
+        MessageBox.DEBUG("AB資源版本:" + _iABVer);
     }
 
     public int f_GetABVer()
@@ -131,3 +131,4 @@ public class SC_Pool
     }
 
 }
+

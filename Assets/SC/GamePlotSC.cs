@@ -1,11 +1,3 @@
-
-//============================================
-//
-//    GamePlot来自GamePlot.xlsx文件自动生成脚本
-//    2021/2/1 17:00:09
-//    
-//
-//============================================
 using ccU3DEngine;
 using System;
 using System.Collections.Generic;
@@ -36,7 +28,7 @@ public class GamePlotSC : NBaseSC
             {
                 if (tFoddScData[i] == "")
                 {
-                    MessageBox.DEBUG(m_strRegDTName + "脚本存在空记录, " + i);
+                    MessageBox.DEBUG(m_strRegDTName + "腳本存在空記錄, " + i);
                     continue;
                 }
                 tData = tFoddScData[i].Split(new string[] { "@," }, System.StringSplitOptions.None);
@@ -57,10 +49,11 @@ public class GamePlotSC : NBaseSC
             }
             catch
             {
-                MessageBox.DEBUG(m_strRegDTName + "脚本记录存在错误, " + i);
+                MessageBox.DEBUG(m_strRegDTName + "腳本記錄存在錯誤, " + i);
                 continue;
             }
         }
     }
 
 }
+

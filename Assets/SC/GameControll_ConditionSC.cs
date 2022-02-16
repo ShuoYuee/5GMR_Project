@@ -1,11 +1,4 @@
 
-//============================================
-//
-//    GameControll_Condition来自GameControll_Condition.xlsx文件自动生成脚本
-//    2018/7/29 22:46:37
-//    
-//
-//============================================
 using ccU3DEngine;
 using System;
 using System.Collections.Generic;
@@ -36,7 +29,7 @@ public class GameControll_ConditionSC : NBaseSC
             {
                 if (tFoddScData[i] == "")
                 {
-                    MessageBox.DEBUG(m_strRegDTName + "脚本存在空记录, " + i);
+                    MessageBox.DEBUG(m_strRegDTName + "腳本存在空記錄, " + i);
                     continue;
                 }
                 tData = tFoddScData[i].Split(new string[] { "@," }, System.StringSplitOptions.None);
@@ -57,10 +50,11 @@ public class GameControll_ConditionSC : NBaseSC
             }
             catch
             {
-                MessageBox.DEBUG(m_strRegDTName + "脚本记录存在错误, " + i);
+                MessageBox.DEBUG(m_strRegDTName + "腳本記錄存在錯誤, " + i);
                 continue;
             }
         }
     }
 
 }
+

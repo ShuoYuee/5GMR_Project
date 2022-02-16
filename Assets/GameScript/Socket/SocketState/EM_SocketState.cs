@@ -2,20 +2,20 @@
 using System.Collections;
 
 /// <summary>
-/// Socket状态
+/// Socket狀態
 /// </summary>
 public enum EM_Socket
 {
     //OffLine,
-    Connect = 1,//连接
-    Regedit,//注册
-    Login,//登录
+    Connect = 1,//連接
+    Regedit,//註冊
+    Login,//登入
     Loop,
     Wait,//等待
     /// <summary>
-    /// 选角色
+    /// 選角色
     /// </summary>
     SelCharacter,
 
-    //ChatLogin,//登录
+    //ChatLogin,//登入
 }

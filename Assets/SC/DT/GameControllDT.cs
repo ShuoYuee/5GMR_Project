@@ -1,11 +1,3 @@
-
-//============================================
-//
-//    GameControll来自GameControll.xlsx文件自动生成脚本
-//    2018/7/6 16:27:34
-//    
-//
-//============================================
 using System;
 using System.Collections.Generic;
 
@@ -18,7 +10,7 @@ public class GameControllDT : NBaseSCDT
     }
 
     /// <summary>
-    /// 说明
+    /// 說明
     /// </summary>
     public string szName;
     /// <summary>
@@ -26,75 +18,76 @@ public class GameControllDT : NBaseSCDT
     /// </summary>
     public int iSection;
     /// <summary>
-    /// 等待多少时间后开始执行（单位秒）
+    /// 等待多少時間後開始執行（單位秒）
     /// </summary>
     public float fStartSleepTime;
     /// <summary>
-    /// 开始时执行指令动作
+    /// 開始時執行指令動作
     /// </summary>
     public int iStartAction;
     /// <summary>
-    /// 所属阵营
+    /// 所屬陣營
     /// </summary>
     public int iTeam;
     /// <summary>
-    /// 动作参数1
+    /// 動作參數1
     /// </summary>
     public string szData1;
     /// <summary>
-    /// 动作参数2
+    /// 動作參數2
     /// </summary>
     public string szData2;
     /// <summary>
-    /// 动作参数3
+    /// 動作參數3
     /// </summary>
     public string szData3;
     /// <summary>
-    /// 动作参数3
+    /// 動作參數3
     /// </summary>
     public string szData4;
     /// <summary>
-    /// 有效攻击部位
+    /// 有效攻擊部位
     /// </summary>
     public string szBeAttackPos;
     /// <summary>
-    /// 有效攻击阵营
+    /// 有效攻擊陣營
     /// </summary>
     public int iBeAttackTeam;
     /// <summary>
-    /// 是否需要等待结束
+    /// 是否需要等待結束
     /// </summary>
     public int iNeedEnd;
     /// <summary>
-    /// 结束事件后等待多少时间后执行（单位秒）
+    /// 結束事件後等待多少時間後執行（單位秒）
     /// </summary>
     public float fEndSleepTime;
     /// <summary>
-    /// 结束时执行指令动作
+    /// 結束時執行指令動作
     /// </summary>
     public int iEndAction;
     /// <summary>
-    /// 角色出生时对游戏结果影响0未影响1死亡游戏失败2死亡游戏胜利
+    /// 角色出生時對遊戲結果影響0未影響1死亡遊戲失敗2死亡遊戲勝利
     /// </summary>
     public int iGameResult;
     /// <summary>
-    /// 运行超时时间，指定时间脚本没有结束就被自动结束不填写默认10秒超时
+    /// 運行超時時間，指定時間腳本沒有結束就被自動結束不填寫默認10秒超時
     /// </summary>
     public float fRunTimeOut;
 
 
-    #region  附加缓存信息
+    #region  附加緩存資訊
 
     /// <summary>
-    /// 执行次数
+    /// 執行次數
     /// </summary>
     public int m_iRunTimes;
 
     /// <summary>
-    /// 结束类型
+    /// 結束類型
     /// </summary>
     public EM_MissionEndType m_emMissionEndType;
 
 
     #endregion
 }
+

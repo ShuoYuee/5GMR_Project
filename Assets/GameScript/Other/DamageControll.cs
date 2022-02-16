@@ -68,7 +68,7 @@ public class DamageControll : MonoBehaviour
         {
             if (m_Num4 == null)
             {
-                MessageBox.ASSERT("显示第4位数字为空 " + iNum);
+                MessageBox.ASSERT("顯示第4位元數位為空 " + iNum);
             }
             int iNum1 = iNum % 10;
             iNum = iNum / 10;
@@ -96,3 +96,4 @@ public class DamageControll : MonoBehaviour
 
 
 }
+

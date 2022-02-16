@@ -2,7 +2,7 @@
 using System.Collections;
 using ccU3DEngine;
 /// <summary>
-/// 声音管理器
+/// 聲音管理器
 /// </summary>
 public class AudioManager : MonoBehaviour
 {
@@ -30,16 +30,16 @@ public class AudioManager : MonoBehaviour
     }
 
     /// <summary>
-    /// 播放按钮音效
+    /// 播放按鈕音效
     /// </summary>
-    /// <param name="audioEffectType">音效类型</param>
+    /// <param name="audioEffectType">音效類型</param>
     /// <param name="PlayTime">播放比例</param>
     public void f_PlayAudioEffect()
     {
         //AudioClip audioEffectClip = glo_Main.GetInstance().m_ResourceManager.f_GetAudioClip(0, (int)audioEffectType);
         //if (audioEffectClip == null)
         //{
-        //    MessageBox.ASSERT("未能加载此音效！");
+        //    MessageBox.ASSERT("未能載入此音效！");
         //}
         //_ButtleAudio.clip = audioEffectClip;
         _EffectAudio.loop = false;
@@ -48,16 +48,16 @@ public class AudioManager : MonoBehaviour
     }
 
     /// <summary>
-    /// 播放游戏背景音乐
+    /// 播放遊戲背景音樂
     /// </summary>
-    /// <param name="audioMusicType">音乐类型</param>
-    /// <param name="isLoop">是否循环播放</param>
+    /// <param name="audioMusicType">音樂類型</param>
+    /// <param name="isLoop">是否迴圈播放</param>
     public void f_PlayAudioMusic(bool isLoop = true)
     {
         //AudioClip audioMusicClip = glo_Main.GetInstance().m_ResourceManager.f_GetAudioClip(2, (int)audioMusicType);
         //if (audioMusicClip == null)
         //{
-        //    MessageBox.ASSERT("未能加载此音效！");
+        //    MessageBox.ASSERT("未能載入此音效！");
         //}
         //_Bgm.clip = audioMusicClip;
         _Bgm.loop = isLoop;
@@ -68,14 +68,14 @@ public class AudioManager : MonoBehaviour
     /// <summary>
     /// 播放特效音效
     /// </summary>
-    /// <param name="audioEffectType">音效类型</param>
+    /// <param name="audioEffectType">音效類型</param>
     /// <param name="PlayTime">播放比例</param>
     public void f_PlayAudioSound()
     {
         //AudioClip audioEffectClip = glo_Main.GetInstance().m_ResourceManager.f_GetAudioClip(1, (int)audioEffectType);
         //if (audioEffectClip == null)
         //{
-        //    MessageBox.ASSERT("未能加载此音效！");
+        //    MessageBox.ASSERT("未能載入此音效！");
         //}
         //_SoundAudio.clip = audioEffectClip;
         //_SoundAudio.loop = false;
@@ -87,14 +87,14 @@ public class AudioManager : MonoBehaviour
     ///// <summary>
     ///// 播放技能音效
     ///// </summary>
-    ///// <param name="audioEffectType">音效类型</param>
+    ///// <param name="audioEffectType">音效類型</param>
     ///// <param name="PlayTime">播放比例</param>
     //public void f_PlayAudioMagic(string strName, float pitch = 1f)
     //{
     //    AudioClip audioEffectClip = glo_Main.GetInstance().m_ResourceManager.f_GetAudioMagic(strName);
     //    if (audioEffectClip == null)
     //    {
-    //        MessageBox.ASSERT("未能加载此音效！" + strName);
+    //        MessageBox.ASSERT("未能載入此音效！" + strName);
     //        return;
     //    }
     //    else
@@ -109,7 +109,7 @@ public class AudioManager : MonoBehaviour
     //}
 
     /// <summary>
-    /// 停止背景音乐
+    /// 停止背景音樂
     /// </summary>
     public void f_StopAudioMusic()
     {
@@ -122,7 +122,7 @@ public class AudioManager : MonoBehaviour
     }
 
     ///// <summary>
-    ///// 播放背景音乐
+    ///// 播放背景音樂
     ///// </summary>
     //public void f_PlayAudioMusic()
     //{
@@ -136,7 +136,7 @@ public class AudioManager : MonoBehaviour
         _SoundAudio.Play();
     }
     /// <summary>
-    /// 暂停背景音乐
+    /// 暫停背景音樂
     /// </summary>
     public void f_PauseAudioMusic()
     {
@@ -150,7 +150,7 @@ public class AudioManager : MonoBehaviour
     }
 
     ///// <summary>
-    ///// 恢复暂停背景音乐
+    ///// 恢復暫停背景音樂
     ///// </summary>
     //public void f_UnPauseAudioMusic()
     //{

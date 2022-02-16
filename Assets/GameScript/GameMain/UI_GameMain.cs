@@ -18,10 +18,10 @@ namespace GameLogic
         //PowerIndicator _PowerIndicator;
         protected override void On_Init()
         {
-            MessageBox.DEBUG("启用游戏包中的UI_GameMain脚本");
+            MessageBox.DEBUG("啟用遊戲包中的UI_GameMain腳本");
 
             _listPosCtrl = f_GetObject("CircularList").GetComponent<ListPositionCtrl>();
-            _Anchor=f_GetObject("Anchor").GetComponent<Image>();
+            _Anchor = f_GetObject("Anchor").GetComponent<Image>();
 
             f_RegClickEvent(f_GetObject("BtnSetup"), OnClick_BtnSetup);
             f_RegClickEvent(f_GetObject("DelObj"), OnClick_DelObj);
@@ -146,7 +146,7 @@ namespace GameLogic
             List<GameObject> tMapObj = (List<GameObject>)oMapObj;
 
             //將資料一一賦予給實例化的物件
-            for(int i = 0; i < tMapObj.Count; i++)
+            for (int i = 0; i < tMapObj.Count; i++)
             {
                 if (tMapObj[i].GetComponent<LoadMapBtn>() != null) { return; }
                 MenuObject tMenuObject = tMapObj[i].AddComponent<MenuObject>();
@@ -174,10 +174,10 @@ namespace GameLogic
         {
 
         }
-      
+
         protected override void On_Close()
         {
-           
+
         }
 
         protected override void On_Update()
@@ -189,7 +189,7 @@ namespace GameLogic
         private float _fAnchorCurTime = 0f;
         protected override void On_UpdateGUI()
         {
-            
+
         }
         #region 按鈕功能
 
@@ -210,7 +210,7 @@ namespace GameLogic
         {
             ListItem tListItem = (ListItem)_listPosCtrl.GetCenteredBox();
             CharacterDT tCharacterDT = (CharacterDT)tListItem.m_SCData;
-                                    
+
             GameMain.GetInstance().f_AddObj(tCharacterDT);
         }
 
@@ -238,12 +238,12 @@ namespace GameLogic
 
         private void DoExit()
         {
-           
+
         }
 
         protected override void On_Destory()
         {
-            
+
         }
 
         #region 錨點(暫未用到)

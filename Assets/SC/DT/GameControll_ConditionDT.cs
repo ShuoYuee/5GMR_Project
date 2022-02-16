@@ -1,11 +1,4 @@
 
-//============================================
-//
-//    GameControll_Condition来自GameControll_Condition.xlsx文件自动生成脚本
-//    2018/7/29 22:46:37
-//    
-//
-//============================================
 using System;
 using System.Collections.Generic;
 
@@ -15,43 +8,44 @@ public class GameControll_ConditionDT : NBaseSCDT
 {
 
     /// <summary>
-    /// 说明
+    /// 說明
     /// </summary>
     public string szName;
     /// <summary>
-    /// 检测参数
+    /// 檢測參數
     /// </summary>
     public string szParament;
     /// <summary>
-    /// 参数值
+    /// 參數值
     /// </summary>
     public string szParamentData;
     /// <summary>
-    /// 检测条件
+    /// 檢測條件
     /// </summary>
     public int iConditionId;
     /// <summary>
-    /// 动作参数1
+    /// 動作參數1
     /// </summary>
     public string szData1;
     /// <summary>
-    /// 动作参数2
+    /// 動作參數2
     /// </summary>
     public string szData2;
     /// <summary>
-    /// 动作参数3
+    /// 動作參數3
     /// </summary>
     public string szData3;
     /// <summary>
-    /// 动作参数4
+    /// 動作參數4
     /// </summary>
     public string szData4;
     /// <summary>
-    /// 条件满足时执行指令动作
+    /// 條件滿足時執行指令動作
     /// </summary>
     public int iRunAction;
     /// <summary>
-    /// 是否循环执行
+    /// 是否迴圈執行
     /// </summary>
     public int iLoop;
 }
+

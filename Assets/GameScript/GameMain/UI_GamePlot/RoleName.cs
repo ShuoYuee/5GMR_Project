@@ -24,7 +24,7 @@ public class RoleName
 
     public void SetRoleName(GamePlotDT tGamePlotDT)
     {
-        //4.设置角色名（参数1角色名文字，参数2显示左右(0向右 1向左)，参数3无效，参数4无效）
+        //4.設置角色名（參數1角色名文字，參數2顯示左右(0向右 1向左)，參數3無效，參數4無效）
         if (tGamePlotDT.szData2.Contains("0") == true)
         {
             if (tGamePlotDT.szData1.Length == 0)

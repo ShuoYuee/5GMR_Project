@@ -4,25 +4,25 @@ namespace GameLogic
 {
     public class UI_GameBattleUI : ccUILogicBase
     {
-        
+
         protected override void On_Init()
         {
-            MessageBox.DEBUG("启用游戏包中的UI_GameBattleUI脚本");
+            MessageBox.DEBUG("啟用遊戲包中的UI_GameBattleUI腳本");
 
-           
+
 
         }
-        
+
         protected override void On_Open(object e)
         {
             //ccUIManage.GetInstance().f_SendMsg("UIP_GameText", BaseUIMessageDef.UI_OPEN);
             //StaticValue.m_GamePlotControll.f_Play(StaticValue.m_iCurGamePlotId);
         }
 
-      
+
         protected override void On_Close()
         {
-           
+
         }
 
         protected override void On_Update()

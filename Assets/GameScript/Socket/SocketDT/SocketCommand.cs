@@ -12,43 +12,43 @@ public enum SocketCommand
     PING_Reps = 30000,
 
     /// <summary>
-    /// --客户端<-->游戏服务器
+    /// --用戶端<-->遊戲伺服器
     /// </summary>
     MSG_CGameMsg = 6,
 
     //////////////////////////////////////////////////////////////////////////
     /// <summary>
-    /// 创建账户 
+    /// 創建帳戶 
     /// </summary>
     CS_UserCreate = 10001,
     /// <summary>
-    /// 登陆申请 CMsg_CTG_AccountEnter
+    /// 登入申請 CMsg_CTG_AccountEnter
     /// </summary>
     CS_UserLogin = 10002,
 
     //////////////////////////////////////////////////////////////////////////////////////
     /// <summary>
-    /// 创建账户结果 
+    /// 創建帳戶結果 
     /// </summary>
     SC_UserCreate = 30001,
     /// <summary>
-    /// 登陆结果返回 CMsg_AccountLoginRelt
+    /// 登入結果返回 CMsg_AccountLoginRelt
     /// </summary>
     SC_UserLogin = 30002,
     SC_Kickout = 30003,
-   
+
     /// <summary>
-    /// 操作结果回应
+    /// 操作結果回應
     /// </summary>
     CONTROL_CTG_OperateResult = 30017,
 
     /// <summary>
-    /// 成绩更新消息
+    /// 成績更新消息
     /// </summary>
     emResultUpdate = 30030,
 
     /// <summary>
-    /// 最后结算成绩
+    /// 最後結算成績
     /// </summary>
     emResultEnd = 30040,
 
@@ -59,4 +59,5 @@ public enum SocketCommand
 
     emPlayerCharge = 30080,
 }
+
 

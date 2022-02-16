@@ -21,7 +21,7 @@ public class Socket_Loop : Socket_StateBase
         if (_iPingId == -99)
         {
             _iPingId = ccTimeEvent.GetInstance().f_RegEvent(GloData.glo_iPingTime, true, null, Callback_Ping);
-        }        
+        }
     }
 
     public override void f_Execute()
@@ -48,26 +48,26 @@ public class Socket_Loop : Socket_StateBase
         {
             f_SetComplete((int)EM_Socket.Login, -99);
         }
-        else 
+        else
         {
-            MessageBox.ASSERT("Socket状态错误 " + _BaseSocket.f_GetSocketStatic().ToString());
-        }        
+            MessageBox.ASSERT("Socket狀態錯誤 " + _BaseSocket.f_GetSocketStatic().ToString());
+        }
     }
 
     private bool TestSocketOnline()
     {
-        if (_BaseSocket.f_TestSocket())       
+        if (_BaseSocket.f_TestSocket())
         {
             //if (!glo_Main.GetInstance().m_StarSDK.f_CheckIsPaying())
             //{
-                if (PingTimeOut())
-                {
-                    return false;
-                }
+            if (PingTimeOut())
+            {
+                return false;
+            }
             //}
         }
         else
-        {           
+        {
             return false;
         }
         return true;
@@ -79,7 +79,7 @@ public class Socket_Loop : Socket_StateBase
         _bTestTime = false;
         m_dtPingTime = System.DateTime.Now;
     }
-    
+
     private void Callback_Ping(object Obj)
     {
         if (_BaseSocket.f_GetSocketStatic() == EM_SocketStatic.OnLine)
@@ -87,10 +87,10 @@ public class Socket_Loop : Socket_StateBase
             //int iTime = (int)(System.DateTime.Now - _BaseSocket.m_dtSocketTimeout).TotalSeconds;
             //if (iTime > GloData.glo_iPingTime)
             //{
-                _iRetryTimes = 0;
-                _bTestTime = true;
-                m_dtPingTime = System.DateTime.Now;
-                _BaseSocket.f_Ping();
+            _iRetryTimes = 0;
+            _bTestTime = true;
+            m_dtPingTime = System.DateTime.Now;
+            _BaseSocket.f_Ping();
             //}
         }
     }
@@ -106,7 +106,7 @@ public class Socket_Loop : Socket_StateBase
                 if (_iRetryTimes > 2)
                 {
                     f_UpdateTestTime();
-                    MessageBox.DEBUG("PingTimeOut 网络超时。");
+                    MessageBox.DEBUG("PingTimeOut 網路超時。");
                     //_BaseSocket.f_Close();
                     return true;
                 }
@@ -116,13 +116,13 @@ public class Socket_Loop : Socket_StateBase
                     _BaseSocket.f_Ping();
                     _iRetryTimes++;
                 }
-            }           
+            }
         }
         return false;
         //int iTime = (int)(System.DateTime.Now - _BaseSocket.m_dtSocketTimeout).TotalSeconds;
         //if (iTime > GloData.glo_iRecvPingTime)
         //{
-        //    MessageBox.DEBUG("BufTimeOut 网络超时。");
+        //    MessageBox.DEBUG("BufTimeOut 網路超時。");
         //    //_BaseSocket.f_Close();
         //    return true;
         //}
@@ -130,3 +130,4 @@ public class Socket_Loop : Socket_StateBase
     }
 
 }
+

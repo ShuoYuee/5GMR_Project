@@ -6,7 +6,7 @@ using System;
 public class ResManagerState_LoadSC : ccMachineStateBase
 {
     static EM_ResManagerStatic m_EM_AIStatic = EM_ResManagerStatic.LoadSC;
-    
+
     WWW w = null;
     private bool _bUpdate = false;
 
@@ -21,7 +21,7 @@ public class ResManagerState_LoadSC : ccMachineStateBase
         _bUpdate = (bool)Obj;
         if (_bUpdate)
         {
-            MessageBox.DEBUG("更新脚本");
+            MessageBox.DEBUG("更新腳本");
             string strUrl = "";
 
 #if UNITY_WEBPLAYER
@@ -39,7 +39,7 @@ public class ResManagerState_LoadSC : ccMachineStateBase
         }
         else
         {
-            MessageBox.DEBUG("加载脚本");
+            MessageBox.DEBUG("載入腳本");
             LoadSuc(ccFile.f_ReadFileForByte(Application.persistentDataPath + "/" + GloData.glo_ProName + "/", "ccData.xlscc"));
         }
     }
@@ -71,7 +71,7 @@ public class ResManagerState_LoadSC : ccMachineStateBase
         w.Dispose();
         w = null;
 
-        MessageBox.DEBUG("下载脚本成功");
+        MessageBox.DEBUG("下載腳本成功");
     }
 
 
@@ -87,12 +87,12 @@ public class ResManagerState_LoadSC : ccMachineStateBase
             ccFile.f_SaveFileForByte(Application.persistentDataPath + "/" + GloData.glo_ProName + "/", "ccData.xlscc", aBytes);
             string strServerVer = PlayerPrefs.GetString("RVer");
             PlayerPrefs.SetString("Ver", strServerVer);
-            MessageBox.DEBUG("更新脚本版本为：" + strServerVer);
+            MessageBox.DEBUG("更新腳本版本為：" + strServerVer);
         }
         f_SetComplete((int)EM_ResManagerStatic.DispSC, aBytes);
     }
 
- 
+
 
 
 }

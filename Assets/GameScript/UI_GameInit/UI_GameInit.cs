@@ -11,10 +11,10 @@ namespace GameLogic
     {
         public Slider m_Progress;
 
-      
+
         private void Start()
         {
-            MessageBox.DEBUG("启用游戏包中的UI_GameInit脚本");
+            MessageBox.DEBUG("啟用遊戲包中的UI_GameInit腳本");
 
             m_Progress.value = 0;
             glo_Main.GetInstance().m_UIMessagePool.f_AddListener(UIMessageDef.UI_UpdateInitProgress, On_UI_UpdateInitProgress);

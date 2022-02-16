@@ -8,7 +8,7 @@ using UnityEngine;
 public class ccMathEx
 {
     /// <summary>
-    /// 将System.DateTime转换成长整型时间格式
+    /// 將System.DateTime轉換成長整型時間格式
     /// </summary>
     /// <param name="dateTime"></param>
     /// <returns></returns>
@@ -23,9 +23,9 @@ public class ccMathEx
 
 
     /// <summary>
-    /// 将长整型时间转换成System.DateTime格式
+    /// 將長整型時間轉換成System.DateTime格式
     /// </summary>
-    /// <param name="iTime">长整型时间</param>
+    /// <param name="iTime">長整型時間</param>
     /// <returns></returns>
     public static System.DateTime time_t2DateTime(long iTime)
     {
@@ -36,10 +36,10 @@ public class ccMathEx
 
 
     /// <summary>
-    /// 检测是否是同一天,跨天重置（延时15秒）
+    /// 檢測是否是同一天,跨天重置（延時15秒）
     /// </summary>
-    /// <param name="time1">时间1</param>
-    /// <param name="time2">时间2</param>
+    /// <param name="time1">時間1</param>
+    /// <param name="time2">時間2</param>
     /// <returns></returns>
     public static bool f_CheckSameDay(long time1, long time2)
     {
@@ -58,9 +58,9 @@ public class ccMathEx
     }
 
     /// <summary>
-    /// 检测是否是同一天,跨天重置（延时15秒）
+    /// 檢測是否是同一天,跨天重置（延時15秒）
     /// </summary>
-    /// <param name="time1">时间1</param>
+    /// <param name="time1">時間1</param>
     /// <returns></returns>
     public static bool f_CheckSameDayForNow(long time1)
     {
@@ -77,7 +77,7 @@ public class ccMathEx
     }
 
     /// <summary>
-    /// 保持指定数量的子对象
+    /// 保持指定數量的子物件
     /// </summary>
     /// <param name="obj"></param>
     /// <param name="iNewItemNum"></param>
@@ -104,3 +104,4 @@ public class ccMathEx
     }
 
 }
+

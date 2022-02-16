@@ -8,15 +8,15 @@ using ccU3DEngine;
 using ccU3DEngine.ccEngine.ThingManager;
 
 /// <summary>
-/// 异步加载资源回调
+/// 非同步載入資源回檔
 /// </summary>
-/// <param name="Obj">申请资源对象</param>
-/// <param name="asset">异步加载成功返回后的资源，根据需要通过GameObject.Instantiate创建</param>
+/// <param name="Obj">申請資源對象</param>
+/// <param name="asset">非同步載入成功返回後的資源，根據需要通過GameObject.Instantiate創建</param>
 public delegate void ResourceCatchDelegate(object Obj, UnityEngine.Object asset);
 
 public class ResourceManager
-{  
-    
+{
+
     public ResourceManager()
     {
     }
@@ -24,11 +24,11 @@ public class ResourceManager
 
     public void f_Update()
     {
-           
+
     }
 
-    #region 创建资源
-    
+    #region 創建資源
+
 
     public AudioClip f_CreateAudio(string strOther, bool bResetPosition = true)
     {
@@ -63,7 +63,7 @@ public class ResourceManager
             GameObject oProfab = (GameObject)Resources.Load(ppSQL);
             if (oProfab == null)
             {
-                MessageBox.ASSERT("Profab没找到 " + ppSQL);
+                MessageBox.ASSERT("Profab沒找到 " + ppSQL);
                 return null;
             }
             GameObject oModel = (GameObject)GameObject.Instantiate(oProfab, Vector3.zero, Quaternion.identity);
@@ -83,8 +83,9 @@ public class ResourceManager
         if (!ccResourceManager.GetInstance().f_CheckIsHave(ppSQL))
         {
             GameObject oProfab = (GameObject)Resources.Load(ppSQL);
-            if (oProfab == null){
-                MessageBox.ASSERT("Profab没找到 " + ppSQL);
+            if (oProfab == null)
+            {
+                MessageBox.ASSERT("Profab沒找到 " + ppSQL);
                 return null;
             }
             GameObject oModel = null;
@@ -108,7 +109,7 @@ public class ResourceManager
     }
 
     /// <summary>
-    /// 创建的GameObject通过此方法进行回收
+    /// 創建的GameObject通過此方法進行回收
     /// </summary>
     /// <param name="Obj"></param>
     public void f_DestorySD(GameObject Obj)
@@ -120,25 +121,25 @@ public class ResourceManager
                 GameObject.Destroy(Obj);
             }
         }
-        catch 
+        catch
         {
             GameObject.Destroy(Obj);
         }
 
     }
-        
+
     /// <summary>
-    /// 获取音效
+    /// 獲取音效
     /// </summary>
-    /// <param name="ButtleOrBg">按钮 或者背景音乐 0是按钮  1为特效 其他为背景音乐</param>
-    /// <param name="MusicType">音乐类型</param>
+    /// <param name="ButtleOrBg">按鈕 或者背景音樂 0是按鈕  1為特效 其他為背景音樂</param>
+    /// <param name="MusicType">音樂類型</param>
     /// <returns></returns>
     public AudioClip f_LoadAudioClip(string strFile)
     {
         AudioClip tAudioClip = Resources.Load<AudioClip>("Audio/" + strFile) as AudioClip;
         if (tAudioClip == null)
         {
-            MessageBox.ASSERT("无此音樂" + strFile);
+            MessageBox.ASSERT("無此音樂" + strFile);
         }
         return tAudioClip;
     }
@@ -205,3 +206,4 @@ public class ResourceManager
     #endregion
     #endregion
 }
+

@@ -53,7 +53,7 @@ namespace ccU3DEngine
         #region List
 
         /// <summary>
-        /// 获取一个值，该值指示 IList 是否具有固定大小。
+        /// 獲取一個值，該值指示 IList 是否具有固定大小。
         /// </summary>
         public bool IsFixedSize
         {
@@ -64,7 +64,7 @@ namespace ccU3DEngine
         }
 
         /// <summary>
-        /// 获取一个值，该值指示 IList 是否为只读。
+        /// 獲取一個值，該值指示 IList 是否為唯讀。
         /// </summary>
         public bool IsReadOnly
         {
@@ -83,7 +83,7 @@ namespace ccU3DEngine
         }
 
         /// <summary>
-        /// 获取一个值，该值指示是否同步对 ICollection 的访问（线程安全）。 （继承自 ICollection。）
+        /// 獲取一個值，該值指示是否同步對 ICollection 的訪問（執行緒安全）。 （繼承自 ICollection。）
         /// </summary>
         public bool IsSynchronized
         {
@@ -94,8 +94,8 @@ namespace ccU3DEngine
         }
 
         /// <summary>
-        /// 获取可用于同步 ICollection 访问的对象。 （继承自 ICollection。）
-        /// 可以看到，在不断的继承过程中，这些接口不断地添加自己的东西，越继承越多，越继承越多
+        /// 獲取可用於同步 ICollection 訪問的對象。 （繼承自 ICollection。）
+        /// 可以看到，在不斷的繼承過程中，這些介面不斷地添加自己的東西，越繼承越多，越繼承越多
         /// </summary>
         // public object SyncRoot
         //object ICollection.SyncRoot
@@ -167,7 +167,7 @@ namespace ccU3DEngine
         {
             return new ccListIT<T>(_aList);
         }
-        
+
     }
 
 

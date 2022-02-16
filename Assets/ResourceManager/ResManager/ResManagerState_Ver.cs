@@ -14,7 +14,7 @@ public class ResManagerState_Ver : ccMachineStateBase
     public ResManagerState_Ver()
         : base((int)m_EM_AIStatic)
     {
-        
+
     }
 
     public override void f_Enter(object Obj)
@@ -31,13 +31,13 @@ public class ResManagerState_Ver : ccMachineStateBase
             //form.AddField("iUserId", 1);
             w = new WWW(GloData.glo_strLoadVer);
 
-            //关掉网络未打开提示
-            glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.LOGINEROINFOR, "SUC"); 
+            //關掉網路未打開提示
+            glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.LOGINEROINFOR, "SUC");
         }
         else
         {
-            //弹出网络未打开提示
-            //glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.LOGINEROINFOR, "网络异常，请检查网络连接。"); 
+            //彈出網路未打開提示
+            //glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.LOGINEROINFOR, "網路異常，請檢查網路連接。"); 
             glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.GAMEMESSAGEBOX, (int)eMsgOperateResult.OR_Error_WIFIConnectTimeOut);
         }
     }
@@ -68,7 +68,7 @@ public class ResManagerState_Ver : ccMachineStateBase
         else
         {
             //LoadVerSuc(w.text);    
-            LoadVerSuc(w.text);     
+            LoadVerSuc(w.text);
         }
         w.Dispose();
         w = null;
@@ -105,7 +105,7 @@ public class ResManagerState_Ver : ccMachineStateBase
     }
 
     private void DispVer(string strLocalVer, string strServerVer)
-    { 
+    {
         string[] aVerData = ccMath.f_String2ArrayString(strServerVer, "-");
 
         if (aVerData.Length == 1)
@@ -129,7 +129,7 @@ public class ResManagerState_Ver : ccMachineStateBase
         if (!ccFile.f_ExistsFile(Application.persistentDataPath + "/" + GloData.glo_ProName + "/ccData.xlscc"))
         {
             bFileEro = true;
-            MessageBox.DEBUG("脚本文件丢失强制更新");
+            MessageBox.DEBUG("指令檔丟失強制更新");
         }
 
         MessageBox.DEBUG("V:" + strLocalVer);
@@ -145,8 +145,8 @@ public class ResManagerState_Ver : ccMachineStateBase
             //LoadSCSuc(ccFile.f_ReadFileForByte(Application.persistentDataPath + "/" + GloData.glo_ProName + "/", "ccData.xlscc"));
         }
 
-        f_SetComplete((int)EM_ResManagerStatic.LoadSC, _bSaveCatchBuf);        
-        
+        f_SetComplete((int)EM_ResManagerStatic.LoadSC, _bSaveCatchBuf);
+
     }
 
     private void DispServerInfor(string ppSQL)

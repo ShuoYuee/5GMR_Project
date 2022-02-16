@@ -34,6 +34,9 @@ public class GameMain : MonoBehaviour
     [Tooltip("生成物件將統一掛在該物件下")]
     /// <summary>主父物件</summary>
     public GameObject m_GameTable;
+    [Tooltip("控制模式顯示文字")]
+    /// <summary>控制模式顯示文字</summary>
+    public TextMesh _PlayerCtrlText;
 
     [HideInInspector]
     /// <summary>地圖物件池</summary>
@@ -77,8 +80,9 @@ public class GameMain : MonoBehaviour
     /// <summary>更新菜單位置</summary>
     private void f_UpdateMenuPos(object e)
     {
-        if(m_MainMenu != null)
-        m_MainMenu.transform.position = m_MainCamera.transform.position + new Vector3(-0.4f, 0.05f, 0);
+        if (m_MainMenu != null)
+            m_MainMenu.transform.localPosition = m_MainCamera.transform.localPosition + new Vector3(-0.4f, 0.05f, 0);
+        //m_MainMenu.transform.position = m_MainCamera.transform.position + new Vector3(-0.4f, 0.05f, 0);
     }
 
     #region 地圖功能

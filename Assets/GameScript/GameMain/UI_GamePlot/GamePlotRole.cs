@@ -18,11 +18,11 @@ public class GamePlotRole : MonoBehaviour
     {
 
     }
-   
-           
+
+
     public void f_DoCMD(GamePlotDT tGamePlotDT)
     {
-//21.显示图片 （参数1资源名Resources\GamePlot，参数2无效，参数3无效，参数4无效)
+        //21.顯示圖片 （參數1資源名Resources\GamePlot，參數2無效，參數3無效，參數4無效)
 
 
 
@@ -65,12 +65,12 @@ public class GamePlotRole : MonoBehaviour
         //{
         //    transform.localRotation = new Quaternion(0, 180, 0, 0);
         //}
-        _bMoveComplete = false;       
+        _bMoveComplete = false;
     }
 
 
     /// <summary>
-    /// //25.图片缩放动画 （参数1资源名Resources\GamePlot，参数2开始比例(空使用当前大小)，参数3 缩放大小比例(0 - 1)，参数4时间内完成）
+    /// //25.圖片縮放動畫 （參數1資源名Resources\GamePlot，參數2開始比例(空使用當前大小)，參數3 縮放大小比例(0 - 1)，參數4時間內完成）
     /// </summary>
     void ImageSize()
     {
@@ -83,12 +83,12 @@ public class GamePlotRole : MonoBehaviour
         {
             float fSize = ccMath.atof(_GamePlotDT.szData3);
 
-            //键值对儿的形式保存iTween所用到的参数
+            //鍵值對兒的形式保存iTween所用到的參數
             Hashtable args = new Hashtable();
 
-            //放大的倍数
+            //放大的倍數
             args.Add("scale", new Vector3(fSize, fSize, fSize));
-           
+
             args.Add("easeType", iTween.EaseType.linear);
             args.Add("time", ccMath.atof(_GamePlotDT.szData4));
             args.Add("islocal", true);
@@ -103,7 +103,7 @@ public class GamePlotRole : MonoBehaviour
     }
 
     /// <summary>
-    /// //24.设置图片朝向 （参数1资源名Resources\GamePlot，参数2 朝向(0向右 1向左)，参数2无效，参数3无效，参数4无效）
+    /// //24.設置圖片朝向 （參數1資源名Resources\GamePlot，參數2 朝向(0向右 1向左)，參數2無效，參數3無效，參數4無效）
     /// </summary>
     void ImageFace()
     {
@@ -124,7 +124,7 @@ public class GamePlotRole : MonoBehaviour
     }
 
     /// <summary>
-    /// //23.设置图片显示层次 （参数1资源名Resources\GamePlot，参数2 显示层次(数越大层次越高(0 - 10))，参数2无效，参数3无效，参数4无效）
+    /// //23.設置圖片顯示層次 （參數1資源名Resources\GamePlot，參數2 顯示層次(數越大層次越高(0 - 10))，參數2無效，參數3無效，參數4無效）
     /// </summary>
     void ImageLay()
     {
@@ -137,7 +137,7 @@ public class GamePlotRole : MonoBehaviour
     }
 
     /// <summary>
-    /// //22.图片位置动画 （参数1资源名Resources\GamePlot，参数2Sx: Sy 开始移动SxSy(空使用当前位置)，参数3Ex: Ey 移动终点Ex:Ey，参数4时间内完成移动)
+    /// //22.圖片位置動畫 （參數1資源名Resources\GamePlot，參數2Sx: Sy 開始移動SxSy(空使用當前位置)，參數3Ex: Ey 移動終點Ex:Ey，參數4時間內完成移動)
     /// </summary>
     void ImagePositionMV()
     {
@@ -147,12 +147,12 @@ public class GamePlotRole : MonoBehaviour
             aData = ccMath.f_String2ArrayFloat(_GamePlotDT.szData2, ":");
             if (aData.Length == 2)
             {
-                //参数2Sx: Sy 开始移动SxSy(空使用当前位置)
+                //參數2Sx: Sy 開始移動SxSy(空使用當前位置)
                 transform.localPosition = new Vector3(aData[0], aData[1], 0);
             }
             else if (_GamePlotDT.szData2.Length > 0)
             {
-                MessageBox.ASSERT("22.图片位置动画 参数2错误:" + _GamePlotDT.szData2);
+                MessageBox.ASSERT("22.圖片位置動畫 參數2錯誤:" + _GamePlotDT.szData2);
             }
         }
 
@@ -172,7 +172,7 @@ public class GamePlotRole : MonoBehaviour
             }
             else if (_GamePlotDT.szData3.Length > 0)
             {
-                MessageBox.ASSERT("22.图片位置动画 参数3错误:" + _GamePlotDT.szData3);
+                MessageBox.ASSERT("22.圖片位置動畫 參數3錯誤:" + _GamePlotDT.szData3);
             }
         }
         else
@@ -180,7 +180,7 @@ public class GamePlotRole : MonoBehaviour
             OnMoveComplete();
         }
     }
-    
+
     void OnMoveComplete()
     {
         _bMoveComplete = true;
@@ -198,3 +198,4 @@ public class GamePlotRole : MonoBehaviour
     }
 
 }
+

@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class SwitchMonitor : MonoBehaviour {
+public class SwitchMonitor : MonoBehaviour
+{
 
     public string math;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         ReadTxtFirst();
         //強制解析度
 
@@ -46,26 +48,26 @@ public class SwitchMonitor : MonoBehaviour {
         //{
         //    Debug.Log("編號錯誤 或 超出第四台螢幕");
         //}
-        
+
     }
 
 
     public void AddTxtTextByFileStream(string txtText)
     {
         string path = Application.streamingAssetsPath + "/Config/Config.txt";
-        // 文件流创建一个文本文件
+        // 檔流創建一個文字檔
         FileStream file = new FileStream(path, FileMode.Create);
-        //得到字符串的UTF8 数据流
+        //得到字串的UTF8 資料流程
         byte[] bts = System.Text.Encoding.UTF8.GetBytes(txtText);
-        // 文件写入数据流
+        // 文件寫入資料流程
         file.Write(bts, 0, bts.Length);
         if (file != null)
         {
-            //清空缓存
+            //清空緩存
             file.Flush();
-            // 关闭流
+            // 關閉流
             file.Close();
-            //销毁资源
+            //銷毀資源
             file.Dispose();
         }
     }
@@ -75,12 +77,13 @@ public class SwitchMonitor : MonoBehaviour {
         string path = Application.streamingAssetsPath + "/Config/Config.txt";
         //FileStream fsSource = new FileStream(path, FileMode.Open, FileAccess.Read);
 
-        //文件读写流
+        //文件讀寫流
         StreamReader strr = new StreamReader(path);
-        //读取内容
+        //讀取內容
         string str = strr.ReadToEnd();
 
         math = str;
     }
 
 }
+

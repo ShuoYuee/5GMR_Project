@@ -8,16 +8,16 @@ using System.Collections.Generic;
 using ccILR;
 using UnityEngine.SceneManagement;
 
-public class glo_Main :MonoBehaviour
+public class glo_Main : MonoBehaviour
 {
     /// <summary>
-    /// 声音控制器
+    /// 聲音控制器
     /// </summary>
     public AudioManager m_AudioManager;
 
     public EM_GameStatic m_EM_GameStatic = EM_GameStatic.Waiting;
-    
-	
+
+
     [HideInInspector]
     public ccMessagePoolV2 m_GameMessagePool = new ccMessagePoolV2();
     public ccMessagePoolV2 m_UIMessagePool = new ccMessagePoolV2();
@@ -27,10 +27,10 @@ public class glo_Main :MonoBehaviour
 
     //public MainLogic m_MainLogic;
     /// <summary>
-    /// 游戏资源管理器
+    /// 遊戲資源管理器
     ///// </summary>
     public ResourceManager m_ResourceManager;
-    
+
     private static glo_Main _Instance = null;
     public static glo_Main GetInstance()
     {
@@ -40,15 +40,15 @@ public class glo_Main :MonoBehaviour
             if (null == _Instance)
             {
                 MessageBox.ASSERT("init glo_Main Fail");
-				return null;
+                return null;
             }
-                      
+
         }
         return _Instance;
     }
 
     void Awake()
-    {      
+    {
         m_ccLog = new ccLog("Log", true, true);
         //m_ccLog.f_SetUserId(SystemInfo.deviceUniqueIdentifier);
         //m_ccLog.f_Start();
@@ -60,21 +60,21 @@ public class glo_Main :MonoBehaviour
         m_SC_Pool = new SC_Pool();
         m_ResourceManager = new ResourceManager();
 
-		
+
     }
 
 
     void Start()
-    {       
+    {
         MessageBox.f_UseUnityDebug();
-        MessageBox.DEBUG("初始游戏");
+        MessageBox.DEBUG("初始遊戲");
         MessageBox.DEBUG(Application.persistentDataPath);
 
         DontDestroyOnLoad(this);    //自己不消失
 
-        /// 初始引擎工作参数
+        /// 初始引擎工作參數
         InitEngineParam();
-        /// 初始化Unity工作环境
+        /// 初始化Unity工作環境
         InitGameUnityParams();
         InitPath();
         InitComponent();
@@ -86,7 +86,7 @@ public class glo_Main :MonoBehaviour
     }
 
     /// <summary>
-    /// 初始引擎工作参数
+    /// 初始引擎工作參數
     /// </summary>
     private void InitEngineParam()
     {
@@ -99,11 +99,11 @@ public class glo_Main :MonoBehaviour
         UpdateManager.Get().SetClientVersion(Application.version);
         gameObject.AddComponent<AssetLoader>();
 
-        //打开模拟器模式 ，此模式下资源不需要经过打包输出和上传到资源服务器就可以直接使用
-        //平时开发都采用模拟器模式来进行，后期整合时再切换回正常模式
+        //打開模擬器模式 ，此模式下資源不需要經過打包輸出和上傳到資原始伺服器就可以直接使用
+        //平時開發都採用模擬器模式來進行，後期整合時再切換回正常模式
         ccU3DEngineParam.m_bIsLocalAB = false;
 
-        //设置当前编辑器及最终打包输出的目标平台
+        //設置當前編輯器及最終打包輸出的目標平臺
 #if UNITY_EDITOR
         UnityEditor.BuildTarget tBuildTarget = UnityEditor.EditorUserBuildSettings.activeBuildTarget;
         if (tBuildTarget == UnityEditor.BuildTarget.Android)
@@ -136,7 +136,7 @@ public class glo_Main :MonoBehaviour
     }
 
     /// <summary>
-    /// 初始化Unity工作环境
+    /// 初始化Unity工作環境
     /// </summary>
     private void InitGameUnityParams()
     {
@@ -167,20 +167,20 @@ public class glo_Main :MonoBehaviour
     }
 
     /// <summary>
-    /// 初始化核心组件
+    /// 初始化核心組件
     /// </summary>
     private void InitComponent()
     {
         ccUIManage.GetInstance().f_SaveFactoryHandler(ccILR_ClassFactory.GetInstance());
 
-        
+
 
         GameDataLoad.f_LoadGameSystemMemory();
     }
 
     /// <summary>
-    /// 初始化资源管理
-    /// 开始加载资源
+    /// 初始化資源管理
+    /// 開始載入資源
     /// </summary>
     private void InitResManager()
     {
@@ -194,21 +194,21 @@ public class glo_Main :MonoBehaviour
 
     private float startLoadResourceTime = 0;
     /// <summary>
-    /// 资源成功加载完回调、
-    /// 初始化玩家数据结构、
-    /// 广播资源加载完成（通知显示logo页面可以进入游戏）
+    /// 資源成功載入完回檔、
+    /// 初始化玩家資料結構、
+    /// 廣播資源載入完成（通知顯示logo頁面可以進入遊戲）
     /// </summary>
     /// <param name="Obj"></param>
     void Callback_LoadResSuc(object Obj)
-    {        
+    {
         //Data_Pool.f_InitPool();
 
-#if Control         
+#if Control
         //Control;
-        MessageBox.DEBUG("使用控制台开始游戏");
+        MessageBox.DEBUG("使用控制台開始遊戲");
         GameControllLogin();
 #else
-        MessageBox.DEBUG("不使用控制台直接开始游戏");
+        MessageBox.DEBUG("不使用控制台直接開始遊戲");
         //GameMain.GetInstance().f_StartGame();   
 #endif
 
@@ -217,13 +217,13 @@ public class glo_Main :MonoBehaviour
     }
 
 
-    #region 资源更新及切换到登陆场景
+    #region 資源更新及切換到登陸場景
 
     void CallBack_StartZip(object Obj)
     {
         UpdateManager.Get().f_ZipBaseRes(CallBack_ZipBaseResProgress, CallBack_ZipBaseResSuc);
     }
-    
+
     void CallBack_ZipBaseResProgress(object Obj)
     {
         glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(UIMessageDef.UI_UpdateInitProgress, Obj);
@@ -235,7 +235,7 @@ public class glo_Main :MonoBehaviour
     }
 
     int iUpdateProcessId = 0;
-    void StartUpdateRes( )
+    void StartUpdateRes()
     {
         UpdateManager.Get().m_remoteUri = new[] { GloData.glo_strABServerURL };
         UpdateManager.Get().BeginInitialize(m_SC_Pool.f_GetABVer(), OnUpdateInitialize, false);
@@ -251,7 +251,7 @@ public class glo_Main :MonoBehaviour
 
     void OnUpdateInitialize()
     {
-        MessageBox.DEBUG("开始更新资源。");
+        MessageBox.DEBUG("開始更新資源。");
         UpdateManager.Get().BeginDownload(OnUpdateComplete);
     }
 
@@ -260,20 +260,20 @@ public class glo_Main :MonoBehaviour
         ccTimeEvent.GetInstance().f_UnRegEvent(iUpdateProcessId);
 
         ccILR_ClassFactory.GetInstance().f_LoadHotFixDLL(true);
-        MessageBox.DEBUG("资源更新成功...");
+        MessageBox.DEBUG("資源更新成功...");
 
         RegLanguageSC();
         LanguageManager.GetInstance().f_ChangeLanguage(Locale.zhTW);
 
         f_InitGame();
     }
-        
+
 
     private void RegLanguageSC()
     {
-        ////登陆相关语言脚本
+        ////登陸相關語言腳本
         LanguageManager.GetInstance().f_RegSC("Login");
-        ////系统级语言脚本
+        ////系統級語言腳本
         LanguageManager.GetInstance().f_RegSC("System");
         LanguageManager.GetInstance().f_RegSC("GameMain");
     }
@@ -284,13 +284,13 @@ public class glo_Main :MonoBehaviour
     private void InitAudio()
     {
 
-    }      
-       
+    }
+
 
     private void InitMessage()
     {
         ccTimeEvent.GetInstance().f_ChangePingTime(0.02f);
-    }       
+    }
 
     void Update()
     {
@@ -304,13 +304,13 @@ public class glo_Main :MonoBehaviour
 
     private void OnDestroy()
     {
-       
+
     }
 
     public void f_Destroy()
     {
-        MessageBox.DEBUG("强制结束游戏 QuitGame");
-       
+        MessageBox.DEBUG("強制結束遊戲 QuitGame");
+
         MessageBox.DEBUG("................................................");
 
         ccTimeEvent.GetInstance().f_RegEvent(1, false, null, ApplicationQuit);
@@ -321,12 +321,12 @@ public class glo_Main :MonoBehaviour
     {
         //GameSocket.GetInstance().f_Close();
         //m_ccLog.f_Quit();
-        Application.Quit(); 
+        Application.Quit();
     }
 
 
     /// <summary>
-    /// 登陆游戏成功，初始游戏数据准备进入游戏
+    /// 登陸遊戲成功，初始遊戲資料準備進入遊戲
     /// </summary>
     public void f_InitGame()
     {
@@ -350,7 +350,7 @@ public class glo_Main :MonoBehaviour
 
     private void InitGameData()
     {
-        
+
 
     }
 
@@ -359,7 +359,8 @@ public class glo_Main :MonoBehaviour
     {
         return StartCoroutine(routine);
     }
-    
-    
+
+
 
 }
+

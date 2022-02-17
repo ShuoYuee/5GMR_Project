@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameControllBaseState : ccMachineStateBase
+public class GameControllBaseState : ccMachineStateBase<ccMachineParamentBase>
 {
     protected GameControllDT _CurGameControllDT = null;
     private bool _bIsRuning = false;
@@ -16,7 +16,7 @@ public class GameControllBaseState : ccMachineStateBase
     {
 
     }
-    
+
     public GameControllBaseState f_Clone()
     {
         GameControllBaseState tGameControllBaseState = (GameControllBaseState)MemberwiseClone();
@@ -34,7 +34,7 @@ public class GameControllBaseState : ccMachineStateBase
 
         if (_CurGameControllDT.m_emMissionEndType != EM_MissionEndType.None)
         {
-            MessageBox.DEBUG("任务的状态错误" + _CurGameControllDT.m_emMissionEndType.ToString());
+            MessageBox.DEBUG("任務的狀態錯誤" + _CurGameControllDT.m_emMissionEndType.ToString());
         }
 
 
@@ -52,7 +52,7 @@ public class GameControllBaseState : ccMachineStateBase
         //}
         //else
         //{
-        //    MessageBox.DEBUG("重复执行动作 " + _CurGameControllDT.iId + " " + _CurGameControllDT.szName);
+        //    MessageBox.DEBUG("重複執行動作 " + _CurGameControllDT.iId + " " + _CurGameControllDT.szName);
         //}
         if (_CurGameControllDT.fStartSleepTime > 0)
         {
@@ -93,7 +93,7 @@ public class GameControllBaseState : ccMachineStateBase
 
     protected virtual void Run(object Obj)
     {
-        
+
     }
 
     protected bool IsRuning()
@@ -129,7 +129,7 @@ public class GameControllBaseState : ccMachineStateBase
 
         if (bIsEnd2Loop)
         {
-            MessageBox.DEBUG("未有下一个动作整个执行结束 " + _CurGameControllDT.iId + " " + _CurGameControllDT.szName);
+            MessageBox.DEBUG("未有下一個動作整個執行結束 " + _CurGameControllDT.iId + " " + _CurGameControllDT.szName);
             //f_SetComplete((int)EM_GameControllAction.Loop, Obj);
             f_SetComplete((int)EM_GameControllAction.End, Obj);
         }
@@ -138,7 +138,7 @@ public class GameControllBaseState : ccMachineStateBase
             GameControllDT tGameControllDT = GameControllTools.f_LoadGameControllDT(_CurGameControllDT.iEndAction);
             if (tGameControllDT == null)
             {
-                MessageBox.DEBUG("对应的任务的后续任务未找到 " + _CurGameControllDT.iId + ">>>" + _CurGameControllDT.iEndAction);
+                MessageBox.DEBUG("對應的任務的後續任務未找到 " + _CurGameControllDT.iId + ">>>" + _CurGameControllDT.iEndAction);
             }
             //f_SetComplete((int)EM_GameControllAction.Read, Obj);
             f_SetComplete(tGameControllDT.iStartAction, tGameControllDT);
@@ -153,10 +153,11 @@ public class GameControllBaseState : ccMachineStateBase
     private void CallBack_RunTimeOut(object Obj)
     {
         _fTimeOut--;
-        if (_fTimeOut < 0) {//任务超时
+        if (_fTimeOut < 0)
+        {//任務超時
             EndCurGoNext(null);
             _CurGameControllDT.m_emMissionEndType = EM_MissionEndType.MessionTimeOut;
-            MessageBox.DEBUG("任务执行超时 " + _CurGameControllDT.iId + " " + _CurGameControllDT.szName);            
+            MessageBox.DEBUG("任務執行超時 " + _CurGameControllDT.iId + " " + _CurGameControllDT.szName);
         }
 
     }
@@ -169,8 +170,9 @@ public class GameControllBaseState : ccMachineStateBase
 
     private void CheckForceGameOver()
     {
-        //强制检测游戏结束
-        if (_CurGameControllDT.iEndAction == -99) {
+        //強制檢測遊戲結束
+        if (_CurGameControllDT.iEndAction == -99)
+        {
             MessageBox.DEBUG("CheckForceGameOver ");
             glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.GAMEOVER, EM_GameResult.Lost);
         }
@@ -178,4 +180,5 @@ public class GameControllBaseState : ccMachineStateBase
     }
 
 }
+
 

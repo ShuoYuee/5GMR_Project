@@ -17,8 +17,8 @@ public class GameControllV3_ShowStepInfor : GameControllBaseState
     public override void f_Enter(object Obj)
     {
         _CurGameControllDT = (GameControllDT) Obj;
-        //5003.任务进度文字信息，参数1提示信息Logo，参数2标题文字，参数3进度显示文字Id（只能显示一个Id的文字）
-        
+        //5003.任務進度文字資訊，參數1提示資訊Logo，參數2標題文字，參數3進度顯示文字Id（只能顯示一個Id的文字）
+
         ccUIManage.GetInstance().f_SendMsg("UIP_ShowStepInfor", BaseUIMessageDef.UI_OPEN, Obj);
         ccTimeEvent.GetInstance().f_RegEvent(1, false, null, On_UI_Close);
 

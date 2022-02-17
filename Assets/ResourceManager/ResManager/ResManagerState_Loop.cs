@@ -2,7 +2,7 @@
 using System.Collections;
 using ccU3DEngine;
 
-public class ResManagerState_Loop : ccMachineStateBase
+public class ResManagerState_Loop : ccMachineStateBase<ccMachineParamentBase>
 {
     static EM_ResManagerStatic m_EM_AIStatic = EM_ResManagerStatic.Loop;
 

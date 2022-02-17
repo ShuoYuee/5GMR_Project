@@ -262,6 +262,7 @@
     <None Include="Assets\ABRes\Language\zhCN\System.txt" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-UI-Default-Transparent.shader" />
     <None Include="Assets\AssetStore\3D Game Kit - Environment Pack\Shaders\Vegetation.shader" />
+    <None Include="Assets\StreamingAssets\AAA.txt" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Lit-Transparent-Diffuse.shader" />
     <None Include="Assets\ThirdParty\DOTween\DemiLib\Core\DemiLib.xml" />
     <None Include="Assets\ABRes\Language\zhTW\Login.txt" />

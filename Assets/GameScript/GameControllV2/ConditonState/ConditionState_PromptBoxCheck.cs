@@ -13,7 +13,7 @@ public class ConditionState_PromptBoxCheck : ConditionState_Base
 
     }
 
-    //8020：PromptBox角色发生对话确认事件（参数1为角色分配的指定KeyId,参数2无效，参数3无效，参数4无效）
+    //8020：PromptBox角色發生對話確認事件（參數1為角色分配的指定KeyId,參數2無效，參數3無效，參數4無效）
     public override void f_Init(string szParament, string szParamentData, string szData1, string szData2, string szData3, string szData4)
     {
         base.f_Init(szParament, szParamentData, szData1, szData2, szData3, szData4);

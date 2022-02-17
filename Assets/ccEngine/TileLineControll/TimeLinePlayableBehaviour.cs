@@ -37,7 +37,7 @@ public class TimeLinePlayableBehaviour : PlayableBehaviour
         var progressRate = playable.GetTime() / playable.GetDuration();
         if (progressRate < 0.2f)
         {
-            //Debug.Log("无效的OnBehaviourPause");
+            //Debug.Log("無效的OnBehaviourPause");
             return;
         }
       

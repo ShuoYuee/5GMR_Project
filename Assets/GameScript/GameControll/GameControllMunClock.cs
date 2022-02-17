@@ -23,7 +23,7 @@ public class GameControllMunClock
         }
         else
         {
-            MessageBox.ASSERT("【任务类型错误】[" + tGameControllDT.iId.ToString() + "] " + tGameControllDT.szName);
+            MessageBox.ASSERT("【任務類型錯誤】[" + tGameControllDT.iId.ToString() + "] " + tGameControllDT.szName);
         }
 
     }
@@ -32,12 +32,12 @@ public class GameControllMunClock
     {
         if (tGameControllDT == null)
         {
-            MessageBox.ASSERT("对应的任务的后续任务未找到 " + tGameControllDT.iId + ">>>" + tGameControllDT.iEndAction);
+            MessageBox.ASSERT("對應的任務的後續任務未找到 " + tGameControllDT.iId + ">>>" + tGameControllDT.iEndAction);
             return;
         }
         lock (_oLock)
         {
-            MessageBox.DEBUG("增加定时器任务 " + tGameControllDT.iId + " " + tGameControllDT.szName);
+            MessageBox.DEBUG("增加計時器任務 " + tGameControllDT.iId + " " + tGameControllDT.szName);
 
             EM_GameControllAction tEM_GameControllAction = (EM_GameControllAction)tGameControllDT.iStartAction;
             GameControllBaseState tGameControllBaseState = GameControllTools.f_CreateState(tEM_GameControllAction);
@@ -45,7 +45,7 @@ public class GameControllMunClock
             _aList.Add(tGameControllBaseState);
         }
     }
-    
+
     public void f_Update()
     {
         lock (_oLock)
@@ -56,7 +56,7 @@ public class GameControllMunClock
                 _aList[i].f_Execute();
                 if (_aList[i].f_IsEnd())
                 {
-                    MessageBox.DEBUG("移除已完成定时器任务 " + _aList[i].iId);
+                    MessageBox.DEBUG("移除已完成計時器任務 " + _aList[i].iId);
                     _aList.Remove(_aList[i]);
                     return;
                 }
@@ -65,5 +65,5 @@ public class GameControllMunClock
     }
 
 
-    
+
 }

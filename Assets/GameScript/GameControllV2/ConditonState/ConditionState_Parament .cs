@@ -13,7 +13,7 @@ public class ConditionState_Parament : ConditionState_Base
 
     }
 
-    //8000.检测变量的值等于目标值（参数1为变量名,参数2为变量等于的目标值，参数3无效）
+    //8000.檢測變數的值等於目標值（參數1為變數名,參數2為變數等於的目標值，參數3無效）
     public override void f_Init(string szParament, string szParamentData, string szData1, string szData2, string szData3, string szData4)
     {
         base.f_Init(szParament, szParamentData, szData1, szData2, szData3, szData4);
@@ -22,7 +22,7 @@ public class ConditionState_Parament : ConditionState_Base
         _szData2 = szData2;
         //if (!GameMain.GetInstance().f_CheckHaveParament(szData1))
         //{
-        //    MessageBox.ASSERT("获取变量失败，未找到变量，请查对变量 " + szData1 + " 是否存在");
+        //    MessageBox.ASSERT("獲取變數失敗，未找到變數，請查對變數 " + szData1 + " 是否存在");
         //    return;
         //}
 

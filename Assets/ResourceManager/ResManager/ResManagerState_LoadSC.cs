@@ -3,7 +3,7 @@ using System.Collections;
 using ccU3DEngine;
 using System;
 
-public class ResManagerState_LoadSC : ccMachineStateBase
+public class ResManagerState_LoadSC : ccMachineStateBase<ccMachineParamentBase>
 {
     static EM_ResManagerStatic m_EM_AIStatic = EM_ResManagerStatic.LoadSC;
 

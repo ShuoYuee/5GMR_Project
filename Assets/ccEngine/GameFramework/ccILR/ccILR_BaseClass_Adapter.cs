@@ -71,7 +71,7 @@ public class ccILR_BaseClass_Adapter : CrossBindingAdaptor
         //    {
         //        if (!mGetNameGot)
         //        {
-        //            //属性的Getter编译后会以get_XXX存在，如果不确定的话可以打开Reflector等反编译软件看一下函数名称
+        //            //屬性的Getter編譯後會以get_XXX存在，如果不確定的話可以打開Reflector等反編譯軟體看一下函數名稱
         //            mGetName = instance.Type.GetMethod("get_Name", 1);
         //            mGetNameGot = true;
         //        }
@@ -107,7 +107,7 @@ public class ccILR_BaseClass_Adapter : CrossBindingAdaptor
             //        tCallClassFunctionDT.m_IMethod = instance.Type.GetMethod(strFunctonName, p.Length);
             //    }
             //}
-            ////对于虚函数而言，必须设定一个标识位来确定是否当前已经在调用中，否则如果脚本类中调用base.Value就会造成无限循环，最终导致爆栈
+            ////對於虛函數而言，必須設定一個標識位元來確定是否當前已經在調用中，否則如果腳本類中調用base.Value就會造成無限迴圈，最終導致爆棧
             //if (tCallClassFunctionDT.m_IMethod != null && !tCallClassFunctionDT.m_bIsGetInvoking)
             //{
             //    tCallClassFunctionDT.m_bIsGetInvoking = true;

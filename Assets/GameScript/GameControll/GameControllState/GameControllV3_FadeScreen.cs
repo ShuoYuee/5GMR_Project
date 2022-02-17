@@ -20,20 +20,21 @@ public class GameControllV3_FadeScreen : GameControllBaseState
 
 
 
-    public override void f_Enter(object Obj) {
+    public override void f_Enter(object Obj)
+    {
         _CurGameControllDT = (GameControllDT)Obj;
         _CurGameControllDT.iNeedEnd = 1;
         StartRun();
 
         Render(null);
         //_iRenderTimeId = ccTimeEvent.GetInstance().f_RegEvent(0.1f, true, null, Render);
-        ccTimeEvent.GetInstance().f_RegEvent(m_FadeTime +0.101f+blackTime, false, null, CallBack_Complete); //待畫面變暗完成，維持完指定時間後，恢復畫面
+        ccTimeEvent.GetInstance().f_RegEvent(m_FadeTime + 0.101f + blackTime, false, null, CallBack_Complete); //待畫面變暗完成，維持完指定時間後，恢復畫面
 
         EndRun();
     }
 
 
-    //4001 場景單純淡入淡出 （参数1为畫面變暗變亮的過程時間,参数2为黑畫面的的時間，参数3无效）
+    //4001 場景單純淡入淡出 （參數1為畫面變暗變亮的過程時間,參數2為黑畫面的的時間，參數3無效）
 
     //protected override void Run(object Obj) {
     //    base.Run(Obj);
@@ -67,7 +68,7 @@ public class GameControllV3_FadeScreen : GameControllBaseState
         }
 
         //GameMain.GetInstance().SceneFadeTo(1, m_FadeTime + 0.1f);                                          //玩家畫面慢慢黑掉
-        
+
 
         //if (_CurGameControllDT.iNeedEnd == 0)
         //{
@@ -85,7 +86,8 @@ public class GameControllV3_FadeScreen : GameControllBaseState
     /// <summary>
     /// 玩家畫面恢復明亮
     /// </summary>
-    private void CallBack_Complete(object obj) {
+    private void CallBack_Complete(object obj)
+    {
         //GameMain.GetInstance().SceneFadeTo(0, m_FadeTime);
 
         ccTimeEvent.GetInstance().f_UnRegEvent(_iRenderTimeId);
@@ -101,5 +103,6 @@ public class GameControllV3_FadeScreen : GameControllBaseState
 
 
 }
+
 
 

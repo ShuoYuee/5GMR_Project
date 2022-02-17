@@ -15,7 +15,7 @@ public class GameControllThread
         _iConditionId = iConditionId;
         if (_iActionId == 0 || _iConditionId == 0)
         {
-            MessageBox.ASSERT("条件任务对应的执行任务为错误. iConditionId:" + _iConditionId + " iRunAction:" + iActionId);
+            MessageBox.ASSERT("條件任務對應的執行任務為錯誤. iConditionId:" + _iConditionId + " iRunAction:" + iActionId);
         }
     }
 
@@ -25,7 +25,7 @@ public class GameControllThread
         _GameControll.f_Start(_iActionId);
         _bIsComplete = false;
     }
-    
+
     public void f_Update()
     {
         if (_bIsComplete)
@@ -44,15 +44,15 @@ public class GameControllThread
         return _bIsComplete;
     }
 
-        //#region 通讯接口
-        //public void f_RunServerActionState(int iId)
-        //{
-        //    if (_GameControll == null)
-        //    {
-        //        _GameControll = new GameControll(_iConditionId);
-        //    }
-        //    //_GameControll.f_RunServerActionState(iId);
-        //}
-        //#endregion
+    //#region 通訊介面
+    //public void f_RunServerActionState(int iId)
+    //{
+    //    if (_GameControll == null)
+    //    {
+    //        _GameControll = new GameControll(_iConditionId);
+    //    }
+    //    //_GameControll.f_RunServerActionState(iId);
+    //}
+    //#endregion
 
-    }
+}

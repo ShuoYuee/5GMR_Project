@@ -15,7 +15,7 @@ public class UpdateText : MonoBehaviour
         _Text = gameObject.GetComponent<Text>();
         if (_Text == null)
         {           
-            MessageBox.ASSERT("UpdateText设置的对象未找到Text组件." + gameObject.name);
+            MessageBox.ASSERT("UpdateText設置的物件未找到Text元件." + gameObject.name);
         }
         else
         {
@@ -24,7 +24,7 @@ public class UpdateText : MonoBehaviour
     }
 
     /// <summary>
-    /// 更新Text文字显示
+    /// 更新Text文字顯示
     /// </summary>
     public void f_Update()
     {

@@ -14,7 +14,7 @@ public class GameControllEnd : GameControllBaseState
 
     public override void f_Enter(object Obj)
     {
-        MessageBox.DEBUG("---------主线任务执行完成,等待游戏结束-------------");
+        MessageBox.DEBUG("---------主線任務執行完成,等待遊戲結束-------------");
         //GameMain.GetInstance().f_EndGame();
     }
 

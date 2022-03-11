@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 遊戲任務主控制器
+/// 游戏任务主控制器
 /// </summary>
 public class GameControll
 {
     private int _iConditionId;
-    private ccMachineManager<ccMachineParamentBase> _GameControllMachineManager = null;
+    private ccMachineManager _GameControllMachineManager = null;
     private GameControllMunClock _GameControllMunClock = null;
 
     private bool _bIsRuning = false;
@@ -18,7 +18,7 @@ public class GameControll
     {
         _iConditionId = iConditionId;
         _GameControllMunClock = new GameControllMunClock(); //Loop
-        _GameControllMachineManager = new ccMachineManager<ccMachineParamentBase>(new GameControllLoop()); //Loop
+        _GameControllMachineManager = new ccMachineManager(new GameControllLoop()); //Loop
 
 
         // ********* ( 除了這邊之外，要到「GameControllTools.cs」填寫對應的類型！！ ) ************
@@ -26,10 +26,10 @@ public class GameControll
         //_GameControllMachineManager.f_RegState(new GameControllRead(_iConditionId)); //讀取任務
 
         RegState(new GameControllEnd());          //結束任務
-                                                  //RegState(new GameControllServerAction()); //
-                                                  //--------------------------------------------------------------------------------------
-
-        RegState(new GameControllV3_SetParament());          //3001.設置變數的值（參數1為變數名, 參數2為變數值，參數3無效）
+        //RegState(new GameControllServerAction()); //
+        //--------------------------------------------------------------------------------------
+        
+        RegState(new GameControllV3_SetParament());          //3001.设置变量的值（参数1为变量名, 参数2为变量值，参数3无效）
         RegState(new GameControllV3_AddParament());
         RegState(new GameControllV3_SubParament());
 
@@ -38,14 +38,14 @@ public class GameControll
 
         //--------------------------------------------------------------------------------------
         RegState(new GameControllEnd());
-        RegState(new GameControllV3_ShowText());                 //5001.顯示對話文字資訊
-        RegState(new GameControllV3_ShowCTLText());                 //5002.中間提示文字資訊，參數1提示資訊Logo，參數2標題文字，參數3顯示文字Id（只能顯示一個Id的文字）       
-        RegState(new GameControllV3_ShowStepInfor());                 //5003.任務進度文字資訊，參數1提示資訊Logo，參數2標題文字，參數3進度顯示文字Id（只能顯示一個Id的文字）
-                                                                      //--------------------------------------------------------------------------------------
+        RegState(new GameControllV3_ShowText());                 //5001.显示对话文字信息
+        RegState(new GameControllV3_ShowCTLText());                 //5002.中间提示文字信息，参数1提示信息Logo，参数2标题文字，参数3显示文字Id（只能显示一个Id的文字）       
+        RegState(new GameControllV3_ShowStepInfor());                 //5003.任务进度文字信息，参数1提示信息Logo，参数2标题文字，参数3进度显示文字Id（只能显示一个Id的文字）
+                                                                  //--------------------------------------------------------------------------------------
 
-        RegState(new GameControllV3_ShowGamePlot());
+        RegState(new GameControllV3_ShowGamePlot()); 
 
-        //特殊處理計時器動作
+        //特殊处理定时器动作
         _GameControllMachineManager.f_RegState(new GameControllClock(_GameControllMunClock));
         _GameControllMachineManager.f_ChangeState((int)EM_GameControllAction.Loop);
     }
@@ -56,7 +56,7 @@ public class GameControll
         //ccMachineStateBase tNewState = tccMachineStateBase.f_Clone();
     }
 
-
+   
 
     public void f_Start(int iActionId = -99)
     {
@@ -64,14 +64,14 @@ public class GameControll
         GameControllDT tGameControllDT = GameControllTools.f_LoadGameControllDT(iActionId);
         if (tGameControllDT == null)
         {
-            MessageBox.ASSERT("GameControllRead 讀取的任務Id非法 ");
+            MessageBox.ASSERT("GameControllRead 读取的任务Id非法 ");
         }
         //_GameControllMachineManager.f_ChangeState((int)EM_GameControllAction.Read, iActionId);
         int iId = tGameControllDT.iId;
         if (iId > 100000)
         {
             iId = iId / 100000;
-            MessageBox.DEBUG("Clock執行Action " + iId + " " + tGameControllDT.szName);
+            MessageBox.DEBUG("Clock执行Action " + iId + " " + tGameControllDT.szName);
             tGameControllDT.iNeedEnd = 0;
             tGameControllDT.fEndSleepTime = 0;
             tGameControllDT.iEndAction = 0;
@@ -79,7 +79,7 @@ public class GameControll
         }
         else
         {
-            //MessageBox.DEBUG("主線任務執行Action " + iId);
+            //MessageBox.DEBUG("主线任务执行Action " + iId);
             _GameControllMachineManager.f_ChangeState(tGameControllDT.iStartAction, tGameControllDT);
         }
     }
@@ -96,12 +96,12 @@ public class GameControll
         _GameControllMachineManager.f_Update();
         _GameControllMunClock.f_Update();
     }
-
+    
 
     void DoClockState(object Obj)
     {
-        GameControllDT tGameControllDT = (GameControllDT)Obj;
-        _GameControllMunClock.f_Execute(tGameControllDT);
+        GameControllDT tGameControllDT = (GameControllDT)Obj;        
+        _GameControllMunClock.f_Execute(tGameControllDT);        
     }
 
     public bool f_IsEnd()

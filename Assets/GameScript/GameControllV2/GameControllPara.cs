@@ -39,11 +39,11 @@ public class GameControllPara
         }
         else
         {
-            MessageBox.ASSERT("獲取變數失敗，未找到變數，請查對變數 " + szParamentName + " 是否存在");
+            MessageBox.ASSERT("获取变量失败，未找到变量，请查对变量 " + szParamentName + " 是否存在");
         }
         return "";
     }
-
+       
     public bool f_CheckHaveParament(string szParamentName)
     {
         GameControllParaPoolDT tGameControllParaDT = null;
@@ -63,7 +63,7 @@ public class GameControllPara
         }
         else
         {
-            MessageBox.ASSERT("設置變數失敗，未找到變數，請查對 " + szParamentName + " 是否存在");
+            MessageBox.ASSERT("设置变量失败，未找到变量，请查对 " + szParamentName + " 是否存在");
         }
     }
 

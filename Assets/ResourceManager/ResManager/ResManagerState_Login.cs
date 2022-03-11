@@ -2,7 +2,7 @@
 using System.Collections;
 using ccU3DEngine;
 
-public class ResManagerState_Login : ccMachineStateBase<ccMachineParamentBase>
+public class ResManagerState_Login : ccMachineStateBase
 {
     static EM_ResManagerStatic m_EM_AIStatic = EM_ResManagerStatic.Login;
 

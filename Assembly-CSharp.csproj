@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ArtResoruce\HighCity\Scripts\HCWave.cs" />
     <Compile Include="Assets\GameEM\GameEM.cs" />
     <Compile Include="Assets\GameScript\GameControll\GameControll.cs" />
     <Compile Include="Assets\GameScript\GameControll\GameControllMunClock.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Assets\GameScript\GameControllV2\GameControllV2.cs" />
     <Compile Include="Assets\GameScript\GameDataLoad\GameDataLoad.cs" />
     <Compile Include="Assets\GameScript\GameDataLoad\LocalDataManager.cs" />
+    <Compile Include="Assets\GameScript\GameMain\EditMap\ConnectURL.cs" />
     <Compile Include="Assets\GameScript\GameMain\EditMap\DT\MapPoolDT.cs" />
     <Compile Include="Assets\GameScript\GameMain\EditMap\EditDisplay.cs" />
     <Compile Include="Assets\GameScript\GameMain\EditMap\EditDisplayText.cs" />
@@ -215,6 +217,23 @@
     <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Internal\WebGLMediaPlayer.cs" />
     <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Internal\WindowsMediaPlayer.cs" />
     <Compile Include="Assets\ThirdParty\DOTween\DOTweenPro\DOTweenAnimation.cs" />
+    <Compile Include="Assets\ThirdParty\ZFBrowser\Demo\Scripts\ActionTimer.cs" />
+    <Compile Include="Assets\ThirdParty\ZFBrowser\Demo\Scripts\BallBrowserSpawner.cs" />
+    <Compile Include="Assets\ThirdParty\ZFBrowser\Demo\Scripts\CoinPickup.cs" />
+    <Compile Include="Assets\ThirdParty\ZFBrowser\Demo\Scripts\DemoList.cs" />
+    <Compile Include="Assets\ThirdParty\ZFBrowser\Demo\Scripts\Door.cs" />
+    <Compile Include="Assets\ThirdParty\ZFBrowser\Demo\Scripts\ExplainUnzip.cs" />
+    <Compile Include="Assets\ThirdParty\ZFBrowser\Demo\Scripts\ForcedCooperation.cs" />
+    <Compile Include="Assets\ThirdParty\ZFBrowser\Demo\Scripts\HUDManager.cs" />
+    <Compile Include="Assets\ThirdParty\ZFBrowser\Demo\Scripts\PlayerInventory.cs" />
+    <Compile Include="Assets\ThirdParty\ZFBrowser\Demo\Scripts\SayWordsOnTouch.cs" />
+    <Compile Include="Assets\ThirdParty\ZFBrowser\Demo\Scripts\SimpleController.cs" />
+    <Compile Include="Assets\ThirdParty\ZFBrowser\Demo\Scripts\SimpleFPSController.cs" />
+    <Compile Include="Assets\ThirdParty\ZFBrowser\Demo\Scripts\SimpleScripting.cs" />
+    <Compile Include="Assets\ThirdParty\ZFBrowser\Demo\Scripts\TestDownloadServer.cs" />
+    <Compile Include="Assets\ThirdParty\ZFBrowser\Demo\Scripts\VRBrowserPanel.cs" />
+    <Compile Include="Assets\ThirdParty\ZFBrowser\Demo\Scripts\VRMainControlPanel.cs" />
+    <Compile Include="Assets\ThirdParty\ZFBrowser\Demo\Scripts\VRMode.cs" />
     <Compile Include="Assets\Tool\VRConceptUI\Scripts\Effects\MenuAnimation.cs" />
     <Compile Include="Assets\Tool\VRConceptUI\Scripts\Effects\ToggleController.cs" />
     <Compile Include="Assets\Tool\VRConceptUI\Scripts\Effects\TransitionEffect.cs" />
@@ -250,6 +269,7 @@
     <Compile Include="Assets\ccEngine\ccMathEx.cs" />
     <Compile Include="Assets\ccEngine\iTween\iTween.cs" />
     <None Include="Assets\ThirdParty\DOTween\DOTween\DOTween50.xml" />
+    <None Include="Assets\ThirdParty\ZFBrowser\Materials\EmulatedMipmap\UnlitColored.shader" />
     <None Include="Assets\AssetStore\3D Game Kit - Character Pack\Shaders\Alien.shader" />
     <None Include="Assets\ABRes\Language\zhCN\GameMain.txt" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-UI-Default-Stereo.shader" />
@@ -258,11 +278,11 @@
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-IMGUI-Transparent.shader" />
     <None Include="Assets\ThirdParty\AVProVideo\Demos\Materials\UI-Default-ExtraTexture.shader" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-VR-InsideSphere-AndroidOES.shader" />
+    <None Include="Assets\ThirdParty\ZFBrowser\Materials\EmulatedMipmap\UnlitOpaque.shader" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Helper-Transition.shader" />
     <None Include="Assets\ABRes\Language\zhCN\System.txt" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-UI-Default-Transparent.shader" />
     <None Include="Assets\AssetStore\3D Game Kit - Environment Pack\Shaders\Vegetation.shader" />
-    <None Include="Assets\StreamingAssets\AAA.txt" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Lit-Transparent-Diffuse.shader" />
     <None Include="Assets\ThirdParty\DOTween\DemiLib\Core\DemiLib.xml" />
     <None Include="Assets\ABRes\Language\zhTW\Login.txt" />
@@ -270,36 +290,46 @@
     <None Include="Assets\ThirdParty\AVProVideo\Demos\Materials\UI-DefaultFont-ExtraTexture.shader" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-VR-InsideSphere.shader" />
     <None Include="Assets\ABRes\Language\zhCN\Login.txt" />
+    <None Include="Assets\ThirdParty\ZFBrowser\Materials\EmulatedMipmap\Transparent.shader" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-VR-InsideSphere-Transparent.shader" />
     <None Include="Assets\ABRes\Language\enUS\System.txt" />
+    <None Include="Assets\ThirdParty\ZFBrowser\Materials\EmulatedMipmap\Unlit.shader" />
     <None Include="Assets\Resources\Font3\Font3.fnt" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Skybox-Sphere.shader" />
     <None Include="Assets\StreamingAssets\SaveFile\TestScene.txt" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-VR-InsideSphere-StereoUV.shader" />
+    <None Include="Assets\ThirdParty\ZFBrowser\Materials\EmulatedMipmap\Standard.shader" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Background-FullScreenTransparent.shader" />
     <None Include="Assets\ABRes\HotFixDLL\HotFixDllp.txt" />
     <None Include="Assets\ABRes\Language\enUS\Login.txt" />
+    <None Include="Assets\StreamingAssets\SaveFile\TestScene2.txt" />
     <None Include="Assets\AssetStore\3D Game Kit - Character Pack\Shaders\EyeBallsHD.shader" />
+    <None Include="Assets\ThirdParty\ZFBrowser\Plugins\versions.txt" />
+    <None Include="Assets\ThirdParty\ZFBrowser\Materials\EmulatedMipmap\Readme.txt" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-UI-AndroidOES.shader" />
     <None Include="Assets\ThirdParty\DOTween\DOTweenPro\readme.txt" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Skybox-Cube3x2.shader" />
     <None Include="Assets\ABRes\Language\enUS\GameMain.txt" />
+    <None Include="Assets\ThirdParty\ZFBrowser\Materials\EmulatedMipmap\MipSample.cginc" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo.cginc" />
     <None Include="Assets\Resources\Font4\Font4.fnt" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Unlit-AndroidOES.shader" />
     <None Include="Assets\gmcs.rsp" />
+    <None Include="Assets\ThirdParty\ZFBrowser\ThirdPartyNotices.txt" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Unlit.shader" />
     <None Include="Assets\AssetStore\3D Game Kit - Character Pack\Shaders\EnergyCore.shader" />
     <None Include="Assets\smcs.rsp" />
     <None Include="Assets\AssetStore\3D Game Kit - Character Pack\Shaders\SculptedHair.shader" />
     <None Include="Assets\ABRes\HotFixDLL\HotFixDll.txt" />
     <None Include="Assets\ABRes\Language\zhTW\GameMain.txt" />
+    <None Include="Assets\ThirdParty\ZFBrowser\Changelog.txt" />
     <None Include="Assets\Tool\VRConceptUI\Content\Shaders\3DText.shader" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Unlit-Transparent.shader" />
     <None Include="Assets\AssetStore\3D Game Kit - Character Pack\Shaders\ToonSkin.shader" />
     <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-BlendFrames.shader" />
     <None Include="Assets\ThirdParty\DOTween\DOTween\readme.txt" />
     <None Include="Assets\ThirdParty\DOTween\DOTween\DOTween46.xml" />
+    <None Include="Assets\ThirdParty\ZFBrowser\Materials\UnlitCursor.shader" />
     <None Include="Assets\ThirdParty\DOTween\DOTween\DOTween43.xml" />
     <None Include="Assets\AssetStore\3D Game Kit - Character Pack\Shaders\Dissolve.shader" />
     <Reference Include="UnityEngine">
@@ -962,6 +992,14 @@
     <ProjectReference Include="SteamVR_Windows_EditorHelper.csproj">
       <Project>{5313027B-EDE3-0AF0-5E8C-197F042E3AF1}</Project>
       <Name>SteamVR_Windows_EditorHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="ZFBrowser.csproj">
+      <Project>{D5B15061-FCF2-0363-87AB-07341382992B}</Project>
+      <Name>ZFBrowser</Name>
+    </ProjectReference>
+    <ProjectReference Include="ZFBrowser-Editor.csproj">
+      <Project>{0213EF8F-B992-53C1-A113-42C587976F33}</Project>
+      <Name>ZFBrowser-Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

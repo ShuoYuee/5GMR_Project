@@ -82,7 +82,6 @@ public class GameMain : MonoBehaviour
     {
         if (m_MainMenu != null)
             m_MainMenu.transform.localPosition = m_MainCamera.transform.localPosition + new Vector3(-0.4f, 0.05f, 0);
-        //m_MainMenu.transform.position = m_MainCamera.transform.position + new Vector3(-0.4f, 0.05f, 0);
     }
 
     #region 地圖功能
@@ -240,4 +239,9 @@ public class GameMain : MonoBehaviour
         m_EditManager.f_EditObjAnimPlay(iAddIndex);
     }
     #endregion
+
+    public void f_Sponsor()
+    {
+        glo_Main.GetInstance().m_ResourceManager.f_CreateResource("Model/DancingGirlA");
+    }
 }

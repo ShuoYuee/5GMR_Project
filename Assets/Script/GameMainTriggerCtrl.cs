@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using ccU3DEngine;
 using Epibyte.ConceptVR;
 
 public class GameMainTriggerCtrl : MonoBehaviour
 {
     public Transform _Focus = null;
 
-    //public float _fLookTimeLimt = 2f;
     private EditObjControll _EditObjControll = null;
     private Interactable _Interactable = null;
     private InputField _InputField = null;
@@ -15,7 +15,6 @@ public class GameMainTriggerCtrl : MonoBehaviour
 
     private GameObject oCurObj = null;
     private EM_TriggerObj _ObjEm = EM_TriggerObj.None;
-    //private float _fLookTime = 0f;
     private bool _bLookTime = false;
 
     private EM_PlayCtrl _PlayCtrl = EM_PlayCtrl.Positon;
@@ -67,6 +66,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
         if(Physics.Raycast(tRay, out hit, Mathf.Infinity))
         {
             Debug.DrawLine(tRay.origin, hit.point, Color.red);
+            if (_bLookTime) { return; }
 
             if (hit.collider.gameObject != oCurObj && oCurObj != null)
             {
@@ -78,13 +78,13 @@ public class GameMainTriggerCtrl : MonoBehaviour
             }
 
             //將要偵測的元件一一填入
-            if (GameMain.GetInstance().m_EditManager._bEdit && hit.collider.GetComponent<EditObjControll>() != null)//編輯物件
+            if (hit.collider.GetComponent<EditObjControll>() != null)//編輯物件
             {
                 _ObjEm = EM_TriggerObj.EditObj;
                 oCurObj = hit.collider.gameObject;
             }
 
-            else if (!_bLookTime && hit.collider.GetComponent<Interactable>() != null)//按鈕物件
+            else if (hit.collider.GetComponent<Interactable>() != null)//按鈕物件
             {
                 _ObjEm = EM_TriggerObj.Button;
                 oCurObj = hit.collider.gameObject;
@@ -105,51 +105,20 @@ public class GameMainTriggerCtrl : MonoBehaviour
             }
 
             f_SetFocus(hit.point);
-
+            ccTimeEvent.GetInstance().f_RegEvent(0.1f, false, null, f_InputCooling);
         }
         else
         {
             f_SetFocus(hit.point);
         }
-        #region
-        /*else
-        {
-            _ObjEm = EM_TriggerObj.None;
-            oCurObj = null;
-
-            if (_Interactable != null)
-            {
-                _Interactable.OnLeave();
-                _Interactable = null;
-            }
-
-            _fLookTime = 0;
-            _bLookTime = false;
-            return;
-        }
-
-        if (_bLookTime)
-        {
-                _fLookTime += Time.deltaTime;
-            if (_fLookTime >= _fLookTimeLimt)
-            {
-                _fLookTime = 0;
-                _bLookTime = false;
-
-                switch (_ObjEm)
-                {
-                    case EM_TriggerObj.EditObj:
-
-                        break;
-                    case EM_TriggerObj.Button:
-                        _Interactable.OnClicked();
-                        break;
-                }
-            }
-        }*/
-        #endregion
     }
-    
+
+    /// <summary>輸入冷卻時間</summary>
+    private void f_InputCooling(object e)
+    {
+        _bLookTime = false;
+    }
+
     /// <summary>
     /// 設定焦點
     /// </summary>
@@ -184,26 +153,35 @@ public class GameMainTriggerCtrl : MonoBehaviour
                 break;
 
             case EM_TriggerObj.EditObj://編輯物
-                if (!GameMain.GetInstance().m_EditManager._bEdit) { return; }
-                if (_EditObjControll != null && _EditObjControll.gameObject != oCurObj)
+                if (GameMain.GetInstance().m_EditManager._bEdit)
                 {
-                    _EditObjControll.f_SetEditState(false);
-                    _EditObjControll = oCurObj.GetComponent<EditObjControll>();
+                    if (_EditObjControll != null && _EditObjControll.gameObject != oCurObj)
+                    {
+                        _EditObjControll.f_SetEditState(false);
+                        _EditObjControll = oCurObj.GetComponent<EditObjControll>();
+                    }
+                    else
+                    {
+                        _EditObjControll = oCurObj.GetComponent<EditObjControll>();
+                    }
+
+                    if (_EditObjControll == null)
+                    {
+                        _ObjEm = EM_TriggerObj.None;
+                        return;
+                    }
+
+                    GameMain.GetInstance().m_EditManager._bSelectEdit = true;
+                    _EditObjControll.f_SetEditState(true);
+                    _EditObjControll.OnClicked();
                 }
                 else
                 {
-                    _EditObjControll = oCurObj.GetComponent<EditObjControll>();
+                    if (oCurObj)
+                    {
+                        oCurObj.GetComponent<EditObjControll>().f_ConnectURL();
+                    }
                 }
-
-                if (_EditObjControll == null)
-                {
-                    _ObjEm = EM_TriggerObj.None;
-                    return;
-                }
-
-                GameMain.GetInstance().m_EditManager._bSelectEdit = true;
-                _EditObjControll.f_SetEditState(true);
-                _EditObjControll.OnClicked();
                 break;
 
             case EM_TriggerObj.InpuUI://UI輸入框

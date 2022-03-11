@@ -12,7 +12,7 @@ public class GameControllV3_AddParament : GameControllBaseState
 
     public override void f_Enter(object Obj){
         _CurGameControllDT = (GameControllDT)Obj;
-        //3002.變數值加上（參數1為變數名,參數2為變數要加上的值，參數3無效）
+        //3002.变量值加上（参数1为变量名,参数2为变量要加上的值，参数3无效）
         StartRun();
     }
 

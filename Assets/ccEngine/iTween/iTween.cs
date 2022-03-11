@@ -1,6 +1,6 @@
 //
-//2021-4-1 修改2019元件失效記錄
-//因2019對GUITexture GUIText元件不支援，元件的功能取消 
+//2021-4-1 修改2019组件失效记录
+//因2019对GUITexture GUIText组件不支持，组件的功能取消 
 
 // Copyright (c) 2011 Bob Berkebile (pixelplacment)
 // Please direct any bugs/comments/suggestions to http://pixelplacement.com
@@ -34,32 +34,32 @@ Redistributions in binary form must reproduce the above copyright notice, this l
 Neither the name of the author nor the names of contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-movetopath：是否先從原始位置走到路徑中第一個點的位置，預設值為真
-position:座標，包括x,y,z三個軸向
-path:路徑，是一個座標陣列，後面會講到iTweenPath腳本的使用，配合著itweenPath可以讓物體沿著路徑點移動。
-x:x軸向的位置，如果只設置了x軸，物體就只移動x軸，y,z軸不會改變
-orienttopath:如果設置為true，物體移動到目標點的過程中，z軸會一直朝向下一個目標點
-looktarget:物體朝向，物體在移動過程中會一直朝向我們設置的座標點的座標
+movetopath：是否先从原始位置走到路径中第一个点的位置，默认值为真
+position:坐标，包括x,y,z三个轴向
+path:路径，是一个坐标数组，后面会讲到iTweenPath脚本的使用，配合着itweenPath可以让物体沿着路径点移动。
+x:x轴向的位置，如果只设置了x轴，物体就只移动x轴，y,z轴不会改变
+orienttopath:如果设置为true，物体移动到目标点的过程中，z轴会一直朝向下一个目标点
+looktarget:物体朝向，物体在移动过程中会一直朝向我们设置的坐标点的坐标
 
-looktime:物體看向looktarget或orienttopath設置座標的時間
-islocal:當物體的目標點是相對于父節點的座標，需要把isLocal設置為true，否則為false
-time speed:這兩個參數都可以控制物體移動的快慢
-delay:延遲時間，當物體開始移動之前等待時間
-easetype:移動模式，我們可以設置一些加速度的效果，這個參數值是一個枚舉iTween.Easetype
-looptype:迴圈模式，一共有三種模式
-iTween.LoopType.none:不迴圈
-iTween.LoopType.loop:迴圈，物體移動到終點後會跳到起點重新移動
-iTween.LoopType.pingPong:來回迴圈，物體移動到終點後會再以相同的模式和時間再移動到起點，然後再移動到終點，一直迴圈
-onstart:物體開始移動之前的回呼函數
-onstarttarget:回呼函數接收物件，預設開始之前會向iTween.MoveTo函數的第一個參數的物體發送回檔，根據需要在這裡設置合適的回檔接收者
-onstartparams:回檔方法的參數
-onupdate:物體在移動過程中的回呼函數
-onupdatetarget:物體在移動過程中回呼函數的接收者
-onupdateparams:移動過程中回呼函數的參數
-oncomplete:物體移動完成後的回檔
-oncompletetarget:物體移動完成後的回呼函數的接收者
-oncompleteparams:物體移動完成後的回呼函數的參數
-ignoretimescale:忽略時間縮放，時間縮放是Time.timeScale = 0.5f; 預設值為1，如果我們把時間縮放值設置小於1，我們遊戲的整體時間都會放慢，就像播放慢鏡頭一樣，如果設置ignoretimescale為true，無論我們時間怎麼縮放，對物體的移動都沒有影響。
+looktime:物体看向looktarget或orienttopath设置坐标的时间
+islocal:当物体的目标点是相对于父节点的坐标，需要把isLocal设置为true，否则为false
+time speed:这两个参数都可以控制物体移动的快慢
+delay:延迟时间，当物体开始移动之前等待时间
+easetype:移动模式，我们可以设置一些加速度的效果，这个参数值是一个枚举iTween.Easetype
+looptype:循环模式，一共有三种模式
+iTween.LoopType.none:不循环
+iTween.LoopType.loop:循环，物体移动到终点后会跳到起点重新移动
+iTween.LoopType.pingPong:来回循环，物体移动到终点后会再以相同的模式和时间再移动到起点，然后再移动到终点，一直循环
+onstart:物体开始移动之前的回调函数
+onstarttarget:回调函数接收对象，默认开始之前会向iTween.MoveTo函数的第一个参数的物体发送回调，根据需要在这里设置合适的回调接收者
+onstartparams:回调方法的参数
+onupdate:物体在移动过程中的回调函数
+onupdatetarget:物体在移动过程中回调函数的接收者
+onupdateparams:移动过程中回调函数的参数
+oncomplete:物体移动完成后的回调
+oncompletetarget:物体移动完成后的回调函数的接收者
+oncompleteparams:物体移动完成后的回调函数的参数
+ignoretimescale:忽略时间缩放，时间缩放是Time.timeScale = 0.5f; 默认值为1，如果我们把时间缩放值设置小于1，我们游戏的整体时间都会放慢，就像播放慢镜头一样，如果设置ignoretimescale为true，无论我们时间怎么缩放，对物体的移动都没有影响。
  
  */
 
@@ -776,7 +776,7 @@ public class iTween : MonoBehaviour
         {
             args.Add("easetype", EaseType.linear);
         }
-
+        
         ////set tempColor and base fromColor:
         //if (target.GetComponent(typeof(GUITexture)))
         //{
@@ -4653,7 +4653,7 @@ public class iTween : MonoBehaviour
         preUpdate = transform.position;
         float t = ease(0, 1, percentage);
         float lookAheadAmount;
-
+        
         //clamp easing equation results as "back" will fail since overshoots aren't handled in the Catmull-Rom interpolation:
         if (isLocal)
         {
@@ -8071,7 +8071,7 @@ public class iTween : MonoBehaviour
             case EaseType.easeInOutElastic:
                 ease = new EasingFunction(easeInOutElastic);
                 break;
-                /* GFX47 MOD END */
+            /* GFX47 MOD END */
         }
     }
 

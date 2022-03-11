@@ -8,13 +8,17 @@ using ccU3DEngine;
 /// </summary>
 public class EditObjControll : MonoBehaviour
 {
+    /// <summary>物件動畫機</summary>
     private Animator _Animator;
+    /// <summary>材質清單</summary>
     private List<Material> _Material = new List<Material>();
 
     /// <summary>場景資料(儲存時所用的)</summary>
     private MapPoolDT _MapPoolDT;
     /// <summary>預覽動畫組</summary>
     private string[] _strAnimGroup;
+    /// <summary>網頁連結腳本</summary>
+    private ConnectURL _ConnectURL = new ConnectURL();
 
     /// <summary>編輯模式</summary>
     EM_EditState _EditEM = EM_EditState.None;
@@ -574,4 +578,14 @@ public class EditObjControll : MonoBehaviour
         }
     }
     #endregion
+
+    public void f_SetURL(string szURL)
+    {
+        _ConnectURL.fSetURL(szURL);
+    }
+
+    public void f_ConnectURL()
+    {
+        _ConnectURL.f_ConnectURL();
+    }
 }

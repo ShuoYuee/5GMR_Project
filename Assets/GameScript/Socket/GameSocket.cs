@@ -32,7 +32,7 @@ public class GameSocket : BaseSocket
 
         Socket_Wait tSocket_Wait = new Socket_Wait(this);
         _Socket_Loop = new Socket_Loop(this);
-        _SocketMachineManger = new ccMachineManager<ccMachineParamentBase>(_Socket_Loop);
+        _SocketMachineManger = new ccMachineManager(_Socket_Loop);
         _SocketMachineManger.f_RegState(new Socket_Connect(this));
         _SocketMachineManger.f_RegState(new Socket_Login(this));
         _SocketMachineManger.f_RegState(new Socket_Wait(this));

@@ -72,12 +72,12 @@ namespace ccILR
             //glo_Main.GetInstance().f_StartCoroutine(LoadHotFixAssembly());
 
             byte[] aDll = null;
-            byte[] aPdb = null;
+            byte[] aPdb = null;          
             try
             {
                 aDll = f_LoadCatchFile("UpdateInforIndd.txtt");
                 aPdb = f_LoadCatchFile("UpdateInforInddp.txtt");
-
+                
                 fs = new MemoryStream(aDll);
                 if (aPdb != null)
                 {
@@ -91,9 +91,9 @@ namespace ccILR
                 //IlAppDomain.LoadAssembly(fs, p, new Mono.Cecil.Pdb.PdbReaderProvider());
                 IlAppDomain.LoadAssembly(fs, p, new ILRuntime.Mono.Cecil.Pdb.PdbReaderProvider());
             }
-            catch (Exception e)
+            catch(Exception e)
             {
-                Debug.LogError("載入熱更DLL失敗，" + e.ToString());
+                Debug.LogError("加载热更DLL失败，" + e.ToString());
             }
 
             //using (System.IO.MemoryStream fs = new MemoryStream(aDll))
@@ -117,13 +117,13 @@ namespace ccILR
         System.IO.MemoryStream p;
         IEnumerator LoadHotFixAssembly()
         {
-            //首先產生實體ILRuntime的AppDomain，AppDomain是一個應用程式定義域，每個AppDomain都是一個獨立的沙箱
+            //首先实例化ILRuntime的AppDomain，AppDomain是一个应用程序域，每个AppDomain都是一个独立的沙盒
             //appdomain = new ILRuntime.Runtime.Enviorment.AppDomain();
-            //正常項目中應該是自行從其他地方下載dll，或者打包在AssetBundle中讀取，平時開發以及為了演示方便直接從StreammingAssets中讀取，
-            //正式發佈的時候需要大家自行從其他地方讀取dll
+            //正常项目中应该是自行从其他地方下载dll，或者打包在AssetBundle中读取，平时开发以及为了演示方便直接从StreammingAssets中读取，
+            //正式发布的时候需要大家自行从其他地方读取dll
 
             //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            //這個DLL檔是直接編譯HotFix_Project.sln生成的，已經在專案中設置好輸出目錄為StreamingAssets，在VS裡直接編譯即可生成到對應目錄，無需手動拷貝
+            //这个DLL文件是直接编译HotFix_Project.sln生成的，已经在项目中设置好输出目录为StreamingAssets，在VS里直接编译即可生成到对应目录，无需手动拷贝
 #if UNITY_ANDROID
         WWW www = new WWW(Application.streamingAssetsPath + "/HotFix_Project.dll");
 #else
@@ -136,7 +136,7 @@ namespace ccILR
             byte[] dll = www.bytes;
             www.Dispose();
 
-            //PDB檔是調試資料庫，如需要在日誌中顯示報錯的行號，則必須提供PDB檔，不過由於會額外耗用記憶體，正式發佈時請將PDB去掉，下面LoadAssembly的時候pdb傳null即可
+            //PDB文件是调试数据库，如需要在日志中显示报错的行号，则必须提供PDB文件，不过由于会额外耗用内存，正式发布时请将PDB去掉，下面LoadAssembly的时候pdb传null即可
 #if UNITY_ANDROID
         www = new WWW(Application.streamingAssetsPath + "/HotFix_Project.pdb");
 #else
@@ -156,7 +156,7 @@ namespace ccILR
             }
             catch
             {
-                Debug.LogError("載入熱更DLL失敗，請確保已經通過VS打開Assets/Samples/ILRuntime/1.6/Demo/HotFix_Project/HotFix_Project.sln編譯過熱更DLL");
+                Debug.LogError("加载热更DLL失败，请确保已经通过VS打开Assets/Samples/ILRuntime/1.6/Demo/HotFix_Project/HotFix_Project.sln编译过热更DLL");
             }
 
             InitializeILRuntime();
@@ -166,7 +166,7 @@ namespace ccILR
 
         void InitializeILRuntime()
         {
-            //這裡做一些ILRuntime的註冊
+            //这里做一些ILRuntime的注册
             IlAppDomain.DelegateManager.RegisterMethodDelegate<GameObject>();
             //IlAppDomain.DelegateManager.RegisterDelegateConvertor<UIEventListener.VoidDelegate>((action) =>
             //{
@@ -183,12 +183,12 @@ namespace ccILR
                     ((System.Action<string, string, LogType>)action)(arg1, arg2, arg3);
                 });
             });
-            IlAppDomain.DelegateManager.RegisterMethodDelegate<GameObject, object, object>();
+            IlAppDomain.DelegateManager.RegisterMethodDelegate< GameObject, object, object> ();
             IlAppDomain.DelegateManager.RegisterDelegateConvertor<ccUIEventListener.VoidDelegateV2>((action) =>
             {
                 return new ccUIEventListener.VoidDelegateV2((arg1, arg2, arg3) =>
                 {
-                    ((System.Action<GameObject, object, object>)action)(arg1, arg2, arg3);
+                    ((System.Action< GameObject, object, object>)action)(arg1, arg2, arg3);
                 });
             });
             IlAppDomain.DelegateManager.RegisterMethodDelegate<object>();
@@ -208,7 +208,7 @@ namespace ccILR
                     ((Action<string>)action)(a);
                 });
             });
-
+            
             IlAppDomain.DelegateManager.RegisterDelegateConvertor<UnityEngine.Events.UnityAction>((act) =>
             {
                 return new UnityEngine.Events.UnityAction(() =>
@@ -216,7 +216,7 @@ namespace ccILR
                     ((Action)act)();
                 });
             });
-
+            
             IlAppDomain.DelegateManager.RegisterMethodDelegate<string>();
             IlAppDomain.DelegateManager.RegisterDelegateConvertor<UnityEngine.Events.UnityAction<BaseEventData>>((act) =>
             {
@@ -247,14 +247,14 @@ namespace ccILR
                 {
                     for (int j = 0; j < types.Length; j++)
                     {
-                        string className = types[j].FullName;
+                        string className = types[j].FullName;                        
                         if (!_dirASClass.ContainsKey(className))
                         {
                             _dirASClass.Add(className, types[j]);
                         }
                         else
                         {
-                            MessageBox.ASSERT("已存在同名的類" + className);
+                            MessageBox.ASSERT("已存在同名的类" + className);
                         }
                     }
                 }
@@ -265,7 +265,7 @@ namespace ccILR
         {
             if (IlAppDomain == null)
             {
-                Debug.LogError("AppDomain未初始化，f_CreateClass失敗." + strFullClassName);
+                Debug.LogError("AppDomain未初始化，f_CreateClass失败." + strFullClassName);
             }
             ILTypeInstance tILTypeInstance = IlAppDomain.Instantiate(strFullClassName);
             //T tCreateClass = IlAppDomain.Instantiate<T>(strFullClassName);
@@ -274,12 +274,12 @@ namespace ccILR
                 T tCreateClass = (T)tILTypeInstance.CLRInstance;
                 //tCreateClass.f_Save(tILTypeInstance);
                 return tCreateClass;
-                ////預先獲得IMethod，可以減低每次調用查找方法耗用的時間
+                ////预先获得IMethod，可以减低每次调用查找方法耗用的时间
                 //IType type = IlAppDomain.LoadedTypes[strFullClassName];
 
-                //Debug.Log("產生實體熱更裡的類");
+                //Debug.Log("实例化热更里的类");
                 //object obj = IlAppDomain.Instantiate(strFullClassName, null);
-                ////第二種方式
+                ////第二种方式
                 //object obj2 = ((ILType)type).Instantiate();
 
                 //return (T) obj;
@@ -301,7 +301,7 @@ namespace ccILR
             return default(T);
         }
 
-
+    
         public void f_Destory()
         {
             IlAppDomain.DebugService.StopDebugService();
@@ -335,14 +335,14 @@ namespace ccILR
         //    ccILR_BaseClass tNewClass = null;
         //    stRegClassDT tstRegClassDT = GetClassDT(strClassName);
         //    if (tstRegClassDT != null)
-        //    {//外部DLL註冊
+        //    {//外部DLL注册
         //        tNewClass = CreateClasss(tstRegClassDT);
         //    }
         //    else
-        //    {//直接走內部創建介面
+        //    {//直接走内部创建接口
         //        if (_ccILR_CreateClassTool == null)
         //        {
-        //            Debug.LogError("ccILR_CreateClassTool 內部創建介面未初始，" + strClassName);
+        //            Debug.LogError("ccILR_CreateClassTool 内部创建接口未初始，" + strClassName);
         //        }
         //        else
         //        {

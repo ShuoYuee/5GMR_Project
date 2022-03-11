@@ -6,8 +6,8 @@ using UnityEngine.Playables;
 
 
 /// <summary>
-/// 一次性計時器事件(等待操作對此指令無效)
-/// 1303.計時器事件(參數1為定時時間到後執行的下一條指令,參數23無效)
+/// 一次性定时器事件(等待操作对此指令无效)
+/// 1303.定时器事件(参数1为定时时间到后执行的下一条指令,参数23无效)
 /// </summary>
 public class GameControllClock : GameControllBaseState
 {
@@ -27,7 +27,7 @@ public class GameControllClock : GameControllBaseState
         GameControllDT tGameControllDT = (GameControllDT)glo_Main.GetInstance().m_SC_Pool.m_GameControllSC.f_GetSC(ccMath.atoi(_CurGameControllDT.szData1));
         if (tGameControllDT == null)
         {
-            MessageBox.ASSERT("讀取計時器事件對應的下一動作失敗 " + _CurGameControllDT.iId + " " + _CurGameControllDT.szData1);
+            MessageBox.ASSERT("读取定时器事件对应的下一动作失败 " + _CurGameControllDT.iId + " " + _CurGameControllDT.szData1);
             return;
         }
         _CurGameControllDT.fEndSleepTime = 0;
@@ -55,7 +55,6 @@ public class GameControllClock : GameControllBaseState
             _GameControllMunClock.f_Read(Obj);
         }
     }
-
+      
 
 }
-

@@ -4,12 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 /// <summary>
-/// 本地資料保存和獲取工具
+/// 本地数据保存和获取工具
 /// </summary>
 public class LocalDataManager
 {
     /// <summary>
-    /// 本地資料首碼
+    /// 本地数据前缀
     /// </summary>
     private static readonly string localDataStr = "localdata";
 
@@ -19,13 +19,13 @@ public class LocalDataManager
         return localDataStr + strKey;
     }
 
-    #region 設置本地數據 設置值
+    #region 设置本地数据 设置值
     /// <summary>
-    /// 設置本地數據 設置值
+    /// 设置本地数据 设置值
     /// </summary>
-    /// <typeparam name="T">資料類型（int,float,string,bool等基底資料型別，或由基底資料型別封裝的類）</typeparam>
-    /// <param name="dataType">資料名字</param>
-    /// <param name="value">數據值</param>
+    /// <typeparam name="T">数据类型（int,float,string,bool等基本数据类型，或由基本数据类型封装的类）</typeparam>
+    /// <param name="dataType">数据名字</param>
+    /// <param name="value">数据值</param>
     public static void f_SetLocalData<T>(string strKey, T value)
     {
         Type type = typeof(T);
@@ -49,20 +49,20 @@ public class LocalDataManager
         }
         else
         {
-            MessageBox.ASSERT("不支援的資料類型");
+            MessageBox.ASSERT("不支持的数据类型");
         }
         PlayerPrefs.Save();
 
         //Debug.Log("Value: " + value + " , Get: " + f_GetLocalData<T>(strKey, value));
     }
     #endregion
-
-    #region 檢查本地資料中是否已經有該資料
+        
+    #region 检查本地数据中是否已经有该数据
     /// <summary>
-    /// 檢查本地資料中是否已經有該資料
+    /// 检查本地数据中是否已经有该数据
     /// </summary>
-    /// <param name="dataType">資料名字</param>
-    /// <returns>是否已經有該資料</returns>
+    /// <param name="dataType">数据名字</param>
+    /// <returns>是否已经有该数据</returns>
     public static bool f_HasLocalData(string strKey)
     {
         string key = GetKey(strKey);
@@ -70,11 +70,11 @@ public class LocalDataManager
     }
     #endregion
 
-    #region 從本地資料中刪除該資料值
+    #region 从本地数据中删除该数据值
     /// <summary>
-    /// 從本地資料中刪除該資料值
+    /// 从本地数据中删除该数据值
     /// </summary>
-    /// <param name="dataType">資料名字</param>
+    /// <param name="dataType">数据名字</param>
     public static void f_DeleteLocalData(string strKey)
     {
         string key = GetKey(strKey);
@@ -82,9 +82,9 @@ public class LocalDataManager
     }
     #endregion
 
-    #region 刪除所有本地資料
+    #region 删除所有本地数据
     /// <summary>
-    /// 刪除所有本地資料
+    /// 删除所有本地数据
     /// </summary>
     public static void f_DeleteAllLocalData()
     {
@@ -92,21 +92,21 @@ public class LocalDataManager
     }
     #endregion
 
-    #region 獲取本地資料中某個資料值
+    #region 获取本地数据中某个数据值
     /// <summary>
-    /// 獲取本地資料中某個資料值
+    /// 获取本地数据中某个数据值
     /// </summary>
-    /// <typeparam name="T">資料類型（int,float,string,bool等基底資料型別，或由基底資料型別封裝的類）</typeparam>
-    /// <param name="dataType">資料名字</param>
-    /// <param name="Defaultalue">如果未發現對應的關健資料則返回此資料</param>
-    /// <returns>資料中該資料值</returns>
+    /// <typeparam name="T">数据类型（int,float,string,bool等基本数据类型，或由基本数据类型封装的类）</typeparam>
+    /// <param name="dataType">数据名字</param>
+    /// <param name="Defaultalue">如果未发现对应的关健数据则返回此数据</param>
+    /// <returns>数据中该数据值</returns>
     public static T f_GetLocalData<T>(string strKey, T Defaultalue = default(T))
     {
         T returnValue = default(T);
         string key = GetKey(strKey);
         Type type = typeof(T);
         if (PlayerPrefs.HasKey(key))
-        {
+        {           
             if (type.Equals(typeof(int)))
             {
                 returnValue = (T)Convert.ChangeType(PlayerPrefs.GetInt(key), type);
@@ -127,7 +127,7 @@ public class LocalDataManager
             }
             else
             {
-                MessageBox.ASSERT("不支援的資料類型");
+                MessageBox.ASSERT("不支持的数据类型");
             }
         }
         else
@@ -138,6 +138,6 @@ public class LocalDataManager
     }
     #endregion
 
-
+    
 
 }

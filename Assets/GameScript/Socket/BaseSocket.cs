@@ -45,7 +45,7 @@ public class BaseSocket
     private bool _bLoginSuc = false;
     private bool m_bSendConnectEro = false;
     private EM_SocketStatic _EM_SocketStatic = EM_SocketStatic.OffLine;
-    protected ccMachineManager<ccMachineParamentBase> _SocketMachineManger = null;
+    protected ccMachineManager _SocketMachineManger = null;
     private Socket_Loop _Socket_Loop = null;
 
     private int m_iId = 0;

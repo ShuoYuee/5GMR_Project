@@ -12,7 +12,7 @@ public class GameControllV3_SubParament : GameControllBaseState
 
     public override void f_Enter(object Obj){
         _CurGameControllDT = (GameControllDT)Obj;
-        // 3003.變數值減去（參數1為變數名,參數2為變數要減去的值，參數3無效
+        // 3003.变量值减去（参数1为变量名,参数2为变量要减去的值，参数3无效
         StartRun();
     }
 

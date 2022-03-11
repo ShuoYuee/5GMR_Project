@@ -17,7 +17,7 @@ public class GameControllV3_Init : ConditionState_Base
 
     }
 
-    //3000.系統初始化指令,只有szParament參數有效（參數1無效,參數2無效，參數3無效，參數4無效）
+    //3000.系统初始化指令,只有szParament参数有效（参数1无效,参数2无效，参数3无效，参数4无效）
     public override bool f_Check()
     {
         return base.f_Check();

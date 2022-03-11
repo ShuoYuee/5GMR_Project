@@ -4,21 +4,21 @@ using ccU3DEngine;
 
 
 
-//資料節點更新類型枚舉
+//数据节点更新类型枚举
 public enum eUpdateNodeType
 {
-    node_default,//默認，第一次進入遊戲
+    node_default,//默认，第一次进入游戏
     node_add,//添加
     node_update,
     node_delete,
 }
 
 /// <summary>
-/// 抽象池類
+/// 抽象池类
 /// </summary>
 public abstract class BasePool : ccBasePool<long>
 {
-    public BasePool(string strRegDTName) : base(strRegDTName)
+    public BasePool(string strRegDTName):base(strRegDTName)
     {
         f_Init();
         RegSocketMessage();

@@ -42,11 +42,11 @@ namespace ccILR
             {
                 if (p == null)
                 {
-                    MessageBox.ASSERT(string.Format("f_CallFunction失敗：類{0}中不存在此方法", Name));
+                    MessageBox.ASSERT(string.Format("f_CallFunction失败：类{0}中不存在此方法", Name));
                 }
                 else
                 {
-                    MessageBox.ASSERT(string.Format("f_CallFunction失敗：類{0}中不存在此方法或參數不匹配。", Name));
+                    MessageBox.ASSERT(string.Format("f_CallFunction失败：类{0}中不存在此方法或参数不匹配。", Name));
                 }
             }
         }

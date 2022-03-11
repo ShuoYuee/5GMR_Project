@@ -8,12 +8,12 @@ public class GameControllTools
     public static bool f_CheckStateTypeIsRight(EM_GameControllAction tEM_GameControllAction)
     {
         if (
-            tEM_GameControllAction == EM_GameControllAction.ShowUIText ||        // (30) 顯示UI文字
+            tEM_GameControllAction == EM_GameControllAction.ShowUIText ||        // (30) 显示UI文字
             tEM_GameControllAction == EM_GameControllAction.UIActionShow ||      // (??) ??
-
+          
             tEM_GameControllAction == EM_GameControllAction.AutoClock
 
-
+            
             )
         {
             return true;
@@ -29,10 +29,10 @@ public class GameControllTools
         {
             return new GameControllEnd();
         }
-
+        
         else
         {
-            MessageBox.ASSERT("未註冊的狀態機 " + tEM_GameControllAction.ToString());
+            MessageBox.ASSERT("未注册的状态机 " + tEM_GameControllAction.ToString());
         }
 
         return null;

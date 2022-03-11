@@ -7,7 +7,7 @@ using System;
 /// </summary>
 public class LoadResource
 {
-    private ccMachineManager<ccMachineParamentBase> _ResManager = null;
+    private ccMachineManager _ResManager = null;
     private int _iLoadResourceTime = 0;
     private string _strResourceMd5;
     //public delegate void Callback_LoadHttp(HttpDataDT eHttpDataDT);
@@ -30,10 +30,10 @@ public class LoadResource
     {
         MessageBox.DEBUG("載入資源");
 
-        _ResManager = new ccMachineManager<ccMachineParamentBase>(new ResManagerState_Loop());
+        _ResManager = new ccMachineManager(new ResManagerState_Loop());
         //GameObject tLoginPage = GameObject.Find("LoginPage");
 
-        ccMachineStateBase<ccMachineParamentBase> tFstMachineStateBase = new ResManagerState_Ver();
+        ccMachineStateBase tFstMachineStateBase = new ResManagerState_Ver();
         _ResManager.f_RegState(tFstMachineStateBase);
         _ResManager.f_RegState(new ResManagerState_LoadSC());
         _ResManager.f_RegState(new ResManagerState_DispSC());

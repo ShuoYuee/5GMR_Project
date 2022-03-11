@@ -7,7 +7,7 @@ using UnityEngine.UI;
 namespace ccU3DEngine
 {
     /// <summary>
-    /// 語言管理器
+    /// 语言管理器
     /// </summary>
     public class LanguageManager
     {
@@ -26,7 +26,7 @@ namespace ccU3DEngine
             return _Instance;
         }
 
-        #region 內部方法
+        #region 内部方法
 
         void SetLanguage(Locale tLocale)
         {
@@ -45,7 +45,7 @@ namespace ccU3DEngine
             strFileName = strFileName.ToLower();
             if (_aSCList.Count == 0)
             {
-                MessageBox.ASSERT("註冊語言文字腳本為0，語言腳本錯誤");
+                MessageBox.ASSERT("注册语言文字脚本为0，语言脚本错误");
             }
             for (int i = 0; i < _aSCList.Count; i++)
             {
@@ -68,7 +68,7 @@ namespace ccU3DEngine
                 {
                     if (_dirData.ContainsKey(strArrays[0]))
                     {
-                        MessageBox.ASSERT("重複的語言關健值。" + strArrays[0]);
+                        MessageBox.ASSERT("重复的语言关健值。" + strArrays[0]);
                         continue;
                     }
                     _dirData.Add(strArrays[0], strArrays[1]);
@@ -83,7 +83,7 @@ namespace ccU3DEngine
             {
                 return ppSQL;
             }
-            MessageBox.ASSERT("未支援的文本。" + strLanuageKey);
+            MessageBox.ASSERT("未支持的文本。" + strLanuageKey);
             return "";
         }
 
@@ -154,23 +154,23 @@ namespace ccU3DEngine
         #endregion
 
 
-        #region 外部介面
+        #region 外部接口
 
         /// <summary>
-        /// 切換語言，切換語言時會同時刷新相應的顯示UI的文字資訊
+        /// 切换语言，切换语言时会同时刷新相应的显示UI的文字信息
         /// </summary>
         /// <param name="tLocale"></param>
         public void f_ChangeLanguage(Locale tLocale)
         {
             if (tLocale == Locale.None)
             {
-                MessageBox.ASSERT("未設置合法的語言類型. " + _Locale.ToString());
+                MessageBox.ASSERT("未设置合法的语言类型. " + _Locale.ToString());
             }
             SetLanguage(tLocale);
         }
 
         /// <summary>
-        /// 註冊語言文字腳本
+        /// 注册语言文字脚本
         /// </summary>
         /// <param name="strLanguageSC"></param>
         public void f_RegSC(string strLanguageSC)
@@ -183,10 +183,10 @@ namespace ccU3DEngine
         }
 
         /// <summary>
-        /// 獲取語言KEY對應的文字資訊
+        /// 获取语言KEY对应的文字信息
         /// </summary>
-        /// <param name="strLanuageKey">語言KEY</param>
-        /// <param name="values">參數列表</param>
+        /// <param name="strLanuageKey">语言KEY</param>
+        /// <param name="values">参数列表</param>
         /// <returns></returns>
         public string f_GetText(string strLanuageKey, params object[] values)
         {
@@ -196,9 +196,9 @@ namespace ccU3DEngine
         }
 
         /// <summary>
-        /// 獲取語言KEY對應的文字資訊
+        /// 获取语言KEY对应的文字信息
         /// </summary>
-        /// <param name="strLanuageKey">語言KEY</param>
+        /// <param name="strLanuageKey">语言KEY</param>
         /// <returns></returns>
         public string f_GetText(string strLanuageKey)
         {

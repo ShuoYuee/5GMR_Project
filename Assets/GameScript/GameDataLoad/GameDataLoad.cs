@@ -6,16 +6,16 @@ public class GameDataLoad
 {
 
     /// <summary>
-    /// 載入遊戲資料
+    /// 加载游戏资料
     /// </summary>
     public static void f_LoadGameSystemMemory()
     {
 
-        //載入遊戲進度
+        //加载游戏进度
         //f_LoadGameStep();
         f_LoadGameSystem();
 
-        //載入遊戲Session值
+        //加载游戏Session值
     }
 
     static void f_LoadGameSystem()
@@ -33,13 +33,13 @@ public class GameDataLoad
         int iGameStepAvgGameStory = LocalDataManager.f_GetLocalData<int>("iGameStepAvgGameStory", 0);
         if (iGameStepSection == 0 || iGameStepAvgGameStory == 0)
         {
-            MessageBox.DEBUG("未發現存檔資訊開始新遊戲");
+            MessageBox.DEBUG("未发现存档信息开始新游戏");
             //iGameStepSection = StaticValue.m_GameInforDT.m_iStartId;
             //iGameStepAvgGameStory = 0;
         }
         else
         {
-            MessageBox.DEBUG("發現存檔資訊:" + iGameStepSection + "-" + iGameStepAvgGameStory);
+            MessageBox.DEBUG("发现存档信息:" + iGameStepSection + "-" + iGameStepAvgGameStory);
         }
         //StaticValue.m_iSectionId = iGameStepSection;
         //StaticValue.m_iAvgGameStoryId = iGameStepAvgGameStory;

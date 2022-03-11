@@ -90,6 +90,10 @@ public class CharacterDT : BaseItemDT
     /// 物件預覽動畫
     /// </summary>
     public string szAnimGroup;
+    /// <summary>
+    /// 點擊物件打開的外部連接地址
+    /// </summary>
+    public string szURL;
 
     public override string f_GetLogo()
     {
@@ -100,9 +104,5 @@ public class CharacterDT : BaseItemDT
     {
         return szName;
     }
-
-
-
-
 }
 

@@ -2,7 +2,7 @@
 using System.Collections;
 using ccU3DEngine;
 
-public class Socket_StateBase : ccMachineStateBase<ccMachineParamentBase>
+public class Socket_StateBase : ccMachineStateBase
 {
     /// <summary>
     /// GameSocket

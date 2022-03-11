@@ -16,12 +16,8 @@ public class GameInputCtrl : MonoBehaviour
     public static event OnClickCtrl OnClickBtnChangeState;
     #endregion
 
-    //private Transform Player;
-    ///// <summary>按鈕間隔時間</summary>
-    //float _fBtnTime = 0f;
     /// <summary>輸入冷卻</summary>
     bool _bBtnTime = false;
-
     /// <summary>輸入模式</summary>
     public static ControlState State = ControlState.PC;
     /// <summary>VR輸入裝備</summary>
@@ -37,37 +33,24 @@ public class GameInputCtrl : MonoBehaviour
     /// <summary>PC移動輸入</summary>
     private void f_MouseMoveInput()
     {
-        /*if (Player == null)
-        {
-            Player = GameMain.GetInstance().m_Player;
-        }*/
-
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            //Player.localPosition += transform.up * 3f * Time.deltaTime;
-            //GameMain.GetInstance().m_MainCamera.transform.localPosition += transform.up * 3f * Time.deltaTime;
             OnClickBtnArrow.Invoke(1);
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            //Player.localPosition -= transform.up * 3f * Time.deltaTime;
-            //GameMain.GetInstance().m_MainCamera.transform.localPosition -= transform.up * 3f * Time.deltaTime;
             OnClickBtnArrow.Invoke(-1);
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {
-            //Player.transform.position = GameMain.GetInstance().m_InitPos.position;
-            //GameMain.GetInstance().m_MainCamera.transform.position = GameMain.GetInstance().m_InitPos.position;
             OnClickBtnReset.Invoke(0);
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            //Player.localPosition += -transform.right * 3f * Time.deltaTime;
             OnClickBtnArrow.Invoke(-2);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            //Player.localPosition += transform.right * 3f * Time.deltaTime;
             OnClickBtnArrow.Invoke(2);
         }
         else if (Input.GetKeyUp(KeyCode.F))
@@ -125,7 +108,7 @@ public class GameInputCtrl : MonoBehaviour
     private void f_PCInputKey()
     {
         if (GameMain.GetInstance().m_EditManager._bEdit) { return; }
-        if (Input.GetKey(KeyCode.A))//選取物件用
+        if (Input.GetKeyDown(KeyCode.A))//選取物件用
         {
             _bBtnTime = true;
             OnClickCtrlEvent(0);

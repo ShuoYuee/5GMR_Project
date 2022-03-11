@@ -282,6 +282,7 @@ public class MapPool : ccBasePool<long>
         tMapPoolDT.f_Set(iId, tEditObj.gameObject, tCharacterDT);
         //儲存物件地圖資料
         f_Save(tMapPoolDT);
+        tEditObj.f_SetURL(tCharacterDT.szURL);
         tEditObj.f_Save(tMapPoolDT);
     }
 
@@ -319,7 +320,7 @@ public class MapPool : ccBasePool<long>
     /// <param name="tObj">物件編輯器</param>
     public void f_ManualAddObj(EditObjControll tObj)
     {
-        if (!tObj.IsInit) { return; }
+        //if (!tObj.IsInit) { return; }
 
         CharacterDT tCharacterDT = (CharacterDT)glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetSC(tObj.CharacterId);
         f_SaveData(CreateKeyId(), tCharacterDT, tObj);

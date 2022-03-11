@@ -5,3 +5,349 @@
 /BuildInfo
 /Data
 /Assets/StreamingAssets/StandaloneWindows.zip
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall6_2Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall6_2Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall6_2Normal.png
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall6_2Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall6_2Specular.png
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall6_2Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall7_2Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall7_2Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall7_2Normal.png
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall7_2Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall7_2Specular.png
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall7_2Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/strfood_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/strfood_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/strfood_AO.png
+/Assets/ArtResoruce/HighCity/Textures/strfood_AO.png.meta
+/Assets/ArtResoruce/HighCity/Textures/strfood_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/strfood_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/strfood_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/strfood_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/wallreup_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/wallreup_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/wallreup_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/wallreup_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/wallreup_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/wallreup_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/windows_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/windows_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/windows_Emission.png
+/Assets/ArtResoruce/HighCity/Textures/windows_Emission.png.meta
+/Assets/ArtResoruce/HighCity/Textures/windows_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/windows_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/windows_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/windows_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_concrete_2Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/_concrete_2Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_concrete_2AO.png
+/Assets/ArtResoruce/HighCity/Textures/_concrete_2AO.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_concrete_2Normal.png
+/Assets/ArtResoruce/HighCity/Textures/_concrete_2Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_concrete_2Specular.png
+/Assets/ArtResoruce/HighCity/Textures/_concrete_2Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_concrete_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/_concrete_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_concrete_AO.png
+/Assets/ArtResoruce/HighCity/Textures/_concrete_AO.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_concrete_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/_concrete_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_concrete_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/_concrete_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_podium_2Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/_podium_2Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_podium_2AO.png
+/Assets/ArtResoruce/HighCity/Textures/_podium_2AO.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_podium_2Normal.png
+/Assets/ArtResoruce/HighCity/Textures/_podium_2Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_podium_2Specular.png
+/Assets/ArtResoruce/HighCity/Textures/_podium_2Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_podium_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/_podium_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_podium_AO.png
+/Assets/ArtResoruce/HighCity/Textures/_podium_AO.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_podium_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/_podium_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_podium_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/_podium_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_podium2_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/_podium2_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_podium2_AO.png
+/Assets/ArtResoruce/HighCity/Textures/_podium2_AO.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_podium2_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/_podium2_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_podium2_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/_podium2_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall_2Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/_wall_2Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall_2AO.png
+/Assets/ArtResoruce/HighCity/Textures/_wall_2AO.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall_2Normal.png
+/Assets/ArtResoruce/HighCity/Textures/_wall_2Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall_2Specular.png
+/Assets/ArtResoruce/HighCity/Textures/_wall_2Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/_wall_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall_AO.png
+/Assets/ArtResoruce/HighCity/Textures/_wall_AO.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/_wall_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/_wall_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall2_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/_wall2_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall2_AO.png
+/Assets/ArtResoruce/HighCity/Textures/_wall2_AO.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall2_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/_wall2_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall2_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/_wall2_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall2a_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/_wall2a_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall2a_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/_wall2a_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall2a_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/_wall2a_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall2b_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/_wall2b_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall2b_AO.png
+/Assets/ArtResoruce/HighCity/Textures/_wall2b_AO.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall2b_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/_wall2b_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall2b_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/_wall2b_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall2ba_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/_wall2ba_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall2ba_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/_wall2ba_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall2ba_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/_wall2ba_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall3_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/_wall3_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall3_AO.png
+/Assets/ArtResoruce/HighCity/Textures/_wall3_AO.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall3_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/_wall3_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall3_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/_wall3_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall4_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/_wall4_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall4_AO.png
+/Assets/ArtResoruce/HighCity/Textures/_wall4_AO.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall4_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/_wall4_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall4_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/_wall4_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall5_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/_wall5_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall5_AO.png
+/Assets/ArtResoruce/HighCity/Textures/_wall5_AO.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall5_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/_wall5_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall5_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/_wall5_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall6_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/_wall6_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall6_AO.png
+/Assets/ArtResoruce/HighCity/Textures/_wall6_AO.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall6_Emission.png
+/Assets/ArtResoruce/HighCity/Textures/_wall6_Emission.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall6_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/_wall6_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall6_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/_wall6_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall7_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/_wall7_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall7_AO.png
+/Assets/ArtResoruce/HighCity/Textures/_wall7_AO.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall7_Emission.png
+/Assets/ArtResoruce/HighCity/Textures/_wall7_Emission.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall7_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/_wall7_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/_wall7_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/_wall7_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/2det_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/2det_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/2det_AO.png
+/Assets/ArtResoruce/HighCity/Textures/2det_AO.png.meta
+/Assets/ArtResoruce/HighCity/Textures/2det_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/2det_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/2det_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/2det_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/advertiz_Albedo3.png
+/Assets/ArtResoruce/HighCity/Textures/advertiz_Albedo3.png.meta
+/Assets/ArtResoruce/HighCity/Textures/advertiz_Emission2.png
+/Assets/ArtResoruce/HighCity/Textures/advertiz_Emission2.png.meta
+/Assets/ArtResoruce/HighCity/Textures/advertiz_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/advertiz_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/advertiz_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/advertiz_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/brick3_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/brick3_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/brick3_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/brick3_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/brick3_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/brick3_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/car 1 albedo.psd
+/Assets/ArtResoruce/HighCity/Textures/car 1 albedo.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/car 1 ao.psd
+/Assets/ArtResoruce/HighCity/Textures/car 1 ao.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/car 1 emission.psd
+/Assets/ArtResoruce/HighCity/Textures/car 1 emission.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/car 1 normal.psd
+/Assets/ArtResoruce/HighCity/Textures/car 1 normal.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/car 1 specular.psd
+/Assets/ArtResoruce/HighCity/Textures/car 1 specular.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/car 2 albedo.psd
+/Assets/ArtResoruce/HighCity/Textures/car 2 albedo.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/car 2 ao.psd
+/Assets/ArtResoruce/HighCity/Textures/car 2 ao.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/car 2 emission.psd
+/Assets/ArtResoruce/HighCity/Textures/car 2 emission.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/car 2 normal.psd
+/Assets/ArtResoruce/HighCity/Textures/car 2 normal.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/car 2 specular.psd
+/Assets/ArtResoruce/HighCity/Textures/car 2 specular.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/car 3 albedo.psd
+/Assets/ArtResoruce/HighCity/Textures/car 3 albedo.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/car 3 ao.psd
+/Assets/ArtResoruce/HighCity/Textures/car 3 ao.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/car 3 emission.psd
+/Assets/ArtResoruce/HighCity/Textures/car 3 emission.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/car 3 normal.psd
+/Assets/ArtResoruce/HighCity/Textures/car 3 normal.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/car 3 specular.psd
+/Assets/ArtResoruce/HighCity/Textures/car 3 specular.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/column_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/column_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/column_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/column_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/column_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/column_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/detz1_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/detz1_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/detz1_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/detz1_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/detz1_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/detz1_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/detz2_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/detz2_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/detz2_AO.png
+/Assets/ArtResoruce/HighCity/Textures/detz2_AO.png.meta
+/Assets/ArtResoruce/HighCity/Textures/detz2_Emission.png
+/Assets/ArtResoruce/HighCity/Textures/detz2_Emission.png.meta
+/Assets/ArtResoruce/HighCity/Textures/detz2_Emission2.png
+/Assets/ArtResoruce/HighCity/Textures/detz2_Emission2.png.meta
+/Assets/ArtResoruce/HighCity/Textures/detz2_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/detz2_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/detz2_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/detz2_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/fill build 1 emis.psd
+/Assets/ArtResoruce/HighCity/Textures/fill build 1 emis.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/fill build 1 n.psd
+/Assets/ArtResoruce/HighCity/Textures/fill build 1 n.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/fill build 1 s.psd
+/Assets/ArtResoruce/HighCity/Textures/fill build 1 s.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/fill build 1.psd
+/Assets/ArtResoruce/HighCity/Textures/fill build 1.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/fill build 2 emis.psd
+/Assets/ArtResoruce/HighCity/Textures/fill build 2 emis.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/fill build 2 n.psd
+/Assets/ArtResoruce/HighCity/Textures/fill build 2 n.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/fill build 2 s.psd
+/Assets/ArtResoruce/HighCity/Textures/fill build 2 s.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/fill build 2.psd
+/Assets/ArtResoruce/HighCity/Textures/fill build 2.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/flyengine_Albedo.tga
+/Assets/ArtResoruce/HighCity/Textures/flyengine_Albedo.tga.meta
+/Assets/ArtResoruce/HighCity/Textures/flyengine_AO.tga
+/Assets/ArtResoruce/HighCity/Textures/flyengine_AO.tga.meta
+/Assets/ArtResoruce/HighCity/Textures/flyengine_Emission.tga
+/Assets/ArtResoruce/HighCity/Textures/flyengine_Emission.tga.meta
+/Assets/ArtResoruce/HighCity/Textures/flyengine_Emission2.tga
+/Assets/ArtResoruce/HighCity/Textures/flyengine_Emission2.tga.meta
+/Assets/ArtResoruce/HighCity/Textures/flyengine_Normal.tga
+/Assets/ArtResoruce/HighCity/Textures/flyengine_Normal.tga.meta
+/Assets/ArtResoruce/HighCity/Textures/flyengine_Specular.tga
+/Assets/ArtResoruce/HighCity/Textures/flyengine_Specular.tga.meta
+/Assets/ArtResoruce/HighCity/Textures/frames.meta
+/Assets/ArtResoruce/HighCity/Textures/Materials.meta
+/Assets/ArtResoruce/HighCity/Textures/paper_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/paper_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/paper_AO.png
+/Assets/ArtResoruce/HighCity/Textures/paper_AO.png.meta
+/Assets/ArtResoruce/HighCity/Textures/paper_Emit.png
+/Assets/ArtResoruce/HighCity/Textures/paper_Emit.png.meta
+/Assets/ArtResoruce/HighCity/Textures/paper_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/paper_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/paper_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/paper_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/parapet_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/parapet_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/parapet_AO.png
+/Assets/ArtResoruce/HighCity/Textures/parapet_AO.png.meta
+/Assets/ArtResoruce/HighCity/Textures/parapet_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/parapet_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/parapet_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/parapet_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/plaster2_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/plaster2_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/plaster2_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/plaster2_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/plaster2_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/plaster2_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/plaster3_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/plaster3_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/plaster3_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/plaster3_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/plaster3_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/plaster3_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/road1_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/road1_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/road1_AO.png
+/Assets/ArtResoruce/HighCity/Textures/road1_AO.png.meta
+/Assets/ArtResoruce/HighCity/Textures/road1_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/road1_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/road1_Spc2.psd
+/Assets/ArtResoruce/HighCity/Textures/road1_Spc2.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/road1asph_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/road1asph_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/road1asph_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/road1asph_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/road1asph_Spc2.psd
+/Assets/ArtResoruce/HighCity/Textures/road1asph_Spc2.psd.meta
+/Assets/ArtResoruce/HighCity/Textures/roofdet_Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/roofdet_Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/roofdet_AO.png
+/Assets/ArtResoruce/HighCity/Textures/roofdet_AO.png.meta
+/Assets/ArtResoruce/HighCity/Textures/roofdet_Emit.png
+/Assets/ArtResoruce/HighCity/Textures/roofdet_Emit.png.meta
+/Assets/ArtResoruce/HighCity/Textures/roofdet_Normal.png
+/Assets/ArtResoruce/HighCity/Textures/roofdet_Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/roofdet_Specular.png
+/Assets/ArtResoruce/HighCity/Textures/roofdet_Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall3_2Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall3_2Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall3_2Normal.png
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall3_2Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall3_2Specular.png
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall3_2Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall4_2Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall4_2Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall4_2Normal.png
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall4_2Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall4_2Specular.png
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall4_2Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall5_2Albedo.png
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall5_2Albedo.png.meta
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall5_2Normal.png
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall5_2Normal.png.meta
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall5_2Specular.png
+/Assets/ArtResoruce/HighCity/Textures/sbs mesh__wall5_2Specular.png.meta
+/Assets/ArtResoruce/HighCity/Textures/*.meta
+/Assets/ArtResoruce/HighCity/Textures/*.png
+/Assets/ArtResoruce/HighCity/Textures/*.psd
+/Assets/ArtResoruce/HighCity/Textures/*.tga
+/Assets/StreamingAssets/AVProVideoSamples
+/Assets/StreamingAssets/AVProVideoSamples/《12強賽事精華》20191112 複賽 中華vs韓國 (1080p).mp4

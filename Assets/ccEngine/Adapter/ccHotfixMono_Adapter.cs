@@ -57,7 +57,7 @@ namespace ccU3DEngine
             bool mAwakeMethodGot;
             public void Awake()
             {
-                //Unity會在ILRuntime準備好這個實例前調用Awake，所以這裡暫時先不調用
+                //Unity会在ILRuntime准备好这个实例前调用Awake，所以这里暂时先不掉用
                 if (instance != null)
                 {
                     if (!mAwakeMethodGot)

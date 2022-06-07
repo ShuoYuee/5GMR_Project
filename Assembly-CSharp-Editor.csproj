@@ -767,21 +767,21 @@
       <Project>{029138CA-6D82-261A-F88C-9C6692D79491}</Project>
       <Name>SteamVR_Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="SteamVR.csproj">
-      <Project>{3B2F8367-CF0C-6E3E-609A-A568D49A271A}</Project>
-      <Name>SteamVR</Name>
-    </ProjectReference>
-    <ProjectReference Include="SteamVR_Windows_EditorHelper.csproj">
-      <Project>{5313027B-EDE3-0AF0-5E8C-197F042E3AF1}</Project>
-      <Name>SteamVR_Windows_EditorHelper</Name>
-    </ProjectReference>
     <ProjectReference Include="ZFBrowser.csproj">
       <Project>{D5B15061-FCF2-0363-87AB-07341382992B}</Project>
       <Name>ZFBrowser</Name>
     </ProjectReference>
+    <ProjectReference Include="SteamVR.csproj">
+      <Project>{3B2F8367-CF0C-6E3E-609A-A568D49A271A}</Project>
+      <Name>SteamVR</Name>
+    </ProjectReference>
     <ProjectReference Include="ZFBrowser-Editor.csproj">
       <Project>{0213EF8F-B992-53C1-A113-42C587976F33}</Project>
       <Name>ZFBrowser-Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="SteamVR_Windows_EditorHelper.csproj">
+      <Project>{5313027B-EDE3-0AF0-5E8C-197F042E3AF1}</Project>
+      <Name>SteamVR_Windows_EditorHelper</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

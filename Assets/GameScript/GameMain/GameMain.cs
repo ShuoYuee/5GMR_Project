@@ -37,6 +37,9 @@ public class GameMain : MonoBehaviour
     [Tooltip("控制模式顯示文字")]
     /// <summary>控制模式顯示文字</summary>
     public TextMesh _PlayerCtrlText;
+    [Tooltip("刪除物件顯示文字")]
+    /// <summary>刪除物件顯示文字</summary>
+    public TextMesh _DeleteText;
 
     [HideInInspector]
     /// <summary>地圖物件池</summary>
@@ -159,7 +162,7 @@ public class GameMain : MonoBehaviour
     public void f_LeaveEdit(TabButton button)
     {
         m_EditManager.f_LeaveEdit(button);
-    }
+    }    
 
     /// <summary>
     /// 設定軸心模式
@@ -240,6 +243,19 @@ public class GameMain : MonoBehaviour
     }
     #endregion
 
+    /// <summary>刪除當前編輯物件</summary>
+    public void f_DelEditObj()
+    {
+        m_MapPool.f_DeleteObj(m_EditManager.f_GetCurEditObj().f_GetId());
+    }
+
+    /// <summary>設定刪除物顯示文字</summary>
+    public void f_SetDelText()
+    {
+        _DeleteText.text = "確定刪除該物件？//n" + m_EditManager.f_GetCurEditObj().name;
+    }
+
+    /// <summary>斗內後創建啦啦隊</summary>
     public void f_Sponsor()
     {
         glo_Main.GetInstance().m_ResourceManager.f_CreateResource("Model/DancingGirlA");

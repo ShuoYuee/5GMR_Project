@@ -231,6 +231,7 @@ public class EditManager
     }
     #endregion
 
+    #region 當前編輯物件
     /// <summary>設定當前編輯的物件</summary>
     public void f_SetCurEditObj(EditObjControll Obj)
     {
@@ -242,6 +243,7 @@ public class EditManager
     {
         return _CurEditObjControll;
     }
+    #endregion
 
     /// <summary>
     /// 編輯物播放預覽動畫

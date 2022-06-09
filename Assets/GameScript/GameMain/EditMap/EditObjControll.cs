@@ -492,6 +492,7 @@ public class EditObjControll : MonoBehaviour
         return Vector3.zero;
     }
     #endregion
+
     #endregion
 
     #region 預覽動畫
@@ -579,6 +580,7 @@ public class EditObjControll : MonoBehaviour
     }
     #endregion
 
+    #region URL
     public void f_SetURL(string szURL)
     {
         _ConnectURL.fSetURL(szURL);
@@ -588,4 +590,5 @@ public class EditObjControll : MonoBehaviour
     {
         _ConnectURL.f_ConnectURL();
     }
+    #endregion
 }

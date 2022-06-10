@@ -9,5 +9,11 @@ public class GameTools
         return "P" + iPlayer;
     }
     
-
+    public static void f_SetGameObj(GameObject Obj, bool bSet)
+    {
+        if (Obj != null)
+        {
+            Obj.SetActive(bSet);
+        }
+    }
 }

@@ -104,6 +104,11 @@ public class GameMain : MonoBehaviour
         m_MapPool.f_SaveMap(strFileName);
     }
 
+    public void f_DelMap(string strFileName)
+    {
+        m_MapPool.f_DelMap(strFileName);
+    }
+
     public void f_ResetMap()
     {
         m_MapPool.f_ResetMap();

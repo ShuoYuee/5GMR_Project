@@ -16,4 +16,10 @@ public class ConnectURL
         if (strURL.Equals("") || strURL == null) { return; }
         Application.OpenURL(strURL);
     }
+
+    public void f_ConnectURL(string szURL)
+    {
+        if (szURL.Equals("") || szURL == null) { return; }
+        Application.OpenURL(szURL);
+    }
 }

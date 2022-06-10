@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEditor;
 
 public class MapPool : ccBasePool<long>
 {
@@ -152,6 +153,11 @@ public class MapPool : ccBasePool<long>
         return false;
     }
     #endregion
+
+    public void f_DelMap(string strFileName)
+    {
+        AssetDatabase.DeleteAsset(GetMapFilePath(strFileName));
+    }
 
     #region AB資源相關
     int iIndex = 0;

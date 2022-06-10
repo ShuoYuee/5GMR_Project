@@ -18,12 +18,16 @@ public class MapFileManager : MonoBehaviour
     public GameObject _oFileBtn;
 
     [Space(10)]
+    [Tooltip("檔案操作面板的元件")]
+    public CheckPanel _FileCanvas;
     [Tooltip("有關Load地圖確認面板的元件")]
     public CheckPanel _LoadCheck;
     [Tooltip("有關Import地圖確認面板的元件")]
     public CheckPanel _ImportCheck;
     [Tooltip("有關Save地圖確認面板的元件")]
     public CheckPanel _SaveCheck;
+    [Tooltip("有關Delete存檔確認面板的元件")]
+    public CheckPanel _DeleteCheck;
     #endregion
 
     /// <summary>當前選擇的檔案名</summary>
@@ -36,24 +40,62 @@ public class MapFileManager : MonoBehaviour
         f_InitMessage();
 
         //設置確認面板點擊事件
+        _FileCanvas.f_Init(f_FileCtrl, f_FileReturnPanel);
         _LoadCheck.f_Init(f_LoadMap, f_LoadReturnPanel);
         _ImportCheck.f_Init(f_ImportMap, f_ImportReturnPanel);
         _SaveCheck.f_Init(f_OverWriteMap, f_SaveReturnPanel);
+        _DeleteCheck.f_Init(f_DelMap, f_DelReturnPanel);
     }
 
     private void f_InitMessage()
     {
         glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_MapObjInit, f_SetLoadMapBtn);    //設定Load按鈕物件資料
-        glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_LoadBtn, f_OnClickLoad); //讀檔點擊事件
+        glo_Main.GetInstance().m_UIMessagePool.f_AddListener(MessageDef.UI_LoadBtn, f_OnClickFile); //讀檔點擊事件
     }
 
-    #region 讀取或匯入地圖
-    /// <summary>確認是否Load地圖</summary>
-    public void f_OnClickLoad(object e)
+    #region 檔案管控
+    public void f_FileCtrl()
+    {
+        _FileCanvas.f_SetFileText(_CurFileName);
+    }
+
+    private void f_FileReturnPanel()
+    {
+        _FileCanvas.f_PanelCtrl(true);
+    }
+
+    public void f_OnClickFile(int iState)
+    {
+        if (iState == 1)
+        {
+            _LoadCheck.f_PanelCtrl(false, true);
+            _LoadCheck.onSelectFile.Invoke();
+        }
+        else if (iState == 2)
+        {
+            _ImportCheck.f_PanelCtrl(false, true);
+            _ImportCheck.onSelectFile.Invoke();
+        }
+        else if (iState == 3)
+        {
+            _SaveCheck.f_PanelCtrl(true);
+            _SaveCheck.onSelectFile.Invoke();
+        }
+        else if (iState == 4)
+        {
+            _DeleteCheck.f_PanelCtrl(false, true);
+            _DeleteCheck.onSelectFile.Invoke();
+        }
+    }
+
+    /// <summary>讀檔點擊事件</summary>
+    private void f_OnClickFile(object e)
     {
         _CurFileName = (string)e;
+        _FileCanvas.f_PanelCtrl(true);
+        _FileCanvas.f_SetFileText(_CurFileName);
 
-        if (_bLoad)
+        /*if (_bLoad)
         {
             _LoadCheck.f_SetFileText(_CurFileName);
             _LoadCheck.onSelectFile.Invoke();
@@ -62,60 +104,67 @@ public class MapFileManager : MonoBehaviour
         {
             _ImportCheck.f_SetFileText(_CurFileName);
             _ImportCheck.onSelectFile.Invoke();
-        }
+        }*/
     }
+    #endregion
 
+    #region 讀取或匯入地圖
     /// <summary>讀取地圖(覆蓋)</summary>
-    public void f_LoadMap()
+    private void f_LoadMap()
     {
         GameMain.GetInstance().m_MapPool.f_ResetMap();
         GameMain.GetInstance().m_MapPool.f_LoadMap(_CurFileName);
         _LoadCheck.onClickYes.Invoke();//調用點擊功能
-        _CurFileName = "";
-    }
-
-    /// <summary>匯入地圖</summary>
-    public void f_ImportMap()
-    {
-        GameMain.GetInstance().m_MapPool.f_LoadMap(_CurFileName);
-        _ImportCheck.onClickYes.Invoke();
+        _LoadCheck.f_PanelCtrl(false, false);
         _CurFileName = "";
     }
 
     /// <summary>返回Load選取介面</summary>
-    public void f_LoadReturnPanel()
+    private void f_LoadReturnPanel()
     {
         _LoadCheck.onClickNO.Invoke();//調用點擊功能
+        _LoadCheck.f_PanelCtrl(true);
+        _CurFileName = "";
+    }
+
+    /// <summary>匯入地圖</summary>
+    private void f_ImportMap()
+    {
+        GameMain.GetInstance().m_MapPool.f_LoadMap(_CurFileName);
+        _ImportCheck.onClickYes.Invoke();
+        _ImportCheck.f_PanelCtrl(false, false);
         _CurFileName = "";
     }
 
     /// <summary>返回Import選取介面</summary>
-    public void f_ImportReturnPanel()
+    private void f_ImportReturnPanel()
     {
         _ImportCheck.onClickNO.Invoke();//調用點擊功能
+        _ImportCheck.f_PanelCtrl(true);
         _CurFileName = "";
     }
     #endregion
 
     #region 地圖檔案UI列表
-    /// <summary>按下按鈕Load地圖(覆蓋)</summary>
-    public void f_OnClickLoadSecene()
+    /*/// <summary>按下按鈕Load地圖(覆蓋)</summary>
+    private void f_OnClickLoadSecene()
     {
         f_Reset();
         _bLoad = true;
     }
 
     /// <summary>按下按鈕匯入地圖</summary>
-    public void f_OnClickImportSecene()
+    private void f_OnClickImportSecene()
     {
         f_Reset();
         _bLoad = false;
-    }
+    }*/
 
     /// <summary>重設地圖讀檔列表</summary>
-    private void f_Reset()
+    public void f_Reset()
     {
         if (_Pagination == null) { return; }
+        _FileCanvas.f_PanelCtrl(false, true);
         f_ClearMapBtn();
         List<GameObject> oMapObj = new List<GameObject>();
         string[] aData = GameMain.GetInstance().m_MapPool.f_LoadPreviewData();
@@ -163,7 +212,8 @@ public class MapFileManager : MonoBehaviour
         _CurFileName = text.text;
         if (GameMain.GetInstance().m_MapPool.f_CheckFileName(_CurFileName))
         {
-            _SaveCheck.onSelectFile.Invoke();
+            //_SaveCheck.onSelectFile.Invoke();
+            _SaveCheck.f_PanelCtrl(false, true);
         }
         else
         {
@@ -171,27 +221,44 @@ public class MapFileManager : MonoBehaviour
         }
     }
 
-    /// <summary>覆蓋存檔</summary>
-    public void f_OverWriteMap()
+    /// <summary>存檔</summary>
+    private void f_OverWriteMap()
     {
         GameMain.GetInstance().m_MapPool.f_SaveMap(_CurFileName);
-        _SaveCheck.onClickYes.Invoke();
+        _SaveCheck.onClickYes.Invoke();//調用點擊功能
+        _SaveCheck.f_PanelCtrl(false, false);
         _CurFileName = "";
     }
 
     /// <summary>返回存檔介面</summary>
-    public void f_SaveReturnPanel()
+    private void f_SaveReturnPanel()
     {
         _SaveCheck.onClickNO.Invoke();//調用點擊功能
+        _SaveCheck.f_PanelCtrl(true);
         _CurFileName = "";
     }
     #endregion
+
+    private void f_DelMap()
+    {
+        GameMain.GetInstance().f_DelMap(_CurFileName);
+        _DeleteCheck.onClickYes.Invoke();
+        _DeleteCheck.f_PanelCtrl(false, false);
+        _CurFileName = "";
+    }
+
+    public void f_DelReturnPanel()
+    {
+        _DeleteCheck.onClickNO.Invoke();
+        _DeleteCheck.f_PanelCtrl(true);
+        _CurFileName = "";
+    }
 }
 
 [System.Serializable]
 public class CheckPanel
 {
-    public GameObject Panel;
+    public GameObject MainPanel, MidPanel;
     public Text FileText;
     public Button YesBtn, NoBtn;
 
@@ -210,27 +277,29 @@ public class CheckPanel
 
     public void f_Init(UnityAction YesEvent, UnityAction NoEvent)
     {
-        if (YesBtn == null || NoBtn == null)
+        if (YesBtn != null)
         {
-            MessageBox.ASSERT("未設置讀檔確認按鈕");
-            return;
+            YesBtn.onClick.AddListener(YesEvent);
         }
-        YesBtn.onClick.AddListener(YesEvent);
-        NoBtn.onClick.AddListener(NoEvent);
+        if (NoBtn != null)
+        {
+            NoBtn.onClick.AddListener(NoEvent);
+        }
     }
 
-    public void f_PanelCtrl(bool e)
+    public void f_PanelCtrl(bool bMain, bool bMid = false)
     {
-        if (Panel == null)
-        {
-            MessageBox.ASSERT("未設置讀檔確認介面");
-            return;
-        }
-        Panel.SetActive(e);
+        GameTools.f_SetGameObj(MainPanel, bMain);
+        GameTools.f_SetGameObj(MidPanel, bMid);
     }
 
     public void f_SetFileText(string strFile)
     {
+        if (FileText == null)
+        {
+            MessageBox.ASSERT("未設置檔案名文字組件");
+            return;
+        }
         FileText.text = strFile;
     }
 }

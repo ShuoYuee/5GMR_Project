@@ -2,6 +2,7 @@
 using UnityEngine;
 using ccU3DEngine;
 using Epibyte.ConceptVR;
+using ZenFulcrum.EmbeddedBrowser;
 
 public class GameMain : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class GameMain : MonoBehaviour
     [Tooltip("素材元件選單")]
     /// <summary>素材元件選單</summary>
     public Pagination m_Pagination;
+    [Tooltip("VR浮動網頁視窗")]
+    /// <summary>VR浮動網頁視窗</summary>
+    public Browser m_Browser;
 
     [Space(10)]
     [Header("額外物件")]
@@ -59,7 +63,8 @@ public class GameMain : MonoBehaviour
     {
         _Instance = this;
         m_GameTable.SetActive(true);
-        ccUIManage.GetInstance().f_SendMsg("UI_GameMain", BaseUIMessageDef.UI_OPEN, null, true);
+        //ccUIManage.GetInstance().f_SendMsg("UI_GameMain", BaseUIMessageDef.UI_OPEN, null, true);
+        ccUIManage.GetInstance().f_SendMsgV3("ui_mrcontorl.bundle", "UI_MRControl", BaseUIMessageDef.UI_OPEN);
 
         ccTimeEvent.GetInstance().f_RegEvent(0.3f, true, null, f_UpdateMenuPos);
     }
@@ -178,6 +183,11 @@ public class GameMain : MonoBehaviour
         m_EditManager.f_SetEditAxis(strAxis);
     }
 
+    public void f_SetEditAxis(int iAxis)
+    {
+        m_EditManager.f_SetEditAxis(iAxis);
+    }
+
     /// <summary>
     /// 設定座標模式
     /// </summary>
@@ -238,6 +248,14 @@ public class GameMain : MonoBehaviour
         m_EditManager.f_SetCurAxis(TextGroup);
     }
 
+    #endregion
+
+    /// <summary>刪除當前編輯物件</summary>
+    public void f_DelEditObj()
+    {
+        m_MapPool.f_DeleteObj(m_EditManager.f_GetCurEditObj().f_GetId());
+    }
+
     /// <summary>
     /// 編輯物播放預覽動畫
     /// </summary>
@@ -245,13 +263,6 @@ public class GameMain : MonoBehaviour
     public void f_EditObjAnimPlay(int iAddIndex)
     {
         m_EditManager.f_EditObjAnimPlay(iAddIndex);
-    }
-    #endregion
-
-    /// <summary>刪除當前編輯物件</summary>
-    public void f_DelEditObj()
-    {
-        m_MapPool.f_DeleteObj(m_EditManager.f_GetCurEditObj().f_GetId());
     }
 
     /// <summary>設定刪除物顯示文字</summary>

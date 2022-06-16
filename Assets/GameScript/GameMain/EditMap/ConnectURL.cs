@@ -14,12 +14,16 @@ public class ConnectURL
     public void f_ConnectURL()
     {
         if (strURL.Equals("") || strURL == null) { return; }
-        Application.OpenURL(strURL);
+        //Application.OpenURL(strURL);
+        Main_Browser.GetInstance().f_EnableWindow(true);
+        Main_Browser.GetInstance().f_ConnectURL(strURL);
     }
 
     public void f_ConnectURL(string szURL)
     {
         if (szURL.Equals("") || szURL == null) { return; }
-        Application.OpenURL(szURL);
+        //Application.OpenURL(szURL);
+        Main_Browser.GetInstance().f_EnableWindow(true);
+        Main_Browser.GetInstance().f_ConnectURL(strURL);
     }
 }

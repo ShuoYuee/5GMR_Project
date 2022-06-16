@@ -16,4 +16,25 @@ public class GameTools
             Obj.SetActive(bSet);
         }
     }
+
+    public static void f_AnimPlay(Animator animator, string strAnim, float fTime = 0.01f, bool IsPlay = false)
+    {
+        if (animator)
+        {
+            int iStateId = Animator.StringToHash(strAnim);
+            bool bHasAction = animator.HasState(0, iStateId);
+            if (bHasAction)
+            {
+                if (IsPlay)
+                {
+                    animator.Play(strAnim);
+                }
+                else
+                {
+                    animator.CrossFade(strAnim, fTime);
+
+                }
+            }
+        }
+    }
 }

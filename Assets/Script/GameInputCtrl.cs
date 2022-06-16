@@ -25,9 +25,9 @@ public class GameInputCtrl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        f_MouseMoveInput();
-        f_EditInput();
-        f_InputKey();
+        //f_MouseMoveInput();
+        //f_EditInput();
+        //f_InputKey();
     }
 
     /// <summary>PC移動輸入</summary>
@@ -112,6 +112,18 @@ public class GameInputCtrl : MonoBehaviour
         {
             _bBtnTime = true;
             OnClickCtrlEvent(0);
+            ccTimeEvent.GetInstance().f_RegEvent(0.1f, false, null, f_InputCooling);
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            _bBtnTime = true;
+            OnClickCtrlEvent(1);
+            ccTimeEvent.GetInstance().f_RegEvent(0.1f, false, null, f_InputCooling);
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            _bBtnTime = true;
+            OnClickCtrlEvent(2);
             ccTimeEvent.GetInstance().f_RegEvent(0.1f, false, null, f_InputCooling);
         }
     }

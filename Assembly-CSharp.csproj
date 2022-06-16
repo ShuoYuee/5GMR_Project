@@ -107,6 +107,7 @@
     <Compile Include="Assets\GameScript\GameMain\UI_GamePlot\RoleName.cs" />
     <Compile Include="Assets\GameScript\GameMain\UI_GamePlot\UI_GamePlot.cs" />
     <Compile Include="Assets\GameScript\GameMain\UI_GameSet.cs" />
+    <Compile Include="Assets\GameScript\GameMain\UI_MRControl.cs" />
     <Compile Include="Assets\GameScript\Other\ChangeWaterPlaneBackgroundByLocal.cs" />
     <Compile Include="Assets\GameScript\Other\DamageControll.cs" />
     <Compile Include="Assets\GameScript\Other\FishEvent.cs" />
@@ -166,57 +167,16 @@
     <Compile Include="Assets\Script\GameInputCtrl.cs" />
     <Compile Include="Assets\Script\GameMainTriggerCtrl.cs" />
     <Compile Include="Assets\Script\GameMoveCtrl.cs" />
+    <Compile Include="Assets\Script\Main_Browser.cs" />
     <Compile Include="Assets\Script\UIFollowVR.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Demos\Scripts\AutoRotate.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Demos\Scripts\DemoInfo.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Demos\Scripts\FrameExtract.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Demos\Scripts\Mapping3D.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Demos\Scripts\SampleApp_Multiple.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Demos\Scripts\Scriptlets\ChangeAudioTrack.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Demos\Scripts\Scriptlets\ChangeStereoMode.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Demos\Scripts\Scriptlets\ChangeVideoExample.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Demos\Scripts\Scriptlets\LoadFromBuffer.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Demos\Scripts\Scriptlets\LoadFromBufferInChunks.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Demos\Scripts\Scriptlets\NativeMediaOpen.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Demos\Scripts\Scriptlets\PlaybackSync.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Demos\Scripts\Scriptlets\StartEndPoint.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Demos\Scripts\Scriptlets\VideoTrigger.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Demos\Scripts\SimpleController.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Demos\Scripts\SphereDemo.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Demos\Scripts\VCR.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Components\ApplyToMaterial.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Components\ApplyToMesh.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Components\AudioChannelMixer.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Components\AudioOutput.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Components\CubemapCube.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Components\DebugOverlay.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Components\DisplayBackground.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Components\DisplayIMGUI.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Components\DisplayUGUI.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Components\MediaPlayer.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Components\PlaylistMediaPlayer.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Components\StreamParser.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Components\SubtitlesUGUI.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Components\Support\NGUI\ApplyToTextureWidgetNGUI.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Components\Support\PlayMaker\Actions\AVProVideoControl.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Components\Support\PlayMaker\Actions\AVProVideoDisplayUGUI.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Components\Support\PlayMaker\Actions\AVProVideoEvent.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Components\Support\PlayMaker\Actions\AVProVideoInfo.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Components\Support\PlayMaker\Actions\AVProVideoPlayer.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Components\Support\PlayMaker\Actions\Internal\AVProVideoActionBase.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Components\UpdateStereoMaterial.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Internal\AndroidMediaPlayer.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Internal\AudioOutputManager.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Internal\BaseMediaPlayer.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Internal\HLSStream.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Internal\Interfaces.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Internal\NullMediaPlayer.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Internal\OSXMediaPlayer.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Internal\Resampler.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Internal\Stream.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Internal\WebGLMediaPlayer.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Internal\WindowsMediaPlayer.cs" />
     <Compile Include="Assets\ThirdParty\DOTween\DOTweenPro\DOTweenAnimation.cs" />
+    <Compile Include="Assets\ThirdParty\VolumetricLines\BuiltInRenderPipeline\ExampleScenes\ExampleScripts\CannonBehavior.cs" />
+    <Compile Include="Assets\ThirdParty\VolumetricLines\BuiltInRenderPipeline\ExampleScenes\ExampleScripts\CreateSinShapedLineStrip.cs" />
+    <Compile Include="Assets\ThirdParty\VolumetricLines\BuiltInRenderPipeline\ExampleScenes\ExampleScripts\ShotBehavior.cs" />
+    <Compile Include="Assets\ThirdParty\VolumetricLines\BuiltInRenderPipeline\ExampleScenes\ExampleScripts\VolumetricMultiLineBehavior.cs" />
+    <Compile Include="Assets\ThirdParty\VolumetricLines\Scripts\VolumetricLineBehavior.cs" />
+    <Compile Include="Assets\ThirdParty\VolumetricLines\Scripts\VolumetricLineStripBehavior.cs" />
+    <Compile Include="Assets\ThirdParty\VolumetricLines\Scripts\VolumetricLineVertexData.cs" />
     <Compile Include="Assets\ThirdParty\ZFBrowser\Demo\Scripts\ActionTimer.cs" />
     <Compile Include="Assets\ThirdParty\ZFBrowser\Demo\Scripts\BallBrowserSpawner.cs" />
     <Compile Include="Assets\ThirdParty\ZFBrowser\Demo\Scripts\CoinPickup.cs" />
@@ -251,6 +211,18 @@
     <Compile Include="Assets\Tool\VRConceptUI\Scripts\TabPanel\TabButton.cs" />
     <Compile Include="Assets\Tool\VRConceptUI\Scripts\TabPanel\TabPanelManager.cs" />
     <Compile Include="Assets\Tool\VRConceptUI\Scripts\XRInteractionToolkitUtil\LaserCalibrator.cs" />
+    <Compile Include="Assets\Tool\XRCube\Scripts\Dataflow.cs" />
+    <Compile Include="Assets\Tool\XRCube\Scripts\DistortionTest.cs" />
+    <Compile Include="Assets\Tool\XRCube\Scripts\FlyCamera.cs" />
+    <Compile Include="Assets\Tool\XRCube\Scripts\SingletonMonoBehaviour.cs" />
+    <Compile Include="Assets\Tool\XRCube\Scripts\StereoMode.cs" />
+    <Compile Include="Assets\Tool\XRCube\Scripts\XRCubeCtrl.cs" />
+    <Compile Include="Assets\Tool\XRCube\Scripts\XRCubeCustomController.cs" />
+    <Compile Include="Assets\Tool\XRCube\Scripts\XRCubeUDPSender.cs" />
+    <Compile Include="Assets\Tool\XRCube\Scripts\XRCubeUWBPosition.cs" />
+    <Compile Include="Assets\Tool\XRCube\Scripts\XRCubeUWBTestmode.cs" />
+    <Compile Include="Assets\Tool\XRCube\Scripts\XRCubeUWBTracking.cs" />
+    <Compile Include="Assets\Tool\XRCube\Scripts\XRCubeWebcam.cs" />
     <Compile Include="Assets\ccEngine\Adapter\ccHotfixMono_Adapter.cs" />
     <Compile Include="Assets\ccEngine\Adapter\ccUILogicBase_Adapter.cs" />
     <Compile Include="Assets\ccEngine\AutoDestory.cs" />
@@ -270,70 +242,95 @@
     <Compile Include="Assets\ccEngine\iTween\iTween.cs" />
     <None Include="Assets\ThirdParty\DOTween\DOTween\DOTween50.xml" />
     <None Include="Assets\ThirdParty\ZFBrowser\Materials\EmulatedMipmap\UnlitColored.shader" />
+    <None Include="Assets\ThirdParty\Smartphone\StandardColorMask.shader" />
+    <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\AssetStore\3D Game Kit - Character Pack\Shaders\Alien.shader" />
     <None Include="Assets\ABRes\Language\zhCN\GameMain.txt" />
-    <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-UI-Default-Stereo.shader" />
-    <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Background-FullScreen.shader" />
+    <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\ThirdParty\AVProVideo\Licenses\LibSamplerate-License.txt" />
+    <None Include="Assets\ThirdParty\VolumetricLines\BuiltInRenderPipeline\Shaders\_LineStripShader.cginc" />
     <None Include="Assets\ABRes\Language\zhTW\System.txt" />
-    <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-IMGUI-Transparent.shader" />
-    <None Include="Assets\ThirdParty\AVProVideo\Demos\Materials\UI-Default-ExtraTexture.shader" />
-    <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-VR-InsideSphere-AndroidOES.shader" />
+    <None Include="Assets\ThirdParty\AVProVideo\Licenses\Hap-License.txt" />
+    <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\ThirdParty\AVProVideo\Licenses\Hap-3rdParty.txt" />
     <None Include="Assets\ThirdParty\ZFBrowser\Materials\EmulatedMipmap\UnlitOpaque.shader" />
-    <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Helper-Transition.shader" />
+    <None Include="Assets\Tool\XRCube\Scripts\Shaders\XRCube_2D.shader" />
+    <None Include="Assets\ThirdParty\AVProVideo\Licenses\GdclMpeg4-License.txt" />
     <None Include="Assets\ABRes\Language\zhCN\System.txt" />
-    <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-UI-Default-Transparent.shader" />
+    <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\Tool\XRCube\Scripts\Shaders\XRCube_InsideVisible-3D-OVER.shader" />
+    <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\AssetStore\3D Game Kit - Environment Pack\Shaders\Vegetation.shader" />
     <None Include="Assets\StreamingAssets\AAA.txt" />
-    <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Lit-Transparent-Diffuse.shader" />
+    <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\ThirdParty\DOTween\DemiLib\Core\DemiLib.xml" />
     <None Include="Assets\ABRes\Language\zhTW\Login.txt" />
-    <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Lit-Diffuse.shader" />
-    <None Include="Assets\ThirdParty\AVProVideo\Demos\Materials\UI-DefaultFont-ExtraTexture.shader" />
-    <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-VR-InsideSphere.shader" />
     <None Include="Assets\ABRes\Language\zhCN\Login.txt" />
+    <None Include="Assets\Tool\XRCube\Scripts\Shaders\XRCubeCompal_InsideVisible-3D-LEFT.shader" />
     <None Include="Assets\ThirdParty\ZFBrowser\Materials\EmulatedMipmap\Transparent.shader" />
-    <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-VR-InsideSphere-Transparent.shader" />
     <None Include="Assets\ABRes\Language\enUS\System.txt" />
+    <None Include="Assets\ThirdParty\VolumetricLines\BuiltInRenderPipeline\Shaders\LineStrip-TextureAlphaBlended.shader" />
     <None Include="Assets\ThirdParty\ZFBrowser\Materials\EmulatedMipmap\Unlit.shader" />
     <None Include="Assets\Resources\Font3\Font3.fnt" />
-    <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Skybox-Sphere.shader" />
+    <None Include="Assets\ThirdParty\VolumetricLines\BuiltInRenderPipeline\Shaders\SingleLine-TextureAdditive.shader" />
+    <None Include="Assets\Tool\XRCube\Scripts\Shaders\XRCube_InsideVisible-3D-UNDER.shader" />
     <None Include="Assets\StreamingAssets\SaveFile\TestScene.txt" />
-    <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-VR-InsideSphere-StereoUV.shader" />
+    <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\ThirdParty\ZFBrowser\Materials\EmulatedMipmap\Standard.shader" />
-    <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Background-FullScreenTransparent.shader" />
+    <None Include="Assets\Tool\XRCube\Scripts\Shaders\XRCube_InsideVisible-3D-RIGHT.shader" />
     <None Include="Assets\ABRes\HotFixDLL\HotFixDllp.txt" />
+    <None Include="Assets\ThirdParty\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\ABRes\Language\enUS\Login.txt" />
+    <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\StreamingAssets\SaveFile\TestScene2.txt" />
+    <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMP_SDF.shader" />
     <None Include="Assets\StreamingAssets\SaveFile\test4.txt" />
     <None Include="Assets\AssetStore\3D Game Kit - Character Pack\Shaders\EyeBallsHD.shader" />
+    <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\ThirdParty\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\ThirdParty\VolumetricLines\BuiltInRenderPipeline\Shaders\_SingleLineShader.cginc" />
+    <None Include="Assets\ThirdParty\VolumetricLines\BuiltInRenderPipeline\Shaders\LineStrip-TextureAdditive.shader" />
     <None Include="Assets\ThirdParty\ZFBrowser\Plugins\versions.txt" />
+    <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\ThirdParty\AVProVideo\Licenses\Third-Party Notices.txt" />
     <None Include="Assets\ThirdParty\ZFBrowser\Materials\EmulatedMipmap\Readme.txt" />
-    <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-UI-AndroidOES.shader" />
+    <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\Tool\XRCube\Scripts\Shaders\XRCube_InsideVisible.shader" />
     <None Include="Assets\ThirdParty\DOTween\DOTweenPro\readme.txt" />
-    <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Skybox-Cube3x2.shader" />
     <None Include="Assets\ABRes\Language\enUS\GameMain.txt" />
+    <None Include="Assets\ThirdParty\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\ThirdParty\ZFBrowser\Materials\EmulatedMipmap\MipSample.cginc" />
-    <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo.cginc" />
+    <None Include="Assets\ThirdParty\VolumetricLines\BuiltInRenderPipeline\Shaders\SingleLine-TextureAlphaBlended.shader" />
+    <None Include="Assets\Tool\XRCube\Resources\jsontest.txt" />
+    <None Include="Assets\ThirdParty\AVProVideo\Licenses\FacebookAudio360-License.txt" />
     <None Include="Assets\Resources\Font4\Font4.fnt" />
-    <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Unlit-AndroidOES.shader" />
     <None Include="Assets\gmcs.rsp" />
     <None Include="Assets\ThirdParty\ZFBrowser\ThirdPartyNotices.txt" />
-    <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Unlit.shader" />
     <None Include="Assets\AssetStore\3D Game Kit - Character Pack\Shaders\EnergyCore.shader" />
     <None Include="Assets\smcs.rsp" />
+    <None Include="Assets\ThirdParty\VolumetricLines\BuiltInRenderPipeline\Shaders\LineStrip-LightSaber.shader" />
     <None Include="Assets\AssetStore\3D Game Kit - Character Pack\Shaders\SculptedHair.shader" />
+    <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\ABRes\HotFixDLL\HotFixDll.txt" />
     <None Include="Assets\StreamingAssets\SaveFile\test3.txt" />
+    <None Include="Assets\ThirdParty\VolumetricLines\BuiltInRenderPipeline\Shaders\SingleLine-LightSaber.shader" />
     <None Include="Assets\ABRes\Language\zhTW\GameMain.txt" />
     <None Include="Assets\ThirdParty\ZFBrowser\Changelog.txt" />
+    <None Include="Assets\ThirdParty\AVProVideo\Licenses\HapInAvFoundation-License.txt" />
+    <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\Tool\VRConceptUI\Content\Shaders\3DText.shader" />
-    <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-Unlit-Transparent.shader" />
+    <None Include="Assets\Tool\XRCube\Resources\PicTemp\temp.txt" />
+    <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\AssetStore\3D Game Kit - Character Pack\Shaders\ToonSkin.shader" />
-    <None Include="Assets\ThirdParty\AVProVideo\Resources\Shaders\AVProVideo-BlendFrames.shader" />
+    <None Include="Assets\ThirdParty\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\ThirdParty\AVProVideo\Docs\Documentation.txt" />
     <None Include="Assets\ThirdParty\DOTween\DOTween\readme.txt" />
     <None Include="Assets\ThirdParty\DOTween\DOTween\DOTween46.xml" />
+    <None Include="Assets\ThirdParty\AVProVideo\Licenses\ExoPlayer-License.txt" />
     <None Include="Assets\ThirdParty\ZFBrowser\Materials\UnlitCursor.shader" />
+    <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\StreamingAssets\SaveFile\test3 .txt" />
+    <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\ThirdParty\DOTween\DOTween\DOTween43.xml" />
     <None Include="Assets\AssetStore\3D Game Kit - Character Pack\Shaders\Dissolve.shader" />
     <Reference Include="UnityEngine">
@@ -965,6 +962,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="AVProVideo.Runtime.csproj">
+      <Project>{4039A8EF-5624-4887-2D66-F0017545F3E1}</Project>
+      <Name>AVProVideo.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="AVProVideo.Editor.csproj">
+      <Project>{EC153215-A279-CD3E-82BE-046E627588A4}</Project>
+      <Name>AVProVideo.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="AVProVideo.Demos.csproj">
+      <Project>{802A3760-727E-6113-8BB5-5E9824457FC1}</Project>
+      <Name>AVProVideo.Demos</Name>
+    </ProjectReference>
     <ProjectReference Include="CircularScrollingList.Editor.csproj">
       <Project>{2D34862F-03A8-F101-44A9-246A67EFEBFD}</Project>
       <Name>CircularScrollingList.Editor</Name>
@@ -977,9 +986,25 @@
       <Project>{03BAAAB3-645B-3360-E1AE-378D390A9288}</Project>
       <Name>ILRuntime</Name>
     </ProjectReference>
+    <ProjectReference Include="AVProVideo.Extensions.UnityUI.csproj">
+      <Project>{36EAC9E2-A71A-B931-17AE-C903899745E9}</Project>
+      <Name>AVProVideo.Extensions.UnityUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="endel.nativewebsocket.csproj">
+      <Project>{279B0D18-AC03-108F-E657-0D51D527207C}</Project>
+      <Name>endel.nativewebsocket</Name>
+    </ProjectReference>
+    <ProjectReference Include="AVProVideo.Extensions.VisualEffectGraph.csproj">
+      <Project>{0F114C7B-CD19-0AF8-3B1D-23CD1F86FC6B}</Project>
+      <Name>AVProVideo.Extensions.VisualEffectGraph</Name>
+    </ProjectReference>
     <ProjectReference Include="CircularScrollingList.csproj">
       <Project>{FDB99BC9-85C3-16B4-A2FC-FD26BAA1A4ED}</Project>
       <Name>CircularScrollingList</Name>
+    </ProjectReference>
+    <ProjectReference Include="AVProVideo.Extensions.Timeline.csproj">
+      <Project>{267F6683-D0D6-37CB-9423-E9568B2A5D7B}</Project>
+      <Name>AVProVideo.Extensions.Timeline</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR_Input_Editor.csproj">
       <Project>{C8D605C7-E981-58F5-521A-D40B0ED5CCED}</Project>
@@ -1004,6 +1029,10 @@
     <ProjectReference Include="SteamVR_Windows_EditorHelper.csproj">
       <Project>{875850EC-675D-0618-6E41-2D77C2E8635D}</Project>
       <Name>SteamVR_Windows_EditorHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="AVProVideo.Extensions.UnityUI.Editor.csproj">
+      <Project>{AA2AE2B5-3F62-4233-E145-6ABEA4BF2E89}</Project>
+      <Name>AVProVideo.Extensions.UnityUI.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

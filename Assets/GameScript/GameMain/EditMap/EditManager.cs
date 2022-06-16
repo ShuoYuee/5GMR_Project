@@ -52,6 +52,27 @@ public class EditManager
         }
     }
 
+    public void f_SetAddEditBtn(int EditTpye)
+    {
+        if ((int)_EditEM + 1 > EditTpye)
+        {
+            _EditEM = (EM_EditState)1;
+        }
+        else
+        {
+            _EditEM = (EM_EditState)(int)_EditEM + 1;
+        }
+    }
+
+    /// <summary>
+    /// 點選編輯按鈕
+    /// </summary>
+    /// <param name="EditTpye">按鈕類型</param>
+    public void f_SetEditBtn(int EditTpye)
+    {
+        _EditEM = (EM_EditState)EditTpye;
+    }
+
     /// <summary>點選編輯按鈕</summary>
     public void f_Edit()
     {
@@ -114,6 +135,11 @@ public class EditManager
         }
     }
 
+    public void f_SetEditAxis(int iAxis)
+    {
+        _EditAxitEM = (EM_EditAxis)iAxis;
+    }
+
     /// <summary>
     /// 設定編輯座標模式
     /// </summary>
@@ -129,7 +155,24 @@ public class EditManager
         else
         {
             _EditPointEM = (EM_EditPoint)(int)_EditPointEM + 1;
-        }  
+        }
+    }
+
+    public void f_SetAddEditPoint(int iPoint)
+    {
+        if ((int)_EditPointEM + 1 > iPoint)
+        {
+            _EditPointEM = (EM_EditPoint)1;
+        }
+        else
+        {
+            _EditPointEM = (EM_EditPoint)(int)_EditPointEM + 1;
+        }
+    }
+
+    public void f_SetEditPoint(int iPoint)
+    {
+        _EditPointEM = (EM_EditPoint)iPoint;
     }
 
     /// <summary>按鈕冷卻結束</summary>
@@ -248,16 +291,10 @@ public class EditManager
     /// <summary>
     /// 編輯物播放預覽動畫
     /// </summary>
-    /// <param name="iAddIndex">增減動畫Index</param>
-    public void f_EditObjAnimPlay(int iAddIndex)
+    /// <param name="iIndex">動畫Index</param>
+    public void f_EditObjAnimPlay(int iIndex)
     {
-        if (!_bEdit || _CurEditObjControll == null) { return; }
-
-        if (iAddIndex == 0)//停止播放預覽動畫
-        {
-            _CurEditObjControll.f_AnimStop();
-        }
-
-        _CurEditObjControll.f_AnimPlay(iAddIndex);
+        //if (!_bEdit || _CurEditObjControll == null) { return; }
+        _CurEditObjControll.f_AnimPlay(iIndex);
     }
 }

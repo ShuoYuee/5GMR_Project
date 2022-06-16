@@ -62,19 +62,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Components\Support\PlayMaker\Editor\AVProVideoActionHeaderPropertyDrawer.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Editor\ApplyToMaterialEditor.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Editor\ApplyToMeshEditor.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Editor\AudioOutputEditor.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Editor\DisplayUGUIEditor.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Editor\MediaPlayerEditor.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Editor\PlaylistMediaPlayerEditor.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Editor\PostProcessBuild.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Editor\SupportWindow.cs" />
-    <Compile Include="Assets\ThirdParty\AVProVideo\Scripts\Editor\UpdateStereoMaterialEditor.cs" />
     <Compile Include="Assets\ThirdParty\DOTween\DOTweenPro\Editor\DOTweenAnimationInspector.cs" />
     <Compile Include="Assets\Tool\VRConceptUI\Scripts\Editor\DeviceControlWindow.cs" />
     <Compile Include="Assets\Tool\VRConceptUI\Scripts\Editor\ScaleConstraintsDrawer.cs" />
+    <Compile Include="Assets\Tool\XRCube\Editor\JSONObject.cs" />
+    <Compile Include="Assets\Tool\XRCube\Editor\XRCubeARWindow.cs" />
+    <Compile Include="Assets\Tool\XRCube\Editor\XRCubeCustomControllerWindow.cs" />
+    <Compile Include="Assets\Tool\XRCube\Editor\XRCubeDistortionWindow.cs" />
+    <Compile Include="Assets\Tool\XRCube\Editor\XRCubeMediaPlayerWindow.cs" />
+    <Compile Include="Assets\Tool\XRCube\Editor\XRCubeMenuItem.cs" />
+    <Compile Include="Assets\Tool\XRCube\Editor\XRCubeSimulatorWindow.cs" />
+    <Compile Include="Assets\Tool\XRCube\Editor\XRCubeStereoWindow.cs" />
+    <Compile Include="Assets\Tool\XRCube\Editor\XRCubeUWBWindow.cs" />
     <Compile Include="Assets\ccEngine\DLL\Editor\BitmapFontExporter.cs" />
     <None Include="Assets\ThirdParty\DOTween\DemiLib\Core\Editor\DemiEditor.xml" />
     <Reference Include="UnityEngine">
@@ -743,6 +742,18 @@
       <Project>{BA010AD5-DED4-A884-BE6D-AEDB0A8941D2}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
+    <ProjectReference Include="AVProVideo.Runtime.csproj">
+      <Project>{4039A8EF-5624-4887-2D66-F0017545F3E1}</Project>
+      <Name>AVProVideo.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="AVProVideo.Editor.csproj">
+      <Project>{EC153215-A279-CD3E-82BE-046E627588A4}</Project>
+      <Name>AVProVideo.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="AVProVideo.Demos.csproj">
+      <Project>{802A3760-727E-6113-8BB5-5E9824457FC1}</Project>
+      <Name>AVProVideo.Demos</Name>
+    </ProjectReference>
     <ProjectReference Include="CircularScrollingList.Editor.csproj">
       <Project>{2D34862F-03A8-F101-44A9-246A67EFEBFD}</Project>
       <Name>CircularScrollingList.Editor</Name>
@@ -755,9 +766,25 @@
       <Project>{03BAAAB3-645B-3360-E1AE-378D390A9288}</Project>
       <Name>ILRuntime</Name>
     </ProjectReference>
+    <ProjectReference Include="AVProVideo.Extensions.UnityUI.csproj">
+      <Project>{36EAC9E2-A71A-B931-17AE-C903899745E9}</Project>
+      <Name>AVProVideo.Extensions.UnityUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="endel.nativewebsocket.csproj">
+      <Project>{279B0D18-AC03-108F-E657-0D51D527207C}</Project>
+      <Name>endel.nativewebsocket</Name>
+    </ProjectReference>
+    <ProjectReference Include="AVProVideo.Extensions.VisualEffectGraph.csproj">
+      <Project>{0F114C7B-CD19-0AF8-3B1D-23CD1F86FC6B}</Project>
+      <Name>AVProVideo.Extensions.VisualEffectGraph</Name>
+    </ProjectReference>
     <ProjectReference Include="CircularScrollingList.csproj">
       <Project>{FDB99BC9-85C3-16B4-A2FC-FD26BAA1A4ED}</Project>
       <Name>CircularScrollingList</Name>
+    </ProjectReference>
+    <ProjectReference Include="AVProVideo.Extensions.Timeline.csproj">
+      <Project>{267F6683-D0D6-37CB-9423-E9568B2A5D7B}</Project>
+      <Name>AVProVideo.Extensions.Timeline</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR_Input_Editor.csproj">
       <Project>{C8D605C7-E981-58F5-521A-D40B0ED5CCED}</Project>
@@ -782,6 +809,10 @@
     <ProjectReference Include="SteamVR_Windows_EditorHelper.csproj">
       <Project>{875850EC-675D-0618-6E41-2D77C2E8635D}</Project>
       <Name>SteamVR_Windows_EditorHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="AVProVideo.Extensions.UnityUI.Editor.csproj">
+      <Project>{AA2AE2B5-3F62-4233-E145-6ABEA4BF2E89}</Project>
+      <Name>AVProVideo.Extensions.UnityUI.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

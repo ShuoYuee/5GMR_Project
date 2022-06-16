@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: de5d65c2b8ef8304b9c314d41af2d7db
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - rightCamera: {instanceID: 0}
+  - leftCamera: {instanceID: 0}
+  - replacementMainMaterial: {fileID: 2100000, guid: 4c1da54e2dafb864da37c4926012ba5b, type: 2}
+  - replacementLeftMaterial: {fileID: 2100000, guid: a34ab22dafd46974f9d4916ef6e4d1df, type: 2}
+  - replacementRightMaterial: {fileID: 2100000, guid: 54e3888888b7c4749850b35e82be9db8, type: 2}
+  - replacementOverMaterial: {fileID: 2100000, guid: 2cdfe86b98bfb9645b87d630ae828145, type: 2}
+  - replacementUnderMaterial: {fileID: 2100000, guid: 67ffc65a585b9554eb3f2ee0303921d0, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

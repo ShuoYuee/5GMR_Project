@@ -17,6 +17,8 @@ public class EditObjControll : MonoBehaviour
     private MapPoolDT _MapPoolDT;
     /// <summary>預覽動畫組</summary>
     private string[] _strAnimGroup;
+    /// <summary>預覽音效組</summary>
+    private string[] _strAudioGroup;
     /// <summary>網頁連結腳本</summary>
     private ConnectURL _ConnectURL = new ConnectURL();
 
@@ -495,34 +497,22 @@ public class EditObjControll : MonoBehaviour
 
     #endregion
 
-    #region 預覽動畫
-    private int _iAnimIndex = 0;
+    #region 動畫與音效
     /// <summary>
-    /// 播放預覽動畫
+    /// 播放動畫
     /// </summary>
-    /// <param name="iAddIndex">增減動畫Index</param>
-    public void f_AnimPlay(int iAddIndex)
+    /// <param name="iIndex">動畫Index</param>
+    public void f_AnimPlay(int iIndex)
     {
-        if (_Animator == null)
+        string strAnim = _strAnimGroup[iIndex];
+        if (strAnim != "")
         {
-            MessageBox.DEBUG("此物件未設有動畫機");
-            return;
-        }
-
-        _iAnimIndex += iAddIndex;
-        if (_iAnimIndex < 0) { _iAnimIndex = _strAnimGroup.Length; }
-        if (_iAnimIndex >= _strAnimGroup.Length) { _iAnimIndex = 0; }
-
-        int iStateId = Animator.StringToHash(_strAnimGroup[_iAnimIndex]);
-        bool bHasAction = _Animator.HasState(0, iStateId);
-
-        if (bHasAction)//確認是否擁有該動畫
-        {
-            _Animator.Play(_strAnimGroup[_iAnimIndex]);
+            GameTools.f_AnimPlay(_Animator, _strAnimGroup[iIndex], 0, true);
+            f_AudioPlay(iIndex);
         }
     }
 
-    /// <summary>停止播放預覽動畫</summary>
+    /// <summary>停止播放動畫</summary>
     public void f_AnimStop()
     {
         if (_Animator == null)
@@ -533,6 +523,30 @@ public class EditObjControll : MonoBehaviour
 
         _Animator.StopRecording();
     }
+
+    /// <summary>
+    /// 播放音效
+    /// </summary>
+    /// <param name="iIndex">音效Index</param>
+    public void f_AudioPlay(int iIndex)
+    {
+        string strAudio = _strAudioGroup[iIndex];
+        try
+        {
+            AudioClip tClip = glo_Main.GetInstance().m_ResourceManager.f_CreateAudio(strAudio);
+            AudioSource tAudioSource = GetComponent<AudioSource>();
+            if (!tAudioSource)
+            {
+                tAudioSource = gameObject.AddComponent<AudioSource>();
+            }
+            tAudioSource.clip = tClip;
+            tAudioSource.Play();
+        }
+        catch
+        {
+            MessageBox.ASSERT("物件音效未找到");
+        }
+    }
     #endregion
 
     #region 屬性設定
@@ -542,6 +556,12 @@ public class EditObjControll : MonoBehaviour
     /// <param name="iSet">判別值</param>
     public void f_SetInput(int iSet)
     {
+        _iEditValue = iSet;
+    }
+
+    public void f_SetInput(EM_EditState tEM, int iSet)
+    {
+        _EditEM = tEM;
         _iEditValue = iSet;
     }
 

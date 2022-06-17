@@ -166,18 +166,16 @@ public class XRCubeUDPSender : MonoBehaviour
         print("Send" + x);
     }
 
-    public void f_SendCus(int iCus, int iSet)
+    public void f_SendCus1(int iSet)
     {
-        if (iCus == 1)
-        {
-            sendString("Cus1," + iSet);
-            print("Send" + iSet);
-        }
-        else if (iCus == 2)
-        {
-            sendString("Cus2," + iSet);
-            print("Send" + iSet);
-        }
+        sendString("Cus1," + iSet);
+        print("Send" + iSet);
+    }
+
+    public void f_SendCus2(int iSet)
+    {
+        sendString("Cus2," + iSet);
+        print("Send" + iSet);
     }
 
     private void sendString(string message)

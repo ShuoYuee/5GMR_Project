@@ -71,35 +71,31 @@ public class EditDisplayText : MonoBehaviour
     {
         Transform Target = EditDisplay.GetInstance().f_GetTarget();
         //確認編輯模式
-        switch (_EditState)
+        if (_EditState == EditState.Position)
         {
-            case EditState.Position:
-                _DisplayV3 = Target.localPosition;
-                break;
-
-            case EditState.Rotation:
-                _DisplayV3 = Target.rotation.eulerAngles;
-                break;
-
-            case EditState.Scale:
-                _DisplayV3 = Target.localScale;
-                break;
+            _DisplayV3 = Target.localPosition;
+        }
+        else if (_EditState == EditState.Rotation)
+        {
+            _DisplayV3 = Target.rotation.eulerAngles;
+        }
+        else if (_EditState == EditState.Scale)
+        {
+            _DisplayV3 = Target.localScale;
         }
 
         //確認座標
-        switch (_Coordinate)
+        if (_Coordinate == EditV3.X)
         {
-            case EditV3.X:
-                _DisplayValue = _DisplayV3.x;
-                break;
-
-            case EditV3.Y:
-                _DisplayValue = _DisplayV3.y;
-                break;
-
-            case EditV3.Z:
-                _DisplayValue = _DisplayV3.z;
-                break;
+            _DisplayValue = _DisplayV3.x;
+        }
+        else if (_Coordinate == EditV3.Y)
+        {
+            _DisplayValue = _DisplayV3.y;
+        }
+        else if (_Coordinate == EditV3.Z)
+        {
+            _DisplayValue = _DisplayV3.z;
         }
 
         _InputField.text = _DisplayValue + "";
@@ -130,23 +126,22 @@ public class EditDisplayText : MonoBehaviour
         }
         catch
         {
+            MessageBox.DEBUG("編輯介面輸入項有問題");
             return;
         }
 
         Transform Target = EditDisplay.GetInstance().f_GetTarget();
-        switch (_EditState)
+        if (_EditState == EditState.Position)
         {
-            case EditState.Position:
-                Target.localPosition = f_SetCoordinate(Target.localPosition, fValue);
-                break;
-
-            case EditState.Rotation:
-                Target.eulerAngles = f_SetCoordinate(Target.eulerAngles, fValue);
-                break;
-
-            case EditState.Scale:
-                Target.localScale = f_SetCoordinate(Target.localScale, fValue);
-                break;
+            Target.localPosition = f_SetCoordinate(Target.localPosition, fValue);
+        }
+        else if (_EditState == EditState.Rotation)
+        {
+            Target.eulerAngles = f_SetCoordinate(Target.eulerAngles, fValue);
+        }
+        else if (_EditState == EditState.Scale)
+        {
+            Target.localScale = f_SetCoordinate(Target.localScale, fValue);
         }
     }
 
@@ -159,19 +154,17 @@ public class EditDisplayText : MonoBehaviour
     private Vector3 f_SetCoordinate(Vector3 vTarget, float fValue)
     {
         Vector3 vValue = Vector3.zero;
-        switch (_Coordinate)
+        if (_Coordinate == EditV3.X)
         {
-            case EditV3.X:
-                vValue = new Vector3(fValue, vTarget.y, vTarget.z);
-                break;
-
-            case EditV3.Y:
-                vValue = new Vector3(vTarget.x, fValue, vTarget.z);
-                break;
-
-            case EditV3.Z:
-                vValue = new Vector3(vTarget.x, vTarget.y, fValue);
-                break;
+            vValue = new Vector3(fValue, vTarget.y, vTarget.z);
+        }
+        else if (_Coordinate == EditV3.Y)
+        {
+            vValue = new Vector3(vTarget.x, fValue, vTarget.z);
+        }
+        else if (_Coordinate == EditV3.Z)
+        {
+            vValue = new Vector3(vTarget.x, vTarget.y, fValue);
         }
 
         return vValue;

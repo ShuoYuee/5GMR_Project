@@ -237,43 +237,71 @@ public class XRCubeCustomController : MonoBehaviour
         if (KeyDownCustom_1[2] && time > 0.1f)
         {//X軸左移
             KeyDownCustom_1[2] = false;
-            _XRCubeCtrl.click(1, -1);
+            f_ShowController();
+            if (showLaser)
+            {
+                _XRCubeCtrl.click(1, -1);
+            }
             time = 0;
         }
         if (KeyDownCustom_1[3] && time > 0.1f)
         {//Y軸上移
             KeyDownCustom_1[3] = false;
-            _XRCubeCtrl.click(2, 1);
+            f_ShowController();
+            if (showLaser)
+            {
+                _XRCubeCtrl.click(2, 1);
+            }
             time = 0;
         }
         if (KeyDownCustom_1[4] && time > 0.1f)
         {//Y軸下移
             KeyDownCustom_1[4] = false;
-            _XRCubeCtrl.click(2, -1);
+            f_ShowController();
+            if (showLaser)
+            {
+                _XRCubeCtrl.click(2, -1);
+            }
             time = 0;
         }
         if (KeyDownCustom_1[5] && time > 0.1f)
         {//Z軸前移
             KeyDownCustom_1[5] = false;
-            _XRCubeCtrl.click(3, 1);
+            f_ShowController();
+            if (showLaser)
+            {
+                _XRCubeCtrl.click(3, 1);
+            }
             time = 0;
         }
         if (KeyDownCustom_1[6] && time > 0.1f)
         {//Z軸後移
             KeyDownCustom_1[6] = false;
-            _XRCubeCtrl.click(3, -1);
+            f_ShowController();
+            if (showLaser)
+            {
+                _XRCubeCtrl.click(3, -1);
+            }
             time = 0;
         }
         if (KeyDownCustom_1[7] && time > 0.1f)
         {//更改編輯模式
             KeyDownCustom_1[7] = false;
-            _XRCubeCtrl.click(4, 3);
+            f_ShowController();
+            if (showLaser)
+            {
+                _XRCubeCtrl.click(4, 3);
+            }
             time = 0;
         }
         if (KeyDownCustom_1[8] && time > 0.1f)
         {//更改座標模式
             KeyDownCustom_1[8] = false;
-            _XRCubeCtrl.click(5, 2);
+            f_ShowController();
+            if (showLaser)
+            {
+                _XRCubeCtrl.click(5, 2);
+            }
             time = 0;
         }
     }

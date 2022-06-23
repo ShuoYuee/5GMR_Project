@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using ccU3DEngine;
 using Epibyte.ConceptVR;
+using Photon;
 
 /*public class GameMainTriggerCtrl : MonoBehaviour
 {

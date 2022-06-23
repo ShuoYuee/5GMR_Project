@@ -249,6 +249,7 @@
     <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\ThirdParty\AVProVideo\Licenses\LibSamplerate-License.txt" />
     <None Include="Assets\ThirdParty\VolumetricLines\BuiltInRenderPipeline\Shaders\_LineStripShader.cginc" />
+    <None Include="Assets\GameScript\Photon\Photon3Unity3D.xml" />
     <None Include="Assets\ABRes\Language\zhTW\System.txt" />
     <None Include="Assets\ThirdParty\AVProVideo\Licenses\Hap-License.txt" />
     <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -521,6 +522,15 @@
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>C:/Users/judy2/OneDrive/Desktop/practice/5GMR/5GMR_Project/Assets/ccEngine/DLL/ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Photon.MmoDemo.Client.Unity3D">
+      <HintPath>C:/Users/judy2/OneDrive/Desktop/practice/5GMR/5GMR_Project/Assets/GameScript/Photon/Photon.MmoDemo.Client.Unity3D.dll</HintPath>
+    </Reference>
+    <Reference Include="Photon.MmoDemo.Common">
+      <HintPath>C:/Users/judy2/OneDrive/Desktop/practice/5GMR/5GMR_Project/Assets/GameScript/Photon/Photon.MmoDemo.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Photon3Unity3D">
+      <HintPath>C:/Users/judy2/OneDrive/Desktop/practice/5GMR/5GMR_Project/Assets/GameScript/Photon/Photon3Unity3D.dll</HintPath>
     </Reference>
     <Reference Include="I18N.CJK">
       <HintPath>C:/Users/judy2/OneDrive/Desktop/practice/5GMR/5GMR_Project/Assets/Plugins/I18N.CJK.dll</HintPath>

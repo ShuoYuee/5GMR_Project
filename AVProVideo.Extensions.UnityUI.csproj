@@ -269,6 +269,15 @@
     <Reference Include="ccU3DEngineEditor">
       <HintPath>C:/Users/judy2/OneDrive/Desktop/practice/5GMR/5GMR_Project/Assets/ccEngine/DLL/Editor/ccU3DEngineEditor.dll</HintPath>
     </Reference>
+    <Reference Include="Photon.MmoDemo.Client.Unity3D">
+      <HintPath>C:/Users/judy2/OneDrive/Desktop/practice/5GMR/5GMR_Project/Assets/GameScript/Photon/Photon.MmoDemo.Client.Unity3D.dll</HintPath>
+    </Reference>
+    <Reference Include="Photon.MmoDemo.Common">
+      <HintPath>C:/Users/judy2/OneDrive/Desktop/practice/5GMR/5GMR_Project/Assets/GameScript/Photon/Photon.MmoDemo.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Photon3Unity3D">
+      <HintPath>C:/Users/judy2/OneDrive/Desktop/practice/5GMR/5GMR_Project/Assets/GameScript/Photon/Photon3Unity3D.dll</HintPath>
+    </Reference>
     <Reference Include="I18N.CJK">
       <HintPath>C:/Users/judy2/OneDrive/Desktop/practice/5GMR/5GMR_Project/Assets/Plugins/I18N.CJK.dll</HintPath>
     </Reference>

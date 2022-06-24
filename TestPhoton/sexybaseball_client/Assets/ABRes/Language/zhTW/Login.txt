@@ -1,0 +1,14 @@
+﻿GmStr_Login_Title	登入
+GmStr_Login_TitleEmail	電子信箱
+GmStr_Login_TitlePassword	密碼
+GmStr_Login_InputFieldEmail	輸入電子信箱...
+GmStr_Login_InputFieldPassword	輸入密碼...
+GmStr_Login_ToggleRememberMe	記住我
+GmStr_Login_BtnLogin	登入
+GmStr_Login_BtnRegister	註冊
+
+ErrorStr_Login_UserPwdEmpty	電子信箱或密碼不得為空。
+ErrorStr_Login_Timeout	登入逾時。
+ErrorStr_Login_Failure	Unknown Authentication failure.
+ErrorStr_Login_NotExist	User doesn't exist.
+ErrorStr_Login_AuthFailed	認證失敗。

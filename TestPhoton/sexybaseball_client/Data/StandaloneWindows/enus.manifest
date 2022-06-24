@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 1247735620
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: e967a9cb1b727164e7b673a73bf71474
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/ABRes/Language/enUS/System.txt
+- Assets/ABRes/Language/enUS/GameMain.txt
+- Assets/ABRes/Language/enUS/Login.txt
+Dependencies: []

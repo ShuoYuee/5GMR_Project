@@ -1,0 +1,37 @@
+ManifestFileVersion: 0
+CRC: 1999269227
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a3725b6f75df7fbbb54b50ee99881c8f
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 03dd5bb200521b7593c49f52c7642a31
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3f60dae4c84e1ba4f9a65e8e0fd3b5e3, type: 3}
+- Class: 114
+  Script: {fileID: -463917630, guid: 6c28abb5a53def14ebab4b7feb6a23ae, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+- Class: 225
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/ABRes/GameInit/UIP_IntroLogo.prefab
+Dependencies: []

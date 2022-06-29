@@ -1,0 +1,2 @@
+E:\practice\MR\sexybaseball_client\obj\Debug\Assembly-CSharp-Editor.csprojAssemblyReference.cache
+E:\practice\MR\sexybaseball_client\obj\Debug\Assembly-CSharp-Editor.csproj.CoreCompileInputs.cache

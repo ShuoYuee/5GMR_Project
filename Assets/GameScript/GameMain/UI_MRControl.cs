@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using ccU3DEngine;
+using MR_Edit;
 
 namespace GameLogic
 {
@@ -10,10 +11,18 @@ namespace GameLogic
     {
         private XRCubeUDPSender _XRCubeUDPSender;
 
+        public ccMachineManager _machineManager;
+
         protected override void On_Init()
         {
             MessageBox.DEBUG("啟用遊戲包中的UI_MRControl腳本");
             _XRCubeUDPSender = f_GetObject("Panel").GetComponent<XRCubeUDPSender>();
+            _machineManager = new ccMachineManager(new ccMachineStateBase(-1));
+            _machineManager.f_RegState(new MainState_Idle());
+            _machineManager.f_RegState(new MainState_Main());
+            _machineManager.f_RegState(new MainState_Edit());
+            _machineManager.f_RegState(new MainState_GuessGame());
+            _machineManager.f_RegState(new MainState_Logout());
 
             f_RegClickEvent(f_GetObject("BtnPos"), OnClick_MainPanel, 0);
             f_RegClickEvent(f_GetObject("BtnController"), OnClick_MainPanel, 1);
@@ -35,12 +44,12 @@ namespace GameLogic
 
         protected override void On_Open(object e)
         {
-            
+            _machineManager.f_ChangeState((int)EM_MainState.Main);
         }
 
         protected override void On_Close()
         {
-            
+            _machineManager.f_ChangeState((int)EM_MainState.Main);
         }
 
         protected override void On_Destory()
@@ -53,6 +62,34 @@ namespace GameLogic
             
         }
 
+        #region UI Crtl
+        public void f_Start()
+        {
+
+        }
+
+        public void f_ReGame()
+        {
+
+        }
+
+        public void f_GameOver()
+        {
+
+        }
+
+        public void f_UpdateText(int iSet, string strInfor)
+        {
+
+        }
+        #endregion
+
+        private void OnClickBtn_Logout(GameObject go, object obj1, object obj2)
+        {//登出
+            glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.Guess_MainLogOut);
+        }
+
+        #region XR_UDP_Send
         private void OnClick_MainPanel(GameObject go, object obj1, object obj2)
         {
             int iSet = (int)obj1;
@@ -111,5 +148,6 @@ namespace GameLogic
                 go.GetComponentInParent<EditDisplayText>().f_InputValue();
             }
         }
+        #endregion
     }
 }

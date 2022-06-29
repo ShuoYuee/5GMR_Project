@@ -590,3 +590,10 @@ C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\obj\Debug\CircularScr
 C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\obj\Debug\CircularScrollingList.pdb
 E:\UnityProjects\MR\Temp\bin\Debug\Valve.Newtonsoft.Json.dll
 C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\Temp\bin\Debug\Valve.Newtonsoft.Json.dll
+C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\Temp\bin\Debug\Photon.MmoDemo.Client.Unity3D.dll
+C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\Temp\bin\Debug\Photon.MmoDemo.Common.dll
+C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\Temp\bin\Debug\Photon3Unity3D.dll
+C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\Temp\bin\Debug\Photon.MmoDemo.Client.Unity3D.pdb
+C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\Temp\bin\Debug\Photon.MmoDemo.Common.pdb
+C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\Temp\bin\Debug\Photon3Unity3D.pdb
+C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\Temp\bin\Debug\Photon3Unity3D.xml

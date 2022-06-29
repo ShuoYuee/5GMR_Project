@@ -38,7 +38,7 @@ public class Socket_Login : Socket_StateBase
 
     private void Login(object Obj)
     {
-        _iReLoginTimeId = -99;
+        /*_iReLoginTimeId = -99;
         if (_BaseSocket.f_GetSocketStatic() == EM_SocketStatic.ConnectSuc)
         {
             SendLogin(_iReLogin);
@@ -48,7 +48,7 @@ public class Socket_Login : Socket_StateBase
             Socket_Connect tSocket_Connect = (Socket_Connect)f_GetOtherStateBase((int)EM_Socket.Connect);
             tSocket_Connect.f_SetIpInfor(_stIp);
             f_SetComplete((int)EM_Socket.Connect, this);
-        }
+        }*/
     }
 
     public override void f_Execute()
@@ -75,11 +75,11 @@ public class Socket_Login : Socket_StateBase
         //tCreateSocketBuf.f_Add(StaticValue.m_LoginPwd, 28);
         //_BaseSocket.f_SendBuf2Force((int)SocketCommand.CS_UserLogin, tCreateSocketBuf.f_GetBuf());
 
-        _BaseSocket.f_SetSocketStatic(EM_SocketStatic.Logining);
+        //_BaseSocket.f_SetSocketStatic(EM_SocketStatic.Logining);
 
-        CMsg_GTC_LoginRelt tCMsg_GTC_LoginRelt = new CMsg_GTC_LoginRelt();
-        tCMsg_GTC_LoginRelt.m_result = (int)eMsgOperateResult.OR_Succeed;
-        On_LoginSuc(tCMsg_GTC_LoginRelt);
+        //CMsg_GTC_LoginRelt tCMsg_GTC_LoginRelt = new CMsg_GTC_LoginRelt();
+        //tCMsg_GTC_LoginRelt.m_result = (int)eMsgOperateResult.OR_Succeed;
+        //On_LoginSuc(tCMsg_GTC_LoginRelt);
     }
 
     private void On_LoginSuc(object Obj)
@@ -90,7 +90,7 @@ public class Socket_Login : Socket_StateBase
             return;
         }
         */
-        CMsg_GTC_LoginRelt tCMsg_GTC_LoginRelt = (CMsg_GTC_LoginRelt)Obj;
+        /*CMsg_GTC_LoginRelt tCMsg_GTC_LoginRelt = (CMsg_GTC_LoginRelt)Obj;
         //_GameSocket.f_RemoveListener(SocketCommand.GTC_AccountEnterResult);
         MessageBox.DEBUG("登入返回：" + tCMsg_GTC_LoginRelt.m_result);
         if (_LoginCallbackFunc != null)
@@ -130,7 +130,7 @@ public class Socket_Login : Socket_StateBase
                 MessageBox.DEBUG("重新登入。 ");
                 _iReLoginTimeId = ccTimeEvent.GetInstance().f_RegEvent(10f, false, null, Login);
             }
-        }
+        }*/
 
     }
 

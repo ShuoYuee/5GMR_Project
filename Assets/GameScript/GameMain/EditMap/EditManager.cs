@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Epibyte.ConceptVR;
 using ccU3DEngine;
+using MR_Edit;
 
 /// <summary>
 /// 編輯管理器
@@ -13,7 +14,7 @@ public class EditManager
     public bool _bSelectEdit = false;
 
     /// <summary>編輯類型</summary>
-    public EM_EditState _EditEM = EM_EditState.None;
+    public EM_EditCtrlState _EditEM = EM_EditCtrlState.None;
     /// <summary>軸心模式</summary>
     public EM_EditAxis _EditAxitEM = EM_EditAxis.AxisX;
     /// <summary>座標模式</summary>
@@ -34,19 +35,19 @@ public class EditManager
         switch (EditTpye)
         {
             case "Position":
-                _EditEM = EM_EditState.Position;
+                _EditEM = EM_EditCtrlState.Position;
                 break;
 
             case "Rotation":
-                _EditEM = EM_EditState.Rotation;
+                _EditEM = EM_EditCtrlState.Rotation;
                 break;
 
             case "Scale":
-                _EditEM = EM_EditState.Scale;
+                _EditEM = EM_EditCtrlState.Scale;
                 break;
 
             case "Edit":
-                _EditEM = EM_EditState.None;
+                _EditEM = EM_EditCtrlState.None;
                 f_Edit();
                 break;
         }
@@ -56,11 +57,11 @@ public class EditManager
     {
         if ((int)_EditEM + 1 > EditTpye)
         {
-            _EditEM = (EM_EditState)1;
+            _EditEM = (EM_EditCtrlState)1;
         }
         else
         {
-            _EditEM = (EM_EditState)(int)_EditEM + 1;
+            _EditEM = (EM_EditCtrlState)(int)_EditEM + 1;
         }
     }
 
@@ -70,7 +71,7 @@ public class EditManager
     /// <param name="EditTpye">按鈕類型</param>
     public void f_SetEditBtn(int EditTpye)
     {
-        _EditEM = (EM_EditState)EditTpye;
+        _EditEM = (EM_EditCtrlState)EditTpye;
     }
 
     /// <summary>點選編輯按鈕</summary>

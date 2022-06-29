@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using ccU3DEngine;
+using MR_Edit;
 
 /// <summary>
 /// 物件編輯控制器
@@ -23,7 +24,7 @@ public class EditObjControll : MonoBehaviour
     private ConnectURL _ConnectURL = new ConnectURL();
 
     /// <summary>編輯模式</summary>
-    EM_EditState _EditEM = EM_EditState.None;
+    EM_EditCtrlState _EditEM = EM_EditCtrlState.None;
     /// <summary>是否被選中編輯</summary>
     bool _bEdit = false;
     /// <summary>判別值(1為右或前，-1為左或後)</summary>
@@ -115,14 +116,14 @@ public class EditObjControll : MonoBehaviour
         _EditEM = GameMain.GetInstance().m_EditManager._EditEM;
         switch (_EditEM)
         {
-            case EM_EditState.Position:
+            case EM_EditCtrlState.Position:
                 f_EditPosition();
                 break;
-            case EM_EditState.Rotation:
+            case EM_EditCtrlState.Rotation:
                 f_EditRotation(_iEditValue);
                 break;
 
-            case EM_EditState.Scale:
+            case EM_EditCtrlState.Scale:
                 f_EditScale(_iEditValue);
                 break;
         }
@@ -132,7 +133,7 @@ public class EditObjControll : MonoBehaviour
     public void f_EndEdit()
     {
         StopAll();
-        _EditEM = EM_EditState.None;
+        _EditEM = EM_EditCtrlState.None;
         EditDisplay.GetInstance().f_StopUpdate();
         f_ChangeMaterial(_Material);
     }
@@ -559,7 +560,7 @@ public class EditObjControll : MonoBehaviour
         _iEditValue = iSet;
     }
 
-    public void f_SetInput(EM_EditState tEM, int iSet)
+    public void f_SetInput(EM_EditCtrlState tEM, int iSet)
     {
         _EditEM = tEM;
         _iEditValue = iSet;
@@ -571,7 +572,7 @@ public class EditObjControll : MonoBehaviour
     /// <param name="bGrab">是否進行移動</param>
     public void f_SetGrabState(object bGrab = null)
     {
-        if(_EditEM != EM_EditState.Position) { return; }
+        if(_EditEM != EM_EditCtrlState.Position) { return; }
         if (bGrab == null)
         {
             isGrabbObj = !isGrabbObj;

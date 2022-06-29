@@ -29,16 +29,15 @@ public class GloData
     /// <summary>
     /// 設置遊戲伺服器的工作IP
     /// </summary>
-    public static string glo_strSvrIP = "192.168.0.227";
-    public static int glo_iSvrPort = 9227;
+    public static string glo_strSvrIP = "127.0.0.1";
+    public static int glo_iSvrPort = 4530;
 
     //本地測試設置
     public static string glo_ProName = "MR_Edit";
     /// <summary>
     /// 設置遊戲腳本伺服器工作IP
     /// </summary>
-    public static string glo_strHttpServerIP = "192.168.0.227";
-    
+    public static string glo_strHttpServerIP = "123.207.87.187";
 
     
 

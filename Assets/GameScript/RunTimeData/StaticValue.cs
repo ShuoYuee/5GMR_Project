@@ -15,4 +15,9 @@ public class StaticValue
     public static float m_fSoundVolume;
     public static float m_fEffectVolume;
     //////////////////////////////////////////////////////////////////////////
+    public static string m_strAccount;
+    public static string m_strPwd;
+    public static string m_strUserName;
+    public static long m_lPlayerID;
+    public static int m_iTeam;
 }

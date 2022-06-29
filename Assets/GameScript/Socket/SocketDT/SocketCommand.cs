@@ -1,63 +1,62 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using ccU3DEngine;
 
 public enum SocketCommand
 {
-    /// <summary>
-    /// PING
-    /// </summary>
-    PING = 10000,
-    PING_Reps = 30000,
-
-    /// <summary>
-    /// --用戶端<-->遊戲伺服器
-    /// </summary>
-    MSG_CGameMsg = 6,
+    PING = 100,
+    PING_Reps = 201,
 
     //////////////////////////////////////////////////////////////////////////
     /// <summary>
-    /// 創建帳戶 
+    /// 创建账户 
     /// </summary>
-    CS_UserCreate = 10001,
-    /// <summary>
-    /// 登入申請 CMsg_CTG_AccountEnter
-    /// </summary>
-    CS_UserLogin = 10002,
-
-    //////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>
-    /// 創建帳戶結果 
-    /// </summary>
-    SC_UserCreate = 30001,
-    /// <summary>
-    /// 登入結果返回 CMsg_AccountLoginRelt
-    /// </summary>
-    SC_UserLogin = 30002,
-    SC_Kickout = 30003,
+    CS_UserCreate = 101,
+    UserCreate_Reps = 201,
 
     /// <summary>
-    /// 操作結果回應
+    /// 登陆申请 CMsg_CTG_AccountEnter
     /// </summary>
-    CONTROL_CTG_OperateResult = 30017,
+    CS_UserLogin = 102,
+    UserLogin_Reps = 202,
 
     /// <summary>
-    /// 成績更新消息
+    /// 登出
     /// </summary>
-    emResultUpdate = 30030,
+    CS_UserLogout = 103,
+    UserLogout_Reps = 203,
 
     /// <summary>
-    /// 最後結算成績
+    /// 傳遞給Server通訊
     /// </summary>
-    emResultEnd = 30040,
+    ServerCommand = 150,
+    /// <summary>
+    /// 傳遞給Client通訊
+    /// </summary>
+    ClientCommand = 151,
 
-    emLedMotor = 30050,
-
-    emPlayerFishing = 30060,
-    emGameControll = 30070,
-
-    emPlayerCharge = 30080,
+    #region 啦啦隊遊戲
+    PlayerPlayGame = 180,
+    /// <summary>
+    /// 玩家猜拳请求
+    /// </summary>
+    PlayerGuess = 182,
+    /// <summary>
+    /// 猜拳结果数据下发
+    /// </summary>
+    PlayerGuessResult = 183,
+    /// <summary>
+    /// 取得當前遊戲分數
+    /// </summary>
+    GameScore = 184,
+    /// <summary>
+    /// 玩家勝利下發
+    /// </summary>
+    GameOver = 185,
+    /// <summary>
+    /// 確認遊戲狀態結果
+    /// </summary>
+    GamePlayCheckRelt = 187,
+    #endregion
 }
-
 

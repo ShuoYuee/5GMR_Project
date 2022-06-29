@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
-using System.Text;
 using System.IO;
 using ccU3DEngine;
 using System.Collections.Generic;
 using ccILR;
-using UnityEngine.SceneManagement;
+using ccPhotonSocket;
 
 public class glo_Main : MonoBehaviour
 {
@@ -25,11 +24,11 @@ public class glo_Main : MonoBehaviour
     ccLog m_ccLog = null;
     public SC_Pool m_SC_Pool;
 
-    //public MainLogic m_MainLogic;
     /// <summary>
     /// 遊戲資源管理器
     ///// </summary>
     public ResourceManager m_ResourceManager;
+    public ccServerSocketPeer m_GameSocket = new ccServerSocketPeer();
 
     private static glo_Main _Instance = null;
     public static glo_Main GetInstance()
@@ -50,8 +49,6 @@ public class glo_Main : MonoBehaviour
     void Awake()
     {
         m_ccLog = new ccLog("Log", true, true);
-        //m_ccLog.f_SetUserId(SystemInfo.deviceUniqueIdentifier);
-        //m_ccLog.f_Start();
 
         GloData.glo_iVer = ccMath.atoi(Application.version);
         GloData.glo_strVer = GloData.glo_strVer + GloData.glo_iVer;
@@ -297,14 +294,13 @@ public class glo_Main : MonoBehaviour
 
         m_GameMessagePool.f_Update();
         m_UIMessagePool.f_Update();
-
-        //GameSocket.GetInstance().f_Update();
+        m_GameSocket.f_Update();
 
     }
 
     private void OnDestroy()
     {
-
+        m_GameSocket.f_Disconnect();
     }
 
     public void f_Destroy()
@@ -313,14 +309,12 @@ public class glo_Main : MonoBehaviour
 
         MessageBox.DEBUG("................................................");
 
+        m_GameSocket.f_Disconnect();
         ccTimeEvent.GetInstance().f_RegEvent(1, false, null, ApplicationQuit);
     }
 
-    //void OnApplicationQuit()
     void ApplicationQuit(object Obj)
     {
-        //GameSocket.GetInstance().f_Close();
-        //m_ccLog.f_Quit();
         Application.Quit();
     }
 
@@ -334,8 +328,8 @@ public class glo_Main : MonoBehaviour
         InitGameData();
         InitSocket();
 
-        ccUIManage.GetInstance().f_SendMsgV2("UI_GameLogin", BaseUIMessageDef.UI_OPEN);
-
+        //ccUIManage.GetInstance().f_SendMsgV2("UI_GameLogin", BaseUIMessageDef.UI_OPEN);
+        ccUIManage.GetInstance().f_SendMsgV3("ui_login.bundle", "UI_Login", UIMessageDef.UI_OPEN);
     }
 
     void InitPool()
@@ -345,7 +339,7 @@ public class glo_Main : MonoBehaviour
 
     void InitSocket()
     {
-        //GameSocket.GetInstance().f_Login();
+        m_GameSocket.f_Connect(GloData.glo_strSvrIP, GloData.glo_iSvrPort);
     }
 
     private void InitGameData()

@@ -1,0 +1,159 @@
+16088: 00:41:15.368 - ---
+16088: 00:41:15.368 - Service: "Photon Socket Server" starting
+16088: 00:41:15.368 - Config File: E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\TestPhontonSC\SexyBaseball.Server\bin\Debug\PhotonServer.config
+16088: 00:41:15.371 - Will produce at most: 10 crash dumps
+16088: 00:41:15.371 - Action: run as exe
+16088: 00:41:15.372 - 
+16088: 00:41:15.372 - ERROR: ***************************************************************
+16088: 00:41:15.372 - ERROR: Can't find configuration file: "E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\TestPhontonSC\SexyBaseball.Server\bin\Debug\PhotonServer.config".
+16088: 00:41:15.372 - ERROR: ***************************************************************
+16088: 00:41:15.372 - 
+16088: 00:41:15.372 - MessageBox: Photon Socket Server: SexyBaseball - 4.0.28.2962
+
+Can't find configuration file: "E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\TestPhontonSC\SexyBaseball.Server\bin\Debug\PhotonServer.config".
+16088: 00:41:25.312 - Service shutting down: can't find configuration file. Errorcode: 102
+16088: 00:41:25.369 - Service shut down complete
+17268: 00:41:40.915 - ---
+17268: 00:41:40.915 - Service: "Photon Socket Server" starting
+17268: 00:41:40.916 - Config File: E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\TestPhontonSC\SexyBaseball.Server\bin\Debug\PhotonServer.config
+17268: 00:41:40.918 - Will produce at most: 10 crash dumps
+17268: 00:41:40.918 - Action: run as exe
+17268: 00:41:40.919 - Server Starting...
+17268: 00:41:40.919 -    Tick count: 51200828 (wraps in: 49.1177 days)
+17268: 00:41:40.919 - Tick count 64: 51200828
+17268: 00:41:40.919 - Photon Version: 4.0.28.2962
+17268: 00:41:40.919 - PID: 13684
+17268: 00:41:40.919 - Config File: E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\TestPhontonSC\SexyBaseball.Server\bin\Debug\PhotonServer.config
+17268: 00:41:40.920 - CService::OnException() - Exception: CXMLConfiguration::LoadDocument() - Failed to located required initial child element: "SexyBaseball" - Source: "E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\TestPhontonSC\SexyBaseball.Server\bin\Debug\PhotonServer.config"
+17268: 00:41:40.920 - Server shutting down...
+17268: 00:41:40.920 - Shutting down socket servers...
+17268: 00:41:40.920 - Destroying servers
+17268: 00:41:40.920 - Destroying WebSocket Outbound Connection Manager
+17268: 00:41:40.920 - Destroying TCP Outbound Connection Manager
+17268: 00:41:40.920 - Destroying TCP inactivity timer
+17268: 00:41:40.920 - Destroying ENet timer wheel
+17268: 00:41:40.920 - Destroying ENet host
+17268: 00:41:40.920 - Destroying HTTP inactivity timer
+17268: 00:41:40.920 - Destroying HTTP host
+17268: 00:41:40.920 - Destroying HTTP Chunk host
+17268: 00:41:40.920 - Destroying CLR dispatcher
+17268: 00:41:40.920 - Destroying CLR applications
+17268: 00:41:40.920 - Destroying ENet thread pool
+17268: 00:41:40.920 - Destroying I/O thread pool
+17268: 00:41:40.920 - Destroying ENet buffer allocator
+17268: 00:41:40.920 - Destroying TCP buffer allocator
+17268: 00:41:40.920 - Destroying TCP socket allocator
+17268: 00:41:40.920 - Destroying ENet inbound socket allocator
+17268: 00:41:40.920 - Destroying ENet outbound socket allocator
+17268: 00:41:40.920 - Destroying shared datagram flow control data
+17268: 00:41:40.920 - Shutdown complete...
+17268: 00:41:40.920 - Service shutting down: invalid instance name. Errorcode: 110
+17268: 00:41:40.922 - Service shut down complete
+19264: 00:41:52.570 - ---
+19264: 00:41:52.570 - Service: "Photon Socket Server" starting
+19264: 00:41:52.571 - Config File: E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\TestPhontonSC\SexyBaseball.Server\bin\Debug\PhotonServer.config
+19264: 00:41:52.573 - Will produce at most: 10 crash dumps
+19264: 00:41:52.573 - Action: run as exe
+19264: 00:41:52.574 - Server Starting...
+19264: 00:41:52.574 -    Tick count: 51212484 (wraps in: 49.1175 days)
+19264: 00:41:52.574 - Tick count 64: 51212484
+19264: 00:41:52.574 - Photon Version: 4.0.28.2962
+19264: 00:41:52.574 - PID: 6336
+19264: 00:41:52.574 - Config File: E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\TestPhontonSC\SexyBaseball.Server\bin\Debug\PhotonServer.config
+19264: 00:41:52.574 - CService::OnException() - Exception: CXMLConfiguration::LoadDocument() - Failed to located required initial child element: "SexyBaseball" - Source: "E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\TestPhontonSC\SexyBaseball.Server\bin\Debug\PhotonServer.config"
+19264: 00:41:52.574 - Server shutting down...
+19264: 00:41:52.574 - Shutting down socket servers...
+19264: 00:41:52.574 - Destroying servers
+19264: 00:41:52.574 - Destroying WebSocket Outbound Connection Manager
+19264: 00:41:52.574 - Destroying TCP Outbound Connection Manager
+19264: 00:41:52.574 - Destroying TCP inactivity timer
+19264: 00:41:52.574 - Destroying ENet timer wheel
+19264: 00:41:52.574 - Destroying ENet host
+19264: 00:41:52.575 - Destroying HTTP inactivity timer
+19264: 00:41:52.575 - Destroying HTTP host
+19264: 00:41:52.575 - Destroying HTTP Chunk host
+19264: 00:41:52.575 - Destroying CLR dispatcher
+19264: 00:41:52.575 - Destroying CLR applications
+19264: 00:41:52.575 - Destroying ENet thread pool
+19264: 00:41:52.575 - Destroying I/O thread pool
+19264: 00:41:52.575 - Destroying ENet buffer allocator
+19264: 00:41:52.575 - Destroying TCP buffer allocator
+19264: 00:41:52.575 - Destroying TCP socket allocator
+19264: 00:41:52.575 - Destroying ENet inbound socket allocator
+19264: 00:41:52.575 - Destroying ENet outbound socket allocator
+19264: 00:41:52.575 - Destroying shared datagram flow control data
+19264: 00:41:52.575 - Shutdown complete...
+19264: 00:41:52.575 - Service shutting down: invalid instance name. Errorcode: 110
+19264: 00:41:52.576 - Service shut down complete
+11640: 00:44:17.471 - ---
+11640: 00:44:17.471 - Service: "Photon Socket Server" starting
+11640: 00:44:17.471 - Config File: E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\TestPhontonSC\SexyBaseball.Server\bin\Debug\PhotonServer.config
+11640: 00:44:17.473 - Will produce at most: 10 crash dumps
+11640: 00:44:17.473 - Action: run as exe
+11640: 00:44:17.474 - Server Starting...
+11640: 00:44:17.474 -    Tick count: 51357375 (wraps in: 49.1159 days)
+11640: 00:44:17.474 - Tick count 64: 51357375
+11640: 00:44:17.474 - Photon Version: 4.0.28.2962
+11640: 00:44:17.474 - PID: 15848
+11640: 00:44:17.474 - Config File: E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\TestPhontonSC\SexyBaseball.Server\bin\Debug\PhotonServer.config
+11640: 00:44:17.474 - CService::OnException() - Exception: CXMLConfiguration::LoadDocument() - Failed to located required initial child element: "SexyBaseball" - Source: "E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\TestPhontonSC\SexyBaseball.Server\bin\Debug\PhotonServer.config"
+11640: 00:44:17.474 - Server shutting down...
+11640: 00:44:17.474 - Shutting down socket servers...
+11640: 00:44:17.474 - Destroying servers
+11640: 00:44:17.474 - Destroying WebSocket Outbound Connection Manager
+11640: 00:44:17.474 - Destroying TCP Outbound Connection Manager
+11640: 00:44:17.474 - Destroying TCP inactivity timer
+11640: 00:44:17.474 - Destroying ENet timer wheel
+11640: 00:44:17.474 - Destroying ENet host
+11640: 00:44:17.474 - Destroying HTTP inactivity timer
+11640: 00:44:17.474 - Destroying HTTP host
+11640: 00:44:17.474 - Destroying HTTP Chunk host
+11640: 00:44:17.474 - Destroying CLR dispatcher
+11640: 00:44:17.474 - Destroying CLR applications
+11640: 00:44:17.474 - Destroying ENet thread pool
+11640: 00:44:17.474 - Destroying I/O thread pool
+11640: 00:44:17.474 - Destroying ENet buffer allocator
+11640: 00:44:17.474 - Destroying TCP buffer allocator
+11640: 00:44:17.474 - Destroying TCP socket allocator
+11640: 00:44:17.474 - Destroying ENet inbound socket allocator
+11640: 00:44:17.475 - Destroying ENet outbound socket allocator
+11640: 00:44:17.475 - Destroying shared datagram flow control data
+11640: 00:44:17.475 - Shutdown complete...
+11640: 00:44:17.475 - Service shutting down: invalid instance name. Errorcode: 110
+11640: 00:44:17.476 - Service shut down complete
+20716: 00:52:40.635 - ---
+20716: 00:52:40.635 - Service: "Photon Socket Server" starting
+20716: 00:52:40.636 - Config File: E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\TestPhontonSC\SexyBaseball.Server\bin\Debug\PhotonServer.config
+20716: 00:52:40.638 - Will produce at most: 10 crash dumps
+20716: 00:52:40.638 - Action: run as exe
+20716: 00:52:40.639 - Server Starting...
+20716: 00:52:40.639 -    Tick count: 51860546 (wraps in: 49.11 days)
+20716: 00:52:40.639 - Tick count 64: 51860546
+20716: 00:52:40.639 - Photon Version: 4.0.28.2962
+20716: 00:52:40.639 - PID: 7188
+20716: 00:52:40.639 - Config File: E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\TestPhontonSC\SexyBaseball.Server\bin\Debug\PhotonServer.config
+20716: 00:52:40.640 - CService::OnException() - Exception: CXMLConfiguration::LoadDocument() - Failed to located required initial child element: "SexyBaseball" - Source: "E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\TestPhontonSC\SexyBaseball.Server\bin\Debug\PhotonServer.config"
+20716: 00:52:40.640 - Server shutting down...
+20716: 00:52:40.640 - Shutting down socket servers...
+20716: 00:52:40.640 - Destroying servers
+20716: 00:52:40.640 - Destroying WebSocket Outbound Connection Manager
+20716: 00:52:40.640 - Destroying TCP Outbound Connection Manager
+20716: 00:52:40.640 - Destroying TCP inactivity timer
+20716: 00:52:40.640 - Destroying ENet timer wheel
+20716: 00:52:40.640 - Destroying ENet host
+20716: 00:52:40.640 - Destroying HTTP inactivity timer
+20716: 00:52:40.640 - Destroying HTTP host
+20716: 00:52:40.640 - Destroying HTTP Chunk host
+20716: 00:52:40.640 - Destroying CLR dispatcher
+20716: 00:52:40.640 - Destroying CLR applications
+20716: 00:52:40.640 - Destroying ENet thread pool
+20716: 00:52:40.640 - Destroying I/O thread pool
+20716: 00:52:40.640 - Destroying ENet buffer allocator
+20716: 00:52:40.640 - Destroying TCP buffer allocator
+20716: 00:52:40.640 - Destroying TCP socket allocator
+20716: 00:52:40.640 - Destroying ENet inbound socket allocator
+20716: 00:52:40.640 - Destroying ENet outbound socket allocator
+20716: 00:52:40.640 - Destroying shared datagram flow control data
+20716: 00:52:40.640 - Shutdown complete...
+20716: 00:52:40.640 - Service shutting down: invalid instance name. Errorcode: 110
+20716: 00:52:40.641 - Service shut down complete

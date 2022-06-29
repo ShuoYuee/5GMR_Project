@@ -3,6 +3,7 @@ using UnityEngine;
 using ccU3DEngine;
 using Epibyte.ConceptVR;
 using ZenFulcrum.EmbeddedBrowser;
+using MR_Edit;
 
 public class GameMain : MonoBehaviour
 {
@@ -63,15 +64,12 @@ public class GameMain : MonoBehaviour
     {
         _Instance = this;
         m_GameTable.SetActive(true);
+
         //ccUIManage.GetInstance().f_SendMsg("UI_GameMain", BaseUIMessageDef.UI_OPEN, null, true);
-        ccUIManage.GetInstance().f_SendMsgV3("ui_mrcontorl.bundle", "UI_MRControl", BaseUIMessageDef.UI_OPEN);
-
-        ccTimeEvent.GetInstance().f_RegEvent(0.3f, true, null, f_UpdateMenuPos);
-    }
-
-    private void Start()
-    {
         f_InitGameObj();
+
+        //ccUIManage.GetInstance().f_SendMsgV3("ui_mrcontrol.bundle", "UI_MRControl", BaseUIMessageDef.UI_OPEN);
+        ccTimeEvent.GetInstance().f_RegEvent(0.3f, true, null, f_UpdateMenuPos);
     }
 
     /// <summary>手動導入場上物件</summary>
@@ -90,6 +88,28 @@ public class GameMain : MonoBehaviour
     {
         if (m_MainMenu != null)
             m_MainMenu.transform.localPosition = m_MainCamera.transform.localPosition + new Vector3(-0.4f, 0.05f, 0);
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public void f_MainBroadcast(int iSet)
+    {
+        if (iSet == 1)
+        {
+            glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.Guess_JoinRoom);
+        }
+        else if (iSet == 2)
+        {
+            glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.Guess_ExitRoom);
+        }
+        else if (iSet == 3)
+        {
+            glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.Guess_SelGuessTeam);
+        }
+        else if (iSet == 4)
+        {
+            glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.Guess_MainLogOut);
+        }
     }
 
     #region 地圖功能

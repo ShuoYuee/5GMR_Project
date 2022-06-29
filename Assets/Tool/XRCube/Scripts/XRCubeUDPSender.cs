@@ -126,21 +126,21 @@ public class XRCubeUDPSender : MonoBehaviour
     {
         if (x == 0)
         {
-            MainPos.SetActive(true);
-            MainCtrl.SetActive(false);
-            MainEdit.SetActive(false);
+            //MainPos.SetActive(true);
+            //MainCtrl.SetActive(false);
+            //MainEdit.SetActive(true);
         }
         else if (x == 1)
         {
-            MainPos.SetActive(false);
-            MainCtrl.SetActive(true);
-            MainEdit.SetActive(false);
+            //MainPos.SetActive(true);
+            //MainCtrl.SetActive(true);
+            //MainEdit.SetActive(false);
         }
         else if (x == 2)
         {
-            MainPos.SetActive(false);
-            MainCtrl.SetActive(false);
-            MainEdit.SetActive(true);
+            //MainPos.SetActive(true);
+            //MainCtrl.SetActive(false);
+            //MainEdit.SetActive(true);
         }
     }
     public void Setip()

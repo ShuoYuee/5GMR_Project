@@ -49,6 +49,33 @@ public enum EM_TeamID
     TeamB = 2,
 }
 
+public enum EM_RoleState
+{
+    /// <summary>
+    /// 玩家
+    /// </summary>
+    Player = 0,
+    /// <summary>
+    /// 動畫物件
+    /// </summary>
+    Anim = 1,
+    /// <summary>
+    /// 網頁連結物件
+    /// </summary>
+    URL = 2,
+    /// <summary>
+    /// 動畫和網頁連結物件
+    /// </summary>
+    AnimAndURL = 3,
+}
+
+public enum EM_InterState
+{
+    None = 0,
+    Anim,
+    URL,
+}
+
 public enum EM_GameResult
 {
     /// <summary>
@@ -296,11 +323,13 @@ namespace MR_Edit
         Idle = 1,
         Main,
         Edit,
+        GuessWait,
         Guess,
         Logout,
     }
     #endregion
 
+    #region 啦啦隊相關
     /// <summary>
     /// 遊戲模式
     /// </summary>
@@ -382,4 +411,5 @@ namespace MR_Edit
         Win = 1,
         Lost,
     }
+    #endregion
 }

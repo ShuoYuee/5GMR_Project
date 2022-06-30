@@ -604,13 +604,19 @@ public class GameMainTriggerCtrl : MonoBehaviour
                     if (oCurObj)
                     {
                         EditObjControll editObjControll = oCurObj.GetComponent<EditObjControll>();
-                        if (iSet == 1)
+                        if (iSet == 0)
                         {
-                            editObjControll.f_AnimPlay(0);
+                            _EditObjControll.f_Interactable();
+                        }
+                        else if (iSet == 1)
+                        {
+                            //editObjControll.f_AnimPlay(0);
+                            _EditObjControll.f_InteractableEM((int)EM_InterState.Anim);
                         }
                         else if (iSet == 2)
                         {
-                            editObjControll.f_ConnectURL();
+                            //editObjControll.f_ConnectURL();
+                            _EditObjControll.f_InteractableEM((int)EM_InterState.URL);
                         }
                     }
                 }

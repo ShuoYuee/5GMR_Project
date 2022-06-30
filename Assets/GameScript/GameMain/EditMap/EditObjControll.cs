@@ -7,7 +7,7 @@ using MR_Edit;
 /// <summary>
 /// 物件編輯控制器
 /// </summary>
-public class EditObjControll : MonoBehaviour
+public class EditObjControll : Interactable_GameCtrl
 {
     /// <summary>物件動畫機</summary>
     private Animator _Animator;
@@ -16,12 +16,12 @@ public class EditObjControll : MonoBehaviour
 
     /// <summary>場景資料(儲存時所用的)</summary>
     private MapPoolDT _MapPoolDT;
-    /// <summary>預覽動畫組</summary>
-    private string[] _strAnimGroup;
-    /// <summary>預覽音效組</summary>
-    private string[] _strAudioGroup;
-    /// <summary>網頁連結腳本</summary>
-    private ConnectURL _ConnectURL = new ConnectURL();
+    ///// <summary>預覽動畫組</summary>
+    //private string[] _strAnimGroup;
+    ///// <summary>預覽音效組</summary>
+    //private string[] _strAudioGroup;
+    ///// <summary>網頁連結腳本</summary>
+    //private ConnectURL _ConnectURL = new ConnectURL();
 
     /// <summary>編輯模式</summary>
     EM_EditCtrlState _EditEM = EM_EditCtrlState.None;
@@ -84,11 +84,11 @@ public class EditObjControll : MonoBehaviour
         name = _MapPoolDT.iId + "_" + _MapPoolDT.m_CharacterDT.szResName;
         transform.parent = GameMain.GetInstance().f_GetObjParent();
 
-        //獲得動畫片段資料
+        /*//獲得動畫片段資料
         if (_MapPoolDT.m_CharacterDT.szAnimGroup != null)
         {
             _strAnimGroup = ccMath.f_String2ArrayString(_MapPoolDT.m_CharacterDT.szAnimGroup, ";");
-        }
+        }*/
     }
         
     public long f_GetId()
@@ -499,7 +499,7 @@ public class EditObjControll : MonoBehaviour
     #endregion
 
     #region 動畫與音效
-    /// <summary>
+    /*/// <summary>
     /// 播放動畫
     /// </summary>
     /// <param name="iIndex">動畫Index</param>
@@ -508,7 +508,7 @@ public class EditObjControll : MonoBehaviour
         string strAnim = _strAnimGroup[iIndex];
         if (strAnim != "")
         {
-            GameTools.f_AnimPlay(_Animator, _strAnimGroup[iIndex], 0, true);
+            GameTools.f_PlayAnimator(_Animator, _strAnimGroup[iIndex], 0, true);
             f_AudioPlay(iIndex);
         }
     }
@@ -547,7 +547,7 @@ public class EditObjControll : MonoBehaviour
         {
             MessageBox.ASSERT("物件音效未找到");
         }
-    }
+    }*/
     #endregion
 
     #region 屬性設定
@@ -601,7 +601,7 @@ public class EditObjControll : MonoBehaviour
     }
     #endregion
 
-    #region URL
+    /*#region URL
     public void f_SetURL(string szURL)
     {
         _ConnectURL.fSetURL(szURL);
@@ -611,5 +611,5 @@ public class EditObjControll : MonoBehaviour
     {
         _ConnectURL.f_ConnectURL();
     }
-    #endregion
+    #endregion*/
 }

@@ -289,8 +289,8 @@ public class CheckPanel
 
     public void f_PanelCtrl(bool bMain, bool bMid = false)
     {
-        GameTools.f_SetGameObj(MainPanel, bMain);
-        GameTools.f_SetGameObj(MidPanel, bMid);
+        GameTools.f_SetGameObject(MainPanel, bMain);
+        GameTools.f_SetGameObject(MidPanel, bMid);
     }
 
     public void f_SetFileText(string strFile)

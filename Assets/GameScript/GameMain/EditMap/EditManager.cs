@@ -289,13 +289,4 @@ public class EditManager
     }
     #endregion
 
-    /// <summary>
-    /// 編輯物播放預覽動畫
-    /// </summary>
-    /// <param name="iIndex">動畫Index</param>
-    public void f_EditObjAnimPlay(int iIndex)
-    {
-        //if (!_bEdit || _CurEditObjControll == null) { return; }
-        _CurEditObjControll.f_AnimPlay(iIndex);
-    }
 }

@@ -18,7 +18,6 @@ namespace GameLogic
             MessageBox.DEBUG("啟用遊戲包中的UI_MRControl腳本");
             _XRCubeUDPSender = f_GetObject("Panel").GetComponent<XRCubeUDPSender>();
             _machineManager = new ccMachineManager(new ccMachineStateBase(-1));
-            _machineManager.f_RegState(new MainState_Idle());
             _machineManager.f_RegState(new MainState_Main());
             _machineManager.f_RegState(new MainState_Edit());
             _machineManager.f_RegState(new MainState_GuessGame());
@@ -62,31 +61,9 @@ namespace GameLogic
             
         }
 
-        #region UI Crtl
-        public void f_Start()
-        {
-
-        }
-
-        public void f_ReGame()
-        {
-
-        }
-
-        public void f_GameOver()
-        {
-
-        }
-
-        public void f_UpdateText(int iSet, string strInfor)
-        {
-
-        }
-        #endregion
-
         private void OnClickBtn_Logout(GameObject go, object obj1, object obj2)
         {//登出
-            glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.Guess_MainLogOut);
+            glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.MainLogOut);
         }
 
         #region XR_UDP_Send

@@ -95,20 +95,24 @@ public class GameMain : MonoBehaviour
     public void f_MainBroadcast(int iSet)
     {
         if (iSet == 1)
-        {
-            glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.Guess_JoinRoom);
+        {//登出
+            glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.MainLogOut);
         }
         else if (iSet == 2)
-        {
-            glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.Guess_ExitRoom);
+        {//啦啦隊_加入遊戲
+            glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.Guess_JoinRoom);
         }
         else if (iSet == 3)
-        {
-            glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.Guess_SelGuessTeam);
+        {//啦啦隊_離開遊戲
+            glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.Guess_ExitRoom);
         }
         else if (iSet == 4)
-        {
-            glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.Guess_MainLogOut);
+        {//啦啦隊_選擇A
+            glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.Guess_SelGuessTeam, (int)EM_TeamID.TeamA);
+        }
+        else if (iSet == 5)
+        {//啦啦隊_選擇B
+            glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.Guess_SelGuessTeam, (int)EM_TeamID.TeamB);
         }
     }
 
@@ -141,7 +145,8 @@ public class GameMain : MonoBehaviour
 
     public void f_ExitMap()
     {
-        glo_Main.GetInstance().f_Destroy();
+        glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.MainLogOut);
+        //glo_Main.GetInstance().f_Destroy();
     }
 
     public EditObjControll f_AddObj(CharacterDT tCharacterDT)
@@ -276,24 +281,9 @@ public class GameMain : MonoBehaviour
         m_MapPool.f_DeleteObj(m_EditManager.f_GetCurEditObj().f_GetId());
     }
 
-    /// <summary>
-    /// 編輯物播放預覽動畫
-    /// </summary>
-    /// <param name="iAddIndex">增減動畫Index</param>
-    public void f_EditObjAnimPlay(int iAddIndex)
-    {
-        m_EditManager.f_EditObjAnimPlay(iAddIndex);
-    }
-
     /// <summary>設定刪除物顯示文字</summary>
     public void f_SetDelText()
     {
         _DeleteText.text = "確定刪除該物件？//n" + m_EditManager.f_GetCurEditObj().name;
-    }
-
-    /// <summary>斗內後創建啦啦隊</summary>
-    public void f_Sponsor()
-    {
-        glo_Main.GetInstance().m_ResourceManager.f_CreateResource("Model/DancingGirlA");
     }
 }

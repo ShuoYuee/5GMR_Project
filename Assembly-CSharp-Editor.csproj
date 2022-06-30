@@ -803,9 +803,17 @@
       <Project>{D95D0FBB-1E2B-7317-099A-50FB03428DD5}</Project>
       <Name>SteamVR_Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="ZFBrowser.csproj">
+      <Project>{2BD7536A-5682-12FA-6FA0-94F0D935FDF7}</Project>
+      <Name>ZFBrowser</Name>
+    </ProjectReference>
     <ProjectReference Include="SteamVR.csproj">
       <Project>{644A7F0D-E01D-3B2C-6942-2C20A97D56C1}</Project>
       <Name>SteamVR</Name>
+    </ProjectReference>
+    <ProjectReference Include="ZFBrowser-Editor.csproj">
+      <Project>{78C1C179-1975-32EA-B83D-BA54B8CAB566}</Project>
+      <Name>ZFBrowser-Editor</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR_Windows_EditorHelper.csproj">
       <Project>{875850EC-675D-0618-6E41-2D77C2E8635D}</Project>
@@ -814,14 +822,6 @@
     <ProjectReference Include="AVProVideo.Extensions.UnityUI.Editor.csproj">
       <Project>{AA2AE2B5-3F62-4233-E145-6ABEA4BF2E89}</Project>
       <Name>AVProVideo.Extensions.UnityUI.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="ZFBrowser-Editor.csproj">
-      <Project>{78C1C179-1975-32EA-B83D-BA54B8CAB566}</Project>
-      <Name>ZFBrowser-Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="ZFBrowser.csproj">
-      <Project>{2BD7536A-5682-12FA-6FA0-94F0D935FDF7}</Project>
-      <Name>ZFBrowser</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

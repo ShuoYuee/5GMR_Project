@@ -50,7 +50,8 @@ public class MessageDef
     public static string Guess_JoinRoom = "Guess_JoinRoom";
     public static string Guess_ExitRoom = "Guess_ExitRoom";
     public static string Guess_SelGuessTeam = "Guess_SelGuessTeam";
-    public static string Guess_MainLogOut = "Guess_MainLogOut";
     #endregion
+
+    public static string MainLogOut = "MainLogOut";
 }
 

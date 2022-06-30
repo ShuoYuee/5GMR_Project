@@ -19,7 +19,7 @@ public class MainState_Main : ccMachineStateBase
         MessageBox.DEBUG("進入MainState_Main狀態");
         UI_MRControl = (UI_MRControl)Obj;
 
-        glo_Main.GetInstance().m_GameMessagePool.f_AddListener(MessageDef.Guess_MainLogOut, f_LogOut);
+        glo_Main.GetInstance().m_GameMessagePool.f_AddListener(MessageDef.MainLogOut, f_LogOut);
         glo_Main.GetInstance().m_GameMessagePool.f_AddListener(MessageDef.Guess_JoinRoom, f_JoinRoom);
     }
 
@@ -31,7 +31,7 @@ public class MainState_Main : ccMachineStateBase
     public override void f_Exit()
     {
         base.f_Exit();
-        glo_Main.GetInstance().m_GameMessagePool.f_RemoveListener(MessageDef.Guess_MainLogOut, f_LogOut);
+        glo_Main.GetInstance().m_GameMessagePool.f_RemoveListener(MessageDef.MainLogOut, f_LogOut);
         glo_Main.GetInstance().m_GameMessagePool.f_RemoveListener(MessageDef.Guess_JoinRoom, f_JoinRoom);
     }
 

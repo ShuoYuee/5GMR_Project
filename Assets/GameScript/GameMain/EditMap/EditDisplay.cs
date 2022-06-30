@@ -59,6 +59,6 @@ public class EditDisplay : MonoBehaviour
     /// <param name="bSet">是否顯示</param>
     public void f_SetPanel(bool bSet)
     {
-        GameTools.f_SetGameObj(_Panel, bSet);
+        GameTools.f_SetGameObject(_Panel, bSet);
     }
 }

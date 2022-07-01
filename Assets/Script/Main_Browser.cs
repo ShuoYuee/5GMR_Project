@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using ZenFulcrum.EmbeddedBrowser;
 
+/// <summary>
+/// VR網頁
+/// </summary>
 public class Main_Browser : MonoBehaviour
 {
     public GameObject _MainBrowser;
@@ -14,11 +17,11 @@ public class Main_Browser : MonoBehaviour
         return _Instance;
     }
 
-    private void Awake()
+    private void Start()
     {
         _Instance = this;
         _Browser = GameMain.GetInstance().m_Browser;
-        f_EnableWindow(false);
+        //f_EnableWindow(false);
     }
 
     public void f_ConnectURL(string strURL)

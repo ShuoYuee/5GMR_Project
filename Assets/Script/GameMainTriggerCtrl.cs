@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using ccU3DEngine;
 using Epibyte.ConceptVR;
+using ccUI_U3DSpace;
 using MR_Edit;
 
 /*public class GameMainTriggerCtrl : MonoBehaviour
@@ -391,6 +392,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
     private Interactable _Interactable = null;
     private InputField _InputField = null;
     private Button _Button = null;
+    private ccInteractable _ccInteractable = null;
 
     public EM_TriggerObj _ObjEm = EM_TriggerObj.None;
     private GameObject oCurObj = null;
@@ -405,6 +407,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
         Button = 2,     //按鈕
         InpuUI = 3,     //輸入文字UI
         ButtonUI = 4,   //按鈕UI
+        MRUI = 5,       //MR UI
     }
 
     /// <summary>輸入控制模式</summary>
@@ -430,7 +433,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
 
         //控制玩家輸入事件
         GameInputCtrl.OnClickBtnArrow += f_PlayCtrlInput;
-        GameInputCtrl.OnClickBtnChangeState += f_ChangePlayCtrlState;
+        //GameInputCtrl.OnClickBtnChangeState += f_ChangePlayCtrlState;
         GameInputCtrl.OnClickBtnReset += f_ResetInitPos;
     }
 
@@ -521,7 +524,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
         switch (_ObjEm)
         {
             case EM_TriggerObj.EditObj:
-
+                
                 break;
 
             case EM_TriggerObj.InpuUI:
@@ -537,9 +540,23 @@ public class GameMainTriggerCtrl : MonoBehaviour
                 _Button = oCurObj.GetComponent<Button>();
                 break;
 
+            case EM_TriggerObj.MRUI:
+                _ccInteractable = oCurObj.GetComponent<ccInteractable>();
+                _ccInteractable.OnHovered();
+                break;
+
             default:
                 oCurObj = null;
                 break;
+        }
+    }
+
+    public void f_LeaveRay()
+    {
+        if (!_ccInteractable)
+        {
+            _ccInteractable.UnHovered();
+            _ccInteractable = null;
         }
     }
 
@@ -644,6 +661,15 @@ public class GameMainTriggerCtrl : MonoBehaviour
                 }
                 _Button.onClick.Invoke();
                 break;
+
+            case EM_TriggerObj.MRUI:
+                if (_ccInteractable == null)
+                {
+                    _ObjEm = EM_TriggerObj.None;
+                    return;
+                }
+                _ccInteractable.OnClicked(iSet);
+                break;
         }
     }
 
@@ -695,7 +721,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
 
     #region 控制輸入事件
     private Transform Player;
-    /// <summary>改變控制輸入模式</summary>
+    /*/// <summary>改變控制輸入模式</summary>
     private void f_ChangePlayCtrlState(int i = 0)
     {
         int iState = (int)_PlayCtrl;
@@ -727,7 +753,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
                     break;
             }
         }
-    }
+    }*/
 
     /// <summary>玩家控制輸入</summary>
     private void f_PlayCtrlInput(int iArrow)

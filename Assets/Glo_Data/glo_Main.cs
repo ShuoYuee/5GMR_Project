@@ -291,11 +291,9 @@ public class glo_Main : MonoBehaviour
 
     void Update()
     {
-
         m_GameMessagePool.f_Update();
         m_UIMessagePool.f_Update();
         m_GameSocket.f_Update();
-
     }
 
     private void OnDestroy()

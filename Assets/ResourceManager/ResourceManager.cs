@@ -143,6 +143,19 @@ public class ResourceManager
         }
         return tAudioClip;
     }
+
+    /// <summary>
+    /// 獲取材質球
+    /// </summary>
+    public Material f_LoadMaterial(string strFile)
+    {
+        Material tMaterial = Resources.Load<Material>("Material/" + strFile) as Material;
+        if (tMaterial == null)
+        {
+            MessageBox.ASSERT("無此材質球" + strFile);
+        }
+        return tMaterial;
+    }
     #endregion
 
     #region AB資源

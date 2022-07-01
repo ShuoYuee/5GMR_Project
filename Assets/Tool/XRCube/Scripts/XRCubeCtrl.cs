@@ -17,14 +17,14 @@ public class XRCubeCtrl : MonoBehaviour
 
     // Start is called before the first frame update
     GameObject GOnow;
-    public GameMainTriggerCtrl _GameMainTriggerCtrl;
+    private GameMainTriggerCtrl _GameMainTriggerCtrl;
     public GameObject DM;
     public GameObject Ani;
     public bool showLaser = false;
     int a = 0;
     void Start()
     {
-        
+        _GameMainTriggerCtrl = Camera.main.GetComponent<GameMainTriggerCtrl>();
     }
     float time=0;
     // Update is called once per frame
@@ -62,6 +62,10 @@ public class XRCubeCtrl : MonoBehaviour
                     {
                         _GameMainTriggerCtrl._ObjEm = GameMainTriggerCtrl.EM_TriggerObj.ButtonUI;
                     }
+                    else if (oCurCollider.TryGetComponent(out ccUI_U3DSpace.ccInteractable ccInteractable))//MR UI
+                    {
+                        _GameMainTriggerCtrl._ObjEm = GameMainTriggerCtrl.EM_TriggerObj.MRUI;
+                    }
 
                     _GameMainTriggerCtrl.f_SetCtrl(oCurCollider);
                     _GameMainTriggerCtrl.f_SetFocus(hit.point);
@@ -74,6 +78,7 @@ public class XRCubeCtrl : MonoBehaviour
                 {
                     GOnow.transform.GetComponent<MeshRenderer>().enabled = false;
                 }
+                _GameMainTriggerCtrl.f_LeaveRay();
             }
         }
         else
@@ -140,10 +145,6 @@ public class XRCubeCtrl : MonoBehaviour
         {//改變物件座標模式(世界座標、本地座標)
             //GameMain.GetInstance().m_EditManager.f_SetEditPoint(iSet);
             GameMain.GetInstance().m_EditManager.f_SetAddEditPoint(iSet);
-        }
-        else if (iClick == 6)
-        {
-
         }
     }
 }

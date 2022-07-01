@@ -5,6 +5,9 @@ using UnityEngine.UI;
 using ccU3DEngine;
 using MR_Edit;
 
+/// <summary>
+/// 啦啦隊遊戲
+/// </summary>
 public class GameCheLead : MonoBehaviour
 {
     public Animator _ModelAnimA, _ModelAnimB;
@@ -31,11 +34,6 @@ public class GameCheLead : MonoBehaviour
         _BtnStart.onClick.AddListener(f_Start);
 
         glo_Main.GetInstance().m_GameMessagePool.f_AddListener(MessageDef.Guess_ExitRoom, f_ExitRoom);
-    }
-
-    private void OnDestroy()
-    {
-        glo_Main.GetInstance().m_GameMessagePool.f_RemoveListener(MessageDef.Guess_ExitRoom, f_ExitRoom);
     }
 
     #region 遊戲UI流程

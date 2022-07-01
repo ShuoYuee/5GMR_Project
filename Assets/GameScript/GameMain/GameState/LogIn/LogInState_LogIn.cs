@@ -73,9 +73,9 @@ public class LogInState_LogIn : ccMachineStateBase
             GameDataLoad.f_SaveGameSystemMemory();
             GameDataLoad.f_LoginGame(tCMsg_GTC_LoginRelt.m_userName, tCMsg_GTC_LoginRelt.m_PlayerId, tCMsg_GTC_LoginRelt.m_iTeam);
 
-            ccUIManage.GetInstance().f_SendMsgV3("ui_mrcontrol.bundle", "UI_MRControl", UIMessageDef.UI_OPEN);
             MessageBox.DEBUG("Logged in successfully.");
             ccUIManage.GetInstance().f_SendMsgV3("ui_login.bundle", "UI_Login", UIMessageDef.UI_CLOSE);
+            ccSceneMgr.GetInstance().f_ChangeScene("GameMain");
             return;
         }
         else if (tCMsg_GTC_LoginRelt.m_result == (int)eMsgOperateResult.OR_Error_LoginTimeOut)

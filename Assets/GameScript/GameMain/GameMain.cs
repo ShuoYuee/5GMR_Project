@@ -3,9 +3,9 @@ using UnityEngine;
 using ccU3DEngine;
 using Epibyte.ConceptVR;
 using ZenFulcrum.EmbeddedBrowser;
-using MR_Edit;
+using ccUI_U3DSpace;
 
-public class GameMain : MonoBehaviour
+public class GameMain : ccSceneBase
 {
     #region 管理物件
     [Header("初始化")]
@@ -39,9 +39,9 @@ public class GameMain : MonoBehaviour
     [Tooltip("生成物件將統一掛在該物件下")]
     /// <summary>主父物件</summary>
     public GameObject m_GameTable;
-    [Tooltip("控制模式顯示文字")]
-    /// <summary>控制模式顯示文字</summary>
-    public TextMesh _PlayerCtrlText;
+    //[Tooltip("控制模式顯示文字")]
+    ///// <summary>控制模式顯示文字</summary>
+    //public TextMesh _PlayerCtrlText;
     [Tooltip("刪除物件顯示文字")]
     /// <summary>刪除物件顯示文字</summary>
     public TextMesh _DeleteText;
@@ -53,14 +53,37 @@ public class GameMain : MonoBehaviour
     public EditManager m_EditManager = new EditManager();
     #endregion
 
+    private ccUImrManager m_ccUImrManager = new ccUImrManager();
+
     private static GameMain _Instance = null;
     public static GameMain GetInstance()
     {
         return _Instance;
     }
 
+    protected override void StartScene()
+    {
+        _Instance = this;
+        m_ccUImrManager.f_Init();
+        m_GameTable.SetActive(true);
 
-    void Awake()
+        f_InitGameObj();
+
+        ccUIManage.GetInstance().f_SendMsgV3("ui_mrcontrol.bundle", "UI_MRControl", UIMessageDef.UI_OPEN);
+        ccTimeEvent.GetInstance().f_RegEvent(0.3f, true, null, f_UpdateMenuPos);
+    }
+
+    protected override void LoadRes()
+    {
+        
+    }
+
+    public override void UnLoadRes()
+    {
+        
+    }
+
+    /*void Awake()
     {
         _Instance = this;
         m_GameTable.SetActive(true);
@@ -70,7 +93,7 @@ public class GameMain : MonoBehaviour
 
         //ccUIManage.GetInstance().f_SendMsgV3("ui_mrcontrol.bundle", "UI_MRControl", BaseUIMessageDef.UI_OPEN);
         ccTimeEvent.GetInstance().f_RegEvent(0.3f, true, null, f_UpdateMenuPos);
-    }
+    }*/
 
     /// <summary>手動導入場上物件</summary>
     private void f_InitGameObj()

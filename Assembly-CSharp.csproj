@@ -181,6 +181,11 @@
     <Compile Include="Assets\Script\Interactable\Interactable_GameCtrl.cs" />
     <Compile Include="Assets\Script\Main_Browser.cs" />
     <Compile Include="Assets\Script\UIFollowVR.cs" />
+    <Compile Include="Assets\Script\VR_UIControl\MRUI_LogicBase.cs" />
+    <Compile Include="Assets\Script\VR_UIControl\MRUI_LogicBase_2D.cs" />
+    <Compile Include="Assets\Script\VR_UIControl\UI_MRGameMain.cs" />
+    <Compile Include="Assets\Script\VR_UIControl\ccInteractable.cs" />
+    <Compile Include="Assets\Script\VR_UIControl\ccUImrManager.cs" />
     <Compile Include="Assets\ThirdParty\DOTween\DOTweenPro\DOTweenAnimation.cs" />
     <Compile Include="Assets\ThirdParty\VolumetricLines\BuiltInRenderPipeline\ExampleScenes\ExampleScripts\CannonBehavior.cs" />
     <Compile Include="Assets\ThirdParty\VolumetricLines\BuiltInRenderPipeline\ExampleScenes\ExampleScripts\CreateSinShapedLineStrip.cs" />

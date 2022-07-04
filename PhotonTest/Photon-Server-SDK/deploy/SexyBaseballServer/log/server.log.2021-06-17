@@ -1,0 +1,211 @@
+﻿2021-06-17 20:03:11,189 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-17 20:03:11,199 [1] ERROR Photon.SocketServer.ApplicationBase - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 PHPServiceServer.Config.f_Read(String strRootNode, String strNode, String strChildNode) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Config\Config.cs:行号 30
+   在 SexyBaseball.Server.ServerApp.Setup() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\ServerApp.cs:行号 42
+   在 Photon.SocketServer.ApplicationBase.PhotonHostRuntimeInterfaces.IPhotonControl.OnPhotonRunning() 位置 h:\svncontent\photon-socketserver-sdk_cloud\src\Photon.SocketServer\ApplicationBase.cs:行号 1169
+2021-06-17 20:03:11,300 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-17 20:03:11,307 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-17 20:04:28,268 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-17 20:04:28,678 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-17 20:04:28,763 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-17 20:04:28,764 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-17 20:04:28,765 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-17 20:04:28,767 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-17 20:04:28,767 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-17 20:04:30,982 [1] ERROR Photon.SocketServer.ApplicationBase - MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.Exception: 引发类型为“System.Exception”的异常。
+   在 MySql.Data.MySqlClient.NativeDriver.Open()
+   在 MySql.Data.MySqlClient.NativeDriver.Open()
+   在 MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   在 MySql.Data.MySqlClient.MySqlConnection.Open()
+   在 PHPServiceServer.MySQL.ccMySql.f_Connect() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MySQL\ccMySql.cs:行号 40
+   在 SexyBaseball.Server.ServerApp.Setup() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\ServerApp.cs:行号 54
+   在 Photon.SocketServer.ApplicationBase.PhotonHostRuntimeInterfaces.IPhotonControl.OnPhotonRunning() 位置 h:\svncontent\photon-socketserver-sdk_cloud\src\Photon.SocketServer\ApplicationBase.cs:行号 1171
+2021-06-17 20:04:31,009 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-17 20:04:31,014 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-17 20:09:36,321 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-17 20:09:36,642 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-17 20:09:36,654 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-17 20:09:36,656 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-17 20:09:36,657 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-17 20:09:36,659 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-17 20:09:36,659 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-17 20:09:38,767 [1] ERROR Photon.SocketServer.ApplicationBase - MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.Exception: 引发类型为“System.Exception”的异常。
+   在 MySql.Data.MySqlClient.NativeDriver.Open()
+   在 MySql.Data.MySqlClient.NativeDriver.Open()
+   在 MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   在 MySql.Data.MySqlClient.MySqlConnection.Open()
+   在 PHPServiceServer.MySQL.ccMySql.f_Connect() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MySQL\ccMySql.cs:行号 40
+   在 SexyBaseball.Server.ServerApp.Setup() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\ServerApp.cs:行号 54
+   在 Photon.SocketServer.ApplicationBase.PhotonHostRuntimeInterfaces.IPhotonControl.OnPhotonRunning() 位置 h:\svncontent\photon-socketserver-sdk_cloud\src\Photon.SocketServer\ApplicationBase.cs:行号 1171
+2021-06-17 20:09:38,779 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-17 20:09:38,784 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-17 20:11:25,002 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-17 20:11:25,326 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-17 20:11:25,338 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-17 20:11:25,340 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-17 20:11:25,342 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-17 20:11:25,344 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-17 20:11:25,344 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-17 20:11:25,408 [1] ERROR Photon.SocketServer.ApplicationBase - MySql.Data.MySqlClient.MySqlException (0x80004005): Access denied for user 'sexybaseballuser'@'localhost' (using password: YES)
+   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.Authenticate411()
+   在 MySql.Data.MySqlClient.NativeDriver.Open()
+   在 MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   在 MySql.Data.MySqlClient.MySqlConnection.Open()
+   在 PHPServiceServer.MySQL.ccMySql.f_Connect() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MySQL\ccMySql.cs:行号 40
+   在 SexyBaseball.Server.ServerApp.Setup() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\ServerApp.cs:行号 54
+   在 Photon.SocketServer.ApplicationBase.PhotonHostRuntimeInterfaces.IPhotonControl.OnPhotonRunning() 位置 h:\svncontent\photon-socketserver-sdk_cloud\src\Photon.SocketServer\ApplicationBase.cs:行号 1171
+2021-06-17 20:11:25,421 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-17 20:11:25,428 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-17 20:11:32,120 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-17 20:11:32,424 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-17 20:11:32,435 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-17 20:11:32,437 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-17 20:11:32,437 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-17 20:11:32,439 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-17 20:11:32,439 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-17 20:11:32,485 [1] ERROR Photon.SocketServer.ApplicationBase - MySql.Data.MySqlClient.MySqlException (0x80004005): Access denied for user 'sexybaseballuser'@'localhost' (using password: YES)
+   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.Authenticate411()
+   在 MySql.Data.MySqlClient.NativeDriver.Open()
+   在 MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   在 MySql.Data.MySqlClient.MySqlConnection.Open()
+   在 PHPServiceServer.MySQL.ccMySql.f_Connect() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MySQL\ccMySql.cs:行号 40
+   在 SexyBaseball.Server.ServerApp.Setup() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\ServerApp.cs:行号 54
+   在 Photon.SocketServer.ApplicationBase.PhotonHostRuntimeInterfaces.IPhotonControl.OnPhotonRunning() 位置 h:\svncontent\photon-socketserver-sdk_cloud\src\Photon.SocketServer\ApplicationBase.cs:行号 1171
+2021-06-17 20:11:32,496 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-17 20:11:32,501 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-17 20:13:16,829 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-17 20:13:17,145 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-17 20:13:17,156 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-17 20:13:17,158 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-17 20:13:17,159 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-17 20:13:17,161 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-17 20:13:17,161 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-17 20:13:17,207 [1] ERROR Photon.SocketServer.ApplicationBase - MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown database 'sexybaseball2'
+   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.Authenticate411()
+   在 MySql.Data.MySqlClient.NativeDriver.Open()
+   在 MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   在 MySql.Data.MySqlClient.MySqlConnection.Open()
+   在 PHPServiceServer.MySQL.ccMySql.f_Connect() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MySQL\ccMySql.cs:行号 40
+   在 SexyBaseball.Server.ServerApp.Setup() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\ServerApp.cs:行号 54
+   在 Photon.SocketServer.ApplicationBase.PhotonHostRuntimeInterfaces.IPhotonControl.OnPhotonRunning() 位置 h:\svncontent\photon-socketserver-sdk_cloud\src\Photon.SocketServer\ApplicationBase.cs:行号 1171
+2021-06-17 20:13:17,218 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-17 20:13:17,224 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-17 20:13:43,002 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-17 20:13:43,273 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-17 20:13:43,285 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-17 20:13:43,287 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-17 20:13:43,288 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-17 20:13:43,290 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-17 20:13:43,290 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-17 20:13:43,462 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-17 20:15:18,677 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-17 20:15:18,680 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-17 20:15:23,987 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-17 20:15:24,311 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-17 20:15:24,322 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-17 20:15:24,324 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-17 20:15:24,326 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-17 20:15:24,329 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-17 20:15:24,329 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-17 20:15:24,459 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-17 20:16:41,376 [11] INFO  SexyBaseball.Server.GameLogic.GameLogicPool - User '11' doesn't exist.
+2021-06-17 20:16:47,868 [10] INFO  SexyBaseball.Server.GameLogic.GameLogicPool - User '11' doesn't exist.
+2021-06-17 20:18:33,843 [14] INFO  SexyBaseball.Server.GameLogic.GameLogicPool - User '11' doesn't exist.
+2021-06-17 20:49:28,549 [14] INFO  SexyBaseball.Server.GameLogic.GameLogicPool - User '11' doesn't exist.
+2021-06-17 20:53:51,285 [11] INFO  SexyBaseball.Server.GameLogic.GameLogicPool - User '11' doesn't exist.
+2021-06-17 20:55:51,359 [10] INFO  SexyBaseball.Server.GameLogic.GameLogicPool - User 'user' doesn't exist.
+2021-06-17 20:55:54,798 [16] INFO  SexyBaseball.Server.GameLogic.GameLogicPool - User 'user' doesn't exist.
+2021-06-17 20:56:08,520 [13] INFO  SexyBaseball.Server.GameLogic.GameLogicPool - User 'user' doesn't exist.
+2021-06-17 20:56:18,319 [10] INFO  SexyBaseball.Server.GameLogic.GameLogicPool - User 'user' doesn't exist.
+2021-06-17 21:45:54,045 [10] INFO  SexyBaseball.Server.GameLogic.GameLogicPool - User '11' doesn't exist.
+2021-06-17 21:46:27,826 [11] INFO  SexyBaseball.Server.GameLogic.GameLogicPool - User '11' doesn't exist.
+2021-06-17 21:51:19,942 [11] INFO  SexyBaseball.Server.GameLogic.GameLogicPool - User '11' doesn't exist.
+2021-06-17 21:52:22,001 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-17 21:52:22,008 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-17 21:54:15,387 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-17 21:54:15,717 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-17 21:54:15,731 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-17 21:54:15,733 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-17 21:54:15,734 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-17 21:54:15,737 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-17 21:54:15,737 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-17 21:54:15,885 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-17 21:54:57,387 [10] INFO  SexyBaseball.Server.GameLogic.GameLogicPool - User ID '7' doesn't exist.
+2021-06-17 21:55:03,231 [10] INFO  SexyBaseball.Server.GameLogic.GameLogicPool - User ID '7' doesn't exist.
+2021-06-17 21:55:16,846 [10] INFO  SexyBaseball.Server.GameLogic.GameLogicPool - User ID '7' doesn't exist.
+2021-06-17 21:55:41,977 [11] INFO  SexyBaseball.Server.GameLogic.GameLogicPool - User ID '7' doesn't exist.
+2021-06-17 21:56:06,216 [10] INFO  SexyBaseball.Server.GameLogic.GameLogicPool - User ID '7' doesn't exist.
+2021-06-17 21:57:14,517 [11] INFO  SexyBaseball.Server.GameLogic.GameLogicPool - User ID '7' doesn't exist.
+2021-06-17 21:57:49,232 [8] INFO  SexyBaseball.Server.GameLogic.GameLogicPool - User ID '7' doesn't exist.
+2021-06-17 22:03:25,893 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-17 22:03:25,895 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-17 22:03:41,674 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-17 22:03:42,075 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-17 22:03:42,089 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-17 22:03:42,091 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-17 22:03:42,093 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-17 22:03:42,095 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-17 22:03:42,095 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-17 22:03:42,225 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-17 22:04:08,870 [14] INFO  SexyBaseball.Server.GameLogic.GameLogicPool - User ID '7' doesn't exist.
+2021-06-17 22:04:33,171 [12] INFO  SexyBaseball.Server.GameLogic.GameLogicPool - User ID '7' doesn't exist.
+2021-06-17 22:05:32,872 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-17 22:05:32,881 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-17 22:05:42,967 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-17 22:05:43,350 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-17 22:05:43,367 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-17 22:05:43,370 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-17 22:05:43,371 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-17 22:05:43,373 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-17 22:05:43,373 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-17 22:05:43,518 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-17 22:07:07,286 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-17 22:07:07,289 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-17 22:07:13,638 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-17 22:07:14,018 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-17 22:07:14,031 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-17 22:07:14,033 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-17 22:07:14,034 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-17 22:07:14,036 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-17 22:07:14,036 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-17 22:07:14,179 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-17 22:08:13,823 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-17 22:08:13,826 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-17 22:08:25,095 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-17 22:08:25,502 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-17 22:08:25,514 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-17 22:08:25,516 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-17 22:08:25,517 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-17 22:08:25,519 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-17 22:08:25,519 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-17 22:08:25,648 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-17 22:08:48,486 [11] INFO  SexyBaseball.Server.GameLogic.GameLogicPool - User ID '7' doesn't exist.
+2021-06-17 22:08:56,997 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-17 22:08:56,999 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-17 22:09:59,498 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-17 22:09:59,905 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-17 22:09:59,918 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-17 22:09:59,920 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-17 22:09:59,921 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-17 22:09:59,924 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-17 22:09:59,924 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-17 22:10:00,050 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-17 22:10:18,149 [10] INFO  SexyBaseball.Server.GameLogic.GameLogicPool - User ID '7' doesn't exist.
+2021-06-17 22:10:23,600 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-17 22:10:23,604 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-17 22:10:52,521 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-17 22:10:52,883 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-17 22:10:52,894 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-17 22:10:52,896 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-17 22:10:52,897 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-17 22:10:52,899 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-17 22:10:52,899 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-17 22:10:53,029 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 

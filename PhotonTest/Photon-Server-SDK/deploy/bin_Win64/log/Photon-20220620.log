@@ -1,0 +1,85 @@
+23396: 17:20:09.229 - ---
+23396: 17:20:09.229 - Service: "Photon Socket Server" starting
+23396: 17:20:09.229 - Config File: E:\practice\MR\Photon-OnPremise-Server-SDK_v4\deploy\bin_Win64\PhotonServer.config
+23396: 17:20:09.230 - Will produce at most: 10 crash dumps
+23396: 17:20:09.230 - Service shutting down
+23396: 17:20:09.232 - Service shut down complete
+10424: 17:20:14.710 - ---
+10424: 17:20:14.710 - Service: "Photon Socket Server" starting
+10424: 17:20:14.710 - Config File: E:\practice\MR\Photon-OnPremise-Server-SDK_v4\deploy\bin_Win64\PhotonServer.config
+10424: 17:20:14.711 - Will produce at most: 10 crash dumps
+10424: 17:20:14.711 - Service shutting down
+10424: 17:20:14.712 - Service shut down complete
+23652: 17:20:24.017 - ---
+23652: 17:20:24.017 - Service: "Photon Socket Server" starting
+23652: 17:20:24.017 - Config File: E:\practice\MR\Photon-OnPremise-Server-SDK_v4\deploy\bin_Win64\PhotonServer.config
+23652: 17:20:24.018 - Will produce at most: 10 crash dumps
+23652: 17:20:24.018 - Service shutting down
+23652: 17:20:24.019 - Service shut down complete
+14808: 17:22:05.634 - ---
+14808: 17:22:05.634 - Service: "Photon Socket Server" starting
+14808: 17:22:05.634 - Config File: E:\practice\MR\Photon-OnPremise-Server-SDK_v4\deploy\bin_Win64\PhotonServer.config
+14808: 17:22:05.636 - Will produce at most: 10 crash dumps
+14808: 17:22:05.636 - Service shutting down
+14808: 17:22:05.637 - Service shut down complete
+23484: 17:22:15.154 - ---
+23484: 17:22:15.154 - Service: "Photon Socket Server" starting
+23484: 17:22:15.155 - Config File: E:\practice\MR\Photon-OnPremise-Server-SDK_v4\deploy\bin_Win64\PhotonServer.config
+23484: 17:22:15.156 - Will produce at most: 10 crash dumps
+23484: 17:22:15.156 - Service shutting down
+23484: 17:22:15.156 - Service shut down complete
+22516: 17:29:07.855 - ---
+22516: 17:29:07.855 - Service: "Photon Socket Server" starting
+22516: 17:29:07.855 - Config File: E:\practice\MR\Photon-OnPremise-Server-SDK_v4\deploy\bin_Win64\PhotonServer.config
+22516: 17:29:07.856 - Will produce at most: 10 crash dumps
+22516: 17:29:07.856 - Service shutting down
+22516: 17:29:07.858 - Service shut down complete
+11464: 17:30:51.104 - ---
+11464: 17:30:51.104 - Service: "Photon Socket Server" starting
+11464: 17:30:51.104 - Config File: E:\practice\MR\Photon-OnPremise-Server-SDK_v4\deploy\bin_Win64\PhotonServer.config
+11464: 17:30:51.106 - Will produce at most: 10 crash dumps
+11464: 17:30:51.106 - MessageBox: Photon Socket Server - 4.0.28.2962
+
+Usage: PhotonSocketServer.exe  Followed by the following command line options.
+  /help		Display this list.
+  /noMessages	Must be first. Do not display status messages.
+  /install name	Installs an instance of the service named 'name'.
+  /installCounters	Installs performance counters for this service.
+  /remove name	Removes the instance of the service named 'name'.
+  /removeCounters	Removes performance counters for this service.
+  /run name   	Runs the service as a normal process for debugging.
+  /stop         	Request all instances of Photon to shutdown and exit.
+  /stop1 name	Request instance 'name' of Photon shutdown and exit.
+  /configPath path	Use the supplied path to locate the config file.
+  /config file	Use the supplied config file.
+
+Note that /config and /configFile can be used with /install and /run
+
+Note that only /noMessages can be combined with all other command line options.
+
+11464: 17:30:52.298 - Service shutting down: commandline option error. Errorcode: 255
+11464: 17:30:52.299 - Service shut down complete
+25504: 17:32:35.805 - ---
+25504: 17:32:35.805 - Service: "Photon Socket Server" starting
+25504: 17:32:35.805 - Config File: E:\practice\MR\Photon-OnPremise-Server-SDK_v4\deploy\bin_Win64\PhotonServer.config
+25504: 17:32:35.807 - Will produce at most: 10 crash dumps
+25504: 17:32:35.807 - Service shutting down
+25504: 17:32:35.808 - Service shut down complete
+13624: 18:08:46.361 - ---
+13624: 18:08:46.361 - Service: "Photon Socket Server" starting
+13624: 18:08:46.361 - Config File: E:\practice\MR\Photon-OnPremise-Server-SDK_v4\deploy\bin_Win64\PhotonServer.config
+13624: 18:08:46.363 - Will produce at most: 10 crash dumps
+13624: 18:08:46.363 - Service shutting down
+13624: 18:08:46.364 - Service shut down complete
+30800: 18:36:14.562 - ---
+30800: 18:36:14.562 - Service: "Photon Socket Server" starting
+30800: 18:36:14.562 - Config File: E:\practice\MR\Photon-OnPremise-Server-SDK_v4\deploy\bin_Win64\PhotonServer.config
+30800: 18:36:14.563 - Will produce at most: 10 crash dumps
+30800: 18:36:14.563 - Service shutting down
+30800: 18:36:14.564 - Service shut down complete
+8796: 19:02:14.016 - ---
+8796: 19:02:14.016 - Service: "Photon Socket Server" starting
+8796: 19:02:14.016 - Config File: E:\practice\MR\Photon-OnPremise-Server-SDK_v4\deploy\bin_Win64\PhotonServer.config
+8796: 19:02:14.018 - Will produce at most: 10 crash dumps
+8796: 19:02:14.018 - Service shutting down
+8796: 19:02:14.019 - Service shut down complete

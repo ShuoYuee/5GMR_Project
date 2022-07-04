@@ -1,0 +1,11 @@
+2021-03-25 09:39:27,428 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=MMoDemo; AppPath=D:\Library\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\MmoDemo, Type=Photon.MmoDemo.Server.PhotonApplication 
+2021-03-25 09:39:27,451 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=MMoDemo
+2021-03-25 09:39:27,455 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=MMoDemo
+2021-03-25 09:39:52,299 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=MMoDemo; AppPath=D:\Library\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\MmoDemo, Type=Photon.MmoDemo.Server.PhotonApplication 
+2021-03-25 09:40:07,469 [13] INFO  Photon.MmoDemo.Server.World - created world Mmo Grid Demo
+2021-03-25 09:59:39,658 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=MMoDemo
+2021-03-25 09:59:39,662 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=MMoDemo
+2021-03-25 11:22:20,573 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=MMoDemo; AppPath=D:\Library\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\MmoDemo, Type=Photon.MmoDemo.Server.PhotonApplication 
+2021-03-25 11:22:22,422 [15] INFO  Photon.MmoDemo.Server.World - created world Mmo Grid Demo
+2021-03-25 12:22:07,047 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=MMoDemo
+2021-03-25 12:22:07,051 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=MMoDemo

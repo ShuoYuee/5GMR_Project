@@ -1,0 +1,2 @@
+C:\Users\puetsualiau\Desktop\Photon-OnPremise-Server-SDK_v4-0-29-11263\src-server\Hive\PhotonHive\obj\Release\PhotonHive.csprojAssemblyReference.cache
+C:\Users\puetsualiau\Desktop\Photon-OnPremise-Server-SDK_v4-0-29-11263\src-server\Hive\PhotonHive\obj\Release\PhotonHive.csproj.CoreCompileInputs.cache

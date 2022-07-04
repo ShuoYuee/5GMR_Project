@@ -1,0 +1,73 @@
+2021-03-26 17:19:05,369 [1] INFO  Photon.StarDust.Client.Program - Starting 5 games with 3 players
+2021-03-26 17:19:05,496 [5] ERROR Photon.StarDust.Client.Connections.ClientConnection - 4032828: Receive issue. State: Connected Exception: System.Net.Sockets.SocketException (0x80004005): 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   在 ExitGames.Client.Photon.SocketUdp.ReceiveLoop() 
+2021-03-26 17:19:05,499 [5] WARN  Photon.StarDust.Client.ConnectionStates.LoadBalancing.WaitingForMasterConnect - Waiting: OnPeerStatusCallback: unexpected return code ExceptionOnReceive
+2021-03-26 17:19:05,651 [7] ERROR Photon.StarDust.Client.Connections.ClientConnection - 12547953: Receive issue. State: Connected Exception: System.Net.Sockets.SocketException (0x80004005): 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   在 ExitGames.Client.Photon.SocketUdp.ReceiveLoop() 
+2021-03-26 17:19:05,651 [7] WARN  Photon.StarDust.Client.ConnectionStates.LoadBalancing.WaitingForMasterConnect - Waiting: OnPeerStatusCallback: unexpected return code ExceptionOnReceive
+2021-03-26 17:19:05,789 [7] ERROR Photon.StarDust.Client.Connections.ClientConnection - 11429296: Receive issue. State: Connected Exception: System.Net.Sockets.SocketException (0x80004005): 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   在 ExitGames.Client.Photon.SocketUdp.ReceiveLoop() 
+2021-03-26 17:19:05,789 [7] WARN  Photon.StarDust.Client.ConnectionStates.LoadBalancing.WaitingForMasterConnect - Waiting: OnPeerStatusCallback: unexpected return code ExceptionOnReceive
+2021-03-26 17:19:05,924 [6] INFO  Photon.StarDust.Client.Program - [11576] Started game WLB(11576)1 with 3 clients
+2021-03-26 17:19:05,948 [7] ERROR Photon.StarDust.Client.Connections.ClientConnection - 41622463: Receive issue. State: Connected Exception: System.Net.Sockets.SocketException (0x80004005): 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   在 ExitGames.Client.Photon.SocketUdp.ReceiveLoop() 
+2021-03-26 17:19:05,948 [7] WARN  Photon.StarDust.Client.ConnectionStates.LoadBalancing.WaitingForMasterConnect - Waiting: OnPeerStatusCallback: unexpected return code ExceptionOnReceive
+2021-03-26 17:19:06,179 [14] ERROR Photon.StarDust.Client.Connections.ClientConnection - 56140151: Receive issue. State: Connected Exception: System.Net.Sockets.SocketException (0x80004005): 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   在 ExitGames.Client.Photon.SocketUdp.ReceiveLoop() 
+2021-03-26 17:19:06,180 [14] WARN  Photon.StarDust.Client.ConnectionStates.LoadBalancing.WaitingForMasterConnect - Waiting: OnPeerStatusCallback: unexpected return code ExceptionOnReceive
+2021-03-26 17:19:06,290 [11] ERROR Photon.StarDust.Client.Connections.ClientConnection - 39086322: Receive issue. State: Connected Exception: System.Net.Sockets.SocketException (0x80004005): 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   在 ExitGames.Client.Photon.SocketUdp.ReceiveLoop() 
+2021-03-26 17:19:06,290 [11] WARN  Photon.StarDust.Client.ConnectionStates.LoadBalancing.WaitingForMasterConnect - Waiting: OnPeerStatusCallback: unexpected return code ExceptionOnReceive
+2021-03-26 17:19:06,376 [6] INFO  Photon.StarDust.Client.Program - [11576] Started game WLB(11576)2 with 3 clients
+2021-03-26 17:19:06,389 [17] DEBUG Photon.StarDust.Client.Program - peers: 0, r-ev: 0, ur-ev: 0, r-op: 0, ur-op: 0, res: 0, r-rtt: 0, ur-rtt: 0, rtt: 0, var: 0, flsh-rtt: 0, flsh-ev 0, flsh-op 0
+2021-03-26 17:19:06,402 [11] ERROR Photon.StarDust.Client.Connections.ClientConnection - 36181605: Receive issue. State: Connected Exception: System.Net.Sockets.SocketException (0x80004005): 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   在 ExitGames.Client.Photon.SocketUdp.ReceiveLoop() 
+2021-03-26 17:19:06,402 [11] WARN  Photon.StarDust.Client.ConnectionStates.LoadBalancing.WaitingForMasterConnect - Waiting: OnPeerStatusCallback: unexpected return code ExceptionOnReceive
+2021-03-26 17:19:06,522 [30] ERROR Photon.StarDust.Client.Connections.ClientConnection - 60588784: Receive issue. State: Connected Exception: System.Net.Sockets.SocketException (0x80004005): 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   在 ExitGames.Client.Photon.SocketUdp.ReceiveLoop() 
+2021-03-26 17:19:06,522 [30] WARN  Photon.StarDust.Client.ConnectionStates.LoadBalancing.WaitingForMasterConnect - Waiting: OnPeerStatusCallback: unexpected return code ExceptionOnReceive
+2021-03-26 17:19:06,665 [17] ERROR Photon.StarDust.Client.Connections.ClientConnection - 21647132: Receive issue. State: Connected Exception: System.Net.Sockets.SocketException (0x80004005): 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   在 ExitGames.Client.Photon.SocketUdp.ReceiveLoop() 
+2021-03-26 17:19:06,665 [17] WARN  Photon.StarDust.Client.ConnectionStates.LoadBalancing.WaitingForMasterConnect - Waiting: OnPeerStatusCallback: unexpected return code ExceptionOnReceive
+2021-03-26 17:19:06,806 [6] INFO  Photon.StarDust.Client.Program - [11576] Started game WLB(11576)3 with 3 clients
+2021-03-26 17:19:06,836 [32] ERROR Photon.StarDust.Client.Connections.ClientConnection - 38860371: Receive issue. State: Connected Exception: System.Net.Sockets.SocketException (0x80004005): 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   在 ExitGames.Client.Photon.SocketUdp.ReceiveLoop() 
+2021-03-26 17:19:06,836 [32] WARN  Photon.StarDust.Client.ConnectionStates.LoadBalancing.WaitingForMasterConnect - Waiting: OnPeerStatusCallback: unexpected return code ExceptionOnReceive
+2021-03-26 17:19:06,948 [16] ERROR Photon.StarDust.Client.Connections.ClientConnection - 49538252: Receive issue. State: Connected Exception: System.Net.Sockets.SocketException (0x80004005): 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   在 ExitGames.Client.Photon.SocketUdp.ReceiveLoop() 
+2021-03-26 17:19:06,948 [16] WARN  Photon.StarDust.Client.ConnectionStates.LoadBalancing.WaitingForMasterConnect - Waiting: OnPeerStatusCallback: unexpected return code ExceptionOnReceive
+2021-03-26 17:19:07,132 [29] ERROR Photon.StarDust.Client.Connections.ClientConnection - 44879274: Receive issue. State: Connected Exception: System.Net.Sockets.SocketException (0x80004005): 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   在 ExitGames.Client.Photon.SocketUdp.ReceiveLoop() 
+2021-03-26 17:19:07,132 [29] WARN  Photon.StarDust.Client.ConnectionStates.LoadBalancing.WaitingForMasterConnect - Waiting: OnPeerStatusCallback: unexpected return code ExceptionOnReceive
+2021-03-26 17:19:07,292 [6] INFO  Photon.StarDust.Client.Program - [11576] Started game WLB(11576)4 with 3 clients
+2021-03-26 17:19:07,318 [29] ERROR Photon.StarDust.Client.Connections.ClientConnection - 61683153: Receive issue. State: Connected Exception: System.Net.Sockets.SocketException (0x80004005): 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   在 ExitGames.Client.Photon.SocketUdp.ReceiveLoop() 
+2021-03-26 17:19:07,318 [29] WARN  Photon.StarDust.Client.ConnectionStates.LoadBalancing.WaitingForMasterConnect - Waiting: OnPeerStatusCallback: unexpected return code ExceptionOnReceive
+2021-03-26 17:19:07,397 [15] DEBUG Photon.StarDust.Client.Program - peers: 0, r-ev: 0, ur-ev: 0, r-op: 0, ur-op: 0, res: 0, r-rtt: 0, ur-rtt: 0, rtt: 0, var: 0, flsh-rtt: 0, flsh-ev 0, flsh-op 0
+2021-03-26 17:19:07,414 [15] ERROR Photon.StarDust.Client.Connections.ClientConnection - 42931033: Receive issue. State: Connected Exception: System.Net.Sockets.SocketException (0x80004005): 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   在 ExitGames.Client.Photon.SocketUdp.ReceiveLoop() 
+2021-03-26 17:19:07,414 [15] WARN  Photon.StarDust.Client.ConnectionStates.LoadBalancing.WaitingForMasterConnect - Waiting: OnPeerStatusCallback: unexpected return code ExceptionOnReceive
+2021-03-26 17:19:07,557 [15] ERROR Photon.StarDust.Client.Connections.ClientConnection - 39053774: Receive issue. State: Connected Exception: System.Net.Sockets.SocketException (0x80004005): 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   在 ExitGames.Client.Photon.SocketUdp.ReceiveLoop() 
+2021-03-26 17:19:07,557 [15] WARN  Photon.StarDust.Client.ConnectionStates.LoadBalancing.WaitingForMasterConnect - Waiting: OnPeerStatusCallback: unexpected return code ExceptionOnReceive
+2021-03-26 17:19:07,744 [6] INFO  Photon.StarDust.Client.Program - [11576] Started game WLB(11576)5 with 3 clients
+2021-03-26 17:19:08,399 [14] DEBUG Photon.StarDust.Client.Program - peers: 0, r-ev: 0, ur-ev: 0, r-op: 0, ur-op: 0, res: 0, r-rtt: 0, ur-rtt: 0, rtt: 0, var: 0, flsh-rtt: 0, flsh-ev 0, flsh-op 0
+2021-03-26 17:19:09,399 [31] DEBUG Photon.StarDust.Client.Program - peers: 0, r-ev: 0, ur-ev: 0, r-op: 0, ur-op: 0, res: 0, r-rtt: 0, ur-rtt: 0, rtt: 0, var: 0, flsh-rtt: 0, flsh-ev 0, flsh-op 0
+2021-03-26 17:19:10,413 [36] DEBUG Photon.StarDust.Client.Program - peers: 0, r-ev: 0, ur-ev: 0, r-op: 0, ur-op: 0, res: 0, r-rtt: 0, ur-rtt: 0, rtt: 0, var: 0, flsh-rtt: 0, flsh-ev 0, flsh-op 0
+2021-03-26 17:19:11,413 [29] DEBUG Photon.StarDust.Client.Program - peers: 0, r-ev: 0, ur-ev: 0, r-op: 0, ur-op: 0, res: 0, r-rtt: 0, ur-rtt: 0, rtt: 0, var: 0, flsh-rtt: 0, flsh-ev 0, flsh-op 0
+2021-03-26 17:19:12,413 [7] DEBUG Photon.StarDust.Client.Program - peers: 0, r-ev: 0, ur-ev: 0, r-op: 0, ur-op: 0, res: 0, r-rtt: 0, ur-rtt: 0, rtt: 0, var: 0, flsh-rtt: 0, flsh-ev 0, flsh-op 0

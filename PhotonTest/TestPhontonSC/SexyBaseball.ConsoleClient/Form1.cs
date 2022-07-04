@@ -57,7 +57,7 @@ namespace SexyBaseball.ConsoleClient
             if (tCMsg_GTC_LoginRelt.m_PlayerId > 0)
             {
                 Console.WriteLine("登陆成功，玩家Id:" + tCMsg_GTC_LoginRelt.m_PlayerId);
-                PlayerDataTools.f_InitServerDataToClient(tCMsg_GTC_LoginRelt);//初始化數值
+                //PlayerDataTools.f_InitServerDataToClient(tCMsg_GTC_LoginRelt);//初始化數值
             }
             else
             {

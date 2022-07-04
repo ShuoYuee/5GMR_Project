@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 
 
 
@@ -7,8 +8,13 @@
 /// </summary>
 public class Data_Pool
 {
-    public PlayerData m_PlayerData;
-    
+
+
+
+    #region POOL
+    public GuessPool m_GuessPool;
+    #endregion
+
     private static Data_Pool _Instance = null;
     public static Data_Pool GetInstance()
     {
@@ -22,21 +28,16 @@ public class Data_Pool
 
     public void f_InitPool()
     {
-        m_PlayerData = new PlayerData();
-
-
-
+        m_GuessPool = new GuessPool();
     }
 
     public void f_LoadPool()
     {
-        
+
     }
 
     public void f_Reset()
     {
-        
-    }
 
-   
+    }
 }

@@ -70,6 +70,7 @@ public enum EM_MainState
 
 public enum EM_GuessState
 {
+    None,
     /// <summary>
     /// Client確認遊戲狀態
     /// </summary>
@@ -124,11 +125,6 @@ public enum EM_GuessState
     /// 遊戲並未開始
     /// </summary>
     NotGameIng,
-
-    /// <summary>
-    /// 已有房主啟動遊戲
-    /// </summary>
-    Error_GameIsStart,
 }
 
 /// <summary>

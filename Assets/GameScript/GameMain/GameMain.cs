@@ -54,6 +54,7 @@ public class GameMain : ccSceneBase
     #endregion
 
     private ccUImrManager m_ccUImrManager = new ccUImrManager();
+    public Data_Pool m_DataPool = new Data_Pool();
 
     private static GameMain _Instance = null;
     public static GameMain GetInstance()
@@ -64,6 +65,7 @@ public class GameMain : ccSceneBase
     protected override void StartScene()
     {
         _Instance = this;
+        m_DataPool.f_InitPool();
         m_ccUImrManager.f_Init();
         m_GameTable.SetActive(true);
 

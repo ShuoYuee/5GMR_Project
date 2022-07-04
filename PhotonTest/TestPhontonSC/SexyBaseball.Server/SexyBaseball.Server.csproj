@@ -100,7 +100,6 @@
     <Compile Include="SocketDT.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="AutoCopy.bat" />
     <None Include="SC\DT\GoodsDT.cs.meta" />
   </ItemGroup>
   <ItemGroup>

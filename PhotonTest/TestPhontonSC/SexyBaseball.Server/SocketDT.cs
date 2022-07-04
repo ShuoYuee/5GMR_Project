@@ -255,6 +255,7 @@ public struct CMsg_CTG_GetScoreResult : SockBaseDT
 
     public int m_iScoreA;
     public int m_iScoreB;
+    public int m_iWin;
     public int m_iResult;
 }
 
@@ -270,6 +271,7 @@ public struct CMsg_CTG_CheckGuessRelt : SockBaseDT
         return tGoodsPoolDT;
     }
 
+    public int m_iBackCall;
     public int m_iResult;
 }
 

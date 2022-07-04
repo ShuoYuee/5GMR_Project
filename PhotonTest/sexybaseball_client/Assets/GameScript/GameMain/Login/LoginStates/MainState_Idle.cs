@@ -55,7 +55,7 @@ public class MainState_Idle : ccMachineStateBase
             UI_MainMenu._bMainGameCtrl = true;
             MessageBox.DEBUG("你已成為房主");
         }
-        else if (tCMsg_CTG_CheckGuessRelt.m_iResult == (int)EM_GuessState.Error_GameIsStart)
+        else if (tCMsg_CTG_CheckGuessRelt.m_iResult == (int)eMsgOperateResult.OR_Error_GameIsStart)
         {//開啟遊戲失敗，遊戲已在運行
             MessageBox.DEBUG("已有房主在進行遊戲");
         }

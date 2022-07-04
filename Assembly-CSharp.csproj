@@ -119,6 +119,8 @@
     <Compile Include="Assets\GameScript\Other\DamageControll.cs" />
     <Compile Include="Assets\GameScript\Other\FishEvent.cs" />
     <Compile Include="Assets\GameScript\Other\SwitchMonitor.cs" />
+    <Compile Include="Assets\GameScript\Pool\Data_Pool.cs" />
+    <Compile Include="Assets\GameScript\Pool\GuessPool.cs" />
     <Compile Include="Assets\GameScript\RunTimeData\StaticValue.cs" />
     <Compile Include="Assets\GameScript\Socket\BaseSocket.cs" />
     <Compile Include="Assets\GameScript\Socket\GameSocket.cs" />

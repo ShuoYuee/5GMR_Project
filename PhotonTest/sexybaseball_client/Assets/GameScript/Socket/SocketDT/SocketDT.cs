@@ -258,6 +258,7 @@
 
         public int m_iScoreA;
         public int m_iScoreB;
+        public int m_iWin;
         public int m_iResult;
     }
 
@@ -273,6 +274,7 @@
             return tGoodsPoolDT;
         }
 
+        public int m_iBackCall;
         public int m_iResult;
     }
 

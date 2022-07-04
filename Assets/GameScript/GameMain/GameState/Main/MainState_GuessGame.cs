@@ -26,20 +26,14 @@ public class MainState_GuessGame : ccMachineStateBase
 
         _fWaitTime = _fGameNotTime;
         _fWaitTime2 = _fGameNotTime;
-        glo_Main.GetInstance().m_GameSocket.f_AddListener((int)SocketCommand.GamePlayCheckRelt, new CMsg_CTG_CheckGuessRelt(), On_CMsg_GTC_CheckGameRelt);
-        glo_Main.GetInstance().m_GameSocket.f_AddListener((int)SocketCommand.PlayerGuessResult, new CMsg_CTG_GetScoreResult(), On_CMsg_GTC_GuessRelt);
-        glo_Main.GetInstance().m_GameSocket.f_AddListener((int)SocketCommand.ClientCommand, new CMsg_CTG_ClientCommand(), On_CMsg_GTC_CommandCall);
+        //glo_Main.GetInstance().m_GameSocket.f_AddListener((int)SocketCommand.GamePlayCheckRelt, new CMsg_CTG_CheckGuessRelt(), On_CMsg_GTC_CheckGameRelt);
+        //glo_Main.GetInstance().m_GameSocket.f_AddListener((int)SocketCommand.PlayerGuessResult, new CMsg_CTG_GetScoreResult(), On_CMsg_GTC_GuessRelt);
+        //glo_Main.GetInstance().m_GameSocket.f_AddListener((int)SocketCommand.ClientCommand, new CMsg_CTG_ClientCommand(), On_CMsg_GTC_CommandCall);
         glo_Main.GetInstance().m_GameMessagePool.f_AddListener(MessageDef.Guess_SelGuessTeam, f_SelGuessTeam);
         glo_Main.GetInstance().m_GameMessagePool.f_AddListener(MessageDef.Guess_ExitRoom, f_ExitRoom);
         glo_Main.GetInstance().m_GameMessagePool.f_AddListener(MessageDef.MainLogOut, f_LogOut);
 
-        //確認遊戲狀態
-        CMsg_CTG_ServerCommand tCMsg_CTG_ServerCommand = new CMsg_CTG_ServerCommand();
-        tCMsg_CTG_ServerCommand.m_szAccount = StaticValue.m_strAccount;
-        tCMsg_CTG_ServerCommand.m_lPlayerID = StaticValue.m_lPlayerID;
-        tCMsg_CTG_ServerCommand.m_iCommand = (int)EM_GameMod.Guess;
-        tCMsg_CTG_ServerCommand.m_iCallState = (int)EM_GuessState.CheckState;
-        glo_Main.GetInstance().m_GameSocket.f_SendBuf((int)SocketCommand.ServerCommand, tCMsg_CTG_ServerCommand);
+        
     }
 
     public override void f_Execute()
@@ -56,12 +50,7 @@ public class MainState_GuessGame : ccMachineStateBase
 
                 if (_bMainGameCtrl)
                 {
-                    CMsg_CTG_ServerCommand tCMsg_CTG_ServerCommand = new CMsg_CTG_ServerCommand();
-                    tCMsg_CTG_ServerCommand.m_szAccount = StaticValue.m_strAccount;
-                    tCMsg_CTG_ServerCommand.m_lPlayerID = StaticValue.m_lPlayerID;
-                    tCMsg_CTG_ServerCommand.m_iCommand = (int)EM_GameMod.Guess;
-                    tCMsg_CTG_ServerCommand.m_iCallState = (int)EM_GuessState.Guess;
-                    glo_Main.GetInstance().m_GameSocket.f_SendBuf((int)SocketCommand.ServerCommand, tCMsg_CTG_ServerCommand);
+                    //GuessPool.f_CheLead_CallGuess(StaticValue.m_strAccount, StaticValue.m_lPlayerID);
                 }
                 else
                 {
@@ -81,12 +70,7 @@ public class MainState_GuessGame : ccMachineStateBase
 
                 if (_bMainGameCtrl)
                 {
-                    CMsg_CTG_ServerCommand tCMsg_CTG_ServerCommand = new CMsg_CTG_ServerCommand();
-                    tCMsg_CTG_ServerCommand.m_szAccount = StaticValue.m_strAccount;
-                    tCMsg_CTG_ServerCommand.m_lPlayerID = StaticValue.m_lPlayerID;
-                    tCMsg_CTG_ServerCommand.m_iCommand = (int)EM_GameMod.Guess;
-                    tCMsg_CTG_ServerCommand.m_iCallState = (int)EM_GuessState.Restart;
-                    glo_Main.GetInstance().m_GameSocket.f_SendBuf((int)SocketCommand.ServerCommand, tCMsg_CTG_ServerCommand);
+                    //GuessPool.f_CheLead_Restart(StaticValue.m_strAccount, StaticValue.m_lPlayerID);
                 }
                 else
                 {
@@ -100,8 +84,8 @@ public class MainState_GuessGame : ccMachineStateBase
     public override void f_Exit()
     {
         base.f_Exit();
-        glo_Main.GetInstance().m_GameSocket.f_RemoveListener((int)SocketCommand.PlayerGuessResult);
-        glo_Main.GetInstance().m_GameSocket.f_RemoveListener((int)SocketCommand.ClientCommand);
+        //glo_Main.GetInstance().m_GameSocket.f_RemoveListener((int)SocketCommand.PlayerGuessResult);
+        //glo_Main.GetInstance().m_GameSocket.f_RemoveListener((int)SocketCommand.ClientCommand);
         glo_Main.GetInstance().m_GameMessagePool.f_RemoveListener(MessageDef.Guess_SelGuessTeam, f_SelGuessTeam);
         glo_Main.GetInstance().m_GameMessagePool.f_RemoveListener(MessageDef.MainLogOut, f_LogOut);
     }
@@ -117,12 +101,7 @@ public class MainState_GuessGame : ccMachineStateBase
         MessageBox.DEBUG("房主關閉遊戲");
         _bMainGameCtrl = false;
 
-        CMsg_CTG_ServerCommand tCMsg_CTG_ServerCommand = new CMsg_CTG_ServerCommand();
-        tCMsg_CTG_ServerCommand.m_szAccount = StaticValue.m_strAccount;
-        tCMsg_CTG_ServerCommand.m_lPlayerID = StaticValue.m_lPlayerID;
-        tCMsg_CTG_ServerCommand.m_iCommand = (int)EM_GameMod.Guess;
-        tCMsg_CTG_ServerCommand.m_iCallState = (int)EM_GuessState.End;
-        glo_Main.GetInstance().m_GameSocket.f_SendBuf((int)SocketCommand.ServerCommand, tCMsg_CTG_ServerCommand);
+        
     }
 
     private void f_ExitRoom(object Obj)
@@ -160,7 +139,7 @@ public class MainState_GuessGame : ccMachineStateBase
             _bMainGameCtrl = true;
             MessageBox.DEBUG("你已成為房主");
         }
-        else if (tCMsg_CTG_CheckGuessRelt.m_iResult == (int)EM_GuessState.Error_GameIsStart)
+        else if (tCMsg_CTG_CheckGuessRelt.m_iResult == (int)eMsgOperateResult.OR_Error_GameIsStart)
         {//開啟遊戲失敗，遊戲已在運行
             MessageBox.DEBUG("已有房主在進行遊戲");
             GameCheLead.GetInstance().f_UpdateInfor("已有房主在進行遊戲，請重試");
@@ -172,12 +151,7 @@ public class MainState_GuessGame : ccMachineStateBase
         CMsg_CTG_ClientCommand tCMsg_CTG_ClientCommand = (CMsg_CTG_ClientCommand)obj;
         if (tCMsg_CTG_ClientCommand.m_iCallState == (int)EM_GuessState.CallGuess)
         {//執行猜測
-            MessageBox.DEBUG("進行猜測");
-            CMsg_CTG_Guess tCMsg_CTG_Guess = new CMsg_CTG_Guess();
-            tCMsg_CTG_Guess.m_szAccount = StaticValue.m_strAccount;
-            tCMsg_CTG_Guess.m_lPlayerID = StaticValue.m_lPlayerID;
-            tCMsg_CTG_Guess.m_iGuess = _iCurSelTeam;
-            glo_Main.GetInstance().m_GameSocket.f_SendBuf((int)SocketCommand.PlayerGuess, tCMsg_CTG_Guess);
+            //GuessPool.f_CheLead_Guess(StaticValue.m_strAccount, StaticValue.m_lPlayerID, _iCurSelTeam);
 
             ccTimeEvent.GetInstance().f_RegEvent(1f, false, null, CallBack_GetScore);
         }
@@ -200,11 +174,20 @@ public class MainState_GuessGame : ccMachineStateBase
 
     private void CallBack_GetScore(object Obj)
     {//請求獲得分數
-        CMsg_CTG_GetScore tCMsg_CTG_GetScore = new CMsg_CTG_GetScore();
-        tCMsg_CTG_GetScore.m_szAccount = StaticValue.m_strAccount;
-        tCMsg_CTG_GetScore.m_lPlayerID = StaticValue.m_lPlayerID;
-        tCMsg_CTG_GetScore.m_iGuess = _iCurSelTeam;
-        glo_Main.GetInstance().m_GameSocket.f_SendBuf((int)SocketCommand.GameScore, tCMsg_CTG_GetScore);
+        SocketCallbackDT tSocketCallbackDT = new SocketCallbackDT();
+        tSocketCallbackDT.m_ccCallbackSuc = f_GetScoreSuc;
+        tSocketCallbackDT.m_ccCallbackFail = f_GetScoreFail;
+        Data_Pool.GetInstance().m_GuessPool.f_CheLead_GetScore(StaticValue.m_strAccount, StaticValue.m_lPlayerID, _iCurSelTeam, tSocketCallbackDT);
+    }
+
+    private void f_GetScoreSuc(object Obj)
+    {
+
+    }
+
+    private void f_GetScoreFail(object Obj)
+    {
+
     }
 
     private void On_CMsg_GTC_GuessRelt(object obj)

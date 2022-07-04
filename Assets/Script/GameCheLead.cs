@@ -51,13 +51,6 @@ public class GameCheLead : MonoBehaviour
         _BtnTeamA.gameObject.SetActive(true);
         _BtnTeamB.gameObject.SetActive(true);
 
-        MessageBox.DEBUG("開啟遊戲，成為房主");
-        CMsg_CTG_ServerCommand tCMsg_CTG_ServerCommand = new CMsg_CTG_ServerCommand();
-        tCMsg_CTG_ServerCommand.m_szAccount = StaticValue.m_strAccount;
-        tCMsg_CTG_ServerCommand.m_lPlayerID = StaticValue.m_lPlayerID;
-        tCMsg_CTG_ServerCommand.m_iCommand = (int)EM_GameMod.Guess;
-        tCMsg_CTG_ServerCommand.m_iCallState = (int)EM_GuessState.Start;
-        glo_Main.GetInstance().m_GameSocket.f_SendBuf((int)SocketCommand.ServerCommand, tCMsg_CTG_ServerCommand);
     }
 
     public void f_WaitRoom()

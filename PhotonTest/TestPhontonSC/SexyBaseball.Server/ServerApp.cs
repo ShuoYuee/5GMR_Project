@@ -150,9 +150,17 @@
             stClient stClient = _GameLogicPool.f_FindOnlineClient(tCMsg_CTG_GetScore.m_szAccount, tCMsg_CTG_GetScore.m_lPlayerID);
 
             CMsg_CTG_GetScoreResult tCMsg_CTG_GuessResult = new CMsg_CTG_GetScoreResult();
-            tCMsg_CTG_GuessResult.m_iResult = _GameMainPool.f_CheckGuessIsWin(tCMsg_CTG_GetScore.m_iGuess);
-            tCMsg_CTG_GuessResult.m_iScoreA = _GameMainPool.f_GetTeamScore((int)EM_TeamID.TeamA);
-            tCMsg_CTG_GuessResult.m_iScoreB = _GameMainPool.f_GetTeamScore((int)EM_TeamID.TeamB);
+            tCMsg_CTG_GuessResult.m_iResult = (int)eMsgOperateResult.OR_Succeed;
+            try
+            {
+                tCMsg_CTG_GuessResult.m_iWin = _GameMainPool.f_CheckGuessIsWin(tCMsg_CTG_GetScore.m_iGuess);
+                tCMsg_CTG_GuessResult.m_iScoreA = _GameMainPool.f_GetTeamScore((int)EM_TeamID.TeamA);
+                tCMsg_CTG_GuessResult.m_iScoreB = _GameMainPool.f_GetTeamScore((int)EM_TeamID.TeamB);
+            }
+            catch
+            {
+                tCMsg_CTG_GuessResult.m_iResult = (int)eMsgOperateResult.OR_Fail;
+            }
             stClient.m_ccClientSocketPeer.f_SendBuf((int)SocketCommand.PlayerGuessResult, tCMsg_CTG_GuessResult);
         }
 
@@ -174,7 +182,8 @@
                 int iRelt = _GameMainPool._bGameStart ? (int)EM_GuessState.GameIng : (int)EM_GuessState.NotGameIng;
 
                 CMsg_CTG_CheckGuessRelt tCMsg_CTG_CheckStateRelt = new CMsg_CTG_CheckGuessRelt();
-                tCMsg_CTG_CheckStateRelt.m_iResult = iRelt;
+                tCMsg_CTG_CheckStateRelt.m_iResult = (int)eMsgOperateResult.OR_Succeed;
+                tCMsg_CTG_CheckStateRelt.m_iBackCall = iRelt;
                 _GameLogicPool.f_BoardCast(0, (int)SocketCommand.GamePlayCheckRelt, tCMsg_CTG_CheckStateRelt);
             }
             else if(tCMsg_CTG_GuessCommand.m_iCallState == (int)EM_GuessState.Start)
@@ -182,7 +191,8 @@
                 if (_GameMainPool._bGameStart)
                 {//遊戲已由他人開啟
                     CMsg_CTG_CheckGuessRelt tCMsg_CTG_CheckGuessRelt = new CMsg_CTG_CheckGuessRelt();
-                    tCMsg_CTG_CheckGuessRelt.m_iResult = (int)EM_GuessState.Error_GameIsStart;
+                    tCMsg_CTG_CheckGuessRelt.m_iResult = (int)eMsgOperateResult.OR_Error_GameIsStart;
+                    tCMsg_CTG_CheckGuessRelt.m_iBackCall = (int)EM_GuessState.None;
                     stClient.m_ccClientSocketPeer.f_SendBuf((int)SocketCommand.GamePlayCheckRelt, tCMsg_CTG_CheckGuessRelt);
                 }
                 else
@@ -193,12 +203,14 @@
                     
                     //建立房主
                     CMsg_CTG_CheckGuessRelt tCMsg_CTG_CheckGuessRelt = new CMsg_CTG_CheckGuessRelt();
-                    tCMsg_CTG_CheckGuessRelt.m_iResult = (int)EM_GuessState.CallRoomMaster;
+                    tCMsg_CTG_CheckGuessRelt.m_iBackCall = (int)EM_GuessState.CallRoomMaster;
+                    tCMsg_CTG_CheckGuessRelt.m_iResult = (int)eMsgOperateResult.OR_Succeed;
                     stClient.m_ccClientSocketPeer.f_SendBuf((int)SocketCommand.GamePlayCheckRelt, tCMsg_CTG_CheckGuessRelt);
 
                     //呼叫在房間內的玩家開啟遊戲
                     CMsg_CTG_CheckGuessRelt aCMsg_CTG_CheckGuessRelt = new CMsg_CTG_CheckGuessRelt();
-                    aCMsg_CTG_CheckGuessRelt.m_iResult = (int)EM_GuessState.CallStart;
+                    aCMsg_CTG_CheckGuessRelt.m_iBackCall = (int)EM_GuessState.CallStart;
+                    tCMsg_CTG_CheckGuessRelt.m_iResult = (int)eMsgOperateResult.OR_Succeed;
                     _GameLogicPool.f_BoardCast(0, (int)SocketCommand.GamePlayCheckRelt, aCMsg_CTG_CheckGuessRelt);
                 }
             }
@@ -207,16 +219,30 @@
                 _GameMainPool.f_GuessIng();
                 CMsg_CTG_ClientCommand tCMsg_CTG_ClientCommand = new CMsg_CTG_ClientCommand();
                 tCMsg_CTG_ClientCommand.m_iResult = 0;
-                tCMsg_CTG_ClientCommand.m_iCommand = (int)EM_GameMod.Guess;
-                tCMsg_CTG_ClientCommand.m_iCallState = (int)EM_GuessState.CallGuess;
+                try
+                {
+                    tCMsg_CTG_ClientCommand.m_iCommand = (int)EM_GameMod.Guess;
+                    tCMsg_CTG_ClientCommand.m_iCallState = (int)EM_GuessState.CallGuess;
+                }
+                catch
+                {
+                    tCMsg_CTG_ClientCommand.m_iResult = (int)eMsgOperateResult.OR_Fail;
+                }
                 _GameLogicPool.f_BoardCast(0, (int)SocketCommand.ClientCommand, tCMsg_CTG_ClientCommand);
             }
             else if (tCMsg_CTG_GuessCommand.m_iCallState == (int)EM_GuessState.Restart)
             {//遊戲重啟
                 CMsg_CTG_ClientCommand tCMsg_CTG_ClientCommand = new CMsg_CTG_ClientCommand();
                 tCMsg_CTG_ClientCommand.m_iResult = 0;
-                tCMsg_CTG_ClientCommand.m_iCommand = (int)EM_GameMod.Guess;
-                tCMsg_CTG_ClientCommand.m_iCallState = (int)EM_GuessState.CallRestart;
+                try
+                {
+                    tCMsg_CTG_ClientCommand.m_iCommand = (int)EM_GameMod.Guess;
+                    tCMsg_CTG_ClientCommand.m_iCallState = (int)EM_GuessState.CallRestart;
+                }
+                catch
+                {
+                    tCMsg_CTG_ClientCommand.m_iResult = (int)eMsgOperateResult.OR_Fail;
+                }
                 _GameLogicPool.f_BoardCast(0, (int)SocketCommand.ClientCommand, tCMsg_CTG_ClientCommand);
             }
             else if (tCMsg_CTG_GuessCommand.m_iCallState == (int)EM_GuessState.End)
@@ -226,8 +252,15 @@
 
                 CMsg_CTG_ClientCommand tCMsg_CTG_ClientCommand = new CMsg_CTG_ClientCommand();
                 tCMsg_CTG_ClientCommand.m_iResult = 0;
-                tCMsg_CTG_ClientCommand.m_iCommand = (int)EM_GameMod.Guess;
-                tCMsg_CTG_ClientCommand.m_iCallState = (int)EM_GuessState.CallEnd;
+                try
+                {
+                    tCMsg_CTG_ClientCommand.m_iCommand = (int)EM_GameMod.Guess;
+                    tCMsg_CTG_ClientCommand.m_iCallState = (int)EM_GuessState.CallEnd;
+                }
+                catch
+                {
+                    tCMsg_CTG_ClientCommand.m_iResult = (int)eMsgOperateResult.OR_Fail;
+                }
                 _GameLogicPool.f_BoardCast(0, (int)SocketCommand.ClientCommand, tCMsg_CTG_ClientCommand);
             }
         }

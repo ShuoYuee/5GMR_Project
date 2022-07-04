@@ -21,6 +21,7 @@ public enum eMsgOperateResult
     OR_Error_SeverMaintain = 73, //伺服器維護
 
     OR_Error_PosIsHavePlayer = 74, //位置上已經有玩家，操作失敗
+    OR_Error_GameIsStart,      //已有房主啟動遊戲
 
 
     OR_Error_WIFIConnectTimeOut = 993, //WIFI網路未開
@@ -107,6 +108,7 @@ public enum EM_GameMod
 
 public enum EM_GuessState
 {
+    None,
     /// <summary>
     /// Client確認遊戲狀態
     /// </summary>
@@ -161,11 +163,6 @@ public enum EM_GuessState
     /// 遊戲並未開始
     /// </summary>
     NotGameIng,
-
-    /// <summary>
-    /// 已有房主啟動遊戲
-    /// </summary>
-    Error_GameIsStart,
 }
 
 public enum EM_Guess

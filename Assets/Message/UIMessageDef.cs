@@ -31,5 +31,8 @@ public class UIMessageDef : BaseUIMessageDef
 
     public static string UI_UpdateInitProgress = "UI_UpdateInitProgress";
 
+    public static string UI_SelectionCheerlead = "UI_SelectionCheerlead";
+
+    public static string UI_CheerleadMoraGame = "UI_CheerleadMoraGame";
 }
 

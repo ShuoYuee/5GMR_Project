@@ -1,4 +1,6 @@
-﻿public enum EM_eGameStep
+﻿
+
+public enum EM_eGameStep
 {
     Loop,
     PlayBall,

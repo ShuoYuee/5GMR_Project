@@ -271,6 +271,12 @@ public enum EM_MissionEndType
 
 }
 
+public enum CheerleadStateClass
+{
+    Mora,
+    Dance
+}
+
 namespace MR_Edit
 {
     #region 編輯器相關

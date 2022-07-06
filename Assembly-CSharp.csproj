@@ -64,6 +64,10 @@
   <ItemGroup>
     <Compile Include="Assets\ArtResoruce\HighCity\Scripts\HCWave.cs" />
     <Compile Include="Assets\GameEM\GameEM.cs" />
+    <Compile Include="Assets\GameScript\Cheerleading\CheerleadControl.cs" />
+    <Compile Include="Assets\GameScript\Cheerleading\CheerleadSelectBtn.cs" />
+    <Compile Include="Assets\GameScript\Cheerleading\UI_Cheerleading.cs" />
+    <Compile Include="Assets\GameScript\Cheerleading\UI_SettingMenu.cs" />
     <Compile Include="Assets\GameScript\GameControll\GameControll.cs" />
     <Compile Include="Assets\GameScript\GameControll\GameControllMunClock.cs" />
     <Compile Include="Assets\GameScript\GameControll\GameControllState\GameControllBaseState.cs" />

@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3006653992
+CRC: 2639157809
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: b5dd87cfaed8d5c051e224b435ac1733
+    Hash: a2c653fd6b368d56cd43a2b845d054f9
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 213657cab09e04c169b16ab88a5a3378
+    Hash: 61feda191caee36f289492d870947b9d
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -18,10 +18,6 @@ ClassTypes:
 - Class: 28
   Script: {instanceID: 0}
 - Class: 48
-  Script: {instanceID: 0}
-- Class: 74
-  Script: {instanceID: 0}
-- Class: 91
   Script: {instanceID: 0}
 - Class: 95
   Script: {instanceID: 0}
@@ -42,7 +38,7 @@ ClassTypes:
 - Class: 114
   Script: {fileID: -463917630, guid: 6c28abb5a53def14ebab4b7feb6a23ae, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 9c3d5226246caec48b579c1593cdf670, type: 3}
+  Script: {fileID: 11500000, guid: bf6137c62c5380a4da258ddb977785b1, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
 - Class: 114
@@ -68,8 +64,7 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/ABRes/GameMain/UI_GameMain.prefab
-- Assets/ABRes/GameUI_Cheerlead/UI_SettingMenu.prefab
 - Assets/ABRes/GameUI_Cheerlead/UI_Cheerleading_new.prefab
 Dependencies:
-- D:/UnityProject/Unicorn/5GMR_Project/Data/StandaloneWindows/ib16.bundle
-- D:/UnityProject/Unicorn/5GMR_Project/Data/StandaloneWindows/loginbtnbg.bundle
+- C:/Users/judy2/OneDrive/Desktop/practice/5GMR/5GMR_Project/Data/StandaloneWindows/ib16.bundle
+- C:/Users/judy2/OneDrive/Desktop/practice/5GMR/5GMR_Project/Data/StandaloneWindows/loginbtnbg.bundle

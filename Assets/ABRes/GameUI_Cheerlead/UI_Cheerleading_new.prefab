@@ -164,7 +164,7 @@ Animator:
   m_GameObject: {fileID: 886163608245063762}
   m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 46013c1a5020ab148ade6c188d767141, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1001,7 +1001,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4072818911336803771}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c3d5226246caec48b579c1593cdf670, type: 3}
+  m_Script: {fileID: 11500000, guid: bf6137c62c5380a4da258ddb977785b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -1032,8 +1032,8 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 4072818911336803781}
-  cheerLeadName: Red
-  cheerleadID: 2
+  cheerLeadName: 
+  cheerleadID: 0
 --- !u!1 &4072818911352736091
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,7 +1854,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4072818912808997870}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c3d5226246caec48b579c1593cdf670, type: 3}
+  m_Script: {fileID: 11500000, guid: bf6137c62c5380a4da258ddb977785b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -1886,7 +1886,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 4072818912808997864}
   cheerLeadName: 
-  cheerleadID: 1
+  cheerleadID: 0
 --- !u!1 &4072818912875056011
 GameObject:
   m_ObjectHideFlags: 0

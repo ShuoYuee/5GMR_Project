@@ -1,0 +1,74 @@
+ManifestFileVersion: 0
+CRC: 2508495093
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d005cd5ac2212fda7454590713c2b98c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 213657cab09e04c169b16ab88a5a3378
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 68e1efa0528be6042866834711833519, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7a98125502f715b4b83cfb77b434e436, type: 3}
+- Class: 114
+  Script: {fileID: -463917630, guid: 6c28abb5a53def14ebab4b7feb6a23ae, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9c3d5226246caec48b579c1593cdf670, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8013df1bcad870d41a547f3cfb73a0f2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: cc0575bc30aa43e41b7b50fd6907d018, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 223
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/ABRes/GameMain/UI_GameMain.prefab
+- Assets/ABRes/GameUI_Cheerlead/UI_Cheerleading_new.prefab
+Dependencies:
+- D:/UnityProject/Unicorn/5GMR_Project/Data/StandaloneWindows/ib16.bundle
+- D:/UnityProject/Unicorn/5GMR_Project/Data/StandaloneWindows/loginbtnbg.bundle

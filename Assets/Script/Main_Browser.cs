@@ -20,8 +20,12 @@ public class Main_Browser : MonoBehaviour
     private void Start()
     {
         _Instance = this;
+        ccU3DEngine.ccTimeEvent.GetInstance().f_RegEvent(1f, false, null, f_Init);
+    }
+
+    private void f_Init(object obj)
+    {
         _Browser = GameMain.GetInstance().m_Browser;
-        //f_EnableWindow(false);
     }
 
     public void f_ConnectURL(string strURL)

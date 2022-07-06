@@ -553,7 +553,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
 
     public void f_LeaveRay()
     {
-        if (!_ccInteractable)
+        if (_ccInteractable != null)
         {
             _ccInteractable.UnHovered();
             _ccInteractable = null;

@@ -21,7 +21,8 @@ namespace GameLogic
         public void f_GuessIng()
         {//遊戲進行
             Random random = new Random();
-            _iCurGuess = random.Next(1, 3);
+            int iRandom = random.Next(1, 100);
+            _iCurGuess = iRandom < 50 ? 1 : 2;
         }
 
         public int f_CheckGuessIsWin(int iGuess)

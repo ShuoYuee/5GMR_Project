@@ -11,6 +11,7 @@ public class CheerleadSelectBtn : Selectable
     public string cheerLeadName;
     public EM_TeamID cheerleadID;
     private float text;
+    private float text_2;
 
     public override void OnPointerDown(PointerEventData eventData)
     {

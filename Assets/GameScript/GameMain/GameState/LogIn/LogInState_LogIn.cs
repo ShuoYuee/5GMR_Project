@@ -11,6 +11,7 @@ public class LogInState_LogIn : ccMachineStateBase
     private float _fLogInTime = 0f, _fNotTime = -99;
     private int _iWait = 0;
     private string _strWaitInfor = "請稍後", _strWait = "";
+    private float text;
 
     public LogInState_LogIn() : base((int)EM_LogInState.LoggingIn)
     {

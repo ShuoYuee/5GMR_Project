@@ -26,6 +26,7 @@ namespace GameLogic
         private bool isGameing; //正在遊戲中
         private EM_TeamID btnString; //選擇了啥選項
         private EM_GuessGameMod guessGameMod;
+        private float test;
         //VS標誌
         private GameObject vsIcon;
         //球隊分數、LOGO

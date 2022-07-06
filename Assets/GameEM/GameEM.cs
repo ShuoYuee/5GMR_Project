@@ -420,6 +420,7 @@ namespace MR_Edit
         None = 0,
         Win = 1,
         Lose,
+        test
     }
     #endregion
 }

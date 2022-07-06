@@ -10,6 +10,7 @@ public class CheerleadControl : MonoBehaviour
     public GameObject[] danceCheerleads;
     public GameObject[] moraCheerleads;
     public bool isMora;
+    private float test;
 
     void Awake()
     {

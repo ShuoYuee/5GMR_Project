@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3158464492
+CRC: 2973423452
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 8792c515e9bbd4b13e149b9758c4596d
+    Hash: efb3c7f72a3dd37ea996712b8da4c813
   TypeTreeHash:
     serializedVersion: 2
     Hash: cf4c02632fa8107a60232c242b970b71
@@ -41,9 +41,7 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/ABRes/GameUI_Cheerlead/UI_SettingMenu.prefab
 - Assets/ABRes/GameMain/UI_GameSet.prefab
 Dependencies:
 - D:/UnityProject/Unicorn/5GMR_Project/Data/StandaloneWindows/grocerystore_01.bundle
-- D:/UnityProject/Unicorn/5GMR_Project/Data/StandaloneWindows/loginbtnbg.bundle
 - D:/UnityProject/Unicorn/5GMR_Project/Data/StandaloneWindows/turquoise.bundle

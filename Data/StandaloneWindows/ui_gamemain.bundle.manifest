@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2508495093
+CRC: 3006653992
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: d005cd5ac2212fda7454590713c2b98c
+    Hash: b5dd87cfaed8d5c051e224b435ac1733
   TypeTreeHash:
     serializedVersion: 2
     Hash: 213657cab09e04c169b16ab88a5a3378
@@ -68,6 +68,7 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/ABRes/GameMain/UI_GameMain.prefab
+- Assets/ABRes/GameUI_Cheerlead/UI_SettingMenu.prefab
 - Assets/ABRes/GameUI_Cheerlead/UI_Cheerleading_new.prefab
 Dependencies:
 - D:/UnityProject/Unicorn/5GMR_Project/Data/StandaloneWindows/ib16.bundle

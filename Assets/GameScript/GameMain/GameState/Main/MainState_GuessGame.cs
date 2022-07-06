@@ -201,7 +201,7 @@ public class MainState_GuessGame : ccMachineStateBase
         {
             strInfor1 = "你贏了";
         }
-        else if (tCMsg_CTG_GuessResult.m_iResult == (int)EM_GuessResult.Lost)
+        else if (tCMsg_CTG_GuessResult.m_iResult == (int)EM_GuessResult.Lose)
         {
             strInfor1 = "你輸了";
         }

@@ -277,6 +277,12 @@ public enum CheerleadStateClass
     Dance
 }
 
+public enum EM_GuessGameMod
+{
+    Waitting,
+    Playing
+}
+
 namespace MR_Edit
 {
     #region 編輯器相關
@@ -413,7 +419,7 @@ namespace MR_Edit
     {
         None = 0,
         Win = 1,
-        Lost,
+        Lose,
     }
     #endregion
 }

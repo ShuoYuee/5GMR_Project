@@ -75,7 +75,8 @@ public class LogInState_LogIn : ccMachineStateBase
 
             MessageBox.DEBUG("Logged in successfully.");
             ccUIManage.GetInstance().f_SendMsgV3("ui_login.bundle", "UI_Login", UIMessageDef.UI_CLOSE);
-            ccSceneMgr.GetInstance().f_ChangeScene("GameMain");
+            //ccSceneMgr.GetInstance().f_ChangeScene("GameMain");
+            ccSceneMgr.GetInstance().f_ChangeScene("Cheerleading");
             return;
         }
         else if (tCMsg_GTC_LoginRelt.m_result == (int)eMsgOperateResult.OR_Error_LoginTimeOut)

@@ -1,20 +1,12 @@
 ManifestFileVersion: 0
-<<<<<<< HEAD
-CRC: 2639157809
+CRC: 3481322851
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: a2c653fd6b368d56cd43a2b845d054f9
-=======
-CRC: 2492813116
-Hashes:
-  AssetFileHash:
-    serializedVersion: 2
-    Hash: 172042d618cc7a1aa00f4d7124ce4073
->>>>>>> d3f42b58e69b54d9a7dfd51666fd85b24aa8e4c5
+    Hash: 616b2388da8154ed608750b6576a88d5
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 61feda191caee36f289492d870947b9d
+    Hash: b458d837a8057de5cab982265b19c4eb
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -27,14 +19,18 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
 - Class: 95
   Script: {instanceID: 0}
 - Class: 114
-  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  Script: {fileID: 11500000, guid: 68e1efa0528be6042866834711833519, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 68e1efa0528be6042866834711833519, type: 3}
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
 - Class: 114
@@ -46,8 +42,6 @@ ClassTypes:
 - Class: 114
   Script: {fileID: -463917630, guid: 6c28abb5a53def14ebab4b7feb6a23ae, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: bf6137c62c5380a4da258ddb977785b1, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 8013df1bcad870d41a547f3cfb73a0f2, type: 3}
@@ -57,6 +51,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: cc0575bc30aa43e41b7b50fd6907d018, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9c3d5226246caec48b579c1593cdf670, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -72,7 +68,8 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/ABRes/GameMain/UI_GameMain.prefab
+- Assets/ABRes/GameUI_Cheerlead/UI_SettingMenu.prefab
 - Assets/ABRes/GameUI_Cheerlead/UI_Cheerleading_new.prefab
 Dependencies:
-- C:/Users/judy2/OneDrive/Desktop/practice/5GMR/5GMR_Project/Data/StandaloneWindows/ib16.bundle
-- C:/Users/judy2/OneDrive/Desktop/practice/5GMR/5GMR_Project/Data/StandaloneWindows/loginbtnbg.bundle
+- D:/UnityProject/Unicorn/5GMR_Project/Data/StandaloneWindows/ib16.bundle
+- D:/UnityProject/Unicorn/5GMR_Project/Data/StandaloneWindows/loginbtnbg.bundle

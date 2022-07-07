@@ -45,5 +45,13 @@ public class MessageDef
 
     public static string UI_MapObjInit = "UI_MapObjInit";
     public static string UI_LoadBtn = "UI_LoadBtn";
+
+    #region 啦啦隊遊戲
+    public static string Guess_JoinRoom = "Guess_JoinRoom";
+    public static string Guess_ExitRoom = "Guess_ExitRoom";
+    public static string Guess_SelGuessTeam = "Guess_SelGuessTeam";
+    #endregion
+
+    public static string MainLogOut = "MainLogOut";
 }
 

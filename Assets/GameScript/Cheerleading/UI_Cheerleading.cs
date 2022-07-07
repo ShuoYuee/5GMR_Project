@@ -23,10 +23,13 @@ namespace GameLogic
         private bool moraing; //是否正在猜拳
         private bool waitBegin;
         private bool watting; //是否是休息時間
-        private bool isGameing; //正在遊戲中
+        private bool isPressSelectBtn; //正在猜拳遊戲中
+        private bool isARoomMaster; //是否為房主
+        private bool waitForGame;
         private EM_TeamID btnString; //選擇了啥選項
         private EM_GuessGameMod guessGameMod;
         private float test;
+        private Data_Pool data_Pool;
         //VS標誌
         private GameObject vsIcon;
         //球隊分數、LOGO
@@ -42,19 +45,14 @@ namespace GameLogic
         private float wattingTimer;
         private float wattingResetTimer;
 
-        private Animator GetFinalAnim;
-        //private GameObject checkBTN;
+        //遊戲回傳資訊
+        public EM_GuessState eM_GuessState;
+
         private GuessPool guessPool;
 
         protected override void On_Init()
         {
             MessageBox.DEBUG("啟動 UI_Cheerleading 腳本");
-
-            //按鈕註冊
-            //ccUIEventListener.Get(_BtnMenuExit.gameObject).f_RegClick(CallBack_BtnMenuExitClick, null, null, "");
-            //註冊UI_ShopBuyBtn 如果被呼叫就執行 CallBack_OnClick_BtnBuy
-            // glo_Main.GetInstance().m_UIMessagePool.f_AddListener(UIMessageDef.UI_ShopBuyBtn, CallBack_OnClick_BtnBuy);
-
             guessPool = new GuessPool();
 
             #region 抓取物件
@@ -71,9 +69,9 @@ namespace GameLogic
             #endregion
 
             #region 按鈕設定
-            f_RegClickEvent(f_GetObject("CheckGameState") , Check_GameState);
+            //f_RegClickEvent(f_GetObject("CheckGameState") , Check_GameState);
             f_RegClickEvent(gameBeginBtn, f_GameStart);
-            f_RegClickEvent(settingBtn, f_EndGame);
+            //f_RegClickEvent(settingBtn, f_EndGame); //測試結束遊戲按鈕
             f_RegClickEvent(gameJoinBtn, f_JontGameControl);
             #endregion
 
@@ -90,54 +88,53 @@ namespace GameLogic
             }
 
             #endregion
-
             
             gameTimer = 10f;
             gameResetTimer = gameTimer;
             wattingTimer = 5f;
             wattingResetTimer = wattingTimer;
-            f_Int();
-        }
 
-        private void f_SettingControl(GameObject go, object obj1, object obj2)
-        {
-            ccUIManage.GetInstance().f_SendMsgV3("ui_gameset.bundle", "UI_SettingMenu", UIMessageDef.UI_OPEN);
-        }   
+           
+        }
 
         private void f_Int()
         {
             guessPool.f_InitManager();
 
             //註冊是否選則啦啦隊
-            glo_Main.GetInstance().m_UIMessagePool.f_AddListener(UIMessageDef.UI_SelectionCheerlead, GameStart);
+            glo_Main.GetInstance().m_UIMessagePool.f_AddListener(UIMessageDef.UI_SelectionCheerlead, SelectCheerlead);
             
         }
 
         protected override void On_Open(object e)
         {
+            f_Int();
             //f_ResetGame();
-            MessageBox.DEBUG("確認遊戲狀態");
-            //Check_GameState();
+            //MessageBox.DEBUG("確認遊戲狀態");
+            GameTools.f_SetText(final, "遊戲狀態");
+            Check_GameState();
         }
 
         private void f_JontGameControl(GameObject go, object obj1, object obj2)
         {
-            guessGameMod = EM_GuessGameMod.Waitting;
-           
+            guessGameMod = EM_GuessGameMod.Playing;
+            waitForGame = true;
+            isPressBtn = true; //先倒數計時
             GameTools.f_SetText(final, "等待中");
+            GameTools.f_SetGameObject(gameJoinBtn, false);
 
+            #region UI物件開關           
             GameTools.f_SetGameObject(aBtn, false);
             GameTools.f_SetGameObject(bBtn, false);
-            GameTools.f_SetGameObject(vsIcon, false);
+            GameTools.f_SetGameObject(vsIcon, true);
             GameTools.f_SetGameObject(timer_Seconds.gameObject, false);
-            GameTools.f_SetGameObject(gameBeginBtn, false);
-            GameTools.f_SetGameObject(gameJoinBtn, false);
+            #endregion
         }
 
         #region 確認遊戲狀態
 
         //確認遊戲狀態
-        private void Check_GameState(GameObject go, object obj1, object obj2)
+        private void Check_GameState(/*GameObject go, object obj1, object obj2*/)
         {
             MessageBox.DEBUG("確認遊戲狀態");
             SocketCallbackDT tSocketCallbackDT = new SocketCallbackDT();
@@ -149,9 +146,10 @@ namespace GameLogic
 
         private void CallBack_GetGameSuc(object obj)
         {
-            Debug.Log((EM_GuessState)obj);      
-            
-            if((EM_GuessState)obj == EM_GuessState.NotGameIng)
+            Debug.Log("確認遊戲狀態成功：" + (EM_GuessState)obj);
+            eM_GuessState = (EM_GuessState)obj;
+
+            if ((EM_GuessState)obj == EM_GuessState.NotGameIng)
             {
                 GameTools.f_SetGameObject(gameBeginBtn, true);
                 GameTools.f_SetGameObject(gameJoinBtn, false);
@@ -166,7 +164,7 @@ namespace GameLogic
         private void CallBack_GetGameFail(object obj)
         {
             eMsgOperateResult tt = (eMsgOperateResult)obj;
-            MessageBox.DEBUG(tt.ToString());
+            MessageBox.DEBUG("確認遊戲狀態失敗：" + tt.ToString());
         }
 
         #endregion
@@ -174,40 +172,34 @@ namespace GameLogic
         #region 開啟遊戲(按下遊戲者成為房主，並控制遊戲)
         private void f_GameStart(GameObject go, object obj1, object obj2)
         {
-            MessageBox.DEBUG("確認遊戲開始");
+            
             SocketCallbackDT tSocketCallbackDT = new SocketCallbackDT();
             tSocketCallbackDT.m_ccCallbackSuc = CallBack_GetGameStartSuc;
             tSocketCallbackDT.m_ccCallbackFail = CallBack_GetGameStartFail;
 
             guessPool.f_CheLead_Start(StaticValue.m_strAccount, StaticValue.m_lPlayerID, tSocketCallbackDT);
-        }
+        } //按下遊戲並成為房主
 
         private void CallBack_GetGameStartSuc(object obj)
         {
-            MessageBox.DEBUG("遊戲開始 : " + (EM_GuessState)obj);
+            //MessageBox.DEBUG("遊戲開始 : " + (EM_GuessState)obj);
 
-            f_NotSelectCheerleadGameStart();
+            eM_GuessState = (EM_GuessState)obj;
+
+            //f_CommandSuc(obj);
+            guessGameMod = EM_GuessGameMod.Playing;
         }
 
         private void CallBack_GetGameStartFail(object obj)
         {
-            MessageBox.DEBUG("遊戲開始失敗");
+            //MessageBox.DEBUG("遊戲開始失敗" + (EM_GuessState)obj);
             eMsgOperateResult tt = (eMsgOperateResult)obj;
             MessageBox.DEBUG(tt.ToString());
             //f_ResetGame();//初始化遊戲
         }
 
         private void f_NotSelectCheerleadGameStart() //還沒選擇啦啦隊時的開始
-        {
-            isPressBtn = true; //遊戲開始          
-            #region 物件開關
-            GameTools.f_SetGameObject(aBtn, true);
-            GameTools.f_SetGameObject(bBtn, true);
-            GameTools.f_SetGameObject(vsIcon, false);
-            GameTools.f_SetGameObject(timer_Seconds.gameObject, true);
-            GameTools.f_SetGameObject(gameBeginBtn, false);
-            #endregion
-
+        {         
             SocketCallbackDT tSocketCallbackDT = new SocketCallbackDT();
             tSocketCallbackDT.m_ccCallbackSuc = CallBack_GetGameCallGuessSuc;
             tSocketCallbackDT.m_ccCallbackFail = CallBack_GetGameCallGuessFail;
@@ -217,28 +209,33 @@ namespace GameLogic
 
         private void CallBack_GetGameCallGuessSuc(object obj)
         {
-            MessageBox.DEBUG("玩家進行猜測 : " + (EM_GuessState)obj);
+            //MessageBox.DEBUG("玩家進行猜測 : " + (EM_GuessState)obj);
+            eM_GuessState = (EM_GuessState)obj;
+              
+            
+           //f_CommandSuc(obj);
 
             //MessageBox.DEBUG("結果 :  " + guessPool.f_GetWin().ToString());
         }
 
         private void CallBack_GetGameCallGuessFail(object obj)
         {
-            MessageBox.DEBUG("玩家無法進行猜測");
+            MessageBox.DEBUG("玩家無法進行猜測" +(EM_GuessState)obj);
 
             eMsgOperateResult tt = (eMsgOperateResult)obj;
-            MessageBox.DEBUG(tt.ToString());
+            //MessageBox.DEBUG(tt.ToString());
         }
         #endregion
 
         #region 遊戲流程
         //已選擇好選項，等待結果
-        private void GameStart(object Obj)
+        private void SelectCheerlead(object obj)
         {
-            Debug.Log("以選擇好選項");
-            Debug.Log((EM_TeamID)Obj);
-            btnString = (EM_TeamID)Obj;           
-
+            //Debug.Log("以選擇好選項");
+            //Debug.Log((EM_TeamID)obj);
+            btnString = (EM_TeamID)obj; //獲得所選擇的啦啦隊
+            isPressSelectBtn = true;
+            //MessageBox.DEBUG("遊戲狀態 : " + (EM_GuessState)obj);
             #region 物件開關
             GameTools.f_SetGameObject(aBtn, false);
             GameTools.f_SetGameObject(bBtn, false);
@@ -252,7 +249,8 @@ namespace GameLogic
 
         protected override void On_Update()
         {
-            //MessageBox.DEBUG("執行中" + timer + " " + isPressBtn);
+            Debug.Log(eM_GuessState);
+            f_CommandSuc(eM_GuessState);
 
             if (gameTimer > 0 && isPressBtn && !watting) //是否按下遊戲開始
                 CountdownTimer(); //倒數計時
@@ -265,11 +263,57 @@ namespace GameLogic
             else if(waitBegin)
             {
                 watting = true;
+                gameTimer = gameResetTimer;
                 f_GetFinal();
             }
             else if (watting)
-            {               
+            {
                 CowndownToWaitting();
+            }
+        }
+
+        private void f_CommandSuc(object obj)
+        {
+            int iCall = (int)obj;
+            if (iCall == (int)EM_GuessState.CallStart)
+            {
+                if(!waitForGame)
+                {
+                    MessageBox.DEBUG("遊戲開始");
+                    isPressBtn = true; //遊戲開始 ， 開始計時
+                    f_NotSelectCheerleadGameStart();
+                }               
+            }
+            else if (iCall == (int)EM_GuessState.CallRoomMaster)
+            {
+                if (!waitForGame)
+                {
+                    isARoomMaster = true;
+                }                   
+            }
+            else if (iCall == (int)EM_GuessState.CallGuess && !isPressSelectBtn)
+            {
+                if (!waitForGame)
+                {
+                    #region UI物件開關           
+                    GameTools.f_SetGameObject(aBtn, true);
+                    GameTools.f_SetGameObject(bBtn, true);
+                    GameTools.f_SetGameObject(vsIcon, false);
+                    GameTools.f_SetGameObject(timer_Seconds.gameObject, true);
+                    GameTools.f_SetGameObject(gameBeginBtn, false);
+                    #endregion
+                }
+            }
+            else if (iCall == (int)EM_GuessState.CallRestart)
+            {
+                MessageBox.DEBUG("重新啟動");
+                f_NotSelectCheerleadGameStart();
+                isPressSelectBtn = false;
+                waitForGame = false;
+            }        
+            else if (iCall == (int)EM_GuessState.CallEnd && isARoomMaster)
+            {
+
             }
         }
 
@@ -278,6 +322,7 @@ namespace GameLogic
         {
             if(guessGameMod == EM_GuessGameMod.Playing)
                 GameTools.f_SetText(final, "進行中..");
+
             gameTimer -= Time.deltaTime;
 
             timer_Seconds.text = Mathf.RoundToInt(gameTimer).ToString();
@@ -294,6 +339,8 @@ namespace GameLogic
                 {
                     watting = false;
                     moraing = false;
+                    //isGuessBegin = false;
+                    Debug.Log("休息中");
                     wattingTimer = wattingResetTimer;
                     f_ReturnGame(); //CowndownToWaitting
                 }
@@ -320,17 +367,23 @@ namespace GameLogic
 
         private void CallBack_GetScoreSuc(object obj)
         {
-            MessageBox.DEBUG("分數保存成功 : " + obj.ToString());
+            //MessageBox.DEBUG("遊戲狀態 : " + (EM_GuessState)obj);
+            //MessageBox.DEBUG("分數保存成功 : " + obj.ToString());
+
+            eM_GuessState = (EM_GuessState)obj;
+           
             EM_GuessResult tt = (EM_GuessResult)guessPool.f_GetWin();
+
             if(guessGameMod == EM_GuessGameMod.Playing)
                 GameTools.f_SetText(final, tt.ToString());
+
             //Debug.Log((EM_GuessResult)guessPool.f_GetWin());
             
             if((EM_GuessResult)guessPool.f_GetWin() == EM_GuessResult.Win)
             {
                 GameTools.f_SetText(scoreText, guessPool.f_GetScore(StaticValue.m_iTeam).ToString());
                 //scoreText.text = guessPool.f_GetScore(StaticValue.m_iTeam).ToString();
-                SetScoreMaskImage(guessPool.f_GetScore(StaticValue.m_iTeam));
+                SetScoreMaskImage(guessPool.f_GetScore(StaticValue.m_iTeam) / 10);
             }
 
             waitBegin = false;
@@ -339,7 +392,7 @@ namespace GameLogic
 
         private void CallBack_GetScoreFail(object obj)
         {
-            MessageBox.DEBUG("分數保存失敗");
+            MessageBox.DEBUG("分數保存失敗" + (EM_GuessState)obj);
             eMsgOperateResult tt = (eMsgOperateResult)obj;
             MessageBox.DEBUG(tt.ToString());
             //f_ReturnGame();//初始化遊戲
@@ -355,7 +408,7 @@ namespace GameLogic
         #region 遊戲重新一輪
         private void f_ReturnGame()
         {
-            MessageBox.DEBUG("重新一局");
+            //MessageBox.DEBUG("重新一局");
 
             SocketCallbackDT tSocketCallbackDT = new SocketCallbackDT();
             tSocketCallbackDT.m_ccCallbackSuc = f_GetGameRestartSuc;
@@ -367,29 +420,29 @@ namespace GameLogic
 
         private void f_GetGameRestartSuc(object obj)
         {
-            MessageBox.DEBUG("重新成功");//重猜測開始
-            guessGameMod = EM_GuessGameMod.Playing;
+            eM_GuessState = (EM_GuessState)obj;
             gameTimer = gameResetTimer;
             moraing = false;
-            GameTools.f_SetGameObject(aBtn, true);
-            GameTools.f_SetGameObject(bBtn, true);
-            GameTools.f_SetGameObject(vsIcon, false);
-            GameTools.f_SetGameObject(timer_Seconds.gameObject, true);
-            GameTools.f_SetGameObject(gameBeginBtn, false);
-            isPressBtn = true;
-            //f_Close();
         }
 
         private void f_GetGameRestartFail(object obj)
         {
-            MessageBox.DEBUG("重新失敗");
+            MessageBox.DEBUG("重新失敗" +(EM_GuessState)obj);
             //f_Close();
         }
 
         #endregion
 
+        private void SetScoreMaskImage(float h) //分數進度條
+        {
+            Debug.Log(h);
+
+            scoreMaskImage.GetComponent<RectTransform>().sizeDelta = new Vector2(scoreMaskImage.GetComponent<RectTransform>().sizeDelta.x,
+                                                                        scoreMaskImage.GetComponent<RectTransform>().sizeDelta.y + h);
+        }
+
         #region 退出遊戲
-        private void f_EndGame(GameObject go, object obj1, object obj2) //當房主退掉，回到有開始遊戲的畫面，重新選擇房主
+        private void f_EndGame() //當房主退掉，回到有開始遊戲的畫面，重新選擇房主
         {
             SocketCallbackDT tSocketCallbackDT = new SocketCallbackDT();
             tSocketCallbackDT.m_ccCallbackSuc = CallBack_EndGameSuc;
@@ -400,13 +453,19 @@ namespace GameLogic
 
         private void CallBack_EndGameSuc(object obj)
         {
-            Debug.Log("關閉遊戲成功");
+            Debug.Log("關閉遊戲成功" +(EM_GuessState)obj);
             f_ResetGameToInt();
+
+            GameTools.f_SetGameObject(gameBeginBtn, true);
+            GameTools.f_SetGameObject(aBtn, false);
+            GameTools.f_SetGameObject(bBtn, false);
+            GameTools.f_SetGameObject(vsIcon, true);
+            GameTools.f_SetGameObject(timer_Seconds.gameObject, true);
         }
 
         private void CallBack_EndGameFail(object obj)
         {
-            Debug.Log("關閉遊戲失敗");
+            Debug.Log("關閉遊戲失敗" + (EM_GuessState)obj);
 
             eMsgOperateResult tt = (eMsgOperateResult)obj;
             MessageBox.DEBUG(tt.ToString());
@@ -429,14 +488,6 @@ namespace GameLogic
         #endregion
 
        
-        private void SetScoreMaskImage(float h) //分數進度條
-        {
-            Debug.Log(h);
-
-            scoreMaskImage.GetComponent<RectTransform>().sizeDelta = new Vector2(scoreMaskImage.GetComponent<RectTransform>().sizeDelta.x ,
-                                                                        scoreMaskImage.GetComponent<RectTransform>().sizeDelta.y + h);
-        }
-
         #endregion
 
         #region 房主退出後..
@@ -444,13 +495,14 @@ namespace GameLogic
         protected override void On_Close()
         {
             guessPool.f_DisManager();
+            f_EndGame();
         }
 
         protected override void On_Destory() 
         {
             guessPool.f_DisManager();
 
-            //f_EndGame();
+            f_EndGame();
         }
         #endregion
     }

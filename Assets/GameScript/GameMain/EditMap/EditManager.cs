@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Epibyte.ConceptVR;
 using ccU3DEngine;
+using MR_Edit;
 
 /// <summary>
 /// 編輯管理器
@@ -13,7 +14,7 @@ public class EditManager
     public bool _bSelectEdit = false;
 
     /// <summary>編輯類型</summary>
-    public EM_EditState _EditEM = EM_EditState.None;
+    public EM_EditCtrlState _EditEM = EM_EditCtrlState.None;
     /// <summary>軸心模式</summary>
     public EM_EditAxis _EditAxitEM = EM_EditAxis.AxisX;
     /// <summary>座標模式</summary>
@@ -34,22 +35,43 @@ public class EditManager
         switch (EditTpye)
         {
             case "Position":
-                _EditEM = EM_EditState.Position;
+                _EditEM = EM_EditCtrlState.Position;
                 break;
 
             case "Rotation":
-                _EditEM = EM_EditState.Rotation;
+                _EditEM = EM_EditCtrlState.Rotation;
                 break;
 
             case "Scale":
-                _EditEM = EM_EditState.Scale;
+                _EditEM = EM_EditCtrlState.Scale;
                 break;
 
             case "Edit":
-                _EditEM = EM_EditState.None;
+                _EditEM = EM_EditCtrlState.None;
                 f_Edit();
                 break;
         }
+    }
+
+    public void f_SetAddEditBtn(int EditTpye)
+    {
+        if ((int)_EditEM + 1 > EditTpye)
+        {
+            _EditEM = (EM_EditCtrlState)1;
+        }
+        else
+        {
+            _EditEM = (EM_EditCtrlState)(int)_EditEM + 1;
+        }
+    }
+
+    /// <summary>
+    /// 點選編輯按鈕
+    /// </summary>
+    /// <param name="EditTpye">按鈕類型</param>
+    public void f_SetEditBtn(int EditTpye)
+    {
+        _EditEM = (EM_EditCtrlState)EditTpye;
     }
 
     /// <summary>點選編輯按鈕</summary>
@@ -114,6 +136,11 @@ public class EditManager
         }
     }
 
+    public void f_SetEditAxis(int iAxis)
+    {
+        _EditAxitEM = (EM_EditAxis)iAxis;
+    }
+
     /// <summary>
     /// 設定編輯座標模式
     /// </summary>
@@ -129,7 +156,24 @@ public class EditManager
         else
         {
             _EditPointEM = (EM_EditPoint)(int)_EditPointEM + 1;
-        }  
+        }
+    }
+
+    public void f_SetAddEditPoint(int iPoint)
+    {
+        if ((int)_EditPointEM + 1 > iPoint)
+        {
+            _EditPointEM = (EM_EditPoint)1;
+        }
+        else
+        {
+            _EditPointEM = (EM_EditPoint)(int)_EditPointEM + 1;
+        }
+    }
+
+    public void f_SetEditPoint(int iPoint)
+    {
+        _EditPointEM = (EM_EditPoint)iPoint;
     }
 
     /// <summary>按鈕冷卻結束</summary>
@@ -231,6 +275,7 @@ public class EditManager
     }
     #endregion
 
+    #region 當前編輯物件
     /// <summary>設定當前編輯的物件</summary>
     public void f_SetCurEditObj(EditObjControll Obj)
     {
@@ -242,20 +287,6 @@ public class EditManager
     {
         return _CurEditObjControll;
     }
+    #endregion
 
-    /// <summary>
-    /// 編輯物播放預覽動畫
-    /// </summary>
-    /// <param name="iAddIndex">增減動畫Index</param>
-    public void f_EditObjAnimPlay(int iAddIndex)
-    {
-        if (!_bEdit || _CurEditObjControll == null) { return; }
-
-        if (iAddIndex == 0)//停止播放預覽動畫
-        {
-            _CurEditObjControll.f_AnimStop();
-        }
-
-        _CurEditObjControll.f_AnimPlay(iAddIndex);
-    }
 }

@@ -1,0 +1,11 @@
+2021-03-24 17:59:38,353 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - Initialize: ApplicationName = 'DefaultDomain', DomainID = '1'
+2021-03-24 17:59:38,366 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - AppDomains with unhandled exceptions are usually not unloaded and restarted.
+2021-03-24 17:59:38,367 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - Getting license information:
+2021-03-24 17:59:39,003 [ 1] INFO  PhotonHostRuntime.PhotonLicensing - LICENSE: No license file was found - starting with Bootstrap License.
+2021-03-24 17:59:39,004 [ 1] INFO  PhotonHostRuntime.PhotonLicensing - LICENSE: Expiration: never; floating license: no; max connections: 20; valid IPs: any
+2021-03-24 17:59:40,673 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - CreateAppDomain: name = 'Lite' , assemblyName = 'PhotonHive'
+2021-03-24 17:59:40,674 [ 1] ERROR PhotonHostRuntime.PhotonDomainManager - CreateDomain
+System.Exception: Can't find PhotonHive.dll in  or C:\Users\puetsualiau\Desktop\Photon-OnPremise-Server-SDK_v4-0-29-11263\src-server\Hive\PhotonHive\bin
+   ©ó PhotonHostRuntime.PhotonDomainManager.PhotonDefaultAppDomainBehavior.CreateAppDomain(String name, String assemblyName, String baseDirectoryRaw, String applicationRootDirectoryRaw, String applicationDirectoryRaw, String sharedDirectoryRaw, String applicationSharedDirectoryRaw, Boolean enableShadowCopy, Boolean createPerInstanceShadowCopyCaches, String instanceName)
+   ©ó PhotonHostRuntime.PhotonDomainManager.CreateAppDomain(String name, String assemblyName, String baseDirectoryRaw, String applicationRootDirectoryRaw, String applicationDirectoryRaw, String sharedDirectoryRaw, String applicationSharedDirectoryRaw, Boolean enableShadowCopy, Boolean createPerInstanceShadowCopyCaches, String instanceName)
+2021-03-24 17:59:40,689 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - RequestStop: ApplicationName = 'DefaultDomain', DomainId='1'

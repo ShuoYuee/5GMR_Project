@@ -2,8 +2,10 @@
 using UnityEngine;
 using ccU3DEngine;
 using Epibyte.ConceptVR;
+using ZenFulcrum.EmbeddedBrowser;
+using ccUI_U3DSpace;
 
-public class GameMain : MonoBehaviour
+public class GameMain : ccSceneBase
 {
     #region 管理物件
     [Header("初始化")]
@@ -25,6 +27,9 @@ public class GameMain : MonoBehaviour
     [Tooltip("素材元件選單")]
     /// <summary>素材元件選單</summary>
     public Pagination m_Pagination;
+    [Tooltip("VR浮動網頁視窗")]
+    /// <summary>VR浮動網頁視窗</summary>
+    public Browser m_Browser;
 
     [Space(10)]
     [Header("額外物件")]
@@ -34,9 +39,12 @@ public class GameMain : MonoBehaviour
     [Tooltip("生成物件將統一掛在該物件下")]
     /// <summary>主父物件</summary>
     public GameObject m_GameTable;
-    [Tooltip("控制模式顯示文字")]
-    /// <summary>控制模式顯示文字</summary>
-    public TextMesh _PlayerCtrlText;
+    //[Tooltip("控制模式顯示文字")]
+    ///// <summary>控制模式顯示文字</summary>
+    //public TextMesh _PlayerCtrlText;
+    [Tooltip("刪除物件顯示文字")]
+    /// <summary>刪除物件顯示文字</summary>
+    public TextMesh _DeleteText;
 
     [HideInInspector]
     /// <summary>地圖物件池</summary>
@@ -45,26 +53,49 @@ public class GameMain : MonoBehaviour
     public EditManager m_EditManager = new EditManager();
     #endregion
 
+    private ccUImrManager m_ccUImrManager = new ccUImrManager();
+    public Data_Pool m_DataPool = new Data_Pool();
+
     private static GameMain _Instance = null;
     public static GameMain GetInstance()
     {
         return _Instance;
     }
 
-
-    void Awake()
+    protected override void StartScene()
     {
         _Instance = this;
+        m_DataPool.f_InitPool();
+        m_ccUImrManager.f_Init();
         m_GameTable.SetActive(true);
-        ccUIManage.GetInstance().f_SendMsg("UI_GameMain", BaseUIMessageDef.UI_OPEN, null, true);
 
+        f_InitGameObj();
+
+        ccUIManage.GetInstance().f_SendMsgV3("ui_mrcontrol.bundle", "UI_MRControl", UIMessageDef.UI_OPEN);
         ccTimeEvent.GetInstance().f_RegEvent(0.3f, true, null, f_UpdateMenuPos);
     }
 
-    private void Start()
+    protected override void LoadRes()
     {
-        f_InitGameObj();
+        
     }
+
+    public override void UnLoadRes()
+    {
+        
+    }
+
+    /*void Awake()
+    {
+        _Instance = this;
+        m_GameTable.SetActive(true);
+
+        //ccUIManage.GetInstance().f_SendMsg("UI_GameMain", BaseUIMessageDef.UI_OPEN, null, true);
+        f_InitGameObj();
+
+        //ccUIManage.GetInstance().f_SendMsgV3("ui_mrcontrol.bundle", "UI_MRControl", BaseUIMessageDef.UI_OPEN);
+        ccTimeEvent.GetInstance().f_RegEvent(0.3f, true, null, f_UpdateMenuPos);
+    }*/
 
     /// <summary>手動導入場上物件</summary>
     private void f_InitGameObj()
@@ -84,6 +115,32 @@ public class GameMain : MonoBehaviour
             m_MainMenu.transform.localPosition = m_MainCamera.transform.localPosition + new Vector3(-0.4f, 0.05f, 0);
     }
 
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public void f_MainBroadcast(int iSet)
+    {
+        if (iSet == 1)
+        {//登出
+            glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.MainLogOut);
+        }
+        else if (iSet == 2)
+        {//啦啦隊_加入遊戲
+            glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.Guess_JoinRoom);
+        }
+        else if (iSet == 3)
+        {//啦啦隊_離開遊戲
+            glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.Guess_ExitRoom);
+        }
+        else if (iSet == 4)
+        {//啦啦隊_選擇A
+            glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.Guess_SelGuessTeam, (int)EM_TeamID.TeamA);
+        }
+        else if (iSet == 5)
+        {//啦啦隊_選擇B
+            glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.Guess_SelGuessTeam, (int)EM_TeamID.TeamB);
+        }
+    }
+
     #region 地圖功能
     public void f_LoadMap(string strFileName)
     {
@@ -101,6 +158,11 @@ public class GameMain : MonoBehaviour
         m_MapPool.f_SaveMap(strFileName);
     }
 
+    public void f_DelMap(string strFileName)
+    {
+        m_MapPool.f_DelMap(strFileName);
+    }
+
     public void f_ResetMap()
     {
         m_MapPool.f_ResetMap();
@@ -108,7 +170,8 @@ public class GameMain : MonoBehaviour
 
     public void f_ExitMap()
     {
-        glo_Main.GetInstance().f_Destroy();
+        glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.MainLogOut);
+        //glo_Main.GetInstance().f_Destroy();
     }
 
     public EditObjControll f_AddObj(CharacterDT tCharacterDT)
@@ -159,7 +222,7 @@ public class GameMain : MonoBehaviour
     public void f_LeaveEdit(TabButton button)
     {
         m_EditManager.f_LeaveEdit(button);
-    }
+    }    
 
     /// <summary>
     /// 設定軸心模式
@@ -168,6 +231,11 @@ public class GameMain : MonoBehaviour
     public void f_SetEditAxis(string strAxis)
     {
         m_EditManager.f_SetEditAxis(strAxis);
+    }
+
+    public void f_SetEditAxis(int iAxis)
+    {
+        m_EditManager.f_SetEditAxis(iAxis);
     }
 
     /// <summary>
@@ -230,18 +298,17 @@ public class GameMain : MonoBehaviour
         m_EditManager.f_SetCurAxis(TextGroup);
     }
 
-    /// <summary>
-    /// 編輯物播放預覽動畫
-    /// </summary>
-    /// <param name="iAddIndex">增減動畫Index</param>
-    public void f_EditObjAnimPlay(int iAddIndex)
-    {
-        m_EditManager.f_EditObjAnimPlay(iAddIndex);
-    }
     #endregion
 
-    public void f_Sponsor()
+    /// <summary>刪除當前編輯物件</summary>
+    public void f_DelEditObj()
     {
-        glo_Main.GetInstance().m_ResourceManager.f_CreateResource("Model/DancingGirlA");
+        m_MapPool.f_DeleteObj(m_EditManager.f_GetCurEditObj().f_GetId());
+    }
+
+    /// <summary>設定刪除物顯示文字</summary>
+    public void f_SetDelText()
+    {
+        _DeleteText.text = "確定刪除該物件？//n" + m_EditManager.f_GetCurEditObj().name;
     }
 }

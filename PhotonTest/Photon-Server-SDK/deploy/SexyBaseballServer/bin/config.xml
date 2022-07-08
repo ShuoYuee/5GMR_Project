@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Config enableGlobalUnique="0">
+  <SCServer>
+    <RootUrl>http://123.207.87.187/BicycleWorld</RootUrl>
+  </SCServer>
+  <Server>
+    <game_db_host>127.0.0.1</game_db_host>
+    <game_db_port>3306</game_db_port>
+    <game_db_user>root</game_db_user>
+    <game_db_password>10114040</game_db_password>
+    <game_db_name>sexybaseball</game_db_name>
+  </Server>
+</Config>

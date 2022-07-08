@@ -87,9 +87,13 @@ public class CharacterDT : BaseItemDT
     /// </summary>
     public float fDisplayScale;
     /// <summary>
-    /// 物件預覽動畫
+    /// 預覽動畫
     /// </summary>
     public string szAnimGroup;
+    /// <summary>
+    /// 預覽音效
+    /// </summary>
+    public string szAudioSource;
     /// <summary>
     /// 點擊物件打開的外部連接地址
     /// </summary>

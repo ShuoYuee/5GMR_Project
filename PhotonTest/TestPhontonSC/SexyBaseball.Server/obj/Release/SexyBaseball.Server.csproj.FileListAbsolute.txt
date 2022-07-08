@@ -1,0 +1,17 @@
+D:\Projects\sexybaseball_server\SexyBaseball.Server\bin\Release\SexyBaseball.Server.dll
+D:\Projects\sexybaseball_server\SexyBaseball.Server\bin\Release\SexyBaseball.Server.pdb
+D:\Projects\sexybaseball_server\SexyBaseball.Server\bin\Release\ExitGamesLibs.dll
+D:\Projects\sexybaseball_server\SexyBaseball.Server\bin\Release\Photon.SocketServer.dll
+D:\Projects\sexybaseball_server\SexyBaseball.Server\bin\Release\SexyBaseball.Common.dll
+D:\Projects\sexybaseball_server\SexyBaseball.Server\bin\Release\SexyBaseball.Common.pdb
+D:\Projects\sexybaseball_server\SexyBaseball.Server\bin\Release\ExitGamesLibs.pdb
+D:\Projects\sexybaseball_server\SexyBaseball.Server\bin\Release\ExitGamesLibs.xml
+D:\Projects\sexybaseball_server\SexyBaseball.Server\bin\Release\Photon.SocketServer.pdb
+D:\Projects\sexybaseball_server\SexyBaseball.Server\bin\Release\Photon.SocketServer.xml
+D:\Projects\sexybaseball_server\SexyBaseball.Server\bin\Release\Photon.SocketServer.dll.config
+D:\Projects\sexybaseball_server\SexyBaseball.Server\obj\Release\SexyBaseball.Server.csprojAssemblyReference.cache
+D:\Projects\sexybaseball_server\SexyBaseball.Server\obj\Release\SexyBaseball.Server.csproj.CoreCompileInputs.cache
+D:\Projects\sexybaseball_server\SexyBaseball.Server\obj\Release\SexyBaseball.Server.csproj.CopyComplete
+D:\Projects\sexybaseball_server\SexyBaseball.Server\obj\Release\SexyBaseball.Server.dll
+D:\Projects\sexybaseball_server\SexyBaseball.Server\obj\Release\SexyBaseball.Server.pdb
+D:\Projects\sexybaseball_server\SexyBaseball.Server\bin\Release\PhotonHostRuntimeInterfaces.dll

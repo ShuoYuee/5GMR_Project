@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using ccU3DEngine;
+using MR_Edit;
 
 /// <summary>
 /// 物件編輯控制器
 /// </summary>
-public class EditObjControll : MonoBehaviour
+public class EditObjControll : Interactable_GameCtrl
 {
     /// <summary>物件動畫機</summary>
     private Animator _Animator;
@@ -15,13 +16,15 @@ public class EditObjControll : MonoBehaviour
 
     /// <summary>場景資料(儲存時所用的)</summary>
     private MapPoolDT _MapPoolDT;
-    /// <summary>預覽動畫組</summary>
-    private string[] _strAnimGroup;
-    /// <summary>網頁連結腳本</summary>
-    private ConnectURL _ConnectURL = new ConnectURL();
+    ///// <summary>預覽動畫組</summary>
+    //private string[] _strAnimGroup;
+    ///// <summary>預覽音效組</summary>
+    //private string[] _strAudioGroup;
+    ///// <summary>網頁連結腳本</summary>
+    //private ConnectURL _ConnectURL = new ConnectURL();
 
     /// <summary>編輯模式</summary>
-    EM_EditState _EditEM = EM_EditState.None;
+    EM_EditCtrlState _EditEM = EM_EditCtrlState.None;
     /// <summary>是否被選中編輯</summary>
     bool _bEdit = false;
     /// <summary>判別值(1為右或前，-1為左或後)</summary>
@@ -81,11 +84,11 @@ public class EditObjControll : MonoBehaviour
         name = _MapPoolDT.iId + "_" + _MapPoolDT.m_CharacterDT.szResName;
         transform.parent = GameMain.GetInstance().f_GetObjParent();
 
-        //獲得動畫片段資料
+        /*//獲得動畫片段資料
         if (_MapPoolDT.m_CharacterDT.szAnimGroup != null)
         {
             _strAnimGroup = ccMath.f_String2ArrayString(_MapPoolDT.m_CharacterDT.szAnimGroup, ";");
-        }
+        }*/
     }
         
     public long f_GetId()
@@ -113,14 +116,14 @@ public class EditObjControll : MonoBehaviour
         _EditEM = GameMain.GetInstance().m_EditManager._EditEM;
         switch (_EditEM)
         {
-            case EM_EditState.Position:
+            case EM_EditCtrlState.Position:
                 f_EditPosition();
                 break;
-            case EM_EditState.Rotation:
+            case EM_EditCtrlState.Rotation:
                 f_EditRotation(_iEditValue);
                 break;
 
-            case EM_EditState.Scale:
+            case EM_EditCtrlState.Scale:
                 f_EditScale(_iEditValue);
                 break;
         }
@@ -130,7 +133,7 @@ public class EditObjControll : MonoBehaviour
     public void f_EndEdit()
     {
         StopAll();
-        _EditEM = EM_EditState.None;
+        _EditEM = EM_EditCtrlState.None;
         EditDisplay.GetInstance().f_StopUpdate();
         f_ChangeMaterial(_Material);
     }
@@ -492,36 +495,25 @@ public class EditObjControll : MonoBehaviour
         return Vector3.zero;
     }
     #endregion
+
     #endregion
 
-    #region 預覽動畫
-    private int _iAnimIndex = 0;
-    /// <summary>
-    /// 播放預覽動畫
+    #region 動畫與音效
+    /*/// <summary>
+    /// 播放動畫
     /// </summary>
-    /// <param name="iAddIndex">增減動畫Index</param>
-    public void f_AnimPlay(int iAddIndex)
+    /// <param name="iIndex">動畫Index</param>
+    public void f_AnimPlay(int iIndex)
     {
-        if (_Animator == null)
+        string strAnim = _strAnimGroup[iIndex];
+        if (strAnim != "")
         {
-            MessageBox.DEBUG("此物件未設有動畫機");
-            return;
-        }
-
-        _iAnimIndex += iAddIndex;
-        if (_iAnimIndex < 0) { _iAnimIndex = _strAnimGroup.Length; }
-        if (_iAnimIndex >= _strAnimGroup.Length) { _iAnimIndex = 0; }
-
-        int iStateId = Animator.StringToHash(_strAnimGroup[_iAnimIndex]);
-        bool bHasAction = _Animator.HasState(0, iStateId);
-
-        if (bHasAction)//確認是否擁有該動畫
-        {
-            _Animator.Play(_strAnimGroup[_iAnimIndex]);
+            GameTools.f_PlayAnimator(_Animator, _strAnimGroup[iIndex], 0, true);
+            f_AudioPlay(iIndex);
         }
     }
 
-    /// <summary>停止播放預覽動畫</summary>
+    /// <summary>停止播放動畫</summary>
     public void f_AnimStop()
     {
         if (_Animator == null)
@@ -532,6 +524,30 @@ public class EditObjControll : MonoBehaviour
 
         _Animator.StopRecording();
     }
+
+    /// <summary>
+    /// 播放音效
+    /// </summary>
+    /// <param name="iIndex">音效Index</param>
+    public void f_AudioPlay(int iIndex)
+    {
+        string strAudio = _strAudioGroup[iIndex];
+        try
+        {
+            AudioClip tClip = glo_Main.GetInstance().m_ResourceManager.f_CreateAudio(strAudio);
+            AudioSource tAudioSource = GetComponent<AudioSource>();
+            if (!tAudioSource)
+            {
+                tAudioSource = gameObject.AddComponent<AudioSource>();
+            }
+            tAudioSource.clip = tClip;
+            tAudioSource.Play();
+        }
+        catch
+        {
+            MessageBox.ASSERT("物件音效未找到");
+        }
+    }*/
     #endregion
 
     #region 屬性設定
@@ -544,13 +560,19 @@ public class EditObjControll : MonoBehaviour
         _iEditValue = iSet;
     }
 
+    public void f_SetInput(EM_EditCtrlState tEM, int iSet)
+    {
+        _EditEM = tEM;
+        _iEditValue = iSet;
+    }
+
     /// <summary>
     /// 設定座標移動狀態
     /// </summary>
     /// <param name="bGrab">是否進行移動</param>
     public void f_SetGrabState(object bGrab = null)
     {
-        if(_EditEM != EM_EditState.Position) { return; }
+        if(_EditEM != EM_EditCtrlState.Position) { return; }
         if (bGrab == null)
         {
             isGrabbObj = !isGrabbObj;
@@ -579,6 +601,7 @@ public class EditObjControll : MonoBehaviour
     }
     #endregion
 
+    /*#region URL
     public void f_SetURL(string szURL)
     {
         _ConnectURL.fSetURL(szURL);
@@ -588,4 +611,5 @@ public class EditObjControll : MonoBehaviour
     {
         _ConnectURL.f_ConnectURL();
     }
+    #endregion*/
 }

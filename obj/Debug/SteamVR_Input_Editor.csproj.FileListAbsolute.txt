@@ -602,3 +602,10 @@ C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\obj\Debug\SteamVR_Inp
 C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\obj\Debug\SteamVR_Input_Editor.csproj.CopyComplete
 C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\obj\Debug\SteamVR_Input_Editor.dll
 C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\obj\Debug\SteamVR_Input_Editor.pdb
+C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\Temp\bin\Debug\Photon.MmoDemo.Client.Unity3D.dll
+C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\Temp\bin\Debug\Photon.MmoDemo.Common.dll
+C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\Temp\bin\Debug\Photon3Unity3D.dll
+C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\Temp\bin\Debug\Photon.MmoDemo.Client.Unity3D.pdb
+C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\Temp\bin\Debug\Photon.MmoDemo.Common.pdb
+C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\Temp\bin\Debug\Photon3Unity3D.pdb
+C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\Temp\bin\Debug\Photon3Unity3D.xml

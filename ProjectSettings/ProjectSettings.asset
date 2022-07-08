@@ -705,7 +705,7 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLWasmStreaming: 0
   scriptingDefineSymbols:
-    1: Server
+    1: Local
     7: Local
   platformArchitecture: {}
   scriptingBackend: {}

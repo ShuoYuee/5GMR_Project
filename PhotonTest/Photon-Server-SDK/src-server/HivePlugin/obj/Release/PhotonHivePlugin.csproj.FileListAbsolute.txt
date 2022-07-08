@@ -1,0 +1,6 @@
+C:\Users\puetsualiau\Desktop\Photon-OnPremise-Server-SDK_v4-0-29-11263\src-server\HivePlugin\bin\Release\PhotonHivePlugin.dll
+C:\Users\puetsualiau\Desktop\Photon-OnPremise-Server-SDK_v4-0-29-11263\src-server\HivePlugin\bin\Release\PhotonHivePlugin.pdb
+C:\Users\puetsualiau\Desktop\Photon-OnPremise-Server-SDK_v4-0-29-11263\src-server\HivePlugin\obj\Release\PhotonHivePlugin.csprojAssemblyReference.cache
+C:\Users\puetsualiau\Desktop\Photon-OnPremise-Server-SDK_v4-0-29-11263\src-server\HivePlugin\obj\Release\PhotonHivePlugin.csproj.CoreCompileInputs.cache
+C:\Users\puetsualiau\Desktop\Photon-OnPremise-Server-SDK_v4-0-29-11263\src-server\HivePlugin\obj\Release\PhotonHivePlugin.dll
+C:\Users\puetsualiau\Desktop\Photon-OnPremise-Server-SDK_v4-0-29-11263\src-server\HivePlugin\obj\Release\PhotonHivePlugin.pdb

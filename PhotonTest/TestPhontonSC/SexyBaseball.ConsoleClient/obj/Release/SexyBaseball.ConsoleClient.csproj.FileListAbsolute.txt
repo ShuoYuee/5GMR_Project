@@ -1,0 +1,16 @@
+D:\Projects\sexybaseball_server\SexyBaseball.ConsoleClient\bin\Release\SexyBaseball.ConsoleClient.exe.config
+D:\Projects\sexybaseball_server\SexyBaseball.ConsoleClient\bin\Release\SexyBaseball.ConsoleClient.exe
+D:\Projects\sexybaseball_server\SexyBaseball.ConsoleClient\bin\Release\SexyBaseball.ConsoleClient.pdb
+D:\Projects\sexybaseball_server\SexyBaseball.ConsoleClient\bin\Release\Photon3DotNet.dll
+D:\Projects\sexybaseball_server\SexyBaseball.ConsoleClient\bin\Release\SexyBaseball.ClientApi.dll
+D:\Projects\sexybaseball_server\SexyBaseball.ConsoleClient\bin\Release\SexyBaseball.Common.dll
+D:\Projects\sexybaseball_server\SexyBaseball.ConsoleClient\bin\Release\websocket-sharp.dll
+D:\Projects\sexybaseball_server\SexyBaseball.ConsoleClient\bin\Release\SexyBaseball.ClientApi.pdb
+D:\Projects\sexybaseball_server\SexyBaseball.ConsoleClient\bin\Release\SexyBaseball.Common.pdb
+D:\Projects\sexybaseball_server\SexyBaseball.ConsoleClient\bin\Release\Photon3DotNet.pdb
+D:\Projects\sexybaseball_server\SexyBaseball.ConsoleClient\bin\Release\Photon3DotNet.xml
+D:\Projects\sexybaseball_server\SexyBaseball.ConsoleClient\obj\Release\SexyBaseball.ConsoleClient.csprojAssemblyReference.cache
+D:\Projects\sexybaseball_server\SexyBaseball.ConsoleClient\obj\Release\SexyBaseball.ConsoleClient.csproj.CoreCompileInputs.cache
+D:\Projects\sexybaseball_server\SexyBaseball.ConsoleClient\obj\Release\SexyBaseball.ConsoleClient.csproj.CopyComplete
+D:\Projects\sexybaseball_server\SexyBaseball.ConsoleClient\obj\Release\SexyBaseball.ConsoleClient.exe
+D:\Projects\sexybaseball_server\SexyBaseball.ConsoleClient\obj\Release\SexyBaseball.ConsoleClient.pdb

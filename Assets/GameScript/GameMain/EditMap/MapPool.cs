@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEditor;
 
 public class MapPool : ccBasePool<long>
 {
@@ -153,22 +154,12 @@ public class MapPool : ccBasePool<long>
     }
     #endregion
 
-    #region AB資源相關
-    int iIndex = 0;
-    /// <summary>創建隨機Id</summary>
-    private long CreateKeyId()
+    public void f_DelMap(string strFileName)
     {
-        //1138817954
-        long iTT = ccMathEx.DateTime2time_t(System.DateTime.Now);
-        long iId = iTT * 100 + iIndex;
-        iIndex++;
-        if (iIndex > 90)
-        {
-            iIndex = 0;
-        }
-        return iId;
+        //AssetDatabase.DeleteAsset(GetMapFilePath(strFileName));
     }
 
+    #region AB資源相關
     /// <summary>
     /// 儲存物件
     /// </summary>
@@ -176,7 +167,7 @@ public class MapPool : ccBasePool<long>
     /// <returns></returns>
     public EditObjControll f_AddObj(CharacterDT tCharacterDT)
     {
-        long iId = CreateKeyId();
+        long iId = RoleTools.CreateKeyId();
         return AddObj(iId, tCharacterDT);
     }
 
@@ -204,8 +195,8 @@ public class MapPool : ccBasePool<long>
     /// <returns></returns>
     private EditObjControll AddObj(long iId, CharacterDT tCharacterDT)
     {
-        GameObject tObj = glo_Main.GetInstance().m_ResourceManager.f_CreateABObj(tCharacterDT.szResName + ".bundle", tCharacterDT.szName, f_SetObj);
         _CurCharacterDT = tCharacterDT;
+        GameObject tObj = glo_Main.GetInstance().m_ResourceManager.f_CreateABObj(tCharacterDT.szResName + ".bundle", tCharacterDT.szName, f_SetObj);        
         //EditObjControll tEditObjControll = tObj.AddComponent<EditObjControll>();
 
         /*//設定物件地圖資料
@@ -225,8 +216,8 @@ public class MapPool : ccBasePool<long>
     private void f_SetObj(object e)
     {
         GameObject tObj = (GameObject)e;
-        EditObjControll tEditObjControll = tObj.AddComponent<EditObjControll>();
-        f_SaveData(CreateKeyId(), _CurCharacterDT, tEditObjControll);
+        //EditObjControll tEditObjControll = tObj.AddComponent<EditObjControll>();
+        f_SaveData(RoleTools.CreateKeyId(), _CurCharacterDT, tObj);
         _CurCharacterDT = null;
     }
 
@@ -243,7 +234,8 @@ public class MapPool : ccBasePool<long>
 
             string[] aData = ccMath.f_String2ArrayString(aItem[iLoadId - 1], ";");
             CharacterDT tCharacterDT = (CharacterDT)glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetSC(ccMath.atoi(aData[1]));
-            f_SaveData((ccMath.atol(aData[0])), tCharacterDT, tObj.AddComponent<EditObjControll>());
+            //f_SaveData((ccMath.atol(aData[0])), tCharacterDT, tObj.AddComponent<EditObjControll>());
+            f_SaveData((ccMath.atol(aData[0])), tCharacterDT, tObj);
 
             //設定物件的位置、旋轉值、縮放值
             tObj.transform.position = new Vector3(ccMath.atof(aData[2]), ccMath.atof(aData[3]), ccMath.atof(aData[4]));
@@ -275,15 +267,17 @@ public class MapPool : ccBasePool<long>
     /// <param name="iId">物件Id</param>
     /// <param name="tCharacterDT">物件資料</param>
     /// <param name="tEditObj">編輯物</param>
-    private void f_SaveData(long iId, CharacterDT tCharacterDT, EditObjControll tEditObj)
+    private void f_SaveData(long iId, CharacterDT tCharacterDT, GameObject tEditObj)
     {
         //設定物件地圖資料
         MapPoolDT tMapPoolDT = new MapPoolDT();
-        tMapPoolDT.f_Set(iId, tEditObj.gameObject, tCharacterDT);
+        tMapPoolDT.f_Set(iId, tEditObj, tCharacterDT);
         //儲存物件地圖資料
         f_Save(tMapPoolDT);
-        tEditObj.f_SetURL(tCharacterDT.szURL);
-        tEditObj.f_Save(tMapPoolDT);
+
+        EditObjControll tEditObjControll = RoleTools.f_CreateEditObj(tEditObj, tCharacterDT, tMapPoolDT);
+        //tEditObj.f_SetURL(tCharacterDT.szURL);
+        //tEditObj.f_Save(tMapPoolDT);
     }
 
     //public bool f_CheckIsDelete(CreateABAction tCreateABAction)
@@ -323,7 +317,8 @@ public class MapPool : ccBasePool<long>
         //if (!tObj.IsInit) { return; }
 
         CharacterDT tCharacterDT = (CharacterDT)glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetSC(tObj.CharacterId);
-        f_SaveData(CreateKeyId(), tCharacterDT, tObj);
+        //f_SaveData(RoleTools.CreateKeyId(), tCharacterDT, tObj);
+        f_SaveData(RoleTools.CreateKeyId(), tCharacterDT, tObj.gameObject);
         MessageBox.DEBUG("讀取現場物件 : " + tObj.CharacterId);
     }
 

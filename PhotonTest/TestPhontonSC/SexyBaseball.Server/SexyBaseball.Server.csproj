@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{986A88A4-F9A8-44EE-9FE1-A20172002E3B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SexyBaseball.Server</RootNamespace>
+    <AssemblyName>SexyBaseball.Server</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ccU3DEngine">
+      <HintPath>..\Lib\ccU3DEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="ExitGamesLibs">
+      <HintPath>..\..\..\Library\Photon-OnPremise-Server-SDK_v4-0-29-11263\lib\ExitGamesLibs.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=5.0.8.1, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Photon.SocketServer">
+      <HintPath>..\..\..\Library\Photon-OnPremise-Server-SDK_v4-0-29-11263\lib\Photon.SocketServer.dll</HintPath>
+    </Reference>
+    <Reference Include="PhotonHostRuntimeInterfaces, Version=3.58.0.0, Culture=neutral, PublicKeyToken=6cb1467adaa73020, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\PhotonHostRuntimeInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\Config.cs" />
+    <Compile Include="GameEM.cs" />
+    <Compile Include="GameLogicPool.cs" />
+    <Compile Include="GameMainPool.cs" />
+    <Compile Include="MonohUI\MonohUI.cs" />
+    <Compile Include="MonohUI\MonohUIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonohUI\MonohUIForm.Designer.cs">
+      <DependentUpon>MonohUIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MySQL\ccMySql.cs" />
+    <Compile Include="SCLoad.cs" />
+    <Compile Include="SC\CharacterSC.cs" />
+    <Compile Include="SC\DT\CharacterDT.cs" />
+    <Compile Include="SC\DT\GameControllDT.cs" />
+    <Compile Include="SC\DT\GameControll_ConditionDT.cs" />
+    <Compile Include="SC\DT\GameControll_ParameterDT.cs" />
+    <Compile Include="SC\DT\GamePlotDT.cs" />
+    <Compile Include="SC\DT\GameTennisDT.cs" />
+    <Compile Include="SC\DT\GoodsDT.cs" />
+    <Compile Include="SC\GameControllSC.cs" />
+    <Compile Include="SC\GameControll_ConditionSC.cs" />
+    <Compile Include="SC\GameControll_ParameterSC.cs" />
+    <Compile Include="SC\GamePlotSC.cs" />
+    <Compile Include="SC\GameTennisSC.cs" />
+    <Compile Include="SC\GoodsSC.cs" />
+    <Compile Include="SC\NBaseSC.cs" />
+    <Compile Include="SC_Pool.cs" />
+    <Compile Include="ServerApp.cs" />
+    <Compile Include="ccClientSocketPeer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SocketDT.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SC\DT\GoodsDT.cs.meta" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MonohUI\MonohUIForm.resx">
+      <DependentUpon>MonohUIForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>AutoCopy.bat</PostBuildEvent>
+  </PropertyGroup>
+</Project>

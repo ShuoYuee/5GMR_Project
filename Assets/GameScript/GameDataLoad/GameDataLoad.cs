@@ -54,6 +54,20 @@ public class GameDataLoad
         LocalDataManager.f_SetLocalData<float>("m_fEffectVolume", StaticValue.m_fEffectVolume);
     }
 
+    public static void f_LoginGame(string strUserName, long lPlayerID, int iTeam)
+    {
+        StaticValue.m_strUserName = strUserName;
+        StaticValue.m_lPlayerID = lPlayerID;
+        StaticValue.m_iTeam = iTeam;
+    }
+
+    public static void f_LogoutGame()
+    {
+        StaticValue.m_strUserName = "";
+        StaticValue.m_lPlayerID = -1;
+        StaticValue.m_iTeam = 0;
+    }
+
     public static int f_MemroySessionLoad(string strSession, int iDefault = -99999)
     {
         return LocalDataManager.f_GetLocalData<int>(strSession, iDefault);

@@ -1,0 +1,925 @@
+﻿2021-06-18 00:03:18,241 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 00:03:18,279 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 10:08:27,905 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 10:08:28,143 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 10:08:28,235 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 10:08:28,239 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 10:08:28,241 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 10:08:28,245 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 10:08:28,245 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 10:08:30,620 [1] ERROR Photon.SocketServer.ApplicationBase - MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.Exception: 引发类型为“System.Exception”的异常。
+   在 MySql.Data.MySqlClient.NativeDriver.Open()
+   在 MySql.Data.MySqlClient.NativeDriver.Open()
+   在 MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   在 MySql.Data.MySqlClient.MySqlConnection.Open()
+   在 PHPServiceServer.MySQL.ccMySql.f_Connect() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MySQL\ccMySql.cs:行号 40
+   在 SexyBaseball.Server.ServerApp.Setup() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\ServerApp.cs:行号 56
+   在 Photon.SocketServer.ApplicationBase.PhotonHostRuntimeInterfaces.IPhotonControl.OnPhotonRunning() 位置 h:\svncontent\photon-socketserver-sdk_cloud\src\Photon.SocketServer\ApplicationBase.cs:行号 1171
+2021-06-18 10:08:30,719 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 10:08:30,725 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 10:08:57,738 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 10:08:57,933 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 10:08:57,944 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 10:08:57,946 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 10:08:57,947 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 10:08:57,949 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 10:08:57,949 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 10:08:58,097 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 10:13:59,862 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 10:13:59,865 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 10:14:11,675 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 10:14:11,791 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 10:14:11,807 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 10:14:11,809 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 10:14:11,810 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 10:14:11,813 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 10:14:11,814 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 10:14:11,954 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 10:14:21,813 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 10:14:21,815 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 10:49:25,741 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 10:49:25,909 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 10:49:25,919 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 10:49:25,921 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 10:49:25,921 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 10:49:25,923 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 10:49:25,923 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 10:49:26,040 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 10:49:28,969 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 10:49:28,972 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 10:50:12,941 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 10:50:13,136 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 10:50:13,147 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 10:50:13,149 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 10:50:13,150 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 10:50:13,152 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 10:50:13,152 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 10:50:13,272 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 10:50:20,379 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 10:50:20,383 [13] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 glo_Main.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 77
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 10:50:20,505 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 10:51:28,414 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 10:51:28,638 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 10:51:28,650 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 10:51:28,651 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 10:51:28,652 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 10:51:28,654 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 10:51:28,654 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 10:51:28,771 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 10:51:37,902 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 10:51:37,905 [13] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 glo_Main.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 77
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 10:51:38,026 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 10:53:15,839 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 10:53:16,124 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 10:53:16,135 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 10:53:16,137 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 10:53:16,138 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 10:53:16,140 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 10:53:16,140 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 10:53:16,256 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 10:54:17,850 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 10:54:28,453 [12] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Windows.Forms.UnsafeNativeMethods.WaitMessage()
+   在 System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   在 MonohUI.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 17
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 10:54:28,512 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 10:54:33,659 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 10:54:33,790 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 10:54:33,802 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 10:54:33,803 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 10:54:33,804 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 10:54:33,806 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 10:54:33,806 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 10:55:07,753 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 10:55:09,186 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 10:55:09,197 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 10:55:09,198 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 10:55:09,199 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 10:55:09,201 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 10:55:09,201 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 10:55:09,318 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 10:55:45,704 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 10:56:00,771 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 10:56:28,822 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 10:56:29,006 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 10:56:29,017 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 10:56:29,019 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 10:56:29,021 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 10:56:29,024 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 10:56:29,024 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 10:56:29,151 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 10:56:50,754 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 10:57:05,818 [12] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 glo_Main.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 87
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 10:57:23,489 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 10:57:23,605 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 10:57:23,616 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 10:57:23,618 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 10:57:23,619 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 10:57:23,621 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 10:57:23,621 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 10:57:23,738 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 10:57:41,115 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 10:58:28,843 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 10:58:28,950 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 10:58:28,962 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 10:58:28,964 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 10:58:28,965 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 10:58:28,967 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 10:58:28,967 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 10:58:29,091 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 10:58:47,034 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 10:58:47,066 [13] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Windows.Forms.UnsafeNativeMethods.WaitMessage()
+   在 System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   在 MonohUI.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 20
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 10:58:47,523 [12] ERROR Photon.SocketServer.ApplicationBase - System.ComponentModel.Win32Exception (0x80004005): 创建窗口句柄时出错。
+   在 System.Windows.Forms.NativeWindow.CreateHandle(CreateParams cp)
+   在 System.Windows.Forms.Control.CreateHandle()
+   在 System.Windows.Forms.TextBoxBase.CreateHandle()
+   在 System.Windows.Forms.Control.get_Handle()
+   在 System.Windows.Forms.RichTextBox.get_TextLength()
+   在 System.Windows.Forms.TextBoxBase.AdjustSelectionStartAndEnd(Int32 selStart, Int32 selLength, Int32& start, Int32& end, Int32 textLen)
+   在 System.Windows.Forms.TextBoxBase.GetSelectionStartAndLength(Int32& start, Int32& length)
+   在 System.Windows.Forms.TextBoxBase.AppendText(String text)
+   在 SexyBaseball.Server.MonohUIForm.f_Log(ELogType t, String format, Object[] args) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MonohUIForm.cs:行号 48
+   在 MonohUI.CallBack_Log(String strMsgType, String strMsg) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 35
+   在 MessageBox.a(String A_0, String A_1)
+   在 glo_Main.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 93
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 10:58:47,571 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 10:59:37,237 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 10:59:37,388 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 10:59:37,399 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 10:59:37,401 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 10:59:37,401 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 10:59:37,403 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 10:59:37,403 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 10:59:37,522 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 10:59:57,051 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 10:59:58,981 [13] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Windows.Forms.UnsafeNativeMethods.WaitMessage()
+   在 System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   在 MonohUI.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 20
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 10:59:59,100 [12] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 glo_Main.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 94
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 10:59:59,115 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 11:00:29,923 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 11:00:53,587 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 11:00:53,598 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 11:00:53,600 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 11:00:53,601 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 11:00:53,603 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 11:00:53,603 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 11:00:53,717 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 11:00:59,834 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 11:02:31,011 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 11:02:31,123 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 11:02:31,134 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 11:02:31,135 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 11:02:31,136 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 11:02:31,138 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 11:02:31,138 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 11:02:31,253 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 11:02:41,616 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 11:02:45,117 [13] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Windows.Forms.UnsafeNativeMethods.WaitMessage()
+   在 System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   在 MonohUI.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 20
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 11:02:45,172 [12] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 glo_Main.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 96
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 11:02:45,188 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 11:03:25,116 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 11:03:25,329 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 11:03:25,341 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 11:03:25,342 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 11:03:25,343 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 11:03:25,345 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 11:03:25,345 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 11:03:25,461 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 11:03:40,216 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 11:04:07,447 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 11:04:07,725 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 11:04:07,736 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 11:04:07,738 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 11:04:07,739 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 11:04:07,741 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 11:04:07,741 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 11:04:07,863 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 11:04:17,130 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 11:04:31,653 [11] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Windows.Forms.UnsafeNativeMethods.WaitMessage()
+   在 System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   在 MonohUI.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 20
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 11:04:31,796 [12] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 glo_Main.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 97
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 11:04:31,811 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 11:06:12,573 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 11:06:12,778 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 11:06:12,789 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 11:06:12,791 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 11:06:12,792 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 11:06:12,794 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 11:06:12,794 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 11:06:12,914 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 11:06:21,809 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 11:06:36,867 [13] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 glo_Main.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 104
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 11:06:46,602 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 11:06:46,738 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 11:06:46,749 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 11:06:46,751 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 11:06:46,752 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 11:06:46,754 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 11:06:46,754 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 11:06:46,869 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 11:06:58,943 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 11:08:10,771 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 11:08:11,012 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 11:08:11,023 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 11:08:11,025 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 11:08:11,026 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 11:08:11,028 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 11:08:11,028 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 11:08:11,146 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 11:08:37,347 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 11:10:03,968 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 11:10:04,084 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 11:10:04,095 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 11:10:04,097 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 11:10:04,097 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 11:10:04,099 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 11:10:04,099 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 11:10:04,223 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 11:10:53,939 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 11:21:12,530 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 11:21:12,687 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 11:21:12,755 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 11:21:12,757 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 11:21:12,758 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 11:21:12,760 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 11:21:12,760 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 11:21:12,969 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 11:21:22,525 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 11:21:24,880 [12] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Windows.Forms.UnsafeNativeMethods.WaitMessage()
+   在 System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   在 MonohUI.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 20
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 11:21:24,931 [13] ERROR Photon.SocketServer.ApplicationBase - System.ComponentModel.Win32Exception (0x80004005): 创建窗口句柄时出错。
+   在 System.Windows.Forms.NativeWindow.CreateHandle(CreateParams cp)
+   在 System.Windows.Forms.Control.CreateHandle()
+   在 System.Windows.Forms.TextBoxBase.CreateHandle()
+   在 System.Windows.Forms.Control.get_Handle()
+   在 System.Windows.Forms.RichTextBox.get_TextLength()
+   在 System.Windows.Forms.TextBoxBase.AdjustSelectionStartAndEnd(Int32 selStart, Int32 selLength, Int32& start, Int32& end, Int32 textLen)
+   在 System.Windows.Forms.TextBoxBase.GetSelectionStartAndLength(Int32& start, Int32& length)
+   在 System.Windows.Forms.TextBoxBase.AppendText(String text)
+   在 SexyBaseball.Server.MonohUIForm.f_Log(ELogType t, String format, Object[] args) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MonohUIForm.cs:行号 57
+   在 SexyBaseball.Server.MonohUIForm.CallBack_Log(Object Obj) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MonohUIForm.cs:行号 37
+   在 b.a(Object A_0)
+   在 ccU3DEngine.ccMessagePoolV2.f_Update()
+   在 glo_Main.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 103
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 11:21:25,004 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 11:21:42,717 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 11:21:42,836 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 11:21:42,851 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 11:21:42,853 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 11:21:42,854 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 11:21:42,856 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 11:21:42,857 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 11:21:42,987 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 11:21:58,222 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 11:21:58,249 [12] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Windows.Forms.UnsafeNativeMethods.WaitMessage()
+   在 System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   在 MonohUI.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 20
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 11:21:58,305 [13] ERROR Photon.SocketServer.ApplicationBase - System.ComponentModel.Win32Exception (0x80004005): 创建窗口句柄时出错。
+   在 System.Windows.Forms.NativeWindow.CreateHandle(CreateParams cp)
+   在 System.Windows.Forms.Control.CreateHandle()
+   在 System.Windows.Forms.TextBoxBase.CreateHandle()
+   在 System.Windows.Forms.Control.get_Handle()
+   在 System.Windows.Forms.RichTextBox.get_TextLength()
+   在 System.Windows.Forms.TextBoxBase.AdjustSelectionStartAndEnd(Int32 selStart, Int32 selLength, Int32& start, Int32& end, Int32 textLen)
+   在 System.Windows.Forms.TextBoxBase.GetSelectionStartAndLength(Int32& start, Int32& length)
+   在 System.Windows.Forms.TextBoxBase.AppendText(String text)
+   在 SexyBaseball.Server.MonohUIForm.f_Log(ELogType t, String format, Object[] args) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MonohUIForm.cs:行号 57
+   在 SexyBaseball.Server.MonohUIForm.CallBack_Log(Object Obj) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MonohUIForm.cs:行号 37
+   在 b.a(Object A_0)
+   在 ccU3DEngine.ccMessagePoolV2.f_Update()
+   在 glo_Main.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 103
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 11:21:58,339 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 11:23:04,514 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 11:23:04,644 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 11:23:04,657 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 11:23:04,659 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 11:23:04,660 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 11:23:04,662 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 11:23:04,662 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 11:23:04,796 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 11:23:08,208 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 11:23:08,236 [10] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Windows.Forms.UnsafeNativeMethods.WaitMessage()
+   在 System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   在 MonohUI.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 20
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 11:23:08,288 [11] ERROR Photon.SocketServer.ApplicationBase - System.ComponentModel.Win32Exception (0x80004005): 创建窗口句柄时出错。
+   在 System.Windows.Forms.NativeWindow.CreateHandle(CreateParams cp)
+   在 System.Windows.Forms.Control.CreateHandle()
+   在 System.Windows.Forms.TextBoxBase.CreateHandle()
+   在 System.Windows.Forms.Control.get_Handle()
+   在 System.Windows.Forms.RichTextBox.get_TextLength()
+   在 System.Windows.Forms.TextBoxBase.AdjustSelectionStartAndEnd(Int32 selStart, Int32 selLength, Int32& start, Int32& end, Int32 textLen)
+   在 System.Windows.Forms.TextBoxBase.GetSelectionStartAndLength(Int32& start, Int32& length)
+   在 System.Windows.Forms.TextBoxBase.AppendText(String text)
+   在 SexyBaseball.Server.MonohUIForm.f_Log(ELogType t, String format, Object[] args) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MonohUIForm.cs:行号 57
+   在 SexyBaseball.Server.MonohUIForm.CallBack_Log(Object Obj) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MonohUIForm.cs:行号 37
+   在 b.a(Object A_0)
+   在 ccU3DEngine.ccMessagePoolV2.f_Update()
+   在 glo_Main.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 103
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 11:23:08,326 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 11:23:16,766 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 11:23:16,888 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 11:23:16,900 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 11:23:16,902 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 11:23:16,903 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 11:23:16,905 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 11:23:16,905 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 11:23:17,019 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 11:23:24,525 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 11:23:24,533 [12] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Windows.Forms.UnsafeNativeMethods.WaitMessage()
+   在 System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   在 MonohUI.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 20
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 11:23:24,578 [13] ERROR Photon.SocketServer.ApplicationBase - System.ComponentModel.Win32Exception (0x80004005): 创建窗口句柄时出错。
+   在 System.Windows.Forms.NativeWindow.CreateHandle(CreateParams cp)
+   在 System.Windows.Forms.Control.CreateHandle()
+   在 System.Windows.Forms.TextBoxBase.CreateHandle()
+   在 System.Windows.Forms.Control.get_Handle()
+   在 System.Windows.Forms.RichTextBox.get_TextLength()
+   在 System.Windows.Forms.TextBoxBase.AdjustSelectionStartAndEnd(Int32 selStart, Int32 selLength, Int32& start, Int32& end, Int32 textLen)
+   在 System.Windows.Forms.TextBoxBase.GetSelectionStartAndLength(Int32& start, Int32& length)
+   在 System.Windows.Forms.TextBoxBase.AppendText(String text)
+   在 SexyBaseball.Server.MonohUIForm.f_Log(ELogType t, String format, Object[] args) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MonohUIForm.cs:行号 57
+   在 MonohUI.CallBack_Log(String strMsgType, String strMsg) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 40
+   在 MessageBox.a(String A_0, String A_1)
+   在 glo_Main.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 108
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 11:23:24,636 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 11:24:35,580 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 11:24:35,704 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 11:24:35,715 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 11:24:35,717 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 11:24:35,718 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 11:24:35,720 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 11:24:35,720 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 11:24:35,834 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 11:24:41,002 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 11:24:41,005 [12] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Monitor.Enter(Object obj)
+   在 System.Windows.Forms.NativeWindow.CreateHandle(CreateParams cp)
+   在 System.Windows.Forms.Form.get_TaskbarOwner()
+   在 System.Windows.Forms.Form.UpdateHandleWithOwner()
+   在 System.Windows.Forms.Form.CreateHandle()
+   在 System.Windows.Forms.Control.get_Handle()
+   在 System.Windows.Forms.Control.SetVisibleCore(Boolean value)
+   在 System.Windows.Forms.Form.SetVisibleCore(Boolean value)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   在 MonohUI.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 20
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 11:25:22,880 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 11:25:23,003 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 11:25:23,014 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 11:25:23,016 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 11:25:23,017 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 11:25:23,019 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 11:25:23,019 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 11:25:23,139 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 11:25:29,896 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 11:25:29,899 [9] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Monitor.Enter(Object obj)
+   在 System.Windows.Forms.NativeWindow.CreateHandle(CreateParams cp)
+   在 System.Windows.Forms.Form.get_TaskbarOwner()
+   在 System.Windows.Forms.Form.UpdateHandleWithOwner()
+   在 System.Windows.Forms.Form.CreateHandle()
+   在 System.Windows.Forms.Control.get_Handle()
+   在 System.Windows.Forms.Control.SetVisibleCore(Boolean value)
+   在 System.Windows.Forms.Form.SetVisibleCore(Boolean value)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   在 MonohUI.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 20
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 11:25:30,030 [10] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.StubHelpers.StubHelpers.FmtClassUpdateNativeInternal(Object obj, Byte* pNative, CleanupWorkList& pCleanupWorkList)
+   在 System.Windows.Forms.UnsafeNativeMethods.SendMessage(HandleRef hWnd, Int32 msg, Int32 wParam, EDITSTREAM64 lParam)
+   在 System.Windows.Forms.RichTextBox.StreamOut(Stream data, Int32 flags, Boolean includeCrLfs)
+   在 System.Windows.Forms.RichTextBox.StreamOut(Int32 flags)
+   在 System.Windows.Forms.RichTextBox.get_Text()
+   在 SexyBaseball.Server.MonohUIForm.f_Log(ELogType t, String format, Object[] args) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MonohUIForm.cs:行号 54
+   在 MonohUI.CallBack_Log(String strMsgType, String strMsg) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 33
+   在 MessageBox.a(String A_0, String A_1)
+   在 glo_Main.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 97
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 11:25:30,045 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 11:26:38,943 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 11:26:39,096 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 11:26:39,109 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 11:26:39,111 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 11:26:39,112 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 11:26:39,114 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 11:26:39,114 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 11:26:39,250 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 11:27:10,229 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 11:27:25,276 [13] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 glo_Main.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 95
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 12:04:56,505 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 12:04:56,634 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 12:04:56,644 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 12:04:56,645 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 12:04:56,647 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 12:04:56,649 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 12:04:56,649 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 12:04:56,768 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 12:05:03,174 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 12:05:18,275 [11] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 glo_Main.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 106
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 12:05:27,746 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 12:05:27,874 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 12:05:27,890 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 12:05:27,893 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 12:05:27,894 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 12:05:27,897 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 12:05:27,897 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 12:05:28,034 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 12:05:39,121 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 12:05:39,124 [12] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Monitor.Enter(Object obj)
+   在 System.Windows.Forms.NativeWindow.CreateHandle(CreateParams cp)
+   在 System.Windows.Forms.Form.get_TaskbarOwner()
+   在 System.Windows.Forms.Form.UpdateHandleWithOwner()
+   在 System.Windows.Forms.Form.CreateHandle()
+   在 System.Windows.Forms.Control.get_Handle()
+   在 System.Windows.Forms.Control.SetVisibleCore(Boolean value)
+   在 System.Windows.Forms.Form.SetVisibleCore(Boolean value)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   在 MonohUI.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 23
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 12:05:39,252 [13] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.StubHelpers.StubHelpers.FmtClassUpdateNativeInternal(Object obj, Byte* pNative, CleanupWorkList& pCleanupWorkList)
+   在 System.Windows.Forms.UnsafeNativeMethods.SendMessage(HandleRef hWnd, Int32 msg, Int32 wParam, EDITSTREAM64 lParam)
+   在 System.Windows.Forms.RichTextBox.StreamOut(Stream data, Int32 flags, Boolean includeCrLfs)
+   在 System.Windows.Forms.RichTextBox.StreamOut(Int32 flags)
+   在 System.Windows.Forms.RichTextBox.get_Text()
+   在 SexyBaseball.Server.MonohUIForm.f_Log(ELogType t, String format, Object[] args) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MonohUIForm.cs:行号 47
+   在 MonohUI.CallBack_Log(String strMsgType, String strMsg) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 44
+   在 MessageBox.a(String A_0, String A_1)
+   在 glo_Main.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 108
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 12:05:39,267 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 12:06:19,843 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 12:06:19,990 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 12:06:20,000 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 12:06:20,002 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 12:06:20,003 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 12:06:20,005 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 12:06:20,005 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 12:06:20,125 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 12:06:26,898 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 12:06:30,845 [12] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Windows.Forms.UnsafeNativeMethods.WaitMessage()
+   在 System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   在 MonohUI.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 23
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 12:06:30,890 [13] ERROR Photon.SocketServer.ApplicationBase - System.ComponentModel.Win32Exception (0x80004005): 创建窗口句柄时出错。
+   在 System.Windows.Forms.NativeWindow.CreateHandle(CreateParams cp)
+   在 System.Windows.Forms.Control.CreateHandle()
+   在 System.Windows.Forms.TextBoxBase.CreateHandle()
+   在 System.Windows.Forms.Control.get_Handle()
+   在 System.Windows.Forms.RichTextBox.get_TextLength()
+   在 System.Windows.Forms.TextBoxBase.AdjustSelectionStartAndEnd(Int32 selStart, Int32 selLength, Int32& start, Int32& end, Int32 textLen)
+   在 System.Windows.Forms.TextBoxBase.GetSelectionStartAndLength(Int32& start, Int32& length)
+   在 System.Windows.Forms.TextBoxBase.AppendText(String text)
+   在 SexyBaseball.Server.MonohUIForm.f_Log(ELogType t, String format, Object[] args) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MonohUIForm.cs:行号 48
+   在 MonohUI.CallBack_Log(String strMsgType, String strMsg) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 48
+   在 MessageBox.a(String A_0, String A_1)
+   在 glo_Main.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 112
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 12:06:30,982 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 12:07:04,057 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 12:07:04,207 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 12:07:04,219 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 12:07:04,221 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 12:07:04,221 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 12:07:04,223 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 12:07:04,223 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 12:07:04,346 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 12:07:43,416 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 12:07:43,427 [12] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Windows.Forms.UnsafeNativeMethods.WaitMessage()
+   在 System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   在 MonohUI.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 23
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 12:07:43,472 [13] ERROR Photon.SocketServer.ApplicationBase - System.ComponentModel.Win32Exception (0x80004005): 创建窗口句柄时出错。
+   在 System.Windows.Forms.NativeWindow.CreateHandle(CreateParams cp)
+   在 System.Windows.Forms.Control.CreateHandle()
+   在 System.Windows.Forms.TextBoxBase.CreateHandle()
+   在 System.Windows.Forms.Control.get_Handle()
+   在 System.Windows.Forms.RichTextBox.get_TextLength()
+   在 System.Windows.Forms.TextBoxBase.AdjustSelectionStartAndEnd(Int32 selStart, Int32 selLength, Int32& start, Int32& end, Int32 textLen)
+   在 System.Windows.Forms.TextBoxBase.GetSelectionStartAndLength(Int32& start, Int32& length)
+   在 System.Windows.Forms.TextBoxBase.AppendText(String text)
+   在 SexyBaseball.Server.MonohUIForm.f_Log(ELogType t, String format, Object[] args) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MonohUIForm.cs:行号 48
+   在 MonohUI.CallBack_Log(String strMsgType, String strMsg) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 48
+   在 MessageBox.a(String A_0, String A_1)
+   在 glo_Main.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 112
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 12:07:43,530 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 12:08:06,433 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 12:08:06,557 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 12:08:06,568 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 12:08:06,569 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 12:08:06,570 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 12:08:06,572 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 12:08:06,572 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 12:08:06,689 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 12:08:39,228 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 12:08:41,140 [9] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+2021-06-18 12:08:41,140 [9] WARN  Photon.SocketServer.ApplicationBase - Process is terminating.
+2021-06-18 12:08:49,882 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 12:08:50,029 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 12:08:50,040 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 12:08:50,042 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 12:08:50,043 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 12:08:50,045 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 12:08:50,045 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 12:08:50,163 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 12:09:05,917 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 12:09:05,924 [10] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Windows.Forms.UnsafeNativeMethods.WaitMessage()
+   在 System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   在 MonohUI.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 23
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 12:09:05,966 [11] ERROR Photon.SocketServer.ApplicationBase - System.ComponentModel.Win32Exception (0x80004005): 创建窗口句柄时出错。
+   在 System.Windows.Forms.NativeWindow.CreateHandle(CreateParams cp)
+   在 System.Windows.Forms.Control.CreateHandle()
+   在 System.Windows.Forms.TextBoxBase.CreateHandle()
+   在 System.Windows.Forms.Control.get_Handle()
+   在 System.Windows.Forms.RichTextBox.get_TextLength()
+   在 System.Windows.Forms.TextBoxBase.AdjustSelectionStartAndEnd(Int32 selStart, Int32 selLength, Int32& start, Int32& end, Int32 textLen)
+   在 System.Windows.Forms.TextBoxBase.GetSelectionStartAndLength(Int32& start, Int32& length)
+   在 System.Windows.Forms.TextBoxBase.AppendText(String text)
+   在 SexyBaseball.Server.MonohUIForm.f_Log(ELogType t, String format, Object[] args) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MonohUIForm.cs:行号 48
+   在 MonohUI.CallBack_Log(String strMsgType, String strMsg) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 48
+   在 MessageBox.a(String A_0, String A_1)
+   在 glo_Main.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 112
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 12:09:06,027 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 12:09:44,367 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 12:09:44,505 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 12:09:44,516 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 12:09:44,517 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 12:09:44,518 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 12:09:44,520 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 12:09:44,520 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 12:09:44,635 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 12:09:56,964 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 12:09:56,993 [12] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Windows.Forms.UnsafeNativeMethods.WaitMessage()
+   在 System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   在 MonohUI.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 23
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 12:09:57,038 [13] ERROR Photon.SocketServer.ApplicationBase - System.ComponentModel.Win32Exception (0x80004005): 创建窗口句柄时出错。
+   在 System.Windows.Forms.NativeWindow.CreateHandle(CreateParams cp)
+   在 System.Windows.Forms.Control.CreateHandle()
+   在 System.Windows.Forms.TextBoxBase.CreateHandle()
+   在 System.Windows.Forms.Control.get_Handle()
+   在 System.Windows.Forms.RichTextBox.get_TextLength()
+   在 System.Windows.Forms.TextBoxBase.AdjustSelectionStartAndEnd(Int32 selStart, Int32 selLength, Int32& start, Int32& end, Int32 textLen)
+   在 System.Windows.Forms.TextBoxBase.GetSelectionStartAndLength(Int32& start, Int32& length)
+   在 System.Windows.Forms.TextBoxBase.AppendText(String text)
+   在 SexyBaseball.Server.MonohUIForm.f_Log(ELogType t, String format, Object[] args) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MonohUIForm.cs:行号 48
+   在 MonohUI.CallBack_Log(String strMsgType, String strMsg) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 49
+   在 MessageBox.a(String A_0, String A_1)
+   在 glo_Main.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 113
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 12:09:57,080 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 12:12:20,505 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 12:12:20,638 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 12:12:20,648 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 12:12:20,651 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 12:12:20,652 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 12:12:20,653 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 12:12:20,653 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 12:12:20,770 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 12:12:27,639 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 12:12:32,092 [12] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Windows.Forms.UnsafeNativeMethods.WaitMessage()
+   在 System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   在 MonohUI.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 25
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 12:12:32,164 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 12:13:04,766 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 12:13:04,908 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 12:13:04,920 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 12:13:04,921 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 12:13:04,922 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 12:13:04,924 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 12:13:04,924 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 12:13:05,043 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 12:13:11,721 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 12:13:11,766 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 12:13:30,457 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 12:13:30,604 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 12:13:30,615 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 12:13:30,617 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 12:13:30,618 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 12:13:30,620 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 12:13:30,620 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 12:13:30,737 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 12:13:38,894 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 12:13:38,943 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 12:15:12,203 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 12:15:33,268 [1] ERROR Photon.SocketServer.ApplicationBase - System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 61.216.26.123:8980
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 SexyBaseball.Server.SCDatabase.f_Load() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\SCDatabase.cs:行号 26
+   在 SexyBaseball.Server.ServerApp.Setup() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\ServerApp.cs:行号 46
+   在 Photon.SocketServer.ApplicationBase.PhotonHostRuntimeInterfaces.IPhotonControl.OnPhotonRunning() 位置 h:\svncontent\photon-socketserver-sdk_cloud\src\Photon.SocketServer\ApplicationBase.cs:行号 1171
+2021-06-18 12:15:33,301 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 12:15:33,330 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 12:16:25,384 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 12:16:25,524 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 12:16:25,535 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 12:16:25,537 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 12:16:25,538 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 12:16:25,540 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 12:16:25,540 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 12:16:25,656 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 12:16:30,773 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 12:16:30,818 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 12:17:43,975 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 12:17:44,105 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 12:17:44,117 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 12:17:44,119 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 12:17:44,120 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 12:17:44,122 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 12:17:44,122 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 12:17:44,241 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 12:17:55,631 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 12:17:55,684 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 12:19:49,488 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 12:19:49,666 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 12:19:49,676 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 12:19:49,678 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 12:19:49,679 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 12:19:49,681 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 12:19:49,681 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 12:19:49,798 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 12:20:17,181 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 12:20:17,228 [13] ERROR Photon.SocketServer.ApplicationBase - System.ComponentModel.Win32Exception (0x80004005): 创建窗口句柄时出错。
+   在 System.Windows.Forms.NativeWindow.CreateHandle(CreateParams cp)
+   在 System.Windows.Forms.Control.CreateHandle()
+   在 System.Windows.Forms.TextBoxBase.CreateHandle()
+   在 System.Windows.Forms.RichTextBox.set_SelectionColor(Color value)
+   在 SexyBaseball.Server.MonohUIForm.f_Log(ELogType t, String format, Object[] args) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MonohUI\MonohUIForm.cs:行号 67
+   在 MonohUI.CallBack_Log(String strMsgType, String strMsg) 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MonohUI\MonohUI.cs:行号 60
+   在 MessageBox.a(String A_0, String A_1)
+   在 glo_Main.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\Glo_Data\glo_Main.cs:行号 66
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 12:20:17,354 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 12:21:12,817 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 12:21:12,972 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 12:21:12,982 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 12:21:12,984 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 12:21:12,985 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 12:21:12,987 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 12:21:12,987 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 12:21:13,105 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 12:21:20,757 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 12:21:20,793 [12] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Windows.Forms.Application.ThreadContext.DisposeThreadWindows()
+   在 System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   在 MonohUI.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MonohUI\MonohUI.cs:行号 24
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 12:21:20,904 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 12:21:43,521 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 12:21:43,705 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 12:21:43,716 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 12:21:43,718 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 12:21:43,719 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 12:21:43,721 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 12:21:43,721 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 12:21:43,842 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 12:21:48,344 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 12:21:48,394 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer
+2021-06-18 14:37:37,598 [1] INFO  SexyBaseball.Server.ServerApp - Configuration file loaded: E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin\config.xml
+2021-06-18 14:37:37,877 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本
+2021-06-18 14:37:37,893 [1] INFO  SexyBaseball.Server.SC_Pool - AB资源版本:0
+2021-06-18 14:37:37,893 [1] WARN  DialoguesSC - DialoguesDT脚本存在空记录, 10
+2021-06-18 14:37:37,893 [1] WARN  RPSGameSC - RPSGameDT脚本存在空记录, 4
+2021-06-18 14:37:37,893 [1] WARN  SlotMachineSC - SlotMachineDT脚本存在空记录, 8
+2021-06-18 14:37:37,893 [1] INFO  SexyBaseball.Server.SC_Pool - 解析脚本成功
+2021-06-18 14:37:38,015 [1] INFO  Photon.SocketServer.ApplicationBase - Application start: AppId=SexyBaseballServer; AppPath=E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer, Type=SexyBaseball.Server.ServerApp 
+2021-06-18 14:38:57,098 [1] INFO  Photon.SocketServer.ApplicationBase - Application is stopping: AppId=SexyBaseballServer
+2021-06-18 14:38:57,129 [9] ERROR Photon.SocketServer.ApplicationBase - System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Windows.Forms.Application.ThreadContext.DisposeThreadWindows()
+   在 System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   在 MonohUI.run() 位置 E:\jjjjjjjjjjjjjjjjjjj\AVG_Project\sexybaseball\server\SexyBaseball.Server\MonohUI\MonohUI.cs:行号 24
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2021-06-18 14:38:57,345 [1] INFO  Photon.SocketServer.ApplicationBase - Application stop: AppId=SexyBaseballServer

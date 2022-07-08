@@ -50,9 +50,9 @@ public class GameSocket : BaseSocket
 
     public void f_Login(ccCallback func = null)
     {
-        Socket_Login tSocket_Login = (Socket_Login)_SocketMachineManger.f_GetStaticBase((int)EM_Socket.Login);
-        tSocket_Login.f_Login(func);
-        _SocketMachineManger.f_ChangeState(tSocket_Login, func);
+        //Socket_Login tSocket_Login = (Socket_Login)_SocketMachineManger.f_GetStaticBase((int)EM_Socket.Login);
+        //tSocket_Login.f_Login(func);
+        //_SocketMachineManger.f_ChangeState(tSocket_Login, func);
     }
 
     #endregion
@@ -80,26 +80,26 @@ public class GameSocket : BaseSocket
         base.InitMessage();
 
         //m_GMSocketMessagePool.f_AddListener(SocketCommand.GM_SCK_UNBUILD.ToString(), On_GM_SCK_UNBUILD, null);
-        stGameCommandReturn tGameCommandRet = new stGameCommandReturn();
-        f_AddListener((int)SocketCommand.CONTROL_CTG_OperateResult, tGameCommandRet, On_CMsg_GameCommandReturn);
+        //stGameCommandReturn tGameCommandRet = new stGameCommandReturn();
+        //f_AddListener((int)SocketCommand.CONTROL_CTG_OperateResult, tGameCommandRet, On_CMsg_GameCommandReturn);
 
         //////////////////////////////////////////////////////////////////////////
         //DATA
-        stCarStatic tstCarStatic = new stCarStatic();
-        f_AddListener((int)SocketCommand.emResultUpdate, tstCarStatic, OnResultUpdate);
+        //stCarStatic tstCarStatic = new stCarStatic();
+        //f_AddListener((int)SocketCommand.emResultUpdate, tstCarStatic, OnResultUpdate);
 
         basicNode1 tPing = new basicNode1();
         f_AddListener((int)SocketCommand.PING, tPing, On_Ping);
 
 
-        stLedCommand tstLedCommand = new stLedCommand();
-        f_AddListener((int)SocketCommand.emLedMotor, tstLedCommand, On_stLedCommand);
+        //stLedCommand tstLedCommand = new stLedCommand();
+        //f_AddListener((int)SocketCommand.emLedMotor, tstLedCommand, On_stLedCommand);
 
-        stPlayerFishing tstPlayerFishing = new stPlayerFishing();
-        f_AddListener((int)SocketCommand.emPlayerFishing, tstPlayerFishing, OnPlayerFishing);
+        //stPlayerFishing tstPlayerFishing = new stPlayerFishing();
+        //f_AddListener((int)SocketCommand.emPlayerFishing, tstPlayerFishing, OnPlayerFishing);
 
-        stGameControll tstGameControll = new stGameControll();
-        f_AddListener((int)SocketCommand.emGameControll, tstGameControll, OnGameControll);
+        //stGameControll tstGameControll = new stGameControll();
+        //f_AddListener((int)SocketCommand.emGameControll, tstGameControll, OnGameControll);
 
 
     }
@@ -162,7 +162,7 @@ public class GameSocket : BaseSocket
         CreateSocketBuf tCreateSocketBuf = new CreateSocketBuf();
         tCreateSocketBuf.f_Add(tstPlayerCharge);
         byte[] bBuf = tCreateSocketBuf.f_GetBuf();
-        int iNum = f_SendBuf2Force((int)SocketCommand.emPlayerCharge, bBuf);
+        //int iNum = f_SendBuf2Force((int)SocketCommand.emPlayerCharge, bBuf);
     }
 
 

@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scence/GameMain.unity
     guid: 267f898010c87f646a4dc48a6db5c332
+  - enabled: 1
+    path: Assets/Scence/Cheerleading.unity
+    guid: e59494556d034ac4782e9aecb70c2689
   m_configObjects: {}

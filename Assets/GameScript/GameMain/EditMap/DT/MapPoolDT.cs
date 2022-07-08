@@ -39,7 +39,7 @@ public class MapPoolDT: BasePoolDT<long>
             collider.height = tCharacterDT.fHeight;
         }
 
-        //替物件裝上動畫機
+        /*//替物件裝上動畫機
         if (!tGameObject.TryGetComponent(out Animator oAnimator))
         {
             Animator tAnimator = tGameObject.AddComponent<Animator>();
@@ -52,7 +52,7 @@ public class MapPoolDT: BasePoolDT<long>
             {
                 MessageBox.DEBUG("動畫機載入出錯：" + tCharacterDT.iId + ", 若沒有設相關動畫機則忽略此警告");
             }
-        }
+        }*/
     }
 
     public void f_UpdateInfor()

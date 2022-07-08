@@ -60,6 +60,7 @@ public class CharacterSC : NBaseSC
                 DataDT.szDisplayAB = tData[a++];
                 DataDT.fDisplayScale = ccMath.atof(tData[a++]);
                 DataDT.szAnimGroup = tData[a++];
+                DataDT.szAudioSource = tData[a++];
                 DataDT.szURL = tData[a++];
                 SaveItem(DataDT);
             }

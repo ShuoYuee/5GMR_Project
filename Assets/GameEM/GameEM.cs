@@ -1,9 +1,4 @@
 ﻿
-public enum EM_eLocalData
-{
-    iCurGameControllIndex = 1,
-
-};
 
 public enum EM_eGameStep
 {
@@ -20,35 +15,68 @@ public enum EM_eGameStep
 public enum eMsgOperateResult
 {
     OR_Succeed = 0, // 成功
-    OR_Fail = 1, //未知原因失败
-    OR_SocketConnectFail = 2, //网格无法连接     
-    OR_VerFail = 3, //获取版本失败 
-    OR_ScFail = 4, //获取脚本失败 
-    OR_ResourceFail = 5, //加载资源失败
+    OR_Fail = 1, //未知原因失敗
+    OR_SocketConnectFail = 2, //網格無法連接     
+    OR_VerFail = 3, //獲取版本失敗 
+    OR_ScFail = 4, //獲取腳本失敗 
+    OR_ResourceFail = 5, //載入資源失敗
 
-    OR_Error_AccountRepetition = 20, // 注册：账号重复
-    OR_Error_NoAccount = 21, // 登陆：账号不存在
-    OR_Error_Password = 22, // 登陆：密码错误
-    OR_Error_AccountOnline = 24, // 登陆：账号在线
-    OR_Error_NameRepetition = 23, // 改名：名称重复
+    OR_Error_AccountRepetition = 20, // 註冊：帳號重複
+    OR_Error_NoAccount = 21, // 登陸：帳號不存在
+    OR_Error_Password = 22, // 登陸：密碼錯誤
+    OR_Error_AccountOnline = 24, // 登陸：帳號線上
+    OR_Error_NameRepetition = 23, // 改名：名稱重複
 
-    OR_Error_VersionNotMatch = 71, //版本不匹配 2016-7-8 
-    OR_Error_ElseWhereLogin = 72, //异地登录 2016-7-8 
-    OR_Error_SeverMaintain = 73, //服务器维护 2016-7-8 
+    OR_Error_VersionNotMatch = 71, //版本不匹配
+    OR_Error_ElseWhereLogin = 72, //異地登錄
+    OR_Error_SeverMaintain = 73, //伺服器維護
 
-    OR_Error_PosIsHavePlayer = 74, //位置上已经有玩家，操作失败
+    OR_Error_PosIsHavePlayer = 74, //位置上已經有玩家，操作失敗
+    OR_Error_GameIsStart,      //已有房主啟動遊戲
 
-
-    OR_Error_WIFIConnectTimeOut = 993, //WIFI网络未开
-    OR_Error_ConnectTimeOut = 994, //连接超时
-    OR_Error_CreateAccountTimeOut = 995, //注册超时
-    OR_Error_LoginTimeOut = 996, //登陆超时
-    OR_Error_ExitGame = 997, //游戏出错，强制玩家离开
-    OR_Error_ServerOffLine = 998, //服务器未开启
-    OR_Error_Disconnect = 999, //游戏断开连接
-    OR_Error_Default = 10000, //操作失败
+    OR_Error_WIFIConnectTimeOut = 993, //WIFI網路未開
+    OR_Error_ConnectTimeOut = 994, //連接逾時
+    OR_Error_CreateAccountTimeOut = 995, //註冊超時
+    OR_Error_LoginTimeOut = 996, //登陸超時
+    OR_Error_ExitGame = 997, //遊戲出錯，強制玩家離開
+    OR_Error_ServerOffLine = 998, //伺服器未開啟
+    OR_Error_Disconnect = 999, //遊戲斷開連接
+    OR_Error_Default = 10000, //操作失敗
 };
 
+public enum EM_TeamID
+{//玩家陣營
+    None = 0,
+    TeamA = 1,
+    TeamB = 2,
+}
+
+public enum EM_RoleState
+{
+    /// <summary>
+    /// 玩家
+    /// </summary>
+    Player = 0,
+    /// <summary>
+    /// 動畫物件
+    /// </summary>
+    Anim = 1,
+    /// <summary>
+    /// 網頁連結物件
+    /// </summary>
+    URL = 2,
+    /// <summary>
+    /// 動畫和網頁連結物件
+    /// </summary>
+    AnimAndURL = 3,
+}
+
+public enum EM_InterState
+{
+    None = 0,
+    Anim,
+    URL,
+}
 
 public enum EM_GameResult
 {
@@ -75,74 +103,6 @@ public enum EM_GameStatic
     Gaming,
     Win,
     Lost,
-}
-
-public enum EM_PlayerControllStep
-{
-    Wait,
-    Throw,
-    Recevie,
-    InFishNet,
-    FishNetReceive,
-    /// <summary>
-    /// 鱼线断开
-    /// </summary>
-    FishingRodDis,
-    Complete,
-    //FishForce,
-
-}
-
-public enum EM_FishStep
-{
-    /// <summary>
-    /// 鱼游动
-    /// </summary>
-    Swim,    
-    CatahToShock,
-    /// <summary>
-    /// 电击
-    /// </summary>
-    Shock,
-    /// <summary>
-    /// 游向食物准备吃钓
-    /// </summary>
-    Move2Food,
-    /// <summary>
-    /// 吃钓，播放跳起来转身动画
-    /// </summary>
-    Catch,
-    /// <summary>
-    /// 鱼已经吃钓，开始挣扎
-    /// </summary>
-    EatFooding,    
-    /// <summary>
-    /// 收竿中
-    /// </summary>
-    BeReciver,
-    /// <summary>
-    /// 收完竿后进行一次快速逃跑挣扎
-    /// </summary>
-    FastRunAway,
-    /// <summary>
-    /// 鱼死亡
-    /// </summary>
-    Die,
-    /// <summary>
-    /// 鱼进入网中
-    /// </summary>
-    FishInNet,
-    Invincible,
-    SucessRunAway,
-    FishFindPlayer,
-
-}
-    
-
-public enum EM_GameScene
-{
-    GameMain,
-
 }
 
 public enum EM_PlayerIndex
@@ -179,25 +139,15 @@ public enum EM_PlayerIndex
     Player30,
 }
 
-public enum EM_MoveWay
-{
-    Left,
-    Right,
-    
-
-}
-
 public enum EM_TableWay
 {
     Top,
     Bottom,
     Left,
     Right,
-
-
 }
 
-public enum EM_Sound
+/*public enum EM_Sound
 {
     /// <summary>
     /// 聲道1-遊戲操作
@@ -215,33 +165,7 @@ public enum EM_Sound
     /// 語音
     /// </summary>
     Voice,
-}
-
-/// <summary>
-/// 編輯器模式
-/// </summary>
-public enum EM_EditState
-{
-    None = 0,   //空
-    Position = 1,   //座標
-    Rotation = 2,  //旋轉
-    Scale = 3,  //縮放
-}
-
-public enum EM_EditAxis
-{
-    AxisX = 1,
-    AxisY = 2,
-    AxisZ = 3,
-    Free = 4,
-}
-
-public enum EM_EditPoint
-{
-    WorldPoint = 1,
-    LocalPoint = 2,
-    UserPoint = 3,
-}
+}*/
 
 public enum EM_GameControllAction
 {
@@ -331,8 +255,6 @@ public enum EM_GameControllAction
     End = 50000,
 }
 
-
-
 public enum EM_MissionEndType
 {
     None = 0,
@@ -347,4 +269,158 @@ public enum EM_MissionEndType
     /// </summary>
     MessionTimeOut = 2,
 
+}
+
+public enum CheerleadStateClass
+{
+    Mora,
+    Dance
+}
+
+public enum EM_GuessGameMod
+{
+    Waitting,
+    Playing
+}
+
+namespace MR_Edit
+{
+    #region 編輯器相關
+    /// <summary>
+    /// 編輯器模式
+    /// </summary>
+    public enum EM_EditCtrlState
+    {
+        None = 0,   //空
+        Position = 1,   //座標
+        Rotation = 2,  //旋轉
+        Scale = 3,  //縮放
+    }
+
+    /// <summary>
+    /// 編輯軸向
+    /// </summary>
+    public enum EM_EditAxis
+    {
+        AxisX = 1,
+        AxisY = 2,
+        AxisZ = 3,
+        Free = 4,
+    }
+
+    /// <summary>
+    /// 編輯座標模式
+    /// </summary>
+    public enum EM_EditPoint
+    {
+        WorldPoint = 1,
+        LocalPoint = 2,
+        UserPoint = 3,
+    }
+    #endregion
+
+    #region 狀態機
+    /// <summary>
+    /// 狀態機LogIn
+    /// </summary>
+    public enum EM_LogInState
+    {
+        Idle = 1,
+        LoggingIn,
+    }
+    
+    /// <summary>
+    /// 狀態機Main
+    /// </summary>
+    public enum EM_MainState
+    {
+        Idle = 1,
+        Main,
+        Edit,
+        GuessWait,
+        Guess,
+        Logout,
+    }
+    #endregion
+
+    #region 啦啦隊相關
+    /// <summary>
+    /// 遊戲模式
+    /// </summary>
+    public enum EM_GameMod
+    {
+        None = 0,
+        Guess,
+    }
+
+    public enum EM_GuessState
+    {
+        None,
+        /// <summary>
+        /// Client確認遊戲狀態
+        /// </summary>
+        CheckState = 1,
+        /// <summary>
+        /// Server開始遊戲
+        /// </summary>
+        Start,
+        /// <summary>
+        /// Server執行猜測
+        /// </summary>
+        Guess,
+        /// <summary>
+        /// Server重啟遊戲
+        /// </summary>
+        Restart,
+        /// <summary>
+        /// Server結束遊戲
+        /// </summary>
+        End,
+
+        /// <summary>
+        /// Client確認遊戲狀態
+        /// </summary>
+        CallCheckState,
+        /// <summary>
+        /// Client建立房主
+        /// </summary>
+        CallRoomMaster,
+        /// <summary>
+        /// Client開始遊戲
+        /// </summary>
+        CallStart,
+        /// <summary>
+        /// Client執行猜測
+        /// </summary>
+        CallGuess,
+        /// <summary>
+        /// Client重啟遊戲
+        /// </summary>
+        CallRestart,
+        /// <summary>
+        /// Client結束遊戲
+        /// </summary>
+        CallEnd,
+
+        /// <summary>
+        /// 遊戲進行中
+        /// </summary>
+        GameIng,
+        /// <summary>
+        /// 遊戲並未開始
+        /// </summary>
+        NotGameIng,
+    }
+
+    /// <summary>
+    /// 猜拳结果
+    /// </summary>
+    public enum EM_GuessResult
+    {
+        None = 0,
+        Win = 1,
+        Lose,
+        test
+    }
+    #endregion
 }

@@ -1,0 +1,12 @@
+11708: 21:00:13.872 - ---
+11708: 21:00:13.872 - Service: "Photon Socket Server" starting
+11708: 21:00:13.872 - Config File: E:\practice\MR\Photon-OnPremise-Server-SDK_v4\deploy\bin_Win64\PhotonServer.config
+11708: 21:00:13.873 - Will produce at most: 10 crash dumps
+11708: 21:00:13.873 - Service shutting down
+11708: 21:00:13.874 - Service shut down complete
+26688: 21:02:20.169 - ---
+26688: 21:02:20.169 - Service: "Photon Socket Server" starting
+26688: 21:02:20.169 - Config File: E:\practice\MR\Photon-OnPremise-Server-SDK_v4\deploy\bin_Win64\PhotonServer.config
+26688: 21:02:20.170 - Will produce at most: 10 crash dumps
+26688: 21:02:20.170 - Service shutting down
+26688: 21:02:20.171 - Service shut down complete

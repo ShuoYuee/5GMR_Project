@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Configs enableGlobalUnique="0">	
+    <Server >
+        <Ip>192.168.0.227</Ip>
+        <Port>8899</Port>
+        <HttpPort>18080</HttpPort>
+
+        <!--来源数据库-->
+        <game_db_host>127.0.0.1</game_db_host>
+        <game_db_port>3306</game_db_port>
+        <game_db_user>root</game_db_user>
+        <game_db_password>10114040</game_db_password>
+        <game_db_name>SexyBaseBall</game_db_name>     	
+       
+    </Server>    
+</Configs>

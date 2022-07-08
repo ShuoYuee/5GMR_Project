@@ -1,0 +1,2 @@
+C:\Users\puetsualiau\Desktop\Photon-OnPremise-Server-SDK_v4-0-29-11263\src-server\Hive\PhotonHive.TestConsole\obj\Debug\PhotonHive.TestConsole.csprojAssemblyReference.cache
+C:\Users\puetsualiau\Desktop\Photon-OnPremise-Server-SDK_v4-0-29-11263\src-server\Hive\PhotonHive.TestConsole\obj\Debug\PhotonHive.TestConsole.csproj.CoreCompileInputs.cache

@@ -1,0 +1,74 @@
+1540: 00:45:02.064 - ---
+1540: 00:45:02.064 - Service: "Photon Socket Server" starting
+1540: 00:45:02.064 - Config File: D:\practice\MR\Photon-OnPremise-Server-SDK_v4\deploy\bin_Win64\PhotonServer.config
+1540: 00:45:02.065 - Will produce at most: 10 crash dumps
+1540: 00:45:02.065 - MessageBox: Photon Socket Server - 4.0.28.2962
+
+Usage: PhotonSocketServer.exe  Followed by the following command line options.
+  /help		Display this list.
+  /noMessages	Must be first. Do not display status messages.
+  /install name	Installs an instance of the service named 'name'.
+  /installCounters	Installs performance counters for this service.
+  /remove name	Removes the instance of the service named 'name'.
+  /removeCounters	Removes performance counters for this service.
+  /run name   	Runs the service as a normal process for debugging.
+  /stop         	Request all instances of Photon to shutdown and exit.
+  /stop1 name	Request instance 'name' of Photon shutdown and exit.
+  /configPath path	Use the supplied path to locate the config file.
+  /config file	Use the supplied config file.
+
+Note that /config and /configFile can be used with /install and /run
+
+Note that only /noMessages can be combined with all other command line options.
+
+1540: 00:45:03.641 - Service shutting down: commandline option error. Errorcode: 255
+1540: 00:45:03.642 - Service shut down complete
+2644: 00:56:37.157 - ---
+2644: 00:56:37.157 - Service: "Photon Socket Server" starting
+2644: 00:56:37.157 - Config File: D:\practice\MR\Photon-OnPremise-Server-SDK_v4\deploy\bin_Win64\PhotonServer.config
+2644: 00:56:37.158 - Will produce at most: 10 crash dumps
+2644: 00:56:39.908 - MessageBox: Photon Socket Server - 4.0.28.2962
+
+Usage: PhotonSocketServer.exe  Followed by the following command line options.
+  /help		Display this list.
+  /noMessages	Must be first. Do not display status messages.
+  /install name	Installs an instance of the service named 'name'.
+  /installCounters	Installs performance counters for this service.
+  /remove name	Removes the instance of the service named 'name'.
+  /removeCounters	Removes performance counters for this service.
+  /run name   	Runs the service as a normal process for debugging.
+  /stop         	Request all instances of Photon to shutdown and exit.
+  /stop1 name	Request instance 'name' of Photon shutdown and exit.
+  /configPath path	Use the supplied path to locate the config file.
+  /config file	Use the supplied config file.
+
+Note that /config and /configFile can be used with /install and /run
+
+Note that only /noMessages can be combined with all other command line options.
+
+2644: 00:56:44.833 - Service shutting down: commandline option error. Errorcode: 255
+2644: 00:56:44.836 - Service shut down complete
+3736: 00:56:50.285 - ---
+3736: 00:56:50.285 - Service: "Photon Socket Server" starting
+3736: 00:56:50.285 - Config File: D:\practice\MR\Photon-OnPremise-Server-SDK_v4\deploy\bin_Win64\PhotonServer.config
+3736: 00:56:50.286 - Will produce at most: 10 crash dumps
+3736: 00:56:50.286 - Service shutting down
+3736: 00:56:50.287 - Service shut down complete
+16456: 01:16:04.980 - ---
+16456: 01:16:04.980 - Service: "Photon Socket Server" starting
+16456: 01:16:04.980 - Config File: D:\practice\MR\Photon-OnPremise-Server-SDK_v4\deploy\bin_Win64\PhotonServer.config
+16456: 01:16:07.747 - Will produce at most: 10 crash dumps
+16456: 01:16:07.747 - Service shutting down
+16456: 01:16:07.748 - Service shut down complete
+22144: 01:16:15.447 - ---
+22144: 01:16:15.447 - Service: "Photon Socket Server" starting
+22144: 01:16:15.447 - Config File: D:\practice\MR\Photon-OnPremise-Server-SDK_v4\deploy\bin_Win64\PhotonServer.config
+22144: 01:16:15.448 - Will produce at most: 10 crash dumps
+22144: 01:16:15.448 - Service shutting down
+22144: 01:16:15.449 - Service shut down complete
+10720: 01:17:21.604 - ---
+10720: 01:17:21.604 - Service: "Photon Socket Server" starting
+10720: 01:17:21.604 - Config File: D:\practice\MR\Photon-OnPremise-Server-SDK_v4\deploy\bin_Win64\PhotonServer.config
+10720: 01:17:21.606 - Will produce at most: 10 crash dumps
+10720: 01:17:21.606 - Service shutting down
+10720: 01:17:21.607 - Service shut down complete

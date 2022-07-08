@@ -592,3 +592,10 @@ C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\obj\Debug\SteamVR_Act
 C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\obj\Debug\SteamVR_Actions.csproj.CopyComplete
 C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\obj\Debug\SteamVR_Actions.dll
 C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\obj\Debug\SteamVR_Actions.pdb
+C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\Temp\bin\Debug\Photon.MmoDemo.Client.Unity3D.dll
+C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\Temp\bin\Debug\Photon.MmoDemo.Common.dll
+C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\Temp\bin\Debug\Photon3Unity3D.dll
+C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\Temp\bin\Debug\Photon.MmoDemo.Client.Unity3D.pdb
+C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\Temp\bin\Debug\Photon.MmoDemo.Common.pdb
+C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\Temp\bin\Debug\Photon3Unity3D.pdb
+C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\Temp\bin\Debug\Photon3Unity3D.xml

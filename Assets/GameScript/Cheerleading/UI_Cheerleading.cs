@@ -486,13 +486,6 @@ namespace GameLogic
             GameTools.f_SetText(final, "沒有房主");
         }
         #endregion
-
-       
-<<<<<<< HEAD
-       
-
-=======
->>>>>>> remotes/origin/mytest_5GMR
         #endregion
 
         #region 房主退出後..

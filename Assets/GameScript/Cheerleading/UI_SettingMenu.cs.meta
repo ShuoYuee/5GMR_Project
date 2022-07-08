@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: f2203f2e000666e48bcdf56a76bdc799
+=======
+guid: 568418ac99c25544fb21df1b78450d2e
+>>>>>>> remotes/origin/mytest_5GMR
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

@@ -69,7 +69,7 @@ namespace GameLogic
             #endregion
 
             #region 按鈕設定
-            //f_RegClickEvent(f_GetObject("CheckGameState") , Check_GameState);
+            f_RegClickEvent(f_GetObject("CheckGameState") , f_CheckLoginOutState);
             f_RegClickEvent(gameBeginBtn, f_GameStart);
             //f_RegClickEvent(settingBtn, f_EndGame); //測試結束遊戲按鈕
             f_RegClickEvent(gameJoinBtn, f_JontGameControl);
@@ -92,9 +92,7 @@ namespace GameLogic
             gameTimer = 10f;
             gameResetTimer = gameTimer;
             wattingTimer = 5f;
-            wattingResetTimer = wattingTimer;
-
-           
+            wattingResetTimer = wattingTimer;      
         }
 
         private void f_Int()
@@ -171,8 +169,7 @@ namespace GameLogic
 
         #region 開啟遊戲(按下遊戲者成為房主，並控制遊戲)
         private void f_GameStart(GameObject go, object obj1, object obj2)
-        {
-            
+        {           
             SocketCallbackDT tSocketCallbackDT = new SocketCallbackDT();
             tSocketCallbackDT.m_ccCallbackSuc = CallBack_GetGameStartSuc;
             tSocketCallbackDT.m_ccCallbackFail = CallBack_GetGameStartFail;
@@ -187,7 +184,7 @@ namespace GameLogic
             eM_GuessState = (EM_GuessState)obj;
 
             //f_CommandSuc(obj);
-            guessGameMod = EM_GuessGameMod.Playing;
+            //guessGameMod = EM_GuessGameMod.Playing;
         }
 
         private void CallBack_GetGameStartFail(object obj)
@@ -265,6 +262,11 @@ namespace GameLogic
                 watting = true;
                 gameTimer = gameResetTimer;
                 f_GetFinal();
+
+                #region UI物件開關           
+                GameTools.f_SetGameObject(aBtn, false);
+                GameTools.f_SetGameObject(bBtn, false);
+                #endregion
             }
             else if (watting)
             {
@@ -279,6 +281,7 @@ namespace GameLogic
             {
                 if(!waitForGame)
                 {
+                    guessGameMod = EM_GuessGameMod.Playing;
                     MessageBox.DEBUG("遊戲開始");
                     isPressBtn = true; //遊戲開始 ， 開始計時
                     f_NotSelectCheerleadGameStart();
@@ -295,6 +298,7 @@ namespace GameLogic
             {
                 if (!waitForGame)
                 {
+                    MessageBox.DEBUG("進行猜測");
                     #region UI物件開關           
                     GameTools.f_SetGameObject(aBtn, true);
                     GameTools.f_SetGameObject(bBtn, true);
@@ -313,7 +317,7 @@ namespace GameLogic
             }        
             else if (iCall == (int)EM_GuessState.CallEnd && isARoomMaster)
             {
-
+                f_ResetGameToInt();
             }
         }
 
@@ -433,17 +437,38 @@ namespace GameLogic
 
         #endregion
 
-        private void SetScoreMaskImage(float h) //分數進度條
+        private void SetScoreMaskImage(float h) //分數進度條 **這邊有錯誤 h => 當前隊伍分數總合
         {
             Debug.Log(h);
 
             scoreMaskImage.GetComponent<RectTransform>().sizeDelta = new Vector2(scoreMaskImage.GetComponent<RectTransform>().sizeDelta.x,
                                                                         scoreMaskImage.GetComponent<RectTransform>().sizeDelta.y + h);
         }
+       
+        #endregion
+
+        #region 房主退出後..
+        //當房主退出遊戲，遊戲回到最初的樣子，等待有人成為房主
+        protected override void On_Close()
+        {
+            MessageBox.DEBUG("UI關閉");
+            f_EndGame();
+
+                   
+        }
+
+        protected override void On_Destory() 
+        {
+            f_EndGame();
+
+            guessPool.f_DisManager();
+        }
+        #endregion
 
         #region 退出遊戲
         private void f_EndGame() //當房主退掉，回到有開始遊戲的畫面，重新選擇房主
         {
+            Debug.Log("關閉遊戲");
             SocketCallbackDT tSocketCallbackDT = new SocketCallbackDT();
             tSocketCallbackDT.m_ccCallbackSuc = CallBack_EndGameSuc;
             tSocketCallbackDT.m_ccCallbackFail = CallBack_EndGameFail;
@@ -453,14 +478,9 @@ namespace GameLogic
 
         private void CallBack_EndGameSuc(object obj)
         {
-            Debug.Log("關閉遊戲成功" +(EM_GuessState)obj);
-            f_ResetGameToInt();
+            Debug.Log("關閉遊戲成功" + (EM_GuessState)obj);
 
-            GameTools.f_SetGameObject(gameBeginBtn, true);
-            GameTools.f_SetGameObject(aBtn, false);
-            GameTools.f_SetGameObject(bBtn, false);
-            GameTools.f_SetGameObject(vsIcon, true);
-            GameTools.f_SetGameObject(timer_Seconds.gameObject, true);
+            eM_GuessState = ((EM_GuessState)obj);
         }
 
         private void CallBack_EndGameFail(object obj)
@@ -477,32 +497,20 @@ namespace GameLogic
             wattingTimer = wattingResetTimer;
             isPressBtn = false;
             moraing = false;
+
+            #region 物件開關
             GameTools.f_SetGameObject(aBtn, false);
             GameTools.f_SetGameObject(bBtn, false);
             GameTools.f_SetGameObject(vsIcon, true);
             GameTools.f_SetGameObject(timer_Seconds.gameObject, false);
             GameTools.f_SetGameObject(gameBeginBtn, true);
-
+            #endregion
             GameTools.f_SetText(final, "沒有房主");
         }
-        #endregion
 
-       
-        #endregion
-
-        #region 房主退出後..
-        //當房主退出遊戲，遊戲回到最初的樣子，等待有人成為房主
-        protected override void On_Close()
+        private void f_CheckLoginOutState(GameObject go, object obj1, object obj2)
         {
-            guessPool.f_DisManager();
-            f_EndGame();
-        }
-
-        protected override void On_Destory() 
-        {
-            guessPool.f_DisManager();
-
-            f_EndGame();
+            ccUIManage.GetInstance().f_SendMsgV3("ui_gamemain.bundle", "UI_Cheerleading_new", UIMessageDef.UI_CLOSE);
         }
         #endregion
     }

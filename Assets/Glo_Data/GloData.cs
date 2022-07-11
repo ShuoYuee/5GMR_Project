@@ -37,18 +37,18 @@ public class GloData
     /// <summary>
     /// 設置遊戲腳本伺服器工作IP
     /// </summary>
-    public static string glo_strHttpServerIP = "123.207.87.187";
+    public static string glo_strHttpServerIP = "127.0.0.1";
 
-    
+
 
 #else
 #endif
 
-    public static string glo_strLoadVer = "http://" + glo_strHttpServerIP + "/" + glo_ProName + "/ver/LoadVer.php";
-    public static string glo_strLoadAllSC = "http://" + glo_strHttpServerIP + "/" + glo_ProName + "/ver/";
-    public static string glo_strSaveLog = "http://" + glo_strHttpServerIP + "/" + glo_ProName + "/Log/SaveLog.php";
+    public static string glo_strLoadVer = "http://" + glo_strHttpServerIP + "/ver/LoadVer.php";
+    public static string glo_strLoadAllSC = "http://" + glo_strHttpServerIP + "/ver/";
+    public static string glo_strSaveLog = "http://" + glo_strHttpServerIP + "/Log/SaveLog.php";
 
-    public static string glo_strABServerURL = "http://" + glo_strHttpServerIP + "/" + glo_ProName + "/ABRes/UpdateCatchData/update";
+    public static string glo_strABServerURL = "http://" + glo_strHttpServerIP + "/ABRes/UpdateCatchData/update";
 
     public static float glo_fCatchBufSleepTime = 0.1f;
     public static float glo_fAutoReLoginSleepTime = 10f;

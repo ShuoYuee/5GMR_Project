@@ -19,7 +19,7 @@ public class LoadMapBtn : MonoBehaviour
     }
 
     /// <summary>按鈕事件</summary>
-    private void f_OnClickLoadMapBtn()
+    private void f_OnClickLoadMapBtn() //當按下按鈕回傳資料給 MapFileManager 的 f_OnClickFile
     {
         glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_LoadBtn, _text.text);
     }

@@ -64,7 +64,7 @@ public class MapFileManager : MonoBehaviour
         _FileCanvas.f_PanelCtrl(true);
     }
 
-    public void f_OnClickFile(int iState)
+    public void f_OnClickFile(int iState) //當點擊地圖後，出現是否讀取還是輸入等選項之操作，依照 iState 去做改變
     {
         if (iState == 1)
         {
@@ -89,7 +89,7 @@ public class MapFileManager : MonoBehaviour
     }
 
     /// <summary>讀檔點擊事件</summary>
-    private void f_OnClickFile(object e)
+    private void f_OnClickFile(object e) //當點擊要選取地圖ButtonUI 會打開 CheckPanel 所指定的 MainPanel 物件，更改 MainPanel 裡的文字顯示
     {
         _CurFileName = (string)e;
         _FileCanvas.f_PanelCtrl(true);
@@ -179,6 +179,7 @@ public class MapFileManager : MonoBehaviour
     /// <summary>設定地圖讀檔按鈕</summary>
     private void f_SetLoadMapBtn(object e)
     {
+        MessageBox.DEBUG("獲取所有地圖資訊，開始設定按鈕");
         List<GameObject> oData = (List<GameObject>)e;
         string[] aData = GameMain.GetInstance().m_MapPool.f_LoadPreviewData();
         for (int i = 0; i < oData.Count; i++)

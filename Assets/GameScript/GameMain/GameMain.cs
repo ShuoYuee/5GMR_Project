@@ -7,6 +7,9 @@ using ccUI_U3DSpace;
 
 public class GameMain : ccSceneBase
 {
+    [Header("MR按鈕測試")]
+    public Interactable text1, text2, text3, text4;
+
     #region 管理物件
     [Header("初始化")]
     [Tooltip("玩家")]
@@ -71,13 +74,18 @@ public class GameMain : ccSceneBase
 
         f_InitGameObj();
 
+        MessageBox.DEBUG("地圖啟動，並初始化");
+
         ccUIManage.GetInstance().f_SendMsgV3("ui_mrcontrol.bundle", "UI_MRControl", UIMessageDef.UI_OPEN);
+        ccUIManage.GetInstance().f_SendMsgV3("ui_gamemain.bundle", "UI_GameMain", UIMessageDef.UI_OPEN);
         ccTimeEvent.GetInstance().f_RegEvent(0.3f, true, null, f_UpdateMenuPos);
     }
 
     protected override void LoadRes()
     {
-        
+        //ccSceneMgr.GetInstance().f_ChangeScene("GameMain");
+
+        MessageBox.DEBUG("LoadRes()");
     }
 
     public override void UnLoadRes()

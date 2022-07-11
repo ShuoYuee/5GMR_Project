@@ -42,6 +42,7 @@ namespace GameLogic
         /// <summary>初始化地圖物件資料</summary>
         private void f_InitMapObjData()
         {
+            #region 暫時沒用到
             /*List<NBaseSCDT> tData = glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetAll();
             CharacterDT aData;
             GameObject oData = null;
@@ -70,6 +71,7 @@ namespace GameLogic
             }
 
             GameMain.GetInstance().m_Pagination.items = oMapObj;//將物件清單傳送給選單腳本*/
+            #endregion
 
             f_LoadObj(null, null, 0);
         }
@@ -89,6 +91,7 @@ namespace GameLogic
             int iNextId = (int)callbackData + 1;
             if (iNextId > aData.Count)
             {
+                MessageBox.DEBUG("將物件清單傳送給選單腳本");
                 GameMain.GetInstance().m_Pagination.items = oMapObj;//將物件清單傳送給選單腳本
                 return;
             }
@@ -97,7 +100,9 @@ namespace GameLogic
             //判別資源來源模式
             switch (tCharacterDT.iDisplayResource)
             {
+
                 case 1:
+                    MessageBox.DEBUG("判別資源來源模式");
                     AssetLoader.LoadAssetAsync(tCharacterDT.szResName + ".bundle", tCharacterDT.szDisplayAB, f_LoadObj, iNextId);
                     break;
                 default:
@@ -158,6 +163,7 @@ namespace GameLogic
         private void CreateTeamItem()
         {
             List<NBaseSCDT> aData = glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetAll();//讀取物件圖示資料
+            MessageBox.DEBUG("獲取到的SC : " + aData.Count.ToString());
             //ListPositionCtrlTools.f_Create(_listPosCtrl, aData);//創建物件圖示
         }
 
@@ -184,6 +190,15 @@ namespace GameLogic
         {
             base.On_Update();
             //f_AnchorUIIng();
+
+            if (Input.GetKeyDown(KeyCode.J))
+                GameMain.GetInstance().text1.OnClicked();
+            else if (Input.GetKeyDown(KeyCode.K))
+                GameMain.GetInstance().text2.OnClicked();
+            else if (Input.GetKeyDown(KeyCode.L))
+                GameMain.GetInstance().text3.OnClicked();
+            else if (Input.GetKeyDown(KeyCode.P))
+                GameMain.GetInstance().text4.OnClicked();
         }
 
         private float _fAnchorCurTime = 0f;

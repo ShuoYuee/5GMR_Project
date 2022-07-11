@@ -113,6 +113,9 @@ namespace GameLogic
             //MessageBox.DEBUG("確認遊戲狀態");
             GameTools.f_SetText(final, "遊戲狀態");
             Check_GameState();
+
+            GameTools.f_SetGameObject(aBtn, false);
+            GameTools.f_SetGameObject(bBtn, false);
         }
 
         private void f_JontGameControl(GameObject go, object obj1, object obj2)
@@ -211,7 +214,7 @@ namespace GameLogic
         {
             //MessageBox.DEBUG("玩家進行猜測 : " + (EM_GuessState)obj);
             eM_GuessState = (EM_GuessState)obj;
-              
+            
             
            //f_CommandSuc(obj);
 
@@ -271,6 +274,10 @@ namespace GameLogic
                 CowndownToWaitting();
             }
         }
+        protected override void On_UpdateGUI()
+        {
+
+        }
 
         private void f_CommandSuc(object obj)
         {
@@ -279,9 +286,10 @@ namespace GameLogic
             {
                 if(!waitForGame)
                 {
+                    guessGameMod = EM_GuessGameMod.Playing;
                     MessageBox.DEBUG("遊戲開始");
                     isPressBtn = true; //遊戲開始 ， 開始計時
-                    f_NotSelectCheerleadGameStart();
+                    f_NotSelectCheerleadGameStart(); //進入選擇啦啦隊環節
                 }               
             }
             else if (iCall == (int)EM_GuessState.CallRoomMaster)
@@ -399,12 +407,7 @@ namespace GameLogic
         }
 
         #endregion     
-
-        protected override void On_UpdateGUI()
-        {
-
-        }       
-
+        
         #region 遊戲重新一輪
         private void f_ReturnGame()
         {
@@ -493,7 +496,8 @@ namespace GameLogic
 
         private void f_GameLoginOutCheck(GameObject go, object obj1, object obj2)
         {
-            ccUIManage.GetInstance().f_SendMsgV3("ui_gamemain.bundle", "UI_Cheerleading_new", UIMessageDef.UI_CLOSE);
+            //ccUIManage.GetInstance().f_SendMsgV3("ui_gamemain.bundle", "UI_Cheerleading_new", UIMessageDef.UI_CLOSE);
+            ccUIManage.GetInstance().f_SendMsgV3("ui_gamemain.bundle", "UI_Cheerleading_MR", UIMessageDef.UI_CLOSE);
         }
 
         protected override void On_Close()

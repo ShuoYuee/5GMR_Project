@@ -24,7 +24,7 @@ public class LogInState_LogIn : ccMachineStateBase
         UI_GameLogin = (UI_Login)Obj;
         glo_Main.GetInstance().m_GameSocket.f_AddListener((int)SocketCommand.UserLogin_Reps, new CMsg_GTC_LoginRelt(), OnGTC_CMsg_LogInRelt);
 
-        UI_GameLogin.f_UpdataText(0, "請稍後......");
+        UI_GameLogin.f_UpdataText(0, "請稍後......"); //傳給UI_Login 文字訊息
         UI_GameLogin.f_UpdataText(1, "");
 
         _strWait = _strWaitInfor;
@@ -32,7 +32,7 @@ public class LogInState_LogIn : ccMachineStateBase
         _fLogInTime = 6f;
     }
 
-    public override void f_Execute()
+    public override void f_Execute() //類似Update
     {
         base.f_Execute();
         if (_fLogInTime != _fNotTime)
@@ -45,7 +45,7 @@ public class LogInState_LogIn : ccMachineStateBase
                 _strWait = _strWait + ".";
                 UI_GameLogin.f_UpdataText(0, _strWait);
 
-                if (_iWait >= 6)
+                if (_iWait >= 6) //登入超時
                 {
                     CMsg_GTC_LoginRelt cMsg_GTC_LoginRelt = new CMsg_GTC_LoginRelt();
                     cMsg_GTC_LoginRelt.m_result = (int)eMsgOperateResult.OR_Error_LoginTimeOut;
@@ -76,8 +76,8 @@ public class LogInState_LogIn : ccMachineStateBase
 
             MessageBox.DEBUG("Logged in successfully.");
             ccUIManage.GetInstance().f_SendMsgV3("ui_login.bundle", "UI_Login", UIMessageDef.UI_CLOSE);
-            //ccSceneMgr.GetInstance().f_ChangeScene("GameMain");
-            ccSceneMgr.GetInstance().f_ChangeScene("Cheerleading");
+            ccSceneMgr.GetInstance().f_ChangeScene("GameMain");
+            //ccSceneMgr.GetInstance().f_ChangeScene("Cheerleading");
             return;
         }
         else if (tCMsg_GTC_LoginRelt.m_result == (int)eMsgOperateResult.OR_Error_LoginTimeOut)

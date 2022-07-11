@@ -17,7 +17,7 @@ namespace GameLogic
         {
             MessageBox.DEBUG("啟用遊戲包中的UI_MRControl腳本");
             _XRCubeUDPSender = f_GetObject("Panel").GetComponent<XRCubeUDPSender>();
-            _machineManager = new ccMachineManager(new ccMachineStateBase(-1));
+            _machineManager = new ccMachineManager(new ccMachineStateBase(-1)); //狀態機
             _machineManager.f_RegState(new MainState_Main());
             _machineManager.f_RegState(new MainState_Edit());
             _machineManager.f_RegState(new MainState_GuessGame());
@@ -69,6 +69,7 @@ namespace GameLogic
         #region XR_UDP_Send
         private void OnClick_MainPanel(GameObject go, object obj1, object obj2)
         {
+            MessageBox.DEBUG("OnClick_MainPanel 觸發 <Obj1> : " + (int)obj1);
             int iSet = (int)obj1;
             if (iSet == -1)
             {
@@ -76,7 +77,7 @@ namespace GameLogic
             }
             else
             {
-                _XRCubeUDPSender.ChangeMain(iSet);
+                _XRCubeUDPSender.ChangeMain(iSet); //切換至iSet頁面
             }
         }
 

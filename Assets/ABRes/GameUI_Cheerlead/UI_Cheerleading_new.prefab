@@ -261,7 +261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6961311023710751187}
   m_Layer: 5
-  m_Name: GameObject (1)
+  m_Name: 5566
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -733,7 +733,7 @@ MonoBehaviour:
   m_Script: {fileID: -463917630, guid: 6c28abb5a53def14ebab4b7feb6a23ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_layer: 2
+  m_layer: 0
   m_strUILogicScriptName: GameLogic.UI_Cheerleading
   m_aObjList:
   - {fileID: 4072818912808997870}

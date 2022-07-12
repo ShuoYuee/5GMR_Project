@@ -18,7 +18,7 @@ namespace GameLogic
         private GameObject bBtn;
         private GameObject gameBeginBtn; //開始遊戲按鈕
         private GameObject gameJoinBtn; //加入遊戲按鈕、需等待下回合
-        private GameObject settingBtn;
+        //private GameObject settingBtn;
         private bool isPressBtn; //是否按下選擇
         private bool moraing; //是否正在猜拳
         private bool waitBegin;
@@ -60,7 +60,7 @@ namespace GameLogic
             bBtn = f_GetObject("B_Btn");
             gameBeginBtn = f_GetObject("GameBegin");
             gameJoinBtn = f_GetObject("JoinGame");
-            settingBtn = f_GetObject("SettingBtn");
+            //settingBtn = f_GetObject("SettingBtn");
             scoreMaskImage = f_GetObject("ScoreMaskImage").GetComponent<Image>();
             scoreText = f_GetObject("Score").GetComponent<Text>();
             vsIcon = f_GetObject("Vs_Image");
@@ -90,11 +90,10 @@ namespace GameLogic
             #endregion
             
             gameTimer = 10f;
+
             gameResetTimer = gameTimer;
             wattingTimer = 5f;
-            wattingResetTimer = wattingTimer;
-
-           
+            wattingResetTimer = wattingTimer;          
         }
 
         private void f_Int()
@@ -119,19 +118,23 @@ namespace GameLogic
             GameTools.f_SetGameObject(bBtn, false);
         }
 
-        private void f_JontGameControl(object obj)
+        private void f_JontGameControl(object obj /*GameObject go, object obj1, object obj2*/)
         {
+            gameTimer = 1f;
             guessGameMod = EM_GuessGameMod.Playing;
             waitForGame = true;
-            isPressBtn = true; //先倒數計時
+            //watting = true;
+            isPressBtn = true; //先倒數計時     
+            isPressSelectBtn = false;
             GameTools.f_SetText(final, "等待中");
             GameTools.f_SetGameObject(gameJoinBtn, false);
-
+            gameTimer = 100f;
+            f_NotSelectCheerleadGameStart();
             #region UI物件開關           
             GameTools.f_SetGameObject(aBtn, false);
             GameTools.f_SetGameObject(bBtn, false);
             GameTools.f_SetGameObject(vsIcon, true);
-            GameTools.f_SetGameObject(timer_Seconds.gameObject, false);
+            GameTools.f_SetGameObject(timer_Seconds.gameObject, true);
             #endregion
         }
 
@@ -148,7 +151,7 @@ namespace GameLogic
             guessPool.f_CheLead_CheckState(StaticValue.m_strAccount, StaticValue.m_lPlayerID, tSocketCallbackDT);
         }
 
-        private void CallBack_GetGameSuc(object obj)
+        private void CallBack_GetGameSuc(object obj) //其他玩家按下開始遊戲時其他玩家會在觸發一次觸發
         {
             Debug.Log("確認遊戲狀態成功：" + (EM_GuessState)obj);
             eM_GuessState = (EM_GuessState)obj;
@@ -175,8 +178,7 @@ namespace GameLogic
 
         #region 開啟遊戲(按下遊戲者成為房主，並控制遊戲)
         private void f_GameStart(object obj)
-        {
-            
+        {         
             SocketCallbackDT tSocketCallbackDT = new SocketCallbackDT();
             tSocketCallbackDT.m_ccCallbackSuc = CallBack_GetGameStartSuc;
             tSocketCallbackDT.m_ccCallbackFail = CallBack_GetGameStartFail;
@@ -186,7 +188,7 @@ namespace GameLogic
 
         private void CallBack_GetGameStartSuc(object obj)
         {
-            //MessageBox.DEBUG("遊戲開始 : " + (EM_GuessState)obj);
+            MessageBox.DEBUG("遊戲開始 : " + (EM_GuessState)obj);
 
             eM_GuessState = (EM_GuessState)obj;
             isARoomMaster = true;
@@ -218,8 +220,6 @@ namespace GameLogic
             
             
            //f_CommandSuc(obj);
-
-            //MessageBox.DEBUG("結果 :  " + guessPool.f_GetWin().ToString());
         }
 
         private void CallBack_GetGameCallGuessFail(object obj)
@@ -315,14 +315,36 @@ namespace GameLogic
             }
             else if (iCall == (int)EM_GuessState.CallRestart)
             {
-                MessageBox.DEBUG("重新啟動");
-                f_NotSelectCheerleadGameStart();
-                isPressSelectBtn = false;
-                waitForGame = false;
+                //MessageBox.DEBUG(StaticValue.m_strAccount + " 重新啟動");
+
+                if(waitForGame)
+                {
+                    MessageBox.DEBUG("有玩家正在等待中");
+                    wattingTimer = wattingResetTimer;
+                    gameTimer = gameResetTimer;
+                    //eM_GuessState = EM_GuessState.CallGuess;
+                    waitForGame = false;
+                }
+                else
+                {
+                    wattingTimer = wattingResetTimer;
+                    gameTimer = gameResetTimer;
+                    btnString = EM_TeamID.None;
+                    isPressSelectBtn = false;
+                    f_NotSelectCheerleadGameStart();
+                    waitForGame = false;
+                }              
             }        
             else if (iCall == (int)EM_GuessState.CallEnd)
             {
                 f_ResetGameToInt();
+            }
+            else if(iCall == (int)EM_GuessState.None)//代表進入休息倒數
+            {
+                #region UI物件開關 
+                GameTools.f_SetGameObject(aBtn, false);
+                GameTools.f_SetGameObject(bBtn, false);
+                #endregion
             }
         }
 
@@ -345,7 +367,7 @@ namespace GameLogic
             {
                 //GameTools.f_SetText(final, "休息中..");
                 if (wattingTimer <= 0)
-                {
+                {                   
                     watting = false;
                     moraing = false;
                     //isGuessBegin = false;
@@ -412,8 +434,6 @@ namespace GameLogic
         #region 遊戲重新一輪
         private void f_ReturnGame()
         {
-            //MessageBox.DEBUG("重新一局");
-
             SocketCallbackDT tSocketCallbackDT = new SocketCallbackDT();
             tSocketCallbackDT.m_ccCallbackSuc = f_GetGameRestartSuc;
             tSocketCallbackDT.m_ccCallbackFail = f_GetGameRestartFail;
@@ -424,6 +444,7 @@ namespace GameLogic
 
         private void f_GetGameRestartSuc(object obj)
         {
+            MessageBox.DEBUG("遊戲重新開始");
             eM_GuessState = (EM_GuessState)obj;
             gameTimer = gameResetTimer;
             moraing = false;

@@ -384,7 +384,8 @@ using MR_Edit;
     #endregion
 }*/
 
-public class GameMainTriggerCtrl : MonoBehaviour
+public class GameMainTriggerCtrl : MonoBehaviour //責所有輸入事件的回饋 
+                                                 //將寫好的事件邏輯Add給XRCubeCtr的Event，當Event被觸發時也會一同被觸發
 {
     public Transform _Focus = null;
 
@@ -509,7 +510,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
     }
 
     /// <summary>設定當前觸發物</summary>
-    public void f_SetCtrl(GameObject oObj)
+    public void f_SetCtrl(GameObject oObj) //如果當前射線碰到觸發物時觸發
     {
         if (oObj != oCurObj && oCurObj != null)
         {

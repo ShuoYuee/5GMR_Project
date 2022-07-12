@@ -47,8 +47,8 @@ public class GloData
     public static string glo_strLoadVer = "http://" + glo_strHttpServerIP + "/ver/LoadVer.php";
     public static string glo_strLoadAllSC = "http://" + glo_strHttpServerIP + "/ver/";
     public static string glo_strSaveLog = "http://" + glo_strHttpServerIP + "/Log/SaveLog.php";
-
     public static string glo_strABServerURL = "http://" + glo_strHttpServerIP + "/ABRes/UpdateCatchData/update";
+
 
     public static float glo_fCatchBufSleepTime = 0.1f;
     public static float glo_fAutoReLoginSleepTime = 10f;

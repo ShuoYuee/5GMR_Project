@@ -6,7 +6,8 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 
-public class XRCubeCustomController : MonoBehaviour
+public class XRCubeCustomController : MonoBehaviour //監聽手機介面依使用者操作進行事件反饋、手機SDK觸發事件
+                                                    //例如按下某一個鍵會執行XRCubeCtrl的Raycast，或按下某一個鍵會直接執行XRCubeCtrl的Event
 {
     private int port = 8001;
     Socket socket;
@@ -356,12 +357,10 @@ public class XRCubeCustomController : MonoBehaviour
             }
             if (head[0] == "Rot")
             {
-
                 Qua.w = float.Parse(head[1]);
                 Qua.x = float.Parse(head[2]);
                 Qua.y = float.Parse(head[4]);
                 Qua.z = float.Parse(head[3]);
-
             }
         }
 

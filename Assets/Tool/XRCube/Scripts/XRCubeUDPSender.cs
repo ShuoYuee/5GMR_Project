@@ -32,6 +32,7 @@ public class XRCubeUDPSender : MonoBehaviour
         sendObj.sendEndless(" endless infos \n");
 
     }
+
     public void Start()
     {
         float per = 1f;
@@ -64,10 +65,7 @@ public class XRCubeUDPSender : MonoBehaviour
     float time3 = 0;
     public void Update()
     {
-
-
         GyroModifyCamera();
-
     }
     void GyroModifyCamera()
     {
@@ -96,7 +94,7 @@ public class XRCubeUDPSender : MonoBehaviour
 
     }
 
-      private void inputFromConsole()
+    private void inputFromConsole()
     {
         try
         {
@@ -117,30 +115,43 @@ public class XRCubeUDPSender : MonoBehaviour
             print(err.ToString());
         }
     }
+
     public void Send(int x)
     {
         sendString("Ctr," + x);
      //   print("Send" + x);
     }
-    public void ChangeMain(int x)
+    public void ChangeMain(int x) //切換頁面
     {
         if (x == 0)
         {
             //MainPos.SetActive(true);
             //MainCtrl.SetActive(false);
             //MainEdit.SetActive(true);
+
+            MainPos.SetActive(false);
+            MainCtrl.SetActive(true);
+            MainEdit.SetActive(true);
         }
         else if (x == 1)
         {
             //MainPos.SetActive(true);
             //MainCtrl.SetActive(true);
             //MainEdit.SetActive(false);
+
+            MainPos.SetActive(true);
+            MainCtrl.SetActive(false);
+            MainEdit.SetActive(true);
         }
         else if (x == 2)
         {
             //MainPos.SetActive(true);
             //MainCtrl.SetActive(false);
             //MainEdit.SetActive(true);
+
+            MainPos.SetActive(true);
+            MainCtrl.SetActive(true);
+            MainEdit.SetActive(false);
         }
     }
     public void Setip()

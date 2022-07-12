@@ -39,7 +39,7 @@ public class MapFileManager : MonoBehaviour
     {
         f_InitMessage();
 
-        //設置確認面板點擊事件
+        //設置確認面板點擊事件 yes or no 選項點擊事件
         _FileCanvas.f_Init(f_FileCtrl, f_FileReturnPanel);
         _LoadCheck.f_Init(f_LoadMap, f_LoadReturnPanel);
         _ImportCheck.f_Init(f_ImportMap, f_ImportReturnPanel);
@@ -177,7 +177,7 @@ public class MapFileManager : MonoBehaviour
     }
 
     /// <summary>設定地圖讀檔按鈕</summary>
-    private void f_SetLoadMapBtn(object e)
+    private void f_SetLoadMapBtn(object e) //設定每個按鈕的資料 監聽: MapObjInit
     {
         MessageBox.DEBUG("獲取所有地圖資訊，開始設定按鈕");
         List<GameObject> oData = (List<GameObject>)e;

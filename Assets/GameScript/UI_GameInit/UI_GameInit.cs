@@ -31,8 +31,8 @@ namespace GameLogic
             glo_Main.GetInstance().m_UIMessagePool.f_RemoveListener(UIMessageDef.UI_UpdateInitProgress, On_UI_UpdateInitProgress);
             ccUIManage.GetInstance().f_SendMsgV3("ui_gamemain.bundle", "UI_Cheerleading_MR", UIMessageDef.UI_OPEN);
             //ccUIManage.GetInstance().f_SendMsgV3("ui_gamemain.bundle", "UI_Cheerleading_new", UIMessageDef.UI_OPEN);
+            //ccUIManage.GetInstance().f_SendMsgV3("ui_gameset.bundle", "UI_Cheerleading_MR", UIMessageDef.UI_OPEN);
         }
-
     }
 
 }

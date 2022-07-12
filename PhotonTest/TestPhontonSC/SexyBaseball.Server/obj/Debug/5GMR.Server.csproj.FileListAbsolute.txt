@@ -1,0 +1,11 @@
+C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.Server\bin\Debug\ccU3DEngine.dll
+C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.Server\bin\Debug\MySql.Data.dll
+C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.Server\obj\Debug\5GMR.Server.csproj.GenerateResource.cache
+C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.Server\obj\Debug\5GMR.Server.csproj.CoreCompileInputs.cache
+C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.Server\obj\Debug\5GMR.Server.csproj.CopyComplete
+C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.Server\bin\Debug\MR.Server.dll
+C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.Server\bin\Debug\MR.Server.pdb
+C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.Server\obj\Debug\5GMR.Server.csprojAssemblyReference.cache
+C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.Server\obj\Debug\MR.Server.MonohUIForm.resources
+C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.Server\obj\Debug\MR.Server.dll
+C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.Server\obj\Debug\MR.Server.pdb

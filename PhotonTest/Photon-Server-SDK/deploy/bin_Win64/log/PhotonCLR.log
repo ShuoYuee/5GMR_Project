@@ -4174,3 +4174,4 @@ System.Threading.ThreadAbortException: 執行緒已經中止。
 2022-07-12 09:16:16,750 [ 8] INFO  PhotonHostRuntime.PhotonDomainManager - ResourceResolveHandler: ApplicationName = 'SexyBaseballServer', DomainId='2', args.Name='System.zh-Hant.resources'
 2022-07-12 09:16:16,788 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - AssemblyLoadEvent: ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73 from file:///D:/UnityProject/Unicorn/5GMR_Project/PhotonTest/Photon-Server-SDK/deploy/SexyBaseballServer/bin/ICSharpCode.SharpZipLib.DLL
 2022-07-12 09:16:16,816 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - PhotonRunning: ApplicationName = 'DefaultDomain', DomainId='1'
+2022-07-12 15:22:44,319 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - RequestStop: ApplicationName = 'DefaultDomain', DomainId='1'

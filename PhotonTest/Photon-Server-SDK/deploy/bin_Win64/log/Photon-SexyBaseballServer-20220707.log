@@ -1,0 +1,95 @@
+29556: 23:25:03.318 - ---
+29556: 23:25:03.318 - Service: "Photon Socket Server" starting
+29556: 23:25:03.318 - Config File: D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\bin_Win64\PhotonServer.config
+29556: 23:25:03.320 - Will produce at most: 10 crash dumps
+29556: 23:25:03.320 - Action: run as exe
+29556: 23:25:03.321 - Server Starting...
+29556: 23:25:03.321 -    Tick count: 434204156 (wraps in: 44.6848 days)
+29556: 23:25:03.321 - Tick count 64: 434204156
+29556: 23:25:03.321 - Photon Version: 4.0.28.2962
+29556: 23:25:03.321 - PID: 32620
+29556: 23:25:03.321 - Config File: D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\bin_Win64\PhotonServer.config
+29556: 23:25:03.321 - Will NOT log unimportant exceptions
+29556: 23:25:03.323 - Not using performance counters as they are not currently installed. Run the service with /InstallCounters to install them.
+29556: 23:25:03.323 - Shutdown timeout enabled: 30000ms
+29556: 23:25:03.323 - Starting I/O thread pool with 2 threads
+29556: 23:25:03.323 - Using Standard allocator
+29556: 23:25:03.323 - Max message size: 512000
+29556: 23:25:03.323 - Starting business logic thread pool with the following settings
+29556: 23:25:03.323 - InitialThreads: 4 threads
+29556: 23:25:03.323 - MinThreads: 4 threads
+29556: 23:25:03.323 - Thread pool is fixed size
+29556: 23:25:03.323 - Starting ENet thread pool with the following settings
+29556: 23:25:03.323 - InitialThreads: 2 threads
+29556: 23:25:03.323 - MinThreads: 2 threads
+29556: 23:25:03.323 - Thread pool is fixed size
+29556: 23:25:03.323 - OnlyDispatchTimers: False
+29556: 23:25:03.323 - S2S: flow control: Max pending writes: 50
+29556: 23:25:03.323 - S2S: flow control: Max queued buffers: 200
+29556: 23:25:03.323 - S2S: flow control: Max pending writes MUX: 500
+29556: 23:25:03.323 - S2S: flow control: Max queued buffers MUX: 2000
+29556: 23:25:03.323 - S2S: MaxInboundMessageSize: 512000
+29556: 23:25:03.323 - S2S: MaxOutboundMessageSize: 512000
+29556: 23:25:03.324 - S2S: No inactivity timeout
+29556: 23:25:03.327 - WebSocket S2S: MaxInboundMessageSize: 512000
+29556: 23:25:03.327 - WebSocket S2S: MaxOutboundMessageSize: 512000
+29556: 23:25:03.327 - WebSocket S2S: No inactivity timeout
+29556: 23:25:03.327 - Max Reliable Data In Transit (awaiting ACKs) per peer : 16384 bytes
+29556: 23:25:03.327 - Per peer bandwidth limit
+29556: 23:25:03.327 - Transmit Rate Limit: 256 KB/Sec
+29556: 23:25:03.327 - Limit period: 200ms
+29556: 23:25:03.327 - Limit per period: 52428 bytes
+29556: 23:25:03.327 - Max queued data for transmission per peer: 163840 bytes
+29556: 23:25:03.327 - Minimum retransmit timeout: 200
+29556: 23:25:03.327 - No Maximum retransmit timeout
+29556: 23:25:03.327 - Minimum ENet timeout: 5000ms
+29556: 23:25:03.327 - Maximum ENet timeout: 30000ms
+29556: 23:25:03.327 - Max Inbound Reliable Data Queued (awaiting resends of earlier sequence numbers) per peer : 163840 bytes
+29556: 23:25:03.327 - No RTT ACK adjustment timeout
+29556: 23:25:03.327 - Outbound ENet: MaxInboundMessageSize: 512000
+29556: 23:25:03.327 - Outbound ENet: MaxOutboundMessageSize: 512000
+29556: 23:25:03.330 - GetRuntime - About to load CLR - versions available:
+29556: 23:25:03.330 - v2.0.50727
+29556: 23:25:03.330 - v4.0.30319
+29556: 23:25:03.330 - Configuration requests: "v2.0.50727"
+29556: 23:25:03.330 - About to load version: "v2.0.50727"
+29556: 23:25:03.360 - About to load runtime: PhotonHostRuntime.PhotonDomainManager from PhotonHostRuntime, Culture=neutral, PublicKeyToken=02C301B61B060C4D
+29556: 23:25:03.360 - CLRBaseDirectory set to "D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy"
+29556: 23:25:03.360 - Optimising event broadcast for 20 or more peers
+29556: 23:25:03.360 - Start: About to load CLR - versions available:
+29556: 23:25:03.360 - v2.0.50727
+29556: 23:25:03.360 - v4.0.30319
+29556: 23:25:03.360 - No preference in configuration file, will load latest.
+29556: 23:25:03.360 - About to load version: "v4.0.30319"
+29556: 23:25:03.362 - Loaded version: "v4.0.30319"
+29556: 23:25:03.486 - Photon host runtime loaded
+29556: 23:25:05.007 - License is valid.
+29556: 23:25:05.007 - Licensed for 100 concurrent connections.
+29556: 23:25:05.007 - ENet: Max Reliable Data In Transit (awaiting ACKs) per peer : 16384 bytes
+29556: 23:25:05.007 - ENet: Per peer bandwidth limit
+29556: 23:25:05.007 - ENet: Transmit Rate Limit: 256 KB/Sec
+29556: 23:25:05.007 - ENet: Limit period: 200ms
+29556: 23:25:05.007 - ENet: Limit per period: 52428 bytes
+29556: 23:25:05.007 - ENet: Max queued data for transmission per peer: 163840 bytes
+29556: 23:25:05.007 - ENet: Minimum retransmit timeout: 200
+29556: 23:25:05.007 - No Maximum retransmit timeout
+29556: 23:25:05.007 - ENet: Minimum timeout: 5000ms
+29556: 23:25:05.007 - ENet: Maximum timeout: 30000ms
+29556: 23:25:05.007 - ENet: Max Inbound Reliable Data Queued (awaiting resends of earlier sequence numbers) per peer : 163840 bytes
+29556: 23:25:05.007 - No RTT ACK adjustment timeout
+29556: 23:25:05.007 - About to load application: SexyBaseballServer from SexyBaseball.Server
+29556: 23:25:05.139 - Taking reference on default app domain
+29556: 23:25:05.374 - Application: "SexyBaseballServer" started in app domain: 2
+29556: 23:25:05.374 - Adding TCP listener on: 0.0.0.0: 4530 with a listen backlog of: 150
+29556: 23:25:05.374 - TCP inactivity timeout: 5000ms
+29556: 23:25:05.374 - TCP disconnect timeout: 120000ms
+29556: 23:25:05.374 - MaxInboundMessageSize: 512000
+29556: 23:25:05.374 - MaxOutboundMessageSize: 512000
+29556: 23:25:05.374 - Forcing all applications ids to: "SexyBaseballServer"
+29556: 23:25:05.374 - Adding TCP listener on: ::: 4530 with a listen backlog of: 150
+29556: 23:25:05.374 - TCP inactivity timeout: 5000ms
+29556: 23:25:05.374 - TCP disconnect timeout: 120000ms
+29556: 23:25:05.374 - MaxInboundMessageSize: 512000
+29556: 23:25:05.374 - MaxOutboundMessageSize: 512000
+29556: 23:25:05.374 - Forcing all applications ids to: "SexyBaseballServer"
+29556: 23:25:05.380 - Service is running...

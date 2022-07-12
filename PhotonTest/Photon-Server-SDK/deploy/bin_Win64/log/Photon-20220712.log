@@ -1,0 +1,12 @@
+19660: 00:03:15.971 - ---
+19660: 00:03:15.971 - Service: "Photon Socket Server" starting
+19660: 00:03:15.971 - Config File: D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\bin_Win64\PhotonServer.config
+19660: 00:03:15.972 - Will produce at most: 10 crash dumps
+19660: 00:03:15.972 - Service shutting down
+19660: 00:03:15.973 - Service shut down complete
+16216: 15:22:44.319 - ---
+16216: 15:22:44.319 - Service: "Photon Socket Server" starting
+16216: 15:22:44.319 - Config File: D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\bin_Win64\PhotonServer.config
+16216: 15:22:44.320 - Will produce at most: 10 crash dumps
+16216: 15:22:44.321 - Service shutting down
+16216: 15:22:44.322 - Service shut down complete

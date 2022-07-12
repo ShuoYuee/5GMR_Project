@@ -1,0 +1,36 @@
+22584: 15:29:04.464 - ---
+22584: 15:29:04.464 - Service: "Photon Socket Server" starting
+22584: 15:29:04.464 - Config File: D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\bin_Win64\PhotonServer.config
+22584: 15:29:04.465 - Will produce at most: 10 crash dumps
+22584: 15:29:04.466 - Service shutting down
+22584: 15:29:04.468 - Service shut down complete
+35516: 15:46:24.719 - ---
+35516: 15:46:24.719 - Service: "Photon Socket Server" starting
+35516: 15:46:24.719 - Config File: D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\bin_Win64\PhotonServer.config
+35516: 15:46:24.721 - Will produce at most: 10 crash dumps
+35516: 15:46:24.721 - Service shutting down
+35516: 15:46:24.722 - Service shut down complete
+27048: 16:29:20.054 - ---
+27048: 16:29:20.054 - Service: "Photon Socket Server" starting
+27048: 16:29:20.054 - Config File: D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\bin_Win64\PhotonServer.config
+27048: 16:29:20.055 - Will produce at most: 10 crash dumps
+27048: 16:29:20.056 - Service shutting down
+27048: 16:29:20.057 - Service shut down complete
+45876: 16:30:21.312 - ---
+45876: 16:30:21.312 - Service: "Photon Socket Server" starting
+45876: 16:30:21.312 - Config File: D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\bin_Win64\PhotonServer.config
+45876: 16:30:21.314 - Will produce at most: 10 crash dumps
+45876: 16:30:21.314 - Service shutting down
+45876: 16:30:21.315 - Service shut down complete
+45676: 16:33:09.497 - ---
+45676: 16:33:09.497 - Service: "Photon Socket Server" starting
+45676: 16:33:09.497 - Config File: D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\bin_Win64\PhotonServer.config
+45676: 16:33:09.499 - Will produce at most: 10 crash dumps
+45676: 16:33:09.499 - Service shutting down
+45676: 16:33:09.500 - Service shut down complete
+10472: 20:56:15.955 - ---
+10472: 20:56:15.955 - Service: "Photon Socket Server" starting
+10472: 20:56:15.955 - Config File: D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\bin_Win64\PhotonServer.config
+10472: 20:56:15.957 - Will produce at most: 10 crash dumps
+10472: 20:56:15.957 - Service shutting down
+10472: 20:56:15.960 - Service shut down complete

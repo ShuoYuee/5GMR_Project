@@ -33,6 +33,8 @@ public class GameInputCtrl : MonoBehaviour
     /// <summary>PC移動輸入</summary>
     private void f_MouseMoveInput()
     {
+        MessageBox.DEBUG("a");
+
         if (Input.GetKey(KeyCode.UpArrow))
         {
             OnClickBtnArrow.Invoke(1);
@@ -110,18 +112,21 @@ public class GameInputCtrl : MonoBehaviour
         if (GameMain.GetInstance().m_EditManager._bEdit) { return; }
         if (Input.GetKeyDown(KeyCode.A))//選取物件用
         {
+            MessageBox.DEBUG("a");
             _bBtnTime = true;
             OnClickCtrlEvent(0);
             ccTimeEvent.GetInstance().f_RegEvent(0.1f, false, null, f_InputCooling);
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
+            MessageBox.DEBUG("a");
             _bBtnTime = true;
             OnClickCtrlEvent(1);
             ccTimeEvent.GetInstance().f_RegEvent(0.1f, false, null, f_InputCooling);
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
+            MessageBox.DEBUG("a");
             _bBtnTime = true;
             OnClickCtrlEvent(2);
             ccTimeEvent.GetInstance().f_RegEvent(0.1f, false, null, f_InputCooling);

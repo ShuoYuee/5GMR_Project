@@ -70,9 +70,9 @@ namespace GameLogic
 
             #region 按鈕設定
             f_RegClickEvent(f_GetObject("CheckGameState") , f_GameLoginOutCheck);
-            f_RegClickEvent(gameBeginBtn, f_GameStart);
+            //f_RegClickEvent(gameBeginBtn, f_GameStart);
             //f_RegClickEvent(settingBtn, f_EndGame); //測試結束遊戲按鈕
-            f_RegClickEvent(gameJoinBtn, f_JontGameControl);
+            //f_RegClickEvent(gameJoinBtn, f_JontGameControl);
             #endregion
 
             #region 設定陣營圖片
@@ -103,7 +103,8 @@ namespace GameLogic
 
             //註冊是否選則啦啦隊
             glo_Main.GetInstance().m_UIMessagePool.f_AddListener(UIMessageDef.UI_SelectionCheerlead, SelectCheerlead);
-            
+            glo_Main.GetInstance().m_UIMessagePool.f_AddListener(UIMessageDef.StartGame, f_GameStart);
+            glo_Main.GetInstance().m_UIMessagePool.f_AddListener(UIMessageDef.PlayerJionGame, f_JontGameControl);
         }
 
         protected override void On_Open(object e)
@@ -118,7 +119,7 @@ namespace GameLogic
             GameTools.f_SetGameObject(bBtn, false);
         }
 
-        private void f_JontGameControl(GameObject go, object obj1, object obj2)
+        private void f_JontGameControl(object obj)
         {
             guessGameMod = EM_GuessGameMod.Playing;
             waitForGame = true;
@@ -173,7 +174,7 @@ namespace GameLogic
         #endregion
 
         #region 開啟遊戲(按下遊戲者成為房主，並控制遊戲)
-        private void f_GameStart(GameObject go, object obj1, object obj2)
+        private void f_GameStart(object obj)
         {
             
             SocketCallbackDT tSocketCallbackDT = new SocketCallbackDT();

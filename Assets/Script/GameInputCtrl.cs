@@ -210,7 +210,7 @@ public class GameInputCtrl : MonoBehaviour
             OnClickBtnThree(1);
             ccTimeEvent.GetInstance().f_RegEvent(0.1f, false, null, f_InputCooling);
         }
-        else if (Input.GetKey(KeyCode.B))
+        else if (Input.GetKey(KeyCode.N))
         {
             _bBtnTime = true;
             OnClickBtnThree(-1);

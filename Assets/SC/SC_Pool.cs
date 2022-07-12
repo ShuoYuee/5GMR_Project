@@ -12,8 +12,6 @@ public class SC_Pool
 
     private bool _bLoadSuc;
 
-    //"Character", "GameControll_Parameter", "GameControll_Condition", "GameControll", "GamePlot", "Goods", "GameTennis"
-
     public CharacterSC m_CharacterSC = new CharacterSC();
 
     public GameControll_ParameterSC m_GameControll_ParameterSC = new GameControll_ParameterSC();
@@ -30,12 +28,6 @@ public class SC_Pool
         ///////////////////////////////////////////////////////////////
 
         _aSCList.Add(m_CharacterSC);
-
-        //_aSCList.Add(m_GameControll_ParameterSC);
-        //_aSCList.Add(m_GameControll_ConditionSC);
-        //_aSCList.Add(m_GameControllSC);
-        //_aSCList.Add(m_GamePlotSC);
-        //_aSCList.Add(m_GoodsSC);
 
 
         ///////////////////////////////////////////////////////////////

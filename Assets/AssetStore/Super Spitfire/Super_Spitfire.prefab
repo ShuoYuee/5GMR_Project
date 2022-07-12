@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7450679097173387789}
   m_Layer: 0
   m_Name: Super_Spitfire
-  m_TagString: Untagged
+  m_TagString: XRCubeCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

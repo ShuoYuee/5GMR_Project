@@ -1,0 +1,12 @@
+14820: 02:11:42.261 - ---
+14820: 02:11:42.261 - Service: "Photon Socket Server" starting
+14820: 02:11:42.262 - Config File: C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\bin_Win64\PhotonServer.config
+14820: 02:11:42.263 - Will produce at most: 10 crash dumps
+14820: 02:11:42.263 - Service shutting down
+14820: 02:11:42.264 - Service shut down complete
+12408: 15:11:43.453 - ---
+12408: 15:11:43.453 - Service: "Photon Socket Server" starting
+12408: 15:11:43.453 - Config File: C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\bin_Win64\PhotonServer.config
+12408: 15:11:43.455 - Will produce at most: 10 crash dumps
+12408: 15:11:43.455 - Service shutting down
+12408: 15:11:43.455 - Service shut down complete

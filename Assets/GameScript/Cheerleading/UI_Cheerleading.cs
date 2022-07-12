@@ -252,7 +252,6 @@ namespace GameLogic
 
         protected override void On_Update()
         {
-            Debug.Log(eM_GuessState);
             f_CommandSuc(eM_GuessState);
 
             if (gameTimer > 0 && isPressBtn && !watting) //是否按下遊戲開始

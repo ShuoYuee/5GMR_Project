@@ -77,23 +77,8 @@ public class EditManager
     /// <summary>點選編輯按鈕</summary>
     public void f_Edit()
     {
-        _bEdit = !_bEdit;
-
-        if (_bEdit)
-        {
-            f_SetEditBtn();
-        }
-        else
-        {
-            f_SetEditBtn();
-            if (_CurEditObjControll != null)
-            {
-                _CurEditObjControll.f_SetEditState(false);
-            }
-
-            _bSelectEdit = false;
-            _CurEditObjControll = null;
-        }
+        _bEdit = true;
+        f_SetEditBtn();
     }
 
     /// <summary>點選離開編輯按鈕</summary>

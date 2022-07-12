@@ -32,8 +32,8 @@ public class MapFileManager : MonoBehaviour
 
     /// <summary>當前選擇的檔案名</summary>
     private string _CurFileName;
-    /// <summary>是否為覆蓋讀取場景</summary>
-    private bool _bLoad = false;
+    ///// <summary>是否為覆蓋讀取場景</summary>
+    //private bool _bLoad = false;
 
     private void Start()
     {
@@ -94,17 +94,9 @@ public class MapFileManager : MonoBehaviour
         _CurFileName = (string)e;
         _FileCanvas.f_PanelCtrl(true);
         _FileCanvas.f_SetFileText(_CurFileName);
-
-        /*if (_bLoad)
-        {
-            _LoadCheck.f_SetFileText(_CurFileName);
-            _LoadCheck.onSelectFile.Invoke();
-        }
-        else
-        {
-            _ImportCheck.f_SetFileText(_CurFileName);
-            _ImportCheck.onSelectFile.Invoke();
-        }*/
+        _LoadCheck.f_SetFileText(_CurFileName);
+        _ImportCheck.f_SetFileText(_CurFileName);
+        _DeleteCheck.f_SetFileText(_CurFileName);
     }
     #endregion
 
@@ -209,11 +201,10 @@ public class MapFileManager : MonoBehaviour
     /// <param name="text">檔案自定義名稱</param>
     public void f_SaveMap(Text text)
     {
-        //GameMain.GetInstance().m_MapPool.f_SaveMap(text.text);
         _CurFileName = text.text;
         if (GameMain.GetInstance().m_MapPool.f_CheckFileName(_CurFileName))
         {
-            //_SaveCheck.onSelectFile.Invoke();
+            _SaveCheck.f_SetFileText(_CurFileName);
             _SaveCheck.f_PanelCtrl(false, true);
         }
         else

@@ -1,0 +1,12 @@
+25672: 19:53:09.943 - ---
+25672: 19:53:09.943 - Service: "Photon Socket Server" starting
+25672: 19:53:09.943 - Config File: C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\bin_Win64\PhotonServer.config
+25672: 19:53:09.944 - Will produce at most: 10 crash dumps
+25672: 19:53:09.944 - Service shutting down
+25672: 19:53:09.945 - Service shut down complete
+27832: 20:32:25.401 - ---
+27832: 20:32:25.401 - Service: "Photon Socket Server" starting
+27832: 20:32:25.401 - Config File: C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\bin_Win64\PhotonServer.config
+27832: 20:32:25.403 - Will produce at most: 10 crash dumps
+27832: 20:32:25.403 - Service shutting down
+27832: 20:32:25.404 - Service shut down complete

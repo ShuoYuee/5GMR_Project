@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ExitGames.Client.Photon;
-using SexyBaseball.ConsoleClient;
+using MR.ConsoleClient;
 
 public class ConsoleApp
 {

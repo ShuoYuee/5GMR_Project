@@ -25,41 +25,34 @@ public class GameInputCtrl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //f_MouseMoveInput();
-        //f_EditInput();
-        //f_InputKey();
+        if (GameMain.GetInstance() == null) { return; }
+        f_MouseMoveInput();
+        f_EditInput();
+        f_InputKey();
     }
 
     /// <summary>PC移動輸入</summary>
     private void f_MouseMoveInput()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            OnClickBtnArrow.Invoke(1);
-        }
-        else if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.W))
         {
             OnClickBtnArrow.Invoke(-1);
         }
-        else if (Input.GetKeyUp(KeyCode.Space))
+        else if (Input.GetKey(KeyCode.S))
+        {
+            OnClickBtnArrow.Invoke(1);
+        }
+        else if (Input.GetKeyUp(KeyCode.R))
         {
             OnClickBtnReset.Invoke(0);
         }
-        else if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.A))
         {
             OnClickBtnArrow.Invoke(-2);
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.D))
         {
             OnClickBtnArrow.Invoke(2);
-        }
-        else if (Input.GetKeyUp(KeyCode.F))
-        {
-            OnClickBtnChangeState(0);
-        }
-        else if (Input.GetKeyUp(KeyCode.G))
-        {
-            OnClickBtnReset.Invoke(1);
         }
     }
 
@@ -108,19 +101,19 @@ public class GameInputCtrl : MonoBehaviour
     private void f_PCInputKey()
     {
         if (GameMain.GetInstance().m_EditManager._bEdit) { return; }
-        if (Input.GetKeyDown(KeyCode.A))//選取物件用
+        if (Input.GetKeyDown(KeyCode.Space))//選取物件用
         {
             _bBtnTime = true;
             OnClickCtrlEvent(0);
             ccTimeEvent.GetInstance().f_RegEvent(0.1f, false, null, f_InputCooling);
         }
-        else if (Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKeyDown(KeyCode.F))
         {
             _bBtnTime = true;
             OnClickCtrlEvent(1);
             ccTimeEvent.GetInstance().f_RegEvent(0.1f, false, null, f_InputCooling);
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.G))
         {
             _bBtnTime = true;
             OnClickCtrlEvent(2);
@@ -133,6 +126,7 @@ public class GameInputCtrl : MonoBehaviour
     /// <summary>編輯模式下輸入</summary>
     private void f_EditInput()
     {
+        if (GameMain.GetInstance().m_EditManager == null) { return; }
         if (!GameMain.GetInstance().m_EditManager._bEdit) { return; }
         switch (State)
         {
@@ -186,19 +180,43 @@ public class GameInputCtrl : MonoBehaviour
     private void f_PCEditInput()
     {
         //將按鈕功能依序填入
-        if (Input.GetKey(KeyCode.D))//拉前、旋轉、放大用
+        if (Input.GetKey(KeyCode.Z))//拉前、旋轉、放大用
         {
             _bBtnTime = true;
             OnClickBtnOne(1);
             ccTimeEvent.GetInstance().f_RegEvent(0.1f, false, null, f_InputCooling);
         }
-        else if (Input.GetKey(KeyCode.S))//退後、旋轉、縮小用
+        else if (Input.GetKey(KeyCode.X))
+        {
+            _bBtnTime = true;
+            OnClickBtnOne(-1);
+            ccTimeEvent.GetInstance().f_RegEvent(0.1f, false, null, f_InputCooling);
+        }
+        else if (Input.GetKey(KeyCode.C))
+        {
+            _bBtnTime = true;
+            OnClickBtnTwo(1);
+            ccTimeEvent.GetInstance().f_RegEvent(0.1f, false, null, f_InputCooling);
+        }
+        else if (Input.GetKey(KeyCode.V))
         {
             _bBtnTime = true;
             OnClickBtnTwo(-1);
             ccTimeEvent.GetInstance().f_RegEvent(0.1f, false, null, f_InputCooling);
         }
-        else if (Input.GetKeyUp(KeyCode.A))//移動座標用
+        else if (Input.GetKey(KeyCode.B))
+        {
+            _bBtnTime = true;
+            OnClickBtnThree(1);
+            ccTimeEvent.GetInstance().f_RegEvent(0.1f, false, null, f_InputCooling);
+        }
+        else if (Input.GetKey(KeyCode.B))
+        {
+            _bBtnTime = true;
+            OnClickBtnThree(-1);
+            ccTimeEvent.GetInstance().f_RegEvent(0.1f, false, null, f_InputCooling);
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
         {
             _bBtnTime = true;
             OnClickCtrlEvent(0);
@@ -208,14 +226,6 @@ public class GameInputCtrl : MonoBehaviour
         {
             OnClickBtnOne(0);
         }
-
-        //_fBtnTime += Time.deltaTime;//按鈕間隔時間
-        /*if (Input.GetKeyUp(KeyCode.A))//移動座標用
-        {
-            _bBtnTime = true;
-            OnClickCtrlEvent(0);
-            ccTimeEvent.GetInstance().f_RegEvent(0.2f, false, null, f_InputCooling);
-        }*/
     }
     #endregion
 }

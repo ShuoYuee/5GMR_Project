@@ -17,11 +17,17 @@ public class GloData
 
 
 #if Server
-    public static string glo_strSvrIP = "192.168.0.227";
+    public static string glo_strSvrIP = "127.0.0.1";
+    public static int glo_iSvrPort = 4530;
+
+    public static string glo_ProName = "";
+    public static string glo_strHttpServerIP = "127.0.0.1";
+
+    /*public static string glo_strSvrIP = "192.168.0.227";
     public static int glo_iSvrPort = 9227;
 
     public static string glo_ProName = "MR_Edit";
-    public static string glo_strHttpServerIP = "123.207.87.187";
+    public static string glo_strHttpServerIP = "123.207.87.187";*/
     //public static string glo_ProName = "MR_Edit5";
     //public static string glo_strHttpServerIP = "192.168.0.182";
 
@@ -33,7 +39,7 @@ public class GloData
     public static int glo_iSvrPort = 4530;
 
     //本地測試設置
-    public static string glo_ProName = "MR_Edit";
+    public static string glo_ProName = "";
     /// <summary>
     /// 設置遊戲腳本伺服器工作IP
     /// </summary>
@@ -49,6 +55,12 @@ public class GloData
     public static string glo_strSaveLog = "http://" + glo_strHttpServerIP + "/Log/SaveLog.php";
 
     public static string glo_strABServerURL = "http://" + glo_strHttpServerIP + "/ABRes/UpdateCatchData/update";
+
+    /*public static string glo_strLoadVer = "http://" + glo_strHttpServerIP + "/" + glo_ProName + "/ver/LoadVer.php";
+    public static string glo_strLoadAllSC = "http://" + glo_strHttpServerIP + "/" + glo_ProName + "/ver/";
+    public static string glo_strSaveLog = "http://" + glo_strHttpServerIP + "/" + glo_ProName + "/Log/SaveLog.php";
+
+    public static string glo_strABServerURL = "http://" + glo_strHttpServerIP + "/" + glo_ProName + "/ABRes/UpdateCatchData/update";*/
 
     public static float glo_fCatchBufSleepTime = 0.1f;
     public static float glo_fAutoReLoginSleepTime = 10f;

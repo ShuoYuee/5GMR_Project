@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 2170119033476774104}
   m_Layer: 0
   m_Name: ABTest
-  m_TagString: Untagged
+  m_TagString: XRCubeCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

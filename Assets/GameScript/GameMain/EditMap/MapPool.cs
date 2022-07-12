@@ -11,7 +11,6 @@ public class MapPool : ccBasePool<long>
 
     private string GetMapFilePath(string strFileName)
     {
-        //return Application.streamingAssetsPath + "/" + _strMapFile + ".txt";
         return Application.streamingAssetsPath + "/SaveFile/" + strFileName + ".txt";
     }
 
@@ -156,7 +155,7 @@ public class MapPool : ccBasePool<long>
 
     public void f_DelMap(string strFileName)
     {
-        //AssetDatabase.DeleteAsset(GetMapFilePath(strFileName));
+        File.Delete(GetMapFilePath(strFileName));
     }
 
     #region AB資源相關
@@ -197,17 +196,7 @@ public class MapPool : ccBasePool<long>
     {
         _CurCharacterDT = tCharacterDT;
         GameObject tObj = glo_Main.GetInstance().m_ResourceManager.f_CreateABObj(tCharacterDT.szResName + ".bundle", tCharacterDT.szName, f_SetObj);        
-        //EditObjControll tEditObjControll = tObj.AddComponent<EditObjControll>();
 
-        /*//設定物件地圖資料
-        MapPoolDT tMapPoolDT = new MapPoolDT();
-        tMapPoolDT.f_Set(iId, tObj, tCharacterDT);
-        //儲存物件地圖資料
-        f_Save(tMapPoolDT);
-        tEditObjControll.f_Save(tMapPoolDT);*/
-        //f_SaveData(iId, tCharacterDT, tEditObjControll);
-
-        //return tEditObjControll;
         return null;
     }
 
@@ -276,8 +265,6 @@ public class MapPool : ccBasePool<long>
         f_Save(tMapPoolDT);
 
         EditObjControll tEditObjControll = RoleTools.f_CreateEditObj(tEditObj, tCharacterDT, tMapPoolDT);
-        //tEditObj.f_SetURL(tCharacterDT.szURL);
-        //tEditObj.f_Save(tMapPoolDT);
     }
 
     //public bool f_CheckIsDelete(CreateABAction tCreateABAction)

@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 1234004146077194519}
   m_Layer: 0
   m_Name: StarSparrow10
-  m_TagString: Untagged
+  m_TagString: XRCubeCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

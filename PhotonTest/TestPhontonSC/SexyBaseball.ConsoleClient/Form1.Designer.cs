@@ -1,6 +1,6 @@
 ﻿
 
-namespace SexyBaseball.ConsoleClient
+namespace MR.ConsoleClient
 {
     partial class Form1
     {

@@ -1,4 +1,4 @@
-﻿namespace SexyBaseball.Server
+﻿namespace MR.Server
 {
     using System;
     using System.Collections.Generic;
@@ -136,12 +136,6 @@
                     _GameMainPool.f_AddTeamScore(stClient.m_iTeam, 10);
                 }
             }
-
-            /*CMsg_CTG_GetScoreResult tCMsg_CTG_GuessResult = new CMsg_CTG_GetScoreResult();
-            tCMsg_CTG_GuessResult.m_iResult = iRelt;
-            tCMsg_CTG_GuessResult.m_iScoreA = _GameMainPool.f_GetTeamScore((int)EM_TeamID.TeamA);
-            tCMsg_CTG_GuessResult.m_iScoreB = _GameMainPool.f_GetTeamScore((int)EM_TeamID.TeamB);
-            stClient.m_ccClientSocketPeer.f_SendBuf((int)SocketCommand.PlayerGuessResult, tCMsg_CTG_GuessResult);*/
         }
 
         private void On_CMsg_CTG_GetScore(object Obj)

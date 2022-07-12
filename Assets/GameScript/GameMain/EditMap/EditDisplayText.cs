@@ -70,34 +70,40 @@ public class EditDisplayText : MonoBehaviour
     private void f_UpdateText()
     {
         Transform Target = EditDisplay.GetInstance().f_GetTarget();
-        //確認編輯模式
-        if (_EditState == EditState.Position)
+        if (Target == null)
         {
-            _DisplayV3 = Target.localPosition;
+            _InputField.text = "";
         }
-        else if (_EditState == EditState.Rotation)
+        else
         {
-            _DisplayV3 = Target.rotation.eulerAngles;
-        }
-        else if (_EditState == EditState.Scale)
-        {
-            _DisplayV3 = Target.localScale;
-        }
+            //確認編輯模式
+            if (_EditState == EditState.Position)
+            {
+                _DisplayV3 = Target.localPosition;
+            }
+            else if (_EditState == EditState.Rotation)
+            {
+                _DisplayV3 = Target.rotation.eulerAngles;
+            }
+            else if (_EditState == EditState.Scale)
+            {
+                _DisplayV3 = Target.localScale;
+            }
 
-        //確認座標
-        if (_Coordinate == EditV3.X)
-        {
-            _DisplayValue = _DisplayV3.x;
+            //確認座標
+            if (_Coordinate == EditV3.X)
+            {
+                _DisplayValue = _DisplayV3.x;
+            }
+            else if (_Coordinate == EditV3.Y)
+            {
+                _DisplayValue = _DisplayV3.y;
+            }
+            else if (_Coordinate == EditV3.Z)
+            {
+                _DisplayValue = _DisplayV3.z;
+            }
         }
-        else if (_Coordinate == EditV3.Y)
-        {
-            _DisplayValue = _DisplayV3.y;
-        }
-        else if (_Coordinate == EditV3.Z)
-        {
-            _DisplayValue = _DisplayV3.z;
-        }
-
         _InputField.text = _DisplayValue + "";
     }
 
@@ -131,6 +137,7 @@ public class EditDisplayText : MonoBehaviour
         }
 
         Transform Target = EditDisplay.GetInstance().f_GetTarget();
+        if (Target == null) { return; }
         if (_EditState == EditState.Position)
         {
             Target.localPosition = f_SetCoordinate(Target.localPosition, fValue);

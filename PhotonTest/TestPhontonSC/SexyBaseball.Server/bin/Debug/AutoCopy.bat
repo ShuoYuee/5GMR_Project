@@ -1,2 +1,2 @@
-xcopy SexyBaseball.Server.dll E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin /Y
-xcopy SexyBaseball.Server.pdb E:\jjjjjjjjjjjjjjjjjjj\Photon\Photon-OnPremise-Server-SDK_v4-0-29-11263\deploy\SexyBaseballServer\bin /Y
+xcopy MR.Server.dll C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\SexyBaseballServer\bin /Y
+xcopy MR.Server.pdb C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\SexyBaseballServer\bin /Y

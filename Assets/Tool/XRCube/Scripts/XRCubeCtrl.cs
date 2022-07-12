@@ -33,8 +33,9 @@ public class XRCubeCtrl : MonoBehaviour
         if (showLaser)
         { 
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.back), out hit, Mathf.Infinity))
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.back) * 20, out hit, Mathf.Infinity))
             {
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.back) * 20, Color.yellow);
                 if (hit.transform.tag == "XRCubeCollider")
                 {
                     /*if (GOnow != null)

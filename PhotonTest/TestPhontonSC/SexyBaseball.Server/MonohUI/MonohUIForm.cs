@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SexyBaseball.Server
+namespace MR.Server
 {
     public partial class MonohUIForm : Form
     {

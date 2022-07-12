@@ -53,6 +53,11 @@ public class EditDisplay : MonoBehaviour
         return _Target;
     }
 
+    public void f_ClearTarget()
+    {
+        _Target = null;
+    }
+
     /// <summary>
     /// 設定UI顯示
     /// </summary>

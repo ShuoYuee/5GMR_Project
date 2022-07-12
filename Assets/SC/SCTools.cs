@@ -14,7 +14,8 @@ public class SCTools
         if (strVVV.Length > 0)
         {
             GloData.glo_ProName = strVVV;
-            GloData.glo_strLoadAllSC = "http://" + GloData.glo_strHttpServerIP + "/" + GloData.glo_ProName + "/ver/";
+            //GloData.glo_strLoadAllSC = "http://" + GloData.glo_strHttpServerIP + "/" + GloData.glo_ProName + "/ver/";
+            GloData.glo_strLoadAllSC = "http://" + GloData.glo_strHttpServerIP + "/ver/";
         }
         //glo_Main.GetInstance().m_GameMessagePool.f_Broadcast(MessageDef.LOADSCSUC);
     }

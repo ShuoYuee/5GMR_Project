@@ -1,5 +1,5 @@
 ﻿
-namespace SexyBaseball.Server
+namespace MR.Server
 {
     partial class MonohUIForm
     {

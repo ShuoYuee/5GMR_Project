@@ -68,3 +68,14 @@ C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhonto
 C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.ConsoleClient\bin\Debug\SexyBaseball.ConsoleClient.pdb
 C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.ConsoleClient\bin\Debug\ccU3DEngine.dll
 C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.ConsoleClient\obj\Debug\SexyBaseball.ConsoleClient.csproj.CopyComplete
+C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.ConsoleClient\bin\Debug\SexyBaseball.ConsoleClient.exe.config
+C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.ConsoleClient\bin\Debug\SexyBaseball.ConsoleClient.exe
+C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.ConsoleClient\bin\Debug\SexyBaseball.ConsoleClient.pdb
+C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.ConsoleClient\bin\Debug\ccU3DEngine.dll
+C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.ConsoleClient\obj\Debug\SexyBaseball.ConsoleClient.csprojAssemblyReference.cache
+C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.ConsoleClient\obj\Debug\SexyBaseball.ConsoleClient.Form1.resources
+C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.ConsoleClient\obj\Debug\SexyBaseball.ConsoleClient.csproj.GenerateResource.cache
+C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.ConsoleClient\obj\Debug\SexyBaseball.ConsoleClient.csproj.CoreCompileInputs.cache
+C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.ConsoleClient\obj\Debug\SexyBaseball.ConsoleClient.csproj.CopyComplete
+C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.ConsoleClient\obj\Debug\SexyBaseball.ConsoleClient.exe
+C:\Users\judy2\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.ConsoleClient\obj\Debug\SexyBaseball.ConsoleClient.pdb

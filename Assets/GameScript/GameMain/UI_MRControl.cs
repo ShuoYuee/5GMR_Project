@@ -18,10 +18,6 @@ namespace GameLogic
             MessageBox.DEBUG("啟用遊戲包中的UI_MRControl腳本");
             _XRCubeUDPSender = f_GetObject("Panel").GetComponent<XRCubeUDPSender>();
             _machineManager = new ccMachineManager(new ccMachineStateBase(-1)); //狀態機
-            _machineManager.f_RegState(new MainState_Main());
-            _machineManager.f_RegState(new MainState_Edit());
-            _machineManager.f_RegState(new MainState_GuessGame());
-            _machineManager.f_RegState(new MainState_Logout());
 
             f_RegClickEvent(f_GetObject("BtnPos"), OnClick_MainPanel, 0);
             f_RegClickEvent(f_GetObject("BtnController"), OnClick_MainPanel, 1);
@@ -43,12 +39,12 @@ namespace GameLogic
 
         protected override void On_Open(object e)
         {
-            _machineManager.f_ChangeState((int)EM_MainState.Main);
+            
         }
 
         protected override void On_Close()
         {
-            _machineManager.f_ChangeState((int)EM_MainState.Main);
+            
         }
 
         protected override void On_Destory()

@@ -42,8 +42,7 @@ namespace GameLogic
         /// <summary>初始化地圖物件資料</summary>
         private void f_InitMapObjData()
         {
-            #region 暫時沒用到
-            /*List<NBaseSCDT> tData = glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetAll();
+            List<NBaseSCDT> tData = glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetAll();
             CharacterDT aData;
             GameObject oData = null;
             for(int i = 0; i < tData.Count; i++)
@@ -51,27 +50,23 @@ namespace GameLogic
                 aData = (CharacterDT)tData[i];
 
                 //判別資源來源模式
-                switch (aData.iDisplayResource)
+                if (aData.iDisplayResource == 1)
                 {
-                    case 1:
-                        oData = AssetLoader.LoadAsset(aData.szResName + ".bundle", aData.szDisplayAB) as GameObject;
-                        break;
-                    default:                        
-                        oData = AssetLoader.LoadAsset(aData.szResName + ".bundle", aData.szName) as GameObject;
-                        break;
+                    oData = AssetLoader.LoadAsset(aData.szResName + ".bundle", aData.szDisplayAB) as GameObject;
                 }
-
+                else
+                {
+                    oData = AssetLoader.LoadAsset(aData.szResName + ".bundle", aData.szName) as GameObject;
+                }
                 if (oData == null)//清除空物件資料
                 {
                     tData.RemoveAt(i);
                     i -= 1;
                     continue;
                 }
-                oMapObj.Add(oData);
             }
 
-            GameMain.GetInstance().m_Pagination.items = oMapObj;//將物件清單傳送給選單腳本*/
-            #endregion
+            GameMain.GetInstance().m_Pagination.items = oMapObj;//將物件清單傳送給選單腳本
 
             f_LoadObj(null, null, 0);
         }
@@ -87,7 +82,7 @@ namespace GameLogic
             }
 
             List<NBaseSCDT> aData = glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetAll();
-            GameObject oData = null;
+            //GameObject oData = null;
             int iNextId = (int)callbackData + 1;
             if (iNextId > aData.Count)
             {
@@ -98,16 +93,14 @@ namespace GameLogic
 
             CharacterDT tCharacterDT = (CharacterDT)aData[(int)callbackData];
             //判別資源來源模式
-            switch (tCharacterDT.iDisplayResource)
+            if (tCharacterDT.iDisplayResource == 1)
             {
-
-                case 1:
-                    MessageBox.DEBUG("判別資源來源模式");
-                    AssetLoader.LoadAssetAsync(tCharacterDT.szResName + ".bundle", tCharacterDT.szDisplayAB, f_LoadObj, iNextId);
-                    break;
-                default:
-                    AssetLoader.LoadAssetAsync(tCharacterDT.szResName + ".bundle", tCharacterDT.szName, f_LoadObj, iNextId);
-                    break;
+                MessageBox.DEBUG("判別資源來源模式");
+                AssetLoader.LoadAssetAsync(tCharacterDT.szResName + ".bundle", tCharacterDT.szDisplayAB, f_LoadObj, iNextId);
+            }
+            else
+            {
+                AssetLoader.LoadAssetAsync(tCharacterDT.szResName + ".bundle", tCharacterDT.szName, f_LoadObj, iNextId);
             }
         }
 
@@ -156,6 +149,7 @@ namespace GameLogic
                 if (tMapObj[i].GetComponent<LoadMapBtn>() != null) { return; }
                 MenuObject tMenuObject = tMapObj[i].AddComponent<MenuObject>();
                 tMenuObject.f_InitMenuObj(tData[i]);
+                tMenuObject.gameObject.tag = "XRCubeCollider";
             }
         }
         #endregion
@@ -164,7 +158,6 @@ namespace GameLogic
         {
             List<NBaseSCDT> aData = glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetAll();//讀取物件圖示資料
             MessageBox.DEBUG("獲取到的SC : " + aData.Count.ToString());
-            //ListPositionCtrlTools.f_Create(_listPosCtrl, aData);//創建物件圖示
         }
 
         protected override void On_Open(object e)

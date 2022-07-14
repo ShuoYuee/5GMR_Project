@@ -16,3 +16,15 @@
 20036: 13:53:13.295 - Will produce at most: 10 crash dumps
 20036: 13:53:13.295 - Service shutting down
 20036: 13:53:13.296 - Service shut down complete
+11876: 14:33:54.609 - ---
+11876: 14:33:54.609 - Service: "Photon Socket Server" starting
+11876: 14:33:54.609 - Config File: D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\bin_Win64\PhotonServer.config
+11876: 14:33:54.610 - Will produce at most: 10 crash dumps
+11876: 14:33:54.610 - Service shutting down
+11876: 14:33:54.611 - Service shut down complete
+32988: 16:13:35.110 - ---
+32988: 16:13:35.110 - Service: "Photon Socket Server" starting
+32988: 16:13:35.110 - Config File: D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\bin_Win64\PhotonServer.config
+32988: 16:13:35.112 - Will produce at most: 10 crash dumps
+32988: 16:13:35.112 - Service shutting down
+32988: 16:13:35.112 - Service shut down complete

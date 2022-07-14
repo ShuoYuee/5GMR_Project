@@ -4243,3 +4243,72 @@ System.Threading.ThreadAbortException: 執行緒已經中止。
    於 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
    於 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
    於 System.Threading.ThreadHelper.ThreadStart()
+2022-07-14 14:22:54,333 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - Initialize: ApplicationName = 'DefaultDomain', DomainID = '1'
+2022-07-14 14:22:54,344 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - AppDomains with unhandled exceptions are usually not unloaded and restarted.
+2022-07-14 14:22:54,346 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - Getting license information:
+2022-07-14 14:22:54,685 [ 1] INFO  PhotonHostRuntime.PhotonLicensing - LICENSE: Type:Standard; Plan:Free; Expiration: never; floating license: yes; max connections: 100; valid IPs: any; status:Licensed
+2022-07-14 14:22:55,838 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - CreateAppDomain: name = 'SexyBaseballServer' , assemblyName = 'SexyBaseball.Server'
+2022-07-14 14:22:55,839 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager -   ApplicationBase = 'D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy'
+2022-07-14 14:22:55,840 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager -   PrivateBinPath = 'D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\SexyBaseballServer\bin;bin_Win64;Shared;'
+2022-07-14 14:22:55,840 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager -   ConfigurationFile = 'D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\SexyBaseballServer\bin\SexyBaseball.Server.dll.config'
+2022-07-14 14:22:55,840 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager -   CachePath = ''
+2022-07-14 14:22:55,868 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager -   ApplicationPath = 'D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\SexyBaseballServer'
+2022-07-14 14:22:55,868 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager -   BinaryPath = 'D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\SexyBaseballServer\bin'
+2022-07-14 14:22:55,868 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager -   ApplicationRootPath = 'D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy'
+2022-07-14 14:22:55,868 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager -   UnmanagedLogPath = 'D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\bin_Win64\log'
+2022-07-14 14:22:55,872 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - AssemblyLoadEvent: SexyBaseball.Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null from file:///D:/UnityProject/Unicorn/5GMR_Project/PhotonTest/Photon-Server-SDK/deploy/SexyBaseballServer/bin/SexyBaseball.Server.DLL
+2022-07-14 14:22:55,873 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - Photon SDK:4.0.28.11245
+2022-07-14 14:22:55,874 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - AssemblyLoadEvent: Photon.SocketServer, Version=4.0.28.11245, Culture=neutral, PublicKeyToken=48c2fa3b6988090e from file:///D:/UnityProject/Unicorn/5GMR_Project/PhotonTest/Photon-Server-SDK/deploy/SexyBaseballServer/bin/Photon.SocketServer.DLL
+2022-07-14 14:22:55,876 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - AssemblyLoadEvent: ExitGamesLibs, Version=1.0.4.0, Culture=neutral, PublicKeyToken=eac0edd9746a4aa0 from file:///D:/UnityProject/Unicorn/5GMR_Project/PhotonTest/Photon-Server-SDK/deploy/SexyBaseballServer/bin/ExitGamesLibs.DLL
+2022-07-14 14:22:55,878 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - AssemblyLoadEvent: ccU3DEngine, Version=5.0.1.5, Culture=neutral, PublicKeyToken=null from file:///D:/UnityProject/Unicorn/5GMR_Project/PhotonTest/Photon-Server-SDK/deploy/SexyBaseballServer/bin/ccU3DEngine.DLL
+2022-07-14 14:22:55,891 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - AssemblyLoadEvent: System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 from file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Windows.Forms/v4.0_4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+2022-07-14 14:22:55,891 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - AssemblyLoadEvent: System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a from file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Drawing/v4.0_4.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll
+2022-07-14 14:22:55,894 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - Starting: name = 'SexyBaseballServer', assemblyName = 'SexyBaseball.Server', typeName = 'SexyBaseball.Server.ServerApp'
+2022-07-14 14:22:55,900 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - PhotonRunning: ApplicationName = 'SexyBaseballServer', DomainId='2' -- calling Application.Setup
+2022-07-14 14:22:55,903 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - AssemblyLoadEvent: UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null from file:///D:/UnityProject/Unicorn/5GMR_Project/PhotonTest/Photon-Server-SDK/deploy/SexyBaseballServer/bin/UnityEngine.DLL
+2022-07-14 14:22:55,905 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - AssemblyLoadEvent: UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null from file:///D:/UnityProject/Unicorn/5GMR_Project/PhotonTest/Photon-Server-SDK/deploy/SexyBaseballServer/bin/UnityEngine.CoreModule.DLL
+2022-07-14 14:22:57,267 [ 9] INFO  PhotonHostRuntime.PhotonDomainManager - AssemblyLoadEvent: System.resources, Version=4.0.0.0, Culture=zh-Hant, PublicKeyToken=b77a5c561934e089 from file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.resources/v4.0_4.0.0.0_zh-Hant_b77a5c561934e089/System.resources.dll
+2022-07-14 14:22:57,267 [ 9] INFO  PhotonHostRuntime.PhotonDomainManager - ResourceResolveHandler: ApplicationName = 'SexyBaseballServer', DomainId='2', args.Name='System.zh-Hant.resources'
+2022-07-14 14:22:57,331 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - AssemblyLoadEvent: ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73 from file:///D:/UnityProject/Unicorn/5GMR_Project/PhotonTest/Photon-Server-SDK/deploy/SexyBaseballServer/bin/ICSharpCode.SharpZipLib.DLL
+2022-07-14 14:22:57,359 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - PhotonRunning: ApplicationName = 'DefaultDomain', DomainId='1'
+2022-07-14 14:33:54,611 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - RequestStop: ApplicationName = 'DefaultDomain', DomainId='1'
+2022-07-14 14:33:54,639 [10] ERROR PhotonHostRuntime.PhotonDomainManager - UnhandledException: 
+System.Threading.ThreadAbortException: 執行緒已經中止。
+   於 System.Windows.Forms.Application.ThreadContext.DisposeThreadWindows()
+   於 System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   於 System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   於 System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   於 MonohUI.run() 於 C:\Users\judy2\OneDrive\Desktop\practice\5GMR\5GMR_Project\PhotonTest\TestPhontonSC\SexyBaseball.Server\MonohUI\MonohUI.cs: 行 25
+   於 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   於 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   於 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   於 System.Threading.ThreadHelper.ThreadStart()
+2022-07-14 14:39:16,825 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - Initialize: ApplicationName = 'DefaultDomain', DomainID = '1'
+2022-07-14 14:39:16,837 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - AppDomains with unhandled exceptions are usually not unloaded and restarted.
+2022-07-14 14:39:16,839 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - Getting license information:
+2022-07-14 14:39:17,182 [ 1] INFO  PhotonHostRuntime.PhotonLicensing - LICENSE: Type:Standard; Plan:Free; Expiration: never; floating license: yes; max connections: 100; valid IPs: any; status:Licensed
+2022-07-14 14:39:18,362 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - CreateAppDomain: name = 'SexyBaseballServer' , assemblyName = 'SexyBaseball.Server'
+2022-07-14 14:39:18,363 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager -   ApplicationBase = 'D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy'
+2022-07-14 14:39:18,363 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager -   PrivateBinPath = 'D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\SexyBaseballServer\bin;bin_Win64;Shared;'
+2022-07-14 14:39:18,363 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager -   ConfigurationFile = 'D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\SexyBaseballServer\bin\SexyBaseball.Server.dll.config'
+2022-07-14 14:39:18,363 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager -   CachePath = ''
+2022-07-14 14:39:18,394 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager -   ApplicationPath = 'D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\SexyBaseballServer'
+2022-07-14 14:39:18,394 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager -   BinaryPath = 'D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\SexyBaseballServer\bin'
+2022-07-14 14:39:18,395 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager -   ApplicationRootPath = 'D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy'
+2022-07-14 14:39:18,395 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager -   UnmanagedLogPath = 'D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\bin_Win64\log'
+2022-07-14 14:39:18,400 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - AssemblyLoadEvent: SexyBaseball.Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null from file:///D:/UnityProject/Unicorn/5GMR_Project/PhotonTest/Photon-Server-SDK/deploy/SexyBaseballServer/bin/SexyBaseball.Server.DLL
+2022-07-14 14:39:18,401 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - Photon SDK:4.0.28.11245
+2022-07-14 14:39:18,403 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - AssemblyLoadEvent: Photon.SocketServer, Version=4.0.28.11245, Culture=neutral, PublicKeyToken=48c2fa3b6988090e from file:///D:/UnityProject/Unicorn/5GMR_Project/PhotonTest/Photon-Server-SDK/deploy/SexyBaseballServer/bin/Photon.SocketServer.DLL
+2022-07-14 14:39:18,405 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - AssemblyLoadEvent: ExitGamesLibs, Version=1.0.4.0, Culture=neutral, PublicKeyToken=eac0edd9746a4aa0 from file:///D:/UnityProject/Unicorn/5GMR_Project/PhotonTest/Photon-Server-SDK/deploy/SexyBaseballServer/bin/ExitGamesLibs.DLL
+2022-07-14 14:39:18,408 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - AssemblyLoadEvent: ccU3DEngine, Version=5.0.1.5, Culture=neutral, PublicKeyToken=null from file:///D:/UnityProject/Unicorn/5GMR_Project/PhotonTest/Photon-Server-SDK/deploy/SexyBaseballServer/bin/ccU3DEngine.DLL
+2022-07-14 14:39:18,410 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - AssemblyLoadEvent: System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 from file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Windows.Forms/v4.0_4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+2022-07-14 14:39:18,410 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - AssemblyLoadEvent: System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a from file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Drawing/v4.0_4.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll
+2022-07-14 14:39:18,416 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - Starting: name = 'SexyBaseballServer', assemblyName = 'SexyBaseball.Server', typeName = 'SexyBaseball.Server.ServerApp'
+2022-07-14 14:39:18,423 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - PhotonRunning: ApplicationName = 'SexyBaseballServer', DomainId='2' -- calling Application.Setup
+2022-07-14 14:39:18,426 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - AssemblyLoadEvent: UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null from file:///D:/UnityProject/Unicorn/5GMR_Project/PhotonTest/Photon-Server-SDK/deploy/SexyBaseballServer/bin/UnityEngine.DLL
+2022-07-14 14:39:18,429 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - AssemblyLoadEvent: UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null from file:///D:/UnityProject/Unicorn/5GMR_Project/PhotonTest/Photon-Server-SDK/deploy/SexyBaseballServer/bin/UnityEngine.CoreModule.DLL
+2022-07-14 14:39:18,809 [ 9] INFO  PhotonHostRuntime.PhotonDomainManager - AssemblyLoadEvent: System.resources, Version=4.0.0.0, Culture=zh-Hant, PublicKeyToken=b77a5c561934e089 from file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.resources/v4.0_4.0.0.0_zh-Hant_b77a5c561934e089/System.resources.dll
+2022-07-14 14:39:18,810 [ 9] INFO  PhotonHostRuntime.PhotonDomainManager - ResourceResolveHandler: ApplicationName = 'SexyBaseballServer', DomainId='2', args.Name='System.zh-Hant.resources'
+2022-07-14 14:39:18,851 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - AssemblyLoadEvent: ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73 from file:///D:/UnityProject/Unicorn/5GMR_Project/PhotonTest/Photon-Server-SDK/deploy/SexyBaseballServer/bin/ICSharpCode.SharpZipLib.DLL
+2022-07-14 14:39:18,880 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - PhotonRunning: ApplicationName = 'DefaultDomain', DomainId='1'
+2022-07-14 16:13:35,110 [ 1] INFO  PhotonHostRuntime.PhotonDomainManager - RequestStop: ApplicationName = 'DefaultDomain', DomainId='1'

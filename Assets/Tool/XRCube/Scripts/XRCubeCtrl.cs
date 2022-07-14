@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using ccU3DEngine;
 using Epibyte.ConceptVR;
 
-public class XRCubeCtrl : MonoBehaviour
+public class XRCubeCtrl : MonoBehaviour //負責Raycast偵測、觸發，再把資訊傳給GameMainTriggerCtrl
 {
     #region 按鈕事件
     public delegate void OnClickCtrl(int iInput);
@@ -33,8 +33,9 @@ public class XRCubeCtrl : MonoBehaviour
         if (showLaser)
         { 
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.back), out hit, Mathf.Infinity))
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.back) * 20, out hit, Mathf.Infinity))
             {
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.back) * 20, Color.yellow);
                 if (hit.transform.tag == "XRCubeCollider")
                 {
                     /*if (GOnow != null)
@@ -52,6 +53,7 @@ public class XRCubeCtrl : MonoBehaviour
                     }
                     else if (oCurCollider.TryGetComponent(out Interactable interactable))//按鈕物件
                     {
+                        //MessageBox.DEBUG(oCurCollider.name);
                         _GameMainTriggerCtrl._ObjEm = GameMainTriggerCtrl.EM_TriggerObj.Button;
                     }
                     else if (oCurCollider.TryGetComponent(out InputField inputField))//輸入文字框物件
@@ -67,6 +69,7 @@ public class XRCubeCtrl : MonoBehaviour
                         _GameMainTriggerCtrl._ObjEm = GameMainTriggerCtrl.EM_TriggerObj.MRUI;
                     }
 
+                    //設定當前觸發前置
                     _GameMainTriggerCtrl.f_SetCtrl(oCurCollider);
                     _GameMainTriggerCtrl.f_SetFocus(hit.point);
                 }
@@ -115,14 +118,17 @@ public class XRCubeCtrl : MonoBehaviour
         }
 
 
-    }
-   
+    } //手機介面互動
+
+    /// <summary> 手機介面互動資訊傳遞給GameMainTriggerCtrl </summary>
     public void click(int iClick, int iSet)
     {
-        if (!GOnow) { return; }
+        MessageBox.DEBUG("XRCubeCtrl_click iClick: " + iClick + " ，iSet: " + iSet + " ，GOnow ? : " + GOnow);
+        //if (!GOnow) { return; }
 
         if (iClick == 0)
         {//互動觸發
+            MessageBox.DEBUG("觸發");
             OnClickCtrlEvent(iSet);
         }
         else if (iClick == 1)
@@ -146,5 +152,5 @@ public class XRCubeCtrl : MonoBehaviour
             //GameMain.GetInstance().m_EditManager.f_SetEditPoint(iSet);
             GameMain.GetInstance().m_EditManager.f_SetAddEditPoint(iSet);
         }
-    }
+    }  
 }

@@ -328,6 +328,7 @@ public class glo_Main : MonoBehaviour
 
         //ccUIManage.GetInstance().f_SendMsgV2("UI_GameLogin", BaseUIMessageDef.UI_OPEN);
         ccUIManage.GetInstance().f_SendMsgV3("ui_login.bundle", "UI_Login", UIMessageDef.UI_OPEN);
+        //ccUIManage.GetInstance().f_SendMsgV3("ui_login.bundle", "UI_LoginSDK", UIMessageDef.UI_OPEN);
     }
 
     void InitPool()

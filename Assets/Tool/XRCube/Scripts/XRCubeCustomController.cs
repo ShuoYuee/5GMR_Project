@@ -6,8 +6,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 
-public class XRCubeCustomController : MonoBehaviour //監聽手機介面依使用者操作進行事件反饋、手機SDK觸發事件
-                                                    //例如按下某一個鍵會執行XRCubeCtrl的Raycast，或按下某一個鍵會直接執行XRCubeCtrl的Event
+public class XRCubeCustomController : MonoBehaviour //負責SDK觸發事件定義
 {
     private int port = 8001;
     Socket socket;
@@ -38,21 +37,26 @@ public class XRCubeCustomController : MonoBehaviour //監聽手機介面依使�
     private XRCubeCtrl _XRCubeCtrl;
     float PosSpeed = 1;
     float time = 0;
+
     void InitSocket()
     {
-
-        ipEnd = new IPEndPoint(IPAddress.Any, port);
+        ipEnd = new IPEndPoint(IPAddress.Any, GloData.glo_iSvrPort);
         socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
         socket.Bind(ipEnd);
         socket.ReceiveBufferSize = 2000000;
-        IPEndPoint sender = new IPEndPoint(IPAddress.Any, 0);
+        IPEndPoint sender = new IPEndPoint(IPAddress.Any, GloData.glo_iSvrPort);
+        MessageBox.DEBUG("Adress : " + sender.Address.ToString() + " Port " + sender.Port);
+        //IPEndPoint sender = new IPEndPoint(IPAddress.Parse(XRCubeUDPSender.serverIP), XRCubeUDPSender.localPort);
         clientEnd = (EndPoint)sender;
         print("waiting for UDP dgram");
+        MessageBox.DEBUG("aiting for UDP dgram");
         connectThread = new Thread(new ThreadStart(SocketReceive));
         connectThread.Start();
     }
+
     void Start()
     {
+        
         InitSocket(); 
         QuaInverse = Quaternion.identity;
         if(autohide)
@@ -73,6 +77,7 @@ public class XRCubeCustomController : MonoBehaviour //監聽手機介面依使�
     {
 
     }
+
     void Update()
     {
         time += Time.deltaTime;
@@ -123,6 +128,8 @@ public class XRCubeCustomController : MonoBehaviour //監聽手機介面依使�
         }
         if (KeyDownCtr[3] && time > 0.1f)
         {
+            MessageBox.DEBUG("KeyDownCtr[3]按下");
+
             KeyDownCtr[3] = false;
             if (showCtrl)
             {
@@ -149,6 +156,8 @@ public class XRCubeCustomController : MonoBehaviour //監聽手機介面依使�
                 showLaserTime = 0;
                 CtrlLaser.SetActive(true);
             }
+
+            _XRCubeCtrl.click(0, 0);
             time = 0;
         }
         if (KeyDownPos[0] && time > 0.1f)
@@ -337,14 +346,17 @@ public class XRCubeCustomController : MonoBehaviour //監聽手機介面依使�
             recvData = new byte[2000000];         
             recvLen = socket.ReceiveFrom(recvData, ref clientEnd);
             recvStr = Encoding.ASCII.GetString(recvData, 0, recvLen);
-            // Debug.Log(recvStr);
+            //MessageBox.DEBUG(recvStr);
             string[] head = recvStr.Split(',');
+            MessageBox.DEBUG("XR " + "Head[0] : " + head[0] + " " + " Head[1] : " + head[1]);
             if (head[0] == "Ctr")
             {
+                print("收到手機傳遞Ctr : " + int.Parse(head[1]));
                 KeyDownCtr[int.Parse(head[1])] = true;
             }
-            else if (head[0] == "Cus1")
+            else if (head[0] == "Cus1") //收到手機Sender 
             {
+                MessageBox.DEBUG("收到手機傳遞 : " + int.Parse(head[1]));
                 KeyDownCustom_1[int.Parse(head[1])] = true;
             }
             else if (head[0] == "Cus2")
@@ -357,14 +369,17 @@ public class XRCubeCustomController : MonoBehaviour //監聽手機介面依使�
             }
             if (head[0] == "Rot")
             {
+
                 Qua.w = float.Parse(head[1]);
                 Qua.x = float.Parse(head[2]);
                 Qua.y = float.Parse(head[4]);
                 Qua.z = float.Parse(head[3]);
+
             }
         }
 
     }
+
     void SocketQuit()
     {
         if (connectThread != null)

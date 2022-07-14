@@ -66,7 +66,6 @@ namespace Epibyte.ConceptVR
 
                 itemIdx++;
             }
-            MessageBox.DEBUG("Pagination.oData.Count = " + oData.Count.ToString());
             glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_MapObjInit, oData);
             numberOfPages = page;
             CleanUpVacantCircle();

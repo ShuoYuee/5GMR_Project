@@ -49,6 +49,7 @@ namespace GameLogic
         public EM_GuessState eM_GuessState;
 
         private GuessPool guessPool;
+        float text;
 
         protected override void On_Init()
         {

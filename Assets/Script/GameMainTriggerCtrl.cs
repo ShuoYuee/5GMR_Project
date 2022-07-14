@@ -384,8 +384,7 @@ using MR_Edit;
     #endregion
 }*/
 
-public class GameMainTriggerCtrl : MonoBehaviour //責所有輸入事件的回饋 
-                                                 //將寫好的事件邏輯Add給XRCubeCtr的Event，當Event被觸發時也會一同被觸發
+public class GameMainTriggerCtrl : MonoBehaviour
 {
     public Transform _Focus = null;
 
@@ -422,19 +421,17 @@ public class GameMainTriggerCtrl : MonoBehaviour //責所有輸入事件的回�
 
     private void Start()
     {
-        //暫預定四個輸入事件
-        //GameInputCtrl.OnClickCtrlEvent += f_OnClick;
-        //GameInputCtrl.OnClickBtnOne += f_EditCtrl;
-        //GameInputCtrl.OnClickBtnTwo += f_EditCtrl;
-        //GameInputCtrl.OnClickBtnThree += f_EditCtrl;
+        GameInputCtrl.OnClickCtrlEvent += f_OnClick;
+        GameInputCtrl.OnClickBtnOne += f_EditCtrl_H;
+        GameInputCtrl.OnClickBtnTwo += f_EditCtrl_V;
+        GameInputCtrl.OnClickBtnThree += f_EditCtrl_D;
         XRCubeCtrl.OnClickCtrlEvent += f_OnClick;
         XRCubeCtrl.OnClickBtnOne += f_EditCtrl_H;
         XRCubeCtrl.OnClickBtnTwo += f_EditCtrl_V;
         XRCubeCtrl.OnClickBtnThree += f_EditCtrl_D;
 
-        //控制玩家輸入事件
+        //控制玩家輸入事件(鍵盤測試)
         GameInputCtrl.OnClickBtnArrow += f_PlayCtrlInput;
-        //GameInputCtrl.OnClickBtnChangeState += f_ChangePlayCtrlState;
         GameInputCtrl.OnClickBtnReset += f_ResetInitPos;
     }
 
@@ -510,7 +507,7 @@ public class GameMainTriggerCtrl : MonoBehaviour //責所有輸入事件的回�
     }
 
     /// <summary>設定當前觸發物</summary>
-    public void f_SetCtrl(GameObject oObj) //如果當前射線碰到觸發物時觸發
+    public void f_SetCtrl(GameObject oObj)
     {
         if (oObj != oCurObj && oCurObj != null)
         {
@@ -619,22 +616,20 @@ public class GameMainTriggerCtrl : MonoBehaviour //責所有輸入事件的回�
                 }
                 else
                 {
-                    if (oCurObj)
+                    if (oCurObj != null)
                     {
                         EditObjControll editObjControll = oCurObj.GetComponent<EditObjControll>();
                         if (iSet == 0)
                         {
-                            _EditObjControll.f_Interactable();
+                            editObjControll.f_Interactable();
                         }
                         else if (iSet == 1)
                         {
-                            //editObjControll.f_AnimPlay(0);
-                            _EditObjControll.f_InteractableEM((int)EM_InterState.Anim);
+                            editObjControll.f_InteractableEM((int)EM_InterState.Anim);
                         }
                         else if (iSet == 2)
                         {
-                            //editObjControll.f_ConnectURL();
-                            _EditObjControll.f_InteractableEM((int)EM_InterState.URL);
+                            editObjControll.f_InteractableEM((int)EM_InterState.URL);
                         }
                     }
                 }
@@ -672,21 +667,6 @@ public class GameMainTriggerCtrl : MonoBehaviour //責所有輸入事件的回�
                 _ccInteractable.OnClicked(iSet);
                 break;
         }
-    }
-
-    /// <summary>
-    /// 編輯模式輸入事件
-    /// </summary>
-    /// <param name="iInput">判別值(左為-1  右為1)</param>
-    private void f_EditCtrl(int iInput)
-    {
-        /*if (!GameMain.GetInstance().m_EditManager._bEdit) { return; }
-        if (!GameMain.GetInstance().m_EditManager._bSelectEdit) { return; }
-        _EditObjControll = GameMain.GetInstance().f_GetCurEditObj();
-        if (_EditObjControll != null)
-        {
-            _EditObjControll.f_SetInput(iInput);
-        }*/
     }
 
     private void f_EditCtrl_V(int iInput)
@@ -764,7 +744,8 @@ public class GameMainTriggerCtrl : MonoBehaviour //責所有輸入事件的回�
             Player = GameMain.GetInstance().m_Player;
         }
 
-        switch (_PlayCtrl)
+        f_CtrlRotation(iArrow);
+        /*switch (_PlayCtrl)
         {
             case EM_PlayCtrl.Positon:
                 f_CtrlPosition(iArrow);
@@ -781,7 +762,7 @@ public class GameMainTriggerCtrl : MonoBehaviour //責所有輸入事件的回�
             case EM_PlayCtrl.Height:
                 f_CtrlHeight(iArrow);
                 break;
-        }
+        }*/
     }
 
     #region 玩家控制輸入
@@ -813,6 +794,14 @@ public class GameMainTriggerCtrl : MonoBehaviour //責所有輸入事件的回�
     {
         switch (iArrow)
         {
+            case 1:
+                Player.localEulerAngles += Vector3.right * 20f * Time.deltaTime;
+                break;
+
+            case -1:
+                Player.localEulerAngles -= Vector3.right * 20f * Time.deltaTime;
+                break;
+
             case 2:
                 Player.localEulerAngles += Vector3.up * 20f * Time.deltaTime;
                 break;

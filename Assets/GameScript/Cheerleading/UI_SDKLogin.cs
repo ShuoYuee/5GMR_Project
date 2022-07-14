@@ -20,7 +20,7 @@ namespace GameLogic
         private InputField _AccountInputField, _PwdInputField;
         IPEndPoint remoteEndPoint;
         UdpClient client;
-
+        float text;
 
         protected override void On_Init()
         {

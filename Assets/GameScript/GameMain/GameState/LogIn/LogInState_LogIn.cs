@@ -24,8 +24,8 @@ public class LogInState_LogIn : ccMachineStateBase
         UI_GameLogin = (UI_Login)Obj;
         glo_Main.GetInstance().m_GameSocket.f_AddListener((int)SocketCommand.UserLogin_Reps, new CMsg_GTC_LoginRelt(), OnGTC_CMsg_LogInRelt);
 
-        UI_GameLogin.f_UpdataText(0, "請稍後......"); //傳給UI_Login 文字訊息
-        UI_GameLogin.f_UpdataText(1, "");
+        //UI_GameLogin.f_UpdataText(0, "請稍後......"); //傳給UI_Login 文字訊息
+        //UI_GameLogin.f_UpdataText(1, "");
 
         _strWait = _strWaitInfor;
         _iWait = 0;
@@ -43,7 +43,7 @@ public class LogInState_LogIn : ccMachineStateBase
                 _iWait += 1;
                 _fLogInTime = 0;
                 _strWait = _strWait + ".";
-                UI_GameLogin.f_UpdataText(0, _strWait);
+                //UI_GameLogin.f_UpdataText(0, _strWait);
 
                 if (_iWait >= 6) //登入超時
                 {
@@ -63,45 +63,53 @@ public class LogInState_LogIn : ccMachineStateBase
 
     private void OnGTC_CMsg_LogInRelt(object Obj)
     {
+        //MessageBox.DEBUG("登入中 Obj: " + Obj);
         _fLogInTime = _fNotTime;
         _iWait = 0;
-        UI_GameLogin.f_UpdataText(0, "");
+        //UI_GameLogin.f_UpdataText(0, "");
 
         CMsg_GTC_LoginRelt tCMsg_GTC_LoginRelt = (CMsg_GTC_LoginRelt)Obj;
+        MessageBox.DEBUG("登入資訊 : " + ((eMsgOperateResult)tCMsg_GTC_LoginRelt.m_result).ToString());
         if (tCMsg_GTC_LoginRelt.m_result == (int)eMsgOperateResult.OR_Succeed)
-        {
+        {         
             MessageBox.DEBUG("UserId:" + tCMsg_GTC_LoginRelt.m_PlayerId);
             GameDataLoad.f_SaveGameSystemMemory();
             GameDataLoad.f_LoginGame(tCMsg_GTC_LoginRelt.m_userName, tCMsg_GTC_LoginRelt.m_PlayerId, tCMsg_GTC_LoginRelt.m_iTeam);
 
             MessageBox.DEBUG("Logged in successfully.");
-            ccUIManage.GetInstance().f_SendMsgV3("ui_login.bundle", "UI_Login", UIMessageDef.UI_CLOSE);
+            ccUIManage.GetInstance().f_SendMsgV3("ui_login.bundle", "UI_Login", UIMessageDef.UI_DESTORY);
+            UI_GameLogin.connectThread.Abort();
             ccSceneMgr.GetInstance().f_ChangeScene("GameMain");
+            #region 手機登入
+            //ccUIManage.GetInstance().f_SendMsgV3("ui_login.bundle", "UI_LoginSDK", UIMessageDef.UI_CLOSE);
+            //ccUIManage.GetInstance().f_SendMsgV3("ui_mrcontrol.bundle", "UI_MRControl", UIMessageDef.UI_OPEN);
+            #endregion
             //ccSceneMgr.GetInstance().f_ChangeScene("Cheerleading");
+            UI_GameLogin.connectThread.Abort();
             return;
         }
         else if (tCMsg_GTC_LoginRelt.m_result == (int)eMsgOperateResult.OR_Error_LoginTimeOut)
         {
             MessageBox.DEBUG("登入超時");
-            UI_GameLogin.f_UpdataText(1, "登入超時");
+            //UI_GameLogin.f_UpdataText(1, "登入超時");
             f_SetComplete((int)EM_LogInState.Idle, UI_GameLogin);
         }
         else if (tCMsg_GTC_LoginRelt.m_result == (int)eMsgOperateResult.OR_Error_Password)
         {
             MessageBox.DEBUG("登入失敗，密碼錯誤");
-            UI_GameLogin.f_UpdataText(1, "登入失敗，密碼錯誤");
+            //UI_GameLogin.f_UpdataText(1, "登入失敗，密碼錯誤");
             f_SetComplete((int)EM_LogInState.Idle, UI_GameLogin);
         }
         else if (tCMsg_GTC_LoginRelt.m_result == (int)eMsgOperateResult.OR_Error_NoAccount)
         {
             MessageBox.DEBUG("帳戶未註冊");
-            UI_GameLogin.f_UpdataText(1, "帳戶未註冊");
+            //UI_GameLogin.f_UpdataText(1, "帳戶未註冊");
             f_SetComplete((int)EM_LogInState.Idle, UI_GameLogin);
         }
         else
         {
             MessageBox.DEBUG("出現未知錯誤");
-            UI_GameLogin.f_UpdataText(1, "出現未知錯誤");
+            //UI_GameLogin.f_UpdataText(1, "出現未知錯誤");
             f_SetComplete((int)EM_LogInState.Idle, UI_GameLogin);
         }
     }

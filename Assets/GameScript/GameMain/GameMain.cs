@@ -76,7 +76,7 @@ public class GameMain : ccSceneBase
 
         MessageBox.DEBUG("地圖啟動，並初始化");
 
-        ccUIManage.GetInstance().f_SendMsgV3("ui_mrcontrol.bundle", "UI_MRControl", UIMessageDef.UI_OPEN);
+        //ccUIManage.GetInstance().f_SendMsgV3("ui_mrcontrol.bundle", "UI_MRControl", UIMessageDef.UI_OPEN);
         ccUIManage.GetInstance().f_SendMsgV3("ui_gamemain.bundle", "UI_GameMain", UIMessageDef.UI_OPEN);
         ccTimeEvent.GetInstance().f_RegEvent(0.3f, true, null, f_UpdateMenuPos);
     }

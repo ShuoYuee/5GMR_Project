@@ -9,10 +9,8 @@ using System.Threading;
 using UnityEngine.UI;
 
 public class XRCubeUDPSender : MonoBehaviour
-{
-    private static int localPort=8001;
+{ 
     private string serverIP = "192.168.0.101";
-    public int port;  
     bool showInput=false;
     public GameObject InputF;
 
@@ -32,7 +30,6 @@ public class XRCubeUDPSender : MonoBehaviour
         sendObj.sendEndless(" endless infos \n");
 
     }
-
     public void Start()
     {
         float per = 1f;
@@ -65,7 +62,10 @@ public class XRCubeUDPSender : MonoBehaviour
     float time3 = 0;
     public void Update()
     {
+
+
         GyroModifyCamera();
+
     }
     void GyroModifyCamera()
     {
@@ -85,16 +85,13 @@ public class XRCubeUDPSender : MonoBehaviour
 
         print("UDPSend.init()");
 
-        port = localPort;
 
-        remoteEndPoint = new IPEndPoint(IPAddress.Parse(serverIP), port);
+        remoteEndPoint = new IPEndPoint(IPAddress.Parse(GloData.glo_strSvrIP), GloData.glo_iSvrPort);
         client = new UdpClient();
-        print("Sending to " + serverIP + " : " + port);
-        print("Testing: nc -lu " + serverIP + " : " + port);
 
     }
 
-    private void inputFromConsole()
+      private void inputFromConsole()
     {
         try
         {
@@ -115,43 +112,30 @@ public class XRCubeUDPSender : MonoBehaviour
             print(err.ToString());
         }
     }
-
     public void Send(int x)
     {
         sendString("Ctr," + x);
      //   print("Send" + x);
     }
-    public void ChangeMain(int x) //切換頁面
+    public void ChangeMain(int x)
     {
         if (x == 0)
         {
-            //MainPos.SetActive(true);
-            //MainCtrl.SetActive(false);
-            //MainEdit.SetActive(true);
-
-            MainPos.SetActive(false);
-            MainCtrl.SetActive(true);
-            MainEdit.SetActive(true);
+            MainPos.SetActive(true);
+            MainCtrl.SetActive(false);
+            MainEdit.SetActive(false);
         }
         else if (x == 1)
         {
-            //MainPos.SetActive(true);
-            //MainCtrl.SetActive(true);
-            //MainEdit.SetActive(false);
-
-            MainPos.SetActive(true);
-            MainCtrl.SetActive(false);
-            MainEdit.SetActive(true);
+            MainPos.SetActive(false);
+            MainCtrl.SetActive(true);
+            MainEdit.SetActive(false);
         }
         else if (x == 2)
         {
-            //MainPos.SetActive(true);
-            //MainCtrl.SetActive(false);
-            //MainEdit.SetActive(true);
-
-            MainPos.SetActive(true);
-            MainCtrl.SetActive(true);
-            MainEdit.SetActive(false);
+            MainPos.SetActive(false);
+            MainCtrl.SetActive(false);
+            MainEdit.SetActive(true);
         }
     }
     public void Setip()
@@ -180,20 +164,21 @@ public class XRCubeUDPSender : MonoBehaviour
     public void f_SendCus1(int iSet)
     {
         sendString("Cus1," + iSet);
-        print("Send" + iSet);
+        print("Send_Cus1" + iSet);
     }
 
     public void f_SendCus2(int iSet)
     {
         sendString("Cus2," + iSet);
-        print("Send" + iSet);
+        print("Send_Cus2" + iSet);
     }
 
     private void sendString(string message)
     {
+        //MessageBox.DEBUG("進入sendString，message : " + message);
         try
         {
-          
+            //MessageBox.DEBUG("try");
             byte[] data = Encoding.UTF8.GetBytes(message);
 
             client.Send(data, data.Length, remoteEndPoint);
@@ -201,6 +186,7 @@ public class XRCubeUDPSender : MonoBehaviour
         }
         catch (Exception err)
         {
+            MessageBox.DEBUG(err.Message);
             print(err.ToString());
         }
     }

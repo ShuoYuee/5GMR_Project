@@ -14,7 +14,7 @@ public class UIMessageDef : BaseUIMessageDef
     public static string RESUMEGAME = "RESUMEGAME";
 
     //public static string BATTLEUIUPDATE = "BATTLEUIUPDATE";
-
+    public static string PlayerLogin = "PlayerLogin";
     public static string PlayerJionGame = "PlayerJionGame";
     public static string PlayerLeaveGame = "PlayerLeaveGame";
 

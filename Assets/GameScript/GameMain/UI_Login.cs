@@ -50,11 +50,11 @@ namespace GameLogic
 
         void InitSocket()
         {
-            ipEnd = new IPEndPoint(IPAddress.Any, GloData.glo_iSvrPort);
+            ipEnd = new IPEndPoint(IPAddress.Any, GloData.glo_iSvrPort + 1);
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
             socket.Bind(ipEnd);
             socket.ReceiveBufferSize = 2000000;
-            IPEndPoint sender = new IPEndPoint(IPAddress.Any, GloData.glo_iSvrPort);
+            IPEndPoint sender = new IPEndPoint(IPAddress.Any, GloData.glo_iSvrPort + 1);
             MessageBox.DEBUG("Adress : " + sender.Address.ToString() + " Port " + sender.Port);
             //IPEndPoint sender = new IPEndPoint(IPAddress.Parse(XRCubeUDPSender.serverIP), XRCubeUDPSender.localPort);
             clientEnd = (EndPoint)sender;
@@ -87,10 +87,10 @@ namespace GameLogic
                 //    Qua.z = float.Parse(head[3]);
 
                 //}
-                if (head[0] == "Login") 
-                {
-                    f_LogInGetSDK(head[1], head[2]);
-                }
+                //if (head[0] == "Login") 
+                //{
+                //    f_LogInGetSDK(head[1], head[2]);
+                //}
             }
 
         }
@@ -98,13 +98,14 @@ namespace GameLogic
         protected override void On_Open(object e)
         {
             _machineManager.f_ChangeState((int)EM_LogInState.Idle, this);
-            InitSocket();
+
+            glo_Main.GetInstance().m_UIMessagePool.f_AddListener(UIMessageDef.PlayerLogin, f_LogInGetSDK);
+            //InitSocket();
         }
 
         protected override void On_Close()
         {
             _machineManager.f_ChangeState((int)EM_LogInState.Idle, this);
-            
         }
 
         protected override void On_Destory()
@@ -121,28 +122,6 @@ namespace GameLogic
         {
             base.On_Update();
             _machineManager.f_Update();
-
-            #region 手機接收測試
-            //bool _bInputIsNull = (head[0] == "") && (head[1] == "");
-            //if (_bInputIsNull)
-            //{
-            //    f_EnableSelectables();
-            //    f_UpdataText(0, "欄位不得為空");
-            //}
-            //else
-            //{
-            //    //收到手機回傳
-            //    //StaticValue.m_strAccount = head[0]; //獲得輸入的帳號 => head[0]
-            //    //StaticValue.m_strPwd = head[1]; //獲得輸入的密碼 => head[1]
-
-            //    CMsg_CTG_AccountEnter tCTG_AccountEnter = new CMsg_CTG_AccountEnter();
-            //    tCTG_AccountEnter.m_strAccount = StaticValue.m_strAccount;
-            //    tCTG_AccountEnter.m_strPassword = StaticValue.m_strPwd;
-            //    glo_Main.GetInstance().m_GameSocket.f_SendBuf((int)SocketCommand.CS_UserLogin, tCTG_AccountEnter);
-
-            //    _machineManager.f_ChangeState((int)EM_LogInState.LoggingIn, this);
-            //}
-            #endregion
         }
 
         private void f_LogIn()
@@ -174,10 +153,11 @@ namespace GameLogic
             }
         }
 
-        private void f_LogInGetSDK(string _account , string pwd)
+        private void f_LogInGetSDK(object obj)
         {
+            string[] head = (string[])obj;
             //這邊接收手機傳遞的訊號
-            bool _bInputIsNull = (_account == "") && (pwd == "");
+            bool _bInputIsNull = (head[1] == "") && (head[2] == "");
             //bool _bInputIsNull = (head[0] == "") && (head[1] == "");
             if (_bInputIsNull)
             {
@@ -186,10 +166,10 @@ namespace GameLogic
             }
             else
             {
-                MessageBox.DEBUG(_account + " " + pwd);
+                MessageBox.DEBUG(head[1] + " " + head[2]);
                 //f_DisableSelectables();
-                StaticValue.m_strAccount = _account; //獲得輸入的帳號
-                StaticValue.m_strPwd = pwd; //獲得輸入的密碼
+                StaticValue.m_strAccount = head[1]; //獲得輸入的帳號
+                StaticValue.m_strPwd = head[2]; //獲得輸入的密碼
 
                 //收到手機回傳
                 //StaticValue.m_strAccount = head[0]; //獲得輸入的帳號 => head[0]
@@ -201,6 +181,8 @@ namespace GameLogic
                 glo_Main.GetInstance().m_GameSocket.f_SendBuf((int)SocketCommand.CS_UserLogin, tCTG_AccountEnter);
 
                 _machineManager.f_ChangeState((int)EM_LogInState.LoggingIn, this);
+
+                //connectThread.Abort();
             }
         }
 

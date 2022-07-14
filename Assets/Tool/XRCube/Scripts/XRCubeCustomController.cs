@@ -21,7 +21,7 @@ public class XRCubeCustomController : MonoBehaviour //負責SDK觸發事件定�
     Quaternion Qua;
     Quaternion QuaInverse;
     public GameObject CtrlLaser;
-    public bool autohide;
+    public bool autohide = false;
     public float autohide_time=12;
     bool showCtrl = false;
     float showCtrlTime = 0;
@@ -59,15 +59,16 @@ public class XRCubeCustomController : MonoBehaviour //負責SDK觸發事件定�
         
         InitSocket(); 
         QuaInverse = Quaternion.identity;
-        if(autohide)
-        {
-            XRCubeControllerGO.SetActive(false);
-        }
-        else
-        {
-            XRCubeControllerGO.SetActive(true);
-        }
-        CtrlLaser.SetActive(false);
+        //if(autohide)
+        //{
+        //    XRCubeControllerGO.SetActive(false);
+        //}
+        //else
+        //{
+        //    XRCubeControllerGO.SetActive(true);
+        //}
+
+        //CtrlLaser.SetActive(false);
         _XRCubeCtrl = XRCubeControllerGO.GetComponent<XRCubeCtrl>();
     }
 
@@ -82,8 +83,14 @@ public class XRCubeCustomController : MonoBehaviour //負責SDK觸發事件定�
     {
         time += Time.deltaTime;
         Quaternion _Qua = Qua * QuaInverse;
-        XRCubeControllerGO.transform.localRotation = Quaternion.Euler(_Qua.eulerAngles.x, -_Qua.eulerAngles.y + 180f, _Qua.eulerAngles.z);
+        //XRCubeControllerGO.transform.localRotation = Quaternion.Euler(_Qua.eulerAngles.x, -_Qua.eulerAngles.y + 180f, _Qua.eulerAngles.z);
         
+        if(_XRCubeCtrl == null)
+        {
+            XRCubeControllerGO = GameObject.FindGameObjectWithTag("XRCubeController");
+            _XRCubeCtrl = XRCubeControllerGO.GetComponent<XRCubeCtrl>();
+        }
+
         if (showLaser)
         {
             showLaserTime += Time.deltaTime;
@@ -99,14 +106,14 @@ public class XRCubeCustomController : MonoBehaviour //負責SDK觸發事件定�
             showLaser = false;
             //XRCubeControllerGO.GetComponent<XRCubeCtrl>().showLaser = false;
             _XRCubeCtrl.showLaser = false;
-            CtrlLaser.SetActive(false);
+           // CtrlLaser.SetActive(false);
         }
         if (showLaserTime > 8)
         {
             showLaser = false;
             //XRCubeControllerGO.GetComponent<XRCubeCtrl>().showLaser = false;
             _XRCubeCtrl.showLaser = false;
-            CtrlLaser.SetActive(false);
+            //CtrlLaser.SetActive(false);
         }
         if (KeyDownCtr[0] && time > 0.1f)
         {
@@ -137,7 +144,7 @@ public class XRCubeCustomController : MonoBehaviour //負責SDK觸發事件定�
             }
             else
             {
-                XRCubeControllerGO.SetActive(true);
+                //XRCubeControllerGO.SetActive(true);
                 showCtrl = true;
                 showCtrlTime = 0;
                 QuaInverse = Quaternion.Inverse(Qua);
@@ -154,7 +161,7 @@ public class XRCubeCustomController : MonoBehaviour //負責SDK觸發事件定�
                 //XRCubeControllerGO.GetComponent<XRCubeCtrl>().showLaser = true;
                 _XRCubeCtrl.showLaser = true;
                 showLaserTime = 0;
-                CtrlLaser.SetActive(true);
+                //CtrlLaser.SetActive(true);
             }
 
             _XRCubeCtrl.click(0, 0);
@@ -324,7 +331,7 @@ public class XRCubeCustomController : MonoBehaviour //負責SDK觸發事件定�
         }
         else
         {
-            XRCubeControllerGO.SetActive(true);
+            //XRCubeControllerGO.SetActive(true);
             showCtrl = true;
             showCtrlTime = 0;
             QuaInverse = Quaternion.Inverse(Qua);
@@ -335,7 +342,7 @@ public class XRCubeCustomController : MonoBehaviour //負責SDK觸發事件定�
             showLaser = true;
             _XRCubeCtrl.showLaser = true;
             showLaserTime = 0;
-            CtrlLaser.SetActive(true);
+           // CtrlLaser.SetActive(true);
         }
     }
 
@@ -375,6 +382,10 @@ public class XRCubeCustomController : MonoBehaviour //負責SDK觸發事件定�
                 Qua.y = float.Parse(head[4]);
                 Qua.z = float.Parse(head[3]);
 
+            }
+            if (head[0] == "Login")
+            {
+                glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(UIMessageDef.PlayerLogin, head);
             }
         }
 

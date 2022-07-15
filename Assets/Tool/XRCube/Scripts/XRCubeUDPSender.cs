@@ -22,6 +22,7 @@ public class XRCubeUDPSender : MonoBehaviour
     public GameObject MainCtrl;
     public GameObject MainEdit;
 
+    float test;
     private static void Main()
     {
         XRCubeUDPSender sendObj = new XRCubeUDPSender();

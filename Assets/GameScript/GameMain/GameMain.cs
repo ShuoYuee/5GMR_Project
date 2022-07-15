@@ -8,7 +8,7 @@ using ccUI_U3DSpace;
 public class GameMain : ccSceneBase
 {
     [Header("MR按鈕測試")]
-    public Interactable text1, text2, text3, text4;
+    public Interactable text1, text2, text3, text4 , text5;
 
     #region 管理物件
     [Header("初始化")]

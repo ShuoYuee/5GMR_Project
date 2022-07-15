@@ -34,6 +34,7 @@ public class UIMessageDef : BaseUIMessageDef
     public static string UI_SelectionCheerlead = "UI_SelectionCheerlead";
 
     public static string UI_CheerleadMoraGame = "UI_CheerleadMoraGame";
-    
+
+    public static string test = "test";
 }
 

@@ -124,5 +124,5 @@ public class GloData
     public static int glo_iFishUpY = 1;
 
 
-
+    float test;
 }

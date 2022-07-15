@@ -778,3 +778,193 @@
 21428: 16:13:35.139 - Shutdown complete...
 21428: 16:13:35.139 - Service shutting down
 21428: 16:13:35.140 - Service shut down complete
+32628: 16:52:13.959 - ---
+32628: 16:52:13.959 - Service: "Photon Socket Server" starting
+32628: 16:52:13.959 - Config File: D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\bin_Win64\PhotonServer.config
+32628: 16:52:13.960 - Will produce at most: 10 crash dumps
+32628: 16:52:13.960 - Action: run as exe
+32628: 16:52:13.960 - Server Starting...
+32628: 16:52:13.960 -    Tick count: 251314796 (wraps in: 46.8015 days)
+32628: 16:52:13.960 - Tick count 64: 251314796
+32628: 16:52:13.961 - Photon Version: 4.0.28.2962
+32628: 16:52:13.961 - PID: 33316
+32628: 16:52:13.961 - Config File: D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\bin_Win64\PhotonServer.config
+32628: 16:52:13.961 - Will NOT log unimportant exceptions
+32628: 16:52:13.962 - Not using performance counters as they are not currently installed. Run the service with /InstallCounters to install them.
+32628: 16:52:13.962 - Shutdown timeout enabled: 30000ms
+32628: 16:52:13.962 - Starting I/O thread pool with 2 threads
+32628: 16:52:13.962 - Using Standard allocator
+32628: 16:52:13.962 - Max message size: 512000
+32628: 16:52:13.962 - Starting business logic thread pool with the following settings
+32628: 16:52:13.962 - InitialThreads: 4 threads
+32628: 16:52:13.962 - MinThreads: 4 threads
+32628: 16:52:13.962 - Thread pool is fixed size
+32628: 16:52:13.962 - Starting ENet thread pool with the following settings
+32628: 16:52:13.962 - InitialThreads: 2 threads
+32628: 16:52:13.962 - MinThreads: 2 threads
+32628: 16:52:13.962 - Thread pool is fixed size
+32628: 16:52:13.962 - OnlyDispatchTimers: False
+32628: 16:52:13.962 - S2S: flow control: Max pending writes: 50
+32628: 16:52:13.962 - S2S: flow control: Max queued buffers: 200
+32628: 16:52:13.962 - S2S: flow control: Max pending writes MUX: 500
+32628: 16:52:13.962 - S2S: flow control: Max queued buffers MUX: 2000
+32628: 16:52:13.962 - S2S: MaxInboundMessageSize: 512000
+32628: 16:52:13.963 - S2S: MaxOutboundMessageSize: 512000
+32628: 16:52:13.963 - S2S: No inactivity timeout
+32628: 16:52:13.964 - WebSocket S2S: MaxInboundMessageSize: 512000
+32628: 16:52:13.964 - WebSocket S2S: MaxOutboundMessageSize: 512000
+32628: 16:52:13.964 - WebSocket S2S: No inactivity timeout
+32628: 16:52:13.965 - Max Reliable Data In Transit (awaiting ACKs) per peer : 16384 bytes
+32628: 16:52:13.965 - Per peer bandwidth limit
+32628: 16:52:13.965 - Transmit Rate Limit: 256 KB/Sec
+32628: 16:52:13.965 - Limit period: 200ms
+32628: 16:52:13.965 - Limit per period: 52428 bytes
+32628: 16:52:13.965 - Max queued data for transmission per peer: 163840 bytes
+32628: 16:52:13.965 - Minimum retransmit timeout: 200
+32628: 16:52:13.965 - No Maximum retransmit timeout
+32628: 16:52:13.965 - Minimum ENet timeout: 5000ms
+32628: 16:52:13.965 - Maximum ENet timeout: 30000ms
+32628: 16:52:13.965 - Max Inbound Reliable Data Queued (awaiting resends of earlier sequence numbers) per peer : 163840 bytes
+32628: 16:52:13.965 - No RTT ACK adjustment timeout
+32628: 16:52:13.965 - Outbound ENet: MaxInboundMessageSize: 512000
+32628: 16:52:13.965 - Outbound ENet: MaxOutboundMessageSize: 512000
+32628: 16:52:13.966 - GetRuntime - About to load CLR - versions available:
+32628: 16:52:13.966 - v2.0.50727
+32628: 16:52:13.966 - v4.0.30319
+32628: 16:52:13.966 - Configuration requests: "v2.0.50727"
+32628: 16:52:13.966 - About to load version: "v2.0.50727"
+32628: 16:52:13.988 - About to load runtime: PhotonHostRuntime.PhotonDomainManager from PhotonHostRuntime, Culture=neutral, PublicKeyToken=02C301B61B060C4D
+32628: 16:52:13.988 - CLRBaseDirectory set to "D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy"
+32628: 16:52:13.988 - Optimising event broadcast for 20 or more peers
+32628: 16:52:13.988 - Start: About to load CLR - versions available:
+32628: 16:52:13.988 - v2.0.50727
+32628: 16:52:13.988 - v4.0.30319
+32628: 16:52:13.988 - No preference in configuration file, will load latest.
+32628: 16:52:13.988 - About to load version: "v4.0.30319"
+32628: 16:52:13.989 - Loaded version: "v4.0.30319"
+32628: 16:52:14.088 - Photon host runtime loaded
+32628: 16:52:15.533 - License is valid.
+32628: 16:52:15.533 - Licensed for 100 concurrent connections.
+32628: 16:52:15.533 - ENet: Max Reliable Data In Transit (awaiting ACKs) per peer : 16384 bytes
+32628: 16:52:15.533 - ENet: Per peer bandwidth limit
+32628: 16:52:15.533 - ENet: Transmit Rate Limit: 256 KB/Sec
+32628: 16:52:15.533 - ENet: Limit period: 200ms
+32628: 16:52:15.533 - ENet: Limit per period: 52428 bytes
+32628: 16:52:15.533 - ENet: Max queued data for transmission per peer: 163840 bytes
+32628: 16:52:15.533 - ENet: Minimum retransmit timeout: 200
+32628: 16:52:15.533 - No Maximum retransmit timeout
+32628: 16:52:15.533 - ENet: Minimum timeout: 5000ms
+32628: 16:52:15.533 - ENet: Maximum timeout: 30000ms
+32628: 16:52:15.533 - ENet: Max Inbound Reliable Data Queued (awaiting resends of earlier sequence numbers) per peer : 163840 bytes
+32628: 16:52:15.533 - No RTT ACK adjustment timeout
+32628: 16:52:15.533 - About to load application: SexyBaseballServer from SexyBaseball.Server
+32628: 16:52:15.641 - Taking reference on default app domain
+32628: 16:52:15.841 - Application: "SexyBaseballServer" started in app domain: 2
+32628: 16:52:15.841 - Adding TCP listener on: 0.0.0.0: 4530 with a listen backlog of: 150
+32628: 16:52:15.841 - TCP inactivity timeout: 5000ms
+32628: 16:52:15.841 - TCP disconnect timeout: 120000ms
+32628: 16:52:15.841 - MaxInboundMessageSize: 512000
+32628: 16:52:15.841 - MaxOutboundMessageSize: 512000
+32628: 16:52:15.841 - Forcing all applications ids to: "SexyBaseballServer"
+32628: 16:52:15.841 - Adding TCP listener on: ::: 4530 with a listen backlog of: 150
+32628: 16:52:15.841 - TCP inactivity timeout: 5000ms
+32628: 16:52:15.841 - TCP disconnect timeout: 120000ms
+32628: 16:52:15.841 - MaxInboundMessageSize: 512000
+32628: 16:52:15.841 - MaxOutboundMessageSize: 512000
+32628: 16:52:15.841 - Forcing all applications ids to: "SexyBaseballServer"
+32628: 16:52:15.846 - Service is running...
+33188: 17:09:31.850 - ---
+33188: 17:09:31.850 - Service: "Photon Socket Server" starting
+33188: 17:09:31.851 - Config File: D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\bin_Win64\PhotonServer.config
+33188: 17:09:31.852 - Will produce at most: 10 crash dumps
+33188: 17:09:31.852 - Action: run as exe
+33188: 17:09:31.852 - Server Starting...
+33188: 17:09:31.852 -    Tick count: 252352687 (wraps in: 46.7895 days)
+33188: 17:09:31.852 - Tick count 64: 252352687
+33188: 17:09:31.852 - Photon Version: 4.0.28.2962
+33188: 17:09:31.852 - PID: 19168
+33188: 17:09:31.852 - Config File: D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy\bin_Win64\PhotonServer.config
+33188: 17:09:31.853 - Will NOT log unimportant exceptions
+33188: 17:09:31.854 - Not using performance counters as they are not currently installed. Run the service with /InstallCounters to install them.
+33188: 17:09:31.854 - Shutdown timeout enabled: 30000ms
+33188: 17:09:31.854 - Starting I/O thread pool with 2 threads
+33188: 17:09:31.854 - Using Standard allocator
+33188: 17:09:31.854 - Max message size: 512000
+33188: 17:09:31.854 - Starting business logic thread pool with the following settings
+33188: 17:09:31.854 - InitialThreads: 4 threads
+33188: 17:09:31.854 - MinThreads: 4 threads
+33188: 17:09:31.854 - Thread pool is fixed size
+33188: 17:09:31.855 - Starting ENet thread pool with the following settings
+33188: 17:09:31.855 - InitialThreads: 2 threads
+33188: 17:09:31.855 - MinThreads: 2 threads
+33188: 17:09:31.855 - Thread pool is fixed size
+33188: 17:09:31.855 - OnlyDispatchTimers: False
+33188: 17:09:31.855 - S2S: flow control: Max pending writes: 50
+33188: 17:09:31.855 - S2S: flow control: Max queued buffers: 200
+33188: 17:09:31.855 - S2S: flow control: Max pending writes MUX: 500
+33188: 17:09:31.855 - S2S: flow control: Max queued buffers MUX: 2000
+33188: 17:09:31.855 - S2S: MaxInboundMessageSize: 512000
+33188: 17:09:31.855 - S2S: MaxOutboundMessageSize: 512000
+33188: 17:09:31.855 - S2S: No inactivity timeout
+33188: 17:09:31.857 - WebSocket S2S: MaxInboundMessageSize: 512000
+33188: 17:09:31.857 - WebSocket S2S: MaxOutboundMessageSize: 512000
+33188: 17:09:31.857 - WebSocket S2S: No inactivity timeout
+33188: 17:09:31.857 - Max Reliable Data In Transit (awaiting ACKs) per peer : 16384 bytes
+33188: 17:09:31.857 - Per peer bandwidth limit
+33188: 17:09:31.857 - Transmit Rate Limit: 256 KB/Sec
+33188: 17:09:31.857 - Limit period: 200ms
+33188: 17:09:31.857 - Limit per period: 52428 bytes
+33188: 17:09:31.857 - Max queued data for transmission per peer: 163840 bytes
+33188: 17:09:31.857 - Minimum retransmit timeout: 200
+33188: 17:09:31.857 - No Maximum retransmit timeout
+33188: 17:09:31.857 - Minimum ENet timeout: 5000ms
+33188: 17:09:31.857 - Maximum ENet timeout: 30000ms
+33188: 17:09:31.857 - Max Inbound Reliable Data Queued (awaiting resends of earlier sequence numbers) per peer : 163840 bytes
+33188: 17:09:31.857 - No RTT ACK adjustment timeout
+33188: 17:09:31.857 - Outbound ENet: MaxInboundMessageSize: 512000
+33188: 17:09:31.857 - Outbound ENet: MaxOutboundMessageSize: 512000
+33188: 17:09:31.858 - GetRuntime - About to load CLR - versions available:
+33188: 17:09:31.858 - v2.0.50727
+33188: 17:09:31.858 - v4.0.30319
+33188: 17:09:31.858 - Configuration requests: "v2.0.50727"
+33188: 17:09:31.858 - About to load version: "v2.0.50727"
+33188: 17:09:31.863 - About to load runtime: PhotonHostRuntime.PhotonDomainManager from PhotonHostRuntime, Culture=neutral, PublicKeyToken=02C301B61B060C4D
+33188: 17:09:31.863 - CLRBaseDirectory set to "D:\UnityProject\Unicorn\5GMR_Project\PhotonTest\Photon-Server-SDK\deploy"
+33188: 17:09:31.863 - Optimising event broadcast for 20 or more peers
+33188: 17:09:31.864 - Start: About to load CLR - versions available:
+33188: 17:09:31.864 - v2.0.50727
+33188: 17:09:31.864 - v4.0.30319
+33188: 17:09:31.864 - No preference in configuration file, will load latest.
+33188: 17:09:31.864 - About to load version: "v4.0.30319"
+33188: 17:09:31.865 - Loaded version: "v4.0.30319"
+33188: 17:09:31.965 - Photon host runtime loaded
+33188: 17:09:33.479 - License is valid.
+33188: 17:09:33.479 - Licensed for 100 concurrent connections.
+33188: 17:09:33.479 - ENet: Max Reliable Data In Transit (awaiting ACKs) per peer : 16384 bytes
+33188: 17:09:33.479 - ENet: Per peer bandwidth limit
+33188: 17:09:33.479 - ENet: Transmit Rate Limit: 256 KB/Sec
+33188: 17:09:33.479 - ENet: Limit period: 200ms
+33188: 17:09:33.479 - ENet: Limit per period: 52428 bytes
+33188: 17:09:33.479 - ENet: Max queued data for transmission per peer: 163840 bytes
+33188: 17:09:33.479 - ENet: Minimum retransmit timeout: 200
+33188: 17:09:33.479 - No Maximum retransmit timeout
+33188: 17:09:33.479 - ENet: Minimum timeout: 5000ms
+33188: 17:09:33.479 - ENet: Maximum timeout: 30000ms
+33188: 17:09:33.479 - ENet: Max Inbound Reliable Data Queued (awaiting resends of earlier sequence numbers) per peer : 163840 bytes
+33188: 17:09:33.479 - No RTT ACK adjustment timeout
+33188: 17:09:33.479 - About to load application: SexyBaseballServer from SexyBaseball.Server
+33188: 17:09:33.511 - Taking reference on default app domain
+33188: 17:09:33.527 - Application: "SexyBaseballServer" started in app domain: 2
+33188: 17:09:33.527 - Adding TCP listener on: 0.0.0.0: 4530 with a listen backlog of: 150
+33188: 17:09:33.527 - TCP inactivity timeout: 5000ms
+33188: 17:09:33.527 - TCP disconnect timeout: 120000ms
+33188: 17:09:33.527 - MaxInboundMessageSize: 512000
+33188: 17:09:33.527 - MaxOutboundMessageSize: 512000
+33188: 17:09:33.527 - Forcing all applications ids to: "SexyBaseballServer"
+33188: 17:09:33.527 - Adding TCP listener on: ::: 4530 with a listen backlog of: 150
+33188: 17:09:33.527 - TCP inactivity timeout: 5000ms
+33188: 17:09:33.527 - TCP disconnect timeout: 120000ms
+33188: 17:09:33.527 - MaxInboundMessageSize: 512000
+33188: 17:09:33.527 - MaxOutboundMessageSize: 512000
+33188: 17:09:33.527 - Forcing all applications ids to: "SexyBaseballServer"
+33188: 17:09:33.532 - Service is running...

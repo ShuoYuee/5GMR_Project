@@ -37,6 +37,7 @@ public class XRCubeCustomController : MonoBehaviour //負責SDK觸發事件定�
     private XRCubeCtrl _XRCubeCtrl;
     float PosSpeed = 1;
     float time = 0;
+    float test;
 
     void InitSocket()
     {

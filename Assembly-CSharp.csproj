@@ -324,6 +324,7 @@
     <None Include="Assets\ThirdParty\ZFBrowser\Materials\EmulatedMipmap\Readme.txt" />
     <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\Tool\XRCube\Scripts\Shaders\XRCube_InsideVisible.shader" />
+    <None Include="Assets\StreamingAssets\SaveFile\s.txt" />
     <None Include="Assets\ThirdParty\DOTween\DOTweenPro\readme.txt" />
     <None Include="Assets\ABRes\Language\enUS\GameMain.txt" />
     <None Include="Assets\ThirdParty\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />

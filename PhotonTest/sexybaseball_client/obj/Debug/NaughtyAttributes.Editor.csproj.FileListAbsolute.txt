@@ -1,2 +1,0 @@
-E:\practice\MR\sexybaseball_client\obj\Debug\NaughtyAttributes.Editor.csprojAssemblyReference.cache
-E:\practice\MR\sexybaseball_client\obj\Debug\NaughtyAttributes.Editor.csproj.CoreCompileInputs.cache

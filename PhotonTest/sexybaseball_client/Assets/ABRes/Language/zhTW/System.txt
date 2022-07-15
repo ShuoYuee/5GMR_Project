@@ -1,6 +1,0 @@
-﻿GmStr_EmptyKeyFrame	新创建空的关键帧
-GmStr_GmName	測試團
-GmStr_Hello1	嗨！帥哥！我是Aoi！
-GmStr_Hello2	歡迎你來到我的頻道。
-
-SvrErr_ConnectionFailed	連線失敗

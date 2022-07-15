@@ -388,7 +388,6 @@ public class GameMainTriggerCtrl : MonoBehaviour
 {
     public Transform _Focus = null;
 
-    [SerializeField]
     private EditObjControll _EditObjControll = null;
     private Interactable _Interactable = null;
     private InputField _InputField = null;
@@ -396,7 +395,6 @@ public class GameMainTriggerCtrl : MonoBehaviour
     private ccInteractable _ccInteractable = null;
 
     public EM_TriggerObj _ObjEm = EM_TriggerObj.None;
-    [SerializeField]
     private GameObject oCurObj = null;
     private bool _bLookTime = false;
 
@@ -524,7 +522,7 @@ public class GameMainTriggerCtrl : MonoBehaviour
         switch (_ObjEm)
         {
             case EM_TriggerObj.EditObj:
-                
+
                 break;
 
             case EM_TriggerObj.InpuUI:

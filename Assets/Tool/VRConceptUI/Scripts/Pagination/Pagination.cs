@@ -69,6 +69,7 @@ namespace Epibyte.ConceptVR
             glo_Main.GetInstance().m_UIMessagePool.f_Broadcast(MessageDef.UI_MapObjInit, oData);
             numberOfPages = page;
             CleanUpVacantCircle();
+            currentPage = 0;
         }
 
         public void Prev()

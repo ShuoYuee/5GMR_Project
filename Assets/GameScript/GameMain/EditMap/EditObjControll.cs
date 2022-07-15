@@ -16,12 +16,6 @@ public class EditObjControll : Interactable_GameCtrl
 
     /// <summary>場景資料(儲存時所用的)</summary>
     private MapPoolDT _MapPoolDT;
-    ///// <summary>預覽動畫組</summary>
-    //private string[] _strAnimGroup;
-    ///// <summary>預覽音效組</summary>
-    //private string[] _strAudioGroup;
-    ///// <summary>網頁連結腳本</summary>
-    //private ConnectURL _ConnectURL = new ConnectURL();
 
     /// <summary>編輯模式</summary>
     EM_EditCtrlState _EditEM = EM_EditCtrlState.None;
@@ -66,7 +60,7 @@ public class EditObjControll : Interactable_GameCtrl
 
     public void OnReleased()
     {
-        
+
     }
 
     public void OnHovered() { }
@@ -90,7 +84,7 @@ public class EditObjControll : Interactable_GameCtrl
             _strAnimGroup = ccMath.f_String2ArrayString(_MapPoolDT.m_CharacterDT.szAnimGroup, ";");
         }*/
     }
-        
+
     public long f_GetId()
     {
         return _MapPoolDT.iId;
@@ -171,7 +165,7 @@ public class EditObjControll : Interactable_GameCtrl
         if (GetComponentInChildren<MeshRenderer>() != null)
         {
             MeshRenderer[] tChilds = GetComponentsInChildren<MeshRenderer>();
-            for(int i = 0; i < _Material.Count; i++)
+            for (int i = 0; i < _Material.Count; i++)
             {
                 tChilds[i].material = material[i];
             }
@@ -199,7 +193,7 @@ public class EditObjControll : Interactable_GameCtrl
                 _Material.Add(Renderer.material);
             }
         }
-        else if (GetComponentInChildren<SkinnedMeshRenderer>() != null)
+        if (GetComponentInChildren<SkinnedMeshRenderer>() != null)
         {
             foreach (SkinnedMeshRenderer Renderer in GetComponentsInChildren<SkinnedMeshRenderer>())
             {
@@ -226,7 +220,7 @@ public class EditObjControll : Interactable_GameCtrl
             return;
         }
 
-        if (!isGrabbObj) { return; }
+        //if (!isGrabbObj) { return; }
 
         if (isGrabbing)
         {
@@ -323,7 +317,7 @@ public class EditObjControll : Interactable_GameCtrl
     IEnumerator PositionTo(float duration)
     {
         isGrabbing = true;
-        float elapsedTime = 0f;      
+        float elapsedTime = 0f;
 
         while (isGrabbing && elapsedTime < duration)
         {
@@ -572,7 +566,7 @@ public class EditObjControll : Interactable_GameCtrl
     /// <param name="bGrab">是否進行移動</param>
     public void f_SetGrabState(object bGrab = null)
     {
-        if(_EditEM != EM_EditCtrlState.Position) { return; }
+        if (_EditEM != EM_EditCtrlState.Position) { return; }
         if (bGrab == null)
         {
             isGrabbObj = !isGrabbObj;
@@ -587,7 +581,6 @@ public class EditObjControll : Interactable_GameCtrl
     /// <param name="bEdit">是否進入編輯狀態</param>
     public void f_SetEditState(bool bEdit)
     {
-        MessageBox.DEBUG("是否進入編輯狀態 : " + bEdit);
         _bEdit = bEdit;
         if (_bEdit)
         {
@@ -601,16 +594,4 @@ public class EditObjControll : Interactable_GameCtrl
         }
     }
     #endregion
-
-    /*#region URL
-    public void f_SetURL(string szURL)
-    {
-        _ConnectURL.fSetURL(szURL);
-    }
-
-    public void f_ConnectURL()
-    {
-        _ConnectURL.f_ConnectURL();
-    }
-    #endregion*/
 }

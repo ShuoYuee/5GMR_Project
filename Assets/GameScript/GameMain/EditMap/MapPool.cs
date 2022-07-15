@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using UnityEditor;
 
 public class MapPool : ccBasePool<long>
 {
@@ -11,7 +10,6 @@ public class MapPool : ccBasePool<long>
 
     private string GetMapFilePath(string strFileName)
     {
-        //return Application.streamingAssetsPath + "/" + _strMapFile + ".txt";
         return Application.streamingAssetsPath + "/SaveFile/" + strFileName + ".txt";
     }
 
@@ -156,7 +154,7 @@ public class MapPool : ccBasePool<long>
 
     public void f_DelMap(string strFileName)
     {
-        //AssetDatabase.DeleteAsset(GetMapFilePath(strFileName));
+        File.Delete(GetMapFilePath(strFileName));
     }
 
     #region AB資源相關
@@ -177,7 +175,6 @@ public class MapPool : ccBasePool<long>
     /// <param name="aData">資料</param>
     private void LoadObj(string[] aData)
     {
-        MessageBox.DEBUG("LoadObj"); 
         long iId = ccMath.atol(aData[0]);
         CharacterDT tCharacterDT = (CharacterDT)glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetSC(ccMath.atoi(aData[1]));
         EditObjControll tEditObjControll = AddObj(iId, tCharacterDT);
@@ -196,20 +193,9 @@ public class MapPool : ccBasePool<long>
     /// <returns></returns>
     private EditObjControll AddObj(long iId, CharacterDT tCharacterDT)
     {
-        MessageBox.DEBUG(tCharacterDT.szResName + ".bundle" + " 角色名: " + tCharacterDT.szName);
         _CurCharacterDT = tCharacterDT;
-        GameObject tObj = glo_Main.GetInstance().m_ResourceManager.f_CreateABObj(tCharacterDT.szResName + ".bundle", tCharacterDT.szName, f_SetObj);        
-        //EditObjControll tEditObjControll = tObj.AddComponent<EditObjControll>();
+        GameObject tObj = glo_Main.GetInstance().m_ResourceManager.f_CreateABObj(tCharacterDT.szResName + ".bundle", tCharacterDT.szName, f_SetObj);
 
-        /*//設定物件地圖資料
-        MapPoolDT tMapPoolDT = new MapPoolDT();
-        tMapPoolDT.f_Set(iId, tObj, tCharacterDT);
-        //儲存物件地圖資料
-        f_Save(tMapPoolDT);
-        tEditObjControll.f_Save(tMapPoolDT);*/
-        //f_SaveData(iId, tCharacterDT, tEditObjControll);
-
-        //return tEditObjControll;
         return null;
     }
 
@@ -217,7 +203,6 @@ public class MapPool : ccBasePool<long>
     /// <summary>設定物件</summary>
     private void f_SetObj(object e)
     {
-        MessageBox.DEBUG("f_SetObj");
         GameObject tObj = (GameObject)e;
         //EditObjControll tEditObjControll = tObj.AddComponent<EditObjControll>();
         f_SaveData(RoleTools.CreateKeyId(), _CurCharacterDT, tObj);
@@ -279,8 +264,6 @@ public class MapPool : ccBasePool<long>
         f_Save(tMapPoolDT);
 
         EditObjControll tEditObjControll = RoleTools.f_CreateEditObj(tEditObj, tCharacterDT, tMapPoolDT);
-        //tEditObj.f_SetURL(tCharacterDT.szURL);
-        //tEditObj.f_Save(tMapPoolDT);
     }
 
     //public bool f_CheckIsDelete(CreateABAction tCreateABAction)

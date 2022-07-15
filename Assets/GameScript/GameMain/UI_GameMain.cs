@@ -20,7 +20,7 @@ namespace GameLogic
         {
             MessageBox.DEBUG("啟用遊戲包中的UI_GameMain腳本");
 
-            _listPosCtrl = f_GetObject("CircularList").GetComponent<ListPositionCtrl>();
+            /*_listPosCtrl = f_GetObject("CircularList").GetComponent<ListPositionCtrl>();
             _Anchor = f_GetObject("Anchor").GetComponent<Image>();
 
             f_RegClickEvent(f_GetObject("BtnSetup"), OnClick_BtnSetup);
@@ -28,7 +28,7 @@ namespace GameLogic
 
 
             f_RegClickEvent(f_GetObject("LoadMap"), OnClick_LoadMap);
-            f_RegClickEvent(f_GetObject("SaveMap"), OnClick_SaveMap);
+            f_RegClickEvent(f_GetObject("SaveMap"), OnClick_SaveMap);*/
 
             f_InitMessage();
         }
@@ -42,7 +42,6 @@ namespace GameLogic
         /// <summary>初始化地圖物件資料</summary>
         private void f_InitMapObjData()
         {
-            #region 暫時沒用到
             List<NBaseSCDT> tData = glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetAll();
             CharacterDT aData;
             GameObject oData = null;
@@ -51,14 +50,13 @@ namespace GameLogic
                 aData = (CharacterDT)tData[i];
 
                 //判別資源來源模式
-                switch (aData.iDisplayResource)
+                if (aData.iDisplayResource == 1)
                 {
-                    case 1:
-                        oData = AssetLoader.LoadAsset(aData.szResName + ".bundle", aData.szDisplayAB) as GameObject;
-                        break;
-                    default:
-                        oData = AssetLoader.LoadAsset(aData.szResName + ".bundle", aData.szName) as GameObject;
-                        break;
+                    oData = AssetLoader.LoadAsset(aData.szResName + ".bundle", aData.szDisplayAB) as GameObject;
+                }
+                else
+                {
+                    oData = AssetLoader.LoadAsset(aData.szResName + ".bundle", aData.szName) as GameObject;
                 }
 
                 if (oData == null)//清除空物件資料
@@ -67,11 +65,9 @@ namespace GameLogic
                     i -= 1;
                     continue;
                 }
-                oMapObj.Add(oData);
             }
 
             GameMain.GetInstance().m_Pagination.items = oMapObj;//將物件清單傳送給選單腳本
-            #endregion
 
             f_LoadObj(null, null, 0);
         }
@@ -98,17 +94,15 @@ namespace GameLogic
 
             CharacterDT tCharacterDT = (CharacterDT)aData[(int)callbackData];
             //判別資源來源模式
-            switch (tCharacterDT.iDisplayResource)
+            if (tCharacterDT.iDisplayResource == 1)
             {
-
-                case 1:
-                    MessageBox.DEBUG("判別資源來源模式 1");
-                    AssetLoader.LoadAssetAsync(tCharacterDT.szResName + ".bundle", tCharacterDT.szDisplayAB, f_LoadObj, iNextId);
-                    break;
-                default:
-                    MessageBox.DEBUG("判別資源來源模式 0");
-                    AssetLoader.LoadAssetAsync(tCharacterDT.szResName + ".bundle", tCharacterDT.szName, f_LoadObj, iNextId);
-                    break;
+                MessageBox.DEBUG("判別資源來源模式 1");
+                AssetLoader.LoadAssetAsync(tCharacterDT.szResName + ".bundle", tCharacterDT.szDisplayAB, f_LoadObj, iNextId);
+            }
+            else
+            {
+                MessageBox.DEBUG("判別資源來源模式 0");
+                AssetLoader.LoadAssetAsync(tCharacterDT.szResName + ".bundle", tCharacterDT.szName, f_LoadObj, iNextId);
             }
         }
 
@@ -166,13 +160,12 @@ namespace GameLogic
         {
             List<NBaseSCDT> aData = glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetAll();//讀取物件圖示資料
             MessageBox.DEBUG("獲取到的SC : " + aData.Count.ToString());
-            //ListPositionCtrlTools.f_Create(_listPosCtrl, aData);//創建物件圖示
         }
 
         protected override void On_Open(object e)
         {
             CreateTeamItem();
-            _listPosCtrl.Initialize();
+            //_listPosCtrl.Initialize();
 
             InitObjList();
             f_InitMapObjData();
@@ -191,16 +184,6 @@ namespace GameLogic
         protected override void On_Update()
         {
             base.On_Update();
-            //f_AnchorUIIng();
-
-            if (Input.GetKeyDown(KeyCode.J))
-                GameMain.GetInstance().text1.OnClicked();
-            else if (Input.GetKeyDown(KeyCode.K))
-                GameMain.GetInstance().text2.OnClicked();
-            else if (Input.GetKeyDown(KeyCode.L))
-                GameMain.GetInstance().text3.OnClicked();
-            else if (Input.GetKeyDown(KeyCode.P))
-                GameMain.GetInstance().text4.OnClicked();
         }
 
         private float _fAnchorCurTime = 0f;

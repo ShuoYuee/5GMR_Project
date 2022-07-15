@@ -26,6 +26,8 @@ public class RoleTools
         if (tEditObjControll == null)
         {
             tEditObjControll = Obj.AddComponent<EditObjControll>();
+            tEditObjControll.tag = "XRCubeCollider";
+            tEditObjControll.f_Save(tMapPoolDT);
         }
 
         if (tCharacterDT.iType == (int)EM_RoleState.Player)
@@ -51,6 +53,8 @@ public class RoleTools
 
     private static void f_SetConnectURL(EditObjControll tEditObj, CharacterDT tCharacterDT)
     {
+        if (tCharacterDT.szURL == "") { return; }
+
         ConnectURL tConnectURL = new ConnectURL();
         tConnectURL.f_Init(tCharacterDT);
         tConnectURL.fSetURL(tCharacterDT.szURL);
@@ -59,6 +63,8 @@ public class RoleTools
 
     private static void f_SetAnimObj(EditObjControll tEditObj, CharacterDT tCharacterDT)
     {
+        if (tCharacterDT.szAI == "") { return; }
+
         //替物件裝上動畫機
         Animator tAnimator = tEditObj.gameObject.GetComponent<Animator>();
         if (tAnimator == null)

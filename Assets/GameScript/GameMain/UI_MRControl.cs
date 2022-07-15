@@ -19,7 +19,6 @@ namespace GameLogic
             _XRCubeUDPSender = f_GetObject("Panel").GetComponent<XRCubeUDPSender>();
             _machineManager = new ccMachineManager(new ccMachineStateBase(-1)); //狀態機
             _machineManager.f_RegState(new MainState_Main());
-            _machineManager.f_RegState(new MainState_Edit());
             _machineManager.f_RegState(new MainState_GuessGame());
             _machineManager.f_RegState(new MainState_Logout());
 

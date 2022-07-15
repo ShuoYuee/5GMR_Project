@@ -32,14 +32,14 @@ public class MapFileManager : MonoBehaviour
 
     /// <summary>當前選擇的檔案名</summary>
     private string _CurFileName;
-    /// <summary>是否為覆蓋讀取場景</summary>
-    private bool _bLoad = false;
+    ///// <summary>是否為覆蓋讀取場景</summary>
+    //private bool _bLoad = false;
 
     private void Start()
     {
         f_InitMessage();
 
-        //設置確認面板點擊事件 yes or no 選項點擊事件
+        //設置確認面板點擊事件
         _FileCanvas.f_Init(f_FileCtrl, f_FileReturnPanel);
         _LoadCheck.f_Init(f_LoadMap, f_LoadReturnPanel);
         _ImportCheck.f_Init(f_ImportMap, f_ImportReturnPanel);
@@ -94,17 +94,9 @@ public class MapFileManager : MonoBehaviour
         _CurFileName = (string)e;
         _FileCanvas.f_PanelCtrl(true);
         _FileCanvas.f_SetFileText(_CurFileName);
-
-        /*if (_bLoad)
-        {
-            _LoadCheck.f_SetFileText(_CurFileName);
-            _LoadCheck.onSelectFile.Invoke();
-        }
-        else
-        {
-            _ImportCheck.f_SetFileText(_CurFileName);
-            _ImportCheck.onSelectFile.Invoke();
-        }*/
+        _LoadCheck.f_SetFileText(_CurFileName);
+        _ImportCheck.f_SetFileText(_CurFileName);
+        _DeleteCheck.f_SetFileText(_CurFileName);
     }
     #endregion
 
@@ -161,7 +153,7 @@ public class MapFileManager : MonoBehaviour
     }*/
 
     /// <summary>重設地圖讀檔列表</summary>
-    public void f_Reset() //按下LoadScence 按鈕時觸發
+    public void f_Reset()
     {
         if (_Pagination == null) { return; }
         _FileCanvas.f_PanelCtrl(false, true);
@@ -177,14 +169,14 @@ public class MapFileManager : MonoBehaviour
     }
 
     /// <summary>設定地圖讀檔按鈕</summary>
-    private void f_SetLoadMapBtn(object e) //設定每個按鈕的資料 監聽: MapObjInit
+    private void f_SetLoadMapBtn(object e)
     {
         MessageBox.DEBUG("獲取所有地圖資訊，開始設定按鈕");
         List<GameObject> oData = (List<GameObject>)e;
         string[] aData = GameMain.GetInstance().m_MapPool.f_LoadPreviewData();
         for (int i = 0; i < oData.Count; i++)
         {
-            if(oData[i].GetComponent<LoadMapBtn>() == null) { return; }
+            if (oData[i].GetComponent<LoadMapBtn>() == null) { return; }
             oData[i].GetComponentInChildren<Text>().text = aData[i];
             oData[i].name = aData[i];
             oData[i].transform.localScale = _oFileBtn.transform.localScale;
@@ -195,7 +187,7 @@ public class MapFileManager : MonoBehaviour
     /// <summary>清空列表</summary>
     private void f_ClearMapBtn()
     {
-        for(int i = 0; i < _Pagination.positions.childCount; i++)
+        for (int i = 0; i < _Pagination.positions.childCount; i++)
         {
             ccMathEx.f_CreateChild(_Pagination.positions.GetChild(i).gameObject, 0);
         }
@@ -209,11 +201,10 @@ public class MapFileManager : MonoBehaviour
     /// <param name="text">檔案自定義名稱</param>
     public void f_SaveMap(Text text)
     {
-        //GameMain.GetInstance().m_MapPool.f_SaveMap(text.text);
         _CurFileName = text.text;
         if (GameMain.GetInstance().m_MapPool.f_CheckFileName(_CurFileName))
         {
-            //_SaveCheck.onSelectFile.Invoke();
+            _SaveCheck.f_SetFileText(_CurFileName);
             _SaveCheck.f_PanelCtrl(false, true);
         }
         else

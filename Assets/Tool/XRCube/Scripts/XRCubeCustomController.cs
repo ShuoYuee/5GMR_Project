@@ -70,7 +70,7 @@ public class XRCubeCustomController : MonoBehaviour //負責SDK觸發事件定�
         //}
 
         //CtrlLaser.SetActive(false);
-        _XRCubeCtrl = XRCubeControllerGO.GetComponent<XRCubeCtrl>();
+        //_XRCubeCtrl = XRCubeControllerGO.GetComponent<XRCubeCtrl>();
     }
 
     // Update is called once per frame

@@ -285,9 +285,7 @@
     <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\Tool\XRCube\Scripts\Shaders\XRCube_InsideVisible-3D-OVER.shader" />
     <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
-    <None Include="Assets\StreamingAssets\SaveFile\5566.txt" />
     <None Include="Assets\AssetStore\3D Game Kit - Environment Pack\Shaders\Vegetation.shader" />
-    <None Include="Assets\StreamingAssets\AAA.txt" />
     <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\ThirdParty\DOTween\DemiLib\Core\DemiLib.xml" />
     <None Include="Assets\ABRes\Language\zhTW\Login.txt" />
@@ -341,7 +339,6 @@
     <None Include="Assets\ThirdParty\ZFBrowser\Changelog.txt" />
     <None Include="Assets\ThirdParty\AVProVideo\Licenses\HapInAvFoundation-License.txt" />
     <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\StreamingAssets\SaveFile\1223.txt" />
     <None Include="Assets\Tool\VRConceptUI\Content\Shaders\3DText.shader" />
     <None Include="Assets\Tool\XRCube\Resources\PicTemp\temp.txt" />
     <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />

@@ -89,7 +89,8 @@ public class XRCubeCustomController : MonoBehaviour //負責SDK觸發事件定�
         if(_XRCubeCtrl == null)
         {
             XRCubeControllerGO = GameObject.FindGameObjectWithTag("XRCubeController");
-            _XRCubeCtrl = XRCubeControllerGO.GetComponent<XRCubeCtrl>();
+            if(XRCubeControllerGO != null)
+                _XRCubeCtrl = XRCubeControllerGO.GetComponent<XRCubeCtrl>();
         }
 
         if (showLaser)

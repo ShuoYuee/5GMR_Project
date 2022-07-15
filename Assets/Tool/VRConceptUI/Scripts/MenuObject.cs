@@ -41,6 +41,7 @@ namespace Epibyte.ConceptVR
         public void f_CreateObj()
         {
             //relatedObject = GameMain.GetInstance().f_AddObj((CharacterDT)m_SCData).gameObject;
+            
             GameMain.GetInstance().f_AddObj((CharacterDT)m_SCData);
         }
 

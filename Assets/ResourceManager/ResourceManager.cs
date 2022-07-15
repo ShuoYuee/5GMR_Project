@@ -179,6 +179,7 @@ public class ResourceManager
     /// <returns></returns>
     public GameObject f_CreateABObj(string strABBundle, string strAB, ccCallback ccCallback)
     {
+        MessageBox.DEBUG("AB 資源名 : " + strABBundle + " 物件名: " + strAB);
         AssetLoader.LoadAssetAsync(strABBundle, strAB, f_CompleteCreateAB, ccCallback);
         /*GameObject oModel = AssetLoader.LoadAsset(strAB + ".bundle", strAB) as GameObject;
         //GameObject oModel = AssetLoader.LoadAsset(strABBundle, strAB) as GameObject;

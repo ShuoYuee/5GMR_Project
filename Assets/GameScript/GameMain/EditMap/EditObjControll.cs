@@ -587,6 +587,7 @@ public class EditObjControll : Interactable_GameCtrl
     /// <param name="bEdit">是否進入編輯狀態</param>
     public void f_SetEditState(bool bEdit)
     {
+        MessageBox.DEBUG("是否進入編輯狀態 : " + bEdit);
         _bEdit = bEdit;
         if (_bEdit)
         {

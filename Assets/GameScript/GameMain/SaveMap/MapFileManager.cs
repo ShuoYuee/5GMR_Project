@@ -161,7 +161,7 @@ public class MapFileManager : MonoBehaviour
     }*/
 
     /// <summary>重設地圖讀檔列表</summary>
-    public void f_Reset()
+    public void f_Reset() //按下LoadScence 按鈕時觸發
     {
         if (_Pagination == null) { return; }
         _FileCanvas.f_PanelCtrl(false, true);

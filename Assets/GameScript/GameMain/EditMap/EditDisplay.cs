@@ -20,7 +20,7 @@ public class EditDisplay : MonoBehaviour
     }
 
     private void Start()
-    {   
+    {
         _Instance = this;
     }
 

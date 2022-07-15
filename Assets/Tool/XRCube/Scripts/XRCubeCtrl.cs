@@ -49,11 +49,12 @@ public class XRCubeCtrl : MonoBehaviour //負責Raycast偵測、觸發，再把資訊傳給Gam
                     //將要偵測的元件一一填入
                     if (oCurCollider.TryGetComponent(out EditObjControll tEditObjControll))//編輯物件
                     {
+                        //MessageBox.DEBUG("編輯物 : " + oCurCollider.name);
                         _GameMainTriggerCtrl._ObjEm = GameMainTriggerCtrl.EM_TriggerObj.EditObj;
                     }
                     else if (oCurCollider.TryGetComponent(out Interactable interactable))//按鈕物件
                     {
-                        //MessageBox.DEBUG(oCurCollider.name);
+                        //MessageBox.DEBUG("物件按鈕 : " + oCurCollider.name);
                         _GameMainTriggerCtrl._ObjEm = GameMainTriggerCtrl.EM_TriggerObj.Button;
                     }
                     else if (oCurCollider.TryGetComponent(out InputField inputField))//輸入文字框物件
@@ -62,6 +63,7 @@ public class XRCubeCtrl : MonoBehaviour //負責Raycast偵測、觸發，再把資訊傳給Gam
                     }
                     else if (oCurCollider.TryGetComponent(out Button button))//UI按鈕
                     {
+                        //MessageBox.DEBUG("UI按鈕 : " + oCurCollider.name);
                         _GameMainTriggerCtrl._ObjEm = GameMainTriggerCtrl.EM_TriggerObj.ButtonUI;
                     }
                     else if (oCurCollider.TryGetComponent(out ccUI_U3DSpace.ccInteractable ccInteractable))//MR UI

@@ -77,7 +77,7 @@ public class LogInState_LogIn : ccMachineStateBase
             GameDataLoad.f_LoginGame(tCMsg_GTC_LoginRelt.m_userName, tCMsg_GTC_LoginRelt.m_PlayerId, tCMsg_GTC_LoginRelt.m_iTeam);
 
             MessageBox.DEBUG("Logged in successfully.");
-            ccUIManage.GetInstance().f_SendMsgV3("ui_login.bundle", "UI_Login", UIMessageDef.UI_DESTORY);
+            ccUIManage.GetInstance().f_SendMsgV3("ui_login.bundle", "UI_Login", UIMessageDef.UI_CLOSE);
             ccSceneMgr.GetInstance().f_ChangeScene("GameMain");
             #region 手機登入
             //ccUIManage.GetInstance().f_SendMsgV3("ui_login.bundle", "UI_LoginSDK", UIMessageDef.UI_CLOSE);

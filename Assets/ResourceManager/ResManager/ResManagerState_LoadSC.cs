@@ -40,7 +40,8 @@ public class ResManagerState_LoadSC : ccMachineStateBase
         else
         {
             MessageBox.DEBUG("載入腳本");
-            LoadSuc(ccFile.f_ReadFileForByte(Application.persistentDataPath + "/" + GloData.glo_ProName + "/", "ccData.xlscc"));
+            //LoadSuc(ccFile.f_ReadFileForByte(Application.persistentDataPath + "/" + GloData.glo_ProName + "/", "ccData.xlscc"));
+            LoadSuc(ccFile.f_ReadFileForByte(Application.persistentDataPath + "/", "ccData.xlscc"));
         }
     }
 
@@ -84,7 +85,8 @@ public class ResManagerState_LoadSC : ccMachineStateBase
     {
         if (_bUpdate)
         {
-            ccFile.f_SaveFileForByte(Application.persistentDataPath + "/" + GloData.glo_ProName + "/", "ccData.xlscc", aBytes);
+            //ccFile.f_SaveFileForByte(Application.persistentDataPath + "/" + GloData.glo_ProName + "/", "ccData.xlscc", aBytes);
+            ccFile.f_SaveFileForByte(Application.persistentDataPath + "/", "ccData.xlscc", aBytes);
             string strServerVer = PlayerPrefs.GetString("RVer");
             PlayerPrefs.SetString("Ver", strServerVer);
             MessageBox.DEBUG("更新腳本版本為：" + strServerVer);

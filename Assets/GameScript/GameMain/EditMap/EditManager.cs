@@ -76,9 +76,9 @@ public class EditManager
 
     /// <summary>點選編輯按鈕</summary>
     public void f_Edit()
-    {
+    {       
         _bEdit = !_bEdit;
-
+        MessageBox.DEBUG("開始編輯" + _bEdit);
         if (_bEdit)
         {
             f_SetEditBtn();

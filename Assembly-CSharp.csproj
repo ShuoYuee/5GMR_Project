@@ -322,6 +322,7 @@
     <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\ThirdParty\AVProVideo\Licenses\Third-Party Notices.txt" />
     <None Include="Assets\ThirdParty\ZFBrowser\Materials\EmulatedMipmap\Readme.txt" />
+    <None Include="Assets\StreamingAssets\SaveFile\5566677ss.txt" />
     <None Include="Assets\ThirdParty\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\Tool\XRCube\Scripts\Shaders\XRCube_InsideVisible.shader" />
     <None Include="Assets\StreamingAssets\SaveFile\s.txt" />

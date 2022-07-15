@@ -43,7 +43,7 @@ namespace Epibyte.ConceptVR
         public void SelectTab(TabButton tab)
         {
             DeselectCurrentItem();
-            tab.Activate();
+            tab.Activate(); //開啟指定面板
             tab.isClicked = true;
             currentSelectedTab = tab;
         }

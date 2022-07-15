@@ -184,6 +184,7 @@ public class GameMain : ccSceneBase
 
     public EditObjControll f_AddObj(CharacterDT tCharacterDT)
     {
+        MessageBox.DEBUG("f_AddObj 資源名 : " + tCharacterDT.szName);
         return m_MapPool.f_AddObj(tCharacterDT);
     }
 

@@ -177,6 +177,7 @@ public class MapPool : ccBasePool<long>
     /// <param name="aData">資料</param>
     private void LoadObj(string[] aData)
     {
+        MessageBox.DEBUG("LoadObj"); 
         long iId = ccMath.atol(aData[0]);
         CharacterDT tCharacterDT = (CharacterDT)glo_Main.GetInstance().m_SC_Pool.m_CharacterSC.f_GetSC(ccMath.atoi(aData[1]));
         EditObjControll tEditObjControll = AddObj(iId, tCharacterDT);
@@ -195,6 +196,7 @@ public class MapPool : ccBasePool<long>
     /// <returns></returns>
     private EditObjControll AddObj(long iId, CharacterDT tCharacterDT)
     {
+        MessageBox.DEBUG(tCharacterDT.szResName + ".bundle" + " 角色名: " + tCharacterDT.szName);
         _CurCharacterDT = tCharacterDT;
         GameObject tObj = glo_Main.GetInstance().m_ResourceManager.f_CreateABObj(tCharacterDT.szResName + ".bundle", tCharacterDT.szName, f_SetObj);        
         //EditObjControll tEditObjControll = tObj.AddComponent<EditObjControll>();
@@ -215,6 +217,7 @@ public class MapPool : ccBasePool<long>
     /// <summary>設定物件</summary>
     private void f_SetObj(object e)
     {
+        MessageBox.DEBUG("f_SetObj");
         GameObject tObj = (GameObject)e;
         //EditObjControll tEditObjControll = tObj.AddComponent<EditObjControll>();
         f_SaveData(RoleTools.CreateKeyId(), _CurCharacterDT, tObj);

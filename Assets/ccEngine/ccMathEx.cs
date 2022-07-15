@@ -84,10 +84,12 @@ public class ccMathEx
     public static void f_CreateChild(GameObject obj, int iNewChhildNum)
     {
         int iNum = obj.transform.childCount - iNewChhildNum;
+        MessageBox.DEBUG("刪除多餘子物件， iNum : " + iNum);
         if (iNum > 0)
         {
             for (int i = 0; i < iNum; i++)
             {
+                
                 GameObject.Destroy(obj.transform.GetChild(0).gameObject);
             }
         }
